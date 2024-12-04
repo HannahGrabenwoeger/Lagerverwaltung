@@ -1,1 +1,9 @@
+# Ignoriere den node_modules-Ordner
+/node_modules/
 /frontend/node_modules/
+
+# Ignoriere macOS-Systemdateien
+.DS_Store
+
+
+
