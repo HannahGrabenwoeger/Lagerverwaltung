@@ -21,20 +21,22 @@ public class ProductsController : ControllerBase
     public IActionResult GetProducts()
     {
         var products = _dbContext.Products
-                                .Select(p => new
-                                {
-                                    Id = p.Id,
-                                    Name = p.Name,
-                                    Quantity = p.Quantity,
-                                    WarehouseId = p.WarehouseId
-                                })
-                                .ToList();
-        return Ok(products);
+            .Select(p => new
+            {
+                Id = p.Id,
+                Name = p.Name,
+                Quantity = p.Quantity,
+                WarehouseId = p.WarehouseId
+            })
+            .AsNoTracking()
+            .ToList();
+
+        return Ok(products); 
     }
 
     // GET: api/Products/{id}
     [HttpGet("{id}")]
-    public IActionResult GetProductsById(Guid id) // ✅ int → Guid geändert
+    public IActionResult GetProductsById(Guid id) 
     {
         var product = _dbContext.Products
                         .Include(p => p.Warehouse)
