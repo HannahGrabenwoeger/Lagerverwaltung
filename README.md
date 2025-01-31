@@ -19,6 +19,9 @@ Das System bietet Funktionen zur Verwaltung und Anzeige von Artikeln.
 1. Navigiere in den Ordner `backend`:
    ```bash
    cd backend
+2. Projekt laufen lassen:
+ ```bash
+   dotnet run
 
 ### Token Github:
 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s
