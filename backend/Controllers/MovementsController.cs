@@ -1,10 +1,10 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Backend.Models;
-using Backend.Dtos;
 using Backend.Data;
 using System;
 using System.Threading.Tasks;
+using backend.Services;
 
 namespace Backend.Controllers
 {
@@ -12,12 +12,15 @@ namespace Backend.Controllers
     [Route("api/[controller]")]
     public class MovementsController : ControllerBase
     {
-        private readonly AppDbContext _context;
+       private readonly AppDbContext _context;
+        private readonly StockService _stockService; 
 
-        public MovementsController(AppDbContext context)
+        public MovementsController(AppDbContext context, StockService stockService)  // ✅ Hier hinzufügen
         {
             _context = context;
+            _stockService = stockService;
         }
+        
 
         [HttpPost]
         public async Task<IActionResult> CreateMovements([FromBody] MovementsDto movementsDto)
@@ -74,10 +77,10 @@ namespace Backend.Controllers
             // Bewegung speichern
             var movement = new Movements
             {
-                Id = Guid.NewGuid(),  // ✅ Neue UUID für die Bewegung generieren
-                ProductsId = Guid.Parse(movementsDto.ProductsId.ToString()),  // ✅ Sicherstellen, dass ProductsId ein Guid ist
-                FromWarehouseId = Guid.Parse(movementsDto.FromWarehouseId.ToString()),  // ✅ Sicherstellen, dass FromWarehouseId ein Guid ist
-                ToWarehouseId = Guid.Parse(movementsDto.ToWarehouseId.ToString()),  // ✅ Sicherstellen, dass ToWarehouseId ein Guid ist
+                Id = Guid.NewGuid(),  
+                ProductId = Guid.Parse(movementsDto.ProductsId.ToString()),  
+                FromWarehouseId = Guid.Parse(movementsDto.FromWarehouseId.ToString()),  
+                ToWarehouseId = Guid.Parse(movementsDto.ToWarehouseId.ToString()),  
                 Quantity = movementsDto.Quantity,
                 MovementsDate = movementsDto.MovementsDate
             };
@@ -104,7 +107,7 @@ namespace Backend.Controllers
 
             var movementDto = new MovementsDto
             {
-                ProductsId = movement.ProductsId,
+                ProductsId = movement.ProductId,
                 FromWarehouseId = movement.FromWarehouseId,
                 ToWarehouseId = movement.ToWarehouseId,
                 Quantity = movement.Quantity,
@@ -119,6 +122,23 @@ namespace Backend.Controllers
         {
             var warehouses = await _context.Warehouses.ToListAsync();
             return Ok(warehouses);
+        }
+
+        [HttpPost("update")]
+        public async Task<IActionResult> UpdateStock([FromBody] StockUpdateRequest request)
+        {
+            bool success = await _stockService.UpdateStock(request.ProductId, request.Quantity, request.MovementType, request.User);
+            if (!success) return BadRequest("Fehler: Produkt nicht gefunden oder ungültige Daten.");
+
+            return Ok("Bestand erfolgreich aktualisiert.");
+        }
+
+        public class StockUpdateRequest
+        {
+            public Guid ProductId { get; set; } 
+            public int Quantity { get; set; }
+            public string MovementType { get; set; } = string.Empty; 
+            public string User { get; set; } = string.Empty;
         }
     }
 }

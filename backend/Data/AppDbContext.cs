@@ -11,6 +11,8 @@ namespace Backend.Data
         public DbSet<Products> Products { get; set; }
         public DbSet<Warehouse> Warehouses { get; set; }
         public DbSet<Movements> Movements { get; set; }
+        public DbSet<RestockQueue> RestockQueue { get; set; }
+        public DbSet<AuditLog> AuditLogs { get; set; }
 
        protected override void OnModelCreating(ModelBuilder modelBuilder)
         {

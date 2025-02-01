@@ -17,6 +17,32 @@ namespace backend.Migrations
 #pragma warning disable 612, 618
             modelBuilder.HasAnnotation("ProductVersion", "9.0.1");
 
+            modelBuilder.Entity("Backend.Models.AuditLog", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("Action")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("Entity")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
+                    b.Property<DateTime>("Timestamp")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("User")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("AuditLogs");
+                });
+
             modelBuilder.Entity("Backend.Models.Movements", b =>
                 {
                     b.Property<Guid>("Id")
@@ -26,16 +52,30 @@ namespace backend.Migrations
                     b.Property<Guid>("FromWarehouseId")
                         .HasColumnType("TEXT");
 
+                    b.Property<string>("MovementType")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
                     b.Property<DateTime>("MovementsDate")
                         .HasColumnType("TEXT");
 
-                    b.Property<Guid>("ProductsId")
+                    b.Property<Guid>("ProductId")
+                        .HasColumnType("TEXT");
+
+                    b.Property<Guid?>("ProductsId")
                         .HasColumnType("TEXT");
 
                     b.Property<int>("Quantity")
                         .HasColumnType("INTEGER");
 
+                    b.Property<DateTime>("Timestamp")
+                        .HasColumnType("TEXT");
+
                     b.Property<Guid>("ToWarehouseId")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("User")
+                        .IsRequired()
                         .HasColumnType("TEXT");
 
                     b.HasKey("Id");
@@ -47,6 +87,31 @@ namespace backend.Migrations
                     b.HasIndex("ToWarehouseId");
 
                     b.ToTable("Movements");
+                });
+
+            modelBuilder.Entity("Backend.Models.RestockQueue", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("TEXT");
+
+                    b.Property<bool>("Processed")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<Guid>("ProductId")
+                        .HasColumnType("TEXT");
+
+                    b.Property<int>("Quantity")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<DateTime>("RequestedAt")
+                        .HasColumnType("TEXT");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("ProductId");
+
+                    b.ToTable("RestockQueue");
                 });
 
             modelBuilder.Entity("Backend.Models.Warehouse", b =>
@@ -88,6 +153,9 @@ namespace backend.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("TEXT");
 
+                    b.Property<int>("MinimumStock")
+                        .HasColumnType("INTEGER");
+
                     b.Property<string>("Name")
                         .IsRequired()
                         .HasColumnType("TEXT");
@@ -108,6 +176,7 @@ namespace backend.Migrations
                         new
                         {
                             Id = new Guid("33333333-3333-3333-3333-333333333333"),
+                            MinimumStock = 0,
                             Name = "Produkt 1",
                             Quantity = 100,
                             WarehouseId = new Guid("11111111-1111-1111-1111-111111111111")
@@ -115,6 +184,7 @@ namespace backend.Migrations
                         new
                         {
                             Id = new Guid("44444444-4444-4444-4444-444444444444"),
+                            MinimumStock = 0,
                             Name = "Produkt 2",
                             Quantity = 50,
                             WarehouseId = new Guid("22222222-2222-2222-2222-222222222222")
@@ -131,9 +201,7 @@ namespace backend.Migrations
 
                     b.HasOne("Products", "Products")
                         .WithMany()
-                        .HasForeignKey("ProductsId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("ProductsId");
 
                     b.HasOne("Backend.Models.Warehouse", "ToWarehouse")
                         .WithMany()
@@ -146,6 +214,17 @@ namespace backend.Migrations
                     b.Navigation("Products");
 
                     b.Navigation("ToWarehouse");
+                });
+
+            modelBuilder.Entity("Backend.Models.RestockQueue", b =>
+                {
+                    b.HasOne("Products", "Product")
+                        .WithMany()
+                        .HasForeignKey("ProductId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Product");
                 });
 
             modelBuilder.Entity("Products", b =>

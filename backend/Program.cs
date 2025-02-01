@@ -1,6 +1,8 @@
 using Microsoft.EntityFrameworkCore;
 using Backend.Data;
 using Backend.Models;
+using backend.Services;
+using Backend.Services;
 
 var builder = WebApplication.CreateBuilder(new WebApplicationOptions
 {
@@ -8,6 +10,7 @@ var builder = WebApplication.CreateBuilder(new WebApplicationOptions
     WebRootPath = "wwwroot"
 });
 
+builder.Services.AddHostedService<RestockProcessor>();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
@@ -19,6 +22,8 @@ builder.Services.AddControllers()
 
 builder.Services.AddDbContext<AppDbContext>(options =>
     options.UseSqlite(builder.Configuration.GetConnectionString("DefaultConnection")));
+
+builder.Services.AddScoped<StockService>();
 
 builder.Services.AddCors(options =>
 {

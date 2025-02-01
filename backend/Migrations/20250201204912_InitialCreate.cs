@@ -14,6 +14,21 @@ namespace backend.Migrations
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.CreateTable(
+                name: "AuditLogs",
+                columns: table => new
+                {
+                    Id = table.Column<Guid>(type: "TEXT", nullable: false),
+                    Entity = table.Column<string>(type: "TEXT", nullable: false),
+                    Action = table.Column<string>(type: "TEXT", nullable: false),
+                    User = table.Column<string>(type: "TEXT", nullable: false),
+                    Timestamp = table.Column<DateTime>(type: "TEXT", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_AuditLogs", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "Warehouses",
                 columns: table => new
                 {
@@ -33,6 +48,7 @@ namespace backend.Migrations
                     Id = table.Column<Guid>(type: "TEXT", nullable: false),
                     Name = table.Column<string>(type: "TEXT", nullable: false),
                     Quantity = table.Column<int>(type: "INTEGER", nullable: false),
+                    MinimumStock = table.Column<int>(type: "INTEGER", nullable: false),
                     WarehouseId = table.Column<Guid>(type: "TEXT", nullable: false)
                 },
                 constraints: table =>
@@ -51,11 +67,15 @@ namespace backend.Migrations
                 columns: table => new
                 {
                     Id = table.Column<Guid>(type: "TEXT", nullable: false),
-                    ProductsId = table.Column<Guid>(type: "TEXT", nullable: false),
+                    ProductId = table.Column<Guid>(type: "TEXT", nullable: false),
                     FromWarehouseId = table.Column<Guid>(type: "TEXT", nullable: false),
                     ToWarehouseId = table.Column<Guid>(type: "TEXT", nullable: false),
                     Quantity = table.Column<int>(type: "INTEGER", nullable: false),
-                    MovementsDate = table.Column<DateTime>(type: "TEXT", nullable: false)
+                    MovementsDate = table.Column<DateTime>(type: "TEXT", nullable: false),
+                    MovementType = table.Column<string>(type: "TEXT", nullable: false),
+                    User = table.Column<string>(type: "TEXT", nullable: false),
+                    Timestamp = table.Column<DateTime>(type: "TEXT", nullable: false),
+                    ProductsId = table.Column<Guid>(type: "TEXT", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -64,8 +84,7 @@ namespace backend.Migrations
                         name: "FK_Movements_Products_ProductsId",
                         column: x => x.ProductsId,
                         principalTable: "Products",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
+                        principalColumn: "Id");
                     table.ForeignKey(
                         name: "FK_Movements_Warehouses_FromWarehouseId",
                         column: x => x.FromWarehouseId,
@@ -80,6 +99,27 @@ namespace backend.Migrations
                         onDelete: ReferentialAction.Restrict);
                 });
 
+            migrationBuilder.CreateTable(
+                name: "RestockQueue",
+                columns: table => new
+                {
+                    Id = table.Column<Guid>(type: "TEXT", nullable: false),
+                    ProductId = table.Column<Guid>(type: "TEXT", nullable: false),
+                    Quantity = table.Column<int>(type: "INTEGER", nullable: false),
+                    Processed = table.Column<bool>(type: "INTEGER", nullable: false),
+                    RequestedAt = table.Column<DateTime>(type: "TEXT", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_RestockQueue", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_RestockQueue_Products_ProductId",
+                        column: x => x.ProductId,
+                        principalTable: "Products",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
             migrationBuilder.InsertData(
                 table: "Warehouses",
                 columns: new[] { "Id", "Location", "Name" },
@@ -91,11 +131,11 @@ namespace backend.Migrations
 
             migrationBuilder.InsertData(
                 table: "Products",
-                columns: new[] { "Id", "Name", "Quantity", "WarehouseId" },
+                columns: new[] { "Id", "MinimumStock", "Name", "Quantity", "WarehouseId" },
                 values: new object[,]
                 {
-                    { new Guid("33333333-3333-3333-3333-333333333333"), "Produkt 1", 100, new Guid("11111111-1111-1111-1111-111111111111") },
-                    { new Guid("44444444-4444-4444-4444-444444444444"), "Produkt 2", 50, new Guid("22222222-2222-2222-2222-222222222222") }
+                    { new Guid("33333333-3333-3333-3333-333333333333"), 0, "Produkt 1", 100, new Guid("11111111-1111-1111-1111-111111111111") },
+                    { new Guid("44444444-4444-4444-4444-444444444444"), 0, "Produkt 2", 50, new Guid("22222222-2222-2222-2222-222222222222") }
                 });
 
             migrationBuilder.CreateIndex(
@@ -117,13 +157,24 @@ namespace backend.Migrations
                 name: "IX_Products_WarehouseId",
                 table: "Products",
                 column: "WarehouseId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_RestockQueue_ProductId",
+                table: "RestockQueue",
+                column: "ProductId");
         }
 
         /// <inheritdoc />
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
+                name: "AuditLogs");
+
+            migrationBuilder.DropTable(
                 name: "Movements");
+
+            migrationBuilder.DropTable(
+                name: "RestockQueue");
 
             migrationBuilder.DropTable(
                 name: "Products");
