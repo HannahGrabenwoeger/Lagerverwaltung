@@ -48,13 +48,7 @@ namespace backend.Services
             _context.Movements.Add(movement);
 
             // Nach jeder Lagerbewegung Audit-Log speichern
-            _context.AuditLogs.Add(new AuditLog
-            {
-                Entity = "Product",
-                Action = movementType == "IN" ? "Stock Added" : "Stock Removed",
-                User = user,
-                Timestamp = DateTime.UtcNow
-            });
+           
 
             // Falls Mindestbestand unterschritten wird → Nachbestellung auslösen
             if (product.Quantity < product.MinimumStock)
