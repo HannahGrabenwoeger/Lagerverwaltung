@@ -7,6 +7,8 @@ using System.Threading.Tasks;
 using backend.Services;
 using Backend.Services;
 using System.Linq;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.Extensions.Logging;
 
 namespace Backend.Controllers
 {
@@ -14,20 +16,21 @@ namespace Backend.Controllers
     [Route("api/[controller]")]
     public class MovementsController : ControllerBase
     {
-       private readonly AppDbContext _context;
+        private readonly AppDbContext _context;
         private readonly StockService _stockService; 
-
         private readonly AuditLogService _auditLogService;
+        private readonly ILogger<MovementsController> _logger;
 
-public MovementsController(AppDbContext context, StockService stockService, AuditLogService auditLogService)
-{
-    _context = context;
-    _stockService = stockService;
-    _auditLogService = auditLogService ?? throw new ArgumentNullException(nameof(auditLogService)); // Sicherstellen, dass es nicht null ist
-}
-        
+        public MovementsController(AppDbContext context, StockService stockService, AuditLogService auditLogService, ILogger<MovementsController> logger)
+        {
+            _context = context;
+            _stockService = stockService;
+            _auditLogService = auditLogService ?? throw new ArgumentNullException(nameof(auditLogService));
+            _logger = logger;
+        }
 
         [HttpPost]
+        [Authorize(Roles = "WarehouseManager, Admin")]
         public async Task<IActionResult> CreateMovements([FromBody] MovementsDto movementsDto)
         {
             if (movementsDto == null)
@@ -35,84 +38,92 @@ public MovementsController(AppDbContext context, StockService stockService, Audi
                 return BadRequest(new { message = "Ungültige Bewegungsdaten." });
             }
 
-            Guid productId = Guid.Parse(movementsDto.ProductsId.ToString());
-            Guid fromWarehouseId = Guid.Parse(movementsDto.FromWarehouseId.ToString());
-            Guid toWarehouseId = Guid.Parse(movementsDto.ToWarehouseId.ToString());
-
-            var product = await _context.Products.FirstOrDefaultAsync(p => p.Id == productId);
-            var fromWarehouse = await _context.Warehouses.FirstOrDefaultAsync(w => w.Id == fromWarehouseId);
-            var toWarehouse = await _context.Warehouses.FirstOrDefaultAsync(w => w.Id == toWarehouseId);
-            
-            if (product == null || fromWarehouse == null || toWarehouse == null)
+            if (!TryParseGuid(movementsDto.ProductsId, out Guid productId) ||
+                !TryParseGuid(movementsDto.FromWarehouseId, out Guid fromWarehouseId) ||
+                !TryParseGuid(movementsDto.ToWarehouseId, out Guid toWarehouseId))
             {
-                return BadRequest(new { message = "Produkt oder Lager nicht gefunden." });
+                return BadRequest(new { message = "Ungültige Lager- oder Produkt-IDs." });
             }
 
-            // Prüfe, ob genug Bestand vorhanden ist
-            if (product.Quantity < movementsDto.Quantity)
+            try
             {
-                return BadRequest(new { message = "Nicht genügend Bestand im Ursprungslager." });
-            }
+                var product = await _context.Products.FindAsync(productId);
+                var fromWarehouse = await _context.Warehouses.FindAsync(fromWarehouseId);
+                var toWarehouse = await _context.Warehouses.FindAsync(toWarehouseId);
 
-            // Bestand im Ausgangslager reduzieren
-            product.Quantity -= movementsDto.Quantity;
-
-            // Versuche, das Produkt im Ziel-Lager zu finden
-            var targetProduct = await _context.Products
-                .FirstOrDefaultAsync(p => p.Name == product.Name && p.WarehouseId == toWarehouseId);
-
-            if (targetProduct != null)
-            {
-                // Falls das Produkt im Ziel-Lager existiert, Menge erhöhen
-                targetProduct.Quantity += movementsDto.Quantity;
-            }
-            else
-            {
-                // Falls das Produkt noch nicht existiert, neues Produkt anlegen
-                var newProduct = new Products
+                if (product == null || fromWarehouse == null || toWarehouse == null)
                 {
-                    Id = Guid.NewGuid(),
-                    Name = product.Name,
+                    return NotFound(new { message = "Produkt oder Lager nicht gefunden." });
+                }
+
+                if (product.Quantity < movementsDto.Quantity)
+                {
+                    return BadRequest(new { message = "Nicht genügend Bestand im Ursprungslager." });
+                }
+
+                // Bestandsänderung im Ausgangslager
+                product.Quantity -= movementsDto.Quantity;
+
+                var targetProduct = await _context.Products
+                    .FirstOrDefaultAsync(p => p.Name == product.Name && p.WarehouseId == toWarehouseId);
+
+                if (targetProduct != null)
+                {
+                    targetProduct.Quantity += movementsDto.Quantity;
+                }
+                else
+                {
+                    targetProduct = new Products
+                    {
+                        Id = Guid.NewGuid(),
+                        Name = product.Name,
+                        Quantity = movementsDto.Quantity,
+                        WarehouseId = toWarehouseId,
+                    };
+                    await _context.Products.AddAsync(targetProduct);
+                }
+
+                var movement = new Movements
+                {
+                    Id = Guid.NewGuid(),  
+                    ProductId = productId,  
+                    FromWarehouseId = fromWarehouseId,  
+                    ToWarehouseId = toWarehouseId,  
                     Quantity = movementsDto.Quantity,
-                    WarehouseId = toWarehouseId,
+                    MovementsDate = movementsDto.MovementsDate
                 };
-                await _context.Products.AddAsync(newProduct);
+
+                await _context.Movements.AddAsync(movement);
+
+                string currentUser = User?.Identity?.Name ?? "System";
+
+                await _auditLogService.LogAction(
+                    entity: "Movement",
+                    action: "Stock Moved",
+                    productId: product.Id,
+                    quantityChange: -movementsDto.Quantity,
+                    user: currentUser
+                );
+
+                await _auditLogService.LogAction(
+                    entity: "Movement",
+                    action: "Stock Received",
+                    productId: targetProduct.Id,
+                    quantityChange: movementsDto.Quantity,
+                    user: currentUser
+                );
+
+                await _context.SaveChangesAsync();
+                _logger.LogInformation("Bestandsbewegung erfolgreich gespeichert: {MovementId}", movement.Id);
+
+                return CreatedAtAction(nameof(GetMovementsById), new { id = movement.Id }, movement);
             }
-
-            // Bewegung speichern
-            var movement = new Movements
+            catch (Exception ex)
             {
-                Id = Guid.NewGuid(),  
-                ProductId = productId,  
-                FromWarehouseId = fromWarehouseId,  
-                ToWarehouseId = toWarehouseId,  
-                Quantity = movementsDto.Quantity,
-                MovementsDate = movementsDto.MovementsDate
-            };
-
-            await _context.Movements.AddAsync(movement);
-            await _context.SaveChangesAsync();
-
-            // **🚀 Audit-Logs hier hinzufügen, nachdem die Änderungen gespeichert wurden**
-            await _auditLogService.LogAction(
-                entity: "Movement",
-                action: "Stock Moved",
-                productId: product.Id,
-                quantityChange: -movementsDto.Quantity,
-                user: "System" // Falls User-Management existiert, ersetze mit `User.Identity.Name`
-            );
-
-            await _auditLogService.LogAction(
-                entity: "Movement",
-                action: "Stock Received",
-                productId: targetProduct?.Id ?? movement.ProductId,
-                quantityChange: movementsDto.Quantity,
-                user: "System"
-            );
-
-            return CreatedAtAction(nameof(GetMovementsById), new { id = movement.Id }, movement);
+                _logger.LogError(ex, "Fehler bei der Bestandsbewegung");
+                return StatusCode(500, new { message = "Ein interner Fehler ist aufgetreten." });
+            }
         }
-
 
         [HttpGet]
         public async Task<IActionResult> GetMovements()
@@ -121,9 +132,9 @@ public MovementsController(AppDbContext context, StockService stockService, Audi
                 .Include(m => m.Products)
                 .Include(m => m.FromWarehouse)
                 .Include(m => m.ToWarehouse)
-                .ToListAsync(); // 🔥 Hier ToListAsync() für alle Bewegungen hinzufügen
+                .ToListAsync();
 
-            if (movements == null || movements.Count == 0)
+            if (!movements.Any())
             {
                 return NotFound(new { message = "Keine Bewegungen gefunden." });
             }
@@ -180,6 +191,15 @@ public MovementsController(AppDbContext context, StockService stockService, Audi
             if (!success) return BadRequest("Fehler: Produkt nicht gefunden oder ungültige Daten.");
 
             return Ok("Bestand erfolgreich aktualisiert.");
+        }
+
+        /// <summary>
+        /// Helfer-Methode zum sicheren Parsen von GUIDs.
+        /// </summary>
+        private bool TryParseGuid(object input, out Guid result)
+        {
+            result = Guid.Empty;
+            return input != null && Guid.TryParse(input.ToString(), out result);
         }
 
         public class StockUpdateRequest

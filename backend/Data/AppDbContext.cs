@@ -1,10 +1,12 @@
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Backend.Models;
 using System;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 
 namespace Backend.Data
 {
-    public class AppDbContext : DbContext
+    public class AppDbContext : IdentityDbContext<ApplicationUser, IdentityRole<Guid>, Guid>
     {
         public AppDbContext(DbContextOptions<AppDbContext> options) : base(options) { }
 
@@ -14,12 +16,13 @@ namespace Backend.Data
         public DbSet<RestockQueue> RestockQueue { get; set; }
         public DbSet<AuditLog> AuditLogs { get; set; }
 
-       protected override void OnModelCreating(ModelBuilder modelBuilder)
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
 
             Console.WriteLine("OnModelCreating wird aufgerufen!");
 
+            // Ersetze die dynamischen Werte durch feste GUIDs
             Guid warehouseId1 = Guid.Parse("11111111-1111-1111-1111-111111111111");
             Guid warehouseId2 = Guid.Parse("22222222-2222-2222-2222-222222222222");
 
@@ -55,6 +58,14 @@ namespace Backend.Data
                 .WithMany()
                 .HasForeignKey(m => m.ToWarehouseId)
                 .OnDelete(DeleteBehavior.Restrict);
+
+            var bossAdminRoleId = Guid.Parse("12345678-1234-1234-1234-123456789012");
+            var employeeAdminRoleId = Guid.Parse("23456789-2345-2345-2345-234567890123");
+
+            modelBuilder.Entity<IdentityRole<Guid>>().HasData(
+                new IdentityRole<Guid> { Id = bossAdminRoleId, Name = "BossAdmin", NormalizedName = "BOSSADMIN" },
+                new IdentityRole<Guid> { Id = employeeAdminRoleId, Name = "EmployeeAdmin", NormalizedName = "EMPLOYEEADMIN" }
+            );
 
             Console.WriteLine("Seed-Daten und Beziehungen wurden in OnModelCreating definiert!");
         }
