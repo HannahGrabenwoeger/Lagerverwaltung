@@ -1,0 +1,109 @@
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
+using Backend.Models;
+using Backend.Data;
+using System;
+using System.Linq;
+using System.Threading.Tasks;
+using Backend.Dtos;
+
+namespace Backend.Controllers
+{
+    [ApiController]
+    [Route("api/restock")]
+    public class RestockQueueController : ControllerBase
+    {
+        private readonly AppDbContext _context;
+
+        public RestockQueueController(AppDbContext context)
+        {
+            _context = context;
+        }
+
+        // 📌 **1. Bestellung hinzufügen**
+        [HttpPost("request")]
+        public async Task<IActionResult> RequestRestock([FromBody] RestockRequestDto request)
+        {
+            if (request == null || request.Quantity <= 0)
+            {
+                return BadRequest(new { message = "Ungültige Nachbestellungsdaten." });
+            }
+
+            var product = await _context.Products.FirstOrDefaultAsync(p => p.Id == request.ProductId);
+            if (product == null)
+            {
+                return NotFound(new { message = "Produkt nicht gefunden." });
+            }
+
+            var restock = new RestockQueue
+            {
+                Id = Guid.NewGuid(),
+                ProductId = request.ProductId,
+                Quantity = request.Quantity,
+                Processed = false,
+                RequestedAt = DateTime.UtcNow
+            };
+
+            await _context.RestockQueue.AddAsync(restock);
+            await _context.SaveChangesAsync();
+
+            return CreatedAtAction(nameof(GetRestockById), new { id = restock.Id }, restock);
+        }
+
+        // 📌 **2. Alle offenen Nachbestellungen abrufen**
+        [HttpGet("pending")]
+        public async Task<IActionResult> GetPendingRestocks()
+        {
+            var restocks = await _context.RestockQueue
+                .Where(r => !r.Processed)
+                .Include(r => r.Product)
+                .ToListAsync();
+
+            return Ok(restocks);
+        }
+
+        // 📌 **3. Eine Nachbestellung abrufen**
+        [HttpGet("{id}")]
+        public async Task<IActionResult> GetRestockById(Guid id)
+        {
+            var restock = await _context.RestockQueue
+                .Include(r => r.Product)
+                .FirstOrDefaultAsync(r => r.Id == id);
+
+            if (restock == null)
+            {
+                return NotFound(new { message = "Nachbestellung nicht gefunden." });
+            }
+
+            return Ok(restock);
+        }
+
+        // 📌 **4. Nachbestellung als erledigt markieren**
+        [HttpPut("{id}/process")]
+        public async Task<IActionResult> ProcessRestock(Guid id)
+        {
+            var restock = await _context.RestockQueue.FirstOrDefaultAsync(r => r.Id == id);
+
+            if (restock == null)
+            {
+                return NotFound(new { message = "Nachbestellung nicht gefunden." });
+            }
+
+            restock.Processed = true;
+            await _context.SaveChangesAsync();
+
+            return Ok(new { message = "Nachbestellung als erledigt markiert." });
+        }
+
+        // 📌 **5. Alle Nachbestellungen abrufen**
+        [HttpGet("all")]
+        public async Task<IActionResult> GetAllRestocks()
+        {
+            var restocks = await _context.RestockQueue
+                .Include(r => r.Product)
+                .ToListAsync();
+
+            return Ok(restocks);
+        }
+    }
+}

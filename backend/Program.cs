@@ -3,6 +3,12 @@ using Backend.Data;
 using Backend.Models;
 using backend.Services;
 using Backend.Services;
+using Microsoft.AspNetCore.Builder;
+using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.Hosting;
+using System;
+using System.Linq;
 
 var builder = WebApplication.CreateBuilder(new WebApplicationOptions
 {
@@ -13,6 +19,7 @@ var builder = WebApplication.CreateBuilder(new WebApplicationOptions
 builder.Services.AddHostedService<RestockProcessor>();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+builder.Services.AddScoped<AuditLogService>();
 
 builder.Services.AddControllers()
     .AddJsonOptions(options =>

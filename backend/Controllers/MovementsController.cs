@@ -5,6 +5,8 @@ using Backend.Data;
 using System;
 using System.Threading.Tasks;
 using backend.Services;
+using Backend.Services;
+using System.Linq;
 
 namespace Backend.Controllers
 {
@@ -15,11 +17,14 @@ namespace Backend.Controllers
        private readonly AppDbContext _context;
         private readonly StockService _stockService; 
 
-        public MovementsController(AppDbContext context, StockService stockService)  // ✅ Hier hinzufügen
-        {
-            _context = context;
-            _stockService = stockService;
-        }
+        private readonly AuditLogService _auditLogService;
+
+public MovementsController(AppDbContext context, StockService stockService, AuditLogService auditLogService)
+{
+    _context = context;
+    _stockService = stockService;
+    _auditLogService = auditLogService ?? throw new ArgumentNullException(nameof(auditLogService)); // Sicherstellen, dass es nicht null ist
+}
         
 
         [HttpPost]
@@ -69,7 +74,7 @@ namespace Backend.Controllers
                     Id = Guid.NewGuid(),
                     Name = product.Name,
                     Quantity = movementsDto.Quantity,
-                    WarehouseId = Guid.Parse(movementsDto.ToWarehouseId.ToString()),
+                    WarehouseId = toWarehouseId,
                 };
                 await _context.Products.AddAsync(newProduct);
             }
@@ -78,9 +83,9 @@ namespace Backend.Controllers
             var movement = new Movements
             {
                 Id = Guid.NewGuid(),  
-                ProductId = Guid.Parse(movementsDto.ProductsId.ToString()),  
-                FromWarehouseId = Guid.Parse(movementsDto.FromWarehouseId.ToString()),  
-                ToWarehouseId = Guid.Parse(movementsDto.ToWarehouseId.ToString()),  
+                ProductId = productId,  
+                FromWarehouseId = fromWarehouseId,  
+                ToWarehouseId = toWarehouseId,  
                 Quantity = movementsDto.Quantity,
                 MovementsDate = movementsDto.MovementsDate
             };
@@ -88,7 +93,51 @@ namespace Backend.Controllers
             await _context.Movements.AddAsync(movement);
             await _context.SaveChangesAsync();
 
+            // **🚀 Audit-Logs hier hinzufügen, nachdem die Änderungen gespeichert wurden**
+            await _auditLogService.LogAction(
+                entity: "Movement",
+                action: "Stock Moved",
+                productId: product.Id,
+                quantityChange: -movementsDto.Quantity,
+                user: "System" // Falls User-Management existiert, ersetze mit `User.Identity.Name`
+            );
+
+            await _auditLogService.LogAction(
+                entity: "Movement",
+                action: "Stock Received",
+                productId: targetProduct?.Id ?? movement.ProductId,
+                quantityChange: movementsDto.Quantity,
+                user: "System"
+            );
+
             return CreatedAtAction(nameof(GetMovementsById), new { id = movement.Id }, movement);
+        }
+
+
+        [HttpGet]
+        public async Task<IActionResult> GetMovements()
+        {
+            var movements = await _context.Movements
+                .Include(m => m.Products)
+                .Include(m => m.FromWarehouse)
+                .Include(m => m.ToWarehouse)
+                .ToListAsync(); // 🔥 Hier ToListAsync() für alle Bewegungen hinzufügen
+
+            if (movements == null || movements.Count == 0)
+            {
+                return NotFound(new { message = "Keine Bewegungen gefunden." });
+            }
+
+            var movementDtos = movements.Select(m => new MovementsDto
+            {
+                ProductsId = m.ProductId,
+                FromWarehouseId = m.FromWarehouseId,
+                ToWarehouseId = m.ToWarehouseId,
+                Quantity = m.Quantity,
+                MovementsDate = m.MovementsDate
+            }).ToList();
+
+            return Ok(movementDtos);
         }
 
         [HttpGet("{id}")]
