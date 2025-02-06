@@ -29,6 +29,6 @@ public class InventoryReportService
                     .Select(m => m.MovementsDate)
                     .FirstOrDefault()
             })
-            .ToListAsync();  // Verwende ToListAsync(), weil _context.Products Entity Framework ist.
+            .ToListAsync();  
     }
 }

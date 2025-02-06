@@ -50,7 +50,7 @@ builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
             IssuerSigningKey = authSigningKey
         };
     });
-    
+
 builder.Services.AddScoped<InventoryReportService>();
 
 // 📌 Zugriffskontrolle mit rollenbasierter Autorisierung
@@ -79,7 +79,7 @@ builder.Services.AddCors(options =>
     options.AddPolicy("AllowFrontend",
         policy =>
         {
-            policy.WithOrigins("http://localhost:3000") // Dein Frontend
+            policy.WithOrigins("http://localhost:3000") 
                   .AllowAnyMethod()
                   .AllowAnyHeader();
         });
@@ -96,8 +96,8 @@ if (app.Environment.IsDevelopment())
 }
 
 // 📌 Authentifizierung & Autorisierung aktivieren
-app.UseAuthentication(); // 🔑 Erst authentifizieren
-app.UseAuthorization();  // 🔐 Dann autorisieren
+app.UseAuthentication(); 
+app.UseAuthorization();  
 
 app.MapControllers();
 
@@ -154,7 +154,7 @@ async Task SeedDataAsync(AppDbContext dbContext, UserManager<ApplicationUser> us
         {
             UserName = bossAdminEmail,
             Email = bossAdminEmail,
-            FullName = "Boss Admin"  // Ensure FullName is set
+            FullName = "Boss Admin"  
         };
         var result = await userManager.CreateAsync(bossAdmin, "Admin123!");
         if (result.Succeeded)
@@ -171,7 +171,7 @@ async Task SeedDataAsync(AppDbContext dbContext, UserManager<ApplicationUser> us
         {
             UserName = employeeAdminEmail,
             Email = employeeAdminEmail,
-            FullName = "Employee Admin"  // Ensure FullName is set
+            FullName = "Employee Admin"  
         };
         var result = await userManager.CreateAsync(employeeAdmin, "Admin123!");
         if (result.Succeeded)

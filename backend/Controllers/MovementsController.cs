@@ -216,9 +216,6 @@ namespace Backend.Controllers
             return Ok(reportData);
         }   
 
-        /// <summary>
-        /// Helfer-Methode zum sicheren Parsen von GUIDs.
-        /// </summary>
         private bool TryParseGuid(object input, out Guid result)
         {
             result = Guid.Empty;
