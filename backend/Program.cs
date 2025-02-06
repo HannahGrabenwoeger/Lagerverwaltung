@@ -50,6 +50,8 @@ builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
             IssuerSigningKey = authSigningKey
         };
     });
+    
+builder.Services.AddScoped<InventoryReportService>();
 
 // 📌 Zugriffskontrolle mit rollenbasierter Autorisierung
 builder.Services.AddAuthorization(options =>

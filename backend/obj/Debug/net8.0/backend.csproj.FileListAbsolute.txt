@@ -1,3 +1,11 @@
+/Users/MacBook/Documents/Diplomprojekt/Lagerverwaltung/backend/obj/Debug/net8.0/backend.csproj.AssemblyReference.cache
+/Users/MacBook/Documents/Diplomprojekt/Lagerverwaltung/backend/obj/Debug/net8.0/backend.GeneratedMSBuildEditorConfig.editorconfig
+/Users/MacBook/Documents/Diplomprojekt/Lagerverwaltung/backend/obj/Debug/net8.0/backend.AssemblyInfoInputs.cache
+/Users/MacBook/Documents/Diplomprojekt/Lagerverwaltung/backend/obj/Debug/net8.0/backend.AssemblyInfo.cs
+/Users/MacBook/Documents/Diplomprojekt/Lagerverwaltung/backend/obj/Debug/net8.0/backend.csproj.CoreCompileInputs.cache
+/Users/MacBook/Documents/Diplomprojekt/Lagerverwaltung/backend/obj/Debug/net8.0/backend.MvcApplicationPartsAssemblyInfo.cs
+/Users/MacBook/Documents/Diplomprojekt/Lagerverwaltung/backend/obj/Debug/net8.0/backend.MvcApplicationPartsAssemblyInfo.cache
+/Users/MacBook/Documents/Diplomprojekt/Lagerverwaltung/backend/obj/Debug/net8.0/backend.sourcelink.json
 /Users/MacBook/Documents/Diplomprojekt/Lagerverwaltung/backend/bin/Debug/net8.0/appsettings.Development.json
 /Users/MacBook/Documents/Diplomprojekt/Lagerverwaltung/backend/bin/Debug/net8.0/appsettings.json
 /Users/MacBook/Documents/Diplomprojekt/Lagerverwaltung/backend/bin/Debug/net8.0/backend.staticwebassets.runtime.json
@@ -44,6 +52,7 @@
 /Users/MacBook/Documents/Diplomprojekt/Lagerverwaltung/backend/bin/Debug/net8.0/Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
 /Users/MacBook/Documents/Diplomprojekt/Lagerverwaltung/backend/bin/Debug/net8.0/Microsoft.IdentityModel.Tokens.dll
 /Users/MacBook/Documents/Diplomprojekt/Lagerverwaltung/backend/bin/Debug/net8.0/Microsoft.OpenApi.dll
+/Users/MacBook/Documents/Diplomprojekt/Lagerverwaltung/backend/bin/Debug/net8.0/Microsoft.Win32.SystemEvents.dll
 /Users/MacBook/Documents/Diplomprojekt/Lagerverwaltung/backend/bin/Debug/net8.0/Mono.TextTemplating.dll
 /Users/MacBook/Documents/Diplomprojekt/Lagerverwaltung/backend/bin/Debug/net8.0/SQLitePCLRaw.batteries_v2.dll
 /Users/MacBook/Documents/Diplomprojekt/Lagerverwaltung/backend/bin/Debug/net8.0/SQLitePCLRaw.core.dll
@@ -58,10 +67,13 @@
 /Users/MacBook/Documents/Diplomprojekt/Lagerverwaltung/backend/bin/Debug/net8.0/System.Composition.Runtime.dll
 /Users/MacBook/Documents/Diplomprojekt/Lagerverwaltung/backend/bin/Debug/net8.0/System.Composition.TypedParts.dll
 /Users/MacBook/Documents/Diplomprojekt/Lagerverwaltung/backend/bin/Debug/net8.0/System.Diagnostics.DiagnosticSource.dll
+/Users/MacBook/Documents/Diplomprojekt/Lagerverwaltung/backend/bin/Debug/net8.0/System.Drawing.Common.dll
+/Users/MacBook/Documents/Diplomprojekt/Lagerverwaltung/backend/bin/Debug/net8.0/System.Private.Windows.Core.dll
 /Users/MacBook/Documents/Diplomprojekt/Lagerverwaltung/backend/bin/Debug/net8.0/System.IdentityModel.Tokens.Jwt.dll
 /Users/MacBook/Documents/Diplomprojekt/Lagerverwaltung/backend/bin/Debug/net8.0/System.IO.Pipelines.dll
 /Users/MacBook/Documents/Diplomprojekt/Lagerverwaltung/backend/bin/Debug/net8.0/System.Text.Encodings.Web.dll
 /Users/MacBook/Documents/Diplomprojekt/Lagerverwaltung/backend/bin/Debug/net8.0/System.Text.Json.dll
+/Users/MacBook/Documents/Diplomprojekt/Lagerverwaltung/backend/bin/Debug/net8.0/zxing.dll
 /Users/MacBook/Documents/Diplomprojekt/Lagerverwaltung/backend/bin/Debug/net8.0/cs/Microsoft.CodeAnalysis.resources.dll
 /Users/MacBook/Documents/Diplomprojekt/Lagerverwaltung/backend/bin/Debug/net8.0/de/Microsoft.CodeAnalysis.resources.dll
 /Users/MacBook/Documents/Diplomprojekt/Lagerverwaltung/backend/bin/Debug/net8.0/es/Microsoft.CodeAnalysis.resources.dll
@@ -127,6 +139,7 @@
 /Users/MacBook/Documents/Diplomprojekt/Lagerverwaltung/backend/bin/Debug/net8.0/tr/Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
 /Users/MacBook/Documents/Diplomprojekt/Lagerverwaltung/backend/bin/Debug/net8.0/zh-Hans/Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
 /Users/MacBook/Documents/Diplomprojekt/Lagerverwaltung/backend/bin/Debug/net8.0/zh-Hant/Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+/Users/MacBook/Documents/Diplomprojekt/Lagerverwaltung/backend/bin/Debug/net8.0/runtimes/win/lib/net8.0/Microsoft.Win32.SystemEvents.dll
 /Users/MacBook/Documents/Diplomprojekt/Lagerverwaltung/backend/bin/Debug/net8.0/runtimes/browser-wasm/nativeassets/net8.0/e_sqlite3.a
 /Users/MacBook/Documents/Diplomprojekt/Lagerverwaltung/backend/bin/Debug/net8.0/runtimes/linux-arm/native/libe_sqlite3.so
 /Users/MacBook/Documents/Diplomprojekt/Lagerverwaltung/backend/bin/Debug/net8.0/runtimes/linux-arm64/native/libe_sqlite3.so
@@ -149,14 +162,6 @@
 /Users/MacBook/Documents/Diplomprojekt/Lagerverwaltung/backend/bin/Debug/net8.0/runtimes/win-x64/native/e_sqlite3.dll
 /Users/MacBook/Documents/Diplomprojekt/Lagerverwaltung/backend/bin/Debug/net8.0/runtimes/win-x86/native/e_sqlite3.dll
 /Users/MacBook/Documents/Diplomprojekt/Lagerverwaltung/backend/bin/Debug/net8.0/runtimes/browser/lib/net8.0/System.Text.Encodings.Web.dll
-/Users/MacBook/Documents/Diplomprojekt/Lagerverwaltung/backend/obj/Debug/net8.0/backend.csproj.AssemblyReference.cache
-/Users/MacBook/Documents/Diplomprojekt/Lagerverwaltung/backend/obj/Debug/net8.0/backend.GeneratedMSBuildEditorConfig.editorconfig
-/Users/MacBook/Documents/Diplomprojekt/Lagerverwaltung/backend/obj/Debug/net8.0/backend.AssemblyInfoInputs.cache
-/Users/MacBook/Documents/Diplomprojekt/Lagerverwaltung/backend/obj/Debug/net8.0/backend.AssemblyInfo.cs
-/Users/MacBook/Documents/Diplomprojekt/Lagerverwaltung/backend/obj/Debug/net8.0/backend.csproj.CoreCompileInputs.cache
-/Users/MacBook/Documents/Diplomprojekt/Lagerverwaltung/backend/obj/Debug/net8.0/backend.MvcApplicationPartsAssemblyInfo.cs
-/Users/MacBook/Documents/Diplomprojekt/Lagerverwaltung/backend/obj/Debug/net8.0/backend.MvcApplicationPartsAssemblyInfo.cache
-/Users/MacBook/Documents/Diplomprojekt/Lagerverwaltung/backend/obj/Debug/net8.0/backend.sourcelink.json
 /Users/MacBook/Documents/Diplomprojekt/Lagerverwaltung/backend/obj/Debug/net8.0/scopedcss/bundle/backend.styles.css
 /Users/MacBook/Documents/Diplomprojekt/Lagerverwaltung/backend/obj/Debug/net8.0/staticwebassets.build.json
 /Users/MacBook/Documents/Diplomprojekt/Lagerverwaltung/backend/obj/Debug/net8.0/staticwebassets.development.json

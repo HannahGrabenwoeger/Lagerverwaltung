@@ -9,6 +9,7 @@ using Backend.Services;
 using System.Linq;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.Extensions.Logging;
+using Backend.Dtos;
 
 namespace Backend.Controllers
 {
@@ -20,13 +21,15 @@ namespace Backend.Controllers
         private readonly StockService _stockService; 
         private readonly AuditLogService _auditLogService;
         private readonly ILogger<MovementsController> _logger;
+        private readonly InventoryReportService _inventoryReportService;
 
-        public MovementsController(AppDbContext context, StockService stockService, AuditLogService auditLogService, ILogger<MovementsController> logger)
+        public MovementsController(AppDbContext context, StockService stockService, AuditLogService auditLogService, ILogger<MovementsController> logger, InventoryReportService inventoryReportService)
         {
             _context = context;
             _stockService = stockService;
             _auditLogService = auditLogService ?? throw new ArgumentNullException(nameof(auditLogService));
             _logger = logger;
+            _inventoryReportService = inventoryReportService;
         }
 
         [HttpPost]
@@ -192,6 +195,26 @@ namespace Backend.Controllers
 
             return Ok("Bestand erfolgreich aktualisiert.");
         }
+
+        [HttpGet("inventory-report")]
+        public async Task<IActionResult> GetInventoryReport()
+        {
+            var reportData = await _context.Products
+                .Select(p => new InventoryReportDto
+                {
+                    ProductName = p.Name,
+                    TotalQuantity = p.Quantity,
+                    TotalMovements = _context.Movements.Count(m => m.ProductId == p.Id),
+                    LastUpdated = _context.Movements
+                        .Where(m => m.ProductId == p.Id)
+                        .OrderByDescending(m => m.MovementsDate)
+                        .Select(m => m.MovementsDate)
+                        .FirstOrDefault()
+                })
+                .ToListAsync();
+
+            return Ok(reportData);
+        }   
 
         /// <summary>
         /// Helfer-Methode zum sicheren Parsen von GUIDs.

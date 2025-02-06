@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "05xgc+KyrAE=",
+  "dgSpecHash": "Iqe/9Z53mkE=",
   "success": true,
   "projectFilePath": "/Users/MacBook/Documents/Diplomprojekt/Lagerverwaltung/backend/backend.csproj",
   "expectedPackageFiles": [
@@ -49,6 +49,7 @@
     "/Users/MacBook/.nuget/packages/microsoft.identitymodel.protocols.openidconnect/7.1.2/microsoft.identitymodel.protocols.openidconnect.7.1.2.nupkg.sha512",
     "/Users/MacBook/.nuget/packages/microsoft.identitymodel.tokens/8.3.1/microsoft.identitymodel.tokens.8.3.1.nupkg.sha512",
     "/Users/MacBook/.nuget/packages/microsoft.openapi/1.4.3/microsoft.openapi.1.4.3.nupkg.sha512",
+    "/Users/MacBook/.nuget/packages/microsoft.win32.systemevents/9.0.1/microsoft.win32.systemevents.9.0.1.nupkg.sha512",
     "/Users/MacBook/.nuget/packages/mono.texttemplating/3.0.0/mono.texttemplating.3.0.0.nupkg.sha512",
     "/Users/MacBook/.nuget/packages/sqlitepclraw.bundle_e_sqlite3/2.1.10/sqlitepclraw.bundle_e_sqlite3.2.1.10.nupkg.sha512",
     "/Users/MacBook/.nuget/packages/sqlitepclraw.core/2.1.10/sqlitepclraw.core.2.1.10.nupkg.sha512",
@@ -67,6 +68,7 @@
     "/Users/MacBook/.nuget/packages/system.composition.runtime/7.0.0/system.composition.runtime.7.0.0.nupkg.sha512",
     "/Users/MacBook/.nuget/packages/system.composition.typedparts/7.0.0/system.composition.typedparts.7.0.0.nupkg.sha512",
     "/Users/MacBook/.nuget/packages/system.diagnostics.diagnosticsource/9.0.1/system.diagnostics.diagnosticsource.9.0.1.nupkg.sha512",
+    "/Users/MacBook/.nuget/packages/system.drawing.common/9.0.1/system.drawing.common.9.0.1.nupkg.sha512",
     "/Users/MacBook/.nuget/packages/system.identitymodel.tokens.jwt/7.1.2/system.identitymodel.tokens.jwt.7.1.2.nupkg.sha512",
     "/Users/MacBook/.nuget/packages/system.io.pipelines/9.0.1/system.io.pipelines.9.0.1.nupkg.sha512",
     "/Users/MacBook/.nuget/packages/system.memory/4.5.3/system.memory.4.5.3.nupkg.sha512",
@@ -75,6 +77,7 @@
     "/Users/MacBook/.nuget/packages/system.text.encodings.web/9.0.1/system.text.encodings.web.9.0.1.nupkg.sha512",
     "/Users/MacBook/.nuget/packages/system.text.json/9.0.1/system.text.json.9.0.1.nupkg.sha512",
     "/Users/MacBook/.nuget/packages/system.threading.channels/7.0.0/system.threading.channels.7.0.0.nupkg.sha512",
+    "/Users/MacBook/.nuget/packages/zxing.net/0.16.10/zxing.net.0.16.10.nupkg.sha512",
     "/Users/MacBook/.nuget/packages/microsoft.aspnetcore.app.ref/8.0.12/microsoft.aspnetcore.app.ref.8.0.12.nupkg.sha512",
     "/Users/MacBook/.nuget/packages/microsoft.netcore.app.host.osx-arm64/8.0.12/microsoft.netcore.app.host.osx-arm64.8.0.12.nupkg.sha512",
     "/Users/MacBook/.nuget/packages/microsoft.netcore.app.ref/8.0.12/microsoft.netcore.app.ref.8.0.12.nupkg.sha512"
