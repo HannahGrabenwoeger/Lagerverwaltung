@@ -4,12 +4,11 @@ using Backend.Models;
 using Backend.Data;
 using System;
 using System.Threading.Tasks;
-using backend.Services;
 using Backend.Services;
-using System.Linq;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.Extensions.Logging;
 using Backend.Dtos;
+using System.Linq;
 
 namespace Backend.Controllers
 {
@@ -18,7 +17,7 @@ namespace Backend.Controllers
     public class MovementsController : ControllerBase
     {
         private readonly AppDbContext _context;
-        private readonly StockService _stockService; 
+        private readonly StockService _stockService;
         private readonly AuditLogService _auditLogService;
         private readonly ILogger<MovementsController> _logger;
         private readonly InventoryReportService _inventoryReportService;
@@ -30,6 +29,23 @@ namespace Backend.Controllers
             _auditLogService = auditLogService ?? throw new ArgumentNullException(nameof(auditLogService));
             _logger = logger;
             _inventoryReportService = inventoryReportService;
+        }
+
+        [HttpGet("stock-summary")]
+        public IActionResult GetStockSummary()
+        {
+            var summary = _context.Products
+                .Include(p => p.Warehouse)  // Lade die Warehouse-Daten
+                .Select(p => new
+                {
+                    p.Id,
+                    p.Name,
+                    p.Quantity,
+                    Warehouse = p.Warehouse != null ? p.Warehouse.Name : "Unbekannt"  // Fallback, wenn Warehouse null ist
+                })
+                .ToList();
+
+            return Ok(summary);
         }
 
         [HttpPost]
@@ -57,6 +73,12 @@ namespace Backend.Controllers
                 if (product == null || fromWarehouse == null || toWarehouse == null)
                 {
                     return NotFound(new { message = "Produkt oder Lager nicht gefunden." });
+                }
+
+                // Prüfe, ob genügend Bestand im Ausgangslager vorhanden ist
+                if (movementsDto.Quantity <= 0)
+                {
+                    return BadRequest(new { message = "Die Menge muss größer als Null sein." });
                 }
 
                 if (product.Quantity < movementsDto.Quantity)
@@ -88,10 +110,10 @@ namespace Backend.Controllers
 
                 var movement = new Movements
                 {
-                    Id = Guid.NewGuid(),  
-                    ProductId = productId,  
-                    FromWarehouseId = fromWarehouseId,  
-                    ToWarehouseId = toWarehouseId,  
+                    Id = Guid.NewGuid(),
+                    ProductId = productId,
+                    FromWarehouseId = fromWarehouseId,
+                    ToWarehouseId = toWarehouseId,
                     Quantity = movementsDto.Quantity,
                     MovementsDate = movementsDto.MovementsDate
                 };
@@ -214,7 +236,7 @@ namespace Backend.Controllers
                 .ToListAsync();
 
             return Ok(reportData);
-        }   
+        }
 
         private bool TryParseGuid(object input, out Guid result)
         {

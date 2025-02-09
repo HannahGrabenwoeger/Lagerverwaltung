@@ -14,20 +14,17 @@ using System.Text;
 using System;
 using System.Threading.Tasks;
 using System.Linq;
-using backend.Services;
+using Microsoft.OpenApi.Models;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// 📌 Datenbankverbindung konfigurieren
 builder.Services.AddDbContext<AppDbContext>(options =>
     options.UseSqlite(builder.Configuration.GetConnectionString("DefaultConnection")));
 
-// 📌 Identity für Benutzer- und Rollenverwaltung hinzufügen
 builder.Services.AddIdentity<ApplicationUser, IdentityRole<Guid>>()
     .AddEntityFrameworkStores<AppDbContext>()
     .AddDefaultTokenProviders();
 
-// 📌 JWT-Authentifizierung konfigurieren
 builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
     .AddJwtBearer(options =>
     {
@@ -66,14 +63,18 @@ builder.Services.AddScoped<StockService>();
 builder.Services.AddHostedService<RestockProcessor>();
 builder.Services.AddSwaggerGen();
 
-// 📌 API-Controller aktivieren
+builder.Services.AddSwaggerGen(c =>
+{
+    c.SwaggerDoc("v1", new OpenApiInfo { Title = "API", Version = "v1" });
+    c.DocInclusionPredicate((docName, apiDesc) => true);  // Fügt alle Controller zu Swagger hinzu
+});
+
 builder.Services.AddControllers()
     .AddJsonOptions(options =>
     {
         options.JsonSerializerOptions.ReferenceHandler = System.Text.Json.Serialization.ReferenceHandler.Preserve;
     });
 
-// 📌 CORS aktivieren, damit das Frontend Zugriff hat
 builder.Services.AddCors(options =>
 {
     options.AddPolicy("AllowFrontend",
@@ -95,13 +96,11 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
-// 📌 Authentifizierung & Autorisierung aktivieren
 app.UseAuthentication(); 
 app.UseAuthorization();  
 
 app.MapControllers();
 
-// 📌 Seed-Daten & Rollen beim Start initialisieren
 using (var scope = app.Services.CreateScope())
 {
     var services = scope.ServiceProvider;
@@ -114,7 +113,6 @@ using (var scope = app.Services.CreateScope())
 
 app.Run();
 
-// 📌 **Seed-Daten für Rollen & Admin-User**
 async Task SeedDataAsync(AppDbContext dbContext, UserManager<ApplicationUser> userManager, RoleManager<IdentityRole<Guid>> roleManager)
 {
     if (!dbContext.Warehouses.Any())
@@ -136,7 +134,6 @@ async Task SeedDataAsync(AppDbContext dbContext, UserManager<ApplicationUser> us
         Console.WriteLine("✅ Seed-Daten erfolgreich hinzugefügt!");
     }
 
-    // 📌 Rollen anlegen, falls sie noch nicht existieren
     string[] roles = { "BossAdmin", "EmployeeAdmin" };
     foreach (var role in roles)
     {
@@ -146,7 +143,6 @@ async Task SeedDataAsync(AppDbContext dbContext, UserManager<ApplicationUser> us
         }
     }
 
-    // 📌 BossAdmin-User erstellen, falls nicht vorhanden
     string bossAdminEmail = "bossadmin@example.com";
     if (await userManager.FindByEmailAsync(bossAdminEmail) == null)
     {
@@ -163,7 +159,6 @@ async Task SeedDataAsync(AppDbContext dbContext, UserManager<ApplicationUser> us
         }
     }
 
-    // 📌 EmployeeAdmin-User erstellen, falls nicht vorhanden
     string employeeAdminEmail = "employeeadmin@example.com";
     if (await userManager.FindByEmailAsync(employeeAdminEmail) == null)
     {

@@ -22,18 +22,23 @@ namespace Backend.Controllers
 
         // 📌 Gesamtbestand pro Lager
         [HttpGet("stock-summary")]
-        [Authorize(Roles = "Admin, Lagerist")]
-        public async Task<IActionResult> GetStockSummary()
+        public IActionResult GetStockSummary()
         {
-            var summary = await _context.Products
-                .GroupBy(p => p.WarehouseId)
-                .Select(g => new
+            var summary = _context.Products
+                .Include(p => p.Warehouse) // Falls Warehouse zu Product gehört
+                .Select(p => new
                 {
-                    WarehouseId = g.Key,
-                    TotalProducts = g.Count(),
-                    TotalQuantity = g.Sum(p => p.Quantity)
+                    p.Id,
+                    p.Name,
+                    p.Quantity,
+                    Warehouse = p.Warehouse != null ? p.Warehouse.Name : "Unbekannt"
                 })
-                .ToListAsync();
+                .ToList();
+            if (!summary.Any())
+            {
+                return NotFound(new { message = "Keine Bestände gefunden." });
+            }
+
 
             return Ok(summary);
         }

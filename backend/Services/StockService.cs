@@ -5,7 +5,7 @@ using Microsoft.EntityFrameworkCore;
 using Backend.Data; 
 using Backend.Models;
 
-namespace backend.Services
+namespace Backend.Services
 {
     public class StockService
     {
