@@ -60,13 +60,13 @@ builder.Services.AddAuthorization(options =>
 // 📌 Services hinzufügen
 builder.Services.AddScoped<AuditLogService>();
 builder.Services.AddScoped<StockService>();
+builder.Services.AddScoped<UserQueryService>();
 builder.Services.AddHostedService<RestockProcessor>();
-builder.Services.AddSwaggerGen();
 
 builder.Services.AddSwaggerGen(c =>
 {
     c.SwaggerDoc("v1", new OpenApiInfo { Title = "API", Version = "v1" });
-    c.DocInclusionPredicate((docName, apiDesc) => true);  // Fügt alle Controller zu Swagger hinzu
+    c.DocInclusionPredicate((docName, apiDesc) => true);  
 });
 
 builder.Services.AddControllers()
@@ -87,6 +87,12 @@ builder.Services.AddCors(options =>
 });
 
 var app = builder.Build();
+
+app.UseSwaggerUI(c =>
+{
+    c.SwaggerEndpoint("/swagger/v1/swagger.json", "API v1");
+    c.RoutePrefix = "";  
+});
 
 app.UseCors("AllowFrontend");
 
@@ -115,6 +121,11 @@ app.Run();
 
 async Task SeedDataAsync(AppDbContext dbContext, UserManager<ApplicationUser> userManager, RoleManager<IdentityRole<Guid>> roleManager)
 {
+    if (!await roleManager.RoleExistsAsync("Admin"))
+    {
+        await roleManager.CreateAsync(new IdentityRole<Guid>("Admin"));
+    }
+    
     if (!dbContext.Warehouses.Any())
     {
         Guid warehouseId1 = Guid.NewGuid();

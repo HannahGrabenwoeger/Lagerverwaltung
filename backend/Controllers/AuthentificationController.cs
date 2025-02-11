@@ -35,29 +35,44 @@ namespace Backend.Controllers
 
             if (!result.Succeeded) return BadRequest(result.Errors);
 
-            await _userManager.AddToRoleAsync(user, "Admin"); // Standard: Admin-Account
+            // Hier kann man flexibel die Rolle für den Benutzer festlegen
+            var role = model.Role ?? "User"; // Default "User" falls keine Rolle angegeben wurde
+            await _userManager.AddToRoleAsync(user, role);
             return Ok(new { message = "Registrierung erfolgreich!" });
         }
 
         [HttpPost("login")]
         public async Task<IActionResult> Login([FromBody] LoginModel model)
         {
+            // Versuche, den Benutzer anhand des Benutzernamens zu finden
             var user = await _userManager.FindByNameAsync(model.Username);
-            if (user == null || !await _userManager.CheckPasswordAsync(user, model.Password))
+            if (user == null)
+            {
                 return Unauthorized(new { message = "Ungültige Anmeldeinformationen" });
+            }
 
+            // Überprüfe das Passwort des Benutzers
+            var isPasswordValid = await _userManager.CheckPasswordAsync(user, model.Password);
+            if (!isPasswordValid)
+            {
+                return Unauthorized(new { message = "Ungültige Anmeldeinformationen" });
+            }
+
+            // Erstelle die Claims für das JWT Token
             var authClaims = new List<Claim>
             {
-                new Claim(ClaimTypes.Name, user.UserName ?? "UnknownUser"),
+                new Claim(ClaimTypes.Name, user.UserName),
                 new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString())
             };
 
+            // Hole die Rollen des Benutzers und füge sie als Claims hinzu
             var userRoles = await _userManager.GetRolesAsync(user);
             foreach (var role in userRoles)
             {
                 authClaims.Add(new Claim(ClaimTypes.Role, role));
             }
 
+            // Erstelle das JWT Token
             var token = GenerateJwtToken(authClaims);
             return Ok(new { token });
         }
@@ -90,6 +105,7 @@ namespace Backend.Controllers
         public required string FullName { get; set; }
         public required string Email { get; set; }
         public required string Password { get; set; }
+        public string? Role { get; set; }  // Hier wird die Rolle optional hinzugefügt
     }
 
     public class LoginModel

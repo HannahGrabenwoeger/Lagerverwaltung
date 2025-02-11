@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/Users/MacBook/Documents/Diplomprojekt/Lagerverwaltung/backend/backend.csproj": {}
+    "/Users/MacBook/Documents/Diplomprojekt/Diplomprojekte/Lagerverwaltung/backend/backend.csproj": {}
   },
   "projects": {
-    "/Users/MacBook/Documents/Diplomprojekt/Lagerverwaltung/backend/backend.csproj": {
+    "/Users/MacBook/Documents/Diplomprojekt/Diplomprojekte/Lagerverwaltung/backend/backend.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/MacBook/Documents/Diplomprojekt/Lagerverwaltung/backend/backend.csproj",
+        "projectUniqueName": "/Users/MacBook/Documents/Diplomprojekt/Diplomprojekte/Lagerverwaltung/backend/backend.csproj",
         "projectName": "backend",
-        "projectPath": "/Users/MacBook/Documents/Diplomprojekt/Lagerverwaltung/backend/backend.csproj",
+        "projectPath": "/Users/MacBook/Documents/Diplomprojekt/Diplomprojekte/Lagerverwaltung/backend/backend.csproj",
         "packagesPath": "/Users/MacBook/.nuget/packages/",
-        "outputPath": "/Users/MacBook/Documents/Diplomprojekt/Lagerverwaltung/backend/obj/",
+        "outputPath": "/Users/MacBook/Documents/Diplomprojekt/Diplomprojekte/Lagerverwaltung/backend/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/Users/MacBook/.nuget/NuGet/NuGet.Config"
@@ -84,7 +84,7 @@
             },
             "Swashbuckle.AspNetCore": {
               "target": "Package",
-              "version": "[6.2.3, )"
+              "version": "[6.0.7, )"
             },
             "System.Drawing.Common": {
               "target": "Package",

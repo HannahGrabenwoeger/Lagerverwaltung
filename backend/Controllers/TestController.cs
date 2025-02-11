@@ -1,6 +1,9 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Backend.Data;
+using System.Threading.Tasks;
+using System.Linq;
+using Backend.Services;
 
 namespace Backend.Controllers
 {
@@ -9,10 +12,12 @@ namespace Backend.Controllers
     public class TestController : ControllerBase
     {
         private readonly AppDbContext _context;
+        private readonly UserQueryService _userQuery;
 
-        public TestController(AppDbContext context)
+        public TestController(AppDbContext context, UserQueryService userQuery)
         {
             _context = context;
+            _userQuery = userQuery;
         }
 
         // Test-Endpunkt, um sicherzustellen, dass der Controller funktioniert

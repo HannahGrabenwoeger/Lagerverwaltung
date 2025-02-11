@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "flNtauwlWQfrlRwZ/C/JfZQenkYPx/24OnH/exgjy7M=",
+  "Hash": "5d25Q/9HACs4J4F7/PAnYrry98a91g7OTBln2yZXjY8=",
   "Source": "backend",
   "BasePath": "_content/backend",
   "Mode": "Default",
@@ -10,7 +10,7 @@
     {
       "Name": "backend/wwwroot",
       "Source": "backend",
-      "ContentRoot": "/Users/MacBook/Documents/Diplomprojekt/Lagerverwaltung/backend/wwwroot/",
+      "ContentRoot": "/Users/MacBook/Documents/Diplomprojekt/Diplomprojekte/Lagerverwaltung/backend/wwwroot/",
       "BasePath": "_content/backend",
       "Pattern": "**"
     }

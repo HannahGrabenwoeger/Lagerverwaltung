@@ -5,19 +5,21 @@ using System;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authorization;
+using Backend.Services;
 
 namespace Backend.Controllers
 {
     [ApiController]
     [Route("api/[controller]")]
-    [Authorize]
     public class ReportsController : ControllerBase
     {
         private readonly AppDbContext _context;
+        private readonly UserQueryService _userQuery;
 
-        public ReportsController(AppDbContext context)
+        public ReportsController(AppDbContext context, UserQueryService userQuery)
         {
             _context = context;
+            _userQuery = userQuery;
         }
 
         // 📌 Gesamtbestand pro Lager
@@ -25,7 +27,7 @@ namespace Backend.Controllers
         public IActionResult GetStockSummary()
         {
             var summary = _context.Products
-                .Include(p => p.Warehouse) // Falls Warehouse zu Product gehört
+                .Include(p => p.Warehouse) 
                 .Select(p => new
                 {
                     p.Id,
@@ -38,8 +40,6 @@ namespace Backend.Controllers
             {
                 return NotFound(new { message = "Keine Bestände gefunden." });
             }
-
-
             return Ok(summary);
         }
 
@@ -79,12 +79,12 @@ namespace Backend.Controllers
             return Ok(topRestocks);
         }
 
-        // 📌 Nachbestellungen pro Zeitraum (Monat oder Woche) – **Korrektur**
+        // 📌 Nachbestellungen pro Zeitraum (Monat oder Woche)
         [HttpGet("restocks-per-period")]
         public async Task<IActionResult> GetRestocksPerPeriod([FromQuery] string period = "month")
         {
             var restocks = await _context.RestockQueue
-                .ToListAsync(); // Hol alle Daten zuerst, da SQLite `DatePart` nicht unterstützt
+                .ToListAsync(); 
 
             var groupedRestocks = restocks
                 .GroupBy(r => period == "month" ? $"{r.RequestedAt:yyyy-MM}" : $"{r.RequestedAt:yyyy}-W{GetIsoWeek(r.RequestedAt)}")
@@ -121,6 +121,18 @@ namespace Backend.Controllers
                 .ToListAsync();
 
             return Ok(lowStockProducts);
+        }
+
+        [HttpGet("find-user")]
+        public async Task<IActionResult> FindUser(string username)
+        {
+            var user = await _userQuery.FindUserAsync(username);
+            if (user == null)
+            {
+                return NotFound(new { message = "Benutzer nicht gefunden" });
+            }
+
+            return Ok(new { username = user.UserName, email = user.Email });
         }
     }
 }
