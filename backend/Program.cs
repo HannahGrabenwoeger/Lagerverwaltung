@@ -50,14 +50,12 @@ builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
 
 builder.Services.AddScoped<InventoryReportService>();
 
-// 📌 Zugriffskontrolle mit rollenbasierter Autorisierung
 builder.Services.AddAuthorization(options =>
 {
     options.AddPolicy("RequireAdmin", policy => policy.RequireRole("Admin"));
     options.AddPolicy("RequireWarehouseManager", policy => policy.RequireRole("WarehouseManager"));
 });
 
-// 📌 Services hinzufügen
 builder.Services.AddScoped<AuditLogService>();
 builder.Services.AddScoped<StockService>();
 builder.Services.AddScoped<UserQueryService>();
@@ -121,11 +119,16 @@ app.Run();
 
 async Task SeedDataAsync(AppDbContext dbContext, UserManager<ApplicationUser> userManager, RoleManager<IdentityRole<Guid>> roleManager)
 {
-    if (!await roleManager.RoleExistsAsync("Admin"))
+    if (!await roleManager.RoleExistsAsync("Manager"))
     {
-        await roleManager.CreateAsync(new IdentityRole<Guid>("Admin"));
+        await roleManager.CreateAsync(new IdentityRole<Guid>("Manager"));
     }
     
+    if (!await roleManager.RoleExistsAsync("Employee"))
+    {
+        await roleManager.CreateAsync(new IdentityRole<Guid>("Employee"));
+    }
+
     if (!dbContext.Warehouses.Any())
     {
         Guid warehouseId1 = Guid.NewGuid();
@@ -142,47 +145,40 @@ async Task SeedDataAsync(AppDbContext dbContext, UserManager<ApplicationUser> us
         );
 
         await dbContext.SaveChangesAsync();
-        Console.WriteLine("✅ Seed-Daten erfolgreich hinzugefügt!");
+        Console.WriteLine("Seed-Daten für Warehouses und Produkte hinzugefügt!");
     }
 
-    string[] roles = { "BossAdmin", "EmployeeAdmin" };
-    foreach (var role in roles)
+    string managerEmail = "manager@example.com";
+    if (await userManager.FindByEmailAsync(managerEmail) == null)
     {
-        if (!await roleManager.RoleExistsAsync(role))
+        var manager = new ApplicationUser
         {
-            await roleManager.CreateAsync(new IdentityRole<Guid>(role));
-        }
-    }
-
-    string bossAdminEmail = "bossadmin@example.com";
-    if (await userManager.FindByEmailAsync(bossAdminEmail) == null)
-    {
-        var bossAdmin = new ApplicationUser
-        {
-            UserName = bossAdminEmail,
-            Email = bossAdminEmail,
-            FullName = "Boss Admin"  
+            UserName = managerEmail,
+            Email = managerEmail,
+            FullName = "Manager"  
         };
-        var result = await userManager.CreateAsync(bossAdmin, "Admin123!");
+        var result = await userManager.CreateAsync(manager, "ManagerPassword123!");
         if (result.Succeeded)
         {
-            await userManager.AddToRoleAsync(bossAdmin, "BossAdmin");
+            await userManager.AddToRoleAsync(manager, "Manager");
         }
     }
 
-    string employeeAdminEmail = "employeeadmin@example.com";
-    if (await userManager.FindByEmailAsync(employeeAdminEmail) == null)
+    string employeeEmail = "employee@example.com";
+    if (await userManager.FindByEmailAsync(employeeEmail) == null)
     {
-        var employeeAdmin = new ApplicationUser
+        var employee = new ApplicationUser
         {
-            UserName = employeeAdminEmail,
-            Email = employeeAdminEmail,
-            FullName = "Employee Admin"  
+            UserName = employeeEmail,
+            Email = employeeEmail,
+            FullName = "Employee"  
         };
-        var result = await userManager.CreateAsync(employeeAdmin, "Admin123!");
+        var result = await userManager.CreateAsync(employee, "EmployeePassword123!");
         if (result.Succeeded)
         {
-            await userManager.AddToRoleAsync(employeeAdmin, "EmployeeAdmin");
+            await userManager.AddToRoleAsync(employee, "Employee");
         }
     }
+
+    Console.WriteLine("Seed-Daten für Manager und Employee Benutzer hinzugefügt!");
 }

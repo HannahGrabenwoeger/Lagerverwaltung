@@ -22,9 +22,9 @@ public class InventoryReportService
             {
                 ProductName = p.Name,
                 TotalQuantity = p.Quantity,
-                TotalMovements = _context.Movements.Count(m => m.ProductId == p.Id),
+                TotalMovements = _context.Movements.Count(m => m.ProductId == p.WarehouseId),
                 LastUpdated = _context.Movements
-                    .Where(m => m.ProductId == p.Id)
+                    .Where(m => m.ProductId == p.WarehouseId)
                     .OrderByDescending(m => m.MovementsDate)
                     .Select(m => m.MovementsDate)
                     .FirstOrDefault()

@@ -1,33 +1,46 @@
 using Microsoft.AspNetCore.Mvc;
 using Backend.Models;
+using Backend.Data;
 using System;
-using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
+using Microsoft.EntityFrameworkCore;
 
 [ApiController]
 [Route("api/[controller]")]
 public class WarehouseController : ControllerBase
 {
-    private static readonly List<Warehouse> Warehouses = new List<Warehouse>
-    {
-        new Warehouse { Id = Guid.NewGuid(), Name = "Lager A", Location = "Wien" },
-        new Warehouse { Id = Guid.NewGuid(), Name = "Lager B", Location = "Salzburg" }
-    };
+    private readonly AppDbContext _context;
 
-    [HttpGet]
-    public IActionResult GetWarehouses()
+    // Konstruktor, der den DbContext injiziert
+    public WarehouseController(AppDbContext context)
     {
-        return Ok(Warehouses);
+        _context = context;
     }
 
-    [HttpGet("{id}")]
-    public IActionResult GetWarehouseById(Guid id)
+    // 📌 Alle Warehouses zurückgeben
+    [HttpGet]
+    public async Task<IActionResult> GetWarehouses()
     {
-        var warehouse = Warehouses.FirstOrDefault(w => w.Id == id);
+        var warehouses = await _context.Warehouses.ToListAsync();  // Abfrage der Warehouses aus der DB
+        return Ok(warehouses);
+    }
+
+    [HttpGet("products/{warehouseId}")]
+    public async Task<IActionResult> GetProductsByWarehouseId(Guid warehouseId)
+    {
+        var warehouse = await _context.Warehouses
+            .FirstOrDefaultAsync(w => w.Id == warehouseId);
+
         if (warehouse == null)
         {
             return NotFound(new { message = "Lager nicht gefunden" });
         }
-        return Ok(warehouse);
+
+        var products = await _context.Products
+            .Where(p => p.WarehouseId == warehouseId)
+            .ToListAsync();
+
+        return Ok(new { warehouse, products });
     }
 }

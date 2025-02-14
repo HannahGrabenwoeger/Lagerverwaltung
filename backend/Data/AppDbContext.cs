@@ -22,20 +22,17 @@ namespace Backend.Data
 
             Console.WriteLine("OnModelCreating wird aufgerufen!");
 
-            // Ersetze die dynamischen Werte durch feste GUIDs
             Guid warehouseId1 = Guid.Parse("11111111-1111-1111-1111-111111111111");
             Guid warehouseId2 = Guid.Parse("22222222-2222-2222-2222-222222222222");
 
             Guid productId1 = Guid.Parse("33333333-3333-3333-3333-333333333333");
             Guid productId2 = Guid.Parse("44444444-4444-4444-4444-444444444444");
 
-            // 🔹 ZUERST: Lager speichern
             modelBuilder.Entity<Warehouse>().HasData(
                 new Warehouse { Id = warehouseId1, Name = "Lager A", Location = "Standort A" },
                 new Warehouse { Id = warehouseId2, Name = "Lager B", Location = "Standort B" }
             );
 
-            // 🔹 DANACH: Produkte speichern (nachdem Lager bereits existieren!)
             modelBuilder.Entity<Products>().HasData(
                 new Products { Id = productId1, Name = "Produkt 1", Quantity = 100, WarehouseId = warehouseId1 },
                 new Products { Id = productId2, Name = "Produkt 2", Quantity = 50, WarehouseId = warehouseId2 }

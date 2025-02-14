@@ -20,11 +20,9 @@ namespace Backend.Controllers
             _userQuery = userQuery;
         }
 
-        // Test-Endpunkt, um sicherzustellen, dass der Controller funktioniert
         [HttpGet]
         public IActionResult Get() => Ok(new { Message = "Test funktioniert!" });
 
-        // Endpunkt zum Abrufen aller Lagerhäuser
         [HttpGet("all-warehouses")]
         public async Task<IActionResult> GetAllWarehouses()
         {
@@ -35,7 +33,6 @@ namespace Backend.Controllers
             return Ok(warehouses);
         }
 
-        // Endpunkt zum Abrufen aller Produkte
         [HttpGet("all-products")]
         public async Task<IActionResult> GetAllProducts()
         {
@@ -46,7 +43,6 @@ namespace Backend.Controllers
             return Ok(products);
         }
 
-        // Endpunkt für paginierte Abfrage von Produkten
         [HttpGet("paginated-products")]
         public async Task<IActionResult> GetPaginatedProducts(int page = 1, int pageSize = 10)
         {
@@ -61,7 +57,6 @@ namespace Backend.Controllers
             return Ok(products);
         }
 
-        // Debug-Endpunkt für direkte Datenbankabfrage (nur für Entwicklung, später entfernen!)
         [HttpGet("debug-warehouses")]
         public IActionResult DebugContext()
         {

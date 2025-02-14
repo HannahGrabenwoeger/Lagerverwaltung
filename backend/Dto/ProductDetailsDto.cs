@@ -6,6 +6,5 @@ namespace Backend.Dtos {
         public int Quantity { get; set; }
         public int WarehouseId { get; set; }
         public string WarehouseName { get; set; } = string.Empty;
-        // Entferne weitere zyklische Referenzen
     }
 }

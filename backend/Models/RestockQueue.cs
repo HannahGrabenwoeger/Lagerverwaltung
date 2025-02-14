@@ -8,7 +8,7 @@ namespace Backend.Models
 {
     public Guid Id { get; set; } = Guid.NewGuid();
     public Guid ProductId { get; set; }
-    public Products? Product { get; set; }  // <-- nullable gemacht
+    public Products? Product { get; set; }  
 
     public int Quantity { get; set; }
     public bool Processed { get; set; } = false;

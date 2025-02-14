@@ -22,7 +22,6 @@ namespace Backend.Controllers
             _userQuery = userQuery;
         }
 
-        // 📌 Gesamtbestand pro Lager
         [HttpGet("stock-summary")]
         public IActionResult GetStockSummary()
         {
@@ -43,7 +42,12 @@ namespace Backend.Controllers
             return Ok(summary);
         }
 
-        // 📌 Bestandsveränderungen pro Tag
+        [HttpGet("reports")]
+        public IActionResult GetReports()
+        {
+            return Ok(new { message = "Reports erfolgreich geladen!" });
+        }
+
         [HttpGet("movements-per-day")]
         public async Task<IActionResult> GetMovementsPerDay()
         {
@@ -60,7 +64,6 @@ namespace Backend.Controllers
             return Ok(movements);
         }
 
-        // 📌 Top 5 nachbestellte Produkte
         [HttpGet("top-restock-products")]
         public async Task<IActionResult> GetTopRestockProducts()
         {
@@ -79,7 +82,6 @@ namespace Backend.Controllers
             return Ok(topRestocks);
         }
 
-        // 📌 Nachbestellungen pro Zeitraum (Monat oder Woche)
         [HttpGet("restocks-per-period")]
         public async Task<IActionResult> GetRestocksPerPeriod([FromQuery] string period = "month")
         {
@@ -98,14 +100,12 @@ namespace Backend.Controllers
             return Ok(groupedRestocks);
         }
 
-        // Hilfsfunktion, um die Kalenderwoche zu berechnen
         private int GetIsoWeek(DateTime date)
         {
             var day = (int)date.DayOfWeek;
             return ((date.DayOfYear - day + 10) / 7);
         }
 
-        // 📌 Produkte unter Mindestbestand anzeigen
         [HttpGet("low-stock-products")]
         public async Task<IActionResult> GetLowStockProducts()
         {

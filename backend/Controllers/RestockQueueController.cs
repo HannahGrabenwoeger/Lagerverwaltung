@@ -20,7 +20,6 @@ namespace Backend.Controllers
             _context = context;
         }
 
-        // 📌 **1. Bestellung hinzufügen**
         [HttpPost("request")]
         public async Task<IActionResult> RequestRestock([FromBody] RestockRequestDto request)
         {
@@ -50,7 +49,6 @@ namespace Backend.Controllers
             return CreatedAtAction(nameof(GetRestockById), new { id = restock.Id }, restock);
         }
 
-        // 📌 **2. Alle offenen Nachbestellungen abrufen**
         [HttpGet("pending")]
         public async Task<IActionResult> GetPendingRestocks()
         {
@@ -62,7 +60,6 @@ namespace Backend.Controllers
             return Ok(restocks);
         }
 
-        // 📌 **3. Eine Nachbestellung abrufen**
         [HttpGet("{id}")]
         public async Task<IActionResult> GetRestockById(Guid id)
         {
@@ -78,7 +75,6 @@ namespace Backend.Controllers
             return Ok(restock);
         }
 
-        // 📌 **4. Nachbestellung als erledigt markieren**
         [HttpPut("{id}/process")]
         public async Task<IActionResult> ProcessRestock(Guid id)
         {
@@ -95,7 +91,6 @@ namespace Backend.Controllers
             return Ok(new { message = "Nachbestellung als erledigt markiert." });
         }
 
-        // 📌 **5. Alle Nachbestellungen abrufen**
         [HttpGet("all")]
         public async Task<IActionResult> GetAllRestocks()
         {

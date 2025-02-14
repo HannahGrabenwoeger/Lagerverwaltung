@@ -35,13 +35,13 @@ namespace Backend.Controllers
         public IActionResult GetStockSummary()
         {
             var summary = _context.Products
-                .Include(p => p.Warehouse)  // Lade die Warehouse-Daten
+                .Include(p => p.Warehouse)  
                 .Select(p => new
                 {
                     p.Id,
                     p.Name,
                     p.Quantity,
-                    Warehouse = p.Warehouse != null ? p.Warehouse.Name : "Unbekannt"  // Fallback, wenn Warehouse null ist
+                    Warehouse = p.Warehouse != null ? p.Warehouse.Name : "Unbekannt"  
                 })
                 .ToList();
 

@@ -47,10 +47,6 @@ namespace Backend.Services
 
             _context.Movements.Add(movement);
 
-            // Nach jeder Lagerbewegung Audit-Log speichern
-           
-
-            // Falls Mindestbestand unterschritten wird → Nachbestellung auslösen
             if (product.Quantity < product.MinimumStock)
             {
                 _context.RestockQueue.Add(new RestockQueue

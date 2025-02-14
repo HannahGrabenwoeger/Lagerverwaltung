@@ -16,7 +16,6 @@ public class ProductsController : ControllerBase
         _dbContext = dbContext;
     }
 
-    // GET: api/Products
     [HttpGet]
     public IActionResult GetProducts()
     {
@@ -34,7 +33,6 @@ public class ProductsController : ControllerBase
         return Ok(products); 
     }
 
-    // GET: api/Products/{id}
     [HttpGet("{id}")]
     public IActionResult GetProductsById(Guid id) 
     {
@@ -57,7 +55,6 @@ public class ProductsController : ControllerBase
         });
     }
 
-    // POST: api/Products
     [HttpPost]
     public IActionResult AddProducts([FromBody] Products product)
     {
@@ -66,7 +63,7 @@ public class ProductsController : ControllerBase
             return BadRequest(new { message = "Ungültige Produktdaten" });
         }
 
-        product.Id = Guid.NewGuid();  // ✅ Neue UUID generieren
+        product.Id = Guid.NewGuid(); 
 
         _dbContext.Products.Add(product);
         _dbContext.SaveChanges();
@@ -74,9 +71,8 @@ public class ProductsController : ControllerBase
         return CreatedAtAction(nameof(GetProductsById), new { id = product.Id }, product);
     }
 
-    // DELETE: api/Products/{id}
     [HttpDelete("{id}")]
-    public IActionResult DeleteProducts(Guid id) // ✅ int → Guid geändert
+    public IActionResult DeleteProducts(Guid id) 
     {
         var product = _dbContext.Products.FirstOrDefault(p => p.Id == id);
         if (product == null)

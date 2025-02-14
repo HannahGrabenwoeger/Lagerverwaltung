@@ -47,7 +47,7 @@ namespace Backend.Services
                     await context.SaveChangesAsync();
                 }
 
-                await Task.Delay(TimeSpan.FromMinutes(5), stoppingToken); // Alle 5 Minuten prüfen
+                await Task.Delay(TimeSpan.FromMinutes(5), stoppingToken); 
             }
         }
     }
