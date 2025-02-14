@@ -12,7 +12,6 @@ public class WarehouseController : ControllerBase
 {
     private readonly AppDbContext _context;
 
-    // Konstruktor, der den DbContext injiziert
     public WarehouseController(AppDbContext context)
     {
         _context = context;
@@ -22,12 +21,13 @@ public class WarehouseController : ControllerBase
     [HttpGet]
     public async Task<IActionResult> GetWarehouses()
     {
-        var warehouses = await _context.Warehouses.ToListAsync();  // Abfrage der Warehouses aus der DB
+        var warehouses = await _context.Warehouses.ToListAsync();  
         return Ok(warehouses);
     }
 
-    [HttpGet("products/{warehouseId}")]
-    public async Task<IActionResult> GetProductsByWarehouseId(Guid warehouseId)
+    // 📌 Produkte nach WarehouseId abrufen
+    [HttpGet("{warehouseId}")]
+    public async Task<IActionResult> GetWarehouseById(Guid warehouseId)
     {
         var warehouse = await _context.Warehouses
             .FirstOrDefaultAsync(w => w.Id == warehouseId);
@@ -37,10 +37,6 @@ public class WarehouseController : ControllerBase
             return NotFound(new { message = "Lager nicht gefunden" });
         }
 
-        var products = await _context.Products
-            .Where(p => p.WarehouseId == warehouseId)
-            .ToListAsync();
-
-        return Ok(new { warehouse, products });
+        return Ok(warehouse);
     }
 }
