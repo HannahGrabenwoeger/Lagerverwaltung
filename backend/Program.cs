@@ -70,7 +70,8 @@ builder.Services.AddSwaggerGen(c =>
 builder.Services.AddControllers()
     .AddJsonOptions(options =>
     {
-        options.JsonSerializerOptions.ReferenceHandler = System.Text.Json.Serialization.ReferenceHandler.Preserve;
+        options.JsonSerializerOptions.WriteIndented = true; 
+        options.JsonSerializerOptions.ReferenceHandler = System.Text.Json.Serialization.ReferenceHandler.IgnoreCycles; 
     });
 
 builder.Services.AddCors(options =>
@@ -131,17 +132,14 @@ async Task SeedDataAsync(AppDbContext dbContext, UserManager<ApplicationUser> us
 
     if (!dbContext.Warehouses.Any())
     {
-        Guid warehouseId1 = Guid.NewGuid();
-        Guid warehouseId2 = Guid.NewGuid();
-
         dbContext.Warehouses.AddRange(
-            new Warehouse { Id = warehouseId1, Name = "Lager A", Location = "Standort A" },
-            new Warehouse { Id = warehouseId2, Name = "Lager B", Location = "Standort B" }
+            new Warehouse { Id = Guid.NewGuid(), Name = "Lager A", Location = "Standort A" },
+            new Warehouse { Id = Guid.NewGuid(), Name = "Lager B", Location = "Standort B" }
         );
 
-        dbContext.Products.AddRange(
-            new Products { Id = Guid.NewGuid(), Name = "Produkt 1", Quantity = 100, WarehouseId = warehouseId1 },
-            new Products { Id = Guid.NewGuid(), Name = "Produkt 2", Quantity = 50, WarehouseId = warehouseId2 }
+       dbContext.Warehouses.AddRange(
+            new Warehouse { Id = Guid.NewGuid(), Name = "Lager A", Location = "Standort A" },
+            new Warehouse { Id = Guid.NewGuid(), Name = "Lager B", Location = "Standort B" }
         );
 
         await dbContext.SaveChangesAsync();

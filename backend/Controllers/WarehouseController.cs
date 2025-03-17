@@ -12,7 +12,6 @@ public class WarehouseController : ControllerBase
 {
     private readonly AppDbContext _context;
 
-    // Konstruktor, der den DbContext injiziert
     public WarehouseController(AppDbContext context)
     {
         _context = context;
@@ -20,27 +19,45 @@ public class WarehouseController : ControllerBase
 
     // 📌 Alle Warehouses zurückgeben
     [HttpGet]
-    public async Task<IActionResult> GetWarehouses()
-    {
-        var warehouses = await _context.Warehouses.ToListAsync();  // Abfrage der Warehouses aus der DB
-        return Ok(warehouses);
-    }
+        public async Task<IActionResult> GetWarehouses()
+        {
+            try
+            {
+                var warehouses = await _context.Warehouses
+                    .Include(w => w.Products)
+                    .ToListAsync();
 
+                if (!warehouses.Any())
+                    return NotFound(new { message = "Keine Lager gefunden" });
+
+                return Ok(warehouses);
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, new { message = "Ein Fehler ist aufgetreten", error = ex.Message });
+            }
+        }
+
+    // 📌 Produkte eines bestimmten Lagers abrufen
     [HttpGet("products/{warehouseId}")]
     public async Task<IActionResult> GetProductsByWarehouseId(Guid warehouseId)
     {
-        var warehouse = await _context.Warehouses
-            .FirstOrDefaultAsync(w => w.Id == warehouseId);
-
-        if (warehouse == null)
+        try
         {
-            return NotFound(new { message = "Lager nicht gefunden" });
+            var warehouse = await _context.Warehouses
+                .Include(w => w.Products)  // Produkte direkt mitladen
+                .FirstOrDefaultAsync(w => w.Id == warehouseId);
+
+            if (warehouse == null)
+            {
+                return NotFound(new { message = "Lager nicht gefunden" });
+            }
+
+            return Ok(new { warehouse, products = warehouse.Products ?? new List<Products>() });
         }
-
-        var products = await _context.Products
-            .Where(p => p.WarehouseId == warehouseId)
-            .ToListAsync();
-
-        return Ok(new { warehouse, products });
+        catch (Exception ex)
+        {
+            return StatusCode(500, new { message = "Ein Fehler ist aufgetreten", error = ex.Message });
+        }
     }
 }
