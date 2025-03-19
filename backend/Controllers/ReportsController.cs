@@ -52,14 +52,15 @@ namespace Backend.Controllers
         public async Task<IActionResult> GetMovementsPerDay()
         {
             var movements = await _context.Movements
-                .GroupBy(m => m.MovementsDate.Date)
-                .Select(g => new
-                {
-                    Date = g.Key,
-                    TotalMovements = g.Count(),
-                    MovedQuantity = g.Sum(m => m.Quantity)
-                })
-                .ToListAsync();
+    .GroupBy(m => new { m.MovementsDate.Date, m.ProductId })
+    .Select(g => new
+    {
+        Date = g.Key.Date,
+        ProductId = g.Key.ProductId,
+        TotalMovements = g.Count(),
+        MovedQuantity = g.Sum(m => m.Quantity)
+    })
+    .ToListAsync();
 
             return Ok(movements);
         }
@@ -82,24 +83,39 @@ namespace Backend.Controllers
             return Ok(topRestocks);
         }
 
-        [HttpGet("restocks-per-period")]
-        public async Task<IActionResult> GetRestocksPerPeriod([FromQuery] string period = "month")
+        [HttpGet("restocks-by-period")]
+    public async Task<IActionResult> GetRestocksByPeriod(string period)
+    {
+        if (string.IsNullOrEmpty(period))
         {
-            var restocks = await _context.RestockQueue
-                .ToListAsync(); 
-
-            var groupedRestocks = restocks
-                .GroupBy(r => period == "month" ? $"{r.RequestedAt:yyyy-MM}" : $"{r.RequestedAt:yyyy}-W{GetIsoWeek(r.RequestedAt)}")
-                .Select(g => new
-                {
-                    Period = g.Key,
-                    TotalRestocks = g.Count()
-                })
-                .ToList();
-
-            return Ok(groupedRestocks);
+            return BadRequest("Period parameter is required.");
         }
 
+        var query = _context.RestockQueue
+            .Include(r => r.Product)
+            .Where(r => r.Quantity > 0)
+            .AsQueryable();
+
+        var groupedData = query
+            .GroupBy(r => new 
+            { 
+                Year = r.RequestedAt.Year
+            })
+            .Select(g => new 
+            {
+                Period = g.Key.Year.ToString(),
+                TotalRestocks = g.Count(),
+                Products = g.Select(r => new 
+                {
+                    ProductId = r.ProductId,
+                    Name = r.Product.Name,
+                    QuantityRestocked = r.Quantity
+                }).ToList()
+            });
+
+        var result = await groupedData.ToListAsync();
+        return Ok(result);
+    }
         private int GetIsoWeek(DateTime date)
         {
             var day = (int)date.DayOfWeek;

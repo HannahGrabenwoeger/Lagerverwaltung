@@ -17,43 +17,60 @@ public class WarehouseController : ControllerBase
         _context = context;
     }
 
-    // 📌 Alle Warehouses zurückgeben
     [HttpGet]
-        public async Task<IActionResult> GetWarehouses()
+    public async Task<IActionResult> GetWarehouses()
+    {
+        try
         {
-            try
-            {
-                var warehouses = await _context.Warehouses
-                    .Include(w => w.Products)
-                    .ToListAsync();
+            var warehouses = await _context.Warehouses
+                .Include(w => w.Products)
+                .Select(w => new
+                {
+                    w.Id,
+                    w.Name,
+                    w.Location,
+                    Products = w.Products.Select(p => new
+                    {
+                        p.Id,
+                        p.Name,
+                        p.Quantity,
+                    }).ToList()
+                })
+                .ToListAsync();
 
-                if (!warehouses.Any())
-                    return NotFound(new { message = "Keine Lager gefunden" });
+            if (!warehouses.Any())
+                return NotFound(new { message = "Keine Lager gefunden" });
 
-                return Ok(warehouses);
-            }
-            catch (Exception ex)
-            {
-                return StatusCode(500, new { message = "Ein Fehler ist aufgetreten", error = ex.Message });
-            }
+            return Ok(warehouses);
         }
+        catch (Exception ex)
+        {
+            return StatusCode(500, new { message = "Ein Fehler ist aufgetreten", error = ex.Message });
+        }
+    }
 
-    // 📌 Produkte eines bestimmten Lagers abrufen
     [HttpGet("products/{warehouseId}")]
     public async Task<IActionResult> GetProductsByWarehouseId(Guid warehouseId)
     {
         try
         {
-            var warehouse = await _context.Warehouses
-                .Include(w => w.Products)  // Produkte direkt mitladen
-                .FirstOrDefaultAsync(w => w.Id == warehouseId);
+            var products = await _context.Products
+                .Where(p => p.WarehouseId == warehouseId)
+                .Select(p => new
+                {
+                    p.Id,
+                    p.Name,
+                    p.Quantity,
+                    p.MinimumStock,
+                })
+                .ToListAsync();
 
-            if (warehouse == null)
+            if (!products.Any())
             {
-                return NotFound(new { message = "Lager nicht gefunden" });
+                return NotFound(new { message = "Keine Produkte in diesem Lager gefunden" });
             }
 
-            return Ok(new { warehouse, products = warehouse.Products ?? new List<Products>() });
+            return Ok(products);  
         }
         catch (Exception ex)
         {

@@ -8,4 +8,5 @@ public class Products
     public int MinimumStock { get; set; }
     public Guid WarehouseId { get; set; }
     public Warehouse? Warehouse { get; set; }  
+    public bool HasSentLowStockNotification { get; set; }
 }

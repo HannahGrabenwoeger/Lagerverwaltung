@@ -3,6 +3,7 @@ using System;
 using Backend.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -10,9 +11,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace backend.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    partial class AppDbContextModelSnapshot : ModelSnapshot
+    [Migration("20250317160408_AddMovementTypeToMovements")]
+    partial class AddMovementTypeToMovements
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder.HasAnnotation("ProductVersion", "9.0.1");
@@ -126,6 +129,10 @@ namespace backend.Migrations
                     b.Property<Guid>("FromWarehouseId")
                         .HasColumnType("TEXT");
 
+                    b.Property<string>("MovementType")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
                     b.Property<DateTime>("MovementsDate")
                         .HasColumnType("TEXT");
 
@@ -205,13 +212,13 @@ namespace backend.Migrations
                     b.HasData(
                         new
                         {
-                            Id = new Guid("11111111-1111-1111-1111-111111111111"),
+                            Id = new Guid("0dfdc6cf-30fa-4a81-b8e7-dd6fb69b7c31"),
                             Location = "Standort A",
                             Name = "Lager A"
                         },
                         new
                         {
-                            Id = new Guid("22222222-2222-2222-2222-222222222222"),
+                            Id = new Guid("3039c739-404d-4942-96e6-85608920fb5e"),
                             Location = "Standort B",
                             Name = "Lager B"
                         });
@@ -363,9 +370,6 @@ namespace backend.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("TEXT");
 
-                    b.Property<bool>("HasSentLowStockNotification")
-                        .HasColumnType("INTEGER");
-
                     b.Property<int>("MinimumStock")
                         .HasColumnType("INTEGER");
 
@@ -389,20 +393,18 @@ namespace backend.Migrations
                         new
                         {
                             Id = new Guid("33333333-3333-3333-3333-333333333333"),
-                            HasSentLowStockNotification = false,
                             MinimumStock = 0,
                             Name = "Produkt 1",
                             Quantity = 100,
-                            WarehouseId = new Guid("11111111-1111-1111-1111-111111111111")
+                            WarehouseId = new Guid("05e1ed1c-5617-48cf-bffc-c9922b9a9d1b")
                         },
                         new
                         {
                             Id = new Guid("44444444-4444-4444-4444-444444444444"),
-                            HasSentLowStockNotification = false,
                             MinimumStock = 0,
                             Name = "Produkt 2",
                             Quantity = 50,
-                            WarehouseId = new Guid("22222222-2222-2222-2222-222222222222")
+                            WarehouseId = new Guid("74bfb85e-4a54-4743-a692-bf36d16a5ccb")
                         });
                 });
 

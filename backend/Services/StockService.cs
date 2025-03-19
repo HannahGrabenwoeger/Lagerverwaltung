@@ -40,7 +40,6 @@ namespace Backend.Services
             {
                 ProductId = productId,
                 Quantity = quantity,
-                MovementType = movementType,
                 User = user,
                 Timestamp = DateTime.UtcNow
             };

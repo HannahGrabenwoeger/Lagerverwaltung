@@ -59,7 +59,8 @@ builder.Services.AddAuthorization(options =>
 builder.Services.AddScoped<AuditLogService>();
 builder.Services.AddScoped<StockService>();
 builder.Services.AddScoped<UserQueryService>();
-builder.Services.AddHostedService<RestockProcessor>();
+builder.Services.AddSingleton<RestockProcessor>();
+builder.Services.AddHostedService(sp => sp.GetRequiredService<RestockProcessor>());
 
 builder.Services.AddSwaggerGen(c =>
 {
@@ -84,6 +85,17 @@ builder.Services.AddCors(options =>
                   .AllowAnyHeader();
         });
 });
+
+builder.Services.AddSingleton<EmailService>(sp =>
+    new EmailService(
+        smtpServer: "sandbox.smtp.mailtrap.io",     
+        smtpPort: 587,                        
+        smtpUser: "77cfd1069e13e9",           
+        smtpPassword: "25037aeb7aeb51",   
+        fromAddress: "no-reply@example.com"    
+    )
+);
+
 
 var app = builder.Build();
 

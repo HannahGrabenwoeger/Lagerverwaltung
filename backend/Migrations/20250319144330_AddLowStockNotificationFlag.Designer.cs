@@ -3,6 +3,7 @@ using System;
 using Backend.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -10,9 +11,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace backend.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    partial class AppDbContextModelSnapshot : ModelSnapshot
+    [Migration("20250319144330_AddLowStockNotificationFlag")]
+    partial class AddLowStockNotificationFlag
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder.HasAnnotation("ProductVersion", "9.0.1");
@@ -205,13 +208,13 @@ namespace backend.Migrations
                     b.HasData(
                         new
                         {
-                            Id = new Guid("11111111-1111-1111-1111-111111111111"),
+                            Id = new Guid("74d8099d-cc60-47d2-a221-9c84af78a7df"),
                             Location = "Standort A",
                             Name = "Lager A"
                         },
                         new
                         {
-                            Id = new Guid("22222222-2222-2222-2222-222222222222"),
+                            Id = new Guid("83f8f3e6-649a-46b7-8960-08707f94648b"),
                             Location = "Standort B",
                             Name = "Lager B"
                         });
@@ -393,7 +396,7 @@ namespace backend.Migrations
                             MinimumStock = 0,
                             Name = "Produkt 1",
                             Quantity = 100,
-                            WarehouseId = new Guid("11111111-1111-1111-1111-111111111111")
+                            WarehouseId = new Guid("ffb47036-0657-43dc-80d1-2e3010ce7d49")
                         },
                         new
                         {
@@ -402,7 +405,7 @@ namespace backend.Migrations
                             MinimumStock = 0,
                             Name = "Produkt 2",
                             Quantity = 50,
-                            WarehouseId = new Guid("22222222-2222-2222-2222-222222222222")
+                            WarehouseId = new Guid("2225f63f-84fe-4440-b992-579b38e03269")
                         });
                 });
 

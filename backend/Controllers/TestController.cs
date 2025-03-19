@@ -13,14 +13,16 @@ namespace Backend.Controllers
     {
         private readonly AppDbContext _context;
         private readonly UserQueryService _userQuery;
+        private readonly RestockProcessor _restockProcessor;
 
-        public TestController(AppDbContext context, UserQueryService userQuery)
+        public TestController(AppDbContext context, UserQueryService userQuery, RestockProcessor restockProcessor)
         {
             _context = context;
             _userQuery = userQuery;
+            _restockProcessor = restockProcessor;
         }
 
-        [HttpGet]
+        [HttpGet("default")]
         public IActionResult Get() => Ok(new { Message = "Test funktioniert!" });
 
         [HttpGet("all-warehouses")]
@@ -43,26 +45,53 @@ namespace Backend.Controllers
             return Ok(products);
         }
 
-        [HttpGet("paginated-products")]
-        public async Task<IActionResult> GetPaginatedProducts(int page = 1, int pageSize = 10)
+        [HttpGet("debug-warehouses")]
+        public IActionResult DebugWarehouses()
         {
-            var products = await _context.Products
-                .Skip((page - 1) * pageSize)
-                .Take(pageSize)
-                .ToListAsync();
+            var warehouses = _context.Warehouses
+                .Select(w => new
+                {
+                    WarehouseId = w.Id,
+                    Name = w.Name,
+                    Location = w.Location,
+                    ProductCount = w.Products.Count,
+                    HasProducts = w.Products.Any(), 
+                    ProductIds = w.Products.Select(p => p.Id).ToList()
+                })
+                .ToList();
 
-            if (products == null || products.Count == 0)
-                return NotFound(new { Message = "Keine Produkte auf dieser Seite gefunden." });
+            var products = _context.Products
+                .Select(p => new
+                {
+                    ProductId = p.Id,
+                    Name = p.Name,
+                    Quantity = p.Quantity,
+                    WarehouseId = p.WarehouseId
+                })
+                .ToList();
 
-            return Ok(products);
+            var orphanedProducts = products
+                .Where(p => !warehouses.Any(w => w.WarehouseId == p.WarehouseId))
+                .ToList();
+
+            var emptyWarehouses = warehouses
+                .Where(w => !w.HasProducts)
+                .ToList();
+
+            return Ok(new
+            {
+                Warehouses = warehouses,
+                Products = products,
+                OrphanedProducts = orphanedProducts,  
+                EmptyWarehouses = emptyWarehouses  
+            });
         }
 
-        [HttpGet("debug-warehouses")]
-        public IActionResult DebugContext()
+        [HttpGet("test-restock-email/{productId}")]
+        public async Task<IActionResult> TestRestockEmail(Guid productId)
         {
-            var warehouses = _context.Warehouses.ToList();
-            var products = _context.Products.ToList();
-            return Ok(new { Warehouses = warehouses, Products = products });
+            await _restockProcessor.ProcessRestockAsync(productId);
+            return Ok("Restock-Prozess wurde ausgelöst. Bitte Log und E-Mail-Postfach prüfen.");
         }
     }
 }

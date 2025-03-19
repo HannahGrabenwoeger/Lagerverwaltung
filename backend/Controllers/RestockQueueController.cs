@@ -46,34 +46,9 @@ namespace Backend.Controllers
             await _context.RestockQueue.AddAsync(restock);
             await _context.SaveChangesAsync();
 
-            return CreatedAtAction(nameof(GetRestockById), new { id = restock.Id }, restock);
-        }
-
-        [HttpGet("pending")]
-        public async Task<IActionResult> GetPendingRestocks()
-        {
-            var restocks = await _context.RestockQueue
-                .Where(r => !r.Processed)
-                .Include(r => r.Product)
-                .ToListAsync();
-
-            return Ok(restocks);
-        }
-
-        [HttpGet("{id}")]
-        public async Task<IActionResult> GetRestockById(Guid id)
-        {
-            var restock = await _context.RestockQueue
-                .Include(r => r.Product)
-                .FirstOrDefaultAsync(r => r.Id == id);
-
-            if (restock == null)
-            {
-                return NotFound(new { message = "Nachbestellung nicht gefunden." });
-            }
-
             return Ok(restock);
         }
+
 
         [HttpPut("{id}/process")]
         public async Task<IActionResult> ProcessRestock(Guid id)
@@ -95,8 +70,15 @@ namespace Backend.Controllers
         public async Task<IActionResult> GetAllRestocks()
         {
             var restocks = await _context.RestockQueue
-                .Include(r => r.Product)
-                .ToListAsync();
+            .Include(r => r.Product)
+            .Select(r => new {
+                r.Id,
+                ProductName = r.Product.Name,
+                r.Quantity,
+                r.Processed,
+                r.RequestedAt
+            })
+            .ToListAsync();
 
             return Ok(restocks);
         }

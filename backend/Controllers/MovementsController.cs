@@ -13,7 +13,7 @@ using System.Linq;
 namespace Backend.Controllers
 {
     [ApiController]
-    [Route("api/[controller]")]
+    [Route("api/movements")]
     public class MovementsController : ControllerBase
     {
         private readonly AppDbContext _context;
@@ -31,26 +31,9 @@ namespace Backend.Controllers
             _inventoryReportService = inventoryReportService;
         }
 
-        [HttpGet("stock-summary")]
-        public IActionResult GetStockSummary()
-        {
-            var summary = _context.Products
-                .Include(p => p.Warehouse)  
-                .Select(p => new
-                {
-                    p.Id,
-                    p.Name,
-                    p.Quantity,
-                    Warehouse = p.Warehouse != null ? p.Warehouse.Name : "Unbekannt"  
-                })
-                .ToList();
 
-            return Ok(summary);
-        }
-
-        [HttpPost]
-        [Authorize(Roles = "WarehouseManager, Admin")]
-        public async Task<IActionResult> CreateMovements([FromBody] MovementsDto movementsDto)
+        [HttpPost("create")]
+        public async Task<IActionResult> CreateMovements([FromBody] MovementsDto movementsDto)  
         {
             if (movementsDto == null)
             {
@@ -75,7 +58,6 @@ namespace Backend.Controllers
                     return NotFound(new { message = "Produkt oder Lager nicht gefunden." });
                 }
 
-                // Prüfe, ob genügend Bestand im Ausgangslager vorhanden ist
                 if (movementsDto.Quantity <= 0)
                 {
                     return BadRequest(new { message = "Die Menge muss größer als Null sein." });
@@ -86,7 +68,6 @@ namespace Backend.Controllers
                     return BadRequest(new { message = "Nicht genügend Bestand im Ursprungslager." });
                 }
 
-                // Bestandsänderung im Ausgangslager
                 product.Quantity -= movementsDto.Quantity;
 
                 var targetProduct = await _context.Products
@@ -94,18 +75,20 @@ namespace Backend.Controllers
 
                 if (targetProduct != null)
                 {
-                    targetProduct.Quantity += movementsDto.Quantity;
+                    targetProduct.Quantity += movementsDto.Quantity; 
                 }
                 else
                 {
                     targetProduct = new Products
                     {
-                        Id = Guid.NewGuid(),
+                        Id = product.Id, 
                         Name = product.Name,
                         Quantity = movementsDto.Quantity,
                         WarehouseId = toWarehouseId,
                     };
-                    await _context.Products.AddAsync(targetProduct);
+
+                    _context.Entry(product).State = EntityState.Detached; 
+                    _context.Products.Update(targetProduct);
                 }
 
                 var movement = new Movements
@@ -200,13 +183,6 @@ namespace Backend.Controllers
             };
 
             return Ok(movementDto);
-        }
-
-        [HttpGet("all-warehouses")]
-        public async Task<IActionResult> GetAllWarehouses()
-        {
-            var warehouses = await _context.Warehouses.ToListAsync();
-            return Ok(warehouses);
         }
 
         [HttpPost("update")]
