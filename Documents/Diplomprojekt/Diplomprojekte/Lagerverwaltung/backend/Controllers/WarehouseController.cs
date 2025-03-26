@@ -1,20 +1,19 @@
 using Microsoft.AspNetCore.Mvc;
 using Backend.Models;
-using Backend.Data;
 using System;
 using System.Linq;
 using System.Threading.Tasks;
-using Microsoft.EntityFrameworkCore;
+using Google.Cloud.Firestore;
 
 [ApiController]
 [Route("api/[controller]")]
 public class WarehouseController : ControllerBase
 {
-    private readonly AppDbContext _context;
+    private readonly FirestoreDb _firestoreDb;
 
-    public WarehouseController(AppDbContext context)
+    public WarehouseController(FirestoreDb firestoreDb)
     {
-        _context = context;
+        _firestoreDb = firestoreDb;
     }
 
     [HttpGet]
@@ -22,24 +21,25 @@ public class WarehouseController : ControllerBase
     {
         try
         {
-            var warehouses = await _context.Warehouses
-                .Include(w => w.Products)
-                .Select(w => new
-                {
-                    w.Id,
-                    w.Name,
-                    w.Location,
-                    Products = w.Products.Select(p => new
+            var snapshot = await _firestoreDb.Collection("warehouses").GetSnapshotAsync();
+
+            var warehouses = snapshot.Documents.Select(doc => new
+            {
+                Id = doc.Id,
+                Name = doc.GetValue<string>("Name"),
+                Location = doc.GetValue<string>("Location"),
+                Products = doc.ContainsField("Products")
+                    ? doc.GetValue<List<Dictionary<string, object>>>("Products").Select(p => new
                     {
-                        p.Id,
-                        p.Name,
-                        p.Quantity
-                    }).ToList()
-                })
-                .ToListAsync();
+                        Id = p.ContainsKey("Id") ? p["Id"]?.ToString() : "",
+                        Name = p.ContainsKey("Name") ? p["Name"]?.ToString() : "",
+                        Quantity = p.ContainsKey("Quantity") ? Convert.ToInt32(p["Quantity"]) : 0
+                    }).Cast<object>().ToList()
+                    : new List<object>()
+            }).ToList();
 
             if (!warehouses.Any())
-                return NotFound(new { message = "No bearings found" });
+                return NotFound(new { message = "No warehouses found" });
 
             return Ok(warehouses);
         }
@@ -50,20 +50,25 @@ public class WarehouseController : ControllerBase
     }
 
     [HttpGet("products/{warehouseId}")]
-    public async Task<IActionResult> GetProductsByWarehouseId(Guid warehouseId)
+    public async Task<IActionResult> GetProductsByWarehouseId(string warehouseId)
     {
         try
         {
-            var products = await _context.Products
-                .Where(p => p.WarehouseId == warehouseId)
-                .Select(p => new
-                {
-                    p.Id,
-                    p.Name,
-                    p.Quantity,
-                    p.MinimumStock
-                })
-                .ToListAsync();
+            var docRef = _firestoreDb.Collection("warehouses").Document(warehouseId);
+            var snapshot = await docRef.GetSnapshotAsync();
+
+            if (!snapshot.Exists || !snapshot.ContainsField("Products"))
+                return NotFound(new { message = "No products found in this warehouse" });
+
+            var productsRaw = snapshot.GetValue<List<Dictionary<string, object>>>("Products");
+
+            var products = productsRaw.Select(p => new
+            {
+                Id = p.ContainsKey("Id") ? p["Id"]?.ToString() : "",
+                Name = p.ContainsKey("Name") ? p["Name"]?.ToString() : "",
+                Quantity = p.ContainsKey("Quantity") ? Convert.ToInt32(p["Quantity"]) : 0,
+                MinimumStock = p.ContainsKey("MinimumStock") ? Convert.ToInt32(p["MinimumStock"]) : 0
+            }).ToList();
 
             if (!products.Any())
                 return NotFound(new { message = "No products found in this warehouse" });

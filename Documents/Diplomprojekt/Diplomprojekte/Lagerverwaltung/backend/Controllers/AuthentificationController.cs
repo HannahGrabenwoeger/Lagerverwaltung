@@ -2,6 +2,7 @@ using Microsoft.AspNetCore.Mvc;
 using System.Threading.Tasks;
 using FirebaseAdmin.Auth;
 using Backend.Dtos;
+using Backend.Interfaces;
 
 namespace Backend.Controllers
 {
@@ -9,6 +10,7 @@ namespace Backend.Controllers
     [Route("api/auth")]
     public class AuthentificationController : ControllerBase
     {
+
         [HttpPost("verify-firebase-token")]
         public async Task<IActionResult> VerifyFirebaseToken(string idToken)
         {

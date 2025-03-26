@@ -4,6 +4,8 @@ using Backend.Data;
 using System;
 using System.Linq;
 using System.Threading.Tasks;
+using Google.Cloud.Firestore;
+using Backend.Services;
 
 namespace Backend.Controllers
 {
@@ -12,14 +14,29 @@ namespace Backend.Controllers
     public class ReportsController : ControllerBase
     {
         private readonly AppDbContext _context;
+        private readonly FirestoreDb _db;
+        private readonly IUserQueryService _userQueryService;
 
-        public ReportsController(AppDbContext context)
+
+        public ReportsController(AppDbContext context, FirestoreDb db, IUserQueryService userQueryService)
         {
             _context = context;
+             _db = db;
+             _userQueryService = userQueryService;
+        }
+        
+        [HttpGet("find-user/{username}")]
+        public async Task<IActionResult> FindUser(string username)
+        {
+            var user = await _userQueryService.FindUserAsync(username);
+            if (user == null)
+                return NotFound(new { message = "User not found" });
+
+            return Ok(user);
         }
 
         [HttpGet("stock-summary")]
-        public IActionResult GetStockSummary()
+        public async Task<IActionResult> GetStockSummary()
         {
             var summary = _context.Products
                 .Include(p => p.Warehouse) 
