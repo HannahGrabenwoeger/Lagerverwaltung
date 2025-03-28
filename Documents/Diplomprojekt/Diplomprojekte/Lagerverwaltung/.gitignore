@@ -1,0 +1,43 @@
+# Build-Ordner
+bin/
+obj/
+
+# System und Mac-Dateien
+.DS_Store
+*.log
+.ServiceHub/
+*.pid
+*.lock
+.vscode/
+*.user
+*.db
+
+# Anaconda und Python
+.anaconda/
+navigator.*
+keyring
+
+# Node.js
+node_modules/
+package-lock.json
+
+# Python/Notebooks
+venv/
+*.ipynb
+
+# Office-Dateien
+*.docx
+*.xlsx
+~$*
+
+# IDE-Ordner
+.idea/
+.vscode/
+
+# CSV-Dateien
+*.csv
+
+# JSON ignorieren – außer Konfig
+*.json
+!appsettings.json
+backend/Secrets/service-account.json
