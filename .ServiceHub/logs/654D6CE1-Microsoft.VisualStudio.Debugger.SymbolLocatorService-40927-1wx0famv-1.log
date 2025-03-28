@@ -1,0 +1,9 @@
+﻿01/18/2025 20:58:34 Mitteleuropäische Normalzeit : Information : Local timezone is (UTC+01:00) Mitteleuropäische Zeit (Wien)
+01/18/2025 20:58:34 Mitteleuropäische Normalzeit : Information : Microsoft.VisualStudio.Debugger.SymbolLocatorService read: end of stream
+01/18/2025 20:58:34 Mitteleuropäische Normalzeit : Information : Added local RPC method "LocateSymbolFileAsync" -> Microsoft.VisualStudio.Debugger.BrokeredServices.SymbolLocator.SymbolLocatorService.LocateSymbolFileAsync(SymbolLocatorPdbInfo, SymbolLocatorSearchFlags, IProgress`1, CancellationToken) (Microsoft.VisualStudio.Debugger.BrokeredServices.SymbolLocator.SymbolLocatorService)
+01/18/2025 20:58:34 Mitteleuropäische Normalzeit : Information : Added local RPC method "LocateSymbolFile" -> Microsoft.VisualStudio.Debugger.BrokeredServices.SymbolLocator.SymbolLocatorService.LocateSymbolFileAsync(SymbolLocatorPdbInfo, SymbolLocatorSearchFlags, IProgress`1, CancellationToken) (Microsoft.VisualStudio.Debugger.BrokeredServices.SymbolLocator.SymbolLocatorService)
+01/18/2025 20:58:34 Mitteleuropäische Normalzeit: Information : 3 :Listening started.
+01/18/2025 20:58:34 Mitteleuropäische Normalzeit: Information : 13 :Connection closing (RemotePartyTerminated: Reached end of stream.). 
+01/18/2025 20:58:34 Mitteleuropäische Normalzeit : Information : Waiting for 'Microsoft.VisualStudio.Debugger.SymbolLocatorService' instance to complete its completionTask.
+01/18/2025 20:58:34 Mitteleuropäische Normalzeit : Information : Disposed 'Microsoft.VisualStudio.Debugger.SymbolLocatorService' via 'completionTask' method.
+01/18/2025 20:58:34 Mitteleuropäische Normalzeit : Information : Finishing shutting down service: Microsoft.VisualStudio.Debugger.SymbolLocatorService.

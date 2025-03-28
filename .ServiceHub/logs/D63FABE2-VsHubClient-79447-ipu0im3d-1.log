@@ -1,0 +1,384 @@
+﻿03/24/2025 09:39:25 Mitteleuropäische Normalzeit : Information : Local timezone is (UTC+01:00) Mitteleuropäische Zeit (Wien)
+03/24/2025 09:39:28 Mitteleuropäische Normalzeit : Information : VsHubClient-hubController write: Content-Length: 109
+
+{"jsonrpc":"2.0","id":2,"method":"UpdateClientInfoAsync","params":[{"clientName":"VsHubClient","pid":79447}]}
+03/24/2025 09:39:28 Mitteleuropäische Normalzeit : Information : VsHubClient-hubController read: Content-Length: 443
+
+{"jsonrpc":"2.0","id":2,"result":{"ClientWatchServerName":"net.pipe://79475A4572","ControllerConfig":{"Executable":"/Users/MacBook/.vscode/extensions/ms-dotnettools.csdevkit-1.16.6-darwin-arm64/components/vs-green-server/platforms/darwin-arm64/node_modules/@microsoft/servicehub-controller-net60.darwin-arm64/Microsoft.ServiceHub.Controller","Args":["435df75909"],"PipeName":"435df75909"},"HostsConfig":{"RootDir":".","AppConfigFallback":""}}}
+03/24/2025 09:39:28 Mitteleuropäische Normalzeit : Information : Connected to Hub Controller's client watch 'net.pipe://79475A4572
+03/24/2025 09:39:29 Mitteleuropäische Normalzeit : Information : VsHubClient-hubController write: Content-Length: 109
+
+{"jsonrpc":"2.0","id":2,"method":"UpdateClientInfoAsync","params":[{"clientName":"VsHubClient","pid":79447}]}
+03/24/2025 09:39:29 Mitteleuropäische Normalzeit : Information : VsHubClient-hubController read: Content-Length: 443
+
+{"jsonrpc":"2.0","id":2,"result":{"ClientWatchServerName":"net.pipe://79475A4572","ControllerConfig":{"Executable":"/Users/MacBook/.vscode/extensions/ms-dotnettools.csdevkit-1.16.6-darwin-arm64/components/vs-green-server/platforms/darwin-arm64/node_modules/@microsoft/servicehub-controller-net60.darwin-arm64/Microsoft.ServiceHub.Controller","Args":["435df75909"],"PipeName":"435df75909"},"HostsConfig":{"RootDir":".","AppConfigFallback":""}}}
+03/24/2025 09:39:29 Mitteleuropäische Normalzeit : Information : VsHubClient-hubController write: Content-Length: 16418
+
+
+03/24/2025 09:39:29 Mitteleuropäische Normalzeit : Information : VsHubClient-hubController write: {"jsonrpc":"2.0","id":3,"method":"RegisterServicesAsync","params":[{"Microsoft.VisualStudio.CpsProjectIconSourceService":{"host":"dotnet.projectSystem","hostId":"C94B8CFE-E3FD-4BAF-A941-2866DBB566FE","serviceBaseDirectory":"/Users/MacBook/.vscode/extensions/ms-dotnettools.csdevkit-1.16.6-darwin-arm64/components/CPS/platforms/darwin-arm64/node_modules/@microsoft/visualstudio-projectsystem-server.darwin-arm64","entryPoint":{"assemblyPath":"/Users/MacBook/.vscode/extensions/ms-dotnettools.csdevkit-1.16.6-darwin-arm64/components/CPS/platforms/darwin-arm64/node_modules/@microsoft/visualstudio-projectsystem-server.darwin-arm64/Microsoft.VisualStudio.ProjectSystem.Server.Implementation.dll","fullClassName":"Microsoft.VisualStudio.ProjectSystem.Server.ProjectIconSourceServiceFactory"}},"Microsoft.VisualStudio.LaunchConfigurationService":{"host":"dotnet.projectSystem","hostId":"C94B8CFE-E3FD-4BAF-A941-2866DBB566FE","serviceBaseDirectory":"/Users/MacBook/.vscode/extensions/ms-dotnettools.csdevkit-1.16.6-darwin-arm64/components/CPS/platforms/darwin-arm64/node_modules/@microsoft/visualstudio-projectsystem-server.darwin-arm64","entryPoint":{"assemblyPath":"/Users/MacBook/.vscode/extensions/ms-dotnettools.csdevkit-1.16.6-darwin-arm64/components/CPS/platforms/darwin-arm64/node_modules/@microsoft/visualstudio-projectsystem-server.darwin-arm64/Microsoft.VisualStudio.ProjectSystem.Server.Implementation.dll","fullClassName":"Microsoft.VisualStudio.ProjectSystem.Server.LaunchConfigurationServiceFactory"}},"Microsoft.VisualStudio.ProjectSystem.CompositionService":{"host":"dotnet.projectSystem","hostId":"C94B8CFE-E3FD-4BAF-A941-2866DBB566FE","serviceBaseDirectory":"/Users/MacBook/.vscode/extensions/ms-dotnettools.csdevkit-1.16.6-darwin-arm64/components/CPS/platforms/darwin-arm64/node_modules/@microsoft/visualstudio-projectsystem-server.darwin-arm64","entryPoint":{"assemblyPath":"/Users/MacBook/.vscode/extensions/ms-dotnettools.csdevkit-1.16.6-darwin-arm64/components/CPS/platforms/darwin-arm64/node_modules/@microsoft/visualstudio-projectsystem-server.darwin-arm64/Microsoft.VisualStudio.ProjectSystem.Server.Implementation.dll","fullClassName":"Microsoft.VisualStudio.ProjectSystem.Server.CompositionServiceFactory"}},"Microsoft.VisualStudio.ProjectSystem.ProjectInitializationStatusService":{"host":"dotnet.projectSystem","hostId":"C94B8CFE-E3FD-4BAF-A941-2866DBB566FE","serviceBaseDirectory":"/Users/MacBook/.vscode/extensions/ms-dotnettools.csdevkit-1.16.6-darwin-arm64/components/CPS/platforms/darwin-arm64/node_modules/@microsoft/visualstudio-projectsystem-server.darwin-arm64","entryPoint":{"assemblyPath":"/Users/MacBook/.vscode/extensions/ms-dotnettools.csdevkit-1.16.6-darwin-arm64/components/CPS/platforms/darwin-arm64/node_modules/@microsoft/visualstudio-projectsystem-server.darwin-arm64/Microsoft.VisualStudio.ProjectSystem.Server.Implementation.dll","fullClassName":"Microsoft.VisualStudio.ProjectSystem.Server.ProjectInitializationStatusServiceFactory"}},"Microsoft.VisualStudio.ProjectSystem.ProjectTreeProvider":{"host":"dotnet.projectSystem","hostId":"C94B8CFE-E3FD-4BAF-A941-2866DBB566FE","serviceBaseDirectory":"/Users/MacBook/.vscode/extensions/ms-dotnettools.csdevkit-1.16.6-darwin-arm64/components/CPS/platforms/darwin-arm64/node_modules/@microsoft/visualstudio-projectsystem-server.darwin-arm64","entryPoint":{"assemblyPath":"/Users/MacBook/.vscode/extensions/ms-dotnettools.csdevkit-1.16.6-darwin-arm64/components/CPS/platforms/darwin-arm64/node_modules/@microsoft/visualstudio-projectsystem-server.darwin-arm64/Microsoft.VisualStudio.ProjectSystem.Server.Implementation.dll","fullClassName":"Microsoft.VisualStudio.ProjectSystem.Server.ProjectTreeProviderFactory"}},"Microsoft.VisualStudio.ProjectSystem.Query.Remoting.QueryExecutionService":{"host":"dotnet.projectSystem","hostId":"C94B8CFE-E3FD-4BAF-A941-2866DBB566FE","serviceBaseDirectory":"/Users/MacBook/.vscode/extensions/ms-dotnettools.csdevkit-1.16.6-darwin-arm64/components/CPS/platforms/darwin-arm64/node_modules/@microsoft/visualstudio-projectsystem-server.darwin-arm64","entryPoint":{"assemblyPath":"/Users/MacBook/.vscode/extensions/ms-dotnettools.csdevkit-1.16.6-darwin-arm64/components/CPS/platforms/darwin-arm64/node_modules/@microsoft/visualstudio-projectsystem-server.darwin-arm64/Microsoft.VisualStudio.ProjectSystem.Server.Implementation.dll","fullClassName":"Microsoft.VisualStudio.ProjectSystem.Server.QueryExecutionServiceFactory"}},"Microsoft.VisualStudio.Debugger.AspireSessionSynchronizeService":{"host":"dotnet","hostId":"C94B8CFE-E3FD-4BAF-A941-2866DBB566FE","serviceBaseDirectory":"/Users/MacBook/.vscode/extensions/ms-dotnettools.csdevkit-1.16.6-darwin-arm64/components/VSDebugCore/platforms/darwin-arm64/node_modules/@microsoft/visualstudio-debugger-devkit.darwin-arm64","entryPoint":{"assemblyPath":"/Users/MacBook/.vscode/extensions/ms-dotnettools.csdevkit-1.16.6-darwin-arm64/components/VSDebugCore/platforms/darwin-arm64/node_modules/@microsoft/visualstudio-debugger-devkit.darwin-arm64/Microsoft.VisualStudio.Debugger.DevKit.dll","fullClassName":"Microsoft.VisualStudio.Debugger.AspireSessionSynchronizeService+Factory"}},"Microsoft.VisualStudio.Debugger.GenericHotReloadAgentManagerService":{"host":"dotnet","hostId":"C94B8CFE-E3FD-4BAF-A941-2866DBB566FE","serviceBaseDirectory":"/Users/MacBook/.vscode/extensions/ms-dotnettools.csdevkit-1.16.6-darwin-arm64/components/VSDebugCore/platforms/darwin-arm64/node_modules/@microsoft/visualstudio-debugger-devkit.darwin-arm64","entryPoint":{"assemblyPath":"/Users/MacBook/.vscode/extensions/ms-dotnettools.csdevkit-1.16.6-darwin-arm64/components/VSDebugCore/platforms/darwin-arm64/node_modules/@microsoft/visualstudio-debugger-devkit.darwin-arm64/Microsoft.VisualStudio.Debugger.DevKit.dll","fullClassName":"Microsoft.VisualStudio.Debugger.GenericHotReloadAgentManagerService+Factory"}},"Microsoft.VisualStudio.Debugger.HotReloadClientService":{"host":"dotnet","hostId":"C94B8CFE-E3FD-4BAF-A941-2866DBB566FE","serviceBaseDirectory":"/Users/MacBook/.vscode/extensions/ms-dotnettools.csdevkit-1.16.6-darwin-arm64/components/VSDebugCore/platforms/darwin-arm64/node_modules/@microsoft/visualstudio-debugger-devkit.darwin-arm64","entryPoint":{"assemblyPath":"/Users/MacBook/.vscode/extensions/ms-dotnettools.csdevkit-1.16.6-darwin-arm64/components/VSDebugCore/platforms/darwin-arm64/node_modules/@microsoft/visualstudio-debugger-devkit.darwin-arm64/Microsoft.VisualStudio.Debugger.DevKit.dll","fullClassName":"Microsoft.VisualStudio.Debugger.HotReloadClientService+Factory"}},"Microsoft.VisualStudio.Debugger.HotReloadSessionNotificationService":{"host":"dotnet","hostId":"C94B8CFE-E3FD-4BAF-A941-2866DBB566FE","serviceBaseDirectory":"/Users/MacBook/.vscode/extensions/ms-dotnettools.csdevkit-1.16.6-darwin-arm64/components/VSDebugCore/platforms/darwin-arm64/node_modules/@microsoft/visualstudio-debugger-devkit.darwin-arm64","entryPoint":{"assemblyPath":"/Users/MacBook/.vscode/extensions/ms-dotnettools.csdevkit-1.16.6-darwin-arm64/components/VSDebugCore/platforms/darwin-arm64/node_modules/@microsoft/visualstudio-debugger-devkit.darwin-arm64/Microsoft.VisualStudio.Debugger.DevKit.dll","fullClassName":"Microsoft.VisualStudio.Debugger.HotReloadSessionNotificationService+Factory"}},"Microsoft.VisualStudio.Debugger.ManagedEditAndContinueCsDevKitEngineService2":{"host":"dotnet","hostId":"C94B8CFE-E3FD-4BAF-A941-2866DBB566FE","serviceBaseDirectory":"/Users/MacBook/.vscode/extensions/ms-dotnettools.csdevkit-1.16.6-darwin-arm64/components/VSDebugCore/platforms/darwin-arm64/node_modules/@microsoft/visualstudio-debugger-devkit.darwin-arm64","entryPoint":{"assemblyPath":"/Users/MacBook/.vscode/extensions/ms-dotnettools.csdevkit-1.16.6-darwin-arm64/components/VSDebugCore/platforms/darwin-arm64/node_modules/@microsoft/visualstudio-debugger-devkit.darwin-arm64/Microsoft.VisualStudio.Debugger.DevKit.dll","fullClassName":"Microsoft.VisualStudio.Debugger.ManagedEditAndContinueCsDevKitEngineService+Factory"}},"Microsoft.VisualStudio.Debugger.ManagedEditAndContinueRemoteDebuggerService2":{"host":"dotnet","hostId":"C94B8CFE-E3FD-4BAF-A941-2866DBB566FE","serviceBaseDirectory":"/Users/MacBook/.vscode/extensions/ms-dotnettools.csdevkit-1.16.6-darwin-arm64/components/VSDebugCore/platforms/darwin-arm64/node_modules/@microsoft/visualstudio-debugger-devkit.darwin-arm64","entryPoint":{"assemblyPath":"/Users/MacBook/.vscode/extensions/ms-dotnettools.csdevkit-1.16.6-darwin-arm64/components/VSDebugCore/platforms/darwin-arm64/node_modules/@microsoft/visualstudio-debugger-devkit.darwin-arm64/Microsoft.VisualStudio.Debugger.DevKit.dll","fullClassName":"Microsoft.VisualStudio.Debugger.ManagedEditAndContinueRemoteDebuggerService+Factory"}},"Microsoft.VisualStudio.Debugger.ManagedHotReloadAgentManagerService":{"host":"dotnet","hostId":"C94B8CFE-E3FD-4BAF-A941-2866DBB566FE","serviceBaseDirectory":"/Users/MacBook/.vscode/extensions/ms-dotnettools.csdevkit-1.16.6-darwin-arm64/components/VSDebugCore/platforms/darwin-arm64/node_modules/@microsoft/visualstudio-debugger-devkit.darwin-arm64","entryPoint":{"assemblyPath":"/Users/MacBook/.vscode/extensions/ms-dotnettools.csdevkit-1.16.6-darwin-arm64/components/VSDebugCore/platforms/darwin-arm64/node_modules/@microsoft/visualstudio-debugger-devkit.darwin-arm64/Microsoft.VisualStudio.Debugger.DevKit.dll","fullClassName":"Microsoft.VisualStudio.Debugger.ManagedHotReloadAgentManagerService+Factory"}},"Microsoft.VisualStudio.Debugger.ManagedHotReloadService":{"host":"dotnet","hostId":"C94B8CFE-E3FD-4BAF-A941-2866DBB566FE","serviceBaseDirectory":"/Users/MacBook/.vscode/extensions/ms-dotnettools.csdevkit-1.16.6-darwin-arm64/components/VSDebugCore/platforms/darwin-arm64/node_modules/@microsoft/visualstudio-debugger-devkit.darwin-arm64","entryPoint":{"assemblyPath":"/Users/MacBook/.vscode/extensions/ms-dotnettools.csdevkit-1.16.6-darwin-arm64/components/VSDebugCore/platforms/darwin-arm64/node_modules/@microsoft/visualstudio-debugger-devkit.darwin-arm64/Microsoft.VisualStudio.Debugger.DevKit.dll","fullClassName":"Microsoft.VisualStudio.Debugger.ManagedHotReloadService+Factory"}},"Microsoft.VisualStudio.Debugger.SourceLinkService":{"host":"dotnet","hostId":"C94B8CFE-E3FD-4BAF-A941-2866DBB566FE","serviceBaseDirectory":"/Users/MacBook/.vscode/extensions/ms-dotnettools.csdevkit-1.16.6-darwin-arm64/components/VSDebugCore/platforms/darwin-arm64/node_modules/@microsoft/visualstudio-debugger-devkit.darwin-arm64","entryPoint":{"assemblyPath":"/Users/MacBook/.vscode/extensions/ms-dotnettools.csdevkit-1.16.6-darwin-arm64/components/VSDebugCore/platforms/darwin-arm64/node_modules/@microsoft/visualstudio-debugger-devkit.darwin-arm64/Microsoft.VisualStudio.Debugger.DevKit.dll","fullClassName":"Microsoft.VisualStudio.Debugger.SourceLinkService+Factory"}},"Microsoft.VisualStudio.Debugger.SymbolLocatorService":{"host":"dotnet","hostId":"C94B8CFE-E3FD-4BAF-A941-2866DBB566FE","serviceBaseDirectory":"/Users/MacBook/.vscode/extensions/ms-dotnettools.csdevkit-1.16.6-darwin-arm64/components/VSDebugCore/platforms/darwin-arm64/node_modules/@microsoft/visualstudio-debugger-devkit.darwin-arm64","entryPoint":{"assemblyPath":"/Users/MacBook/.vscode/extensions/ms-dotnettools.csdevkit-1.16.6-darwin-arm64/components/VSDebugCore/platforms/darwin-arm64/node_modules/@microsoft/visualstudio-debugger-devkit.darwin-arm64/Microsoft.VisualStudio.Debugger.DevKit.dll","fullClassName":"Microsoft.VisualStudio.Debugger.BrokeredServices.SymbolLocator.SymbolLocatorService+Factory"}},"Microsoft.VisualStudio.TestWindow.VSCode.ProjectSystemProvider.Service":{"host":"dotnet","hostId":"C94B8CFE-E3FD-4BAF-A941-2866DBB566FE","serviceBaseDirectory":"/Users/MacBook/.vscode/extensions/ms-dotnettools.csdevkit-1.16.6-darwin-arm64/components/VSUnitTesting/platforms/darwin-arm64/node_modules/@microsoft/visualstudio-testwindow-vscode-service.darwin-arm64","entryPoint":{"assemblyPath":"/Users/MacBook/.vscode/extensions/ms-dotnettools.csdevkit-1.16.6-darwin-arm64/components/VSUnitTesting/platforms/darwin-arm64/node_modules/@microsoft/visualstudio-testwindow-vscode-service.darwin-arm64/Microsoft.VisualStudio.TestWindow.VSCode.Service.dll","fullClassName":"Microsoft.VisualStudio.TestWindow.VSCode.ProjectSystemProvider.Service.ProjectSystemProviderServiceFactory"}},"Microsoft.VisualStudio.TestWindow.VSCode.Service":{"host":"dotnet","hostId":"C94B8CFE-E3FD-4BAF-A941-2866DBB566FE","serviceBaseDirectory":"/Users/MacBook/.vscode/extensions/ms-dotnettools.csdevkit-1.16.6-darwin-arm64/components/VSUnitTesting/platforms/darwin-arm64/node_modules/@microsoft/visualstudio-testwindow-vscode-service.darwin-arm64","entryPoint":{"assemblyPath":"/Users/MacBook/.vscode/extensions/ms-dotnettools.csdevkit-1.16.6-darwin-arm64/components/VSUnitTesting/platforms/darwin-arm64/node_modules/@microsoft/visualstudio-testwindow-vscode-service.darwin-arm64/Microsoft.VisualStudio.TestWindow.VSCode.Service.dll","fullClassName":"Microsoft.VisualStudio.TestWindow.VSCode.Service.TestWindowVSCodeServiceFactory"}},"Microsoft.VisualStudio.AspireServer":{"host":"dotnet.aspireServer","hostId":"C94B8CFE-E3FD-4BAF-A941-2866DBB566FE","serviceBaseDirectory":"/Users/MacBook/.vscode/extensions/ms-dotnettools.csdevkit-1.16.6-darwin-arm64/components/WebTools/node_modules/@microsoft/vscode.webtools/Services","entryPoint":{"assemblyPath":"/Users/MacBook/.vscode/extensions/ms-dotnettools.csdevkit-1.16.6-darwin-arm64/components/WebTools/node_modules/@microsoft/vscode.webtools/Services/Microsoft.WebTools.AspireServer.dll","fullClassName":"Microsoft.WebTools.AspireServer.ServiceFactory"}},"Microsoft.VisualStudio.Debugger.AspireService":{"host":"dotnet.projectSystem","hostId":"C94B8CFE-E3FD-4BAF-A941-2866DBB566FE","serviceBaseDirectory":"/Users/MacBook/.vscode/extensions/ms-dotnettools.csdevkit-1.16.6-darwin-arm64/components/WebTools/node_modules/@microsoft/vscode.webtools/Services","entryPoint":{"assemblyPath":"/Users/MacBook/.vscode/extensions/ms-dotnettools.csdevkit-1.16.6-darwin-arm64/components/WebTools/node_modules/@microsoft/vscode.webtools/Services/Microsoft.WebTools.Aspire.VSCode.Services.dll","fullClassName":"Microsoft.WebTools.Aspire.VSCode.Services.ServiceFactory"},"friendServices":["Microsoft.VisualStudio.ProjectSystem.CompositionService"]},"Microsoft.VisualStudio.ProjectSystem.DebugTargetFrameworkService":{"host":"dotnet.projectSystem","hostId":"C94B8CFE-E3FD-4BAF-A941-2866DBB566FE","serviceBaseDirectory":"/Users/MacBook/.vscode/extensions/ms-dotnettools.csdevkit-1.16.6-darwin-arm64/components/dotnet-project-system-vscode/node_modules/@microsoft/vscode.projectsystem.managed/Services","entryPoint":{"assemblyPath":"/Users/MacBook/.vscode/extensions/ms-dotnettools.csdevkit-1.16.6-darwin-arm64/components/dotnet-project-system-vscode/node_modules/@microsoft/vscode.projectsystem.managed/Services/Microsoft.ProjectSystem.Managed.VSCode.Services.dll","fullClassName":"Microsoft.VisualStudio.ProjectSystem.Services.DebugTargetFrameworkServiceFactory"},"friendServices":["Microsoft.VisualStudio.ProjectSystem.CompositionService"]},"Microsoft.VisualStudio.ProjectQueryTestService":{"host":"dotnet","hostId":"C94B8CFE-E3FD-4BAF-A941-2866DBB566FE","serviceBaseDirectory":"/Users/MacBook/.vscode/extensions/ms-dotnettools.csdevkit-1.16.6-darwin-arm64/components/vs-green-server/platforms/darwin-arm64/node_modules/@microsoft/visualstudio-server-samples-sayhello.darwin-arm64","entryPoint":{"assemblyPath":"/Users/MacBook/.vscode/extensions/ms-dotnettools.csdevkit-1.16.6-darwin-arm64/components/vs-green-server/platforms/darwin-arm64/node_modules/@microsoft/visualstudio-server-samples-sayhello.darwin-arm64/Microsoft.VisualStudio.Samples.SayHello.dll","fullClassName":"Microsoft.VisualStudio.Samples.SayHello.ProjectQueryTestServiceFactory"}},"helloServiceHubDotNetHost":{"host":"dotnet","hostId":"C94B8CFE-E3FD-4BAF-A941-2866DBB566FE","serviceBaseDirectory":"/Users/MacBook/.vscode/extensions/ms-dotnettools.csdevkit-1.16.6-darwin-arm64/components/vs-green-server/platforms/darwin-arm64/node_modules/@microsoft/visualstudio-server-samples-sayhello.darwin-arm64","entryPoint":{"assemblyPath":"/Users/MacBook/.vscode/extensions/ms-dotnettools.csdevkit-1.16.6-darwin-arm64/components/vs-green-server/platforms/darwin-arm64/node_modules/@microsoft/visualstudio-server-samples-sayhello.darwin-arm64/Microsoft.VisualStudio.Samples.SayHello.dll","fullClassName":"Microsoft.VisualStudio.Samples.SayHello.HelloWorldFactory"}}}]}
+03/24/2025 09:39:29 Mitteleuropäische Normalzeit : Information : VsHubClient-hubController read: Content-Length: 38
+
+{"jsonrpc":"2.0","id":3,"result":null}
+03/24/2025 09:39:29 Mitteleuropäische Normalzeit : Information : VsHubClient-hubController write: Content-Length: 342
+
+{"jsonrpc":"2.0","id":3,"method":"requestServiceChannel","params":[{"Name":"Microsoft.VisualStudio.TestWindow.VSCode.Service","Version":"0.1"},{"ActivationArguments":{"__servicehub__ServiceHubRemoteServiceBrokerPipeName":"/Users/MacBook/.ServiceHub/435df75909/26b39d80d1"},"ClientCredentials":{},"ClientCulture":"de","ClientUICulture":"de"}]}
+03/24/2025 09:39:29 Mitteleuropäische Normalzeit : Information : VsHubClient-hubController write: Content-Length: 350
+
+{"jsonrpc":"2.0","id":5,"method":"requestServiceChannel","params":[{"Name":"Microsoft.VisualStudio.ProjectSystem.ProjectTreeProvider","Version":"0.1"},{"ActivationArguments":{"__servicehub__ServiceHubRemoteServiceBrokerPipeName":"/Users/MacBook/.ServiceHub/435df75909/6d04f0bfe3"},"ClientCredentials":{},"ClientCulture":"de","ClientUICulture":"de"}]}
+03/24/2025 09:39:29 Mitteleuropäische Normalzeit : Information : VsHubClient-hubController write: Content-Length: 327
+
+{"jsonrpc":"2.0","id":4,"method":"requestServiceChannel","params":[{"Name":"Microsoft.VisualStudio.LaunchConfigurationService"},{"ActivationArguments":{"__servicehub__ServiceHubRemoteServiceBrokerPipeName":"/Users/MacBook/.ServiceHub/435df75909/82e485b04a"},"ClientCredentials":{},"ClientCulture":"de","ClientUICulture":"de"}]}
+03/24/2025 09:39:29 Mitteleuropäische Normalzeit : Information : VsHubClient-hubController write: Content-Length: 367
+
+{"jsonrpc":"2.0","id":6,"method":"requestServiceChannel","params":[{"Name":"Microsoft.VisualStudio.Debugger.HotReloadSessionNotificationService","Version":"0.1"},{"ActivationArguments":{"__servicehub__ServiceHubRemoteServiceBrokerPipeName":"/Users/MacBook/.ServiceHub/435df75909/4cfc5e9a39"},"ClientCredentials":{},"ClientCulture":"de-AT","ClientUICulture":"en-US"}]}
+03/24/2025 09:39:29 Mitteleuropäische Normalzeit : Information : VsHubClient-hubController write: Content-Length: 365
+
+{"jsonrpc":"2.0","id":7,"method":"requestServiceChannel","params":[{"Name":"Microsoft.VisualStudio.ProjectSystem.ProjectInitializationStatusService","Version":"0.1"},{"ActivationArguments":{"__servicehub__ServiceHubRemoteServiceBrokerPipeName":"/Users/MacBook/.ServiceHub/435df75909/1ca2737a17"},"ClientCredentials":{},"ClientCulture":"de","ClientUICulture":"de"}]}
+03/24/2025 09:39:30 Mitteleuropäische Normalzeit : Information : VsHubClient-hubController read: Content-Length: 164
+
+{"jsonrpc":"2.0","id":3,"result":{"RequestId":"4dc83ae2-79e0-4787-999f-daec4aebebd5","PipeName":"/Users/MacBook/.ServiceHub/435df75909/41fe350e82","IsEmpty":false}}Content-Length: 164
+
+{"jsonrpc":"2.0","id":6,"result":{"RequestId":"b44a2dba-7ae0-47d6-a6e3-186d95551963","PipeName":"/Users/MacBook/.ServiceHub/435df75909/5b803ea30d","IsEmpty":false}}
+03/24/2025 09:39:30 Mitteleuropäische Normalzeit : Information : Disposing ServiceBroker server '/Users/MacBook/.ServiceHub/435df75909/26b39d80d1'.
+03/24/2025 09:39:30 Mitteleuropäische Normalzeit : Information : Disposing ServiceBroker server '/Users/MacBook/.ServiceHub/435df75909/4cfc5e9a39'.
+03/24/2025 09:39:31 Mitteleuropäische Normalzeit : Information : Microsoft.VisualStudio.Debugger.HotReloadSessionNotificationService-RemoteServiceBrokerServer read: Content-Length: 194
+
+{"jsonrpc":"2.0","id":2,"method":"handshake","params":[{"supportedConnections":"IpcPipe","localServiceHost":{"operatingSystem":2,"processArchitecture":3,"runtime":2,"runtimeVersion":"8.0.11"}}]}
+03/24/2025 09:39:31 Mitteleuropäische Normalzeit : Information : Microsoft.VisualStudio.TestWindow.VSCode.Service-RemoteServiceBrokerServer read: Content-Length: 194
+
+{"jsonrpc":"2.0","id":2,"method":"handshake","params":[{"supportedConnections":"IpcPipe","localServiceHost":{"operatingSystem":2,"processArchitecture":3,"runtime":2,"runtimeVersion":"8.0.11"}}]}
+03/24/2025 09:39:31 Mitteleuropäische Normalzeit : Information : Microsoft.VisualStudio.Debugger.HotReloadSessionNotificationService-RemoteServiceBrokerServer write: Content-Length: 38
+
+{"jsonrpc":"2.0","id":2,"result":null}
+03/24/2025 09:39:31 Mitteleuropäische Normalzeit : Information : Microsoft.VisualStudio.TestWindow.VSCode.Service-RemoteServiceBrokerServer write: Content-Length: 38
+
+{"jsonrpc":"2.0","id":2,"result":null}
+03/24/2025 09:39:31 Mitteleuropäische Normalzeit : Information : Microsoft.VisualStudio.TestWindow.VSCode.Service-RemoteServiceBrokerServer read: Content-Length: 177
+
+{"jsonrpc":"2.0","id":3,"method":"requestServiceChannel","params":[{"name":"Microsoft.ServiceHub.Framework.AuthorizationService"},{"clientCulture":"de","clientUICulture":"de"}]}
+03/24/2025 09:39:31 Mitteleuropäische Normalzeit : Information : Microsoft.VisualStudio.Debugger.HotReloadSessionNotificationService-RemoteServiceBrokerServer read: Content-Length: 183
+
+{"jsonrpc":"2.0","id":3,"method":"requestServiceChannel","params":[{"name":"Microsoft.ServiceHub.Framework.AuthorizationService"},{"clientCulture":"de-AT","clientUICulture":"en-US"}]}
+03/24/2025 09:39:31 Mitteleuropäische Normalzeit : Information : Microsoft.VisualStudio.Debugger.HotReloadSessionNotificationService-RemoteServiceBrokerServer write: Content-Length: 181
+
+{"jsonrpc":"2.0","id":3,"result":{"requestId":"631fb679-b086-4847-9139-a3574592a584","pipeName":"/var/folders/3l/2l1z4wws21v3mv848wtg85jc0000gn/T/709f66df19654168943164eaa72ad275"}}
+03/24/2025 09:39:31 Mitteleuropäische Normalzeit : Information : Microsoft.VisualStudio.TestWindow.VSCode.Service-RemoteServiceBrokerServer write: Content-Length: 181
+
+{"jsonrpc":"2.0","id":3,"result":{"requestId":"f4fda8a0-5e76-4fd4-90b5-204c68cb3064","pipeName":"/var/folders/3l/2l1z4wws21v3mv848wtg85jc0000gn/T/ed71ec16fada4bb5bc7d4054023bf6f5"}}
+03/24/2025 09:39:31 Mitteleuropäische Normalzeit : Information : VsHubClient-hubController read: Content-Length: 164
+
+{"jsonrpc":"2.0","id":7,"result":{"RequestId":"5b602879-95eb-49de-8869-0fca23b44325","PipeName":"/Users/MacBook/.ServiceHub/435df75909/17027498cd","IsEmpty":false}}
+03/24/2025 09:39:31 Mitteleuropäische Normalzeit : Information : VsHubClient-hubController read: Content-Length: 164
+
+{"jsonrpc":"2.0","id":5,"result":{"RequestId":"d4a13e1b-39ca-495f-8002-cf8685d72c82","PipeName":"/Users/MacBook/.ServiceHub/435df75909/019d9367ea","IsEmpty":false}}Content-Length: 164
+
+{"jsonrpc":"2.0","id":4,"result":{"RequestId":"1b2888ae-3e60-4330-a27d-0bdd6d365e83","PipeName":"/Users/MacBook/.ServiceHub/435df75909/86cd92abc5","IsEmpty":false}}
+03/24/2025 09:39:31 Mitteleuropäische Normalzeit : Information : VsHubClient-hubController write: Content-Length: 364
+
+{"jsonrpc":"2.0","id":8,"method":"requestServiceChannel","params":[{"Name":"Microsoft.VisualStudio.TestWindow.VSCode.ProjectSystemProvider.Service","Version":"0.1"},{"ActivationArguments":{"__servicehub__ServiceHubRemoteServiceBrokerPipeName":"/Users/MacBook/.ServiceHub/435df75909/99fb7b0c39"},"ClientCredentials":{},"ClientCulture":"de","ClientUICulture":"de"}]}
+03/24/2025 09:39:31 Mitteleuropäische Normalzeit : Information : VsHubClient-hubController read: Content-Length: 164
+
+{"jsonrpc":"2.0","id":8,"result":{"RequestId":"48d06ff9-38f2-47f1-9303-dec35aba9374","PipeName":"/Users/MacBook/.ServiceHub/435df75909/076c81af19","IsEmpty":false}}
+03/24/2025 09:39:31 Mitteleuropäische Normalzeit : Information : Disposing ServiceBroker server '/Users/MacBook/.ServiceHub/435df75909/99fb7b0c39'.
+03/24/2025 09:39:31 Mitteleuropäische Normalzeit : Information : Microsoft.VisualStudio.TestWindow.VSCode.ProjectSystemProvider.Service-RemoteServiceBrokerServer read: Content-Length: 194
+
+{"jsonrpc":"2.0","id":2,"method":"handshake","params":[{"supportedConnections":"IpcPipe","localServiceHost":{"operatingSystem":2,"processArchitecture":3,"runtime":2,"runtimeVersion":"8.0.11"}}]}
+03/24/2025 09:39:31 Mitteleuropäische Normalzeit : Information : Microsoft.VisualStudio.TestWindow.VSCode.ProjectSystemProvider.Service-RemoteServiceBrokerServer write: Content-Length: 38
+
+{"jsonrpc":"2.0","id":2,"result":null}
+03/24/2025 09:39:31 Mitteleuropäische Normalzeit : Information : Disposing ServiceBroker server '/Users/MacBook/.ServiceHub/435df75909/6d04f0bfe3'.
+03/24/2025 09:39:31 Mitteleuropäische Normalzeit : Information : Disposing ServiceBroker server '/Users/MacBook/.ServiceHub/435df75909/82e485b04a'.
+03/24/2025 09:39:32 Mitteleuropäische Normalzeit : Information : Disposing ServiceBroker server '/Users/MacBook/.ServiceHub/435df75909/1ca2737a17'.
+03/24/2025 09:39:32 Mitteleuropäische Normalzeit : Information : Microsoft.VisualStudio.TestWindow.VSCode.ProjectSystemProvider.Service-RemoteServiceBrokerServer read: Content-Length: 177
+
+{"jsonrpc":"2.0","id":3,"method":"requestServiceChannel","params":[{"name":"Microsoft.ServiceHub.Framework.AuthorizationService"},{"clientCulture":"de","clientUICulture":"de"}]}
+03/24/2025 09:39:32 Mitteleuropäische Normalzeit : Information : Microsoft.VisualStudio.TestWindow.VSCode.ProjectSystemProvider.Service-RemoteServiceBrokerServer write: Content-Length: 181
+
+{"jsonrpc":"2.0","id":3,"result":{"requestId":"dd724295-a1e1-41d3-b276-42e39efd0014","pipeName":"/var/folders/3l/2l1z4wws21v3mv848wtg85jc0000gn/T/e9c4d957d5dc4ed6a67df2eb3600b249"}}
+03/24/2025 09:39:32 Mitteleuropäische Normalzeit : Information : Microsoft.VisualStudio.TestWindow.VSCode.ProjectSystemProvider.Service-RemoteServiceBrokerServer read: Content-Length: 287
+
+{"jsonrpc":"2.0","id":4,"method":"requestServiceChannel","params":[{"name":"Microsoft.VisualStudio.ProjectSystem.Query.Remoting.QueryExecutionService","version":"0.3"},{"clientCulture":"de","clientUICulture":"de"}],"traceparent":"00-d0109c1cc01ff445964253e95e08cba9-a3ee07fb6ecede4f-00"}
+03/24/2025 09:39:32 Mitteleuropäische Normalzeit : Information : VsHubClient-hubController write: Content-Length: 367
+
+{"jsonrpc":"2.0","id":9,"method":"requestServiceChannel","params":[{"Name":"Microsoft.VisualStudio.ProjectSystem.Query.Remoting.QueryExecutionService","Version":"0.3"},{"ActivationArguments":{"__servicehub__ServiceHubRemoteServiceBrokerPipeName":"/Users/MacBook/.ServiceHub/435df75909/9511b15a8d"},"ClientCredentials":{},"ClientCulture":"de","ClientUICulture":"de"}]}
+03/24/2025 09:39:32 Mitteleuropäische Normalzeit : Information : VsHubClient-hubController read: Content-Length: 164
+
+{"jsonrpc":"2.0","id":9,"result":{"RequestId":"f4a23b11-5d1e-4fbd-b39b-9c2c5b2075d2","PipeName":"/Users/MacBook/.ServiceHub/435df75909/a68f5a7a03","IsEmpty":false}}
+03/24/2025 09:39:32 Mitteleuropäische Normalzeit : Information : Microsoft.VisualStudio.TestWindow.VSCode.ProjectSystemProvider.Service-RemoteServiceBrokerServer write: Content-Length: 148
+
+{"jsonrpc":"2.0","id":4,"result":{"requestId":"f4a23b11-5d1e-4fbd-b39b-9c2c5b2075d2","pipeName":"/Users/MacBook/.ServiceHub/435df75909/a68f5a7a03"}}
+03/24/2025 09:39:32 Mitteleuropäische Normalzeit : Information : Disposing ServiceBroker server '/Users/MacBook/.ServiceHub/435df75909/9511b15a8d'.
+03/24/2025 09:39:32 Mitteleuropäische Normalzeit : Information : Microsoft.VisualStudio.LaunchConfigurationService-RemoteServiceBrokerServer read: Content-Length: 193
+
+{"jsonrpc":"2.0","id":2,"method":"handshake","params":[{"supportedConnections":"IpcPipe","localServiceHost":{"operatingSystem":2,"processArchitecture":3,"runtime":2,"runtimeVersion":"9.0.1"}}]}
+03/24/2025 09:39:32 Mitteleuropäische Normalzeit : Information : Microsoft.VisualStudio.ProjectSystem.ProjectTreeProvider-RemoteServiceBrokerServer read: Content-Length: 193
+
+{"jsonrpc":"2.0","id":2,"method":"handshake","params":[{"supportedConnections":"IpcPipe","localServiceHost":{"operatingSystem":2,"processArchitecture":3,"runtime":2,"runtimeVersion":"9.0.1"}}]}
+03/24/2025 09:39:32 Mitteleuropäische Normalzeit : Information : Microsoft.VisualStudio.ProjectSystem.Query.Remoting.QueryExecutionService-RemoteServiceBrokerServer read: Content-Length: 193
+
+{"jsonrpc":"2.0","id":2,"method":"handshake","params":[{"supportedConnections":"IpcPipe","localServiceHost":{"operatingSystem":2,"processArchitecture":3,"runtime":2,"runtimeVersion":"9.0.1"}}]}
+03/24/2025 09:39:32 Mitteleuropäische Normalzeit : Information : Microsoft.VisualStudio.ProjectSystem.ProjectInitializationStatusService-RemoteServiceBrokerServer read: Content-Length: 193
+
+{"jsonrpc":"2.0","id":2,"method":"handshake","params":[{"supportedConnections":"IpcPipe","localServiceHost":{"operatingSystem":2,"processArchitecture":3,"runtime":2,"runtimeVersion":"9.0.1"}}]}
+03/24/2025 09:39:32 Mitteleuropäische Normalzeit : Information : Microsoft.VisualStudio.LaunchConfigurationService-RemoteServiceBrokerServer write: Content-Length: 38
+
+{"jsonrpc":"2.0","id":2,"result":null}
+03/24/2025 09:39:32 Mitteleuropäische Normalzeit : Information : Microsoft.VisualStudio.ProjectSystem.ProjectTreeProvider-RemoteServiceBrokerServer write: Content-Length: 38
+
+{"jsonrpc":"2.0","id":2,"result":null}
+03/24/2025 09:39:32 Mitteleuropäische Normalzeit : Information : Microsoft.VisualStudio.ProjectSystem.ProjectInitializationStatusService-RemoteServiceBrokerServer write: Content-Length: 38
+
+{"jsonrpc":"2.0","id":2,"result":null}
+03/24/2025 09:39:32 Mitteleuropäische Normalzeit : Information : Microsoft.VisualStudio.ProjectSystem.Query.Remoting.QueryExecutionService-RemoteServiceBrokerServer write: Content-Length: 38
+
+{"jsonrpc":"2.0","id":2,"result":null}
+03/24/2025 09:39:32 Mitteleuropäische Normalzeit : Information : Microsoft.VisualStudio.ProjectSystem.ProjectTreeProvider-RemoteServiceBrokerServer read: Content-Length: 177
+
+{"jsonrpc":"2.0","id":3,"method":"requestServiceChannel","params":[{"name":"Microsoft.ServiceHub.Framework.AuthorizationService"},{"clientCulture":"de","clientUICulture":"de"}]}
+03/24/2025 09:39:32 Mitteleuropäische Normalzeit : Information : Microsoft.VisualStudio.ProjectSystem.Query.Remoting.QueryExecutionService-RemoteServiceBrokerServer read: Content-Length: 177
+
+{"jsonrpc":"2.0","id":3,"method":"requestServiceChannel","params":[{"name":"Microsoft.ServiceHub.Framework.AuthorizationService"},{"clientCulture":"de","clientUICulture":"de"}]}
+03/24/2025 09:39:32 Mitteleuropäische Normalzeit : Information : Microsoft.VisualStudio.ProjectSystem.ProjectInitializationStatusService-RemoteServiceBrokerServer read: Content-Length: 177
+
+{"jsonrpc":"2.0","id":3,"method":"requestServiceChannel","params":[{"name":"Microsoft.ServiceHub.Framework.AuthorizationService"},{"clientCulture":"de","clientUICulture":"de"}]}
+03/24/2025 09:39:32 Mitteleuropäische Normalzeit : Information : Microsoft.VisualStudio.LaunchConfigurationService-RemoteServiceBrokerServer read: Content-Length: 177
+
+{"jsonrpc":"2.0","id":3,"method":"requestServiceChannel","params":[{"name":"Microsoft.ServiceHub.Framework.AuthorizationService"},{"clientCulture":"de","clientUICulture":"de"}]}
+03/24/2025 09:39:32 Mitteleuropäische Normalzeit : Information : Microsoft.VisualStudio.ProjectSystem.ProjectInitializationStatusService-RemoteServiceBrokerServer write: Content-Length: 181
+
+{"jsonrpc":"2.0","id":3,"result":{"requestId":"281cf087-c950-4733-99dd-ef4405516801","pipeName":"/var/folders/3l/2l1z4wws21v3mv848wtg85jc0000gn/T/243c2f8951ff4822ba251d9eadc5cca4"}}
+03/24/2025 09:39:32 Mitteleuropäische Normalzeit : Information : Microsoft.VisualStudio.ProjectSystem.ProjectTreeProvider-RemoteServiceBrokerServer write: Content-Length: 181
+
+{"jsonrpc":"2.0","id":3,"result":{"requestId":"fe026461-88a3-4769-bfd2-84121f8e5516","pipeName":"/var/folders/3l/2l1z4wws21v3mv848wtg85jc0000gn/T/160352584f5442269f2f5215bb139756"}}
+03/24/2025 09:39:32 Mitteleuropäische Normalzeit : Information : Microsoft.VisualStudio.LaunchConfigurationService-RemoteServiceBrokerServer write: Content-Length: 181
+
+{"jsonrpc":"2.0","id":3,"result":{"requestId":"1bb4f82f-6254-4b1f-a31d-5cb5a3f75b75","pipeName":"/var/folders/3l/2l1z4wws21v3mv848wtg85jc0000gn/T/7cc0150545964a4ba9e0db5d273640d2"}}
+03/24/2025 09:39:32 Mitteleuropäische Normalzeit : Information : Microsoft.VisualStudio.ProjectSystem.Query.Remoting.QueryExecutionService-RemoteServiceBrokerServer write: Content-Length: 181
+
+{"jsonrpc":"2.0","id":3,"result":{"requestId":"31019487-9fa2-40b3-806e-ebe10045189a","pipeName":"/var/folders/3l/2l1z4wws21v3mv848wtg85jc0000gn/T/4918e370cc13451587410fc9856d89ee"}}
+03/24/2025 09:39:32 Mitteleuropäische Normalzeit : Information : Microsoft.VisualStudio.ProjectSystem.ProjectInitializationStatusService-RemoteServiceBrokerServer read: Content-Length: 197
+
+{"jsonrpc":"2.0","id":4,"method":"requestServiceChannel","params":[{"name":"Microsoft.VisualStudio.ProjectSystem.CompositionService","version":"0.1"},{"clientCulture":"de","clientUICulture":"de"}]}
+03/24/2025 09:39:32 Mitteleuropäische Normalzeit : Information : VsHubClient-hubController write: Content-Length: 350
+
+{"jsonrpc":"2.0","id":10,"method":"requestServiceChannel","params":[{"Name":"Microsoft.VisualStudio.ProjectSystem.CompositionService","Version":"0.1"},{"ActivationArguments":{"__servicehub__ServiceHubRemoteServiceBrokerPipeName":"/Users/MacBook/.ServiceHub/435df75909/03cc4bf73c"},"ClientCredentials":{},"ClientCulture":"de","ClientUICulture":"de"}]}
+03/24/2025 09:39:32 Mitteleuropäische Normalzeit : Information : VsHubClient-hubController read: Content-Length: 165
+
+{"jsonrpc":"2.0","id":10,"result":{"RequestId":"9db38e3e-6fa0-4616-b131-420a9440260a","PipeName":"/Users/MacBook/.ServiceHub/435df75909/f3af6cf68b","IsEmpty":false}}
+03/24/2025 09:39:32 Mitteleuropäische Normalzeit : Information : Microsoft.VisualStudio.ProjectSystem.ProjectInitializationStatusService-RemoteServiceBrokerServer write: Content-Length: 148
+
+{"jsonrpc":"2.0","id":4,"result":{"requestId":"9db38e3e-6fa0-4616-b131-420a9440260a","pipeName":"/Users/MacBook/.ServiceHub/435df75909/f3af6cf68b"}}
+03/24/2025 09:39:32 Mitteleuropäische Normalzeit : Information : Disposing ServiceBroker server '/Users/MacBook/.ServiceHub/435df75909/03cc4bf73c'.
+03/24/2025 09:39:32 Mitteleuropäische Normalzeit : Information : Microsoft.VisualStudio.ProjectSystem.CompositionService-RemoteServiceBrokerServer read: Content-Length: 193
+
+{"jsonrpc":"2.0","id":2,"method":"handshake","params":[{"supportedConnections":"IpcPipe","localServiceHost":{"operatingSystem":2,"processArchitecture":3,"runtime":2,"runtimeVersion":"9.0.1"}}]}
+03/24/2025 09:39:32 Mitteleuropäische Normalzeit : Information : Microsoft.VisualStudio.ProjectSystem.CompositionService-RemoteServiceBrokerServer write: Content-Length: 38
+
+{"jsonrpc":"2.0","id":2,"result":null}
+03/24/2025 09:39:32 Mitteleuropäische Normalzeit : Information : Microsoft.VisualStudio.ProjectSystem.CompositionService-RemoteServiceBrokerServer read: Content-Length: 177
+
+{"jsonrpc":"2.0","id":3,"method":"requestServiceChannel","params":[{"name":"Microsoft.ServiceHub.Framework.AuthorizationService"},{"clientCulture":"de","clientUICulture":"de"}]}
+03/24/2025 09:39:32 Mitteleuropäische Normalzeit : Information : Microsoft.VisualStudio.ProjectSystem.CompositionService-RemoteServiceBrokerServer write: Content-Length: 181
+
+{"jsonrpc":"2.0","id":3,"result":{"requestId":"5674cb9a-f1e2-4e3a-b23b-99288691b9c3","pipeName":"/var/folders/3l/2l1z4wws21v3mv848wtg85jc0000gn/T/dc6e34e37cbf4e8ab16037494be6a1ef"}}
+03/24/2025 09:39:32 Mitteleuropäische Normalzeit : Information : Microsoft.VisualStudio.ProjectSystem.CompositionService-RemoteServiceBrokerServer read: Content-Length: 191
+
+{"jsonrpc":"2.0","id":4,"method":"requestServiceChannel","params":[{"name":"Microsoft.VisualStudio.NoDelay.EnvironmentService","version":"0.1"},{"clientCulture":"de","clientUICulture":"de"}]}Content-Length: 188
+
+{"jsonrpc":"2.0","id":5,"method":"requestServiceChannel","params":[{"name":"Microsoft.VisualStudio.ComponentExportsService","version":"0.1"},{"clientCulture":"de","clientUICulture":"de"}]}
+03/24/2025 09:39:32 Mitteleuropäische Normalzeit : Information : Microsoft.VisualStudio.ProjectSystem.CompositionService-RemoteServiceBrokerServer write: Content-Length: 181
+
+{"jsonrpc":"2.0","id":4,"result":{"requestId":"a466dc46-8cd9-41d6-a674-f21cfa881a90","pipeName":"/var/folders/3l/2l1z4wws21v3mv848wtg85jc0000gn/T/339c29ff4b464256af241da59b30fd61"}}
+03/24/2025 09:39:32 Mitteleuropäische Normalzeit : Information : Microsoft.VisualStudio.ProjectSystem.CompositionService-RemoteServiceBrokerServer write: Content-Length: 181
+
+{"jsonrpc":"2.0","id":5,"result":{"requestId":"a822d24f-d650-4363-bf6d-f39d0d05521a","pipeName":"/var/folders/3l/2l1z4wws21v3mv848wtg85jc0000gn/T/a1619aedbe234814a37940abc97f86ee"}}
+03/24/2025 09:39:33 Mitteleuropäische Normalzeit : Information : Microsoft.VisualStudio.ProjectSystem.CompositionService-RemoteServiceBrokerServer read: Content-Length: 198
+
+{"jsonrpc":"2.0","id":6,"method":"requestServiceChannel","params":[{"name":"Microsoft.VisualStudio.ActiveDocumentsInformationService","version":"0.1"},{"clientCulture":"de","clientUICulture":"de"}]}
+03/24/2025 09:39:33 Mitteleuropäische Normalzeit : Information : Microsoft.VisualStudio.ProjectSystem.CompositionService-RemoteServiceBrokerServer write: Content-Length: 181
+
+{"jsonrpc":"2.0","id":6,"result":{"requestId":"490f7e04-c417-4bd1-8d8f-dcfc48220c56","pipeName":"/var/folders/3l/2l1z4wws21v3mv848wtg85jc0000gn/T/cdc5765aa12b4d8c9c27a68933b7bfe2"}}
+03/24/2025 09:39:33 Mitteleuropäische Normalzeit : Information : Microsoft.VisualStudio.ProjectSystem.CompositionService-RemoteServiceBrokerServer read: Content-Length: 236
+
+{"jsonrpc":"2.0","id":7,"method":"requestServiceChannel","params":[{"name":"Microsoft.VisualStudio.NuGetSolutionRestoreService","version":"0.1"},{"activationArguments":{"needEvents":"True"},"clientCulture":"de","clientUICulture":"de"}]}
+03/24/2025 09:39:33 Mitteleuropäische Normalzeit : Information : Microsoft.VisualStudio.ProjectSystem.CompositionService-RemoteServiceBrokerServer write: Content-Length: 181
+
+{"jsonrpc":"2.0","id":7,"result":{"requestId":"41346b1d-a43a-4ced-b342-1a54e91c5694","pipeName":"/var/folders/3l/2l1z4wws21v3mv848wtg85jc0000gn/T/a2ec907f217d4cbdb77304e117e4f206"}}
+03/24/2025 09:39:33 Mitteleuropäische Normalzeit : Information : Microsoft.VisualStudio.ProjectSystem.CompositionService-RemoteServiceBrokerServer read: Content-Length: 264
+
+{"jsonrpc":"2.0","id":8,"method":"requestServiceChannel","params":[{"name":"Microsoft.VisualStudio.CpsProjectIconSourceService","version":"0.1"},{"clientCulture":"de","clientUICulture":"de"}],"traceparent":"00-f061503cc9b05449aa96fe2ade14dc23-9dde671735e91841-00"}
+03/24/2025 09:39:33 Mitteleuropäische Normalzeit : Information : VsHubClient-hubController write: Content-Length: 345
+
+{"jsonrpc":"2.0","id":11,"method":"requestServiceChannel","params":[{"Name":"Microsoft.VisualStudio.CpsProjectIconSourceService","Version":"0.1"},{"ActivationArguments":{"__servicehub__ServiceHubRemoteServiceBrokerPipeName":"/Users/MacBook/.ServiceHub/435df75909/1888d254c7"},"ClientCredentials":{},"ClientCulture":"de","ClientUICulture":"de"}]}
+03/24/2025 09:39:33 Mitteleuropäische Normalzeit : Information : VsHubClient-hubController read: Content-Length: 165
+
+{"jsonrpc":"2.0","id":11,"result":{"RequestId":"06739689-d592-4a3f-ad1f-43cf3ffb6e21","PipeName":"/Users/MacBook/.ServiceHub/435df75909/c803595bb0","IsEmpty":false}}
+03/24/2025 09:39:33 Mitteleuropäische Normalzeit : Information : Microsoft.VisualStudio.ProjectSystem.CompositionService-RemoteServiceBrokerServer write: Content-Length: 148
+
+{"jsonrpc":"2.0","id":8,"result":{"requestId":"06739689-d592-4a3f-ad1f-43cf3ffb6e21","pipeName":"/Users/MacBook/.ServiceHub/435df75909/c803595bb0"}}
+03/24/2025 09:39:33 Mitteleuropäische Normalzeit : Information : Disposing ServiceBroker server '/Users/MacBook/.ServiceHub/435df75909/1888d254c7'.
+03/24/2025 09:39:33 Mitteleuropäische Normalzeit : Information : Microsoft.VisualStudio.CpsProjectIconSourceService-RemoteServiceBrokerServer read: Content-Length: 193
+
+{"jsonrpc":"2.0","id":2,"method":"handshake","params":[{"supportedConnections":"IpcPipe","localServiceHost":{"operatingSystem":2,"processArchitecture":3,"runtime":2,"runtimeVersion":"9.0.1"}}]}
+03/24/2025 09:39:33 Mitteleuropäische Normalzeit : Information : Microsoft.VisualStudio.CpsProjectIconSourceService-RemoteServiceBrokerServer write: Content-Length: 38
+
+{"jsonrpc":"2.0","id":2,"result":null}
+03/24/2025 09:39:33 Mitteleuropäische Normalzeit : Information : Microsoft.VisualStudio.CpsProjectIconSourceService-RemoteServiceBrokerServer read: Content-Length: 177
+
+{"jsonrpc":"2.0","id":3,"method":"requestServiceChannel","params":[{"name":"Microsoft.ServiceHub.Framework.AuthorizationService"},{"clientCulture":"de","clientUICulture":"de"}]}
+03/24/2025 09:39:33 Mitteleuropäische Normalzeit : Information : Microsoft.VisualStudio.CpsProjectIconSourceService-RemoteServiceBrokerServer write: Content-Length: 181
+
+{"jsonrpc":"2.0","id":3,"result":{"requestId":"9f65f6a4-68bc-43dd-bb9c-3af5ef195eea","pipeName":"/var/folders/3l/2l1z4wws21v3mv848wtg85jc0000gn/T/c60e9ecd4d4e47f3850fc7f7d891f99e"}}
+03/24/2025 09:39:35 Mitteleuropäische Normalzeit : Information : Microsoft.VisualStudio.ProjectSystem.CompositionService-RemoteServiceBrokerServer read: Content-Length: 191
+
+{"jsonrpc":"2.0","id":9,"method":"requestServiceChannel","params":[{"name":"Microsoft.VisualStudio.NoDelay.EnvironmentService","version":"0.1"},{"clientCulture":"de","clientUICulture":"de"}]}
+03/24/2025 09:39:35 Mitteleuropäische Normalzeit : Information : Microsoft.VisualStudio.ProjectSystem.CompositionService-RemoteServiceBrokerServer write: Content-Length: 181
+
+{"jsonrpc":"2.0","id":9,"result":{"requestId":"6672bd88-be85-40cc-8389-d4c97139cc5a","pipeName":"/var/folders/3l/2l1z4wws21v3mv848wtg85jc0000gn/T/ef2b54c0b41240898ec378d3dcd7b9b6"}}
+03/24/2025 09:39:35 Mitteleuropäische Normalzeit : Information : Microsoft.VisualStudio.ProjectSystem.CompositionService-RemoteServiceBrokerServer read: Content-Length: 197
+
+{"jsonrpc":"2.0","id":10,"method":"requestServiceChannel","params":[{"name":"Microsoft.VisualStudio.LanguageServices.WorkspaceProjectFactoryService"},{"clientCulture":"de","clientUICulture":"de"}]}
+03/24/2025 09:39:35 Mitteleuropäische Normalzeit : Information : VsHubClient-hubController write: Content-Length: 366
+
+{"jsonrpc":"2.0","id":12,"method":"requestServiceChannel","params":[{"Name":"Microsoft.VisualStudio.ProjectSystem.ProjectInitializationStatusService","Version":"0.1"},{"ActivationArguments":{"__servicehub__ServiceHubRemoteServiceBrokerPipeName":"/Users/MacBook/.ServiceHub/435df75909/eda17e4d9b"},"ClientCredentials":{},"ClientCulture":"de","ClientUICulture":"de"}]}
+03/24/2025 09:39:35 Mitteleuropäische Normalzeit : Information : VsHubClient-hubController read: Content-Length: 165
+
+{"jsonrpc":"2.0","id":12,"result":{"RequestId":"53ba571c-9597-4965-ad0f-f99879caaa01","PipeName":"/Users/MacBook/.ServiceHub/435df75909/c00c7552ea","IsEmpty":false}}
+03/24/2025 09:39:35 Mitteleuropäische Normalzeit : Information : Disposing ServiceBroker server '/Users/MacBook/.ServiceHub/435df75909/eda17e4d9b'.
+03/24/2025 09:39:35 Mitteleuropäische Normalzeit : Information : Microsoft.VisualStudio.ProjectSystem.ProjectInitializationStatusService-RemoteServiceBrokerServer read: Content-Length: 193
+
+{"jsonrpc":"2.0","id":2,"method":"handshake","params":[{"supportedConnections":"IpcPipe","localServiceHost":{"operatingSystem":2,"processArchitecture":3,"runtime":2,"runtimeVersion":"9.0.1"}}]}
+03/24/2025 09:39:35 Mitteleuropäische Normalzeit : Information : Microsoft.VisualStudio.ProjectSystem.ProjectInitializationStatusService-RemoteServiceBrokerServer write: Content-Length: 38
+
+{"jsonrpc":"2.0","id":2,"result":null}
+03/24/2025 09:39:35 Mitteleuropäische Normalzeit : Information : Microsoft.VisualStudio.ProjectSystem.ProjectInitializationStatusService-RemoteServiceBrokerServer read: Content-Length: 177
+
+{"jsonrpc":"2.0","id":3,"method":"requestServiceChannel","params":[{"name":"Microsoft.ServiceHub.Framework.AuthorizationService"},{"clientCulture":"de","clientUICulture":"de"}]}
+03/24/2025 09:39:35 Mitteleuropäische Normalzeit : Information : Microsoft.VisualStudio.ProjectSystem.CompositionService-RemoteServiceBrokerServer read: Content-Length: 179
+
+{"jsonrpc":"2.0","id":11,"method":"requestServiceChannel","params":[{"name":"Microsoft.VisualStudio.OptionService","version":"0.1"},{"clientCulture":"de","clientUICulture":"de"}]}
+03/24/2025 09:39:35 Mitteleuropäische Normalzeit : Information : Microsoft.VisualStudio.ProjectSystem.ProjectInitializationStatusService-RemoteServiceBrokerServer write: Content-Length: 181
+
+{"jsonrpc":"2.0","id":3,"result":{"requestId":"7db41541-b22e-4ad7-8cf1-811f2c132848","pipeName":"/var/folders/3l/2l1z4wws21v3mv848wtg85jc0000gn/T/4f3ce2751088481282cde9ff19c5446a"}}
+03/24/2025 09:39:35 Mitteleuropäische Normalzeit : Information : Microsoft.VisualStudio.ProjectSystem.CompositionService-RemoteServiceBrokerServer write: Content-Length: 182
+
+{"jsonrpc":"2.0","id":11,"result":{"requestId":"d0e768f3-1326-4e6b-955f-2a59de97fb4a","pipeName":"/var/folders/3l/2l1z4wws21v3mv848wtg85jc0000gn/T/56cec193531b415da0b1bd27e1d3dec6"}}
+03/24/2025 09:39:35 Mitteleuropäische Normalzeit : Information : Microsoft.VisualStudio.ProjectSystem.CompositionService-RemoteServiceBrokerServer write: Content-Length: 182
+
+{"jsonrpc":"2.0","id":10,"result":{"requestId":"41b7f48c-0c84-48cc-a704-462354cd9cbd","pipeName":"/var/folders/3l/2l1z4wws21v3mv848wtg85jc0000gn/T/60bab8ff829549e6bfc2887477238b66"}}
+03/24/2025 09:39:37 Mitteleuropäische Normalzeit : Information : Microsoft.VisualStudio.ProjectSystem.CompositionService-RemoteServiceBrokerServer read: Content-Length: 193
+
+{"jsonrpc":"2.0","id":12,"method":"requestServiceChannel","params":[{"name":"Microsoft.VisualStudio.NuGetSolutionRestoreService","version":"0.1"},{"clientCulture":"de","clientUICulture":"de"}]}
+03/24/2025 09:39:37 Mitteleuropäische Normalzeit : Information : Microsoft.VisualStudio.ProjectSystem.CompositionService-RemoteServiceBrokerServer write: Content-Length: 182
+
+{"jsonrpc":"2.0","id":12,"result":{"requestId":"01ebe5b1-1e53-48e2-8b65-f29a264bae32","pipeName":"/var/folders/3l/2l1z4wws21v3mv848wtg85jc0000gn/T/53c31940ac16411a91a0c47aea47fb55"}}
+03/24/2025 09:39:37 Mitteleuropäische Normalzeit : Information : Microsoft.VisualStudio.ProjectSystem.CompositionService-RemoteServiceBrokerServer read: Content-Length: 244
+
+{"jsonrpc":"2.0","id":13,"method":"requestServiceChannel","params":[{"name":"Microsoft.VisualStudio.LogOutputChannelService","version":"0.1"},{"activationArguments":{"outputChannelName":"Projects"},"clientCulture":"de","clientUICulture":"de"}]}
+03/24/2025 09:39:37 Mitteleuropäische Normalzeit : Information : Microsoft.VisualStudio.ProjectSystem.CompositionService-RemoteServiceBrokerServer write: Content-Length: 182
+
+{"jsonrpc":"2.0","id":13,"result":{"requestId":"26ad64fa-0be7-4bc3-a11f-7bd12db5fc7c","pipeName":"/var/folders/3l/2l1z4wws21v3mv848wtg85jc0000gn/T/22242c419f8a4fd283cafb2d1abad565"}}
+03/24/2025 09:53:23 Mitteleuropäische Normalzeit : Information : VsHubClient-hubController write: Content-Length: 368
+
+{"jsonrpc":"2.0","id":13,"method":"requestServiceChannel","params":[{"Name":"Microsoft.VisualStudio.ProjectSystem.Query.Remoting.QueryExecutionService","Version":"0.3"},{"ActivationArguments":{"__servicehub__ServiceHubRemoteServiceBrokerPipeName":"/Users/MacBook/.ServiceHub/435df75909/947b906a31"},"ClientCredentials":{},"ClientCulture":"de","ClientUICulture":"de"}]}
+03/24/2025 09:53:23 Mitteleuropäische Normalzeit : Information : VsHubClient-hubController read: Content-Length: 165
+
+{"jsonrpc":"2.0","id":13,"result":{"RequestId":"b828d4c8-d34c-4483-a60b-954816cbb680","PipeName":"/Users/MacBook/.ServiceHub/435df75909/c5121b79f2","IsEmpty":false}}
+03/24/2025 09:53:23 Mitteleuropäische Normalzeit : Information : Disposing ServiceBroker server '/Users/MacBook/.ServiceHub/435df75909/947b906a31'.
+03/24/2025 09:53:23 Mitteleuropäische Normalzeit : Information : Microsoft.VisualStudio.ProjectSystem.Query.Remoting.QueryExecutionService-RemoteServiceBrokerServer read: Content-Length: 193
+
+{"jsonrpc":"2.0","id":2,"method":"handshake","params":[{"supportedConnections":"IpcPipe","localServiceHost":{"operatingSystem":2,"processArchitecture":3,"runtime":2,"runtimeVersion":"9.0.1"}}]}
+03/24/2025 09:53:23 Mitteleuropäische Normalzeit : Information : Microsoft.VisualStudio.ProjectSystem.Query.Remoting.QueryExecutionService-RemoteServiceBrokerServer write: Content-Length: 38
+
+{"jsonrpc":"2.0","id":2,"result":null}
+03/24/2025 09:53:23 Mitteleuropäische Normalzeit : Information : Microsoft.VisualStudio.ProjectSystem.Query.Remoting.QueryExecutionService-RemoteServiceBrokerServer read: Content-Length: 177
+
+{"jsonrpc":"2.0","id":3,"method":"requestServiceChannel","params":[{"name":"Microsoft.ServiceHub.Framework.AuthorizationService"},{"clientCulture":"de","clientUICulture":"de"}]}
+03/24/2025 09:53:23 Mitteleuropäische Normalzeit : Information : Microsoft.VisualStudio.ProjectSystem.Query.Remoting.QueryExecutionService-RemoteServiceBrokerServer write: Content-Length: 181
+
+{"jsonrpc":"2.0","id":3,"result":{"requestId":"0276c27a-dfeb-488a-9067-01d5adf87410","pipeName":"/var/folders/3l/2l1z4wws21v3mv848wtg85jc0000gn/T/9879183e33f94978a498b6f304e9bb7a"}}
+03/24/2025 10:03:32 Mitteleuropäische Normalzeit : Information : VsHubClient-hubController write: Content-Length: 353
+
+{"jsonrpc":"2.0","id":14,"method":"requestServiceChannel","params":[{"Name":"Microsoft.VisualStudio.Debugger.SymbolLocatorService","Version":"0.1"},{"ActivationArguments":{"__servicehub__ServiceHubRemoteServiceBrokerPipeName":"/Users/MacBook/.ServiceHub/435df75909/c71fedc590"},"ClientCredentials":{},"ClientCulture":"de-AT","ClientUICulture":"en-US"}]}
+03/24/2025 10:03:32 Mitteleuropäische Normalzeit : Information : VsHubClient-hubController read: Content-Length: 165
+
+{"jsonrpc":"2.0","id":14,"result":{"RequestId":"f744102f-8581-4c32-a2b2-62744689f584","PipeName":"/Users/MacBook/.ServiceHub/435df75909/d568e75ca3","IsEmpty":false}}
+03/24/2025 10:03:32 Mitteleuropäische Normalzeit : Information : Disposing ServiceBroker server '/Users/MacBook/.ServiceHub/435df75909/c71fedc590'.
+03/24/2025 10:03:32 Mitteleuropäische Normalzeit : Information : Microsoft.VisualStudio.Debugger.SymbolLocatorService-RemoteServiceBrokerServer read: Content-Length: 194
+
+{"jsonrpc":"2.0","id":2,"method":"handshake","params":[{"supportedConnections":"IpcPipe","localServiceHost":{"operatingSystem":2,"processArchitecture":3,"runtime":2,"runtimeVersion":"8.0.11"}}]}
+03/24/2025 10:03:32 Mitteleuropäische Normalzeit : Information : Microsoft.VisualStudio.Debugger.SymbolLocatorService-RemoteServiceBrokerServer write: Content-Length: 38
+
+{"jsonrpc":"2.0","id":2,"result":null}
+03/24/2025 10:03:32 Mitteleuropäische Normalzeit : Information : Microsoft.VisualStudio.Debugger.SymbolLocatorService-RemoteServiceBrokerServer read: Content-Length: 183
+
+{"jsonrpc":"2.0","id":3,"method":"requestServiceChannel","params":[{"name":"Microsoft.ServiceHub.Framework.AuthorizationService"},{"clientCulture":"de-AT","clientUICulture":"en-US"}]}
+03/24/2025 10:03:32 Mitteleuropäische Normalzeit : Information : Microsoft.VisualStudio.Debugger.SymbolLocatorService-RemoteServiceBrokerServer write: Content-Length: 181
+
+{"jsonrpc":"2.0","id":3,"result":{"requestId":"ad5acf50-bfb2-429d-964d-f5fd4625abe6","pipeName":"/var/folders/3l/2l1z4wws21v3mv848wtg85jc0000gn/T/d36748f1f8284c578819655c95d4fe02"}}
+03/24/2025 10:03:32 Mitteleuropäische Normalzeit : Information : Microsoft.VisualStudio.Debugger.SymbolLocatorService-RemoteServiceBrokerServer read: Content-Length: 256
+
+{"jsonrpc":"2.0","id":4,"method":"requestServiceChannel","params":[{"name":"Microsoft.VisualStudio.OptionService","version":"0.1"},{"clientCulture":"de-AT","clientUICulture":"en-US"}],"traceparent":"00-62ff60da1464584a9a3811442a9f6fb5-a225b3eb398c3646-00"}
+03/24/2025 10:03:32 Mitteleuropäische Normalzeit : Information : Microsoft.VisualStudio.Debugger.SymbolLocatorService-RemoteServiceBrokerServer write: Content-Length: 181
+
+{"jsonrpc":"2.0","id":4,"result":{"requestId":"5703f7dc-4fe8-4174-ae6d-ec95b87e90e8","pipeName":"/var/folders/3l/2l1z4wws21v3mv848wtg85jc0000gn/T/e2402d584c404b1db388b9ae63ffd03f"}}
+03/24/2025 10:03:32 Mitteleuropäische Normalzeit : Information : Microsoft.VisualStudio.Debugger.SymbolLocatorService-RemoteServiceBrokerServer read: Content-Length: 329
+
+{"jsonrpc":"2.0","id":5,"method":"requestServiceChannel","params":[{"name":"Microsoft.VisualStudio.LogOutputChannelService","version":"0.1"},{"activationArguments":{"outputChannelName":"C# SymbolLocator"},"clientCulture":"de-AT","clientUICulture":"en-US"}],"traceparent":"00-62ff60da1464584a9a3811442a9f6fb5-813da6a31ea23d44-00"}
+03/24/2025 10:03:32 Mitteleuropäische Normalzeit : Information : Microsoft.VisualStudio.Debugger.SymbolLocatorService-RemoteServiceBrokerServer write: Content-Length: 181
+
+{"jsonrpc":"2.0","id":5,"result":{"requestId":"80bc6095-63db-47b1-a086-1cc344fb7aa9","pipeName":"/var/folders/3l/2l1z4wws21v3mv848wtg85jc0000gn/T/fec480cabfb04999afb01a4db7284030"}}
+03/24/2025 10:03:33 Mitteleuropäische Normalzeit : Information : VsHubClient-hubController write: Content-Length: 353
+
+{"jsonrpc":"2.0","id":15,"method":"requestServiceChannel","params":[{"Name":"Microsoft.VisualStudio.Debugger.SymbolLocatorService","Version":"0.1"},{"ActivationArguments":{"__servicehub__ServiceHubRemoteServiceBrokerPipeName":"/Users/MacBook/.ServiceHub/435df75909/7901a659a6"},"ClientCredentials":{},"ClientCulture":"de-AT","ClientUICulture":"en-US"}]}
+03/24/2025 10:03:33 Mitteleuropäische Normalzeit : Information : VsHubClient-hubController read: Content-Length: 165
+
+{"jsonrpc":"2.0","id":15,"result":{"RequestId":"69246ef3-26b0-42fb-a83c-0b1af2baa069","PipeName":"/Users/MacBook/.ServiceHub/435df75909/0907b2da20","IsEmpty":false}}
+03/24/2025 10:03:33 Mitteleuropäische Normalzeit : Information : Disposing ServiceBroker server '/Users/MacBook/.ServiceHub/435df75909/7901a659a6'.
+03/24/2025 10:03:33 Mitteleuropäische Normalzeit : Information : Microsoft.VisualStudio.Debugger.SymbolLocatorService-RemoteServiceBrokerServer read: Content-Length: 194
+
+{"jsonrpc":"2.0","id":2,"method":"handshake","params":[{"supportedConnections":"IpcPipe","localServiceHost":{"operatingSystem":2,"processArchitecture":3,"runtime":2,"runtimeVersion":"8.0.11"}}]}
+03/24/2025 10:03:33 Mitteleuropäische Normalzeit : Information : Microsoft.VisualStudio.Debugger.SymbolLocatorService-RemoteServiceBrokerServer write: Content-Length: 38
+
+{"jsonrpc":"2.0","id":2,"result":null}
+03/24/2025 10:03:33 Mitteleuropäische Normalzeit : Information : Microsoft.VisualStudio.Debugger.SymbolLocatorService-RemoteServiceBrokerServer read: Content-Length: 183
+
+{"jsonrpc":"2.0","id":3,"method":"requestServiceChannel","params":[{"name":"Microsoft.ServiceHub.Framework.AuthorizationService"},{"clientCulture":"de-AT","clientUICulture":"en-US"}]}
+03/24/2025 10:03:33 Mitteleuropäische Normalzeit : Information : Microsoft.VisualStudio.Debugger.SymbolLocatorService-RemoteServiceBrokerServer write: Content-Length: 181
+
+{"jsonrpc":"2.0","id":3,"result":{"requestId":"bb762e82-245e-4f4e-94b7-b64f777ec2a3","pipeName":"/var/folders/3l/2l1z4wws21v3mv848wtg85jc0000gn/T/57569ac7ce594d96b1e605ba5b7e29f0"}}
+03/24/2025 10:03:33 Mitteleuropäische Normalzeit : Information : Microsoft.VisualStudio.Debugger.SymbolLocatorService-RemoteServiceBrokerServer read: Content-Length: 256
+
+{"jsonrpc":"2.0","id":4,"method":"requestServiceChannel","params":[{"name":"Microsoft.VisualStudio.OptionService","version":"0.1"},{"clientCulture":"de-AT","clientUICulture":"en-US"}],"traceparent":"00-710402cefbaee249a9cc9485f5a052f3-82a1e30d4b8b524c-00"}
+03/24/2025 10:03:33 Mitteleuropäische Normalzeit : Information : Microsoft.VisualStudio.Debugger.SymbolLocatorService-RemoteServiceBrokerServer write: Content-Length: 181
+
+{"jsonrpc":"2.0","id":4,"result":{"requestId":"20f73f42-abe4-432e-8d8a-9929bc7eeb06","pipeName":"/var/folders/3l/2l1z4wws21v3mv848wtg85jc0000gn/T/c8b255199e634701a9eba3a36e3d1c48"}}
+03/24/2025 10:03:33 Mitteleuropäische Normalzeit : Information : Microsoft.VisualStudio.Debugger.SymbolLocatorService-RemoteServiceBrokerServer read: Content-Length: 329
+
+{"jsonrpc":"2.0","id":5,"method":"requestServiceChannel","params":[{"name":"Microsoft.VisualStudio.LogOutputChannelService","version":"0.1"},{"activationArguments":{"outputChannelName":"C# SymbolLocator"},"clientCulture":"de-AT","clientUICulture":"en-US"}],"traceparent":"00-710402cefbaee249a9cc9485f5a052f3-94048d8778408f40-00"}
+03/24/2025 10:03:33 Mitteleuropäische Normalzeit : Information : Microsoft.VisualStudio.Debugger.SymbolLocatorService-RemoteServiceBrokerServer write: Content-Length: 181
+
+{"jsonrpc":"2.0","id":5,"result":{"requestId":"9e8e5e0c-637c-4468-a66b-c9155d8dbde8","pipeName":"/var/folders/3l/2l1z4wws21v3mv848wtg85jc0000gn/T/656d4fc7be6240caba6e451da9f04973"}}
+03/24/2025 12:22:04 Mitteleuropäische Normalzeit : Information : VsHubClient-hubController write: Content-Length: 328
+
+{"jsonrpc":"2.0","id":16,"method":"requestServiceChannel","params":[{"Name":"Microsoft.VisualStudio.LaunchConfigurationService"},{"ActivationArguments":{"__servicehub__ServiceHubRemoteServiceBrokerPipeName":"/Users/MacBook/.ServiceHub/435df75909/caea4b98e1"},"ClientCredentials":{},"ClientCulture":"de","ClientUICulture":"de"}]}
+03/24/2025 12:22:04 Mitteleuropäische Normalzeit : Information : VsHubClient-hubController read: Content-Length: 165
+
+{"jsonrpc":"2.0","id":16,"result":{"RequestId":"b00f1ff8-ecfc-403e-a61f-beaaf5d06653","PipeName":"/Users/MacBook/.ServiceHub/435df75909/1d6de13911","IsEmpty":false}}
+03/24/2025 12:22:04 Mitteleuropäische Normalzeit : Information : Disposing ServiceBroker server '/Users/MacBook/.ServiceHub/435df75909/caea4b98e1'.
+03/24/2025 12:22:04 Mitteleuropäische Normalzeit : Information : Microsoft.VisualStudio.LaunchConfigurationService-RemoteServiceBrokerServer read: Content-Length: 193
+
+{"jsonrpc":"2.0","id":2,"method":"handshake","params":[{"supportedConnections":"IpcPipe","localServiceHost":{"operatingSystem":2,"processArchitecture":3,"runtime":2,"runtimeVersion":"9.0.1"}}]}
+03/24/2025 12:22:04 Mitteleuropäische Normalzeit : Information : Microsoft.VisualStudio.LaunchConfigurationService-RemoteServiceBrokerServer write: Content-Length: 38
+
+{"jsonrpc":"2.0","id":2,"result":null}
+03/24/2025 12:22:04 Mitteleuropäische Normalzeit : Information : Microsoft.VisualStudio.LaunchConfigurationService-RemoteServiceBrokerServer read: Content-Length: 177
+
+{"jsonrpc":"2.0","id":3,"method":"requestServiceChannel","params":[{"name":"Microsoft.ServiceHub.Framework.AuthorizationService"},{"clientCulture":"de","clientUICulture":"de"}]}
+03/24/2025 12:22:04 Mitteleuropäische Normalzeit : Information : Microsoft.VisualStudio.LaunchConfigurationService-RemoteServiceBrokerServer write: Content-Length: 181
+
+{"jsonrpc":"2.0","id":3,"result":{"requestId":"9cffcc6f-83f1-4ed5-9db9-b8b7dcd2f896","pipeName":"/var/folders/3l/2l1z4wws21v3mv848wtg85jc0000gn/T/3d29c9c8f6924c249146a3f36c3c29e4"}}
+03/24/2025 12:22:06 Mitteleuropäische Normalzeit : Information : VsHubClient-hubController JSON RPC has been disposed
+03/24/2025 12:22:06 Mitteleuropäische Normalzeit : Information : VsHubClient-hubController read: end of stream
+03/24/2025 12:22:06 Mitteleuropäische Normalzeit : Information : Microsoft.VisualStudio.ProjectSystem.Query.Remoting.QueryExecutionService-RemoteServiceBrokerServer read: end of stream
+03/24/2025 12:22:06 Mitteleuropäische Normalzeit : Information : Microsoft.VisualStudio.TestWindow.VSCode.Service-RemoteServiceBrokerServer read: end of stream

@@ -1,0 +1,967 @@
+﻿01/21/2025 17:24:41 Mitteleuropäische Normalzeit : Information : Local timezone is (UTC+01:00) Mitteleuropäische Zeit (Wien)
+01/21/2025 17:24:41 Mitteleuropäische Normalzeit : Information : Started controller with command line /Users/MacBook/.vscode/extensions/ms-dotnettools.csdevkit-1.15.34-darwin-arm64/components/vs-green-server/platforms/darwin-arm64/node_modules/@microsoft/servicehub-controller-net60.darwin-arm64/Microsoft.ServiceHub.Controller 57d5b9e605 /ControllerCooldownTimeout:30000 /TelemetrySession:{"TelemetryLevel":"all","IsOptedIn":false,"HostName":"Default","AppInsightsInstrumentationKey":null,"AsimovInstrumentationKey":null,"CollectorApiKey":"0c6ae279ed8443289764825290e4f9e2-1a736e7c-1324-4338-be46-fc2a58ae4d14-7255","AppId":1010,"UserId":"d025fecc-e95a-469f-b8bf-8b0860300ee1","Id":"e9c4112a-1c88-49a6-bb28-5a4dc4d1b4c51737476675014","ProcessStartTime":133819502798589808,"SkuName":null,"VSExeVersion":null,"BucketFiltersToEnableWatsonForFaults":[],"BucketFiltersToAddDumpsToFaults":[]}
+01/21/2025 17:24:41 Mitteleuropäische Normalzeit : Information : Acquiring single controller instance mutex with name '1341793196-ServiceHubControllerSingleInstanceMutex'
+01/21/2025 17:24:41 Mitteleuropäische Normalzeit : Information : Acquired single controller instance mutex with name '1341793196-ServiceHubControllerSingleInstanceMutex'
+01/21/2025 17:24:42 Mitteleuropäische Normalzeit : Information : Controller cooldown timeout is set to 30000ms
+01/21/2025 17:24:42 Mitteleuropäische Normalzeit : Information : Starting server 'hubController' at 'net.pipe://57d5b9e605' (at '/Users/MacBook/.ServiceHub/57d5b9e605/57d5b9e605').
+01/21/2025 17:24:42 Mitteleuropäische Normalzeit : Information : Successfully started server on pipe 57d5b9e605
+01/21/2025 17:24:42 Mitteleuropäische Normalzeit : Information : Triggered controller shutdown timer process.
+01/21/2025 17:24:42 Mitteleuropäische Normalzeit : Information : Client connected to controller
+01/21/2025 17:24:42 Mitteleuropäische Normalzeit : Information : Client connected to controller
+01/21/2025 17:24:42 Mitteleuropäische Normalzeit : Information : Client connected to controller
+01/21/2025 17:24:42 Mitteleuropäische Normalzeit : Information : Microsoft.ServiceHub.Controller.HubController read: end of stream
+01/21/2025 17:24:42 Mitteleuropäische Normalzeit : Information : Microsoft.ServiceHub.Controller.HubController read: end of stream
+01/21/2025 17:24:42 Mitteleuropäische Normalzeit : Information : Microsoft.ServiceHub.Controller.HubController read: Content-Length: 109
+
+{"jsonrpc":"2.0","id":2,"method":"UpdateClientInfoAsync","params":[{"clientName":"VsHubClient","pid":92691}]}
+01/21/2025 17:24:42 Mitteleuropäische Normalzeit : Information : JsonRpc disconnected due to RemotePartyTerminated. Reached end of stream.
+01/21/2025 17:24:42 Mitteleuropäische Normalzeit : Information : JsonRpc disconnected due to RemotePartyTerminated. Reached end of stream.
+01/21/2025 17:24:42 Mitteleuropäische Normalzeit : Information : Starting server 'clientWatch' at 'net.pipe://927011ABCD' (at '/Users/MacBook/.ServiceHub/57d5b9e605/927011ABCD').
+01/21/2025 17:24:42 Mitteleuropäische Normalzeit : Information : Microsoft.ServiceHub.Controller.HubController write: Content-Length: 444
+
+{"jsonrpc":"2.0","id":2,"result":{"ClientWatchServerName":"net.pipe://927011ABCD","ControllerConfig":{"Executable":"/Users/MacBook/.vscode/extensions/ms-dotnettools.csdevkit-1.15.34-darwin-arm64/components/vs-green-server/platforms/darwin-arm64/node_modules/@microsoft/servicehub-controller-net60.darwin-arm64/Microsoft.ServiceHub.Controller","Args":["57d5b9e605"],"PipeName":"57d5b9e605"},"HostsConfig":{"RootDir":".","AppConfigFallback":""}}}
+01/21/2025 17:24:42 Mitteleuropäische Normalzeit : Information : External client connect to client watch
+01/21/2025 17:24:42 Mitteleuropäische Normalzeit : Information : Client connected to controller
+01/21/2025 17:24:42 Mitteleuropäische Normalzeit : Information : Client connected to controller
+01/21/2025 17:24:42 Mitteleuropäische Normalzeit : Information : Microsoft.ServiceHub.Controller.HubController read: end of stream
+01/21/2025 17:24:42 Mitteleuropäische Normalzeit : Information : JsonRpc disconnected due to RemotePartyTerminated. Reached end of stream.
+01/21/2025 17:24:42 Mitteleuropäische Normalzeit : Information : Microsoft.ServiceHub.Controller.HubController read: Content-Length: 109
+
+{"jsonrpc":"2.0","id":2,"method":"UpdateClientInfoAsync","params":[{"clientName":"VsHubClient","pid":92691}]}
+01/21/2025 17:24:42 Mitteleuropäische Normalzeit : Information : Microsoft.ServiceHub.Controller.HubController write: Content-Length: 444
+
+{"jsonrpc":"2.0","id":2,"result":{"ClientWatchServerName":"net.pipe://927011ABCD","ControllerConfig":{"Executable":"/Users/MacBook/.vscode/extensions/ms-dotnettools.csdevkit-1.15.34-darwin-arm64/components/vs-green-server/platforms/darwin-arm64/node_modules/@microsoft/servicehub-controller-net60.darwin-arm64/Microsoft.ServiceHub.Controller","Args":["57d5b9e605"],"PipeName":"57d5b9e605"},"HostsConfig":{"RootDir":".","AppConfigFallback":""}}}
+01/21/2025 17:24:42 Mitteleuropäische Normalzeit : Information : Microsoft.ServiceHub.Controller.HubController read: Content-Length: 16464
+
+
+01/21/2025 17:24:42 Mitteleuropäische Normalzeit : Information : Microsoft.ServiceHub.Controller.HubController read: {"jsonrpc":"2.0","id":3,"method":"RegisterServicesAsync","params":[{"Microsoft.VisualStudio.CpsProjectIconSourceService":{"host":"dotnet.projectSystem","hostId":"C94B8CFE-E3FD-4BAF-A941-2866DBB566FE","serviceBaseDirectory":"/Users/MacBook/.vscode/extensions/ms-dotnettools.csdevkit-1.15.34-darwin-arm64/components/CPS/platforms/darwin-arm64/node_modules/@microsoft/visualstudio-projectsystem-server.darwin-arm64","entryPoint":{"assemblyPath":"/Users/MacBook/.vscode/extensions/ms-dotnettools.csdevkit-1.15.34-darwin-arm64/components/CPS/platforms/darwin-arm64/node_modules/@microsoft/visualstudio-projectsystem-server.darwin-arm64/Microsoft.VisualStudio.ProjectSystem.Server.Implementation.dll","fullClassName":"Microsoft.VisualStudio.ProjectSystem.Server.ProjectIconSourceServiceFactory"}},"Microsoft.VisualStudio.LaunchConfigurationService":{"host":"dotnet.projectSystem","hostId":"C94B8CFE-E3FD-4BAF-A941-2866DBB566FE","serviceBaseDirectory":"/Users/MacBook/.vscode/extensions/ms-dotnettools.csdevkit-1.15.34-darwin-arm64/components/CPS/platforms/darwin-arm64/node_modules/@microsoft/visualstudio-projectsystem-server.darwin-arm64","entryPoint":{"assemblyPath":"/Users/MacBook/.vscode/extensions/ms-dotnettools.csdevkit-1.15.34-darwin-arm64/components/CPS/platforms/darwin-arm64/node_modules/@microsoft/visualstudio-projectsystem-server.darwin-arm64/Microsoft.VisualStudio.ProjectSystem.Server.Implementation.dll","fullClassName":"Microsoft.VisualStudio.ProjectSystem.Server.LaunchConfigurationServiceFactory"}},"Microsoft.VisualStudio.ProjectSystem.CompositionService":{"host":"dotnet.projectSystem","hostId":"C94B8CFE-E3FD-4BAF-A941-2866DBB566FE","serviceBaseDirectory":"/Users/MacBook/.vscode/extensions/ms-dotnettools.csdevkit-1.15.34-darwin-arm64/components/CPS/platforms/darwin-arm64/node_modules/@microsoft/visualstudio-projectsystem-server.darwin-arm64","entryPoint":{"assemblyPath":"/Users/MacBook/.vscode/extensions/ms-dotnettools.csdevkit-1.15.34-darwin-arm64/components/CPS/platforms/darwin-arm64/node_modules/@microsoft/visualstudio-projectsystem-server.darwin-arm64/Microsoft.VisualStudio.ProjectSystem.Server.Implementation.dll","fullClassName":"Microsoft.VisualStudio.ProjectSystem.Server.CompositionServiceFactory"}},"Microsoft.VisualStudio.ProjectSystem.ProjectInitializationStatusService":{"host":"dotnet.projectSystem","hostId":"C94B8CFE-E3FD-4BAF-A941-2866DBB566FE","serviceBaseDirectory":"/Users/MacBook/.vscode/extensions/ms-dotnettools.csdevkit-1.15.34-darwin-arm64/components/CPS/platforms/darwin-arm64/node_modules/@microsoft/visualstudio-projectsystem-server.darwin-arm64","entryPoint":{"assemblyPath":"/Users/MacBook/.vscode/extensions/ms-dotnettools.csdevkit-1.15.34-darwin-arm64/components/CPS/platforms/darwin-arm64/node_modules/@microsoft/visualstudio-projectsystem-server.darwin-arm64/Microsoft.VisualStudio.ProjectSystem.Server.Implementation.dll","fullClassName":"Microsoft.VisualStudio.ProjectSystem.Server.ProjectInitializationStatusServiceFactory"}},"Microsoft.VisualStudio.ProjectSystem.ProjectTreeProvider":{"host":"dotnet.projectSystem","hostId":"C94B8CFE-E3FD-4BAF-A941-2866DBB566FE","serviceBaseDirectory":"/Users/MacBook/.vscode/extensions/ms-dotnettools.csdevkit-1.15.34-darwin-arm64/components/CPS/platforms/darwin-arm64/node_modules/@microsoft/visualstudio-projectsystem-server.darwin-arm64","entryPoint":{"assemblyPath":"/Users/MacBook/.vscode/extensions/ms-dotnettools.csdevkit-1.15.34-darwin-arm64/components/CPS/platforms/darwin-arm64/node_modules/@microsoft/visualstudio-projectsystem-server.darwin-arm64/Microsoft.VisualStudio.ProjectSystem.Server.Implementation.dll","fullClassName":"Microsoft.VisualStudio.ProjectSystem.Server.ProjectTreeProviderFactory"}},"Microsoft.VisualStudio.ProjectSystem.Query.Remoting.QueryExecutionService":{"host":"dotnet.projectSystem","hostId":"C94B8CFE-E3FD-4BAF-A941-2866DBB566FE","serviceBaseDirectory":"/Users/MacBook/.vscode/extensions/ms-dotnettools.csdevkit-1.15.34-darwin-arm64/components/CPS/platforms/darwin-arm64/node_modules/@microsoft/visualstudio-projectsystem-server.darwin-arm64","entryPoint":
+01/21/2025 17:24:42 Mitteleuropäische Normalzeit : Information : Microsoft.ServiceHub.Controller.HubController read: {"assemblyPath":"/Users/MacBook/.vscode/extensions/ms-dotnettools.csdevkit-1.15.34-darwin-arm64/components/CPS/platforms/darwin-arm64/node_modules/@microsoft/visualstudio-projectsystem-server.darwin-arm64/Microsoft.VisualStudio.ProjectSystem.Server.Implementation.dll","fullClassName":"Microsoft.VisualStudio.ProjectSystem.Server.QueryExecutionServiceFactory"}},"Microsoft.VisualStudio.Debugger.AspireSessionSynchronizeService":{"host":"dotnet","hostId":"C94B8CFE-E3FD-4BAF-A941-2866DBB566FE","serviceBaseDirectory":"/Users/MacBook/.vscode/extensions/ms-dotnettools.csdevkit-1.15.34-darwin-arm64/components/VSDebugCore/platforms/darwin-arm64/node_modules/@microsoft/visualstudio-debugger-devkit.darwin-arm64","entryPoint":{"assemblyPath":"/Users/MacBook/.vscode/extensions/ms-dotnettools.csdevkit-1.15.34-darwin-arm64/components/VSDebugCore/platforms/darwin-arm64/node_modules/@microsoft/visualstudio-debugger-devkit.darwin-arm64/Microsoft.VisualStudio.Debugger.DevKit.dll","fullClassName":"Microsoft.VisualStudio.Debugger.AspireSessionSynchronizeService+Factory"}},"Microsoft.VisualStudio.Debugger.GenericHotReloadAgentManagerService":{"host":"dotnet","hostId":"C94B8CFE-E3FD-4BAF-A941-2866DBB566FE","serviceBaseDirectory":"/Users/MacBook/.vscode/extensions/ms-dotnettools.csdevkit-1.15.34-darwin-arm64/components/VSDebugCore/platforms/darwin-arm64/node_modules/@microsoft/visualstudio-debugger-devkit.darwin-arm64","entryPoint":{"assemblyPath":"/Users/MacBook/.vscode/extensions/ms-dotnettools.csdevkit-1.15.34-darwin-arm64/components/VSDebugCore/platforms/darwin-arm64/node_modules/@microsoft/visualstudio-debugger-devkit.darwin-arm64/Microsoft.VisualStudio.Debugger.DevKit.dll","fullClassName":"Microsoft.VisualStudio.Debugger.GenericHotReloadAgentManagerService+Factory"}},"Microsoft.VisualStudio.Debugger.HotReloadClientService":{"host":"dotnet","hostId":"C94B8CFE-E3FD-4BAF-A941-2866DBB566FE","serviceBaseDirectory":"/Users/MacBook/.vscode/extensions/ms-dotnettools.csdevkit-1.15.34-darwin-arm64/components/VSDebugCore/platforms/darwin-arm64/node_modules/@microsoft/visualstudio-debugger-devkit.darwin-arm64","entryPoint":{"assemblyPath":"/Users/MacBook/.vscode/extensions/ms-dotnettools.csdevkit-1.15.34-darwin-arm64/components/VSDebugCore/platforms/darwin-arm64/node_modules/@microsoft/visualstudio-debugger-devkit.darwin-arm64/Microsoft.VisualStudio.Debugger.DevKit.dll","fullClassName":"Microsoft.VisualStudio.Debugger.HotReloadClientService+Factory"}},"Microsoft.VisualStudio.Debugger.HotReloadSessionNotificationService":{"host":"dotnet","hostId":"C94B8CFE-E3FD-4BAF-A941-2866DBB566FE","serviceBaseDirectory":"/Users/MacBook/.vscode/extensions/ms-dotnettools.csdevkit-1.15.34-darwin-arm64/components/VSDebugCore/platforms/darwin-arm64/node_modules/@microsoft/visualstudio-debugger-devkit.darwin-arm64","entryPoint":{"assemblyPath":"/Users/MacBook/.vscode/extensions/ms-dotnettools.csdevkit-1.15.34-darwin-arm64/components/VSDebugCore/platforms/darwin-arm64/node_modules/@microsoft/visualstudio-debugger-devkit.darwin-arm64/Microsoft.VisualStudio.Debugger.DevKit.dll","fullClassName":"Microsoft.VisualStudio.Debugger.HotReloadSessionNotificationService+Factory"}},"Microsoft.VisualStudio.Debugger.ManagedEditAndContinueCsDevKitEngineService2":{"host":"dotnet","hostId":"C94B8CFE-E3FD-4BAF-A941-2866DBB566FE","serviceBaseDirectory":"/Users/MacBook/.vscode/extensions/ms-dotnettools.csdevkit-1.15.34-darwin-arm64/components/VSDebugCore/platforms/darwin-arm64/node_modules/@microsoft/visualstudio-debugger-devkit.darwin-arm64","entryPoint":{"assemblyPath":"/Users/MacBook/.vscode/extensions/ms-dotnettools.csdevkit-1.15.34-darwin-arm64/components/VSDebugCore/platforms/darwin-arm64/node_modules/@microsoft/visualstudio-debugger-devkit.darwin-arm64/Microsoft.VisualStudio.Debugger.DevKit.dll","fullClassName":"Microsoft.VisualStudio.Debugger.ManagedEditAndContinueCsDevKitEngineService+Factory"}},"Microsoft.VisualStudio.Debugger.ManagedEditAndContinueRemoteDebuggerService2":{"host":"dotnet","hostId":"C94B8CFE-E3FD-4BAF-A941-2866DBB566FE","serviceBaseDirectory":"/Users/MacBook/.vscode/
+01/21/2025 17:24:42 Mitteleuropäische Normalzeit : Information : Microsoft.ServiceHub.Controller.HubController read: extensions/ms-dotnettools.csdevkit-1.15.34-darwin-arm64/components/VSDebugCore/platforms/darwin-arm64/node_modules/@microsoft/visualstudio-debugger-devkit.darwin-arm64","entryPoint":{"assemblyPath":"/Users/MacBook/.vscode/extensions/ms-dotnettools.csdevkit-1.15.34-darwin-arm64/components/VSDebugCore/platforms/darwin-arm64/node_modules/@microsoft/visualstudio-debugger-devkit.darwin-arm64/Microsoft.VisualStudio.Debugger.DevKit.dll","fullClassName":"Microsoft.VisualStudio.Debugger.ManagedEditAndContinueRemoteDebuggerService+Factory"}},"Microsoft.VisualStudio.Debugger.ManagedHotReloadAgentManagerService":{"host":"dotnet","hostId":"C94B8CFE-E3FD-4BAF-A941-2866DBB566FE","serviceBaseDirectory":"/Users/MacBook/.vscode/extensions/ms-dotnettools.csdevkit-1.15.34-darwin-arm64/components/VSDebugCore/platforms/darwin-arm64/node_modules/@microsoft/visualstudio-debugger-devkit.darwin-arm64","entryPoint":{"assemblyPath":"/Users/MacBook/.vscode/extensions/ms-dotnettools.csdevkit-1.15.34-darwin-arm64/components/VSDebugCore/platforms/darwin-arm64/node_modules/@microsoft/visualstudio-debugger-devkit.darwin-arm64/Microsoft.VisualStudio.Debugger.DevKit.dll","fullClassName":"Microsoft.VisualStudio.Debugger.ManagedHotReloadAgentManagerService+Factory"}},"Microsoft.VisualStudio.Debugger.ManagedHotReloadService":{"host":"dotnet","hostId":"C94B8CFE-E3FD-4BAF-A941-2866DBB566FE","serviceBaseDirectory":"/Users/MacBook/.vscode/extensions/ms-dotnettools.csdevkit-1.15.34-darwin-arm64/components/VSDebugCore/platforms/darwin-arm64/node_modules/@microsoft/visualstudio-debugger-devkit.darwin-arm64","entryPoint":{"assemblyPath":"/Users/MacBook/.vscode/extensions/ms-dotnettools.csdevkit-1.15.34-darwin-arm64/components/VSDebugCore/platforms/darwin-arm64/node_modules/@microsoft/visualstudio-debugger-devkit.darwin-arm64/Microsoft.VisualStudio.Debugger.DevKit.dll","fullClassName":"Microsoft.VisualStudio.Debugger.ManagedHotReloadService+Factory"}},"Microsoft.VisualStudio.Debugger.SourceLinkService":{"host":"dotnet","hostId":"C94B8CFE-E3FD-4BAF-A941-2866DBB566FE","serviceBaseDirectory":"/Users/MacBook/.vscode/extensions/ms-dotnettools.csdevkit-1.15.34-darwin-arm64/components/VSDebugCore/platforms/darwin-arm64/node_modules/@microsoft/visualstudio-debugger-devkit.darwin-arm64","entryPoint":{"assemblyPath":"/Users/MacBook/.vscode/extensions/ms-dotnettools.csdevkit-1.15.34-darwin-arm64/components/VSDebugCore/platforms/darwin-arm64/node_modules/@microsoft/visualstudio-debugger-devkit.darwin-arm64/Microsoft.VisualStudio.Debugger.DevKit.dll","fullClassName":"Microsoft.VisualStudio.Debugger.SourceLinkService+Factory"}},"Microsoft.VisualStudio.Debugger.SymbolLocatorService":{"host":"dotnet","hostId":"C94B8CFE-E3FD-4BAF-A941-2866DBB566FE","serviceBaseDirectory":"/Users/MacBook/.vscode/extensions/ms-dotnettools.csdevkit-1.15.34-darwin-arm64/components/VSDebugCore/platforms/darwin-arm64/node_modules/@microsoft/visualstudio-debugger-devkit.darwin-arm64","entryPoint":{"assemblyPath":"/Users/MacBook/.vscode/extensions/ms-dotnettools.csdevkit-1.15.34-darwin-arm64/components/VSDebugCore/platforms/darwin-arm64/node_modules/@microsoft/visualstudio-debugger-devkit.darwin-arm64/Microsoft.VisualStudio.Debugger.DevKit.dll","fullClassName":"Microsoft.VisualStudio.Debugger.BrokeredServices.SymbolLocator.SymbolLocatorService+Factory"}},"Microsoft.VisualStudio.TestWindow.VSCode.ProjectSystemProvider.Service":{"host":"dotnet","hostId":"C94B8CFE-E3FD-4BAF-A941-2866DBB566FE","serviceBaseDirectory":"/Users/MacBook/.vscode/extensions/ms-dotnettools.csdevkit-1.15.34-darwin-arm64/components/VSUnitTesting/platforms/darwin-arm64/node_modules/@microsoft/visualstudio-testwindow-vscode-service.darwin-arm64","entryPoint":{"assemblyPath":"/Users/MacBook/.vscode/extensions/ms-dotnettools.csdevkit-1.15.34-darwin-arm64/components/VSUnitTesting/platforms/darwin-arm64/node_modules/@microsoft/visualstudio-testwindow-vscode-service.darwin-arm64/Microsoft.VisualStudio.TestWindow.VSCode.Service.dll","fullClassName":"Microsoft.VisualStudio.TestWindow.VSCode.ProjectSystemProvider.Service.ProjectSystemProviderService
+01/21/2025 17:24:42 Mitteleuropäische Normalzeit : Information : Microsoft.ServiceHub.Controller.HubController read: Factory"}},"Microsoft.VisualStudio.TestWindow.VSCode.Service":{"host":"dotnet","hostId":"C94B8CFE-E3FD-4BAF-A941-2866DBB566FE","serviceBaseDirectory":"/Users/MacBook/.vscode/extensions/ms-dotnettools.csdevkit-1.15.34-darwin-arm64/components/VSUnitTesting/platforms/darwin-arm64/node_modules/@microsoft/visualstudio-testwindow-vscode-service.darwin-arm64","entryPoint":{"assemblyPath":"/Users/MacBook/.vscode/extensions/ms-dotnettools.csdevkit-1.15.34-darwin-arm64/components/VSUnitTesting/platforms/darwin-arm64/node_modules/@microsoft/visualstudio-testwindow-vscode-service.darwin-arm64/Microsoft.VisualStudio.TestWindow.VSCode.Service.dll","fullClassName":"Microsoft.VisualStudio.TestWindow.VSCode.Service.TestWindowVSCodeServiceFactory"}},"Microsoft.VisualStudio.AspireServer":{"host":"dotnet.aspireServer","hostId":"C94B8CFE-E3FD-4BAF-A941-2866DBB566FE","serviceBaseDirectory":"/Users/MacBook/.vscode/extensions/ms-dotnettools.csdevkit-1.15.34-darwin-arm64/components/WebTools/node_modules/@microsoft/vscode.webtools/Services","entryPoint":{"assemblyPath":"/Users/MacBook/.vscode/extensions/ms-dotnettools.csdevkit-1.15.34-darwin-arm64/components/WebTools/node_modules/@microsoft/vscode.webtools/Services/Microsoft.WebTools.AspireServer.dll","fullClassName":"Microsoft.WebTools.AspireServer.ServiceFactory"}},"Microsoft.VisualStudio.Debugger.AspireService":{"host":"dotnet.projectSystem","hostId":"C94B8CFE-E3FD-4BAF-A941-2866DBB566FE","serviceBaseDirectory":"/Users/MacBook/.vscode/extensions/ms-dotnettools.csdevkit-1.15.34-darwin-arm64/components/WebTools/node_modules/@microsoft/vscode.webtools/Services","entryPoint":{"assemblyPath":"/Users/MacBook/.vscode/extensions/ms-dotnettools.csdevkit-1.15.34-darwin-arm64/components/WebTools/node_modules/@microsoft/vscode.webtools/Services/Microsoft.WebTools.Aspire.VSCode.Services.dll","fullClassName":"Microsoft.WebTools.Aspire.VSCode.Services.ServiceFactory"},"friendServices":["Microsoft.VisualStudio.ProjectSystem.CompositionService"]},"Microsoft.VisualStudio.ProjectSystem.DebugTargetFrameworkService":{"host":"dotnet.projectSystem","hostId":"C94B8CFE-E3FD-4BAF-A941-2866DBB566FE","serviceBaseDirectory":"/Users/MacBook/.vscode/extensions/ms-dotnettools.csdevkit-1.15.34-darwin-arm64/components/dotnet-project-system-vscode/node_modules/@microsoft/vscode.projectsystem.managed/Services","entryPoint":{"assemblyPath":"/Users/MacBook/.vscode/extensions/ms-dotnettools.csdevkit-1.15.34-darwin-arm64/components/dotnet-project-system-vscode/node_modules/@microsoft/vscode.projectsystem.managed/Services/Microsoft.ProjectSystem.Managed.VSCode.Services.dll","fullClassName":"Microsoft.VisualStudio.ProjectSystem.Services.DebugTargetFrameworkServiceFactory"},"friendServices":["Microsoft.VisualStudio.ProjectSystem.CompositionService"]},"Microsoft.VisualStudio.ProjectQueryTestService":{"host":"dotnet","hostId":"C94B8CFE-E3FD-4BAF-A941-2866DBB566FE","serviceBaseDirectory":"/Users/MacBook/.vscode/extensions/ms-dotnettools.csdevkit-1.15.34-darwin-arm64/components/vs-green-server/platforms/darwin-arm64/node_modules/@microsoft/visualstudio-server-samples-sayhello.darwin-arm64","entryPoint":{"assemblyPath":"/Users/MacBook/.vscode/extensions/ms-dotnettools.csdevkit-1.15.34-darwin-arm64/components/vs-green-server/platforms/darwin-arm64/node_modules/@microsoft/visualstudio-server-samples-sayhello.darwin-arm64/Microsoft.VisualStudio.Samples.SayHello.dll","fullClassName":"Microsoft.VisualStudio.Samples.SayHello.ProjectQueryTestServiceFactory"}},"helloServiceHubDotNetHost":{"host":"dotnet","hostId":"C94B8CFE-E3FD-4BAF-A941-2866DBB566FE","serviceBaseDirectory":"/Users/MacBook/.vscode/extensions/ms-dotnettools.csdevkit-1.15.34-darwin-arm64/components/vs-green-server/platforms/darwin-arm64/node_modules/@microsoft/visualstudio-server-samples-sayhello.darwin-arm64","entryPoint":{"assemblyPath":"/Users/MacBook/.vscode/extensions/ms-dotnettools.csdevkit-1.15.34-darwin-arm64/components/vs-green-server/platforms/darwin-arm64/node_modules/@microsoft/visualstudio-server-samples-sayhello.darwin-arm64/Microsoft.VisualStudio.Samples.SayHello.dll",
+01/21/2025 17:24:42 Mitteleuropäische Normalzeit : Information : Microsoft.ServiceHub.Controller.HubController read: "fullClassName":"Microsoft.VisualStudio.Samples.SayHello.HelloWorldFactory"}}}]}
+01/21/2025 17:24:42 Mitteleuropäische Normalzeit : Information : Microsoft.ServiceHub.Controller.HubController write: Content-Length: 38
+
+{"jsonrpc":"2.0","id":3,"result":null}
+01/21/2025 17:24:42 Mitteleuropäische Normalzeit : Information : Microsoft.ServiceHub.Controller.HubController read: Content-Length: 327
+
+{"jsonrpc":"2.0","id":3,"method":"requestServiceChannel","params":[{"Name":"Microsoft.VisualStudio.LaunchConfigurationService"},{"ActivationArguments":{"__servicehub__ServiceHubRemoteServiceBrokerPipeName":"/Users/MacBook/.ServiceHub/57d5b9e605/194f259748"},"ClientCredentials":{},"ClientCulture":"de","ClientUICulture":"de"}]}
+01/21/2025 17:24:43 Mitteleuropäische Normalzeit : Information : Microsoft.ServiceHub.Controller.HubController read: Content-Length: 342
+
+{"jsonrpc":"2.0","id":4,"method":"requestServiceChannel","params":[{"Name":"Microsoft.VisualStudio.TestWindow.VSCode.Service","Version":"0.1"},{"ActivationArguments":{"__servicehub__ServiceHubRemoteServiceBrokerPipeName":"/Users/MacBook/.ServiceHub/57d5b9e605/87bd53447e"},"ClientCredentials":{},"ClientCulture":"de","ClientUICulture":"de"}]}Content-Length: 350
+
+{"jsonrpc":"2.0","id":5,"method":"requestServiceChannel","params":[{"Name":"Microsoft.VisualStudio.ProjectSystem.ProjectTreeProvider","Version":"0.1"},{"ActivationArguments":{"__servicehub__ServiceHubRemoteServiceBrokerPipeName":"/Users/MacBook/.ServiceHub/57d5b9e605/efbdb36671"},"ClientCredentials":{},"ClientCulture":"de","ClientUICulture":"de"}]}
+01/21/2025 17:24:43 Mitteleuropäische Normalzeit : Information : Locating service 'Microsoft.VisualStudio.LaunchConfigurationService' requested by VsHubClient (pid:92691)
+01/21/2025 17:24:43 Mitteleuropäische Normalzeit : Information : Service 'Microsoft.VisualStudio.LaunchConfigurationService' has not been loaded before. Loading now.
+01/21/2025 17:24:43 Mitteleuropäische Normalzeit : Information : Discovering configuration files for 'HostConfigurationFileManager'
+01/21/2025 17:24:43 Mitteleuropäische Normalzeit : Information : Found configuration file "/Users/MacBook/.vscode/extensions/ms-dotnettools.csdevkit-1.15.34-darwin-arm64/components/servicehub/dotnet.projectSystem.servicehub.host.json"
+01/21/2025 17:24:43 Mitteleuropäische Normalzeit : Information : Found configuration file 'dotnet.projectSystem' at "/Users/MacBook/.vscode/extensions/ms-dotnettools.csdevkit-1.15.34-darwin-arm64/components/servicehub/dotnet.projectSystem.servicehub.host.json"
+01/21/2025 17:24:43 Mitteleuropäische Normalzeit : Information : Found configuration file "/Users/MacBook/.vscode/extensions/ms-dotnettools.csdevkit-1.15.34-darwin-arm64/components/servicehub/dotnet.aspireServer.servicehub.host.json"
+01/21/2025 17:24:43 Mitteleuropäische Normalzeit : Information : Found configuration file 'dotnet.aspireServer' at "/Users/MacBook/.vscode/extensions/ms-dotnettools.csdevkit-1.15.34-darwin-arm64/components/servicehub/dotnet.aspireServer.servicehub.host.json"
+01/21/2025 17:24:43 Mitteleuropäische Normalzeit : Information : Found configuration file "/Users/MacBook/.vscode/extensions/ms-dotnettools.csdevkit-1.15.34-darwin-arm64/components/servicehub/dotnet.servicehub.host.json"
+01/21/2025 17:24:43 Mitteleuropäische Normalzeit : Information : Found configuration file 'dotnet' at "/Users/MacBook/.vscode/extensions/ms-dotnettools.csdevkit-1.15.34-darwin-arm64/components/servicehub/dotnet.servicehub.host.json"
+01/21/2025 17:24:43 Mitteleuropäische Normalzeit : Information : Loading host info for 'dotnet.projectSystem' from '/Users/MacBook/.vscode/extensions/ms-dotnettools.csdevkit-1.15.34-darwin-arm64/components/servicehub/dotnet.projectSystem.servicehub.host.json'
+01/21/2025 17:24:43 Mitteleuropäische Normalzeit : Information : Starting server 'hostCallback' at 'net.pipe://927013DC0D' (at '/Users/MacBook/.ServiceHub/57d5b9e605/927013DC0D').
+01/21/2025 17:24:43 Mitteleuropäische Normalzeit : Information : Launching 'dotnet.projectSystem$C94B8CFE-E3FD-4BAF-A941-2866DBB566FE' hub host with command line: '/Users/MacBook/.vscode/extensions/ms-dotnettools.csdevkit-1.15.34-darwin-arm64/components/vs-green-server/platforms/darwin-arm64/node_modules/@microsoft/visualstudio-code-servicehost.darwin-arm64/Microsoft.VisualStudio.Code.ServiceHost dotnet.projectSystem$C94B8CFE-E3FD-4BAF-A941-2866DBB566FE net.pipe://927013DC0D "/TelemetrySession:{\"TelemetryLevel\":\"all\",\"IsOptedIn\":false,\"HostName\":\"Default\",\"AppInsightsInstrumentationKey\":null,\"AsimovInstrumentationKey\":null,\"CollectorApiKey\":\"0c6ae279ed8443289764825290e4f9e2-1a736e7c-1324-4338-be46-fc2a58ae4d14-7255\",\"AppId\":1010,\"UserId\":\"d025fecc-e95a-469f-b8bf-8b0860300ee1\",\"Id\":\"e9c4112a-1c88-49a6-bb28-5a4dc4d1b4c51737476675014\",\"ProcessStartTime\":133819502798589808,\"SkuName\":null,\"VSExeVersion\":null,\"BucketFiltersToEnableWatsonForFaults\":[],\"BucketFiltersToAddDumpsToFaults\":[]}"'
+01/21/2025 17:24:43 Mitteleuropäische Normalzeit : Information : Setting environment variable 'DOTNET_ROOT' to '/usr/local/share/dotnet' in the "/Users/MacBook/.vscode/extensions/ms-dotnettools.csdevkit-1.15.34-darwin-arm64/components/vs-green-server/platforms/darwin-arm64/node_modules/@microsoft/visualstudio-code-servicehost.darwin-arm64/Microsoft.VisualStudio.Code.ServiceHost" process.
+01/21/2025 17:24:43 Mitteleuropäische Normalzeit : Information : Setting environment variable 'DOTNET_ROLL_FORWARD_TO_PRERELEASE' to '1' in the "/Users/MacBook/.vscode/extensions/ms-dotnettools.csdevkit-1.15.34-darwin-arm64/components/vs-green-server/platforms/darwin-arm64/node_modules/@microsoft/visualstudio-code-servicehost.darwin-arm64/Microsoft.VisualStudio.Code.ServiceHost" process.
+01/21/2025 17:24:43 Mitteleuropäische Normalzeit : Information : Setting environment variable 'DOTNET_ROLL_FORWARD' to 'LatestMajor' in the "/Users/MacBook/.vscode/extensions/ms-dotnettools.csdevkit-1.15.34-darwin-arm64/components/vs-green-server/platforms/darwin-arm64/node_modules/@microsoft/visualstudio-code-servicehost.darwin-arm64/Microsoft.VisualStudio.Code.ServiceHost" process.
+01/21/2025 17:24:43 Mitteleuropäische Normalzeit : Information : Microsoft.ServiceHub.Controller.HubController read: Content-Length: 367
+
+{"jsonrpc":"2.0","id":6,"method":"requestServiceChannel","params":[{"Name":"Microsoft.VisualStudio.Debugger.HotReloadSessionNotificationService","Version":"0.1"},{"ActivationArguments":{"__servicehub__ServiceHubRemoteServiceBrokerPipeName":"/Users/MacBook/.ServiceHub/57d5b9e605/e7766ddd0d"},"ClientCredentials":{},"ClientCulture":"de-AT","ClientUICulture":"en-US"}]}
+01/21/2025 17:24:43 Mitteleuropäische Normalzeit : Information : Launched 'dotnet.projectSystem$C94B8CFE-E3FD-4BAF-A941-2866DBB566FE' hub host. PID: 92730
+01/21/2025 17:24:43 Mitteleuropäische Normalzeit : Information : Locating service 'Microsoft.VisualStudio.TestWindow.VSCode.Service' requested by VsHubClient (pid:92691)
+01/21/2025 17:24:43 Mitteleuropäische Normalzeit : Information : Service 'Microsoft.VisualStudio.TestWindow.VSCode.Service' has not been loaded before. Loading now.
+01/21/2025 17:24:43 Mitteleuropäische Normalzeit : Information : Loading host info for 'dotnet' from '/Users/MacBook/.vscode/extensions/ms-dotnettools.csdevkit-1.15.34-darwin-arm64/components/servicehub/dotnet.servicehub.host.json'
+01/21/2025 17:24:43 Mitteleuropäische Normalzeit : Information : Launching 'dotnet$C94B8CFE-E3FD-4BAF-A941-2866DBB566FE' hub host with command line: '/Users/MacBook/.vscode/extensions/ms-dotnettools.csdevkit-1.15.34-darwin-arm64/components/vs-green-server/platforms/darwin-arm64/node_modules/@microsoft/visualstudio-code-servicehost.darwin-arm64/Microsoft.VisualStudio.Code.ServiceHost dotnet$C94B8CFE-E3FD-4BAF-A941-2866DBB566FE net.pipe://927013DC0D "/TelemetrySession:{\"TelemetryLevel\":\"all\",\"IsOptedIn\":false,\"HostName\":\"Default\",\"AppInsightsInstrumentationKey\":null,\"AsimovInstrumentationKey\":null,\"CollectorApiKey\":\"0c6ae279ed8443289764825290e4f9e2-1a736e7c-1324-4338-be46-fc2a58ae4d14-7255\",\"AppId\":1010,\"UserId\":\"d025fecc-e95a-469f-b8bf-8b0860300ee1\",\"Id\":\"e9c4112a-1c88-49a6-bb28-5a4dc4d1b4c51737476675014\",\"ProcessStartTime\":133819502798589808,\"SkuName\":null,\"VSExeVersion\":null,\"BucketFiltersToEnableWatsonForFaults\":[],\"BucketFiltersToAddDumpsToFaults\":[]}"'
+01/21/2025 17:24:43 Mitteleuropäische Normalzeit : Information : Microsoft.ServiceHub.Controller.HubController read: Content-Length: 365
+
+{"jsonrpc":"2.0","id":7,"method":"requestServiceChannel","params":[{"Name":"Microsoft.VisualStudio.ProjectSystem.ProjectInitializationStatusService","Version":"0.1"},{"ActivationArguments":{"__servicehub__ServiceHubRemoteServiceBrokerPipeName":"/Users/MacBook/.ServiceHub/57d5b9e605/9d6e9a0912"},"ClientCredentials":{},"ClientCulture":"de","ClientUICulture":"de"}]}
+01/21/2025 17:24:43 Mitteleuropäische Normalzeit : Information : Launched 'dotnet$C94B8CFE-E3FD-4BAF-A941-2866DBB566FE' hub host. PID: 92731
+01/21/2025 17:24:43 Mitteleuropäische Normalzeit : Information : Locating service 'Microsoft.VisualStudio.ProjectSystem.ProjectTreeProvider' requested by VsHubClient (pid:92691)
+01/21/2025 17:24:43 Mitteleuropäische Normalzeit : Information : Service 'Microsoft.VisualStudio.ProjectSystem.ProjectTreeProvider' has not been loaded before. Loading now.
+01/21/2025 17:24:43 Mitteleuropäische Normalzeit : Information : Locating service 'Microsoft.VisualStudio.Debugger.HotReloadSessionNotificationService' requested by VsHubClient (pid:92691)
+01/21/2025 17:24:43 Mitteleuropäische Normalzeit : Information : Service 'Microsoft.VisualStudio.Debugger.HotReloadSessionNotificationService' has not been loaded before. Loading now.
+01/21/2025 17:24:43 Mitteleuropäische Normalzeit : Information : Locating service 'Microsoft.VisualStudio.ProjectSystem.ProjectInitializationStatusService' requested by VsHubClient (pid:92691)
+01/21/2025 17:24:43 Mitteleuropäische Normalzeit : Information : Service 'Microsoft.VisualStudio.ProjectSystem.ProjectInitializationStatusService' has not been loaded before. Loading now.
+01/21/2025 17:24:43 Mitteleuropäische Normalzeit : Information : LocationService write: Content-Length: 116
+
+{"jsonrpc":"2.0","id":2,"method":"InitializeHostAsync","params":[{"HostsRootDirectory":".","AppConfigFallback":""}]}
+01/21/2025 17:24:44 Mitteleuropäische Normalzeit : Information : LocationService read: Content-Length: 79
+
+{"jsonrpc":"2.0","id":2,"result":"dotnet$C94B8CFE-E3FD-4BAF-A941-2866DBB566FE"}
+01/21/2025 17:24:44 Mitteleuropäische Normalzeit : Information : Microsoft.ServiceHub.Controller.HubController read: Content-Length: 367
+
+{"jsonrpc":"2.0","id":8,"method":"requestServiceChannel","params":[{"Name":"Microsoft.VisualStudio.ProjectSystem.Query.Remoting.QueryExecutionService","Version":"0.3"},{"ActivationArguments":{"__servicehub__ServiceHubRemoteServiceBrokerPipeName":"/Users/MacBook/.ServiceHub/57d5b9e605/7f4277281f"},"ClientCredentials":{},"ClientCulture":"de","ClientUICulture":"de"}]}
+01/21/2025 17:24:44 Mitteleuropäische Normalzeit : Information : Locating service 'Microsoft.VisualStudio.ProjectSystem.Query.Remoting.QueryExecutionService' requested by VsHubClient (pid:92691)
+01/21/2025 17:24:44 Mitteleuropäische Normalzeit : Information : Service 'Microsoft.VisualStudio.ProjectSystem.Query.Remoting.QueryExecutionService' has not been loaded before. Loading now.
+01/21/2025 17:24:44 Mitteleuropäische Normalzeit : Information : LocationService write: Content-Length: 116
+
+{"jsonrpc":"2.0","id":2,"method":"InitializeHostAsync","params":[{"HostsRootDirectory":".","AppConfigFallback":""}]}
+01/21/2025 17:24:44 Mitteleuropäische Normalzeit : Information : LocationService write: Content-Length: 1046
+
+{"jsonrpc":"2.0","id":3,"method":"StartServiceAsync","params":[{"name":"Microsoft.VisualStudio.TestWindow.VSCode.Service","host":"dotnet","hostId":"C94B8CFE-E3FD-4BAF-A941-2866DBB566FE","serviceBaseDirectory":"/Users/MacBook/.vscode/extensions/ms-dotnettools.csdevkit-1.15.34-darwin-arm64/components/VSUnitTesting/platforms/darwin-arm64/node_modules/@microsoft/visualstudio-testwindow-vscode-service.darwin-arm64","entryPoint":{"assemblyPath":"/Users/MacBook/.vscode/extensions/ms-dotnettools.csdevkit-1.15.34-darwin-arm64/components/VSUnitTesting/platforms/darwin-arm64/node_modules/@microsoft/visualstudio-testwindow-vscode-service.darwin-arm64/Microsoft.VisualStudio.TestWindow.VSCode.Service.dll","fullClassName":"Microsoft.VisualStudio.TestWindow.VSCode.Service.TestWindowVSCodeServiceFactory"}},{"ActivationArguments":{"__servicehub__ServiceHubRemoteServiceBrokerPipeName":"/Users/MacBook/.ServiceHub/57d5b9e605/87bd53447e","__servicehub__RequestedServiceVersion":"0.1"},"ClientCredentials":{},"ClientCulture":"de","ClientUICulture":"de"}]}
+01/21/2025 17:24:44 Mitteleuropäische Normalzeit : Information : LocationService write: Content-Length: 1033
+
+{"jsonrpc":"2.0","id":4,"method":"StartServiceAsync","params":[{"name":"Microsoft.VisualStudio.Debugger.HotReloadSessionNotificationService","host":"dotnet","hostId":"C94B8CFE-E3FD-4BAF-A941-2866DBB566FE","serviceBaseDirectory":"/Users/MacBook/.vscode/extensions/ms-dotnettools.csdevkit-1.15.34-darwin-arm64/components/VSDebugCore/platforms/darwin-arm64/node_modules/@microsoft/visualstudio-debugger-devkit.darwin-arm64","entryPoint":{"assemblyPath":"/Users/MacBook/.vscode/extensions/ms-dotnettools.csdevkit-1.15.34-darwin-arm64/components/VSDebugCore/platforms/darwin-arm64/node_modules/@microsoft/visualstudio-debugger-devkit.darwin-arm64/Microsoft.VisualStudio.Debugger.DevKit.dll","fullClassName":"Microsoft.VisualStudio.Debugger.HotReloadSessionNotificationService+Factory"}},{"ActivationArguments":{"__servicehub__ServiceHubRemoteServiceBrokerPipeName":"/Users/MacBook/.ServiceHub/57d5b9e605/e7766ddd0d","__servicehub__RequestedServiceVersion":"0.1"},"ClientCredentials":{},"ClientCulture":"de-AT","ClientUICulture":"en-US"}]}
+01/21/2025 17:24:44 Mitteleuropäische Normalzeit : Information : LocationService read: Content-Length: 84
+
+{"jsonrpc":"2.0","id":3,"result":"/Users/MacBook/.ServiceHub/57d5b9e605/81cb59af91"}
+01/21/2025 17:24:44 Mitteleuropäische Normalzeit : Information : Located service \'Microsoft.VisualStudio.TestWindow.VSCode.Service\' at '/Users/MacBook/.ServiceHub/57d5b9e605/81cb59af91 @ dotnet$C94B8CFE-E3FD-4BAF-A941-2866DBB566FE' requested by VsHubClient (pid:92691)
+01/21/2025 17:24:44 Mitteleuropäische Normalzeit : Information : LocationService read: Content-Length: 84
+
+{"jsonrpc":"2.0","id":4,"result":"/Users/MacBook/.ServiceHub/57d5b9e605/0ac5e25f7e"}
+01/21/2025 17:24:44 Mitteleuropäische Normalzeit : Information : Located service \'Microsoft.VisualStudio.Debugger.HotReloadSessionNotificationService\' at '/Users/MacBook/.ServiceHub/57d5b9e605/0ac5e25f7e @ dotnet$C94B8CFE-E3FD-4BAF-A941-2866DBB566FE' requested by VsHubClient (pid:92691)
+01/21/2025 17:24:44 Mitteleuropäische Normalzeit : Information : Microsoft.ServiceHub.Controller.HubController write: Content-Length: 164
+
+{"jsonrpc":"2.0","id":4,"result":{"RequestId":"c6f961c8-964b-4aa1-8151-606e6f844aba","PipeName":"/Users/MacBook/.ServiceHub/57d5b9e605/81cb59af91","IsEmpty":false}}Content-Length: 164
+
+{"jsonrpc":"2.0","id":6,"result":{"RequestId":"540fc30b-c7f2-4b58-b5b4-94548ce965f8","PipeName":"/Users/MacBook/.ServiceHub/57d5b9e605/0ac5e25f7e","IsEmpty":false}}
+01/21/2025 17:24:44 Mitteleuropäische Normalzeit : Information : LocationService read: Content-Length: 110
+
+{"jsonrpc":"2.0","method":"HostServicesStartedAsync","params":["dotnet$C94B8CFE-E3FD-4BAF-A941-2866DBB566FE"]}
+01/21/2025 17:24:44 Mitteleuropäische Normalzeit : Information : LocationService read: Content-Length: 93
+
+{"jsonrpc":"2.0","id":2,"result":"dotnet.projectSystem$C94B8CFE-E3FD-4BAF-A941-2866DBB566FE"}
+01/21/2025 17:24:44 Mitteleuropäische Normalzeit : Information : LocationService write: Content-Length: 993
+
+{"jsonrpc":"2.0","id":3,"method":"StartServiceAsync","params":[{"name":"Microsoft.VisualStudio.LaunchConfigurationService","host":"dotnet.projectSystem","hostId":"C94B8CFE-E3FD-4BAF-A941-2866DBB566FE","serviceBaseDirectory":"/Users/MacBook/.vscode/extensions/ms-dotnettools.csdevkit-1.15.34-darwin-arm64/components/CPS/platforms/darwin-arm64/node_modules/@microsoft/visualstudio-projectsystem-server.darwin-arm64","entryPoint":{"assemblyPath":"/Users/MacBook/.vscode/extensions/ms-dotnettools.csdevkit-1.15.34-darwin-arm64/components/CPS/platforms/darwin-arm64/node_modules/@microsoft/visualstudio-projectsystem-server.darwin-arm64/Microsoft.VisualStudio.ProjectSystem.Server.Implementation.dll","fullClassName":"Microsoft.VisualStudio.ProjectSystem.Server.LaunchConfigurationServiceFactory"}},{"ActivationArguments":{"__servicehub__ServiceHubRemoteServiceBrokerPipeName":"/Users/MacBook/.ServiceHub/57d5b9e605/194f259748"},"ClientCredentials":{},"ClientCulture":"de","ClientUICulture":"de"}]}
+01/21/2025 17:24:44 Mitteleuropäische Normalzeit : Information : LocationService write: Content-Length: 1058
+
+{"jsonrpc":"2.0","id":4,"method":"StartServiceAsync","params":[{"name":"Microsoft.VisualStudio.ProjectSystem.Query.Remoting.QueryExecutionService","host":"dotnet.projectSystem","hostId":"C94B8CFE-E3FD-4BAF-A941-2866DBB566FE","serviceBaseDirectory":"/Users/MacBook/.vscode/extensions/ms-dotnettools.csdevkit-1.15.34-darwin-arm64/components/CPS/platforms/darwin-arm64/node_modules/@microsoft/visualstudio-projectsystem-server.darwin-arm64","entryPoint":{"assemblyPath":"/Users/MacBook/.vscode/extensions/ms-dotnettools.csdevkit-1.15.34-darwin-arm64/components/CPS/platforms/darwin-arm64/node_modules/@microsoft/visualstudio-projectsystem-server.darwin-arm64/Microsoft.VisualStudio.ProjectSystem.Server.Implementation.dll","fullClassName":"Microsoft.VisualStudio.ProjectSystem.Server.QueryExecutionServiceFactory"}},{"ActivationArguments":{"__servicehub__ServiceHubRemoteServiceBrokerPipeName":"/Users/MacBook/.ServiceHub/57d5b9e605/7f4277281f","__servicehub__RequestedServiceVersion":"0.3"},"ClientCredentials":{},"ClientCulture":"de","ClientUICulture":"de"}]}Content-Length: 1069
+
+{"jsonrpc":"2.0","id":5,"method":"StartServiceAsync","params":[{"name":"Microsoft.VisualStudio.ProjectSystem.ProjectInitializationStatusService","host":"dotnet.projectSystem","hostId":"C94B8CFE-E3FD-4BAF-A941-2866DBB566FE","serviceBaseDirectory":"/Users/MacBook/.vscode/extensions/ms-dotnettools.csdevkit-1.15.34-darwin-arm64/components/CPS/platforms/darwin-arm64/node_modules/@microsoft/visualstudio-projectsystem-server.darwin-arm64","entryPoint":{"assemblyPath":"/Users/MacBook/.vscode/extensions/ms-dotnettools.csdevkit-1.15.34-darwin-arm64/components/CPS/platforms/darwin-arm64/node_modules/@microsoft/visualstudio-projectsystem-server.darwin-arm64/Microsoft.VisualStudio.ProjectSystem.Server.Implementation.dll","fullClassName":"Microsoft.VisualStudio.ProjectSystem.Server.ProjectInitializationStatusServiceFactory"}},{"ActivationArguments":{"__servicehub__ServiceHubRemoteServiceBrokerPipeName":"/Users/MacBook/.ServiceHub/57d5b9e605/9d6e9a0912","__servicehub__RequestedServiceVersion":"0.1"},"ClientCredentials":{},"ClientCulture":"de","ClientUICulture":"de"}]}
+01/21/2025 17:24:44 Mitteleuropäische Normalzeit : Information : LocationService write: Content-Length: 1039
+
+{"jsonrpc":"2.0","id":6,"method":"StartServiceAsync","params":[{"name":"Microsoft.VisualStudio.ProjectSystem.ProjectTreeProvider","host":"dotnet.projectSystem","hostId":"C94B8CFE-E3FD-4BAF-A941-2866DBB566FE","serviceBaseDirectory":"/Users/MacBook/.vscode/extensions/ms-dotnettools.csdevkit-1.15.34-darwin-arm64/components/CPS/platforms/darwin-arm64/node_modules/@microsoft/visualstudio-projectsystem-server.darwin-arm64","entryPoint":{"assemblyPath":"/Users/MacBook/.vscode/extensions/ms-dotnettools.csdevkit-1.15.34-darwin-arm64/components/CPS/platforms/darwin-arm64/node_modules/@microsoft/visualstudio-projectsystem-server.darwin-arm64/Microsoft.VisualStudio.ProjectSystem.Server.Implementation.dll","fullClassName":"Microsoft.VisualStudio.ProjectSystem.Server.ProjectTreeProviderFactory"}},{"ActivationArguments":{"__servicehub__ServiceHubRemoteServiceBrokerPipeName":"/Users/MacBook/.ServiceHub/57d5b9e605/efbdb36671","__servicehub__RequestedServiceVersion":"0.1"},"ClientCredentials":{},"ClientCulture":"de","ClientUICulture":"de"}]}
+01/21/2025 17:24:44 Mitteleuropäische Normalzeit : Information : LocationService read: Content-Length: 84
+
+{"jsonrpc":"2.0","id":3,"result":"/Users/MacBook/.ServiceHub/57d5b9e605/ed7eee44a6"}
+01/21/2025 17:24:44 Mitteleuropäische Normalzeit : Information : Located service \'Microsoft.VisualStudio.LaunchConfigurationService\' at '/Users/MacBook/.ServiceHub/57d5b9e605/ed7eee44a6 @ dotnet.projectSystem$C94B8CFE-E3FD-4BAF-A941-2866DBB566FE' requested by VsHubClient (pid:92691)
+01/21/2025 17:24:44 Mitteleuropäische Normalzeit : Information : Microsoft.ServiceHub.Controller.HubController write: Content-Length: 164
+
+{"jsonrpc":"2.0","id":3,"result":{"RequestId":"a3f997c3-8720-401d-b8a0-0b40829cd4de","PipeName":"/Users/MacBook/.ServiceHub/57d5b9e605/ed7eee44a6","IsEmpty":false}}
+01/21/2025 17:24:44 Mitteleuropäische Normalzeit : Information : LocationService read: Content-Length: 84
+
+{"jsonrpc":"2.0","id":4,"result":"/Users/MacBook/.ServiceHub/57d5b9e605/b4edd2d9fa"}Content-Length: 84
+
+{"jsonrpc":"2.0","id":5,"result":"/Users/MacBook/.ServiceHub/57d5b9e605/d16591cbd9"}Content-Length: 84
+
+{"jsonrpc":"2.0","id":6,"result":"/Users/MacBook/.ServiceHub/57d5b9e605/1f15a8aab2"}
+01/21/2025 17:24:44 Mitteleuropäische Normalzeit : Information : Located service \'Microsoft.VisualStudio.ProjectSystem.Query.Remoting.QueryExecutionService\' at '/Users/MacBook/.ServiceHub/57d5b9e605/b4edd2d9fa @ dotnet.projectSystem$C94B8CFE-E3FD-4BAF-A941-2866DBB566FE' requested by VsHubClient (pid:92691)
+01/21/2025 17:24:44 Mitteleuropäische Normalzeit : Information : Located service \'Microsoft.VisualStudio.ProjectSystem.ProjectInitializationStatusService\' at '/Users/MacBook/.ServiceHub/57d5b9e605/d16591cbd9 @ dotnet.projectSystem$C94B8CFE-E3FD-4BAF-A941-2866DBB566FE' requested by VsHubClient (pid:92691)
+01/21/2025 17:24:44 Mitteleuropäische Normalzeit : Information : Located service \'Microsoft.VisualStudio.ProjectSystem.ProjectTreeProvider\' at '/Users/MacBook/.ServiceHub/57d5b9e605/1f15a8aab2 @ dotnet.projectSystem$C94B8CFE-E3FD-4BAF-A941-2866DBB566FE' requested by VsHubClient (pid:92691)
+01/21/2025 17:24:44 Mitteleuropäische Normalzeit : Information : Microsoft.ServiceHub.Controller.HubController write: Content-Length: 164
+
+{"jsonrpc":"2.0","id":8,"result":{"RequestId":"761f6cab-255d-4323-a738-55ac7f5370e7","PipeName":"/Users/MacBook/.ServiceHub/57d5b9e605/b4edd2d9fa","IsEmpty":false}}Content-Length: 164
+
+{"jsonrpc":"2.0","id":7,"result":{"RequestId":"1fc974d6-3205-41ba-aa1c-cce0faa0103a","PipeName":"/Users/MacBook/.ServiceHub/57d5b9e605/d16591cbd9","IsEmpty":false}}Content-Length: 164
+
+{"jsonrpc":"2.0","id":5,"result":{"RequestId":"72eb4ba5-684c-4203-9ee6-35eaf6a2aeb5","PipeName":"/Users/MacBook/.ServiceHub/57d5b9e605/1f15a8aab2","IsEmpty":false}}
+01/21/2025 17:24:44 Mitteleuropäische Normalzeit : Information : LocationService read: Content-Length: 124
+
+{"jsonrpc":"2.0","method":"HostServicesStartedAsync","params":["dotnet.projectSystem$C94B8CFE-E3FD-4BAF-A941-2866DBB566FE"]}
+01/21/2025 17:24:45 Mitteleuropäische Normalzeit : Information : Microsoft.ServiceHub.Controller.HubController read: Content-Length: 349
+
+{"jsonrpc":"2.0","id":9,"method":"requestServiceChannel","params":[{"Name":"Microsoft.VisualStudio.ProjectSystem.CompositionService","Version":"0.1"},{"ActivationArguments":{"__servicehub__ServiceHubRemoteServiceBrokerPipeName":"/Users/MacBook/.ServiceHub/57d5b9e605/165f2117f7"},"ClientCredentials":{},"ClientCulture":"de","ClientUICulture":"de"}]}
+01/21/2025 17:24:45 Mitteleuropäische Normalzeit : Information : Locating service 'Microsoft.VisualStudio.ProjectSystem.CompositionService' requested by VsHubClient (pid:92691)
+01/21/2025 17:24:45 Mitteleuropäische Normalzeit : Information : Service 'Microsoft.VisualStudio.ProjectSystem.CompositionService' has not been loaded before. Loading now.
+01/21/2025 17:24:45 Mitteleuropäische Normalzeit : Information : LocationService write: Content-Length: 1037
+
+{"jsonrpc":"2.0","id":7,"method":"StartServiceAsync","params":[{"name":"Microsoft.VisualStudio.ProjectSystem.CompositionService","host":"dotnet.projectSystem","hostId":"C94B8CFE-E3FD-4BAF-A941-2866DBB566FE","serviceBaseDirectory":"/Users/MacBook/.vscode/extensions/ms-dotnettools.csdevkit-1.15.34-darwin-arm64/components/CPS/platforms/darwin-arm64/node_modules/@microsoft/visualstudio-projectsystem-server.darwin-arm64","entryPoint":{"assemblyPath":"/Users/MacBook/.vscode/extensions/ms-dotnettools.csdevkit-1.15.34-darwin-arm64/components/CPS/platforms/darwin-arm64/node_modules/@microsoft/visualstudio-projectsystem-server.darwin-arm64/Microsoft.VisualStudio.ProjectSystem.Server.Implementation.dll","fullClassName":"Microsoft.VisualStudio.ProjectSystem.Server.CompositionServiceFactory"}},{"ActivationArguments":{"__servicehub__ServiceHubRemoteServiceBrokerPipeName":"/Users/MacBook/.ServiceHub/57d5b9e605/165f2117f7","__servicehub__RequestedServiceVersion":"0.1"},"ClientCredentials":{},"ClientCulture":"de","ClientUICulture":"de"}]}
+01/21/2025 17:24:45 Mitteleuropäische Normalzeit : Information : LocationService read: Content-Length: 84
+
+{"jsonrpc":"2.0","id":7,"result":"/Users/MacBook/.ServiceHub/57d5b9e605/f356577bdd"}
+01/21/2025 17:24:45 Mitteleuropäische Normalzeit : Information : Located service \'Microsoft.VisualStudio.ProjectSystem.CompositionService\' at '/Users/MacBook/.ServiceHub/57d5b9e605/f356577bdd @ dotnet.projectSystem$C94B8CFE-E3FD-4BAF-A941-2866DBB566FE' requested by VsHubClient (pid:92691)
+01/21/2025 17:24:45 Mitteleuropäische Normalzeit : Information : Microsoft.ServiceHub.Controller.HubController write: Content-Length: 164
+
+{"jsonrpc":"2.0","id":9,"result":{"RequestId":"cae97316-1e77-4ed2-8637-c4480a0bcd1d","PipeName":"/Users/MacBook/.ServiceHub/57d5b9e605/f356577bdd","IsEmpty":false}}
+01/21/2025 17:24:45 Mitteleuropäische Normalzeit : Information : Microsoft.ServiceHub.Controller.HubController read: Content-Length: 365
+
+{"jsonrpc":"2.0","id":10,"method":"requestServiceChannel","params":[{"Name":"Microsoft.VisualStudio.TestWindow.VSCode.ProjectSystemProvider.Service","Version":"0.1"},{"ActivationArguments":{"__servicehub__ServiceHubRemoteServiceBrokerPipeName":"/Users/MacBook/.ServiceHub/57d5b9e605/c80833d261"},"ClientCredentials":{},"ClientCulture":"de","ClientUICulture":"de"}]}
+01/21/2025 17:24:45 Mitteleuropäische Normalzeit : Information : Locating service 'Microsoft.VisualStudio.TestWindow.VSCode.ProjectSystemProvider.Service' requested by VsHubClient (pid:92691)
+01/21/2025 17:24:45 Mitteleuropäische Normalzeit : Information : Service 'Microsoft.VisualStudio.TestWindow.VSCode.ProjectSystemProvider.Service' has not been loaded before. Loading now.
+01/21/2025 17:24:45 Mitteleuropäische Normalzeit : Information : LocationService write: Content-Length: 1095
+
+{"jsonrpc":"2.0","id":5,"method":"StartServiceAsync","params":[{"name":"Microsoft.VisualStudio.TestWindow.VSCode.ProjectSystemProvider.Service","host":"dotnet","hostId":"C94B8CFE-E3FD-4BAF-A941-2866DBB566FE","serviceBaseDirectory":"/Users/MacBook/.vscode/extensions/ms-dotnettools.csdevkit-1.15.34-darwin-arm64/components/VSUnitTesting/platforms/darwin-arm64/node_modules/@microsoft/visualstudio-testwindow-vscode-service.darwin-arm64","entryPoint":{"assemblyPath":"/Users/MacBook/.vscode/extensions/ms-dotnettools.csdevkit-1.15.34-darwin-arm64/components/VSUnitTesting/platforms/darwin-arm64/node_modules/@microsoft/visualstudio-testwindow-vscode-service.darwin-arm64/Microsoft.VisualStudio.TestWindow.VSCode.Service.dll","fullClassName":"Microsoft.VisualStudio.TestWindow.VSCode.ProjectSystemProvider.Service.ProjectSystemProviderServiceFactory"}},{"ActivationArguments":{"__servicehub__ServiceHubRemoteServiceBrokerPipeName":"/Users/MacBook/.ServiceHub/57d5b9e605/c80833d261","__servicehub__RequestedServiceVersion":"0.1"},"ClientCredentials":{},"ClientCulture":"de","ClientUICulture":"de"}]}
+01/21/2025 17:24:45 Mitteleuropäische Normalzeit : Information : LocationService read: Content-Length: 84
+
+{"jsonrpc":"2.0","id":5,"result":"/Users/MacBook/.ServiceHub/57d5b9e605/b405df8ec8"}
+01/21/2025 17:24:45 Mitteleuropäische Normalzeit : Information : Located service \'Microsoft.VisualStudio.TestWindow.VSCode.ProjectSystemProvider.Service\' at '/Users/MacBook/.ServiceHub/57d5b9e605/b405df8ec8 @ dotnet$C94B8CFE-E3FD-4BAF-A941-2866DBB566FE' requested by VsHubClient (pid:92691)
+01/21/2025 17:24:45 Mitteleuropäische Normalzeit : Information : Microsoft.ServiceHub.Controller.HubController write: Content-Length: 165
+
+{"jsonrpc":"2.0","id":10,"result":{"RequestId":"8bc55337-3dc7-40f6-8e6d-0feb3cbd68be","PipeName":"/Users/MacBook/.ServiceHub/57d5b9e605/b405df8ec8","IsEmpty":false}}
+01/21/2025 17:24:45 Mitteleuropäische Normalzeit : Information : Microsoft.ServiceHub.Controller.HubController read: Content-Length: 368
+
+{"jsonrpc":"2.0","id":11,"method":"requestServiceChannel","params":[{"Name":"Microsoft.VisualStudio.ProjectSystem.Query.Remoting.QueryExecutionService","Version":"0.3"},{"ActivationArguments":{"__servicehub__ServiceHubRemoteServiceBrokerPipeName":"/Users/MacBook/.ServiceHub/57d5b9e605/3281066414"},"ClientCredentials":{},"ClientCulture":"de","ClientUICulture":"de"}]}
+01/21/2025 17:24:45 Mitteleuropäische Normalzeit : Information : Locating service 'Microsoft.VisualStudio.ProjectSystem.Query.Remoting.QueryExecutionService' requested by VsHubClient (pid:92691)
+01/21/2025 17:24:45 Mitteleuropäische Normalzeit : Information : Service 'Microsoft.VisualStudio.ProjectSystem.Query.Remoting.QueryExecutionService' has not been loaded before. Loading now.
+01/21/2025 17:24:45 Mitteleuropäische Normalzeit : Information : LocationService write: Content-Length: 1058
+
+{"jsonrpc":"2.0","id":8,"method":"StartServiceAsync","params":[{"name":"Microsoft.VisualStudio.ProjectSystem.Query.Remoting.QueryExecutionService","host":"dotnet.projectSystem","hostId":"C94B8CFE-E3FD-4BAF-A941-2866DBB566FE","serviceBaseDirectory":"/Users/MacBook/.vscode/extensions/ms-dotnettools.csdevkit-1.15.34-darwin-arm64/components/CPS/platforms/darwin-arm64/node_modules/@microsoft/visualstudio-projectsystem-server.darwin-arm64","entryPoint":{"assemblyPath":"/Users/MacBook/.vscode/extensions/ms-dotnettools.csdevkit-1.15.34-darwin-arm64/components/CPS/platforms/darwin-arm64/node_modules/@microsoft/visualstudio-projectsystem-server.darwin-arm64/Microsoft.VisualStudio.ProjectSystem.Server.Implementation.dll","fullClassName":"Microsoft.VisualStudio.ProjectSystem.Server.QueryExecutionServiceFactory"}},{"ActivationArguments":{"__servicehub__ServiceHubRemoteServiceBrokerPipeName":"/Users/MacBook/.ServiceHub/57d5b9e605/3281066414","__servicehub__RequestedServiceVersion":"0.3"},"ClientCredentials":{},"ClientCulture":"de","ClientUICulture":"de"}]}
+01/21/2025 17:24:45 Mitteleuropäische Normalzeit : Information : LocationService read: Content-Length: 84
+
+{"jsonrpc":"2.0","id":8,"result":"/Users/MacBook/.ServiceHub/57d5b9e605/90f010567e"}
+01/21/2025 17:24:45 Mitteleuropäische Normalzeit : Information : Located service \'Microsoft.VisualStudio.ProjectSystem.Query.Remoting.QueryExecutionService\' at '/Users/MacBook/.ServiceHub/57d5b9e605/90f010567e @ dotnet.projectSystem$C94B8CFE-E3FD-4BAF-A941-2866DBB566FE' requested by VsHubClient (pid:92691)
+01/21/2025 17:24:45 Mitteleuropäische Normalzeit : Information : Microsoft.ServiceHub.Controller.HubController write: Content-Length: 165
+
+{"jsonrpc":"2.0","id":11,"result":{"RequestId":"f29688c9-ec09-4675-846b-5b40435b0e8f","PipeName":"/Users/MacBook/.ServiceHub/57d5b9e605/90f010567e","IsEmpty":false}}
+01/21/2025 17:24:46 Mitteleuropäische Normalzeit : Information : Microsoft.ServiceHub.Controller.HubController read: Content-Length: 345
+
+{"jsonrpc":"2.0","id":12,"method":"requestServiceChannel","params":[{"Name":"Microsoft.VisualStudio.CpsProjectIconSourceService","Version":"0.1"},{"ActivationArguments":{"__servicehub__ServiceHubRemoteServiceBrokerPipeName":"/Users/MacBook/.ServiceHub/57d5b9e605/051d92ec98"},"ClientCredentials":{},"ClientCulture":"de","ClientUICulture":"de"}]}
+01/21/2025 17:24:46 Mitteleuropäische Normalzeit : Information : Locating service 'Microsoft.VisualStudio.CpsProjectIconSourceService' requested by VsHubClient (pid:92691)
+01/21/2025 17:24:46 Mitteleuropäische Normalzeit : Information : Service 'Microsoft.VisualStudio.CpsProjectIconSourceService' has not been loaded before. Loading now.
+01/21/2025 17:24:46 Mitteleuropäische Normalzeit : Information : LocationService write: Content-Length: 1038
+
+{"jsonrpc":"2.0","id":9,"method":"StartServiceAsync","params":[{"name":"Microsoft.VisualStudio.CpsProjectIconSourceService","host":"dotnet.projectSystem","hostId":"C94B8CFE-E3FD-4BAF-A941-2866DBB566FE","serviceBaseDirectory":"/Users/MacBook/.vscode/extensions/ms-dotnettools.csdevkit-1.15.34-darwin-arm64/components/CPS/platforms/darwin-arm64/node_modules/@microsoft/visualstudio-projectsystem-server.darwin-arm64","entryPoint":{"assemblyPath":"/Users/MacBook/.vscode/extensions/ms-dotnettools.csdevkit-1.15.34-darwin-arm64/components/CPS/platforms/darwin-arm64/node_modules/@microsoft/visualstudio-projectsystem-server.darwin-arm64/Microsoft.VisualStudio.ProjectSystem.Server.Implementation.dll","fullClassName":"Microsoft.VisualStudio.ProjectSystem.Server.ProjectIconSourceServiceFactory"}},{"ActivationArguments":{"__servicehub__ServiceHubRemoteServiceBrokerPipeName":"/Users/MacBook/.ServiceHub/57d5b9e605/051d92ec98","__servicehub__RequestedServiceVersion":"0.1"},"ClientCredentials":{},"ClientCulture":"de","ClientUICulture":"de"}]}
+01/21/2025 17:24:46 Mitteleuropäische Normalzeit : Information : LocationService read: Content-Length: 84
+
+{"jsonrpc":"2.0","id":9,"result":"/Users/MacBook/.ServiceHub/57d5b9e605/ddc38e0e95"}
+01/21/2025 17:24:46 Mitteleuropäische Normalzeit : Information : Located service \'Microsoft.VisualStudio.CpsProjectIconSourceService\' at '/Users/MacBook/.ServiceHub/57d5b9e605/ddc38e0e95 @ dotnet.projectSystem$C94B8CFE-E3FD-4BAF-A941-2866DBB566FE' requested by VsHubClient (pid:92691)
+01/21/2025 17:24:46 Mitteleuropäische Normalzeit : Information : Microsoft.ServiceHub.Controller.HubController write: Content-Length: 165
+
+{"jsonrpc":"2.0","id":12,"result":{"RequestId":"757ff66e-468c-463c-bae6-6d214ccaea4f","PipeName":"/Users/MacBook/.ServiceHub/57d5b9e605/ddc38e0e95","IsEmpty":false}}
+01/21/2025 17:24:47 Mitteleuropäische Normalzeit : Information : Microsoft.ServiceHub.Controller.HubController read: Content-Length: 366
+
+{"jsonrpc":"2.0","id":13,"method":"requestServiceChannel","params":[{"Name":"Microsoft.VisualStudio.ProjectSystem.ProjectInitializationStatusService","Version":"0.1"},{"ActivationArguments":{"__servicehub__ServiceHubRemoteServiceBrokerPipeName":"/Users/MacBook/.ServiceHub/57d5b9e605/be7858a0a9"},"ClientCredentials":{},"ClientCulture":"de","ClientUICulture":"de"}]}
+01/21/2025 17:24:47 Mitteleuropäische Normalzeit : Information : Locating service 'Microsoft.VisualStudio.ProjectSystem.ProjectInitializationStatusService' requested by VsHubClient (pid:92691)
+01/21/2025 17:24:47 Mitteleuropäische Normalzeit : Information : Service 'Microsoft.VisualStudio.ProjectSystem.ProjectInitializationStatusService' has not been loaded before. Loading now.
+01/21/2025 17:24:47 Mitteleuropäische Normalzeit : Information : LocationService write: Content-Length: 1070
+
+{"jsonrpc":"2.0","id":10,"method":"StartServiceAsync","params":[{"name":"Microsoft.VisualStudio.ProjectSystem.ProjectInitializationStatusService","host":"dotnet.projectSystem","hostId":"C94B8CFE-E3FD-4BAF-A941-2866DBB566FE","serviceBaseDirectory":"/Users/MacBook/.vscode/extensions/ms-dotnettools.csdevkit-1.15.34-darwin-arm64/components/CPS/platforms/darwin-arm64/node_modules/@microsoft/visualstudio-projectsystem-server.darwin-arm64","entryPoint":{"assemblyPath":"/Users/MacBook/.vscode/extensions/ms-dotnettools.csdevkit-1.15.34-darwin-arm64/components/CPS/platforms/darwin-arm64/node_modules/@microsoft/visualstudio-projectsystem-server.darwin-arm64/Microsoft.VisualStudio.ProjectSystem.Server.Implementation.dll","fullClassName":"Microsoft.VisualStudio.ProjectSystem.Server.ProjectInitializationStatusServiceFactory"}},{"ActivationArguments":{"__servicehub__ServiceHubRemoteServiceBrokerPipeName":"/Users/MacBook/.ServiceHub/57d5b9e605/be7858a0a9","__servicehub__RequestedServiceVersion":"0.1"},"ClientCredentials":{},"ClientCulture":"de","ClientUICulture":"de"}]}
+01/21/2025 17:24:47 Mitteleuropäische Normalzeit : Information : LocationService read: Content-Length: 85
+
+{"jsonrpc":"2.0","id":10,"result":"/Users/MacBook/.ServiceHub/57d5b9e605/1852b41ba4"}
+01/21/2025 17:24:47 Mitteleuropäische Normalzeit : Information : Located service \'Microsoft.VisualStudio.ProjectSystem.ProjectInitializationStatusService\' at '/Users/MacBook/.ServiceHub/57d5b9e605/1852b41ba4 @ dotnet.projectSystem$C94B8CFE-E3FD-4BAF-A941-2866DBB566FE' requested by VsHubClient (pid:92691)
+01/21/2025 17:24:47 Mitteleuropäische Normalzeit : Information : Microsoft.ServiceHub.Controller.HubController write: Content-Length: 165
+
+{"jsonrpc":"2.0","id":13,"result":{"RequestId":"aedc667d-7630-47ef-8a00-0cc98be40283","PipeName":"/Users/MacBook/.ServiceHub/57d5b9e605/1852b41ba4","IsEmpty":false}}
+01/21/2025 21:56:23 Mitteleuropäische Normalzeit : Information : Microsoft.ServiceHub.Controller.HubController read: Content-Length: 353
+
+{"jsonrpc":"2.0","id":14,"method":"requestServiceChannel","params":[{"Name":"Microsoft.VisualStudio.Debugger.SymbolLocatorService","Version":"0.1"},{"ActivationArguments":{"__servicehub__ServiceHubRemoteServiceBrokerPipeName":"/Users/MacBook/.ServiceHub/57d5b9e605/7b3e05c791"},"ClientCredentials":{},"ClientCulture":"de-AT","ClientUICulture":"en-US"}]}
+01/21/2025 21:56:23 Mitteleuropäische Normalzeit : Information : Locating service 'Microsoft.VisualStudio.Debugger.SymbolLocatorService' requested by VsHubClient (pid:92691)
+01/21/2025 21:56:23 Mitteleuropäische Normalzeit : Information : Service 'Microsoft.VisualStudio.Debugger.SymbolLocatorService' has not been loaded before. Loading now.
+01/21/2025 21:56:23 Mitteleuropäische Normalzeit : Information : LocationService write: Content-Length: 1034
+
+{"jsonrpc":"2.0","id":6,"method":"StartServiceAsync","params":[{"name":"Microsoft.VisualStudio.Debugger.SymbolLocatorService","host":"dotnet","hostId":"C94B8CFE-E3FD-4BAF-A941-2866DBB566FE","serviceBaseDirectory":"/Users/MacBook/.vscode/extensions/ms-dotnettools.csdevkit-1.15.34-darwin-arm64/components/VSDebugCore/platforms/darwin-arm64/node_modules/@microsoft/visualstudio-debugger-devkit.darwin-arm64","entryPoint":{"assemblyPath":"/Users/MacBook/.vscode/extensions/ms-dotnettools.csdevkit-1.15.34-darwin-arm64/components/VSDebugCore/platforms/darwin-arm64/node_modules/@microsoft/visualstudio-debugger-devkit.darwin-arm64/Microsoft.VisualStudio.Debugger.DevKit.dll","fullClassName":"Microsoft.VisualStudio.Debugger.BrokeredServices.SymbolLocator.SymbolLocatorService+Factory"}},{"ActivationArguments":{"__servicehub__ServiceHubRemoteServiceBrokerPipeName":"/Users/MacBook/.ServiceHub/57d5b9e605/7b3e05c791","__servicehub__RequestedServiceVersion":"0.1"},"ClientCredentials":{},"ClientCulture":"de-AT","ClientUICulture":"en-US"}]}
+01/21/2025 21:56:23 Mitteleuropäische Normalzeit : Information : LocationService read: Content-Length: 84
+
+{"jsonrpc":"2.0","id":6,"result":"/Users/MacBook/.ServiceHub/57d5b9e605/3df49c31a1"}
+01/21/2025 21:56:23 Mitteleuropäische Normalzeit : Information : Located service \'Microsoft.VisualStudio.Debugger.SymbolLocatorService\' at '/Users/MacBook/.ServiceHub/57d5b9e605/3df49c31a1 @ dotnet$C94B8CFE-E3FD-4BAF-A941-2866DBB566FE' requested by VsHubClient (pid:92691)
+01/21/2025 21:56:23 Mitteleuropäische Normalzeit : Information : Microsoft.ServiceHub.Controller.HubController write: Content-Length: 165
+
+{"jsonrpc":"2.0","id":14,"result":{"RequestId":"54293227-0eab-4145-b8a0-c49575d10bba","PipeName":"/Users/MacBook/.ServiceHub/57d5b9e605/3df49c31a1","IsEmpty":false}}
+01/21/2025 21:56:23 Mitteleuropäische Normalzeit : Information : Microsoft.ServiceHub.Controller.HubController read: Content-Length: 350
+
+{"jsonrpc":"2.0","id":15,"method":"requestServiceChannel","params":[{"Name":"Microsoft.VisualStudio.Debugger.SourceLinkService","Version":"0.1"},{"ActivationArguments":{"__servicehub__ServiceHubRemoteServiceBrokerPipeName":"/Users/MacBook/.ServiceHub/57d5b9e605/1868805f34"},"ClientCredentials":{},"ClientCulture":"de-AT","ClientUICulture":"en-US"}]}
+01/21/2025 21:56:23 Mitteleuropäische Normalzeit : Information : Locating service 'Microsoft.VisualStudio.Debugger.SourceLinkService' requested by VsHubClient (pid:92691)
+01/21/2025 21:56:23 Mitteleuropäische Normalzeit : Information : Service 'Microsoft.VisualStudio.Debugger.SourceLinkService' has not been loaded before. Loading now.
+01/21/2025 21:56:23 Mitteleuropäische Normalzeit : Information : LocationService write: Content-Length: 997
+
+{"jsonrpc":"2.0","id":7,"method":"StartServiceAsync","params":[{"name":"Microsoft.VisualStudio.Debugger.SourceLinkService","host":"dotnet","hostId":"C94B8CFE-E3FD-4BAF-A941-2866DBB566FE","serviceBaseDirectory":"/Users/MacBook/.vscode/extensions/ms-dotnettools.csdevkit-1.15.34-darwin-arm64/components/VSDebugCore/platforms/darwin-arm64/node_modules/@microsoft/visualstudio-debugger-devkit.darwin-arm64","entryPoint":{"assemblyPath":"/Users/MacBook/.vscode/extensions/ms-dotnettools.csdevkit-1.15.34-darwin-arm64/components/VSDebugCore/platforms/darwin-arm64/node_modules/@microsoft/visualstudio-debugger-devkit.darwin-arm64/Microsoft.VisualStudio.Debugger.DevKit.dll","fullClassName":"Microsoft.VisualStudio.Debugger.SourceLinkService+Factory"}},{"ActivationArguments":{"__servicehub__ServiceHubRemoteServiceBrokerPipeName":"/Users/MacBook/.ServiceHub/57d5b9e605/1868805f34","__servicehub__RequestedServiceVersion":"0.1"},"ClientCredentials":{},"ClientCulture":"de-AT","ClientUICulture":"en-US"}]}
+01/21/2025 21:56:23 Mitteleuropäische Normalzeit : Information : LocationService read: Content-Length: 84
+
+{"jsonrpc":"2.0","id":7,"result":"/Users/MacBook/.ServiceHub/57d5b9e605/e7056e1ba6"}
+01/21/2025 21:56:23 Mitteleuropäische Normalzeit : Information : Located service \'Microsoft.VisualStudio.Debugger.SourceLinkService\' at '/Users/MacBook/.ServiceHub/57d5b9e605/e7056e1ba6 @ dotnet$C94B8CFE-E3FD-4BAF-A941-2866DBB566FE' requested by VsHubClient (pid:92691)
+01/21/2025 21:56:23 Mitteleuropäische Normalzeit : Information : Microsoft.ServiceHub.Controller.HubController write: Content-Length: 165
+
+{"jsonrpc":"2.0","id":15,"result":{"RequestId":"5fa3082d-1635-44e3-9195-57c0487f2bf3","PipeName":"/Users/MacBook/.ServiceHub/57d5b9e605/e7056e1ba6","IsEmpty":false}}
+01/21/2025 22:06:14 Mitteleuropäische Normalzeit : Information : Microsoft.ServiceHub.Controller.HubController read: Content-Length: 353
+
+{"jsonrpc":"2.0","id":16,"method":"requestServiceChannel","params":[{"Name":"Microsoft.VisualStudio.Debugger.SymbolLocatorService","Version":"0.1"},{"ActivationArguments":{"__servicehub__ServiceHubRemoteServiceBrokerPipeName":"/Users/MacBook/.ServiceHub/57d5b9e605/405d6dd51c"},"ClientCredentials":{},"ClientCulture":"de-AT","ClientUICulture":"en-US"}]}
+01/21/2025 22:06:14 Mitteleuropäische Normalzeit : Information : Locating service 'Microsoft.VisualStudio.Debugger.SymbolLocatorService' requested by VsHubClient (pid:92691)
+01/21/2025 22:06:14 Mitteleuropäische Normalzeit : Information : Service 'Microsoft.VisualStudio.Debugger.SymbolLocatorService' has not been loaded before. Loading now.
+01/21/2025 22:06:14 Mitteleuropäische Normalzeit : Information : LocationService write: Content-Length: 1034
+
+{"jsonrpc":"2.0","id":8,"method":"StartServiceAsync","params":[{"name":"Microsoft.VisualStudio.Debugger.SymbolLocatorService","host":"dotnet","hostId":"C94B8CFE-E3FD-4BAF-A941-2866DBB566FE","serviceBaseDirectory":"/Users/MacBook/.vscode/extensions/ms-dotnettools.csdevkit-1.15.34-darwin-arm64/components/VSDebugCore/platforms/darwin-arm64/node_modules/@microsoft/visualstudio-debugger-devkit.darwin-arm64","entryPoint":{"assemblyPath":"/Users/MacBook/.vscode/extensions/ms-dotnettools.csdevkit-1.15.34-darwin-arm64/components/VSDebugCore/platforms/darwin-arm64/node_modules/@microsoft/visualstudio-debugger-devkit.darwin-arm64/Microsoft.VisualStudio.Debugger.DevKit.dll","fullClassName":"Microsoft.VisualStudio.Debugger.BrokeredServices.SymbolLocator.SymbolLocatorService+Factory"}},{"ActivationArguments":{"__servicehub__ServiceHubRemoteServiceBrokerPipeName":"/Users/MacBook/.ServiceHub/57d5b9e605/405d6dd51c","__servicehub__RequestedServiceVersion":"0.1"},"ClientCredentials":{},"ClientCulture":"de-AT","ClientUICulture":"en-US"}]}
+01/21/2025 22:06:14 Mitteleuropäische Normalzeit : Information : LocationService read: Content-Length: 84
+
+{"jsonrpc":"2.0","id":8,"result":"/Users/MacBook/.ServiceHub/57d5b9e605/508d9a2c02"}
+01/21/2025 22:06:14 Mitteleuropäische Normalzeit : Information : Located service \'Microsoft.VisualStudio.Debugger.SymbolLocatorService\' at '/Users/MacBook/.ServiceHub/57d5b9e605/508d9a2c02 @ dotnet$C94B8CFE-E3FD-4BAF-A941-2866DBB566FE' requested by VsHubClient (pid:92691)
+01/21/2025 22:06:14 Mitteleuropäische Normalzeit : Information : Microsoft.ServiceHub.Controller.HubController write: Content-Length: 165
+
+{"jsonrpc":"2.0","id":16,"result":{"RequestId":"97602cc9-0129-4d43-9bc4-e593073b0ce3","PipeName":"/Users/MacBook/.ServiceHub/57d5b9e605/508d9a2c02","IsEmpty":false}}
+01/21/2025 22:06:55 Mitteleuropäische Normalzeit : Information : Microsoft.ServiceHub.Controller.HubController read: Content-Length: 353
+
+{"jsonrpc":"2.0","id":17,"method":"requestServiceChannel","params":[{"Name":"Microsoft.VisualStudio.Debugger.SymbolLocatorService","Version":"0.1"},{"ActivationArguments":{"__servicehub__ServiceHubRemoteServiceBrokerPipeName":"/Users/MacBook/.ServiceHub/57d5b9e605/5dea3828b8"},"ClientCredentials":{},"ClientCulture":"de-AT","ClientUICulture":"en-US"}]}
+01/21/2025 22:06:55 Mitteleuropäische Normalzeit : Information : Locating service 'Microsoft.VisualStudio.Debugger.SymbolLocatorService' requested by VsHubClient (pid:92691)
+01/21/2025 22:06:55 Mitteleuropäische Normalzeit : Information : Service 'Microsoft.VisualStudio.Debugger.SymbolLocatorService' has not been loaded before. Loading now.
+01/21/2025 22:06:55 Mitteleuropäische Normalzeit : Information : LocationService write: Content-Length: 1034
+
+{"jsonrpc":"2.0","id":9,"method":"StartServiceAsync","params":[{"name":"Microsoft.VisualStudio.Debugger.SymbolLocatorService","host":"dotnet","hostId":"C94B8CFE-E3FD-4BAF-A941-2866DBB566FE","serviceBaseDirectory":"/Users/MacBook/.vscode/extensions/ms-dotnettools.csdevkit-1.15.34-darwin-arm64/components/VSDebugCore/platforms/darwin-arm64/node_modules/@microsoft/visualstudio-debugger-devkit.darwin-arm64","entryPoint":{"assemblyPath":"/Users/MacBook/.vscode/extensions/ms-dotnettools.csdevkit-1.15.34-darwin-arm64/components/VSDebugCore/platforms/darwin-arm64/node_modules/@microsoft/visualstudio-debugger-devkit.darwin-arm64/Microsoft.VisualStudio.Debugger.DevKit.dll","fullClassName":"Microsoft.VisualStudio.Debugger.BrokeredServices.SymbolLocator.SymbolLocatorService+Factory"}},{"ActivationArguments":{"__servicehub__ServiceHubRemoteServiceBrokerPipeName":"/Users/MacBook/.ServiceHub/57d5b9e605/5dea3828b8","__servicehub__RequestedServiceVersion":"0.1"},"ClientCredentials":{},"ClientCulture":"de-AT","ClientUICulture":"en-US"}]}
+01/21/2025 22:06:55 Mitteleuropäische Normalzeit : Information : LocationService read: Content-Length: 84
+
+{"jsonrpc":"2.0","id":9,"result":"/Users/MacBook/.ServiceHub/57d5b9e605/50a8efa812"}
+01/21/2025 22:06:55 Mitteleuropäische Normalzeit : Information : Located service \'Microsoft.VisualStudio.Debugger.SymbolLocatorService\' at '/Users/MacBook/.ServiceHub/57d5b9e605/50a8efa812 @ dotnet$C94B8CFE-E3FD-4BAF-A941-2866DBB566FE' requested by VsHubClient (pid:92691)
+01/21/2025 22:06:55 Mitteleuropäische Normalzeit : Information : Microsoft.ServiceHub.Controller.HubController write: Content-Length: 165
+
+{"jsonrpc":"2.0","id":17,"result":{"RequestId":"7e4c1564-3ace-4389-b20b-3d5513ba335e","PipeName":"/Users/MacBook/.ServiceHub/57d5b9e605/50a8efa812","IsEmpty":false}}
+01/21/2025 22:06:55 Mitteleuropäische Normalzeit : Information : Microsoft.ServiceHub.Controller.HubController read: Content-Length: 350
+
+{"jsonrpc":"2.0","id":18,"method":"requestServiceChannel","params":[{"Name":"Microsoft.VisualStudio.Debugger.SourceLinkService","Version":"0.1"},{"ActivationArguments":{"__servicehub__ServiceHubRemoteServiceBrokerPipeName":"/Users/MacBook/.ServiceHub/57d5b9e605/569a969643"},"ClientCredentials":{},"ClientCulture":"de-AT","ClientUICulture":"en-US"}]}
+01/21/2025 22:06:55 Mitteleuropäische Normalzeit : Information : Microsoft.ServiceHub.Controller.HubController read: Content-Length: 350
+
+{"jsonrpc":"2.0","id":19,"method":"requestServiceChannel","params":[{"Name":"Microsoft.VisualStudio.Debugger.SourceLinkService","Version":"0.1"},{"ActivationArguments":{"__servicehub__ServiceHubRemoteServiceBrokerPipeName":"/Users/MacBook/.ServiceHub/57d5b9e605/25006d0397"},"ClientCredentials":{},"ClientCulture":"de-AT","ClientUICulture":"en-US"}]}
+01/21/2025 22:06:55 Mitteleuropäische Normalzeit : Information : Locating service 'Microsoft.VisualStudio.Debugger.SourceLinkService' requested by VsHubClient (pid:92691)
+01/21/2025 22:06:55 Mitteleuropäische Normalzeit : Information : Microsoft.ServiceHub.Controller.HubController read: Content-Length: 350
+
+{"jsonrpc":"2.0","id":20,"method":"requestServiceChannel","params":[{"Name":"Microsoft.VisualStudio.Debugger.SourceLinkService","Version":"0.1"},{"ActivationArguments":{"__servicehub__ServiceHubRemoteServiceBrokerPipeName":"/Users/MacBook/.ServiceHub/57d5b9e605/f49463dab5"},"ClientCredentials":{},"ClientCulture":"de-AT","ClientUICulture":"en-US"}]}
+01/21/2025 22:06:55 Mitteleuropäische Normalzeit : Information : Service 'Microsoft.VisualStudio.Debugger.SourceLinkService' has not been loaded before. Loading now.
+01/21/2025 22:06:55 Mitteleuropäische Normalzeit : Information : LocationService write: Content-Length: 998
+
+{"jsonrpc":"2.0","id":10,"method":"StartServiceAsync","params":[{"name":"Microsoft.VisualStudio.Debugger.SourceLinkService","host":"dotnet","hostId":"C94B8CFE-E3FD-4BAF-A941-2866DBB566FE","serviceBaseDirectory":"/Users/MacBook/.vscode/extensions/ms-dotnettools.csdevkit-1.15.34-darwin-arm64/components/VSDebugCore/platforms/darwin-arm64/node_modules/@microsoft/visualstudio-debugger-devkit.darwin-arm64","entryPoint":{"assemblyPath":"/Users/MacBook/.vscode/extensions/ms-dotnettools.csdevkit-1.15.34-darwin-arm64/components/VSDebugCore/platforms/darwin-arm64/node_modules/@microsoft/visualstudio-debugger-devkit.darwin-arm64/Microsoft.VisualStudio.Debugger.DevKit.dll","fullClassName":"Microsoft.VisualStudio.Debugger.SourceLinkService+Factory"}},{"ActivationArguments":{"__servicehub__ServiceHubRemoteServiceBrokerPipeName":"/Users/MacBook/.ServiceHub/57d5b9e605/569a969643","__servicehub__RequestedServiceVersion":"0.1"},"ClientCredentials":{},"ClientCulture":"de-AT","ClientUICulture":"en-US"}]}
+01/21/2025 22:06:55 Mitteleuropäische Normalzeit : Information : Locating service 'Microsoft.VisualStudio.Debugger.SourceLinkService' requested by VsHubClient (pid:92691)
+01/21/2025 22:06:55 Mitteleuropäische Normalzeit : Information : Service 'Microsoft.VisualStudio.Debugger.SourceLinkService' has not been loaded before. Loading now.
+01/21/2025 22:06:55 Mitteleuropäische Normalzeit : Information : LocationService write: Content-Length: 998
+
+{"jsonrpc":"2.0","id":11,"method":"StartServiceAsync","params":[{"name":"Microsoft.VisualStudio.Debugger.SourceLinkService","host":"dotnet","hostId":"C94B8CFE-E3FD-4BAF-A941-2866DBB566FE","serviceBaseDirectory":"/Users/MacBook/.vscode/extensions/ms-dotnettools.csdevkit-1.15.34-darwin-arm64/components/VSDebugCore/platforms/darwin-arm64/node_modules/@microsoft/visualstudio-debugger-devkit.darwin-arm64","entryPoint":{"assemblyPath":"/Users/MacBook/.vscode/extensions/ms-dotnettools.csdevkit-1.15.34-darwin-arm64/components/VSDebugCore/platforms/darwin-arm64/node_modules/@microsoft/visualstudio-debugger-devkit.darwin-arm64/Microsoft.VisualStudio.Debugger.DevKit.dll","fullClassName":"Microsoft.VisualStudio.Debugger.SourceLinkService+Factory"}},{"ActivationArguments":{"__servicehub__ServiceHubRemoteServiceBrokerPipeName":"/Users/MacBook/.ServiceHub/57d5b9e605/25006d0397","__servicehub__RequestedServiceVersion":"0.1"},"ClientCredentials":{},"ClientCulture":"de-AT","ClientUICulture":"en-US"}]}
+01/21/2025 22:06:55 Mitteleuropäische Normalzeit : Information : Locating service 'Microsoft.VisualStudio.Debugger.SourceLinkService' requested by VsHubClient (pid:92691)
+01/21/2025 22:06:55 Mitteleuropäische Normalzeit : Information : Microsoft.ServiceHub.Controller.HubController read: Content-Length: 350
+
+{"jsonrpc":"2.0","id":21,"method":"requestServiceChannel","params":[{"Name":"Microsoft.VisualStudio.Debugger.SourceLinkService","Version":"0.1"},{"ActivationArguments":{"__servicehub__ServiceHubRemoteServiceBrokerPipeName":"/Users/MacBook/.ServiceHub/57d5b9e605/579fa5bdb6"},"ClientCredentials":{},"ClientCulture":"de-AT","ClientUICulture":"en-US"}]}
+01/21/2025 22:06:55 Mitteleuropäische Normalzeit : Information : Service 'Microsoft.VisualStudio.Debugger.SourceLinkService' has not been loaded before. Loading now.
+01/21/2025 22:06:55 Mitteleuropäische Normalzeit : Information : LocationService write: Content-Length: 998
+
+{"jsonrpc":"2.0","id":12,"method":"StartServiceAsync","params":[{"name":"Microsoft.VisualStudio.Debugger.SourceLinkService","host":"dotnet","hostId":"C94B8CFE-E3FD-4BAF-A941-2866DBB566FE","serviceBaseDirectory":"/Users/MacBook/.vscode/extensions/ms-dotnettools.csdevkit-1.15.34-darwin-arm64/components/VSDebugCore/platforms/darwin-arm64/node_modules/@microsoft/visualstudio-debugger-devkit.darwin-arm64","entryPoint":{"assemblyPath":"/Users/MacBook/.vscode/extensions/ms-dotnettools.csdevkit-1.15.34-darwin-arm64/components/VSDebugCore/platforms/darwin-arm64/node_modules/@microsoft/visualstudio-debugger-devkit.darwin-arm64/Microsoft.VisualStudio.Debugger.DevKit.dll","fullClassName":"Microsoft.VisualStudio.Debugger.SourceLinkService+Factory"}},{"ActivationArguments":{"__servicehub__ServiceHubRemoteServiceBrokerPipeName":"/Users/MacBook/.ServiceHub/57d5b9e605/f49463dab5","__servicehub__RequestedServiceVersion":"0.1"},"ClientCredentials":{},"ClientCulture":"de-AT","ClientUICulture":"en-US"}]}
+01/21/2025 22:06:55 Mitteleuropäische Normalzeit : Information : Locating service 'Microsoft.VisualStudio.Debugger.SourceLinkService' requested by VsHubClient (pid:92691)
+01/21/2025 22:06:55 Mitteleuropäische Normalzeit : Information : Service 'Microsoft.VisualStudio.Debugger.SourceLinkService' has not been loaded before. Loading now.
+01/21/2025 22:06:55 Mitteleuropäische Normalzeit : Information : LocationService write: Content-Length: 998
+
+{"jsonrpc":"2.0","id":13,"method":"StartServiceAsync","params":[{"name":"Microsoft.VisualStudio.Debugger.SourceLinkService","host":"dotnet","hostId":"C94B8CFE-E3FD-4BAF-A941-2866DBB566FE","serviceBaseDirectory":"/Users/MacBook/.vscode/extensions/ms-dotnettools.csdevkit-1.15.34-darwin-arm64/components/VSDebugCore/platforms/darwin-arm64/node_modules/@microsoft/visualstudio-debugger-devkit.darwin-arm64","entryPoint":{"assemblyPath":"/Users/MacBook/.vscode/extensions/ms-dotnettools.csdevkit-1.15.34-darwin-arm64/components/VSDebugCore/platforms/darwin-arm64/node_modules/@microsoft/visualstudio-debugger-devkit.darwin-arm64/Microsoft.VisualStudio.Debugger.DevKit.dll","fullClassName":"Microsoft.VisualStudio.Debugger.SourceLinkService+Factory"}},{"ActivationArguments":{"__servicehub__ServiceHubRemoteServiceBrokerPipeName":"/Users/MacBook/.ServiceHub/57d5b9e605/579fa5bdb6","__servicehub__RequestedServiceVersion":"0.1"},"ClientCredentials":{},"ClientCulture":"de-AT","ClientUICulture":"en-US"}]}
+01/21/2025 22:06:55 Mitteleuropäische Normalzeit : Information : LocationService read: Content-Length: 85
+
+{"jsonrpc":"2.0","id":10,"result":"/Users/MacBook/.ServiceHub/57d5b9e605/6d8eadcab6"}
+01/21/2025 22:06:55 Mitteleuropäische Normalzeit : Information : Located service \'Microsoft.VisualStudio.Debugger.SourceLinkService\' at '/Users/MacBook/.ServiceHub/57d5b9e605/6d8eadcab6 @ dotnet$C94B8CFE-E3FD-4BAF-A941-2866DBB566FE' requested by VsHubClient (pid:92691)
+01/21/2025 22:06:55 Mitteleuropäische Normalzeit : Information : LocationService read: Content-Length: 85
+
+{"jsonrpc":"2.0","id":11,"result":"/Users/MacBook/.ServiceHub/57d5b9e605/a500c1ff02"}
+01/21/2025 22:06:55 Mitteleuropäische Normalzeit : Information : Microsoft.ServiceHub.Controller.HubController write: Content-Length: 165
+
+{"jsonrpc":"2.0","id":18,"result":{"RequestId":"23724d90-d8a0-4e1c-b802-7b89dc9c3479","PipeName":"/Users/MacBook/.ServiceHub/57d5b9e605/6d8eadcab6","IsEmpty":false}}
+01/21/2025 22:06:55 Mitteleuropäische Normalzeit : Information : Located service \'Microsoft.VisualStudio.Debugger.SourceLinkService\' at '/Users/MacBook/.ServiceHub/57d5b9e605/a500c1ff02 @ dotnet$C94B8CFE-E3FD-4BAF-A941-2866DBB566FE' requested by VsHubClient (pid:92691)
+01/21/2025 22:06:55 Mitteleuropäische Normalzeit : Information : Microsoft.ServiceHub.Controller.HubController write: Content-Length: 165
+
+{"jsonrpc":"2.0","id":19,"result":{"RequestId":"92890a60-ba50-4688-a3b2-d62e690d4596","PipeName":"/Users/MacBook/.ServiceHub/57d5b9e605/a500c1ff02","IsEmpty":false}}
+01/21/2025 22:06:55 Mitteleuropäische Normalzeit : Information : LocationService read: Content-Length: 85
+
+{"jsonrpc":"2.0","id":12,"result":"/Users/MacBook/.ServiceHub/57d5b9e605/4e64d524e9"}
+01/21/2025 22:06:55 Mitteleuropäische Normalzeit : Information : Located service \'Microsoft.VisualStudio.Debugger.SourceLinkService\' at '/Users/MacBook/.ServiceHub/57d5b9e605/4e64d524e9 @ dotnet$C94B8CFE-E3FD-4BAF-A941-2866DBB566FE' requested by VsHubClient (pid:92691)
+01/21/2025 22:06:55 Mitteleuropäische Normalzeit : Information : Microsoft.ServiceHub.Controller.HubController write: Content-Length: 165
+
+{"jsonrpc":"2.0","id":20,"result":{"RequestId":"389a7e09-62c1-4f51-855a-86fab426bc50","PipeName":"/Users/MacBook/.ServiceHub/57d5b9e605/4e64d524e9","IsEmpty":false}}
+01/21/2025 22:06:55 Mitteleuropäische Normalzeit : Information : LocationService read: Content-Length: 85
+
+{"jsonrpc":"2.0","id":13,"result":"/Users/MacBook/.ServiceHub/57d5b9e605/b30b20b117"}
+01/21/2025 22:06:55 Mitteleuropäische Normalzeit : Information : Located service \'Microsoft.VisualStudio.Debugger.SourceLinkService\' at '/Users/MacBook/.ServiceHub/57d5b9e605/b30b20b117 @ dotnet$C94B8CFE-E3FD-4BAF-A941-2866DBB566FE' requested by VsHubClient (pid:92691)
+01/21/2025 22:06:55 Mitteleuropäische Normalzeit : Information : Microsoft.ServiceHub.Controller.HubController write: Content-Length: 165
+
+{"jsonrpc":"2.0","id":21,"result":{"RequestId":"3e9a1b0c-1387-4048-ab76-bb93c19d24aa","PipeName":"/Users/MacBook/.ServiceHub/57d5b9e605/b30b20b117","IsEmpty":false}}
+01/21/2025 22:07:26 Mitteleuropäische Normalzeit : Information : Microsoft.ServiceHub.Controller.HubController read: Content-Length: 353
+
+{"jsonrpc":"2.0","id":22,"method":"requestServiceChannel","params":[{"Name":"Microsoft.VisualStudio.Debugger.SymbolLocatorService","Version":"0.1"},{"ActivationArguments":{"__servicehub__ServiceHubRemoteServiceBrokerPipeName":"/Users/MacBook/.ServiceHub/57d5b9e605/1015069edd"},"ClientCredentials":{},"ClientCulture":"de-AT","ClientUICulture":"en-US"}]}
+01/21/2025 22:07:26 Mitteleuropäische Normalzeit : Information : Locating service 'Microsoft.VisualStudio.Debugger.SymbolLocatorService' requested by VsHubClient (pid:92691)
+01/21/2025 22:07:26 Mitteleuropäische Normalzeit : Information : Service 'Microsoft.VisualStudio.Debugger.SymbolLocatorService' has not been loaded before. Loading now.
+01/21/2025 22:07:26 Mitteleuropäische Normalzeit : Information : LocationService write: Content-Length: 1035
+
+{"jsonrpc":"2.0","id":14,"method":"StartServiceAsync","params":[{"name":"Microsoft.VisualStudio.Debugger.SymbolLocatorService","host":"dotnet","hostId":"C94B8CFE-E3FD-4BAF-A941-2866DBB566FE","serviceBaseDirectory":"/Users/MacBook/.vscode/extensions/ms-dotnettools.csdevkit-1.15.34-darwin-arm64/components/VSDebugCore/platforms/darwin-arm64/node_modules/@microsoft/visualstudio-debugger-devkit.darwin-arm64","entryPoint":{"assemblyPath":"/Users/MacBook/.vscode/extensions/ms-dotnettools.csdevkit-1.15.34-darwin-arm64/components/VSDebugCore/platforms/darwin-arm64/node_modules/@microsoft/visualstudio-debugger-devkit.darwin-arm64/Microsoft.VisualStudio.Debugger.DevKit.dll","fullClassName":"Microsoft.VisualStudio.Debugger.BrokeredServices.SymbolLocator.SymbolLocatorService+Factory"}},{"ActivationArguments":{"__servicehub__ServiceHubRemoteServiceBrokerPipeName":"/Users/MacBook/.ServiceHub/57d5b9e605/1015069edd","__servicehub__RequestedServiceVersion":"0.1"},"ClientCredentials":{},"ClientCulture":"de-AT","ClientUICulture":"en-US"}]}
+01/21/2025 22:07:26 Mitteleuropäische Normalzeit : Information : LocationService read: Content-Length: 85
+
+{"jsonrpc":"2.0","id":14,"result":"/Users/MacBook/.ServiceHub/57d5b9e605/1e3c0076d6"}
+01/21/2025 22:07:26 Mitteleuropäische Normalzeit : Information : Located service \'Microsoft.VisualStudio.Debugger.SymbolLocatorService\' at '/Users/MacBook/.ServiceHub/57d5b9e605/1e3c0076d6 @ dotnet$C94B8CFE-E3FD-4BAF-A941-2866DBB566FE' requested by VsHubClient (pid:92691)
+01/21/2025 22:07:26 Mitteleuropäische Normalzeit : Information : Microsoft.ServiceHub.Controller.HubController write: Content-Length: 165
+
+{"jsonrpc":"2.0","id":22,"result":{"RequestId":"c9f14a1e-a328-4543-9e1a-a4cdeb0426a7","PipeName":"/Users/MacBook/.ServiceHub/57d5b9e605/1e3c0076d6","IsEmpty":false}}
+01/21/2025 22:07:26 Mitteleuropäische Normalzeit : Information : Microsoft.ServiceHub.Controller.HubController read: Content-Length: 350
+
+{"jsonrpc":"2.0","id":23,"method":"requestServiceChannel","params":[{"Name":"Microsoft.VisualStudio.Debugger.SourceLinkService","Version":"0.1"},{"ActivationArguments":{"__servicehub__ServiceHubRemoteServiceBrokerPipeName":"/Users/MacBook/.ServiceHub/57d5b9e605/0b72baaf72"},"ClientCredentials":{},"ClientCulture":"de-AT","ClientUICulture":"en-US"}]}
+01/21/2025 22:07:26 Mitteleuropäische Normalzeit : Information : Locating service 'Microsoft.VisualStudio.Debugger.SourceLinkService' requested by VsHubClient (pid:92691)
+01/21/2025 22:07:26 Mitteleuropäische Normalzeit : Information : Service 'Microsoft.VisualStudio.Debugger.SourceLinkService' has not been loaded before. Loading now.
+01/21/2025 22:07:26 Mitteleuropäische Normalzeit : Information : LocationService write: Content-Length: 998
+
+{"jsonrpc":"2.0","id":15,"method":"StartServiceAsync","params":[{"name":"Microsoft.VisualStudio.Debugger.SourceLinkService","host":"dotnet","hostId":"C94B8CFE-E3FD-4BAF-A941-2866DBB566FE","serviceBaseDirectory":"/Users/MacBook/.vscode/extensions/ms-dotnettools.csdevkit-1.15.34-darwin-arm64/components/VSDebugCore/platforms/darwin-arm64/node_modules/@microsoft/visualstudio-debugger-devkit.darwin-arm64","entryPoint":{"assemblyPath":"/Users/MacBook/.vscode/extensions/ms-dotnettools.csdevkit-1.15.34-darwin-arm64/components/VSDebugCore/platforms/darwin-arm64/node_modules/@microsoft/visualstudio-debugger-devkit.darwin-arm64/Microsoft.VisualStudio.Debugger.DevKit.dll","fullClassName":"Microsoft.VisualStudio.Debugger.SourceLinkService+Factory"}},{"ActivationArguments":{"__servicehub__ServiceHubRemoteServiceBrokerPipeName":"/Users/MacBook/.ServiceHub/57d5b9e605/0b72baaf72","__servicehub__RequestedServiceVersion":"0.1"},"ClientCredentials":{},"ClientCulture":"de-AT","ClientUICulture":"en-US"}]}
+01/21/2025 22:07:26 Mitteleuropäische Normalzeit : Information : LocationService read: Content-Length: 85
+
+{"jsonrpc":"2.0","id":15,"result":"/Users/MacBook/.ServiceHub/57d5b9e605/663eb5c41a"}
+01/21/2025 22:07:26 Mitteleuropäische Normalzeit : Information : Located service \'Microsoft.VisualStudio.Debugger.SourceLinkService\' at '/Users/MacBook/.ServiceHub/57d5b9e605/663eb5c41a @ dotnet$C94B8CFE-E3FD-4BAF-A941-2866DBB566FE' requested by VsHubClient (pid:92691)
+01/21/2025 22:07:26 Mitteleuropäische Normalzeit : Information : Microsoft.ServiceHub.Controller.HubController write: Content-Length: 165
+
+{"jsonrpc":"2.0","id":23,"result":{"RequestId":"fadcbb05-665d-4306-b553-a4642ba5e7d6","PipeName":"/Users/MacBook/.ServiceHub/57d5b9e605/663eb5c41a","IsEmpty":false}}
+01/21/2025 22:13:55 Mitteleuropäische Normalzeit : Information : Microsoft.ServiceHub.Controller.HubController read: Content-Length: 353
+
+{"jsonrpc":"2.0","id":24,"method":"requestServiceChannel","params":[{"Name":"Microsoft.VisualStudio.Debugger.SymbolLocatorService","Version":"0.1"},{"ActivationArguments":{"__servicehub__ServiceHubRemoteServiceBrokerPipeName":"/Users/MacBook/.ServiceHub/57d5b9e605/0a0ee9cea9"},"ClientCredentials":{},"ClientCulture":"de-AT","ClientUICulture":"en-US"}]}
+01/21/2025 22:13:55 Mitteleuropäische Normalzeit : Information : Locating service 'Microsoft.VisualStudio.Debugger.SymbolLocatorService' requested by VsHubClient (pid:92691)
+01/21/2025 22:13:55 Mitteleuropäische Normalzeit : Information : Service 'Microsoft.VisualStudio.Debugger.SymbolLocatorService' has not been loaded before. Loading now.
+01/21/2025 22:13:55 Mitteleuropäische Normalzeit : Information : LocationService write: Content-Length: 1035
+
+{"jsonrpc":"2.0","id":16,"method":"StartServiceAsync","params":[{"name":"Microsoft.VisualStudio.Debugger.SymbolLocatorService","host":"dotnet","hostId":"C94B8CFE-E3FD-4BAF-A941-2866DBB566FE","serviceBaseDirectory":"/Users/MacBook/.vscode/extensions/ms-dotnettools.csdevkit-1.15.34-darwin-arm64/components/VSDebugCore/platforms/darwin-arm64/node_modules/@microsoft/visualstudio-debugger-devkit.darwin-arm64","entryPoint":{"assemblyPath":"/Users/MacBook/.vscode/extensions/ms-dotnettools.csdevkit-1.15.34-darwin-arm64/components/VSDebugCore/platforms/darwin-arm64/node_modules/@microsoft/visualstudio-debugger-devkit.darwin-arm64/Microsoft.VisualStudio.Debugger.DevKit.dll","fullClassName":"Microsoft.VisualStudio.Debugger.BrokeredServices.SymbolLocator.SymbolLocatorService+Factory"}},{"ActivationArguments":{"__servicehub__ServiceHubRemoteServiceBrokerPipeName":"/Users/MacBook/.ServiceHub/57d5b9e605/0a0ee9cea9","__servicehub__RequestedServiceVersion":"0.1"},"ClientCredentials":{},"ClientCulture":"de-AT","ClientUICulture":"en-US"}]}
+01/21/2025 22:13:55 Mitteleuropäische Normalzeit : Information : LocationService read: Content-Length: 85
+
+{"jsonrpc":"2.0","id":16,"result":"/Users/MacBook/.ServiceHub/57d5b9e605/87ddb5d8aa"}
+01/21/2025 22:13:55 Mitteleuropäische Normalzeit : Information : Located service \'Microsoft.VisualStudio.Debugger.SymbolLocatorService\' at '/Users/MacBook/.ServiceHub/57d5b9e605/87ddb5d8aa @ dotnet$C94B8CFE-E3FD-4BAF-A941-2866DBB566FE' requested by VsHubClient (pid:92691)
+01/21/2025 22:13:55 Mitteleuropäische Normalzeit : Information : Microsoft.ServiceHub.Controller.HubController write: Content-Length: 165
+
+{"jsonrpc":"2.0","id":24,"result":{"RequestId":"d78aa80f-c6a6-4605-8de6-071b6ccfb413","PipeName":"/Users/MacBook/.ServiceHub/57d5b9e605/87ddb5d8aa","IsEmpty":false}}
+01/21/2025 22:13:55 Mitteleuropäische Normalzeit : Information : Microsoft.ServiceHub.Controller.HubController read: Content-Length: 353
+
+{"jsonrpc":"2.0","id":25,"method":"requestServiceChannel","params":[{"Name":"Microsoft.VisualStudio.Debugger.SymbolLocatorService","Version":"0.1"},{"ActivationArguments":{"__servicehub__ServiceHubRemoteServiceBrokerPipeName":"/Users/MacBook/.ServiceHub/57d5b9e605/be52066ec2"},"ClientCredentials":{},"ClientCulture":"de-AT","ClientUICulture":"en-US"}]}
+01/21/2025 22:13:55 Mitteleuropäische Normalzeit : Information : Locating service 'Microsoft.VisualStudio.Debugger.SymbolLocatorService' requested by VsHubClient (pid:92691)
+01/21/2025 22:13:55 Mitteleuropäische Normalzeit : Information : Service 'Microsoft.VisualStudio.Debugger.SymbolLocatorService' has not been loaded before. Loading now.
+01/21/2025 22:13:55 Mitteleuropäische Normalzeit : Information : LocationService write: Content-Length: 1035
+
+{"jsonrpc":"2.0","id":17,"method":"StartServiceAsync","params":[{"name":"Microsoft.VisualStudio.Debugger.SymbolLocatorService","host":"dotnet","hostId":"C94B8CFE-E3FD-4BAF-A941-2866DBB566FE","serviceBaseDirectory":"/Users/MacBook/.vscode/extensions/ms-dotnettools.csdevkit-1.15.34-darwin-arm64/components/VSDebugCore/platforms/darwin-arm64/node_modules/@microsoft/visualstudio-debugger-devkit.darwin-arm64","entryPoint":{"assemblyPath":"/Users/MacBook/.vscode/extensions/ms-dotnettools.csdevkit-1.15.34-darwin-arm64/components/VSDebugCore/platforms/darwin-arm64/node_modules/@microsoft/visualstudio-debugger-devkit.darwin-arm64/Microsoft.VisualStudio.Debugger.DevKit.dll","fullClassName":"Microsoft.VisualStudio.Debugger.BrokeredServices.SymbolLocator.SymbolLocatorService+Factory"}},{"ActivationArguments":{"__servicehub__ServiceHubRemoteServiceBrokerPipeName":"/Users/MacBook/.ServiceHub/57d5b9e605/be52066ec2","__servicehub__RequestedServiceVersion":"0.1"},"ClientCredentials":{},"ClientCulture":"de-AT","ClientUICulture":"en-US"}]}
+01/21/2025 22:13:55 Mitteleuropäische Normalzeit : Information : LocationService read: Content-Length: 85
+
+{"jsonrpc":"2.0","id":17,"result":"/Users/MacBook/.ServiceHub/57d5b9e605/ed5ee30df5"}
+01/21/2025 22:13:55 Mitteleuropäische Normalzeit : Information : Located service \'Microsoft.VisualStudio.Debugger.SymbolLocatorService\' at '/Users/MacBook/.ServiceHub/57d5b9e605/ed5ee30df5 @ dotnet$C94B8CFE-E3FD-4BAF-A941-2866DBB566FE' requested by VsHubClient (pid:92691)
+01/21/2025 22:13:55 Mitteleuropäische Normalzeit : Information : Microsoft.ServiceHub.Controller.HubController write: Content-Length: 165
+
+{"jsonrpc":"2.0","id":25,"result":{"RequestId":"e4d3a3f0-464b-4ad2-b189-42de069c9e0a","PipeName":"/Users/MacBook/.ServiceHub/57d5b9e605/ed5ee30df5","IsEmpty":false}}
+01/21/2025 22:13:55 Mitteleuropäische Normalzeit : Information : Microsoft.ServiceHub.Controller.HubController read: Content-Length: 350
+
+{"jsonrpc":"2.0","id":26,"method":"requestServiceChannel","params":[{"Name":"Microsoft.VisualStudio.Debugger.SourceLinkService","Version":"0.1"},{"ActivationArguments":{"__servicehub__ServiceHubRemoteServiceBrokerPipeName":"/Users/MacBook/.ServiceHub/57d5b9e605/cdf47851c5"},"ClientCredentials":{},"ClientCulture":"de-AT","ClientUICulture":"en-US"}]}
+01/21/2025 22:13:55 Mitteleuropäische Normalzeit : Information : Locating service 'Microsoft.VisualStudio.Debugger.SourceLinkService' requested by VsHubClient (pid:92691)
+01/21/2025 22:13:55 Mitteleuropäische Normalzeit : Information : Service 'Microsoft.VisualStudio.Debugger.SourceLinkService' has not been loaded before. Loading now.
+01/21/2025 22:13:55 Mitteleuropäische Normalzeit : Information : LocationService write: Content-Length: 998
+
+{"jsonrpc":"2.0","id":18,"method":"StartServiceAsync","params":[{"name":"Microsoft.VisualStudio.Debugger.SourceLinkService","host":"dotnet","hostId":"C94B8CFE-E3FD-4BAF-A941-2866DBB566FE","serviceBaseDirectory":"/Users/MacBook/.vscode/extensions/ms-dotnettools.csdevkit-1.15.34-darwin-arm64/components/VSDebugCore/platforms/darwin-arm64/node_modules/@microsoft/visualstudio-debugger-devkit.darwin-arm64","entryPoint":{"assemblyPath":"/Users/MacBook/.vscode/extensions/ms-dotnettools.csdevkit-1.15.34-darwin-arm64/components/VSDebugCore/platforms/darwin-arm64/node_modules/@microsoft/visualstudio-debugger-devkit.darwin-arm64/Microsoft.VisualStudio.Debugger.DevKit.dll","fullClassName":"Microsoft.VisualStudio.Debugger.SourceLinkService+Factory"}},{"ActivationArguments":{"__servicehub__ServiceHubRemoteServiceBrokerPipeName":"/Users/MacBook/.ServiceHub/57d5b9e605/cdf47851c5","__servicehub__RequestedServiceVersion":"0.1"},"ClientCredentials":{},"ClientCulture":"de-AT","ClientUICulture":"en-US"}]}
+01/21/2025 22:13:55 Mitteleuropäische Normalzeit : Information : LocationService read: Content-Length: 85
+
+{"jsonrpc":"2.0","id":18,"result":"/Users/MacBook/.ServiceHub/57d5b9e605/3a6023d83d"}
+01/21/2025 22:13:55 Mitteleuropäische Normalzeit : Information : Located service \'Microsoft.VisualStudio.Debugger.SourceLinkService\' at '/Users/MacBook/.ServiceHub/57d5b9e605/3a6023d83d @ dotnet$C94B8CFE-E3FD-4BAF-A941-2866DBB566FE' requested by VsHubClient (pid:92691)
+01/21/2025 22:13:55 Mitteleuropäische Normalzeit : Information : Microsoft.ServiceHub.Controller.HubController write: Content-Length: 165
+
+{"jsonrpc":"2.0","id":26,"result":{"RequestId":"96347390-9a6c-46a2-911a-41b613f8a1b3","PipeName":"/Users/MacBook/.ServiceHub/57d5b9e605/3a6023d83d","IsEmpty":false}}
+01/21/2025 22:41:05 Mitteleuropäische Normalzeit : Information : Microsoft.ServiceHub.Controller.HubController read: Content-Length: 328
+
+{"jsonrpc":"2.0","id":27,"method":"requestServiceChannel","params":[{"Name":"Microsoft.VisualStudio.LaunchConfigurationService"},{"ActivationArguments":{"__servicehub__ServiceHubRemoteServiceBrokerPipeName":"/Users/MacBook/.ServiceHub/57d5b9e605/a750af3924"},"ClientCredentials":{},"ClientCulture":"de","ClientUICulture":"de"}]}
+01/21/2025 22:41:05 Mitteleuropäische Normalzeit : Information : Locating service 'Microsoft.VisualStudio.LaunchConfigurationService' requested by VsHubClient (pid:92691)
+01/21/2025 22:41:05 Mitteleuropäische Normalzeit : Information : Service 'Microsoft.VisualStudio.LaunchConfigurationService' has not been loaded before. Loading now.
+01/21/2025 22:41:05 Mitteleuropäische Normalzeit : Information : LocationService write: Content-Length: 994
+
+{"jsonrpc":"2.0","id":11,"method":"StartServiceAsync","params":[{"name":"Microsoft.VisualStudio.LaunchConfigurationService","host":"dotnet.projectSystem","hostId":"C94B8CFE-E3FD-4BAF-A941-2866DBB566FE","serviceBaseDirectory":"/Users/MacBook/.vscode/extensions/ms-dotnettools.csdevkit-1.15.34-darwin-arm64/components/CPS/platforms/darwin-arm64/node_modules/@microsoft/visualstudio-projectsystem-server.darwin-arm64","entryPoint":{"assemblyPath":"/Users/MacBook/.vscode/extensions/ms-dotnettools.csdevkit-1.15.34-darwin-arm64/components/CPS/platforms/darwin-arm64/node_modules/@microsoft/visualstudio-projectsystem-server.darwin-arm64/Microsoft.VisualStudio.ProjectSystem.Server.Implementation.dll","fullClassName":"Microsoft.VisualStudio.ProjectSystem.Server.LaunchConfigurationServiceFactory"}},{"ActivationArguments":{"__servicehub__ServiceHubRemoteServiceBrokerPipeName":"/Users/MacBook/.ServiceHub/57d5b9e605/a750af3924"},"ClientCredentials":{},"ClientCulture":"de","ClientUICulture":"de"}]}
+01/21/2025 22:41:05 Mitteleuropäische Normalzeit : Information : LocationService read: Content-Length: 85
+
+{"jsonrpc":"2.0","id":11,"result":"/Users/MacBook/.ServiceHub/57d5b9e605/20d0491f3d"}
+01/21/2025 22:41:05 Mitteleuropäische Normalzeit : Information : Located service \'Microsoft.VisualStudio.LaunchConfigurationService\' at '/Users/MacBook/.ServiceHub/57d5b9e605/20d0491f3d @ dotnet.projectSystem$C94B8CFE-E3FD-4BAF-A941-2866DBB566FE' requested by VsHubClient (pid:92691)
+01/21/2025 22:41:05 Mitteleuropäische Normalzeit : Information : Microsoft.ServiceHub.Controller.HubController write: Content-Length: 165
+
+{"jsonrpc":"2.0","id":27,"result":{"RequestId":"a15738c0-b4ad-4c9b-b634-a1aabc153ed1","PipeName":"/Users/MacBook/.ServiceHub/57d5b9e605/20d0491f3d","IsEmpty":false}}
+01/21/2025 22:41:07 Mitteleuropäische Normalzeit : Information : Microsoft.ServiceHub.Controller.HubController read: Content-Length: 377
+
+{"jsonrpc":"2.0","id":28,"method":"requestServiceChannel","params":[{"Name":"Microsoft.VisualStudio.Debugger.ManagedEditAndContinueRemoteDebuggerService2","Version":"0.1"},{"ActivationArguments":{"__servicehub__ServiceHubRemoteServiceBrokerPipeName":"/Users/MacBook/.ServiceHub/57d5b9e605/7a1ccaa220"},"ClientCredentials":{},"ClientCulture":"de-AT","ClientUICulture":"de-AT"}]}
+01/21/2025 22:41:07 Mitteleuropäische Normalzeit : Information : Locating service 'Microsoft.VisualStudio.Debugger.ManagedEditAndContinueRemoteDebuggerService2' requested by VsHubClient (pid:92691)
+01/21/2025 22:41:07 Mitteleuropäische Normalzeit : Information : Service 'Microsoft.VisualStudio.Debugger.ManagedEditAndContinueRemoteDebuggerService2' has not been loaded before. Loading now.
+01/21/2025 22:41:07 Mitteleuropäische Normalzeit : Information : LocationService write: Content-Length: 1051
+
+{"jsonrpc":"2.0","id":19,"method":"StartServiceAsync","params":[{"name":"Microsoft.VisualStudio.Debugger.ManagedEditAndContinueRemoteDebuggerService2","host":"dotnet","hostId":"C94B8CFE-E3FD-4BAF-A941-2866DBB566FE","serviceBaseDirectory":"/Users/MacBook/.vscode/extensions/ms-dotnettools.csdevkit-1.15.34-darwin-arm64/components/VSDebugCore/platforms/darwin-arm64/node_modules/@microsoft/visualstudio-debugger-devkit.darwin-arm64","entryPoint":{"assemblyPath":"/Users/MacBook/.vscode/extensions/ms-dotnettools.csdevkit-1.15.34-darwin-arm64/components/VSDebugCore/platforms/darwin-arm64/node_modules/@microsoft/visualstudio-debugger-devkit.darwin-arm64/Microsoft.VisualStudio.Debugger.DevKit.dll","fullClassName":"Microsoft.VisualStudio.Debugger.ManagedEditAndContinueRemoteDebuggerService+Factory"}},{"ActivationArguments":{"__servicehub__ServiceHubRemoteServiceBrokerPipeName":"/Users/MacBook/.ServiceHub/57d5b9e605/7a1ccaa220","__servicehub__RequestedServiceVersion":"0.1"},"ClientCredentials":{},"ClientCulture":"de-AT","ClientUICulture":"de-AT"}]}
+01/21/2025 22:41:07 Mitteleuropäische Normalzeit : Information : LocationService read: Content-Length: 85
+
+{"jsonrpc":"2.0","id":19,"result":"/Users/MacBook/.ServiceHub/57d5b9e605/66be365a74"}
+01/21/2025 22:41:07 Mitteleuropäische Normalzeit : Information : Located service \'Microsoft.VisualStudio.Debugger.ManagedEditAndContinueRemoteDebuggerService2\' at '/Users/MacBook/.ServiceHub/57d5b9e605/66be365a74 @ dotnet$C94B8CFE-E3FD-4BAF-A941-2866DBB566FE' requested by VsHubClient (pid:92691)
+01/21/2025 22:41:07 Mitteleuropäische Normalzeit : Information : Microsoft.ServiceHub.Controller.HubController write: Content-Length: 165
+
+{"jsonrpc":"2.0","id":28,"result":{"RequestId":"897e89c4-a6e4-4dff-aeac-f9240bf7dd3c","PipeName":"/Users/MacBook/.ServiceHub/57d5b9e605/66be365a74","IsEmpty":false}}
+01/21/2025 22:41:10 Mitteleuropäische Normalzeit : Information : Microsoft.ServiceHub.Controller.HubController read: Content-Length: 377
+
+{"jsonrpc":"2.0","id":29,"method":"requestServiceChannel","params":[{"Name":"Microsoft.VisualStudio.Debugger.ManagedEditAndContinueCsDevKitEngineService2","Version":"0.1"},{"ActivationArguments":{"__servicehub__ServiceHubRemoteServiceBrokerPipeName":"/Users/MacBook/.ServiceHub/57d5b9e605/8114c28e14"},"ClientCredentials":{},"ClientCulture":"de-AT","ClientUICulture":"de-AT"}]}
+01/21/2025 22:41:10 Mitteleuropäische Normalzeit : Information : Locating service 'Microsoft.VisualStudio.Debugger.ManagedEditAndContinueCsDevKitEngineService2' requested by VsHubClient (pid:92691)
+01/21/2025 22:41:10 Mitteleuropäische Normalzeit : Information : Service 'Microsoft.VisualStudio.Debugger.ManagedEditAndContinueCsDevKitEngineService2' has not been loaded before. Loading now.
+01/21/2025 22:41:10 Mitteleuropäische Normalzeit : Information : LocationService write: Content-Length: 1051
+
+{"jsonrpc":"2.0","id":20,"method":"StartServiceAsync","params":[{"name":"Microsoft.VisualStudio.Debugger.ManagedEditAndContinueCsDevKitEngineService2","host":"dotnet","hostId":"C94B8CFE-E3FD-4BAF-A941-2866DBB566FE","serviceBaseDirectory":"/Users/MacBook/.vscode/extensions/ms-dotnettools.csdevkit-1.15.34-darwin-arm64/components/VSDebugCore/platforms/darwin-arm64/node_modules/@microsoft/visualstudio-debugger-devkit.darwin-arm64","entryPoint":{"assemblyPath":"/Users/MacBook/.vscode/extensions/ms-dotnettools.csdevkit-1.15.34-darwin-arm64/components/VSDebugCore/platforms/darwin-arm64/node_modules/@microsoft/visualstudio-debugger-devkit.darwin-arm64/Microsoft.VisualStudio.Debugger.DevKit.dll","fullClassName":"Microsoft.VisualStudio.Debugger.ManagedEditAndContinueCsDevKitEngineService+Factory"}},{"ActivationArguments":{"__servicehub__ServiceHubRemoteServiceBrokerPipeName":"/Users/MacBook/.ServiceHub/57d5b9e605/8114c28e14","__servicehub__RequestedServiceVersion":"0.1"},"ClientCredentials":{},"ClientCulture":"de-AT","ClientUICulture":"de-AT"}]}
+01/21/2025 22:41:10 Mitteleuropäische Normalzeit : Information : LocationService read: Content-Length: 85
+
+{"jsonrpc":"2.0","id":20,"result":"/Users/MacBook/.ServiceHub/57d5b9e605/8cc9315429"}
+01/21/2025 22:41:10 Mitteleuropäische Normalzeit : Information : Located service \'Microsoft.VisualStudio.Debugger.ManagedEditAndContinueCsDevKitEngineService2\' at '/Users/MacBook/.ServiceHub/57d5b9e605/8cc9315429 @ dotnet$C94B8CFE-E3FD-4BAF-A941-2866DBB566FE' requested by VsHubClient (pid:92691)
+01/21/2025 22:41:10 Mitteleuropäische Normalzeit : Information : Microsoft.ServiceHub.Controller.HubController write: Content-Length: 165
+
+{"jsonrpc":"2.0","id":29,"result":{"RequestId":"9c6b1f49-4db0-4c8e-af78-806bf77c6bda","PipeName":"/Users/MacBook/.ServiceHub/57d5b9e605/8cc9315429","IsEmpty":false}}
+01/22/2025 06:11:23 Mitteleuropäische Normalzeit : Information : Microsoft.ServiceHub.Controller.HubController read: Content-Length: 353
+
+{"jsonrpc":"2.0","id":30,"method":"requestServiceChannel","params":[{"Name":"Microsoft.VisualStudio.Debugger.SymbolLocatorService","Version":"0.1"},{"ActivationArguments":{"__servicehub__ServiceHubRemoteServiceBrokerPipeName":"/Users/MacBook/.ServiceHub/57d5b9e605/97999a5df3"},"ClientCredentials":{},"ClientCulture":"de-AT","ClientUICulture":"en-US"}]}
+01/22/2025 06:11:23 Mitteleuropäische Normalzeit : Information : Locating service 'Microsoft.VisualStudio.Debugger.SymbolLocatorService' requested by VsHubClient (pid:92691)
+01/22/2025 06:11:23 Mitteleuropäische Normalzeit : Information : Service 'Microsoft.VisualStudio.Debugger.SymbolLocatorService' has not been loaded before. Loading now.
+01/22/2025 06:11:23 Mitteleuropäische Normalzeit : Information : LocationService write: Content-Length: 1035
+
+{"jsonrpc":"2.0","id":21,"method":"StartServiceAsync","params":[{"name":"Microsoft.VisualStudio.Debugger.SymbolLocatorService","host":"dotnet","hostId":"C94B8CFE-E3FD-4BAF-A941-2866DBB566FE","serviceBaseDirectory":"/Users/MacBook/.vscode/extensions/ms-dotnettools.csdevkit-1.15.34-darwin-arm64/components/VSDebugCore/platforms/darwin-arm64/node_modules/@microsoft/visualstudio-debugger-devkit.darwin-arm64","entryPoint":{"assemblyPath":"/Users/MacBook/.vscode/extensions/ms-dotnettools.csdevkit-1.15.34-darwin-arm64/components/VSDebugCore/platforms/darwin-arm64/node_modules/@microsoft/visualstudio-debugger-devkit.darwin-arm64/Microsoft.VisualStudio.Debugger.DevKit.dll","fullClassName":"Microsoft.VisualStudio.Debugger.BrokeredServices.SymbolLocator.SymbolLocatorService+Factory"}},{"ActivationArguments":{"__servicehub__ServiceHubRemoteServiceBrokerPipeName":"/Users/MacBook/.ServiceHub/57d5b9e605/97999a5df3","__servicehub__RequestedServiceVersion":"0.1"},"ClientCredentials":{},"ClientCulture":"de-AT","ClientUICulture":"en-US"}]}
+01/22/2025 06:11:23 Mitteleuropäische Normalzeit : Information : LocationService read: Content-Length: 85
+
+{"jsonrpc":"2.0","id":21,"result":"/Users/MacBook/.ServiceHub/57d5b9e605/b83092a257"}
+01/22/2025 06:11:23 Mitteleuropäische Normalzeit : Information : Located service \'Microsoft.VisualStudio.Debugger.SymbolLocatorService\' at '/Users/MacBook/.ServiceHub/57d5b9e605/b83092a257 @ dotnet$C94B8CFE-E3FD-4BAF-A941-2866DBB566FE' requested by VsHubClient (pid:92691)
+01/22/2025 06:11:23 Mitteleuropäische Normalzeit : Information : Microsoft.ServiceHub.Controller.HubController write: Content-Length: 165
+
+{"jsonrpc":"2.0","id":30,"result":{"RequestId":"592fc322-c71d-42f6-9e51-d8efc6b3fe63","PipeName":"/Users/MacBook/.ServiceHub/57d5b9e605/b83092a257","IsEmpty":false}}
+01/22/2025 06:11:23 Mitteleuropäische Normalzeit : Information : Microsoft.ServiceHub.Controller.HubController read: Content-Length: 350
+
+{"jsonrpc":"2.0","id":31,"method":"requestServiceChannel","params":[{"Name":"Microsoft.VisualStudio.Debugger.SourceLinkService","Version":"0.1"},{"ActivationArguments":{"__servicehub__ServiceHubRemoteServiceBrokerPipeName":"/Users/MacBook/.ServiceHub/57d5b9e605/24b6492732"},"ClientCredentials":{},"ClientCulture":"de-AT","ClientUICulture":"en-US"}]}
+01/22/2025 06:11:23 Mitteleuropäische Normalzeit : Information : Locating service 'Microsoft.VisualStudio.Debugger.SourceLinkService' requested by VsHubClient (pid:92691)
+01/22/2025 06:11:23 Mitteleuropäische Normalzeit : Information : Service 'Microsoft.VisualStudio.Debugger.SourceLinkService' has not been loaded before. Loading now.
+01/22/2025 06:11:23 Mitteleuropäische Normalzeit : Information : LocationService write: Content-Length: 998
+
+{"jsonrpc":"2.0","id":22,"method":"StartServiceAsync","params":[{"name":"Microsoft.VisualStudio.Debugger.SourceLinkService","host":"dotnet","hostId":"C94B8CFE-E3FD-4BAF-A941-2866DBB566FE","serviceBaseDirectory":"/Users/MacBook/.vscode/extensions/ms-dotnettools.csdevkit-1.15.34-darwin-arm64/components/VSDebugCore/platforms/darwin-arm64/node_modules/@microsoft/visualstudio-debugger-devkit.darwin-arm64","entryPoint":{"assemblyPath":"/Users/MacBook/.vscode/extensions/ms-dotnettools.csdevkit-1.15.34-darwin-arm64/components/VSDebugCore/platforms/darwin-arm64/node_modules/@microsoft/visualstudio-debugger-devkit.darwin-arm64/Microsoft.VisualStudio.Debugger.DevKit.dll","fullClassName":"Microsoft.VisualStudio.Debugger.SourceLinkService+Factory"}},{"ActivationArguments":{"__servicehub__ServiceHubRemoteServiceBrokerPipeName":"/Users/MacBook/.ServiceHub/57d5b9e605/24b6492732","__servicehub__RequestedServiceVersion":"0.1"},"ClientCredentials":{},"ClientCulture":"de-AT","ClientUICulture":"en-US"}]}
+01/22/2025 06:11:23 Mitteleuropäische Normalzeit : Information : LocationService read: Content-Length: 85
+
+{"jsonrpc":"2.0","id":22,"result":"/Users/MacBook/.ServiceHub/57d5b9e605/30415ab0f5"}
+01/22/2025 06:11:23 Mitteleuropäische Normalzeit : Information : Located service \'Microsoft.VisualStudio.Debugger.SourceLinkService\' at '/Users/MacBook/.ServiceHub/57d5b9e605/30415ab0f5 @ dotnet$C94B8CFE-E3FD-4BAF-A941-2866DBB566FE' requested by VsHubClient (pid:92691)
+01/22/2025 06:11:23 Mitteleuropäische Normalzeit : Information : Microsoft.ServiceHub.Controller.HubController write: Content-Length: 165
+
+{"jsonrpc":"2.0","id":31,"result":{"RequestId":"b7970dc1-9a8a-4ec6-a204-da342133adb9","PipeName":"/Users/MacBook/.ServiceHub/57d5b9e605/30415ab0f5","IsEmpty":false}}
+01/22/2025 06:20:13 Mitteleuropäische Normalzeit : Information : Microsoft.ServiceHub.Controller.HubController read: Content-Length: 353
+
+{"jsonrpc":"2.0","id":32,"method":"requestServiceChannel","params":[{"Name":"Microsoft.VisualStudio.Debugger.SymbolLocatorService","Version":"0.1"},{"ActivationArguments":{"__servicehub__ServiceHubRemoteServiceBrokerPipeName":"/Users/MacBook/.ServiceHub/57d5b9e605/3dbb1319cc"},"ClientCredentials":{},"ClientCulture":"de-AT","ClientUICulture":"en-US"}]}
+01/22/2025 06:20:13 Mitteleuropäische Normalzeit : Information : Locating service 'Microsoft.VisualStudio.Debugger.SymbolLocatorService' requested by VsHubClient (pid:92691)
+01/22/2025 06:20:13 Mitteleuropäische Normalzeit : Information : Service 'Microsoft.VisualStudio.Debugger.SymbolLocatorService' has not been loaded before. Loading now.
+01/22/2025 06:20:13 Mitteleuropäische Normalzeit : Information : LocationService write: Content-Length: 1035
+
+{"jsonrpc":"2.0","id":23,"method":"StartServiceAsync","params":[{"name":"Microsoft.VisualStudio.Debugger.SymbolLocatorService","host":"dotnet","hostId":"C94B8CFE-E3FD-4BAF-A941-2866DBB566FE","serviceBaseDirectory":"/Users/MacBook/.vscode/extensions/ms-dotnettools.csdevkit-1.15.34-darwin-arm64/components/VSDebugCore/platforms/darwin-arm64/node_modules/@microsoft/visualstudio-debugger-devkit.darwin-arm64","entryPoint":{"assemblyPath":"/Users/MacBook/.vscode/extensions/ms-dotnettools.csdevkit-1.15.34-darwin-arm64/components/VSDebugCore/platforms/darwin-arm64/node_modules/@microsoft/visualstudio-debugger-devkit.darwin-arm64/Microsoft.VisualStudio.Debugger.DevKit.dll","fullClassName":"Microsoft.VisualStudio.Debugger.BrokeredServices.SymbolLocator.SymbolLocatorService+Factory"}},{"ActivationArguments":{"__servicehub__ServiceHubRemoteServiceBrokerPipeName":"/Users/MacBook/.ServiceHub/57d5b9e605/3dbb1319cc","__servicehub__RequestedServiceVersion":"0.1"},"ClientCredentials":{},"ClientCulture":"de-AT","ClientUICulture":"en-US"}]}
+01/22/2025 06:20:13 Mitteleuropäische Normalzeit : Information : LocationService read: Content-Length: 85
+
+{"jsonrpc":"2.0","id":23,"result":"/Users/MacBook/.ServiceHub/57d5b9e605/7f166d6c87"}
+01/22/2025 06:20:13 Mitteleuropäische Normalzeit : Information : Located service \'Microsoft.VisualStudio.Debugger.SymbolLocatorService\' at '/Users/MacBook/.ServiceHub/57d5b9e605/7f166d6c87 @ dotnet$C94B8CFE-E3FD-4BAF-A941-2866DBB566FE' requested by VsHubClient (pid:92691)
+01/22/2025 06:20:13 Mitteleuropäische Normalzeit : Information : Microsoft.ServiceHub.Controller.HubController write: Content-Length: 165
+
+{"jsonrpc":"2.0","id":32,"result":{"RequestId":"3a4e1dc9-5ee5-44f9-84e6-33c61a18fa12","PipeName":"/Users/MacBook/.ServiceHub/57d5b9e605/7f166d6c87","IsEmpty":false}}
+01/22/2025 06:20:18 Mitteleuropäische Normalzeit : Information : Microsoft.ServiceHub.Controller.HubController read: Content-Length: 353
+
+{"jsonrpc":"2.0","id":33,"method":"requestServiceChannel","params":[{"Name":"Microsoft.VisualStudio.Debugger.SymbolLocatorService","Version":"0.1"},{"ActivationArguments":{"__servicehub__ServiceHubRemoteServiceBrokerPipeName":"/Users/MacBook/.ServiceHub/57d5b9e605/d9af384d5f"},"ClientCredentials":{},"ClientCulture":"de-AT","ClientUICulture":"en-US"}]}
+01/22/2025 06:20:18 Mitteleuropäische Normalzeit : Information : Locating service 'Microsoft.VisualStudio.Debugger.SymbolLocatorService' requested by VsHubClient (pid:92691)
+01/22/2025 06:20:18 Mitteleuropäische Normalzeit : Information : Service 'Microsoft.VisualStudio.Debugger.SymbolLocatorService' has not been loaded before. Loading now.
+01/22/2025 06:20:18 Mitteleuropäische Normalzeit : Information : LocationService write: Content-Length: 1035
+
+{"jsonrpc":"2.0","id":24,"method":"StartServiceAsync","params":[{"name":"Microsoft.VisualStudio.Debugger.SymbolLocatorService","host":"dotnet","hostId":"C94B8CFE-E3FD-4BAF-A941-2866DBB566FE","serviceBaseDirectory":"/Users/MacBook/.vscode/extensions/ms-dotnettools.csdevkit-1.15.34-darwin-arm64/components/VSDebugCore/platforms/darwin-arm64/node_modules/@microsoft/visualstudio-debugger-devkit.darwin-arm64","entryPoint":{"assemblyPath":"/Users/MacBook/.vscode/extensions/ms-dotnettools.csdevkit-1.15.34-darwin-arm64/components/VSDebugCore/platforms/darwin-arm64/node_modules/@microsoft/visualstudio-debugger-devkit.darwin-arm64/Microsoft.VisualStudio.Debugger.DevKit.dll","fullClassName":"Microsoft.VisualStudio.Debugger.BrokeredServices.SymbolLocator.SymbolLocatorService+Factory"}},{"ActivationArguments":{"__servicehub__ServiceHubRemoteServiceBrokerPipeName":"/Users/MacBook/.ServiceHub/57d5b9e605/d9af384d5f","__servicehub__RequestedServiceVersion":"0.1"},"ClientCredentials":{},"ClientCulture":"de-AT","ClientUICulture":"en-US"}]}
+01/22/2025 06:20:18 Mitteleuropäische Normalzeit : Information : LocationService read: Content-Length: 85
+
+{"jsonrpc":"2.0","id":24,"result":"/Users/MacBook/.ServiceHub/57d5b9e605/d180a54bab"}
+01/22/2025 06:20:18 Mitteleuropäische Normalzeit : Information : Located service \'Microsoft.VisualStudio.Debugger.SymbolLocatorService\' at '/Users/MacBook/.ServiceHub/57d5b9e605/d180a54bab @ dotnet$C94B8CFE-E3FD-4BAF-A941-2866DBB566FE' requested by VsHubClient (pid:92691)
+01/22/2025 06:20:18 Mitteleuropäische Normalzeit : Information : Microsoft.ServiceHub.Controller.HubController write: Content-Length: 165
+
+{"jsonrpc":"2.0","id":33,"result":{"RequestId":"33816a73-baed-4153-b3e2-4f4f1f6c90f2","PipeName":"/Users/MacBook/.ServiceHub/57d5b9e605/d180a54bab","IsEmpty":false}}
+01/22/2025 06:20:18 Mitteleuropäische Normalzeit : Information : Microsoft.ServiceHub.Controller.HubController read: Content-Length: 350
+
+{"jsonrpc":"2.0","id":34,"method":"requestServiceChannel","params":[{"Name":"Microsoft.VisualStudio.Debugger.SourceLinkService","Version":"0.1"},{"ActivationArguments":{"__servicehub__ServiceHubRemoteServiceBrokerPipeName":"/Users/MacBook/.ServiceHub/57d5b9e605/9a155a4070"},"ClientCredentials":{},"ClientCulture":"de-AT","ClientUICulture":"en-US"}]}
+01/22/2025 06:20:18 Mitteleuropäische Normalzeit : Information : Locating service 'Microsoft.VisualStudio.Debugger.SourceLinkService' requested by VsHubClient (pid:92691)
+01/22/2025 06:20:18 Mitteleuropäische Normalzeit : Information : Service 'Microsoft.VisualStudio.Debugger.SourceLinkService' has not been loaded before. Loading now.
+01/22/2025 06:20:18 Mitteleuropäische Normalzeit : Information : LocationService write: Content-Length: 998
+
+{"jsonrpc":"2.0","id":25,"method":"StartServiceAsync","params":[{"name":"Microsoft.VisualStudio.Debugger.SourceLinkService","host":"dotnet","hostId":"C94B8CFE-E3FD-4BAF-A941-2866DBB566FE","serviceBaseDirectory":"/Users/MacBook/.vscode/extensions/ms-dotnettools.csdevkit-1.15.34-darwin-arm64/components/VSDebugCore/platforms/darwin-arm64/node_modules/@microsoft/visualstudio-debugger-devkit.darwin-arm64","entryPoint":{"assemblyPath":"/Users/MacBook/.vscode/extensions/ms-dotnettools.csdevkit-1.15.34-darwin-arm64/components/VSDebugCore/platforms/darwin-arm64/node_modules/@microsoft/visualstudio-debugger-devkit.darwin-arm64/Microsoft.VisualStudio.Debugger.DevKit.dll","fullClassName":"Microsoft.VisualStudio.Debugger.SourceLinkService+Factory"}},{"ActivationArguments":{"__servicehub__ServiceHubRemoteServiceBrokerPipeName":"/Users/MacBook/.ServiceHub/57d5b9e605/9a155a4070","__servicehub__RequestedServiceVersion":"0.1"},"ClientCredentials":{},"ClientCulture":"de-AT","ClientUICulture":"en-US"}]}
+01/22/2025 06:20:18 Mitteleuropäische Normalzeit : Information : LocationService read: Content-Length: 85
+
+{"jsonrpc":"2.0","id":25,"result":"/Users/MacBook/.ServiceHub/57d5b9e605/32499d7eb6"}
+01/22/2025 06:20:18 Mitteleuropäische Normalzeit : Information : Located service \'Microsoft.VisualStudio.Debugger.SourceLinkService\' at '/Users/MacBook/.ServiceHub/57d5b9e605/32499d7eb6 @ dotnet$C94B8CFE-E3FD-4BAF-A941-2866DBB566FE' requested by VsHubClient (pid:92691)
+01/22/2025 06:20:18 Mitteleuropäische Normalzeit : Information : Microsoft.ServiceHub.Controller.HubController write: Content-Length: 165
+
+{"jsonrpc":"2.0","id":34,"result":{"RequestId":"8eee50a6-bfca-4f45-b6de-6fd83abc82d5","PipeName":"/Users/MacBook/.ServiceHub/57d5b9e605/32499d7eb6","IsEmpty":false}}
+01/22/2025 06:21:53 Mitteleuropäische Normalzeit : Information : Microsoft.ServiceHub.Controller.HubController read: Content-Length: 353
+
+{"jsonrpc":"2.0","id":35,"method":"requestServiceChannel","params":[{"Name":"Microsoft.VisualStudio.Debugger.SymbolLocatorService","Version":"0.1"},{"ActivationArguments":{"__servicehub__ServiceHubRemoteServiceBrokerPipeName":"/Users/MacBook/.ServiceHub/57d5b9e605/53eb2e242c"},"ClientCredentials":{},"ClientCulture":"de-AT","ClientUICulture":"en-US"}]}
+01/22/2025 06:21:53 Mitteleuropäische Normalzeit : Information : Locating service 'Microsoft.VisualStudio.Debugger.SymbolLocatorService' requested by VsHubClient (pid:92691)
+01/22/2025 06:21:53 Mitteleuropäische Normalzeit : Information : Service 'Microsoft.VisualStudio.Debugger.SymbolLocatorService' has not been loaded before. Loading now.
+01/22/2025 06:21:53 Mitteleuropäische Normalzeit : Information : LocationService write: Content-Length: 1035
+
+{"jsonrpc":"2.0","id":26,"method":"StartServiceAsync","params":[{"name":"Microsoft.VisualStudio.Debugger.SymbolLocatorService","host":"dotnet","hostId":"C94B8CFE-E3FD-4BAF-A941-2866DBB566FE","serviceBaseDirectory":"/Users/MacBook/.vscode/extensions/ms-dotnettools.csdevkit-1.15.34-darwin-arm64/components/VSDebugCore/platforms/darwin-arm64/node_modules/@microsoft/visualstudio-debugger-devkit.darwin-arm64","entryPoint":{"assemblyPath":"/Users/MacBook/.vscode/extensions/ms-dotnettools.csdevkit-1.15.34-darwin-arm64/components/VSDebugCore/platforms/darwin-arm64/node_modules/@microsoft/visualstudio-debugger-devkit.darwin-arm64/Microsoft.VisualStudio.Debugger.DevKit.dll","fullClassName":"Microsoft.VisualStudio.Debugger.BrokeredServices.SymbolLocator.SymbolLocatorService+Factory"}},{"ActivationArguments":{"__servicehub__ServiceHubRemoteServiceBrokerPipeName":"/Users/MacBook/.ServiceHub/57d5b9e605/53eb2e242c","__servicehub__RequestedServiceVersion":"0.1"},"ClientCredentials":{},"ClientCulture":"de-AT","ClientUICulture":"en-US"}]}
+01/22/2025 06:21:53 Mitteleuropäische Normalzeit : Information : LocationService read: Content-Length: 85
+
+{"jsonrpc":"2.0","id":26,"result":"/Users/MacBook/.ServiceHub/57d5b9e605/3d282b4331"}
+01/22/2025 06:21:53 Mitteleuropäische Normalzeit : Information : Located service \'Microsoft.VisualStudio.Debugger.SymbolLocatorService\' at '/Users/MacBook/.ServiceHub/57d5b9e605/3d282b4331 @ dotnet$C94B8CFE-E3FD-4BAF-A941-2866DBB566FE' requested by VsHubClient (pid:92691)
+01/22/2025 06:21:53 Mitteleuropäische Normalzeit : Information : Microsoft.ServiceHub.Controller.HubController write: Content-Length: 165
+
+{"jsonrpc":"2.0","id":35,"result":{"RequestId":"65b2b4d9-7c2d-4c70-80b7-58ae6da01996","PipeName":"/Users/MacBook/.ServiceHub/57d5b9e605/3d282b4331","IsEmpty":false}}
+01/22/2025 06:25:06 Mitteleuropäische Normalzeit : Information : Microsoft.ServiceHub.Controller.HubController read: Content-Length: 353
+
+{"jsonrpc":"2.0","id":36,"method":"requestServiceChannel","params":[{"Name":"Microsoft.VisualStudio.Debugger.SymbolLocatorService","Version":"0.1"},{"ActivationArguments":{"__servicehub__ServiceHubRemoteServiceBrokerPipeName":"/Users/MacBook/.ServiceHub/57d5b9e605/e434b0f195"},"ClientCredentials":{},"ClientCulture":"de-AT","ClientUICulture":"en-US"}]}
+01/22/2025 06:25:06 Mitteleuropäische Normalzeit : Information : Locating service 'Microsoft.VisualStudio.Debugger.SymbolLocatorService' requested by VsHubClient (pid:92691)
+01/22/2025 06:25:06 Mitteleuropäische Normalzeit : Information : Service 'Microsoft.VisualStudio.Debugger.SymbolLocatorService' has not been loaded before. Loading now.
+01/22/2025 06:25:06 Mitteleuropäische Normalzeit : Information : LocationService write: Content-Length: 1035
+
+{"jsonrpc":"2.0","id":27,"method":"StartServiceAsync","params":[{"name":"Microsoft.VisualStudio.Debugger.SymbolLocatorService","host":"dotnet","hostId":"C94B8CFE-E3FD-4BAF-A941-2866DBB566FE","serviceBaseDirectory":"/Users/MacBook/.vscode/extensions/ms-dotnettools.csdevkit-1.15.34-darwin-arm64/components/VSDebugCore/platforms/darwin-arm64/node_modules/@microsoft/visualstudio-debugger-devkit.darwin-arm64","entryPoint":{"assemblyPath":"/Users/MacBook/.vscode/extensions/ms-dotnettools.csdevkit-1.15.34-darwin-arm64/components/VSDebugCore/platforms/darwin-arm64/node_modules/@microsoft/visualstudio-debugger-devkit.darwin-arm64/Microsoft.VisualStudio.Debugger.DevKit.dll","fullClassName":"Microsoft.VisualStudio.Debugger.BrokeredServices.SymbolLocator.SymbolLocatorService+Factory"}},{"ActivationArguments":{"__servicehub__ServiceHubRemoteServiceBrokerPipeName":"/Users/MacBook/.ServiceHub/57d5b9e605/e434b0f195","__servicehub__RequestedServiceVersion":"0.1"},"ClientCredentials":{},"ClientCulture":"de-AT","ClientUICulture":"en-US"}]}
+01/22/2025 06:25:06 Mitteleuropäische Normalzeit : Information : LocationService read: Content-Length: 85
+
+{"jsonrpc":"2.0","id":27,"result":"/Users/MacBook/.ServiceHub/57d5b9e605/aa4175445b"}
+01/22/2025 06:25:06 Mitteleuropäische Normalzeit : Information : Located service \'Microsoft.VisualStudio.Debugger.SymbolLocatorService\' at '/Users/MacBook/.ServiceHub/57d5b9e605/aa4175445b @ dotnet$C94B8CFE-E3FD-4BAF-A941-2866DBB566FE' requested by VsHubClient (pid:92691)
+01/22/2025 06:25:06 Mitteleuropäische Normalzeit : Information : Microsoft.ServiceHub.Controller.HubController write: Content-Length: 165
+
+{"jsonrpc":"2.0","id":36,"result":{"RequestId":"780f6ab2-0931-4731-9208-8d0719476e21","PipeName":"/Users/MacBook/.ServiceHub/57d5b9e605/aa4175445b","IsEmpty":false}}
+01/22/2025 06:25:06 Mitteleuropäische Normalzeit : Information : Microsoft.ServiceHub.Controller.HubController read: Content-Length: 350
+
+{"jsonrpc":"2.0","id":37,"method":"requestServiceChannel","params":[{"Name":"Microsoft.VisualStudio.Debugger.SourceLinkService","Version":"0.1"},{"ActivationArguments":{"__servicehub__ServiceHubRemoteServiceBrokerPipeName":"/Users/MacBook/.ServiceHub/57d5b9e605/f4ae42e7de"},"ClientCredentials":{},"ClientCulture":"de-AT","ClientUICulture":"en-US"}]}
+01/22/2025 06:25:06 Mitteleuropäische Normalzeit : Information : Locating service 'Microsoft.VisualStudio.Debugger.SourceLinkService' requested by VsHubClient (pid:92691)
+01/22/2025 06:25:06 Mitteleuropäische Normalzeit : Information : Service 'Microsoft.VisualStudio.Debugger.SourceLinkService' has not been loaded before. Loading now.
+01/22/2025 06:25:06 Mitteleuropäische Normalzeit : Information : LocationService write: Content-Length: 998
+
+{"jsonrpc":"2.0","id":28,"method":"StartServiceAsync","params":[{"name":"Microsoft.VisualStudio.Debugger.SourceLinkService","host":"dotnet","hostId":"C94B8CFE-E3FD-4BAF-A941-2866DBB566FE","serviceBaseDirectory":"/Users/MacBook/.vscode/extensions/ms-dotnettools.csdevkit-1.15.34-darwin-arm64/components/VSDebugCore/platforms/darwin-arm64/node_modules/@microsoft/visualstudio-debugger-devkit.darwin-arm64","entryPoint":{"assemblyPath":"/Users/MacBook/.vscode/extensions/ms-dotnettools.csdevkit-1.15.34-darwin-arm64/components/VSDebugCore/platforms/darwin-arm64/node_modules/@microsoft/visualstudio-debugger-devkit.darwin-arm64/Microsoft.VisualStudio.Debugger.DevKit.dll","fullClassName":"Microsoft.VisualStudio.Debugger.SourceLinkService+Factory"}},{"ActivationArguments":{"__servicehub__ServiceHubRemoteServiceBrokerPipeName":"/Users/MacBook/.ServiceHub/57d5b9e605/f4ae42e7de","__servicehub__RequestedServiceVersion":"0.1"},"ClientCredentials":{},"ClientCulture":"de-AT","ClientUICulture":"en-US"}]}
+01/22/2025 06:25:06 Mitteleuropäische Normalzeit : Information : LocationService read: Content-Length: 85
+
+{"jsonrpc":"2.0","id":28,"result":"/Users/MacBook/.ServiceHub/57d5b9e605/ca4097728e"}
+01/22/2025 06:25:06 Mitteleuropäische Normalzeit : Information : Located service \'Microsoft.VisualStudio.Debugger.SourceLinkService\' at '/Users/MacBook/.ServiceHub/57d5b9e605/ca4097728e @ dotnet$C94B8CFE-E3FD-4BAF-A941-2866DBB566FE' requested by VsHubClient (pid:92691)
+01/22/2025 06:25:06 Mitteleuropäische Normalzeit : Information : Microsoft.ServiceHub.Controller.HubController write: Content-Length: 165
+
+{"jsonrpc":"2.0","id":37,"result":{"RequestId":"ebbf779d-3446-4d0e-ac96-8d65ea019c6f","PipeName":"/Users/MacBook/.ServiceHub/57d5b9e605/ca4097728e","IsEmpty":false}}
+01/22/2025 06:25:06 Mitteleuropäische Normalzeit : Information : Microsoft.ServiceHub.Controller.HubController read: Content-Length: 353
+
+{"jsonrpc":"2.0","id":38,"method":"requestServiceChannel","params":[{"Name":"Microsoft.VisualStudio.Debugger.SymbolLocatorService","Version":"0.1"},{"ActivationArguments":{"__servicehub__ServiceHubRemoteServiceBrokerPipeName":"/Users/MacBook/.ServiceHub/57d5b9e605/ef365b445b"},"ClientCredentials":{},"ClientCulture":"de-AT","ClientUICulture":"en-US"}]}
+01/22/2025 06:25:06 Mitteleuropäische Normalzeit : Information : Locating service 'Microsoft.VisualStudio.Debugger.SymbolLocatorService' requested by VsHubClient (pid:92691)
+01/22/2025 06:25:06 Mitteleuropäische Normalzeit : Information : Service 'Microsoft.VisualStudio.Debugger.SymbolLocatorService' has not been loaded before. Loading now.
+01/22/2025 06:25:06 Mitteleuropäische Normalzeit : Information : LocationService write: Content-Length: 1035
+
+{"jsonrpc":"2.0","id":29,"method":"StartServiceAsync","params":[{"name":"Microsoft.VisualStudio.Debugger.SymbolLocatorService","host":"dotnet","hostId":"C94B8CFE-E3FD-4BAF-A941-2866DBB566FE","serviceBaseDirectory":"/Users/MacBook/.vscode/extensions/ms-dotnettools.csdevkit-1.15.34-darwin-arm64/components/VSDebugCore/platforms/darwin-arm64/node_modules/@microsoft/visualstudio-debugger-devkit.darwin-arm64","entryPoint":{"assemblyPath":"/Users/MacBook/.vscode/extensions/ms-dotnettools.csdevkit-1.15.34-darwin-arm64/components/VSDebugCore/platforms/darwin-arm64/node_modules/@microsoft/visualstudio-debugger-devkit.darwin-arm64/Microsoft.VisualStudio.Debugger.DevKit.dll","fullClassName":"Microsoft.VisualStudio.Debugger.BrokeredServices.SymbolLocator.SymbolLocatorService+Factory"}},{"ActivationArguments":{"__servicehub__ServiceHubRemoteServiceBrokerPipeName":"/Users/MacBook/.ServiceHub/57d5b9e605/ef365b445b","__servicehub__RequestedServiceVersion":"0.1"},"ClientCredentials":{},"ClientCulture":"de-AT","ClientUICulture":"en-US"}]}
+01/22/2025 06:25:06 Mitteleuropäische Normalzeit : Information : LocationService read: Content-Length: 85
+
+{"jsonrpc":"2.0","id":29,"result":"/Users/MacBook/.ServiceHub/57d5b9e605/b0e1acce76"}
+01/22/2025 06:25:06 Mitteleuropäische Normalzeit : Information : Located service \'Microsoft.VisualStudio.Debugger.SymbolLocatorService\' at '/Users/MacBook/.ServiceHub/57d5b9e605/b0e1acce76 @ dotnet$C94B8CFE-E3FD-4BAF-A941-2866DBB566FE' requested by VsHubClient (pid:92691)
+01/22/2025 06:25:06 Mitteleuropäische Normalzeit : Information : Microsoft.ServiceHub.Controller.HubController write: Content-Length: 165
+
+{"jsonrpc":"2.0","id":38,"result":{"RequestId":"f2dc14c4-e404-4c60-a31e-403aec53287a","PipeName":"/Users/MacBook/.ServiceHub/57d5b9e605/b0e1acce76","IsEmpty":false}}
+01/22/2025 06:25:06 Mitteleuropäische Normalzeit : Information : Microsoft.ServiceHub.Controller.HubController read: Content-Length: 350
+
+{"jsonrpc":"2.0","id":39,"method":"requestServiceChannel","params":[{"Name":"Microsoft.VisualStudio.Debugger.SourceLinkService","Version":"0.1"},{"ActivationArguments":{"__servicehub__ServiceHubRemoteServiceBrokerPipeName":"/Users/MacBook/.ServiceHub/57d5b9e605/a176140ef9"},"ClientCredentials":{},"ClientCulture":"de-AT","ClientUICulture":"en-US"}]}
+01/22/2025 06:25:06 Mitteleuropäische Normalzeit : Information : Locating service 'Microsoft.VisualStudio.Debugger.SourceLinkService' requested by VsHubClient (pid:92691)
+01/22/2025 06:25:06 Mitteleuropäische Normalzeit : Information : Service 'Microsoft.VisualStudio.Debugger.SourceLinkService' has not been loaded before. Loading now.
+01/22/2025 06:25:06 Mitteleuropäische Normalzeit : Information : LocationService write: Content-Length: 998
+
+{"jsonrpc":"2.0","id":30,"method":"StartServiceAsync","params":[{"name":"Microsoft.VisualStudio.Debugger.SourceLinkService","host":"dotnet","hostId":"C94B8CFE-E3FD-4BAF-A941-2866DBB566FE","serviceBaseDirectory":"/Users/MacBook/.vscode/extensions/ms-dotnettools.csdevkit-1.15.34-darwin-arm64/components/VSDebugCore/platforms/darwin-arm64/node_modules/@microsoft/visualstudio-debugger-devkit.darwin-arm64","entryPoint":{"assemblyPath":"/Users/MacBook/.vscode/extensions/ms-dotnettools.csdevkit-1.15.34-darwin-arm64/components/VSDebugCore/platforms/darwin-arm64/node_modules/@microsoft/visualstudio-debugger-devkit.darwin-arm64/Microsoft.VisualStudio.Debugger.DevKit.dll","fullClassName":"Microsoft.VisualStudio.Debugger.SourceLinkService+Factory"}},{"ActivationArguments":{"__servicehub__ServiceHubRemoteServiceBrokerPipeName":"/Users/MacBook/.ServiceHub/57d5b9e605/a176140ef9","__servicehub__RequestedServiceVersion":"0.1"},"ClientCredentials":{},"ClientCulture":"de-AT","ClientUICulture":"en-US"}]}
+01/22/2025 06:25:06 Mitteleuropäische Normalzeit : Information : LocationService read: Content-Length: 85
+
+{"jsonrpc":"2.0","id":30,"result":"/Users/MacBook/.ServiceHub/57d5b9e605/f0c4587f1f"}
+01/22/2025 06:25:06 Mitteleuropäische Normalzeit : Information : Located service \'Microsoft.VisualStudio.Debugger.SourceLinkService\' at '/Users/MacBook/.ServiceHub/57d5b9e605/f0c4587f1f @ dotnet$C94B8CFE-E3FD-4BAF-A941-2866DBB566FE' requested by VsHubClient (pid:92691)
+01/22/2025 06:25:06 Mitteleuropäische Normalzeit : Information : Microsoft.ServiceHub.Controller.HubController write: Content-Length: 165
+
+{"jsonrpc":"2.0","id":39,"result":{"RequestId":"897e2146-1a2a-495a-be4b-48364e6ebd15","PipeName":"/Users/MacBook/.ServiceHub/57d5b9e605/f0c4587f1f","IsEmpty":false}}
+01/22/2025 06:27:17 Mitteleuropäische Normalzeit : Information : Microsoft.ServiceHub.Controller.HubController read: Content-Length: 353
+
+{"jsonrpc":"2.0","id":40,"method":"requestServiceChannel","params":[{"Name":"Microsoft.VisualStudio.Debugger.SymbolLocatorService","Version":"0.1"},{"ActivationArguments":{"__servicehub__ServiceHubRemoteServiceBrokerPipeName":"/Users/MacBook/.ServiceHub/57d5b9e605/0b71d4aed4"},"ClientCredentials":{},"ClientCulture":"de-AT","ClientUICulture":"en-US"}]}
+01/22/2025 06:27:17 Mitteleuropäische Normalzeit : Information : Locating service 'Microsoft.VisualStudio.Debugger.SymbolLocatorService' requested by VsHubClient (pid:92691)
+01/22/2025 06:27:17 Mitteleuropäische Normalzeit : Information : Service 'Microsoft.VisualStudio.Debugger.SymbolLocatorService' has not been loaded before. Loading now.
+01/22/2025 06:27:17 Mitteleuropäische Normalzeit : Information : LocationService write: Content-Length: 1035
+
+{"jsonrpc":"2.0","id":31,"method":"StartServiceAsync","params":[{"name":"Microsoft.VisualStudio.Debugger.SymbolLocatorService","host":"dotnet","hostId":"C94B8CFE-E3FD-4BAF-A941-2866DBB566FE","serviceBaseDirectory":"/Users/MacBook/.vscode/extensions/ms-dotnettools.csdevkit-1.15.34-darwin-arm64/components/VSDebugCore/platforms/darwin-arm64/node_modules/@microsoft/visualstudio-debugger-devkit.darwin-arm64","entryPoint":{"assemblyPath":"/Users/MacBook/.vscode/extensions/ms-dotnettools.csdevkit-1.15.34-darwin-arm64/components/VSDebugCore/platforms/darwin-arm64/node_modules/@microsoft/visualstudio-debugger-devkit.darwin-arm64/Microsoft.VisualStudio.Debugger.DevKit.dll","fullClassName":"Microsoft.VisualStudio.Debugger.BrokeredServices.SymbolLocator.SymbolLocatorService+Factory"}},{"ActivationArguments":{"__servicehub__ServiceHubRemoteServiceBrokerPipeName":"/Users/MacBook/.ServiceHub/57d5b9e605/0b71d4aed4","__servicehub__RequestedServiceVersion":"0.1"},"ClientCredentials":{},"ClientCulture":"de-AT","ClientUICulture":"en-US"}]}
+01/22/2025 06:27:17 Mitteleuropäische Normalzeit : Information : LocationService read: Content-Length: 85
+
+{"jsonrpc":"2.0","id":31,"result":"/Users/MacBook/.ServiceHub/57d5b9e605/5d5a75b392"}
+01/22/2025 06:27:17 Mitteleuropäische Normalzeit : Information : Located service \'Microsoft.VisualStudio.Debugger.SymbolLocatorService\' at '/Users/MacBook/.ServiceHub/57d5b9e605/5d5a75b392 @ dotnet$C94B8CFE-E3FD-4BAF-A941-2866DBB566FE' requested by VsHubClient (pid:92691)
+01/22/2025 06:27:17 Mitteleuropäische Normalzeit : Information : Microsoft.ServiceHub.Controller.HubController write: Content-Length: 165
+
+{"jsonrpc":"2.0","id":40,"result":{"RequestId":"559c8cc0-406e-4334-aba4-a648b8dac7e6","PipeName":"/Users/MacBook/.ServiceHub/57d5b9e605/5d5a75b392","IsEmpty":false}}
+01/22/2025 07:07:00 Mitteleuropäische Normalzeit : Information : Microsoft.ServiceHub.Controller.HubController read: Content-Length: 353
+
+{"jsonrpc":"2.0","id":41,"method":"requestServiceChannel","params":[{"Name":"Microsoft.VisualStudio.Debugger.SymbolLocatorService","Version":"0.1"},{"ActivationArguments":{"__servicehub__ServiceHubRemoteServiceBrokerPipeName":"/Users/MacBook/.ServiceHub/57d5b9e605/9d8c0ceca8"},"ClientCredentials":{},"ClientCulture":"de-AT","ClientUICulture":"en-US"}]}
+01/22/2025 07:07:00 Mitteleuropäische Normalzeit : Information : Locating service 'Microsoft.VisualStudio.Debugger.SymbolLocatorService' requested by VsHubClient (pid:92691)
+01/22/2025 07:07:00 Mitteleuropäische Normalzeit : Information : Service 'Microsoft.VisualStudio.Debugger.SymbolLocatorService' has not been loaded before. Loading now.
+01/22/2025 07:07:00 Mitteleuropäische Normalzeit : Information : LocationService write: Content-Length: 1035
+
+{"jsonrpc":"2.0","id":32,"method":"StartServiceAsync","params":[{"name":"Microsoft.VisualStudio.Debugger.SymbolLocatorService","host":"dotnet","hostId":"C94B8CFE-E3FD-4BAF-A941-2866DBB566FE","serviceBaseDirectory":"/Users/MacBook/.vscode/extensions/ms-dotnettools.csdevkit-1.15.34-darwin-arm64/components/VSDebugCore/platforms/darwin-arm64/node_modules/@microsoft/visualstudio-debugger-devkit.darwin-arm64","entryPoint":{"assemblyPath":"/Users/MacBook/.vscode/extensions/ms-dotnettools.csdevkit-1.15.34-darwin-arm64/components/VSDebugCore/platforms/darwin-arm64/node_modules/@microsoft/visualstudio-debugger-devkit.darwin-arm64/Microsoft.VisualStudio.Debugger.DevKit.dll","fullClassName":"Microsoft.VisualStudio.Debugger.BrokeredServices.SymbolLocator.SymbolLocatorService+Factory"}},{"ActivationArguments":{"__servicehub__ServiceHubRemoteServiceBrokerPipeName":"/Users/MacBook/.ServiceHub/57d5b9e605/9d8c0ceca8","__servicehub__RequestedServiceVersion":"0.1"},"ClientCredentials":{},"ClientCulture":"de-AT","ClientUICulture":"en-US"}]}
+01/22/2025 07:07:00 Mitteleuropäische Normalzeit : Information : LocationService read: Content-Length: 85
+
+{"jsonrpc":"2.0","id":32,"result":"/Users/MacBook/.ServiceHub/57d5b9e605/beeb358afb"}
+01/22/2025 07:07:00 Mitteleuropäische Normalzeit : Information : Located service \'Microsoft.VisualStudio.Debugger.SymbolLocatorService\' at '/Users/MacBook/.ServiceHub/57d5b9e605/beeb358afb @ dotnet$C94B8CFE-E3FD-4BAF-A941-2866DBB566FE' requested by VsHubClient (pid:92691)
+01/22/2025 07:07:00 Mitteleuropäische Normalzeit : Information : Microsoft.ServiceHub.Controller.HubController write: Content-Length: 165
+
+{"jsonrpc":"2.0","id":41,"result":{"RequestId":"f7e9e59a-06a0-4a5d-a1ed-bf080c678210","PipeName":"/Users/MacBook/.ServiceHub/57d5b9e605/beeb358afb","IsEmpty":false}}
+01/22/2025 07:07:00 Mitteleuropäische Normalzeit : Information : Microsoft.ServiceHub.Controller.HubController read: Content-Length: 350
+
+{"jsonrpc":"2.0","id":42,"method":"requestServiceChannel","params":[{"Name":"Microsoft.VisualStudio.Debugger.SourceLinkService","Version":"0.1"},{"ActivationArguments":{"__servicehub__ServiceHubRemoteServiceBrokerPipeName":"/Users/MacBook/.ServiceHub/57d5b9e605/8d1a30ada5"},"ClientCredentials":{},"ClientCulture":"de-AT","ClientUICulture":"en-US"}]}
+01/22/2025 07:07:00 Mitteleuropäische Normalzeit : Information : Locating service 'Microsoft.VisualStudio.Debugger.SourceLinkService' requested by VsHubClient (pid:92691)
+01/22/2025 07:07:00 Mitteleuropäische Normalzeit : Information : Service 'Microsoft.VisualStudio.Debugger.SourceLinkService' has not been loaded before. Loading now.
+01/22/2025 07:07:00 Mitteleuropäische Normalzeit : Information : LocationService write: Content-Length: 998
+
+{"jsonrpc":"2.0","id":33,"method":"StartServiceAsync","params":[{"name":"Microsoft.VisualStudio.Debugger.SourceLinkService","host":"dotnet","hostId":"C94B8CFE-E3FD-4BAF-A941-2866DBB566FE","serviceBaseDirectory":"/Users/MacBook/.vscode/extensions/ms-dotnettools.csdevkit-1.15.34-darwin-arm64/components/VSDebugCore/platforms/darwin-arm64/node_modules/@microsoft/visualstudio-debugger-devkit.darwin-arm64","entryPoint":{"assemblyPath":"/Users/MacBook/.vscode/extensions/ms-dotnettools.csdevkit-1.15.34-darwin-arm64/components/VSDebugCore/platforms/darwin-arm64/node_modules/@microsoft/visualstudio-debugger-devkit.darwin-arm64/Microsoft.VisualStudio.Debugger.DevKit.dll","fullClassName":"Microsoft.VisualStudio.Debugger.SourceLinkService+Factory"}},{"ActivationArguments":{"__servicehub__ServiceHubRemoteServiceBrokerPipeName":"/Users/MacBook/.ServiceHub/57d5b9e605/8d1a30ada5","__servicehub__RequestedServiceVersion":"0.1"},"ClientCredentials":{},"ClientCulture":"de-AT","ClientUICulture":"en-US"}]}
+01/22/2025 07:07:00 Mitteleuropäische Normalzeit : Information : LocationService read: Content-Length: 85
+
+{"jsonrpc":"2.0","id":33,"result":"/Users/MacBook/.ServiceHub/57d5b9e605/35f7d764eb"}
+01/22/2025 07:07:00 Mitteleuropäische Normalzeit : Information : Located service \'Microsoft.VisualStudio.Debugger.SourceLinkService\' at '/Users/MacBook/.ServiceHub/57d5b9e605/35f7d764eb @ dotnet$C94B8CFE-E3FD-4BAF-A941-2866DBB566FE' requested by VsHubClient (pid:92691)
+01/22/2025 07:07:00 Mitteleuropäische Normalzeit : Information : Microsoft.ServiceHub.Controller.HubController write: Content-Length: 165
+
+{"jsonrpc":"2.0","id":42,"result":{"RequestId":"46e2f9a8-3f8c-425d-9bc9-8309b9a8f779","PipeName":"/Users/MacBook/.ServiceHub/57d5b9e605/35f7d764eb","IsEmpty":false}}
+01/22/2025 07:09:57 Mitteleuropäische Normalzeit : Information : Microsoft.ServiceHub.Controller.HubController read: Content-Length: 353
+
+{"jsonrpc":"2.0","id":43,"method":"requestServiceChannel","params":[{"Name":"Microsoft.VisualStudio.Debugger.SymbolLocatorService","Version":"0.1"},{"ActivationArguments":{"__servicehub__ServiceHubRemoteServiceBrokerPipeName":"/Users/MacBook/.ServiceHub/57d5b9e605/ae9f4bdb52"},"ClientCredentials":{},"ClientCulture":"de-AT","ClientUICulture":"en-US"}]}
+01/22/2025 07:09:57 Mitteleuropäische Normalzeit : Information : Locating service 'Microsoft.VisualStudio.Debugger.SymbolLocatorService' requested by VsHubClient (pid:92691)
+01/22/2025 07:09:57 Mitteleuropäische Normalzeit : Information : Service 'Microsoft.VisualStudio.Debugger.SymbolLocatorService' has not been loaded before. Loading now.
+01/22/2025 07:09:57 Mitteleuropäische Normalzeit : Information : LocationService write: Content-Length: 1035
+
+{"jsonrpc":"2.0","id":34,"method":"StartServiceAsync","params":[{"name":"Microsoft.VisualStudio.Debugger.SymbolLocatorService","host":"dotnet","hostId":"C94B8CFE-E3FD-4BAF-A941-2866DBB566FE","serviceBaseDirectory":"/Users/MacBook/.vscode/extensions/ms-dotnettools.csdevkit-1.15.34-darwin-arm64/components/VSDebugCore/platforms/darwin-arm64/node_modules/@microsoft/visualstudio-debugger-devkit.darwin-arm64","entryPoint":{"assemblyPath":"/Users/MacBook/.vscode/extensions/ms-dotnettools.csdevkit-1.15.34-darwin-arm64/components/VSDebugCore/platforms/darwin-arm64/node_modules/@microsoft/visualstudio-debugger-devkit.darwin-arm64/Microsoft.VisualStudio.Debugger.DevKit.dll","fullClassName":"Microsoft.VisualStudio.Debugger.BrokeredServices.SymbolLocator.SymbolLocatorService+Factory"}},{"ActivationArguments":{"__servicehub__ServiceHubRemoteServiceBrokerPipeName":"/Users/MacBook/.ServiceHub/57d5b9e605/ae9f4bdb52","__servicehub__RequestedServiceVersion":"0.1"},"ClientCredentials":{},"ClientCulture":"de-AT","ClientUICulture":"en-US"}]}
+01/22/2025 07:09:57 Mitteleuropäische Normalzeit : Information : LocationService read: Content-Length: 85
+
+{"jsonrpc":"2.0","id":34,"result":"/Users/MacBook/.ServiceHub/57d5b9e605/03bb6eca15"}
+01/22/2025 07:09:57 Mitteleuropäische Normalzeit : Information : Located service \'Microsoft.VisualStudio.Debugger.SymbolLocatorService\' at '/Users/MacBook/.ServiceHub/57d5b9e605/03bb6eca15 @ dotnet$C94B8CFE-E3FD-4BAF-A941-2866DBB566FE' requested by VsHubClient (pid:92691)
+01/22/2025 07:09:57 Mitteleuropäische Normalzeit : Information : Microsoft.ServiceHub.Controller.HubController write: Content-Length: 165
+
+{"jsonrpc":"2.0","id":43,"result":{"RequestId":"ef6e31a9-ec9b-45ec-9624-deae9f18ebe3","PipeName":"/Users/MacBook/.ServiceHub/57d5b9e605/03bb6eca15","IsEmpty":false}}
+01/22/2025 08:37:22 Mitteleuropäische Normalzeit : Information : Microsoft.ServiceHub.Controller.HubController read: Content-Length: 353
+
+{"jsonrpc":"2.0","id":44,"method":"requestServiceChannel","params":[{"Name":"Microsoft.VisualStudio.Debugger.SymbolLocatorService","Version":"0.1"},{"ActivationArguments":{"__servicehub__ServiceHubRemoteServiceBrokerPipeName":"/Users/MacBook/.ServiceHub/57d5b9e605/60bc95177a"},"ClientCredentials":{},"ClientCulture":"de-AT","ClientUICulture":"en-US"}]}
+01/22/2025 08:37:22 Mitteleuropäische Normalzeit : Information : Locating service 'Microsoft.VisualStudio.Debugger.SymbolLocatorService' requested by VsHubClient (pid:92691)
+01/22/2025 08:37:22 Mitteleuropäische Normalzeit : Information : Service 'Microsoft.VisualStudio.Debugger.SymbolLocatorService' has not been loaded before. Loading now.
+01/22/2025 08:37:22 Mitteleuropäische Normalzeit : Information : LocationService write: Content-Length: 1035
+
+{"jsonrpc":"2.0","id":35,"method":"StartServiceAsync","params":[{"name":"Microsoft.VisualStudio.Debugger.SymbolLocatorService","host":"dotnet","hostId":"C94B8CFE-E3FD-4BAF-A941-2866DBB566FE","serviceBaseDirectory":"/Users/MacBook/.vscode/extensions/ms-dotnettools.csdevkit-1.15.34-darwin-arm64/components/VSDebugCore/platforms/darwin-arm64/node_modules/@microsoft/visualstudio-debugger-devkit.darwin-arm64","entryPoint":{"assemblyPath":"/Users/MacBook/.vscode/extensions/ms-dotnettools.csdevkit-1.15.34-darwin-arm64/components/VSDebugCore/platforms/darwin-arm64/node_modules/@microsoft/visualstudio-debugger-devkit.darwin-arm64/Microsoft.VisualStudio.Debugger.DevKit.dll","fullClassName":"Microsoft.VisualStudio.Debugger.BrokeredServices.SymbolLocator.SymbolLocatorService+Factory"}},{"ActivationArguments":{"__servicehub__ServiceHubRemoteServiceBrokerPipeName":"/Users/MacBook/.ServiceHub/57d5b9e605/60bc95177a","__servicehub__RequestedServiceVersion":"0.1"},"ClientCredentials":{},"ClientCulture":"de-AT","ClientUICulture":"en-US"}]}
+01/22/2025 08:37:22 Mitteleuropäische Normalzeit : Information : LocationService read: Content-Length: 85
+
+{"jsonrpc":"2.0","id":35,"result":"/Users/MacBook/.ServiceHub/57d5b9e605/680ba15401"}
+01/22/2025 08:37:22 Mitteleuropäische Normalzeit : Information : Located service \'Microsoft.VisualStudio.Debugger.SymbolLocatorService\' at '/Users/MacBook/.ServiceHub/57d5b9e605/680ba15401 @ dotnet$C94B8CFE-E3FD-4BAF-A941-2866DBB566FE' requested by VsHubClient (pid:92691)
+01/22/2025 08:37:22 Mitteleuropäische Normalzeit : Information : Microsoft.ServiceHub.Controller.HubController write: Content-Length: 165
+
+{"jsonrpc":"2.0","id":44,"result":{"RequestId":"2a690b4f-93b0-47be-b9db-26497a024317","PipeName":"/Users/MacBook/.ServiceHub/57d5b9e605/680ba15401","IsEmpty":false}}
+01/22/2025 08:37:22 Mitteleuropäische Normalzeit : Information : Microsoft.ServiceHub.Controller.HubController read: Content-Length: 350
+
+{"jsonrpc":"2.0","id":45,"method":"requestServiceChannel","params":[{"Name":"Microsoft.VisualStudio.Debugger.SourceLinkService","Version":"0.1"},{"ActivationArguments":{"__servicehub__ServiceHubRemoteServiceBrokerPipeName":"/Users/MacBook/.ServiceHub/57d5b9e605/17a74f9d35"},"ClientCredentials":{},"ClientCulture":"de-AT","ClientUICulture":"en-US"}]}
+01/22/2025 08:37:22 Mitteleuropäische Normalzeit : Information : Locating service 'Microsoft.VisualStudio.Debugger.SourceLinkService' requested by VsHubClient (pid:92691)
+01/22/2025 08:37:22 Mitteleuropäische Normalzeit : Information : Service 'Microsoft.VisualStudio.Debugger.SourceLinkService' has not been loaded before. Loading now.
+01/22/2025 08:37:22 Mitteleuropäische Normalzeit : Information : LocationService write: Content-Length: 998
+
+{"jsonrpc":"2.0","id":36,"method":"StartServiceAsync","params":[{"name":"Microsoft.VisualStudio.Debugger.SourceLinkService","host":"dotnet","hostId":"C94B8CFE-E3FD-4BAF-A941-2866DBB566FE","serviceBaseDirectory":"/Users/MacBook/.vscode/extensions/ms-dotnettools.csdevkit-1.15.34-darwin-arm64/components/VSDebugCore/platforms/darwin-arm64/node_modules/@microsoft/visualstudio-debugger-devkit.darwin-arm64","entryPoint":{"assemblyPath":"/Users/MacBook/.vscode/extensions/ms-dotnettools.csdevkit-1.15.34-darwin-arm64/components/VSDebugCore/platforms/darwin-arm64/node_modules/@microsoft/visualstudio-debugger-devkit.darwin-arm64/Microsoft.VisualStudio.Debugger.DevKit.dll","fullClassName":"Microsoft.VisualStudio.Debugger.SourceLinkService+Factory"}},{"ActivationArguments":{"__servicehub__ServiceHubRemoteServiceBrokerPipeName":"/Users/MacBook/.ServiceHub/57d5b9e605/17a74f9d35","__servicehub__RequestedServiceVersion":"0.1"},"ClientCredentials":{},"ClientCulture":"de-AT","ClientUICulture":"en-US"}]}
+01/22/2025 08:37:22 Mitteleuropäische Normalzeit : Information : LocationService read: Content-Length: 85
+
+{"jsonrpc":"2.0","id":36,"result":"/Users/MacBook/.ServiceHub/57d5b9e605/d57eaf6bac"}
+01/22/2025 08:37:22 Mitteleuropäische Normalzeit : Information : Located service \'Microsoft.VisualStudio.Debugger.SourceLinkService\' at '/Users/MacBook/.ServiceHub/57d5b9e605/d57eaf6bac @ dotnet$C94B8CFE-E3FD-4BAF-A941-2866DBB566FE' requested by VsHubClient (pid:92691)
+01/22/2025 08:37:22 Mitteleuropäische Normalzeit : Information : Microsoft.ServiceHub.Controller.HubController write: Content-Length: 165
+
+{"jsonrpc":"2.0","id":45,"result":{"RequestId":"73a1f386-fda6-4247-8d9d-4b959de133ed","PipeName":"/Users/MacBook/.ServiceHub/57d5b9e605/d57eaf6bac","IsEmpty":false}}
+01/22/2025 08:41:02 Mitteleuropäische Normalzeit : Information : Microsoft.ServiceHub.Controller.HubController read: Content-Length: 353
+
+{"jsonrpc":"2.0","id":46,"method":"requestServiceChannel","params":[{"Name":"Microsoft.VisualStudio.Debugger.SymbolLocatorService","Version":"0.1"},{"ActivationArguments":{"__servicehub__ServiceHubRemoteServiceBrokerPipeName":"/Users/MacBook/.ServiceHub/57d5b9e605/ce464f82b4"},"ClientCredentials":{},"ClientCulture":"de-AT","ClientUICulture":"en-US"}]}
+01/22/2025 08:41:02 Mitteleuropäische Normalzeit : Information : Locating service 'Microsoft.VisualStudio.Debugger.SymbolLocatorService' requested by VsHubClient (pid:92691)
+01/22/2025 08:41:02 Mitteleuropäische Normalzeit : Information : Service 'Microsoft.VisualStudio.Debugger.SymbolLocatorService' has not been loaded before. Loading now.
+01/22/2025 08:41:02 Mitteleuropäische Normalzeit : Information : LocationService write: Content-Length: 1035
+
+{"jsonrpc":"2.0","id":37,"method":"StartServiceAsync","params":[{"name":"Microsoft.VisualStudio.Debugger.SymbolLocatorService","host":"dotnet","hostId":"C94B8CFE-E3FD-4BAF-A941-2866DBB566FE","serviceBaseDirectory":"/Users/MacBook/.vscode/extensions/ms-dotnettools.csdevkit-1.15.34-darwin-arm64/components/VSDebugCore/platforms/darwin-arm64/node_modules/@microsoft/visualstudio-debugger-devkit.darwin-arm64","entryPoint":{"assemblyPath":"/Users/MacBook/.vscode/extensions/ms-dotnettools.csdevkit-1.15.34-darwin-arm64/components/VSDebugCore/platforms/darwin-arm64/node_modules/@microsoft/visualstudio-debugger-devkit.darwin-arm64/Microsoft.VisualStudio.Debugger.DevKit.dll","fullClassName":"Microsoft.VisualStudio.Debugger.BrokeredServices.SymbolLocator.SymbolLocatorService+Factory"}},{"ActivationArguments":{"__servicehub__ServiceHubRemoteServiceBrokerPipeName":"/Users/MacBook/.ServiceHub/57d5b9e605/ce464f82b4","__servicehub__RequestedServiceVersion":"0.1"},"ClientCredentials":{},"ClientCulture":"de-AT","ClientUICulture":"en-US"}]}
+01/22/2025 08:41:02 Mitteleuropäische Normalzeit : Information : LocationService read: Content-Length: 85
+
+{"jsonrpc":"2.0","id":37,"result":"/Users/MacBook/.ServiceHub/57d5b9e605/12b853ee04"}
+01/22/2025 08:41:02 Mitteleuropäische Normalzeit : Information : Located service \'Microsoft.VisualStudio.Debugger.SymbolLocatorService\' at '/Users/MacBook/.ServiceHub/57d5b9e605/12b853ee04 @ dotnet$C94B8CFE-E3FD-4BAF-A941-2866DBB566FE' requested by VsHubClient (pid:92691)
+01/22/2025 08:41:02 Mitteleuropäische Normalzeit : Information : Microsoft.ServiceHub.Controller.HubController write: Content-Length: 165
+
+{"jsonrpc":"2.0","id":46,"result":{"RequestId":"170ec59f-3c82-479e-8bf7-063f6f7ceddd","PipeName":"/Users/MacBook/.ServiceHub/57d5b9e605/12b853ee04","IsEmpty":false}}
+01/22/2025 08:41:02 Mitteleuropäische Normalzeit : Information : Microsoft.ServiceHub.Controller.HubController read: Content-Length: 350
+
+{"jsonrpc":"2.0","id":47,"method":"requestServiceChannel","params":[{"Name":"Microsoft.VisualStudio.Debugger.SourceLinkService","Version":"0.1"},{"ActivationArguments":{"__servicehub__ServiceHubRemoteServiceBrokerPipeName":"/Users/MacBook/.ServiceHub/57d5b9e605/8bdda4e39c"},"ClientCredentials":{},"ClientCulture":"de-AT","ClientUICulture":"en-US"}]}
+01/22/2025 08:41:02 Mitteleuropäische Normalzeit : Information : Locating service 'Microsoft.VisualStudio.Debugger.SourceLinkService' requested by VsHubClient (pid:92691)
+01/22/2025 08:41:02 Mitteleuropäische Normalzeit : Information : Service 'Microsoft.VisualStudio.Debugger.SourceLinkService' has not been loaded before. Loading now.
+01/22/2025 08:41:02 Mitteleuropäische Normalzeit : Information : LocationService write: Content-Length: 998
+
+{"jsonrpc":"2.0","id":38,"method":"StartServiceAsync","params":[{"name":"Microsoft.VisualStudio.Debugger.SourceLinkService","host":"dotnet","hostId":"C94B8CFE-E3FD-4BAF-A941-2866DBB566FE","serviceBaseDirectory":"/Users/MacBook/.vscode/extensions/ms-dotnettools.csdevkit-1.15.34-darwin-arm64/components/VSDebugCore/platforms/darwin-arm64/node_modules/@microsoft/visualstudio-debugger-devkit.darwin-arm64","entryPoint":{"assemblyPath":"/Users/MacBook/.vscode/extensions/ms-dotnettools.csdevkit-1.15.34-darwin-arm64/components/VSDebugCore/platforms/darwin-arm64/node_modules/@microsoft/visualstudio-debugger-devkit.darwin-arm64/Microsoft.VisualStudio.Debugger.DevKit.dll","fullClassName":"Microsoft.VisualStudio.Debugger.SourceLinkService+Factory"}},{"ActivationArguments":{"__servicehub__ServiceHubRemoteServiceBrokerPipeName":"/Users/MacBook/.ServiceHub/57d5b9e605/8bdda4e39c","__servicehub__RequestedServiceVersion":"0.1"},"ClientCredentials":{},"ClientCulture":"de-AT","ClientUICulture":"en-US"}]}
+01/22/2025 08:41:02 Mitteleuropäische Normalzeit : Information : LocationService read: Content-Length: 85
+
+{"jsonrpc":"2.0","id":38,"result":"/Users/MacBook/.ServiceHub/57d5b9e605/6eb69f23eb"}
+01/22/2025 08:41:02 Mitteleuropäische Normalzeit : Information : Located service \'Microsoft.VisualStudio.Debugger.SourceLinkService\' at '/Users/MacBook/.ServiceHub/57d5b9e605/6eb69f23eb @ dotnet$C94B8CFE-E3FD-4BAF-A941-2866DBB566FE' requested by VsHubClient (pid:92691)
+01/22/2025 08:41:02 Mitteleuropäische Normalzeit : Information : Microsoft.ServiceHub.Controller.HubController write: Content-Length: 165
+
+{"jsonrpc":"2.0","id":47,"result":{"RequestId":"9365e0dd-e4dc-4910-ad0f-3849b902cfbe","PipeName":"/Users/MacBook/.ServiceHub/57d5b9e605/6eb69f23eb","IsEmpty":false}}
+01/22/2025 09:11:36 Mitteleuropäische Normalzeit : Information : Microsoft.ServiceHub.Controller.HubController read: Content-Length: 353
+
+{"jsonrpc":"2.0","id":48,"method":"requestServiceChannel","params":[{"Name":"Microsoft.VisualStudio.Debugger.SymbolLocatorService","Version":"0.1"},{"ActivationArguments":{"__servicehub__ServiceHubRemoteServiceBrokerPipeName":"/Users/MacBook/.ServiceHub/57d5b9e605/630956f909"},"ClientCredentials":{},"ClientCulture":"de-AT","ClientUICulture":"en-US"}]}
+01/22/2025 09:11:36 Mitteleuropäische Normalzeit : Information : Locating service 'Microsoft.VisualStudio.Debugger.SymbolLocatorService' requested by VsHubClient (pid:92691)
+01/22/2025 09:11:36 Mitteleuropäische Normalzeit : Information : Service 'Microsoft.VisualStudio.Debugger.SymbolLocatorService' has not been loaded before. Loading now.
+01/22/2025 09:11:36 Mitteleuropäische Normalzeit : Information : LocationService write: Content-Length: 1035
+
+{"jsonrpc":"2.0","id":39,"method":"StartServiceAsync","params":[{"name":"Microsoft.VisualStudio.Debugger.SymbolLocatorService","host":"dotnet","hostId":"C94B8CFE-E3FD-4BAF-A941-2866DBB566FE","serviceBaseDirectory":"/Users/MacBook/.vscode/extensions/ms-dotnettools.csdevkit-1.15.34-darwin-arm64/components/VSDebugCore/platforms/darwin-arm64/node_modules/@microsoft/visualstudio-debugger-devkit.darwin-arm64","entryPoint":{"assemblyPath":"/Users/MacBook/.vscode/extensions/ms-dotnettools.csdevkit-1.15.34-darwin-arm64/components/VSDebugCore/platforms/darwin-arm64/node_modules/@microsoft/visualstudio-debugger-devkit.darwin-arm64/Microsoft.VisualStudio.Debugger.DevKit.dll","fullClassName":"Microsoft.VisualStudio.Debugger.BrokeredServices.SymbolLocator.SymbolLocatorService+Factory"}},{"ActivationArguments":{"__servicehub__ServiceHubRemoteServiceBrokerPipeName":"/Users/MacBook/.ServiceHub/57d5b9e605/630956f909","__servicehub__RequestedServiceVersion":"0.1"},"ClientCredentials":{},"ClientCulture":"de-AT","ClientUICulture":"en-US"}]}
+01/22/2025 09:11:36 Mitteleuropäische Normalzeit : Information : LocationService read: Content-Length: 85
+
+{"jsonrpc":"2.0","id":39,"result":"/Users/MacBook/.ServiceHub/57d5b9e605/527c0013cc"}
+01/22/2025 09:11:36 Mitteleuropäische Normalzeit : Information : Located service \'Microsoft.VisualStudio.Debugger.SymbolLocatorService\' at '/Users/MacBook/.ServiceHub/57d5b9e605/527c0013cc @ dotnet$C94B8CFE-E3FD-4BAF-A941-2866DBB566FE' requested by VsHubClient (pid:92691)
+01/22/2025 09:11:36 Mitteleuropäische Normalzeit : Information : Microsoft.ServiceHub.Controller.HubController write: Content-Length: 165
+
+{"jsonrpc":"2.0","id":48,"result":{"RequestId":"13f74d81-443c-4717-ac16-b07084d6de0e","PipeName":"/Users/MacBook/.ServiceHub/57d5b9e605/527c0013cc","IsEmpty":false}}
+01/22/2025 09:11:37 Mitteleuropäische Normalzeit : Information : Microsoft.ServiceHub.Controller.HubController read: Content-Length: 350
+
+{"jsonrpc":"2.0","id":49,"method":"requestServiceChannel","params":[{"Name":"Microsoft.VisualStudio.Debugger.SourceLinkService","Version":"0.1"},{"ActivationArguments":{"__servicehub__ServiceHubRemoteServiceBrokerPipeName":"/Users/MacBook/.ServiceHub/57d5b9e605/13e4e7dbca"},"ClientCredentials":{},"ClientCulture":"de-AT","ClientUICulture":"en-US"}]}
+01/22/2025 09:11:37 Mitteleuropäische Normalzeit : Information : Locating service 'Microsoft.VisualStudio.Debugger.SourceLinkService' requested by VsHubClient (pid:92691)
+01/22/2025 09:11:37 Mitteleuropäische Normalzeit : Information : Service 'Microsoft.VisualStudio.Debugger.SourceLinkService' has not been loaded before. Loading now.
+01/22/2025 09:11:37 Mitteleuropäische Normalzeit : Information : LocationService write: Content-Length: 998
+
+{"jsonrpc":"2.0","id":40,"method":"StartServiceAsync","params":[{"name":"Microsoft.VisualStudio.Debugger.SourceLinkService","host":"dotnet","hostId":"C94B8CFE-E3FD-4BAF-A941-2866DBB566FE","serviceBaseDirectory":"/Users/MacBook/.vscode/extensions/ms-dotnettools.csdevkit-1.15.34-darwin-arm64/components/VSDebugCore/platforms/darwin-arm64/node_modules/@microsoft/visualstudio-debugger-devkit.darwin-arm64","entryPoint":{"assemblyPath":"/Users/MacBook/.vscode/extensions/ms-dotnettools.csdevkit-1.15.34-darwin-arm64/components/VSDebugCore/platforms/darwin-arm64/node_modules/@microsoft/visualstudio-debugger-devkit.darwin-arm64/Microsoft.VisualStudio.Debugger.DevKit.dll","fullClassName":"Microsoft.VisualStudio.Debugger.SourceLinkService+Factory"}},{"ActivationArguments":{"__servicehub__ServiceHubRemoteServiceBrokerPipeName":"/Users/MacBook/.ServiceHub/57d5b9e605/13e4e7dbca","__servicehub__RequestedServiceVersion":"0.1"},"ClientCredentials":{},"ClientCulture":"de-AT","ClientUICulture":"en-US"}]}
+01/22/2025 09:11:37 Mitteleuropäische Normalzeit : Information : LocationService read: Content-Length: 85
+
+{"jsonrpc":"2.0","id":40,"result":"/Users/MacBook/.ServiceHub/57d5b9e605/528edfc60b"}
+01/22/2025 09:11:37 Mitteleuropäische Normalzeit : Information : Located service \'Microsoft.VisualStudio.Debugger.SourceLinkService\' at '/Users/MacBook/.ServiceHub/57d5b9e605/528edfc60b @ dotnet$C94B8CFE-E3FD-4BAF-A941-2866DBB566FE' requested by VsHubClient (pid:92691)
+01/22/2025 09:11:37 Mitteleuropäische Normalzeit : Information : Microsoft.ServiceHub.Controller.HubController write: Content-Length: 165
+
+{"jsonrpc":"2.0","id":49,"result":{"RequestId":"37eed585-3092-420d-b695-acad8e97951c","PipeName":"/Users/MacBook/.ServiceHub/57d5b9e605/528edfc60b","IsEmpty":false}}
+01/22/2025 09:16:41 Mitteleuropäische Normalzeit : Information : Microsoft.ServiceHub.Controller.HubController read: Content-Length: 353
+
+{"jsonrpc":"2.0","id":50,"method":"requestServiceChannel","params":[{"Name":"Microsoft.VisualStudio.Debugger.SymbolLocatorService","Version":"0.1"},{"ActivationArguments":{"__servicehub__ServiceHubRemoteServiceBrokerPipeName":"/Users/MacBook/.ServiceHub/57d5b9e605/47a869c7c0"},"ClientCredentials":{},"ClientCulture":"de-AT","ClientUICulture":"en-US"}]}
+01/22/2025 09:16:41 Mitteleuropäische Normalzeit : Information : Locating service 'Microsoft.VisualStudio.Debugger.SymbolLocatorService' requested by VsHubClient (pid:92691)
+01/22/2025 09:16:41 Mitteleuropäische Normalzeit : Information : Service 'Microsoft.VisualStudio.Debugger.SymbolLocatorService' has not been loaded before. Loading now.
+01/22/2025 09:16:41 Mitteleuropäische Normalzeit : Information : LocationService write: Content-Length: 1035
+
+{"jsonrpc":"2.0","id":41,"method":"StartServiceAsync","params":[{"name":"Microsoft.VisualStudio.Debugger.SymbolLocatorService","host":"dotnet","hostId":"C94B8CFE-E3FD-4BAF-A941-2866DBB566FE","serviceBaseDirectory":"/Users/MacBook/.vscode/extensions/ms-dotnettools.csdevkit-1.15.34-darwin-arm64/components/VSDebugCore/platforms/darwin-arm64/node_modules/@microsoft/visualstudio-debugger-devkit.darwin-arm64","entryPoint":{"assemblyPath":"/Users/MacBook/.vscode/extensions/ms-dotnettools.csdevkit-1.15.34-darwin-arm64/components/VSDebugCore/platforms/darwin-arm64/node_modules/@microsoft/visualstudio-debugger-devkit.darwin-arm64/Microsoft.VisualStudio.Debugger.DevKit.dll","fullClassName":"Microsoft.VisualStudio.Debugger.BrokeredServices.SymbolLocator.SymbolLocatorService+Factory"}},{"ActivationArguments":{"__servicehub__ServiceHubRemoteServiceBrokerPipeName":"/Users/MacBook/.ServiceHub/57d5b9e605/47a869c7c0","__servicehub__RequestedServiceVersion":"0.1"},"ClientCredentials":{},"ClientCulture":"de-AT","ClientUICulture":"en-US"}]}
+01/22/2025 09:16:41 Mitteleuropäische Normalzeit : Information : LocationService read: Content-Length: 85
+
+{"jsonrpc":"2.0","id":41,"result":"/Users/MacBook/.ServiceHub/57d5b9e605/cdfb74b22b"}
+01/22/2025 09:16:41 Mitteleuropäische Normalzeit : Information : Located service \'Microsoft.VisualStudio.Debugger.SymbolLocatorService\' at '/Users/MacBook/.ServiceHub/57d5b9e605/cdfb74b22b @ dotnet$C94B8CFE-E3FD-4BAF-A941-2866DBB566FE' requested by VsHubClient (pid:92691)
+01/22/2025 09:16:41 Mitteleuropäische Normalzeit : Information : Microsoft.ServiceHub.Controller.HubController write: Content-Length: 165
+
+{"jsonrpc":"2.0","id":50,"result":{"RequestId":"e6d415bc-a4ce-4725-a562-f95c7293af1e","PipeName":"/Users/MacBook/.ServiceHub/57d5b9e605/cdfb74b22b","IsEmpty":false}}
+01/22/2025 09:17:59 Mitteleuropäische Normalzeit : Information : Microsoft.ServiceHub.Controller.HubController read: Content-Length: 353
+
+{"jsonrpc":"2.0","id":51,"method":"requestServiceChannel","params":[{"Name":"Microsoft.VisualStudio.Debugger.SymbolLocatorService","Version":"0.1"},{"ActivationArguments":{"__servicehub__ServiceHubRemoteServiceBrokerPipeName":"/Users/MacBook/.ServiceHub/57d5b9e605/bd9c201f0b"},"ClientCredentials":{},"ClientCulture":"de-AT","ClientUICulture":"en-US"}]}
+01/22/2025 09:17:59 Mitteleuropäische Normalzeit : Information : Locating service 'Microsoft.VisualStudio.Debugger.SymbolLocatorService' requested by VsHubClient (pid:92691)
+01/22/2025 09:17:59 Mitteleuropäische Normalzeit : Information : Service 'Microsoft.VisualStudio.Debugger.SymbolLocatorService' has not been loaded before. Loading now.
+01/22/2025 09:17:59 Mitteleuropäische Normalzeit : Information : LocationService write: Content-Length: 1035
+
+{"jsonrpc":"2.0","id":42,"method":"StartServiceAsync","params":[{"name":"Microsoft.VisualStudio.Debugger.SymbolLocatorService","host":"dotnet","hostId":"C94B8CFE-E3FD-4BAF-A941-2866DBB566FE","serviceBaseDirectory":"/Users/MacBook/.vscode/extensions/ms-dotnettools.csdevkit-1.15.34-darwin-arm64/components/VSDebugCore/platforms/darwin-arm64/node_modules/@microsoft/visualstudio-debugger-devkit.darwin-arm64","entryPoint":{"assemblyPath":"/Users/MacBook/.vscode/extensions/ms-dotnettools.csdevkit-1.15.34-darwin-arm64/components/VSDebugCore/platforms/darwin-arm64/node_modules/@microsoft/visualstudio-debugger-devkit.darwin-arm64/Microsoft.VisualStudio.Debugger.DevKit.dll","fullClassName":"Microsoft.VisualStudio.Debugger.BrokeredServices.SymbolLocator.SymbolLocatorService+Factory"}},{"ActivationArguments":{"__servicehub__ServiceHubRemoteServiceBrokerPipeName":"/Users/MacBook/.ServiceHub/57d5b9e605/bd9c201f0b","__servicehub__RequestedServiceVersion":"0.1"},"ClientCredentials":{},"ClientCulture":"de-AT","ClientUICulture":"en-US"}]}
+01/22/2025 09:17:59 Mitteleuropäische Normalzeit : Information : LocationService read: Content-Length: 85
+
+{"jsonrpc":"2.0","id":42,"result":"/Users/MacBook/.ServiceHub/57d5b9e605/c512dfb3e5"}
+01/22/2025 09:17:59 Mitteleuropäische Normalzeit : Information : Located service \'Microsoft.VisualStudio.Debugger.SymbolLocatorService\' at '/Users/MacBook/.ServiceHub/57d5b9e605/c512dfb3e5 @ dotnet$C94B8CFE-E3FD-4BAF-A941-2866DBB566FE' requested by VsHubClient (pid:92691)
+01/22/2025 09:17:59 Mitteleuropäische Normalzeit : Information : Microsoft.ServiceHub.Controller.HubController write: Content-Length: 165
+
+{"jsonrpc":"2.0","id":51,"result":{"RequestId":"e6d2071a-1dff-41e8-88fc-adb15010d3d4","PipeName":"/Users/MacBook/.ServiceHub/57d5b9e605/c512dfb3e5","IsEmpty":false}}
+01/22/2025 09:17:59 Mitteleuropäische Normalzeit : Information : Microsoft.ServiceHub.Controller.HubController read: Content-Length: 350
+
+{"jsonrpc":"2.0","id":52,"method":"requestServiceChannel","params":[{"Name":"Microsoft.VisualStudio.Debugger.SourceLinkService","Version":"0.1"},{"ActivationArguments":{"__servicehub__ServiceHubRemoteServiceBrokerPipeName":"/Users/MacBook/.ServiceHub/57d5b9e605/185b935ad7"},"ClientCredentials":{},"ClientCulture":"de-AT","ClientUICulture":"en-US"}]}
+01/22/2025 09:17:59 Mitteleuropäische Normalzeit : Information : Locating service 'Microsoft.VisualStudio.Debugger.SourceLinkService' requested by VsHubClient (pid:92691)
+01/22/2025 09:17:59 Mitteleuropäische Normalzeit : Information : Service 'Microsoft.VisualStudio.Debugger.SourceLinkService' has not been loaded before. Loading now.
+01/22/2025 09:17:59 Mitteleuropäische Normalzeit : Information : LocationService write: Content-Length: 998
+
+{"jsonrpc":"2.0","id":43,"method":"StartServiceAsync","params":[{"name":"Microsoft.VisualStudio.Debugger.SourceLinkService","host":"dotnet","hostId":"C94B8CFE-E3FD-4BAF-A941-2866DBB566FE","serviceBaseDirectory":"/Users/MacBook/.vscode/extensions/ms-dotnettools.csdevkit-1.15.34-darwin-arm64/components/VSDebugCore/platforms/darwin-arm64/node_modules/@microsoft/visualstudio-debugger-devkit.darwin-arm64","entryPoint":{"assemblyPath":"/Users/MacBook/.vscode/extensions/ms-dotnettools.csdevkit-1.15.34-darwin-arm64/components/VSDebugCore/platforms/darwin-arm64/node_modules/@microsoft/visualstudio-debugger-devkit.darwin-arm64/Microsoft.VisualStudio.Debugger.DevKit.dll","fullClassName":"Microsoft.VisualStudio.Debugger.SourceLinkService+Factory"}},{"ActivationArguments":{"__servicehub__ServiceHubRemoteServiceBrokerPipeName":"/Users/MacBook/.ServiceHub/57d5b9e605/185b935ad7","__servicehub__RequestedServiceVersion":"0.1"},"ClientCredentials":{},"ClientCulture":"de-AT","ClientUICulture":"en-US"}]}
+01/22/2025 09:17:59 Mitteleuropäische Normalzeit : Information : LocationService read: Content-Length: 85
+
+{"jsonrpc":"2.0","id":43,"result":"/Users/MacBook/.ServiceHub/57d5b9e605/597fbf8b76"}
+01/22/2025 09:17:59 Mitteleuropäische Normalzeit : Information : Located service \'Microsoft.VisualStudio.Debugger.SourceLinkService\' at '/Users/MacBook/.ServiceHub/57d5b9e605/597fbf8b76 @ dotnet$C94B8CFE-E3FD-4BAF-A941-2866DBB566FE' requested by VsHubClient (pid:92691)
+01/22/2025 09:17:59 Mitteleuropäische Normalzeit : Information : Microsoft.ServiceHub.Controller.HubController write: Content-Length: 165
+
+{"jsonrpc":"2.0","id":52,"result":{"RequestId":"9924e754-8f54-48b8-b8ec-acfd07fbecb2","PipeName":"/Users/MacBook/.ServiceHub/57d5b9e605/597fbf8b76","IsEmpty":false}}
+01/22/2025 12:54:30 Mitteleuropäische Normalzeit : Information : Microsoft.ServiceHub.Controller.HubController read: Content-Length: 353
+
+{"jsonrpc":"2.0","id":53,"method":"requestServiceChannel","params":[{"Name":"Microsoft.VisualStudio.Debugger.SymbolLocatorService","Version":"0.1"},{"ActivationArguments":{"__servicehub__ServiceHubRemoteServiceBrokerPipeName":"/Users/MacBook/.ServiceHub/57d5b9e605/33befb9520"},"ClientCredentials":{},"ClientCulture":"de-AT","ClientUICulture":"en-US"}]}
+01/22/2025 12:54:30 Mitteleuropäische Normalzeit : Information : Locating service 'Microsoft.VisualStudio.Debugger.SymbolLocatorService' requested by VsHubClient (pid:92691)
+01/22/2025 12:54:30 Mitteleuropäische Normalzeit : Information : Service 'Microsoft.VisualStudio.Debugger.SymbolLocatorService' has not been loaded before. Loading now.
+01/22/2025 12:54:30 Mitteleuropäische Normalzeit : Information : LocationService write: Content-Length: 1035
+
+{"jsonrpc":"2.0","id":44,"method":"StartServiceAsync","params":[{"name":"Microsoft.VisualStudio.Debugger.SymbolLocatorService","host":"dotnet","hostId":"C94B8CFE-E3FD-4BAF-A941-2866DBB566FE","serviceBaseDirectory":"/Users/MacBook/.vscode/extensions/ms-dotnettools.csdevkit-1.15.34-darwin-arm64/components/VSDebugCore/platforms/darwin-arm64/node_modules/@microsoft/visualstudio-debugger-devkit.darwin-arm64","entryPoint":{"assemblyPath":"/Users/MacBook/.vscode/extensions/ms-dotnettools.csdevkit-1.15.34-darwin-arm64/components/VSDebugCore/platforms/darwin-arm64/node_modules/@microsoft/visualstudio-debugger-devkit.darwin-arm64/Microsoft.VisualStudio.Debugger.DevKit.dll","fullClassName":"Microsoft.VisualStudio.Debugger.BrokeredServices.SymbolLocator.SymbolLocatorService+Factory"}},{"ActivationArguments":{"__servicehub__ServiceHubRemoteServiceBrokerPipeName":"/Users/MacBook/.ServiceHub/57d5b9e605/33befb9520","__servicehub__RequestedServiceVersion":"0.1"},"ClientCredentials":{},"ClientCulture":"de-AT","ClientUICulture":"en-US"}]}
+01/22/2025 12:54:30 Mitteleuropäische Normalzeit : Information : LocationService read: Content-Length: 85
+
+{"jsonrpc":"2.0","id":44,"result":"/Users/MacBook/.ServiceHub/57d5b9e605/4378401028"}
+01/22/2025 12:54:30 Mitteleuropäische Normalzeit : Information : Located service \'Microsoft.VisualStudio.Debugger.SymbolLocatorService\' at '/Users/MacBook/.ServiceHub/57d5b9e605/4378401028 @ dotnet$C94B8CFE-E3FD-4BAF-A941-2866DBB566FE' requested by VsHubClient (pid:92691)
+01/22/2025 12:54:30 Mitteleuropäische Normalzeit : Information : Microsoft.ServiceHub.Controller.HubController write: Content-Length: 165
+
+{"jsonrpc":"2.0","id":53,"result":{"RequestId":"1d70e0ca-e0df-44ae-9558-782c250fedb6","PipeName":"/Users/MacBook/.ServiceHub/57d5b9e605/4378401028","IsEmpty":false}}
+01/22/2025 12:56:32 Mitteleuropäische Normalzeit : Information : Microsoft.ServiceHub.Controller.HubController read: Content-Length: 353
+
+{"jsonrpc":"2.0","id":54,"method":"requestServiceChannel","params":[{"Name":"Microsoft.VisualStudio.Debugger.SymbolLocatorService","Version":"0.1"},{"ActivationArguments":{"__servicehub__ServiceHubRemoteServiceBrokerPipeName":"/Users/MacBook/.ServiceHub/57d5b9e605/41e103c72d"},"ClientCredentials":{},"ClientCulture":"de-AT","ClientUICulture":"en-US"}]}
+01/22/2025 12:56:32 Mitteleuropäische Normalzeit : Information : Locating service 'Microsoft.VisualStudio.Debugger.SymbolLocatorService' requested by VsHubClient (pid:92691)
+01/22/2025 12:56:32 Mitteleuropäische Normalzeit : Information : Service 'Microsoft.VisualStudio.Debugger.SymbolLocatorService' has not been loaded before. Loading now.
+01/22/2025 12:56:32 Mitteleuropäische Normalzeit : Information : LocationService write: Content-Length: 1035
+
+{"jsonrpc":"2.0","id":45,"method":"StartServiceAsync","params":[{"name":"Microsoft.VisualStudio.Debugger.SymbolLocatorService","host":"dotnet","hostId":"C94B8CFE-E3FD-4BAF-A941-2866DBB566FE","serviceBaseDirectory":"/Users/MacBook/.vscode/extensions/ms-dotnettools.csdevkit-1.15.34-darwin-arm64/components/VSDebugCore/platforms/darwin-arm64/node_modules/@microsoft/visualstudio-debugger-devkit.darwin-arm64","entryPoint":{"assemblyPath":"/Users/MacBook/.vscode/extensions/ms-dotnettools.csdevkit-1.15.34-darwin-arm64/components/VSDebugCore/platforms/darwin-arm64/node_modules/@microsoft/visualstudio-debugger-devkit.darwin-arm64/Microsoft.VisualStudio.Debugger.DevKit.dll","fullClassName":"Microsoft.VisualStudio.Debugger.BrokeredServices.SymbolLocator.SymbolLocatorService+Factory"}},{"ActivationArguments":{"__servicehub__ServiceHubRemoteServiceBrokerPipeName":"/Users/MacBook/.ServiceHub/57d5b9e605/41e103c72d","__servicehub__RequestedServiceVersion":"0.1"},"ClientCredentials":{},"ClientCulture":"de-AT","ClientUICulture":"en-US"}]}
+01/22/2025 12:56:32 Mitteleuropäische Normalzeit : Information : LocationService read: Content-Length: 85
+
+{"jsonrpc":"2.0","id":45,"result":"/Users/MacBook/.ServiceHub/57d5b9e605/644c7a2289"}
+01/22/2025 12:56:32 Mitteleuropäische Normalzeit : Information : Located service \'Microsoft.VisualStudio.Debugger.SymbolLocatorService\' at '/Users/MacBook/.ServiceHub/57d5b9e605/644c7a2289 @ dotnet$C94B8CFE-E3FD-4BAF-A941-2866DBB566FE' requested by VsHubClient (pid:92691)
+01/22/2025 12:56:32 Mitteleuropäische Normalzeit : Information : Microsoft.ServiceHub.Controller.HubController write: Content-Length: 165
+
+{"jsonrpc":"2.0","id":54,"result":{"RequestId":"9bef69fb-0591-441a-a62c-10d157f61b0c","PipeName":"/Users/MacBook/.ServiceHub/57d5b9e605/644c7a2289","IsEmpty":false}}
+01/22/2025 13:25:39 Mitteleuropäische Normalzeit : Information : Microsoft.ServiceHub.Controller.HubController read: Content-Length: 353
+
+{"jsonrpc":"2.0","id":55,"method":"requestServiceChannel","params":[{"Name":"Microsoft.VisualStudio.Debugger.SymbolLocatorService","Version":"0.1"},{"ActivationArguments":{"__servicehub__ServiceHubRemoteServiceBrokerPipeName":"/Users/MacBook/.ServiceHub/57d5b9e605/cef725605f"},"ClientCredentials":{},"ClientCulture":"de-AT","ClientUICulture":"en-US"}]}
+01/22/2025 13:25:39 Mitteleuropäische Normalzeit : Information : Locating service 'Microsoft.VisualStudio.Debugger.SymbolLocatorService' requested by VsHubClient (pid:92691)
+01/22/2025 13:25:39 Mitteleuropäische Normalzeit : Information : Service 'Microsoft.VisualStudio.Debugger.SymbolLocatorService' has not been loaded before. Loading now.
+01/22/2025 13:25:39 Mitteleuropäische Normalzeit : Information : LocationService write: Content-Length: 1035
+
+{"jsonrpc":"2.0","id":46,"method":"StartServiceAsync","params":[{"name":"Microsoft.VisualStudio.Debugger.SymbolLocatorService","host":"dotnet","hostId":"C94B8CFE-E3FD-4BAF-A941-2866DBB566FE","serviceBaseDirectory":"/Users/MacBook/.vscode/extensions/ms-dotnettools.csdevkit-1.15.34-darwin-arm64/components/VSDebugCore/platforms/darwin-arm64/node_modules/@microsoft/visualstudio-debugger-devkit.darwin-arm64","entryPoint":{"assemblyPath":"/Users/MacBook/.vscode/extensions/ms-dotnettools.csdevkit-1.15.34-darwin-arm64/components/VSDebugCore/platforms/darwin-arm64/node_modules/@microsoft/visualstudio-debugger-devkit.darwin-arm64/Microsoft.VisualStudio.Debugger.DevKit.dll","fullClassName":"Microsoft.VisualStudio.Debugger.BrokeredServices.SymbolLocator.SymbolLocatorService+Factory"}},{"ActivationArguments":{"__servicehub__ServiceHubRemoteServiceBrokerPipeName":"/Users/MacBook/.ServiceHub/57d5b9e605/cef725605f","__servicehub__RequestedServiceVersion":"0.1"},"ClientCredentials":{},"ClientCulture":"de-AT","ClientUICulture":"en-US"}]}
+01/22/2025 13:25:39 Mitteleuropäische Normalzeit : Information : Microsoft.ServiceHub.Controller.HubController read: Content-Length: 63
+
+{"jsonrpc":"2.0","method":"$/cancelRequest","params":{"id":55}}
+01/22/2025 13:25:39 Mitteleuropäische Normalzeit : Information : LocationService read: Content-Length: 85
+
+{"jsonrpc":"2.0","id":46,"result":"/Users/MacBook/.ServiceHub/57d5b9e605/25ff64133d"}
+01/22/2025 13:25:39 Mitteleuropäische Normalzeit : Information : Located service \'Microsoft.VisualStudio.Debugger.SymbolLocatorService\' at '/Users/MacBook/.ServiceHub/57d5b9e605/25ff64133d @ dotnet$C94B8CFE-E3FD-4BAF-A941-2866DBB566FE' requested by VsHubClient (pid:92691)
+01/22/2025 13:25:39 Mitteleuropäische Normalzeit : Information : Microsoft.ServiceHub.Controller.HubController write: Content-Length: 165
+
+{"jsonrpc":"2.0","id":55,"result":{"RequestId":"4b905f2d-c007-4154-b5d1-ea236cbf3a51","PipeName":"/Users/MacBook/.ServiceHub/57d5b9e605/25ff64133d","IsEmpty":false}}
+01/22/2025 13:43:21 Mitteleuropäische Normalzeit : Information : Microsoft.ServiceHub.Controller.HubController read: Content-Length: 328
+
+{"jsonrpc":"2.0","id":56,"method":"requestServiceChannel","params":[{"Name":"Microsoft.VisualStudio.LaunchConfigurationService"},{"ActivationArguments":{"__servicehub__ServiceHubRemoteServiceBrokerPipeName":"/Users/MacBook/.ServiceHub/57d5b9e605/7456437d8d"},"ClientCredentials":{},"ClientCulture":"de","ClientUICulture":"de"}]}
+01/22/2025 13:43:21 Mitteleuropäische Normalzeit : Information : Locating service 'Microsoft.VisualStudio.LaunchConfigurationService' requested by VsHubClient (pid:92691)
+01/22/2025 13:43:21 Mitteleuropäische Normalzeit : Information : Service 'Microsoft.VisualStudio.LaunchConfigurationService' has not been loaded before. Loading now.
+01/22/2025 13:43:21 Mitteleuropäische Normalzeit : Information : LocationService write: Content-Length: 994
+
+{"jsonrpc":"2.0","id":12,"method":"StartServiceAsync","params":[{"name":"Microsoft.VisualStudio.LaunchConfigurationService","host":"dotnet.projectSystem","hostId":"C94B8CFE-E3FD-4BAF-A941-2866DBB566FE","serviceBaseDirectory":"/Users/MacBook/.vscode/extensions/ms-dotnettools.csdevkit-1.15.34-darwin-arm64/components/CPS/platforms/darwin-arm64/node_modules/@microsoft/visualstudio-projectsystem-server.darwin-arm64","entryPoint":{"assemblyPath":"/Users/MacBook/.vscode/extensions/ms-dotnettools.csdevkit-1.15.34-darwin-arm64/components/CPS/platforms/darwin-arm64/node_modules/@microsoft/visualstudio-projectsystem-server.darwin-arm64/Microsoft.VisualStudio.ProjectSystem.Server.Implementation.dll","fullClassName":"Microsoft.VisualStudio.ProjectSystem.Server.LaunchConfigurationServiceFactory"}},{"ActivationArguments":{"__servicehub__ServiceHubRemoteServiceBrokerPipeName":"/Users/MacBook/.ServiceHub/57d5b9e605/7456437d8d"},"ClientCredentials":{},"ClientCulture":"de","ClientUICulture":"de"}]}
+01/22/2025 13:43:21 Mitteleuropäische Normalzeit : Information : LocationService read: Content-Length: 85
+
+{"jsonrpc":"2.0","id":12,"result":"/Users/MacBook/.ServiceHub/57d5b9e605/d44e955a85"}
+01/22/2025 13:43:21 Mitteleuropäische Normalzeit : Information : Located service \'Microsoft.VisualStudio.LaunchConfigurationService\' at '/Users/MacBook/.ServiceHub/57d5b9e605/d44e955a85 @ dotnet.projectSystem$C94B8CFE-E3FD-4BAF-A941-2866DBB566FE' requested by VsHubClient (pid:92691)
+01/22/2025 13:43:21 Mitteleuropäische Normalzeit : Information : Microsoft.ServiceHub.Controller.HubController write: Content-Length: 165
+
+{"jsonrpc":"2.0","id":56,"result":{"RequestId":"83a09cfd-e159-4b7b-86be-91f908bd469b","PipeName":"/Users/MacBook/.ServiceHub/57d5b9e605/d44e955a85","IsEmpty":false}}
+01/22/2025 13:43:25 Mitteleuropäische Normalzeit : Information : Microsoft.ServiceHub.Controller.HubController read: Content-Length: 377
+
+{"jsonrpc":"2.0","id":57,"method":"requestServiceChannel","params":[{"Name":"Microsoft.VisualStudio.Debugger.ManagedEditAndContinueRemoteDebuggerService2","Version":"0.1"},{"ActivationArguments":{"__servicehub__ServiceHubRemoteServiceBrokerPipeName":"/Users/MacBook/.ServiceHub/57d5b9e605/22f700743e"},"ClientCredentials":{},"ClientCulture":"de-AT","ClientUICulture":"de-AT"}]}
+01/22/2025 13:43:25 Mitteleuropäische Normalzeit : Information : Locating service 'Microsoft.VisualStudio.Debugger.ManagedEditAndContinueRemoteDebuggerService2' requested by VsHubClient (pid:92691)
+01/22/2025 13:43:25 Mitteleuropäische Normalzeit : Information : Service 'Microsoft.VisualStudio.Debugger.ManagedEditAndContinueRemoteDebuggerService2' has not been loaded before. Loading now.
+01/22/2025 13:43:25 Mitteleuropäische Normalzeit : Information : LocationService write: Content-Length: 1051
+
+{"jsonrpc":"2.0","id":47,"method":"StartServiceAsync","params":[{"name":"Microsoft.VisualStudio.Debugger.ManagedEditAndContinueRemoteDebuggerService2","host":"dotnet","hostId":"C94B8CFE-E3FD-4BAF-A941-2866DBB566FE","serviceBaseDirectory":"/Users/MacBook/.vscode/extensions/ms-dotnettools.csdevkit-1.15.34-darwin-arm64/components/VSDebugCore/platforms/darwin-arm64/node_modules/@microsoft/visualstudio-debugger-devkit.darwin-arm64","entryPoint":{"assemblyPath":"/Users/MacBook/.vscode/extensions/ms-dotnettools.csdevkit-1.15.34-darwin-arm64/components/VSDebugCore/platforms/darwin-arm64/node_modules/@microsoft/visualstudio-debugger-devkit.darwin-arm64/Microsoft.VisualStudio.Debugger.DevKit.dll","fullClassName":"Microsoft.VisualStudio.Debugger.ManagedEditAndContinueRemoteDebuggerService+Factory"}},{"ActivationArguments":{"__servicehub__ServiceHubRemoteServiceBrokerPipeName":"/Users/MacBook/.ServiceHub/57d5b9e605/22f700743e","__servicehub__RequestedServiceVersion":"0.1"},"ClientCredentials":{},"ClientCulture":"de-AT","ClientUICulture":"de-AT"}]}
+01/22/2025 13:43:25 Mitteleuropäische Normalzeit : Information : LocationService read: Content-Length: 85
+
+{"jsonrpc":"2.0","id":47,"result":"/Users/MacBook/.ServiceHub/57d5b9e605/e4d73270cf"}
+01/22/2025 13:43:25 Mitteleuropäische Normalzeit : Information : Located service \'Microsoft.VisualStudio.Debugger.ManagedEditAndContinueRemoteDebuggerService2\' at '/Users/MacBook/.ServiceHub/57d5b9e605/e4d73270cf @ dotnet$C94B8CFE-E3FD-4BAF-A941-2866DBB566FE' requested by VsHubClient (pid:92691)
+01/22/2025 13:43:25 Mitteleuropäische Normalzeit : Information : Microsoft.ServiceHub.Controller.HubController write: Content-Length: 165
+
+{"jsonrpc":"2.0","id":57,"result":{"RequestId":"0dfd0352-73ed-43d2-ace9-652261405061","PipeName":"/Users/MacBook/.ServiceHub/57d5b9e605/e4d73270cf","IsEmpty":false}}
+01/22/2025 13:43:25 Mitteleuropäische Normalzeit : Information : Microsoft.ServiceHub.Controller.HubController read: Content-Length: 377
+
+{"jsonrpc":"2.0","id":58,"method":"requestServiceChannel","params":[{"Name":"Microsoft.VisualStudio.Debugger.ManagedEditAndContinueCsDevKitEngineService2","Version":"0.1"},{"ActivationArguments":{"__servicehub__ServiceHubRemoteServiceBrokerPipeName":"/Users/MacBook/.ServiceHub/57d5b9e605/967f3768a8"},"ClientCredentials":{},"ClientCulture":"de-AT","ClientUICulture":"de-AT"}]}
+01/22/2025 13:43:25 Mitteleuropäische Normalzeit : Information : Locating service 'Microsoft.VisualStudio.Debugger.ManagedEditAndContinueCsDevKitEngineService2' requested by VsHubClient (pid:92691)
+01/22/2025 13:43:25 Mitteleuropäische Normalzeit : Information : Service 'Microsoft.VisualStudio.Debugger.ManagedEditAndContinueCsDevKitEngineService2' has not been loaded before. Loading now.
+01/22/2025 13:43:25 Mitteleuropäische Normalzeit : Information : LocationService write: Content-Length: 1051
+
+{"jsonrpc":"2.0","id":48,"method":"StartServiceAsync","params":[{"name":"Microsoft.VisualStudio.Debugger.ManagedEditAndContinueCsDevKitEngineService2","host":"dotnet","hostId":"C94B8CFE-E3FD-4BAF-A941-2866DBB566FE","serviceBaseDirectory":"/Users/MacBook/.vscode/extensions/ms-dotnettools.csdevkit-1.15.34-darwin-arm64/components/VSDebugCore/platforms/darwin-arm64/node_modules/@microsoft/visualstudio-debugger-devkit.darwin-arm64","entryPoint":{"assemblyPath":"/Users/MacBook/.vscode/extensions/ms-dotnettools.csdevkit-1.15.34-darwin-arm64/components/VSDebugCore/platforms/darwin-arm64/node_modules/@microsoft/visualstudio-debugger-devkit.darwin-arm64/Microsoft.VisualStudio.Debugger.DevKit.dll","fullClassName":"Microsoft.VisualStudio.Debugger.ManagedEditAndContinueCsDevKitEngineService+Factory"}},{"ActivationArguments":{"__servicehub__ServiceHubRemoteServiceBrokerPipeName":"/Users/MacBook/.ServiceHub/57d5b9e605/967f3768a8","__servicehub__RequestedServiceVersion":"0.1"},"ClientCredentials":{},"ClientCulture":"de-AT","ClientUICulture":"de-AT"}]}
+01/22/2025 13:43:25 Mitteleuropäische Normalzeit : Information : LocationService read: Content-Length: 85
+
+{"jsonrpc":"2.0","id":48,"result":"/Users/MacBook/.ServiceHub/57d5b9e605/cf4e3f95c9"}
+01/22/2025 13:43:25 Mitteleuropäische Normalzeit : Information : Located service \'Microsoft.VisualStudio.Debugger.ManagedEditAndContinueCsDevKitEngineService2\' at '/Users/MacBook/.ServiceHub/57d5b9e605/cf4e3f95c9 @ dotnet$C94B8CFE-E3FD-4BAF-A941-2866DBB566FE' requested by VsHubClient (pid:92691)
+01/22/2025 13:43:25 Mitteleuropäische Normalzeit : Information : Microsoft.ServiceHub.Controller.HubController write: Content-Length: 165
+
+{"jsonrpc":"2.0","id":58,"result":{"RequestId":"1c8db569-fdb3-4df3-ac8e-de59f5277567","PipeName":"/Users/MacBook/.ServiceHub/57d5b9e605/cf4e3f95c9","IsEmpty":false}}
+01/22/2025 14:06:43 Mitteleuropäische Normalzeit : Information : Microsoft.ServiceHub.Controller.HubController read: Content-Length: 328
+
+{"jsonrpc":"2.0","id":59,"method":"requestServiceChannel","params":[{"Name":"Microsoft.VisualStudio.LaunchConfigurationService"},{"ActivationArguments":{"__servicehub__ServiceHubRemoteServiceBrokerPipeName":"/Users/MacBook/.ServiceHub/57d5b9e605/0c3ca1831a"},"ClientCredentials":{},"ClientCulture":"de","ClientUICulture":"de"}]}
+01/22/2025 14:06:43 Mitteleuropäische Normalzeit : Information : Locating service 'Microsoft.VisualStudio.LaunchConfigurationService' requested by VsHubClient (pid:92691)
+01/22/2025 14:06:43 Mitteleuropäische Normalzeit : Information : Service 'Microsoft.VisualStudio.LaunchConfigurationService' has not been loaded before. Loading now.
+01/22/2025 14:06:43 Mitteleuropäische Normalzeit : Information : LocationService write: Content-Length: 994
+
+{"jsonrpc":"2.0","id":13,"method":"StartServiceAsync","params":[{"name":"Microsoft.VisualStudio.LaunchConfigurationService","host":"dotnet.projectSystem","hostId":"C94B8CFE-E3FD-4BAF-A941-2866DBB566FE","serviceBaseDirectory":"/Users/MacBook/.vscode/extensions/ms-dotnettools.csdevkit-1.15.34-darwin-arm64/components/CPS/platforms/darwin-arm64/node_modules/@microsoft/visualstudio-projectsystem-server.darwin-arm64","entryPoint":{"assemblyPath":"/Users/MacBook/.vscode/extensions/ms-dotnettools.csdevkit-1.15.34-darwin-arm64/components/CPS/platforms/darwin-arm64/node_modules/@microsoft/visualstudio-projectsystem-server.darwin-arm64/Microsoft.VisualStudio.ProjectSystem.Server.Implementation.dll","fullClassName":"Microsoft.VisualStudio.ProjectSystem.Server.LaunchConfigurationServiceFactory"}},{"ActivationArguments":{"__servicehub__ServiceHubRemoteServiceBrokerPipeName":"/Users/MacBook/.ServiceHub/57d5b9e605/0c3ca1831a"},"ClientCredentials":{},"ClientCulture":"de","ClientUICulture":"de"}]}
+01/22/2025 14:06:43 Mitteleuropäische Normalzeit : Information : LocationService read: Content-Length: 85
+
+{"jsonrpc":"2.0","id":13,"result":"/Users/MacBook/.ServiceHub/57d5b9e605/6139474169"}
+01/22/2025 14:06:43 Mitteleuropäische Normalzeit : Information : Located service \'Microsoft.VisualStudio.LaunchConfigurationService\' at '/Users/MacBook/.ServiceHub/57d5b9e605/6139474169 @ dotnet.projectSystem$C94B8CFE-E3FD-4BAF-A941-2866DBB566FE' requested by VsHubClient (pid:92691)
+01/22/2025 14:06:43 Mitteleuropäische Normalzeit : Information : Microsoft.ServiceHub.Controller.HubController write: Content-Length: 165
+
+{"jsonrpc":"2.0","id":59,"result":{"RequestId":"4c9be8bf-2fbc-4a1f-9066-4108d451e832","PipeName":"/Users/MacBook/.ServiceHub/57d5b9e605/6139474169","IsEmpty":false}}
+01/22/2025 14:06:45 Mitteleuropäische Normalzeit : Information : Microsoft.ServiceHub.Controller.HubController read: end of stream
+01/22/2025 14:06:45 Mitteleuropäische Normalzeit : Information : JsonRpc disconnected due to RemotePartyTerminated. Reached end of stream.
+01/22/2025 14:06:45 Mitteleuropäische Normalzeit : Information : LocationService read: Content-Length: 108
+
+{"jsonrpc":"2.0","method":"HostServicesEndedAsync","params":["dotnet$C94B8CFE-E3FD-4BAF-A941-2866DBB566FE"]}
+01/22/2025 14:06:45 Mitteleuropäische Normalzeit : Information : Microsoft.ServiceHub.Controller.HubController read: end of stream
+01/22/2025 14:06:45 Mitteleuropäische Normalzeit : Information : JsonRpc disconnected due to RemotePartyTerminated. Reached end of stream.
+01/22/2025 14:06:45 Mitteleuropäische Normalzeit : Information : External client disconnected from client watch.
+01/22/2025 14:06:45 Mitteleuropäische Normalzeit : Information : Starting fast shutdown
+01/22/2025 14:06:45 Mitteleuropäische Normalzeit : Information : Stopping the location service server.
+01/22/2025 14:06:45 Mitteleuropäische Normalzeit : Information : Exiting hub controller.
+01/22/2025 14:06:45 Mitteleuropäische Normalzeit : Information : Releasing single controller instance mutex.
+01/22/2025 14:06:45 Mitteleuropäische Normalzeit : Information : Stopping host 'dotnet.projectSystem$C94B8CFE-E3FD-4BAF-A941-2866DBB566FE' PID: 92730
+01/22/2025 14:06:45 Mitteleuropäische Normalzeit : Information : LocationService write: Content-Length: 58
+
+{"jsonrpc":"2.0","id":14,"method":"ExitAsync","params":[]}
+01/22/2025 14:06:45 Mitteleuropäische Normalzeit : Information : LocationService read: Content-Length: 39
+
+{"jsonrpc":"2.0","id":14,"result":null}
+01/22/2025 14:06:45 Mitteleuropäische Normalzeit : Information : Stopping host 'dotnet$C94B8CFE-E3FD-4BAF-A941-2866DBB566FE' PID: 92731
+01/22/2025 14:06:45 Mitteleuropäische Normalzeit : Information : LocationService write: Content-Length: 58
+
+{"jsonrpc":"2.0","id":49,"method":"ExitAsync","params":[]}
+01/22/2025 14:06:45 Mitteleuropäische Normalzeit : Information : LocationService read: end of stream
+01/22/2025 14:06:45 Mitteleuropäische Normalzeit : Information : LocationService read: Content-Length: 39
+
+{"jsonrpc":"2.0","id":49,"result":null}
+01/22/2025 14:06:45 Mitteleuropäische Normalzeit : Information : Host 'dotnet.projectSystem$C94B8CFE-E3FD-4BAF-A941-2866DBB566FE' has been removed from the hosts cache.
+01/22/2025 14:06:45 Mitteleuropäische Normalzeit : Information : Waiting for host 'dotnet.projectSystem$C94B8CFE-E3FD-4BAF-A941-2866DBB566FE' with pid '92730' to exit...
+01/22/2025 14:06:45 Mitteleuropäische Normalzeit : Information : Host 'dotnet$C94B8CFE-E3FD-4BAF-A941-2866DBB566FE' has been removed from the hosts cache.
+01/22/2025 14:06:45 Mitteleuropäische Normalzeit : Information : Waiting for host 'dotnet$C94B8CFE-E3FD-4BAF-A941-2866DBB566FE' with pid '92731' to exit...
+01/22/2025 14:06:45 Mitteleuropäische Normalzeit : Information : LocationService read: end of stream
+01/22/2025 14:06:45 Mitteleuropäische Normalzeit : Information : Waiting for all hosts to shutdown. Running hosts: dotnet.projectSystem$C94B8CFE-E3FD-4BAF-A941-2866DBB566FE, dotnet$C94B8CFE-E3FD-4BAF-A941-2866DBB566FE
+01/22/2025 14:06:45 Mitteleuropäische Normalzeit : Information : code: 'Hub host 'C94B8CFE-E3FD-4BAF-A941-2866DBB566FE', PID: 92731 exited.' 0.
+01/22/2025 14:06:45 Mitteleuropäische Normalzeit : Information : code: 'Hub host 'C94B8CFE-E3FD-4BAF-A941-2866DBB566FE', PID: 92730 exited.' 0.
+01/22/2025 14:06:45 Mitteleuropäische Normalzeit : Information : All hosts have exited.
+01/22/2025 14:06:45 Mitteleuropäische Normalzeit : Information : Controller terminating with exit code '0'.

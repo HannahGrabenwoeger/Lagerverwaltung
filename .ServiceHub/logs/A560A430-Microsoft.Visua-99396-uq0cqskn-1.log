@@ -1,0 +1,17 @@
+﻿02/15/2025 20:36:54 Central European Standard Time : Information : Local timezone is (UTC+01:00) Central European Time (Vienna)
+02/15/2025 20:36:55 Central European Standard Time : Information : Service Hub .NET service module host started. Host id: dotnet$C94B8CFE-E3FD-4BAF-A941-2866DBB566FE. Controller pipe: net.pipe://99295C19CD. PID: 99396
+02/15/2025 20:36:55 Central European Standard Time : Information : hubHostClr read: Content-Length: 116
+
+{"jsonrpc":"2.0","id":2,"method":"InitializeHostAsync","params":[{"HostsRootDirectory":".","AppConfigFallback":""}]}
+02/15/2025 20:36:55 Central European Standard Time : Information : hubHostClr write: Content-Length: 79
+
+{"jsonrpc":"2.0","id":2,"result":"dotnet$C94B8CFE-E3FD-4BAF-A941-2866DBB566FE"}
+02/15/2025 20:37:04 Central European Standard Time : Information : hubHostClr read: Content-Length: 57
+
+{"jsonrpc":"2.0","id":3,"method":"ExitAsync","params":[]}
+02/15/2025 20:37:04 Central European Standard Time : Information : Exit command received. Exiting CLR host
+02/15/2025 20:37:04 Central European Standard Time : Information : hubHostClr write: Content-Length: 38
+
+{"jsonrpc":"2.0","id":3,"result":null}
+02/15/2025 20:37:04 Central European Standard Time : Information : hubHostClr JSON RPC has been disposed
+02/15/2025 20:37:04 Central European Standard Time : Information : hubHostClr read: end of stream

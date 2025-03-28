@@ -1,0 +1,10 @@
+﻿01/21/2025 14:47:37 Mitteleuropäische Normalzeit : Information : Local timezone is (UTC+01:00) Mitteleuropäische Zeit (Wien)
+01/21/2025 14:47:41 Mitteleuropäische Normalzeit : Information : VsHubClient-hubController write: Content-Length: 109
+
+{"jsonrpc":"2.0","id":2,"method":"UpdateClientInfoAsync","params":[{"clientName":"VsHubClient","pid":89799}]}
+01/21/2025 14:47:42 Mitteleuropäische Normalzeit : Information : VsHubClient-hubController read: Content-Length: 444
+
+{"jsonrpc":"2.0","id":2,"result":{"ClientWatchServerName":"net.pipe://89806EFE42","ControllerConfig":{"Executable":"/Users/MacBook/.vscode/extensions/ms-dotnettools.csdevkit-1.15.34-darwin-arm64/components/vs-green-server/platforms/darwin-arm64/node_modules/@microsoft/servicehub-controller-net60.darwin-arm64/Microsoft.ServiceHub.Controller","Args":["a836931074"],"PipeName":"a836931074"},"HostsConfig":{"RootDir":".","AppConfigFallback":""}}}
+01/21/2025 14:47:42 Mitteleuropäische Normalzeit : Information : Connected to Hub Controller's client watch 'net.pipe://89806EFE42
+01/21/2025 14:47:42 Mitteleuropäische Normalzeit : Information : VsHubClient-hubController JSON RPC has been disposed
+01/21/2025 14:47:42 Mitteleuropäische Normalzeit : Information : VsHubClient-hubController read: end of stream

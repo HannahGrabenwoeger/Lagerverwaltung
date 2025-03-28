@@ -1,0 +1,60 @@
+﻿03/19/2025 14:43:33 Mitteleuropäische Normalzeit : Information : Local timezone is (UTC+01:00) Mitteleuropäische Zeit (Wien)
+03/19/2025 14:43:33 Mitteleuropäische Normalzeit : Information : Service Hub .NET service module host started. Host id: dotnet$C94B8CFE-E3FD-4BAF-A941-2866DBB566FE. Controller pipe: net.pipe://5566295331. PID: 55777
+03/19/2025 14:43:34 Mitteleuropäische Normalzeit : Information : hubHostClr read: Content-Length: 116
+
+{"jsonrpc":"2.0","id":2,"method":"InitializeHostAsync","params":[{"HostsRootDirectory":".","AppConfigFallback":""}]}
+03/19/2025 14:43:34 Mitteleuropäische Normalzeit : Information : hubHostClr write: Content-Length: 79
+
+{"jsonrpc":"2.0","id":2,"result":"dotnet$C94B8CFE-E3FD-4BAF-A941-2866DBB566FE"}
+03/19/2025 14:43:34 Mitteleuropäische Normalzeit : Information : hubHostClr read: Content-Length: 1044
+
+{"jsonrpc":"2.0","id":3,"method":"StartServiceAsync","params":[{"name":"Microsoft.VisualStudio.TestWindow.VSCode.Service","host":"dotnet","hostId":"C94B8CFE-E3FD-4BAF-A941-2866DBB566FE","serviceBaseDirectory":"/Users/MacBook/.vscode/extensions/ms-dotnettools.csdevkit-1.16.6-darwin-arm64/components/VSUnitTesting/platforms/darwin-arm64/node_modules/@microsoft/visualstudio-testwindow-vscode-service.darwin-arm64","entryPoint":{"assemblyPath":"/Users/MacBook/.vscode/extensions/ms-dotnettools.csdevkit-1.16.6-darwin-arm64/components/VSUnitTesting/platforms/darwin-arm64/node_modules/@microsoft/visualstudio-testwindow-vscode-service.darwin-arm64/Microsoft.VisualStudio.TestWindow.VSCode.Service.dll","fullClassName":"Microsoft.VisualStudio.TestWindow.VSCode.Service.TestWindowVSCodeServiceFactory"}},{"ActivationArguments":{"__servicehub__ServiceHubRemoteServiceBrokerPipeName":"/Users/MacBook/.ServiceHub/08896de539/e091700459","__servicehub__RequestedServiceVersion":"0.1"},"ClientCredentials":{},"ClientCulture":"de","ClientUICulture":"de"}]}Content-Length: 1031
+
+{"jsonrpc":"2.0","id":4,"method":"StartServiceAsync","params":[{"name":"Microsoft.VisualStudio.Debugger.HotReloadSessionNotificationService","host":"dotnet","hostId":"C94B8CFE-E3FD-4BAF-A941-2866DBB566FE","serviceBaseDirectory":"/Users/MacBook/.vscode/extensions/ms-dotnettools.csdevkit-1.16.6-darwin-arm64/components/VSDebugCore/platforms/darwin-arm64/node_modules/@microsoft/visualstudio-debugger-devkit.darwin-arm64","entryPoint":{"assemblyPath":"/Users/MacBook/.vscode/extensions/ms-dotnettools.csdevkit-1.16.6-darwin-arm64/components/VSDebugCore/platforms/darwin-arm64/node_modules/@microsoft/visualstudio-debugger-devkit.darwin-arm64/Microsoft.VisualStudio.Debugger.DevKit.dll","fullClassName":"Microsoft.VisualStudio.Debugger.HotReloadSessionNotificationService+Factory"}},{"ActivationArguments":{"__servicehub__ServiceHubRemoteServiceBrokerPipeName":"/Users/MacBook/.ServiceHub/08896de539/66bd20cd0b","__servicehub__RequestedServiceVersion":"0.1"},"ClientCredentials":{},"ClientCulture":"de-AT","ClientUICulture":"en-US"}]}
+03/19/2025 14:43:34 Mitteleuropäische Normalzeit : Information : CLR host received start request for service 'Microsoft.VisualStudio.TestWindow.VSCode.Service'
+03/19/2025 14:43:34 Mitteleuropäische Normalzeit : Information : Loading service module assembly '/Users/MacBook/.vscode/extensions/ms-dotnettools.csdevkit-1.16.6-darwin-arm64/components/VSUnitTesting/platforms/darwin-arm64/node_modules/@microsoft/visualstudio-testwindow-vscode-service.darwin-arm64/Microsoft.VisualStudio.TestWindow.VSCode.Service.dll' from '/Users/MacBook/.vscode/extensions/ms-dotnettools.csdevkit-1.16.6-darwin-arm64/components/VSUnitTesting/platforms/darwin-arm64/node_modules/@microsoft/visualstudio-testwindow-vscode-service.darwin-arm64'
+03/19/2025 14:43:34 Mitteleuropäische Normalzeit : Information : Starting service module 'Microsoft.VisualStudio.TestWindow.VSCode.Service'. Class: Microsoft.VisualStudio.TestWindow.VSCode.Service.TestWindowVSCodeServiceFactory, Supported Version: 
+03/19/2025 14:43:34 Mitteleuropäische Normalzeit : Information : Started service 'Microsoft.VisualStudio.TestWindow.VSCode.Service'. Pipe name: /Users/MacBook/.ServiceHub/08896de539/361c57a711, Supported Version: 
+03/19/2025 14:43:34 Mitteleuropäische Normalzeit : Information : hubHostClr write: Content-Length: 84
+
+{"jsonrpc":"2.0","id":3,"result":"/Users/MacBook/.ServiceHub/08896de539/361c57a711"}
+03/19/2025 14:43:34 Mitteleuropäische Normalzeit : Information : CLR host received start request for service 'Microsoft.VisualStudio.Debugger.HotReloadSessionNotificationService'
+03/19/2025 14:43:34 Mitteleuropäische Normalzeit : Information : Loading service module assembly '/Users/MacBook/.vscode/extensions/ms-dotnettools.csdevkit-1.16.6-darwin-arm64/components/VSDebugCore/platforms/darwin-arm64/node_modules/@microsoft/visualstudio-debugger-devkit.darwin-arm64/Microsoft.VisualStudio.Debugger.DevKit.dll' from '/Users/MacBook/.vscode/extensions/ms-dotnettools.csdevkit-1.16.6-darwin-arm64/components/VSDebugCore/platforms/darwin-arm64/node_modules/@microsoft/visualstudio-debugger-devkit.darwin-arm64'
+03/19/2025 14:43:34 Mitteleuropäische Normalzeit : Information : Starting service module 'Microsoft.VisualStudio.Debugger.HotReloadSessionNotificationService'. Class: Microsoft.VisualStudio.Debugger.HotReloadSessionNotificationService+Factory, Supported Version: 
+03/19/2025 14:43:34 Mitteleuropäische Normalzeit : Information : Started service 'Microsoft.VisualStudio.Debugger.HotReloadSessionNotificationService'. Pipe name: /Users/MacBook/.ServiceHub/08896de539/00cf64d9e5, Supported Version: 
+03/19/2025 14:43:34 Mitteleuropäische Normalzeit : Information : hubHostClr write: Content-Length: 84
+
+{"jsonrpc":"2.0","id":4,"result":"/Users/MacBook/.ServiceHub/08896de539/00cf64d9e5"}
+03/19/2025 14:43:34 Mitteleuropäische Normalzeit : Information : A new client connected to CLR service module 'Microsoft.VisualStudio.TestWindow.VSCode.Service'
+03/19/2025 14:43:34 Mitteleuropäische Normalzeit : Information : A new client connected to CLR service module 'Microsoft.VisualStudio.Debugger.HotReloadSessionNotificationService'
+03/19/2025 14:43:34 Mitteleuropäische Normalzeit : Information : Found FactoryVersion=Version2 for service : Microsoft.VisualStudio.Debugger.HotReloadSessionNotificationService.
+03/19/2025 14:43:34 Mitteleuropäische Normalzeit : Information : Service 'Microsoft.VisualStudio.Debugger.HotReloadSessionNotificationService+Factory' implements IServiceHubServiceFactory. Creating factory instance and caching it.
+03/19/2025 14:43:34 Mitteleuropäische Normalzeit : Information : Found FactoryVersion=Version2 for service : Microsoft.VisualStudio.TestWindow.VSCode.Service.
+03/19/2025 14:43:34 Mitteleuropäische Normalzeit : Information : Service 'Microsoft.VisualStudio.TestWindow.VSCode.Service.TestWindowVSCodeServiceFactory' implements IServiceHubServiceFactory. Creating factory instance and caching it.
+03/19/2025 14:43:34 Mitteleuropäische Normalzeit : Information : hubHostClr write: Content-Length: 110
+
+{"jsonrpc":"2.0","method":"HostServicesStartedAsync","params":["dotnet$C94B8CFE-E3FD-4BAF-A941-2866DBB566FE"]}
+03/19/2025 14:43:34 Mitteleuropäische Normalzeit : Information : Creating service Microsoft.VisualStudio.TestWindow.VSCode.Service.TestWindowVSCodeServiceFactory from factory with FactoryVersion=Version2 and ClientRequestedVersion=0.1.
+03/19/2025 14:43:34 Mitteleuropäische Normalzeit : Information : Setting up RPC connection for service 'Microsoft.VisualStudio.TestWindow.VSCode.Service.TestWindowVSCodeServiceFactory' from factory
+03/19/2025 14:43:34 Mitteleuropäische Normalzeit : Information : Creating service Microsoft.VisualStudio.Debugger.HotReloadSessionNotificationService+Factory from factory with FactoryVersion=Version2 and ClientRequestedVersion=0.1.
+03/19/2025 14:43:34 Mitteleuropäische Normalzeit : Information : Setting up RPC connection for service 'Microsoft.VisualStudio.Debugger.HotReloadSessionNotificationService+Factory' from factory
+03/19/2025 14:43:34 Mitteleuropäische Normalzeit : Information : Completed RPC connection setup for service 'Microsoft.VisualStudio.TestWindow.VSCode.Service.TestWindowVSCodeServiceFactory' from factory
+03/19/2025 14:43:34 Mitteleuropäische Normalzeit : Information : Completed RPC connection setup for service 'Microsoft.VisualStudio.Debugger.HotReloadSessionNotificationService+Factory' from factory
+03/19/2025 14:46:42 Mitteleuropäische Normalzeit : Information : Checking if 'Microsoft.VisualStudio.TestWindow.VSCode.Service.TestWindowVSCodeServiceFactory' implements Microsoft.VisualStudio.Threading.IAsyncDisposable.
+03/19/2025 14:46:42 Mitteleuropäische Normalzeit : Information : Checking if 'Microsoft.VisualStudio.TestWindow.VSCode.Service.TestWindowVSCodeServiceFactory' implements System.IAsyncDisposable.
+03/19/2025 14:46:42 Mitteleuropäische Normalzeit : Information : Checking if 'Microsoft.VisualStudio.TestWindow.VSCode.Service.TestWindowVSCodeServiceFactory' implements System.IDisposable.
+03/19/2025 14:46:42 Mitteleuropäische Normalzeit : Information : hubHostClr write: Content-Length: 108
+
+{"jsonrpc":"2.0","method":"HostServicesEndedAsync","params":["dotnet$C94B8CFE-E3FD-4BAF-A941-2866DBB566FE"]}
+03/19/2025 14:46:42 Mitteleuropäische Normalzeit : Information : Checking if 'Microsoft.VisualStudio.Debugger.HotReloadSessionNotificationService+Factory' implements Microsoft.VisualStudio.Threading.IAsyncDisposable.
+03/19/2025 14:46:42 Mitteleuropäische Normalzeit : Information : Checking if 'Microsoft.VisualStudio.Debugger.HotReloadSessionNotificationService+Factory' implements System.IAsyncDisposable.
+03/19/2025 14:46:42 Mitteleuropäische Normalzeit : Information : Checking if 'Microsoft.VisualStudio.Debugger.HotReloadSessionNotificationService+Factory' implements System.IDisposable.
+03/19/2025 14:46:52 Mitteleuropäische Normalzeit : Information : hubHostClr read: Content-Length: 57
+
+{"jsonrpc":"2.0","id":5,"method":"ExitAsync","params":[]}
+03/19/2025 14:46:52 Mitteleuropäische Normalzeit : Information : Exit command received. Exiting CLR host
+03/19/2025 14:46:52 Mitteleuropäische Normalzeit : Information : hubHostClr write: Content-Length: 38
+
+{"jsonrpc":"2.0","id":5,"result":null}
+03/19/2025 14:46:52 Mitteleuropäische Normalzeit : Information : hubHostClr JSON RPC has been disposed
+03/19/2025 14:46:52 Mitteleuropäische Normalzeit : Information : hubHostClr read: end of stream

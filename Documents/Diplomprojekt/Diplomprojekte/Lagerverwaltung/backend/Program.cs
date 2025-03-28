@@ -15,6 +15,7 @@ using System.Linq;
 using Microsoft.OpenApi.Models;
 using Google.Apis.Auth.OAuth2;
 using FirebaseAdmin;
+using Backend.Services.Firebase;
 
 FirebaseApp.Create(new AppOptions
 {
@@ -31,6 +32,7 @@ builder.Services.AddScoped<AuditLogService>();
 builder.Services.AddScoped<StockService>();
 builder.Services.AddScoped<UserQueryService>();
 builder.Services.AddSingleton<RestockProcessor>();
+builder.Services.AddSingleton<IFirebaseAuthWrapper, FirebaseAuthWrapper>();
 builder.Services.AddHostedService(sp => sp.GetRequiredService<RestockProcessor>());
 
 builder.Services.AddControllers()

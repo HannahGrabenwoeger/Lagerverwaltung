@@ -1,0 +1,41 @@
+﻿02/14/2025 13:10:45 Mitteleuropäische Normalzeit : Information : Local timezone is (UTC+01:00) Mitteleuropäische Zeit (Wien)
+02/14/2025 13:10:45 Mitteleuropäische Normalzeit : Information : Added local RPC method "getPipe" -> Microsoft.VisualStudio.Utilities.ServiceBroker.GlobalBrokeredServiceContainer+View.GetPipeAsync(ServiceMoniker, ServiceActivationOptions, CancellationToken) (Microsoft.VisualStudio.Utilities.ServiceBroker.GlobalBrokeredServiceContainer+View)
+02/14/2025 13:10:45 Mitteleuropäische Normalzeit : Information : Added local RPC method "getProxy" -> Microsoft.VisualStudio.Utilities.ServiceBroker.GlobalBrokeredServiceContainer+View.GetProxyAsync(ServiceRpcDescriptor, ServiceActivationOptions, CancellationToken) (Microsoft.VisualStudio.Utilities.ServiceBroker.GlobalBrokeredServiceContainer+View)
+02/14/2025 13:10:45 Mitteleuropäische Normalzeit : Information : Added local RPC method "handshake" -> Microsoft.VisualStudio.Utilities.ServiceBroker.GlobalBrokeredServiceContainer+View.HandshakeAsync(ServiceBrokerClientMetadata, CancellationToken) (Microsoft.VisualStudio.Utilities.ServiceBroker.GlobalBrokeredServiceContainer+View)
+02/14/2025 13:10:45 Mitteleuropäische Normalzeit : Information : Added local RPC method "requestServiceChannel" -> Microsoft.VisualStudio.Utilities.ServiceBroker.GlobalBrokeredServiceContainer+View.RequestServiceChannelAsync(ServiceMoniker, ServiceActivationOptions, CancellationToken) (Microsoft.VisualStudio.Utilities.ServiceBroker.GlobalBrokeredServiceContainer+View)
+02/14/2025 13:10:45 Mitteleuropäische Normalzeit : Information : Added local RPC method "cancelServiceRequest" -> Microsoft.VisualStudio.Utilities.ServiceBroker.GlobalBrokeredServiceContainer+View.CancelServiceRequestAsync(Guid) (Microsoft.VisualStudio.Utilities.ServiceBroker.GlobalBrokeredServiceContainer+View)
+02/14/2025 13:10:45 Mitteleuropäische Normalzeit : Information : Added local RPC method "getPipe" -> Microsoft.VisualStudio.Utilities.ServiceBroker.GlobalBrokeredServiceContainer+View.GetPipeAsync(ServiceMoniker, ServiceActivationOptions, CancellationToken) (Microsoft.VisualStudio.Utilities.ServiceBroker.GlobalBrokeredServiceContainer+View)
+02/14/2025 13:10:45 Mitteleuropäische Normalzeit : Information : Added local RPC method "getProxy" -> Microsoft.VisualStudio.Utilities.ServiceBroker.GlobalBrokeredServiceContainer+View.GetProxyAsync(ServiceRpcDescriptor, ServiceActivationOptions, CancellationToken) (Microsoft.VisualStudio.Utilities.ServiceBroker.GlobalBrokeredServiceContainer+View)
+02/14/2025 13:10:45 Mitteleuropäische Normalzeit : Information : Added local RPC method "handshake" -> Microsoft.VisualStudio.Utilities.ServiceBroker.GlobalBrokeredServiceContainer+View.HandshakeAsync(ServiceBrokerClientMetadata, CancellationToken) (Microsoft.VisualStudio.Utilities.ServiceBroker.GlobalBrokeredServiceContainer+View)
+02/14/2025 13:10:45 Mitteleuropäische Normalzeit : Information : Added local RPC method "requestServiceChannel" -> Microsoft.VisualStudio.Utilities.ServiceBroker.GlobalBrokeredServiceContainer+View.RequestServiceChannelAsync(ServiceMoniker, ServiceActivationOptions, CancellationToken) (Microsoft.VisualStudio.Utilities.ServiceBroker.GlobalBrokeredServiceContainer+View)
+02/14/2025 13:10:45 Mitteleuropäische Normalzeit : Information : Added local RPC method "cancelServiceRequest" -> Microsoft.VisualStudio.Utilities.ServiceBroker.GlobalBrokeredServiceContainer+View.CancelServiceRequestAsync(Guid) (Microsoft.VisualStudio.Utilities.ServiceBroker.GlobalBrokeredServiceContainer+View)
+02/14/2025 13:10:45 Mitteleuropäische Normalzeit: Information : 2 :Listening for events from Microsoft.VisualStudio.Utilities.ServiceBroker.GlobalBrokeredServiceContainer+View.AvailabilityChanged to raise notification.
+02/14/2025 13:10:45 Mitteleuropäische Normalzeit: Information : 3 :Listening started.
+02/14/2025 13:10:45 Mitteleuropäische Normalzeit: Information : 7 :{"id":2,"method":"handshake"}
+02/14/2025 13:10:45 Mitteleuropäische Normalzeit: Information : 6 :Received request "2" for method "handshake".
+02/14/2025 13:10:45 Mitteleuropäische Normalzeit: Information : 9 :Invoking Microsoft.VisualStudio.Utilities.ServiceBroker.GlobalBrokeredServiceContainer+View.HandshakeAsync(ServiceBrokerClientMetadata, CancellationToken)
+02/14/2025 13:10:45 Mitteleuropäische Normalzeit : Start : handshake
+02/14/2025 13:10:45 Mitteleuropäische Normalzeit : Stop : handshake
+02/14/2025 13:10:45 Mitteleuropäische Normalzeit: Information : 8 :{"id":2}
+02/14/2025 13:10:45 Mitteleuropäische Normalzeit: Information : 7 :{"id":3,"method":"requestServiceChannel"}
+02/14/2025 13:10:45 Mitteleuropäische Normalzeit: Information : 6 :Received request "3" for method "requestServiceChannel".
+02/14/2025 13:10:45 Mitteleuropäische Normalzeit: Information : 9 :Invoking Microsoft.VisualStudio.Utilities.ServiceBroker.GlobalBrokeredServiceContainer+View.RequestServiceChannelAsync(ServiceMoniker, ServiceActivationOptions, CancellationToken)
+02/14/2025 13:10:45 Mitteleuropäische Normalzeit : Start : requestServiceChannel
+02/14/2025 13:10:45 Mitteleuropäische Normalzeit : Stop : requestServiceChannel
+02/14/2025 13:10:45 Mitteleuropäische Normalzeit: Information : 8 :{"id":3}
+02/14/2025 13:10:45 Mitteleuropäische Normalzeit: Information : 7 :{"id":4,"method":"requestServiceChannel"}
+02/14/2025 13:10:45 Mitteleuropäische Normalzeit: Information : 6 :Received request "4" for method "requestServiceChannel".
+02/14/2025 13:10:45 Mitteleuropäische Normalzeit: Information : 9 :Invoking Microsoft.VisualStudio.Utilities.ServiceBroker.GlobalBrokeredServiceContainer+View.RequestServiceChannelAsync(ServiceMoniker, ServiceActivationOptions, CancellationToken)
+02/14/2025 13:10:45 Mitteleuropäische Normalzeit : Transfer : Transfer, relatedActivityId=60f5662d-4fba-475f-a710-9b360b96c9d5
+02/14/2025 13:10:45 Mitteleuropäische Normalzeit : Start : requestServiceChannel
+02/14/2025 13:10:45 Mitteleuropäische Normalzeit : Stop : requestServiceChannel
+02/14/2025 13:10:45 Mitteleuropäische Normalzeit : Transfer : Transfer, relatedActivityId=4d3ce2e8-ae07-4712-805e-dda3a651cdc7
+02/14/2025 13:10:45 Mitteleuropäische Normalzeit: Information : 8 :{"id":4}
+02/14/2025 13:10:45 Mitteleuropäische Normalzeit: Information : 7 :{"id":5,"method":"requestServiceChannel"}
+02/14/2025 13:10:45 Mitteleuropäische Normalzeit: Information : 6 :Received request "5" for method "requestServiceChannel".
+02/14/2025 13:10:45 Mitteleuropäische Normalzeit: Information : 9 :Invoking Microsoft.VisualStudio.Utilities.ServiceBroker.GlobalBrokeredServiceContainer+View.RequestServiceChannelAsync(ServiceMoniker, ServiceActivationOptions, CancellationToken)
+02/14/2025 13:10:45 Mitteleuropäische Normalzeit : Transfer : Transfer, relatedActivityId=61a238dc-8726-43a8-b1cc-118b65919ee3
+02/14/2025 13:10:45 Mitteleuropäische Normalzeit : Start : requestServiceChannel
+02/14/2025 13:10:45 Mitteleuropäische Normalzeit : Stop : requestServiceChannel
+02/14/2025 13:10:45 Mitteleuropäische Normalzeit : Transfer : Transfer, relatedActivityId=4d3ce2e8-ae07-4712-805e-dda3a651cdc7
+02/14/2025 13:10:45 Mitteleuropäische Normalzeit: Information : 8 :{"id":5}

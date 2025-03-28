@@ -7,56 +7,68 @@ using Backend.Dto;
 using FirebaseAdmin.Auth;
 using System.Collections.Generic;
 using Backend.Dtos;
+using Backend.Services.Firebase;
 
 public class AuthentificationControllerTests
 {
-    private AuthentificationController CreateController(Mock<FirebaseAuth>? mockAuth = null)
+    private AuthentificationController CreateController(Mock<IFirebaseAuthWrapper>? mockAuth = null)
     {
-        return new AuthentificationController();
+        return new AuthentificationController(mockAuth?.Object ?? Mock.Of<IFirebaseAuthWrapper>());
     }
 
     [Fact]
     public async Task VerifyFirebaseToken_ReturnsOk_WhenTokenValid()
     {
-        // Arrange
-        var controller = CreateController();
-        var idToken = "valid-token";
+        var mockAuth = new Mock<IFirebaseAuthWrapper>();
+        var mockToken = new Mock<FirebaseToken>();
+        mockToken.Setup(t => t.Uid).Returns("mocked-uid");
+        mockAuth.Setup(auth => auth.VerifyIdTokenAsync("valid-token"))
+                .ReturnsAsync(mockToken.Object);
 
-        // Act
-        var result = await controller.VerifyFirebaseToken(idToken);
+        var controller = CreateController(mockAuth);
 
-        // Assert
-        Assert.IsType<OkObjectResult>(result);
+        var result = await controller.VerifyFirebaseToken("valid-token");
+
+        var okResult = Assert.IsType<OkObjectResult>(result);
+        Assert.Equal("mocked-uid", okResult.Value);
     }
 
     [Fact]
     public async Task VerifyToken_ReturnsUid_WhenTokenValid()
     {
-        // Arrange
-        var controller = CreateController();
+        var mockAuth = new Mock<IFirebaseAuthWrapper>();
+        var mockToken = new Mock<FirebaseToken>();
+        mockToken.Setup(t => t.Uid).Returns("mocked-uid");
+        mockAuth.Setup(auth => auth.VerifyIdTokenAsync("valid-token"))
+                .ReturnsAsync(mockToken.Object);
+
+        var controller = CreateController(mockAuth);
         var model = new FirebaseAuthDto
         {
             IdToken = "valid-token"
         };
 
-        // Act
         var result = await controller.VerifyToken(model);
 
-        // Assert
-        Assert.IsType<OkObjectResult>(result);
+        var okResult = Assert.IsType<OkObjectResult>(result);
+        Assert.Equal("mocked-uid", okResult.Value);
     }
 
     [Fact]
     public async Task GetUid_ReturnsUid_WhenTokenValid()
     {
-        // Arrange
-        var controller = CreateController();
+        var mockAuth = new Mock<IFirebaseAuthWrapper>();
+        var mockToken = new Mock<FirebaseToken>();
+        mockToken.Setup(t => t.Uid).Returns("mocked-uid");
+        mockAuth.Setup(auth => auth.VerifyIdTokenAsync("valid-token"))
+                .ReturnsAsync(mockToken.Object);
+
+        var controller = CreateController(mockAuth);
         var token = "valid-token";
 
-        // Act
         var result = await controller.GetUid(token);
 
-        // Assert
-        Assert.IsType<OkObjectResult>(result);
+        var okResult = Assert.IsType<OkObjectResult>(result);
+        Assert.Equal("mocked-uid", okResult.Value);
     }
 }

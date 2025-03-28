@@ -1,0 +1,3425 @@
+﻿01/20/2025 17:51:53 Mitteleuropäische Normalzeit: Information : 44047487 :Query subscription collected 2 items for Select Workspace.Projects (Id Name Files). Version:{
+,
+"ProjectsStateUpdates:Version" : 0,
+"CpsProject:1:EventManagementSystem.Debug|AnyCPU" : 62,
+"CpsProject:0:EventManagementSystem.Tests.Debug|AnyCPU" : 39,
+"Workspace:Version" : 1
+}
+01/20/2025 17:51:53 Mitteleuropäische Normalzeit: Information : 63347539 :Query subscription collected 2 items for Select Workspace.Projects (Id Name Files). Version:{
+,
+"ProjectsStateUpdates:Version" : 0,
+"CpsProject:1:EventManagementSystem.Debug|AnyCPU" : 62,
+"CpsProject:0:EventManagementSystem.Tests.Debug|AnyCPU" : 39,
+"Workspace:Version" : 1
+}
+01/20/2025 17:51:53 Mitteleuropäische Normalzeit: Information : 48618772 :Query subscription collected 2 items for Select Workspace.Projects (Id Name Files). Version:{
+,
+"ProjectsStateUpdates:Version" : 0,
+"CpsProject:1:EventManagementSystem.Debug|AnyCPU" : 62,
+"CpsProject:0:EventManagementSystem.Tests.Debug|AnyCPU" : 39,
+"Workspace:Version" : 1
+}
+01/20/2025 17:51:53 Mitteleuropäische Normalzeit: Error : 65284983 :Build '/Users/MacBook/EventManagementSystem/EventManagementSystem.csproj' failed with exception Microsoft.Build.Exceptions.InvalidProjectFileException: Elemente außerhalb von Target-Elementen müssen einen der folgenden Vorgänge aufweisen: Include, Update oder Remove.  /Users/MacBook/EventManagementSystem/EventManagementSystem.csproj  /Users/MacBook/EventManagementSystem/EventManagementSystem.csproj.
+01/20/2025 17:51:53 Mitteleuropäische Normalzeit: Information : 6503 :DesignTimeBuildManagerService: Build Results Failure: FromCache: False ResetId: 61 Results:  - for project /Users/MacBook/EventManagementSystem/EventManagementSystem.csproj:Debug|AnyCPU
+01/20/2025 17:51:53 Mitteleuropäische Normalzeit: Warning : 6503 :OutputGroupsService.GetOutputGroupSnapshotsFromBuildSnapshot: The result of an output group target 'BuiltProjectOutputGroup' cannot be found in build snapshot. It indicates building the target failed - for project /Users/MacBook/EventManagementSystem/EventManagementSystem.csproj:Debug|AnyCPU
+01/20/2025 17:51:53 Mitteleuropäische Normalzeit: Information : 6503 :OutputGroup 'Built' for project '/Users/MacBook/EventManagementSystem/EventManagementSystem.csproj' is empty
+01/20/2025 17:51:53 Mitteleuropäische Normalzeit: Information : 33754516 :Query subscription collected 2 items for Select Workspace.Projects (Id Name Path Guid ActiveConfigurations). Version:{
+,
+"ProjectsStateUpdates:Version" : 0,
+"CpsProject:1:EventManagementSystem.Debug|AnyCPU" : 62,
+"CpsProject:0:EventManagementSystem.Tests.Debug|AnyCPU" : 39,
+"Workspace:Version" : 1
+}
+01/20/2025 17:51:53 Mitteleuropäische Normalzeit: Error : 6503 :Microsoft.Build.Exceptions.InvalidProjectFileException->Microsoft.Build.Exceptions.InvalidProjectFileException: Elemente außerhalb von Target-Elementen müssen einen der folgenden Vorgänge aufweisen: Include, Update oder Remove.  /Users/MacBook/EventManagementSystem/EventManagementSystem.csproj  /Users/MacBook/EventManagementSystem/EventManagementSystem.csproj
+   at Microsoft.Build.Shared.ProjectErrorUtilities.ThrowInvalidProject(String errorSubCategoryResourceName, IElementLocation elementLocation, String resourceName, Object[] args)
+   at Microsoft.Build.Construction.ProjectParser.ParseProjectItemElement(XmlElementWithLocation element, ProjectItemGroupElement parent)
+   at Microsoft.Build.Construction.ProjectParser.ParseProjectItemGroupElement(XmlElementWithLocation element, ProjectElementContainer parent)
+   at Microsoft.Build.Construction.ProjectParser.Parse()
+   at Microsoft.Build.Construction.ProjectParser.Parse(XmlDocumentWithLocation document, ProjectRootElement projectRootElement)
+   at Microsoft.Build.Construction.ProjectRootElement.CreateProjectFromPath(String projectFile, ProjectRootElementCacheBase projectRootElementCache, Boolean preserveFormatting)
+   at Microsoft.Build.Evaluation.ProjectRootElementCache.GetOrLoad(String projectFile, OpenProjectRootElement loadProjectRootElement, Boolean isExplicitlyLoaded, Nullable`1 preserveFormatting)
+   at Microsoft.Build.Evaluation.ProjectRootElementCache.Get(String projectFile, OpenProjectRootElement loadProjectRootElement, Boolean isExplicitlyLoaded, Nullable`1 preserveFormatting)
+   at Microsoft.Build.BackEnd.BuildRequestConfiguration.<>c__DisplayClass61_0.<LoadProjectIntoConfiguration>b__0()
+   at Microsoft.Build.BackEnd.BuildRequestConfiguration.InitializeProject(BuildParameters buildParameters, Func`1 loadProjectFromFile)
+   at Microsoft.Build.BackEnd.RequestBuilder.BuildProject()
+   at Microsoft.Build.BackEnd.RequestBuilder.RequestThreadProc(Boolean setThreadParameters)
+
+01/20/2025 17:52:07 Mitteleuropäische Normalzeit: Information : 6503 :Project '/Users/MacBook/EventManagementSystem/EventManagementSystem.csproj' is updated from File
+01/20/2025 17:52:07 Mitteleuropäische Normalzeit: Information : 6503 :Write '/Users/MacBook/EventManagementSystem/EventManagementSystem.csproj' to the disk
+01/20/2025 17:52:07 Mitteleuropäische Normalzeit: Information : 6503 :Design time build targets update received for project: '/Users/MacBook/EventManagementSystem/EventManagementSystem.csproj'
+01/20/2025 17:52:07 Mitteleuropäische Normalzeit: Information : 6503 :DesignTimeBuildManagerService: Resetting design time build service for project /Users/MacBook/EventManagementSystem/EventManagementSystem.csproj:Debug|AnyCPU. Evaluation version: (current=306, previous=303).
+01/20/2025 17:52:07 Mitteleuropäische Normalzeit: Information : 6503 :Design time build targets update received for project: '/Users/MacBook/EventManagementSystem/EventManagementSystem.csproj'
+01/20/2025 17:52:07 Mitteleuropäische Normalzeit: Information : 48618772 :Query subscription collected 2 items for Select Workspace.Projects (Id Name Files). Version:{
+,
+"ProjectsStateUpdates:Version" : 0,
+"CpsProject:1:EventManagementSystem.Debug|AnyCPU" : 63,
+"CpsProject:0:EventManagementSystem.Tests.Debug|AnyCPU" : 39,
+"Workspace:Version" : 1
+}
+01/20/2025 17:52:07 Mitteleuropäische Normalzeit: Information : 31792028 :Query subscription collected 2 items for Select Workspace.Projects (Id Name Files). Version:{
+,
+"ProjectsStateUpdates:Version" : 0,
+"CpsProject:1:EventManagementSystem.Debug|AnyCPU" : 63,
+"CpsProject:0:EventManagementSystem.Tests.Debug|AnyCPU" : 39,
+"Workspace:Version" : 1
+}
+01/20/2025 17:52:07 Mitteleuropäische Normalzeit: Information : 14514028 :Query subscription collected 2 items for Select Workspace.Projects (Id Name Files). Version:{
+,
+"ProjectsStateUpdates:Version" : 0,
+"CpsProject:1:EventManagementSystem.Debug|AnyCPU" : 63,
+"CpsProject:0:EventManagementSystem.Tests.Debug|AnyCPU" : 39,
+"Workspace:Version" : 1
+}
+01/20/2025 17:52:07 Mitteleuropäische Normalzeit: Information : 38829871 :Query subscription collected 0 items for Select Workspace.Projects (Id Name Files). Version:{
+,
+"ProjectsStateUpdates:Version" : 0,
+"CpsProject:1:EventManagementSystem.Debug|AnyCPU" : 63,
+"CpsProject:0:EventManagementSystem.Tests.Debug|AnyCPU" : 39,
+"Workspace:Version" : 1
+}
+01/20/2025 17:52:07 Mitteleuropäische Normalzeit: Information : 38842255 :Query subscription collected 2 items for Select Workspace.Projects (Id Name Files). Version:{
+,
+"ProjectsStateUpdates:Version" : 0,
+"CpsProject:1:EventManagementSystem.Debug|AnyCPU" : 63,
+"CpsProject:0:EventManagementSystem.Tests.Debug|AnyCPU" : 39,
+"Workspace:Version" : 1
+}
+01/20/2025 17:52:07 Mitteleuropäische Normalzeit: Information : 44047487 :Query subscription collected 2 items for Select Workspace.Projects (Id Name Files). Version:{
+,
+"ProjectsStateUpdates:Version" : 0,
+"CpsProject:1:EventManagementSystem.Debug|AnyCPU" : 63,
+"CpsProject:0:EventManagementSystem.Tests.Debug|AnyCPU" : 39,
+"Workspace:Version" : 1
+}
+01/20/2025 17:52:07 Mitteleuropäische Normalzeit: Information : 56417709 :Query subscription collected 0 items for Select Workspace.Projects (Id Name Files). Version:{
+,
+"ProjectsStateUpdates:Version" : 0,
+"CpsProject:1:EventManagementSystem.Debug|AnyCPU" : 63,
+"CpsProject:0:EventManagementSystem.Tests.Debug|AnyCPU" : 39,
+"Workspace:Version" : 1
+}
+01/20/2025 17:52:07 Mitteleuropäische Normalzeit: Information : 44840035 :Query subscription collected 2 items for Select Workspace.Projects (Id Name Files). Version:{
+,
+"ProjectsStateUpdates:Version" : 0,
+"CpsProject:1:EventManagementSystem.Debug|AnyCPU" : 63,
+"CpsProject:0:EventManagementSystem.Tests.Debug|AnyCPU" : 39,
+"Workspace:Version" : 1
+}
+01/20/2025 17:52:07 Mitteleuropäische Normalzeit: Information : 26759878 :Query subscription collected 2 items for Select Workspace.Projects (Id Name Files). Version:{
+,
+"ProjectsStateUpdates:Version" : 0,
+"CpsProject:1:EventManagementSystem.Debug|AnyCPU" : 63,
+"CpsProject:0:EventManagementSystem.Tests.Debug|AnyCPU" : 39,
+"Workspace:Version" : 1
+}
+01/20/2025 17:52:07 Mitteleuropäische Normalzeit: Information : 54473738 :Query subscription collected 2 items for Select Workspace.Projects (Id Name Files). Version:{
+,
+"ProjectsStateUpdates:Version" : 0,
+"CpsProject:1:EventManagementSystem.Debug|AnyCPU" : 63,
+"CpsProject:0:EventManagementSystem.Tests.Debug|AnyCPU" : 39,
+"Workspace:Version" : 1
+}
+01/20/2025 17:52:07 Mitteleuropäische Normalzeit: Information : 37915565 :Query subscription collected 0 items for Select Workspace.Projects (Id Name Files). Version:{
+,
+"ProjectsStateUpdates:Version" : 0,
+"CpsProject:1:EventManagementSystem.Debug|AnyCPU" : 63,
+"CpsProject:0:EventManagementSystem.Tests.Debug|AnyCPU" : 39,
+"Workspace:Version" : 1
+}
+01/20/2025 17:52:07 Mitteleuropäische Normalzeit: Information : 59498988 :Query subscription collected 2 items for Select Workspace.Projects (Id Name Files). Version:{
+,
+"ProjectsStateUpdates:Version" : 0,
+"CpsProject:1:EventManagementSystem.Debug|AnyCPU" : 63,
+"CpsProject:0:EventManagementSystem.Tests.Debug|AnyCPU" : 39,
+"Workspace:Version" : 1
+}
+01/20/2025 17:52:07 Mitteleuropäische Normalzeit: Information : 11645056 :Query subscription collected 2 items for Select Workspace.Projects (Id Name Files). Version:{
+,
+"ProjectsStateUpdates:Version" : 0,
+"CpsProject:1:EventManagementSystem.Debug|AnyCPU" : 63,
+"CpsProject:0:EventManagementSystem.Tests.Debug|AnyCPU" : 39,
+"Workspace:Version" : 1
+}
+01/20/2025 17:52:07 Mitteleuropäische Normalzeit: Information : 11826078 :Query subscription collected 2 items for Select Workspace.Projects (Id Name Files). Version:{
+,
+"ProjectsStateUpdates:Version" : 0,
+"CpsProject:1:EventManagementSystem.Debug|AnyCPU" : 63,
+"CpsProject:0:EventManagementSystem.Tests.Debug|AnyCPU" : 39,
+"Workspace:Version" : 1
+}
+01/20/2025 17:52:07 Mitteleuropäische Normalzeit: Information : 48028580 :Query subscription collected 0 items for Select Workspace.Projects (Id Name Files). Version:{
+,
+"ProjectsStateUpdates:Version" : 0,
+"CpsProject:1:EventManagementSystem.Debug|AnyCPU" : 63,
+"CpsProject:0:EventManagementSystem.Tests.Debug|AnyCPU" : 39,
+"Workspace:Version" : 1
+}
+01/20/2025 17:52:07 Mitteleuropäische Normalzeit: Information : 58187981 :Query subscription collected 0 items for Select Workspace.Projects (Id Name Files). Version:{
+,
+"ProjectsStateUpdates:Version" : 0,
+"CpsProject:1:EventManagementSystem.Debug|AnyCPU" : 63,
+"CpsProject:0:EventManagementSystem.Tests.Debug|AnyCPU" : 39,
+"Workspace:Version" : 1
+}
+01/20/2025 17:52:07 Mitteleuropäische Normalzeit: Information : 32201927 :Query subscription collected 2 items for Select Workspace.Projects (Id Name Files). Version:{
+,
+"ProjectsStateUpdates:Version" : 0,
+"CpsProject:1:EventManagementSystem.Debug|AnyCPU" : 63,
+"CpsProject:0:EventManagementSystem.Tests.Debug|AnyCPU" : 39,
+"Workspace:Version" : 1
+}
+01/20/2025 17:52:07 Mitteleuropäische Normalzeit: Information : 60826852 :Query subscription collected 2 items for Select Workspace.Projects (Id Name Files). Version:{
+,
+"ProjectsStateUpdates:Version" : 0,
+"CpsProject:1:EventManagementSystem.Debug|AnyCPU" : 63,
+"CpsProject:0:EventManagementSystem.Tests.Debug|AnyCPU" : 39,
+"Workspace:Version" : 1
+}
+01/20/2025 17:52:07 Mitteleuropäische Normalzeit: Information : 31464535 :Query subscription collected 2 items for Select Workspace.Projects (Id Name Files). Version:{
+,
+"ProjectsStateUpdates:Version" : 0,
+"CpsProject:1:EventManagementSystem.Debug|AnyCPU" : 63,
+"CpsProject:0:EventManagementSystem.Tests.Debug|AnyCPU" : 39,
+"Workspace:Version" : 1
+}
+01/20/2025 17:52:07 Mitteleuropäische Normalzeit: Information : 10350501 :Query subscription collected 2 items for Select Workspace.Projects (Id Name Files). Version:{
+,
+"ProjectsStateUpdates:Version" : 0,
+"CpsProject:1:EventManagementSystem.Debug|AnyCPU" : 63,
+"CpsProject:0:EventManagementSystem.Tests.Debug|AnyCPU" : 39,
+"Workspace:Version" : 1
+}
+01/20/2025 17:52:07 Mitteleuropäische Normalzeit: Information : 43260535 :Query subscription collected 2 items for Select Workspace.Projects (Id Name Files). Version:{
+,
+"ProjectsStateUpdates:Version" : 0,
+"CpsProject:1:EventManagementSystem.Debug|AnyCPU" : 63,
+"CpsProject:0:EventManagementSystem.Tests.Debug|AnyCPU" : 39,
+"Workspace:Version" : 1
+}
+01/20/2025 17:52:07 Mitteleuropäische Normalzeit: Information : 4312542 :Query subscription collected 2 items for Select Workspace.Projects (Id Name Files). Version:{
+,
+"ProjectsStateUpdates:Version" : 0,
+"CpsProject:1:EventManagementSystem.Debug|AnyCPU" : 63,
+"CpsProject:0:EventManagementSystem.Tests.Debug|AnyCPU" : 39,
+"Workspace:Version" : 1
+}
+01/20/2025 17:52:07 Mitteleuropäische Normalzeit: Information : 33890612 :Query subscription collected 2 items for Select Workspace.Projects (Id Name Files). Version:{
+,
+"ProjectsStateUpdates:Version" : 0,
+"CpsProject:1:EventManagementSystem.Debug|AnyCPU" : 63,
+"CpsProject:0:EventManagementSystem.Tests.Debug|AnyCPU" : 39,
+"Workspace:Version" : 1
+}
+01/20/2025 17:52:07 Mitteleuropäische Normalzeit: Information : 32101957 :Query subscription collected 0 items for Select Workspace.Projects (Id Name Files). Version:{
+,
+"ProjectsStateUpdates:Version" : 0,
+"CpsProject:1:EventManagementSystem.Debug|AnyCPU" : 63,
+"CpsProject:0:EventManagementSystem.Tests.Debug|AnyCPU" : 39,
+"Workspace:Version" : 1
+}
+01/20/2025 17:52:07 Mitteleuropäische Normalzeit: Information : 34879004 :Query subscription collected 0 items for Select Workspace.Projects (Id Name Files). Version:{
+,
+"ProjectsStateUpdates:Version" : 0,
+"CpsProject:1:EventManagementSystem.Debug|AnyCPU" : 63,
+"CpsProject:0:EventManagementSystem.Tests.Debug|AnyCPU" : 39,
+"Workspace:Version" : 1
+}
+01/20/2025 17:52:07 Mitteleuropäische Normalzeit: Information : 5967413 :Query subscription collected 2 items for Select Workspace.Projects (Id Name Files). Version:{
+,
+"ProjectsStateUpdates:Version" : 0,
+"CpsProject:1:EventManagementSystem.Debug|AnyCPU" : 63,
+"CpsProject:0:EventManagementSystem.Tests.Debug|AnyCPU" : 39,
+"Workspace:Version" : 1
+}
+01/20/2025 17:52:07 Mitteleuropäische Normalzeit: Information : 10794232 :Query subscription collected 0 items for Select Workspace.Projects (Id Name Files). Version:{
+,
+"ProjectsStateUpdates:Version" : 0,
+"CpsProject:1:EventManagementSystem.Debug|AnyCPU" : 63,
+"CpsProject:0:EventManagementSystem.Tests.Debug|AnyCPU" : 39,
+"Workspace:Version" : 1
+}
+01/20/2025 17:52:07 Mitteleuropäische Normalzeit: Information : 52249638 :Query subscription collected 2 items for Select Workspace.Projects (Id Name Files). Version:{
+,
+"ProjectsStateUpdates:Version" : 0,
+"CpsProject:1:EventManagementSystem.Debug|AnyCPU" : 63,
+"CpsProject:0:EventManagementSystem.Tests.Debug|AnyCPU" : 39,
+"Workspace:Version" : 1
+}
+01/20/2025 17:52:07 Mitteleuropäische Normalzeit: Information : 33453190 :Query subscription collected 2 items for Select Workspace.Projects (Id Name Files). Version:{
+,
+"ProjectsStateUpdates:Version" : 0,
+"CpsProject:1:EventManagementSystem.Debug|AnyCPU" : 63,
+"CpsProject:0:EventManagementSystem.Tests.Debug|AnyCPU" : 39,
+"Workspace:Version" : 1
+}
+01/20/2025 17:52:07 Mitteleuropäische Normalzeit: Information : 23071722 :Query subscription collected 2 items for Select Workspace.Projects (Id Name Files). Version:{
+,
+"ProjectsStateUpdates:Version" : 0,
+"CpsProject:1:EventManagementSystem.Debug|AnyCPU" : 63,
+"CpsProject:0:EventManagementSystem.Tests.Debug|AnyCPU" : 39,
+"Workspace:Version" : 1
+}
+01/20/2025 17:52:07 Mitteleuropäische Normalzeit: Information : 20932920 :Query subscription collected 2 items for Select Workspace.Projects (Id Name Files). Version:{
+,
+"ProjectsStateUpdates:Version" : 0,
+"CpsProject:1:EventManagementSystem.Debug|AnyCPU" : 63,
+"CpsProject:0:EventManagementSystem.Tests.Debug|AnyCPU" : 39,
+"Workspace:Version" : 1
+}
+01/20/2025 17:52:07 Mitteleuropäische Normalzeit: Information : 8352657 :Query subscription collected 0 items for Select Workspace.Projects (Id Name Files). Version:{
+,
+"ProjectsStateUpdates:Version" : 0,
+"CpsProject:1:EventManagementSystem.Debug|AnyCPU" : 63,
+"CpsProject:0:EventManagementSystem.Tests.Debug|AnyCPU" : 39,
+"Workspace:Version" : 1
+}
+01/20/2025 17:52:07 Mitteleuropäische Normalzeit: Information : 42570374 :Query subscription collected 0 items for Select Workspace.Projects (Id Name Files). Version:{
+,
+"ProjectsStateUpdates:Version" : 0,
+"CpsProject:1:EventManagementSystem.Debug|AnyCPU" : 63,
+"CpsProject:0:EventManagementSystem.Tests.Debug|AnyCPU" : 39,
+"Workspace:Version" : 1
+}
+01/20/2025 17:52:07 Mitteleuropäische Normalzeit: Information : 49129803 :Query subscription collected 2 items for Select Workspace.Projects (Id Name Files). Version:{
+,
+"ProjectsStateUpdates:Version" : 0,
+"CpsProject:1:EventManagementSystem.Debug|AnyCPU" : 63,
+"CpsProject:0:EventManagementSystem.Tests.Debug|AnyCPU" : 39,
+"Workspace:Version" : 1
+}
+01/20/2025 17:52:07 Mitteleuropäische Normalzeit: Information : 30216071 :Query subscription collected 2 items for Select Workspace.Projects (Id Name Files). Version:{
+,
+"ProjectsStateUpdates:Version" : 0,
+"CpsProject:1:EventManagementSystem.Debug|AnyCPU" : 63,
+"CpsProject:0:EventManagementSystem.Tests.Debug|AnyCPU" : 39,
+"Workspace:Version" : 1
+}
+01/20/2025 17:52:07 Mitteleuropäische Normalzeit: Information : 49547977 :Query subscription collected 0 items for Select Workspace.Projects (Id Name Files). Version:{
+,
+"ProjectsStateUpdates:Version" : 0,
+"CpsProject:1:EventManagementSystem.Debug|AnyCPU" : 63,
+"CpsProject:0:EventManagementSystem.Tests.Debug|AnyCPU" : 39,
+"Workspace:Version" : 1
+}
+01/20/2025 17:52:07 Mitteleuropäische Normalzeit: Information : 15677976 :Query subscription collected 2 items for Select Workspace.Projects (Id Name Files). Version:{
+,
+"ProjectsStateUpdates:Version" : 0,
+"CpsProject:1:EventManagementSystem.Debug|AnyCPU" : 63,
+"CpsProject:0:EventManagementSystem.Tests.Debug|AnyCPU" : 39,
+"Workspace:Version" : 1
+}
+01/20/2025 17:52:07 Mitteleuropäische Normalzeit: Information : 23767280 :Query subscription collected 2 items for Select Workspace.Projects (Id Name Files). Version:{
+,
+"ProjectsStateUpdates:Version" : 0,
+"CpsProject:1:EventManagementSystem.Debug|AnyCPU" : 63,
+"CpsProject:0:EventManagementSystem.Tests.Debug|AnyCPU" : 39,
+"Workspace:Version" : 1
+}
+01/20/2025 17:52:07 Mitteleuropäische Normalzeit: Information : 62641894 :Query subscription collected 2 items for Select Workspace.Projects (Id Name Files). Version:{
+,
+"ProjectsStateUpdates:Version" : 0,
+"CpsProject:1:EventManagementSystem.Debug|AnyCPU" : 63,
+"CpsProject:0:EventManagementSystem.Tests.Debug|AnyCPU" : 39,
+"Workspace:Version" : 1
+}
+01/20/2025 17:52:07 Mitteleuropäische Normalzeit: Information : 825472 :Query subscription collected 2 items for Select Workspace.Projects (Id Name Files). Version:{
+,
+"ProjectsStateUpdates:Version" : 0,
+"CpsProject:1:EventManagementSystem.Debug|AnyCPU" : 63,
+"CpsProject:0:EventManagementSystem.Tests.Debug|AnyCPU" : 39,
+"Workspace:Version" : 1
+}
+01/20/2025 17:52:07 Mitteleuropäische Normalzeit: Information : 56063192 :Query subscription collected 2 items for Select Workspace.Projects (Id Name Files). Version:{
+,
+"ProjectsStateUpdates:Version" : 0,
+"CpsProject:1:EventManagementSystem.Debug|AnyCPU" : 63,
+"CpsProject:0:EventManagementSystem.Tests.Debug|AnyCPU" : 39,
+"Workspace:Version" : 1
+}
+01/20/2025 17:52:07 Mitteleuropäische Normalzeit: Information : 19968525 :Query subscription collected 2 items for Select Workspace.Projects (Id Name Files). Version:{
+,
+"ProjectsStateUpdates:Version" : 0,
+"CpsProject:1:EventManagementSystem.Debug|AnyCPU" : 63,
+"CpsProject:0:EventManagementSystem.Tests.Debug|AnyCPU" : 39,
+"Workspace:Version" : 1
+}
+01/20/2025 17:52:07 Mitteleuropäische Normalzeit: Information : 50364069 :Query subscription collected 2 items for Select Workspace.Projects (Id Name Files). Version:{
+,
+"ProjectsStateUpdates:Version" : 0,
+"CpsProject:1:EventManagementSystem.Debug|AnyCPU" : 63,
+"CpsProject:0:EventManagementSystem.Tests.Debug|AnyCPU" : 39,
+"Workspace:Version" : 1
+}
+01/20/2025 17:52:07 Mitteleuropäische Normalzeit: Information : 63347539 :Query subscription collected 2 items for Select Workspace.Projects (Id Name Files). Version:{
+,
+"ProjectsStateUpdates:Version" : 0,
+"CpsProject:1:EventManagementSystem.Debug|AnyCPU" : 63,
+"CpsProject:0:EventManagementSystem.Tests.Debug|AnyCPU" : 39,
+"Workspace:Version" : 1
+}
+01/20/2025 17:52:07 Mitteleuropäische Normalzeit: Information : 15316017 :Query subscription collected 2 items for Select Workspace.Projects (Id Name Files). Version:{
+,
+"ProjectsStateUpdates:Version" : 0,
+"CpsProject:1:EventManagementSystem.Debug|AnyCPU" : 63,
+"CpsProject:0:EventManagementSystem.Tests.Debug|AnyCPU" : 39,
+"Workspace:Version" : 1
+}
+01/20/2025 17:52:07 Mitteleuropäische Normalzeit: Information : 57771278 :Query subscription collected 2 items for Select Workspace.Projects (Id Name Files). Version:{
+,
+"ProjectsStateUpdates:Version" : 0,
+"CpsProject:1:EventManagementSystem.Debug|AnyCPU" : 63,
+"CpsProject:0:EventManagementSystem.Tests.Debug|AnyCPU" : 39,
+"Workspace:Version" : 1
+}
+01/20/2025 17:52:07 Mitteleuropäische Normalzeit: Information : 9261217 :Query subscription collected 2 items for Select Workspace.Projects (Id Name Files). Version:{
+,
+"ProjectsStateUpdates:Version" : 0,
+"CpsProject:1:EventManagementSystem.Debug|AnyCPU" : 63,
+"CpsProject:0:EventManagementSystem.Tests.Debug|AnyCPU" : 39,
+"Workspace:Version" : 1
+}
+01/20/2025 17:52:07 Mitteleuropäische Normalzeit: Information : 56527528 :Query subscription collected 2 items for Select Workspace.Projects (Id Name Files). Version:{
+,
+"ProjectsStateUpdates:Version" : 0,
+"CpsProject:1:EventManagementSystem.Debug|AnyCPU" : 63,
+"CpsProject:0:EventManagementSystem.Tests.Debug|AnyCPU" : 39,
+"Workspace:Version" : 1
+}
+01/20/2025 17:52:07 Mitteleuropäische Normalzeit: Information : 56346594 :Query subscription collected 0 items for Select Workspace.Projects (Id Name Files). Version:{
+,
+"ProjectsStateUpdates:Version" : 0,
+"CpsProject:1:EventManagementSystem.Debug|AnyCPU" : 63,
+"CpsProject:0:EventManagementSystem.Tests.Debug|AnyCPU" : 39,
+"Workspace:Version" : 1
+}
+01/20/2025 17:52:07 Mitteleuropäische Normalzeit: Information : 32161586 :Query subscription collected 2 items for Select Workspace.Projects (Id Name Files). Version:{
+,
+"ProjectsStateUpdates:Version" : 0,
+"CpsProject:1:EventManagementSystem.Debug|AnyCPU" : 63,
+"CpsProject:0:EventManagementSystem.Tests.Debug|AnyCPU" : 39,
+"Workspace:Version" : 1
+}
+01/20/2025 17:52:07 Mitteleuropäische Normalzeit: Information : 12800199 :Query subscription collected 0 items for Select Workspace.Projects (Id Name Files). Version:{
+,
+"ProjectsStateUpdates:Version" : 0,
+"CpsProject:1:EventManagementSystem.Debug|AnyCPU" : 63,
+"CpsProject:0:EventManagementSystem.Tests.Debug|AnyCPU" : 39,
+"Workspace:Version" : 1
+}
+01/20/2025 17:52:07 Mitteleuropäische Normalzeit: Information : 58501815 :Query subscription collected 2 items for Select Workspace.Projects (Id Name Files). Version:{
+,
+"ProjectsStateUpdates:Version" : 0,
+"CpsProject:1:EventManagementSystem.Debug|AnyCPU" : 63,
+"CpsProject:0:EventManagementSystem.Tests.Debug|AnyCPU" : 39,
+"Workspace:Version" : 1
+}
+01/20/2025 17:52:07 Mitteleuropäische Normalzeit: Information : 16202333 :Query subscription collected 2 items for Select Workspace.Projects (Id Name Files). Version:{
+,
+"ProjectsStateUpdates:Version" : 0,
+"CpsProject:1:EventManagementSystem.Debug|AnyCPU" : 63,
+"CpsProject:0:EventManagementSystem.Tests.Debug|AnyCPU" : 39,
+"Workspace:Version" : 1
+}
+01/20/2025 17:52:07 Mitteleuropäische Normalzeit: Information : 18140976 :Query subscription collected 0 items for Select Workspace.Projects (Id Name Files). Version:{
+,
+"ProjectsStateUpdates:Version" : 0,
+"CpsProject:1:EventManagementSystem.Debug|AnyCPU" : 63,
+"CpsProject:0:EventManagementSystem.Tests.Debug|AnyCPU" : 39,
+"Workspace:Version" : 1
+}
+01/20/2025 17:52:07 Mitteleuropäische Normalzeit: Information : 1603175 :Query subscription collected 2 items for Select Workspace.Projects (Id Name Files). Version:{
+,
+"ProjectsStateUpdates:Version" : 0,
+"CpsProject:1:EventManagementSystem.Debug|AnyCPU" : 63,
+"CpsProject:0:EventManagementSystem.Tests.Debug|AnyCPU" : 39,
+"Workspace:Version" : 1
+}
+01/20/2025 17:52:07 Mitteleuropäische Normalzeit: Information : 46380612 :Query subscription collected 2 items for Select Workspace.Projects (Id Name Files). Version:{
+,
+"ProjectsStateUpdates:Version" : 0,
+"CpsProject:1:EventManagementSystem.Debug|AnyCPU" : 63,
+"CpsProject:0:EventManagementSystem.Tests.Debug|AnyCPU" : 39,
+"Workspace:Version" : 1
+}
+01/20/2025 17:52:07 Mitteleuropäische Normalzeit: Information : 918997 :Query subscription collected 2 items for Select Workspace.Projects (Id Name Files). Version:{
+,
+"ProjectsStateUpdates:Version" : 0,
+"CpsProject:1:EventManagementSystem.Debug|AnyCPU" : 63,
+"CpsProject:0:EventManagementSystem.Tests.Debug|AnyCPU" : 39,
+"Workspace:Version" : 1
+}
+01/20/2025 17:52:07 Mitteleuropäische Normalzeit: Information : 13223652 :Query subscription collected 2 items for Select Workspace.Projects (Id Name Files). Version:{
+,
+"ProjectsStateUpdates:Version" : 0,
+"CpsProject:1:EventManagementSystem.Debug|AnyCPU" : 63,
+"CpsProject:0:EventManagementSystem.Tests.Debug|AnyCPU" : 39,
+"Workspace:Version" : 1
+}
+01/20/2025 17:52:07 Mitteleuropäische Normalzeit: Information : 21108821 :Query subscription collected 2 items for Select Workspace.Projects (Id Name Files). Version:{
+,
+"ProjectsStateUpdates:Version" : 0,
+"CpsProject:1:EventManagementSystem.Debug|AnyCPU" : 63,
+"CpsProject:0:EventManagementSystem.Tests.Debug|AnyCPU" : 39,
+"Workspace:Version" : 1
+}
+01/20/2025 17:52:07 Mitteleuropäische Normalzeit: Information : 11902578 :Query subscription collected 2 items for Select Workspace.Projects (Id Name Files). Version:{
+,
+"ProjectsStateUpdates:Version" : 0,
+"CpsProject:1:EventManagementSystem.Debug|AnyCPU" : 63,
+"CpsProject:0:EventManagementSystem.Tests.Debug|AnyCPU" : 39,
+"Workspace:Version" : 1
+}
+01/20/2025 17:52:07 Mitteleuropäische Normalzeit: Information : 46177472 :Query subscription collected 2 items for Select Workspace.Projects (Id Name Files). Version:{
+,
+"ProjectsStateUpdates:Version" : 0,
+"CpsProject:1:EventManagementSystem.Debug|AnyCPU" : 63,
+"CpsProject:0:EventManagementSystem.Tests.Debug|AnyCPU" : 39,
+"Workspace:Version" : 1
+}
+01/20/2025 17:52:07 Mitteleuropäische Normalzeit: Information : 46018583 :Query subscription collected 2 items for Select Workspace.Projects (Id Name Files). Version:{
+,
+"ProjectsStateUpdates:Version" : 0,
+"CpsProject:1:EventManagementSystem.Debug|AnyCPU" : 63,
+"CpsProject:0:EventManagementSystem.Tests.Debug|AnyCPU" : 39,
+"Workspace:Version" : 1
+}
+01/20/2025 17:52:07 Mitteleuropäische Normalzeit: Information : 42117081 :Query subscription collected 2 items for Select Workspace.Projects (Id Name Files). Version:{
+,
+"ProjectsStateUpdates:Version" : 0,
+"CpsProject:1:EventManagementSystem.Debug|AnyCPU" : 63,
+"CpsProject:0:EventManagementSystem.Tests.Debug|AnyCPU" : 39,
+"Workspace:Version" : 1
+}
+01/20/2025 17:52:07 Mitteleuropäische Normalzeit: Information : 709883 :Query subscription collected 2 items for Select Workspace.Projects (Id Name Files). Version:{
+,
+"ProjectsStateUpdates:Version" : 0,
+"CpsProject:1:EventManagementSystem.Debug|AnyCPU" : 63,
+"CpsProject:0:EventManagementSystem.Tests.Debug|AnyCPU" : 39,
+"Workspace:Version" : 1
+}
+01/20/2025 17:52:07 Mitteleuropäische Normalzeit: Information : 9585839 :Query subscription collected 2 items for Select Workspace.Projects (Id Name Files). Version:{
+,
+"ProjectsStateUpdates:Version" : 0,
+"CpsProject:1:EventManagementSystem.Debug|AnyCPU" : 63,
+"CpsProject:0:EventManagementSystem.Tests.Debug|AnyCPU" : 39,
+"Workspace:Version" : 1
+}
+01/20/2025 17:52:07 Mitteleuropäische Normalzeit: Information : 16295813 :Query subscription collected 2 items for Select Workspace.Projects (Id Name Files). Version:{
+,
+"ProjectsStateUpdates:Version" : 0,
+"CpsProject:1:EventManagementSystem.Debug|AnyCPU" : 63,
+"CpsProject:0:EventManagementSystem.Tests.Debug|AnyCPU" : 39,
+"Workspace:Version" : 1
+}
+01/20/2025 17:52:07 Mitteleuropäische Normalzeit: Information : 47380964 :Query subscription collected 2 items for Select Workspace.Projects (Id Name Files). Version:{
+,
+"ProjectsStateUpdates:Version" : 0,
+"CpsProject:1:EventManagementSystem.Debug|AnyCPU" : 63,
+"CpsProject:0:EventManagementSystem.Tests.Debug|AnyCPU" : 39,
+"Workspace:Version" : 1
+}
+01/20/2025 17:52:07 Mitteleuropäische Normalzeit: Information : 23337156 :Query subscription collected 0 items for Select Workspace.Projects (Id Name Files). Version:{
+,
+"ProjectsStateUpdates:Version" : 0,
+"CpsProject:1:EventManagementSystem.Debug|AnyCPU" : 63,
+"CpsProject:0:EventManagementSystem.Tests.Debug|AnyCPU" : 39,
+"Workspace:Version" : 1
+}
+01/20/2025 17:52:07 Mitteleuropäische Normalzeit: Information : 5708136 :Query subscription collected 0 items for Select Workspace.Projects (Id Name Files). Version:{
+,
+"ProjectsStateUpdates:Version" : 0,
+"CpsProject:1:EventManagementSystem.Debug|AnyCPU" : 63,
+"CpsProject:0:EventManagementSystem.Tests.Debug|AnyCPU" : 39,
+"Workspace:Version" : 1
+}
+01/20/2025 17:52:07 Mitteleuropäische Normalzeit: Information : 26852256 :Query subscription collected 2 items for Select Workspace.Projects (Id Name Files). Version:{
+,
+"ProjectsStateUpdates:Version" : 0,
+"CpsProject:1:EventManagementSystem.Debug|AnyCPU" : 63,
+"CpsProject:0:EventManagementSystem.Tests.Debug|AnyCPU" : 39,
+"Workspace:Version" : 1
+}
+01/20/2025 17:52:07 Mitteleuropäische Normalzeit: Information : 33999199 :Query subscription collected 0 items for Select Workspace.Projects (Id Name Files). Version:{
+,
+"ProjectsStateUpdates:Version" : 0,
+"CpsProject:1:EventManagementSystem.Debug|AnyCPU" : 63,
+"CpsProject:0:EventManagementSystem.Tests.Debug|AnyCPU" : 39,
+"Workspace:Version" : 1
+}
+01/20/2025 17:52:07 Mitteleuropäische Normalzeit: Information : 64771809 :Query subscription collected 2 items for Select Workspace.Projects (Id Name Files). Version:{
+,
+"ProjectsStateUpdates:Version" : 0,
+"CpsProject:1:EventManagementSystem.Debug|AnyCPU" : 63,
+"CpsProject:0:EventManagementSystem.Tests.Debug|AnyCPU" : 39,
+"Workspace:Version" : 1
+}
+01/20/2025 17:52:07 Mitteleuropäische Normalzeit: Information : 49159068 :Query subscription collected 2 items for Select Workspace.Projects (Id Name Files). Version:{
+,
+"ProjectsStateUpdates:Version" : 0,
+"CpsProject:1:EventManagementSystem.Debug|AnyCPU" : 63,
+"CpsProject:0:EventManagementSystem.Tests.Debug|AnyCPU" : 39,
+"Workspace:Version" : 1
+}
+01/20/2025 17:52:07 Mitteleuropäische Normalzeit: Information : 11134008 :Query subscription collected 2 items for Select Workspace.Projects (Id Name Files). Version:{
+,
+"ProjectsStateUpdates:Version" : 0,
+"CpsProject:1:EventManagementSystem.Debug|AnyCPU" : 63,
+"CpsProject:0:EventManagementSystem.Tests.Debug|AnyCPU" : 39,
+"Workspace:Version" : 1
+}
+01/20/2025 17:52:07 Mitteleuropäische Normalzeit: Information : 23889156 :Query subscription collected 0 items for Select Workspace.Projects (Id Name Files). Version:{
+,
+"ProjectsStateUpdates:Version" : 0,
+"CpsProject:1:EventManagementSystem.Debug|AnyCPU" : 63,
+"CpsProject:0:EventManagementSystem.Tests.Debug|AnyCPU" : 39,
+"Workspace:Version" : 1
+}
+01/20/2025 17:52:07 Mitteleuropäische Normalzeit: Information : 20497834 :Query subscription collected 2 items for Select Workspace.Projects (Id Name Files). Version:{
+,
+"ProjectsStateUpdates:Version" : 0,
+"CpsProject:1:EventManagementSystem.Debug|AnyCPU" : 63,
+"CpsProject:0:EventManagementSystem.Tests.Debug|AnyCPU" : 39,
+"Workspace:Version" : 1
+}
+01/20/2025 17:52:07 Mitteleuropäische Normalzeit: Information : 18313142 :Query subscription collected 2 items for Select Workspace.Projects (Id Name Files). Version:{
+,
+"ProjectsStateUpdates:Version" : 0,
+"CpsProject:1:EventManagementSystem.Debug|AnyCPU" : 63,
+"CpsProject:0:EventManagementSystem.Tests.Debug|AnyCPU" : 39,
+"Workspace:Version" : 1
+}
+01/20/2025 17:52:07 Mitteleuropäische Normalzeit: Information : 45968062 :Query subscription collected 2 items for Select Workspace.Projects (Id Name Files). Version:{
+,
+"ProjectsStateUpdates:Version" : 0,
+"CpsProject:1:EventManagementSystem.Debug|AnyCPU" : 63,
+"CpsProject:0:EventManagementSystem.Tests.Debug|AnyCPU" : 39,
+"Workspace:Version" : 1
+}
+01/20/2025 17:52:07 Mitteleuropäische Normalzeit: Information : 26755242 :Query subscription collected 2 items for Select Workspace.Projects (Id Name Files). Version:{
+,
+"ProjectsStateUpdates:Version" : 0,
+"CpsProject:1:EventManagementSystem.Debug|AnyCPU" : 63,
+"CpsProject:0:EventManagementSystem.Tests.Debug|AnyCPU" : 39,
+"Workspace:Version" : 1
+}
+01/20/2025 17:52:07 Mitteleuropäische Normalzeit: Information : 395446 :Query subscription collected 2 items for Select Workspace.Projects (Id Name Files). Version:{
+,
+"ProjectsStateUpdates:Version" : 0,
+"CpsProject:1:EventManagementSystem.Debug|AnyCPU" : 63,
+"CpsProject:0:EventManagementSystem.Tests.Debug|AnyCPU" : 39,
+"Workspace:Version" : 1
+}
+01/20/2025 17:52:07 Mitteleuropäische Normalzeit: Information : 12505814 :Query subscription collected 2 items for Select Workspace.Projects (Id Name Files). Version:{
+,
+"ProjectsStateUpdates:Version" : 0,
+"CpsProject:1:EventManagementSystem.Debug|AnyCPU" : 63,
+"CpsProject:0:EventManagementSystem.Tests.Debug|AnyCPU" : 39,
+"Workspace:Version" : 1
+}
+01/20/2025 17:52:07 Mitteleuropäische Normalzeit: Information : 26283594 :Query subscription collected 0 items for Select Workspace.Projects (Id Name Files). Version:{
+,
+"ProjectsStateUpdates:Version" : 0,
+"CpsProject:1:EventManagementSystem.Debug|AnyCPU" : 63,
+"CpsProject:0:EventManagementSystem.Tests.Debug|AnyCPU" : 39,
+"Workspace:Version" : 1
+}
+01/20/2025 17:52:07 Mitteleuropäische Normalzeit: Information : 34274199 :Query subscription collected 0 items for Select Workspace.Projects (Id Name Files). Version:{
+,
+"ProjectsStateUpdates:Version" : 0,
+"CpsProject:1:EventManagementSystem.Debug|AnyCPU" : 63,
+"CpsProject:0:EventManagementSystem.Tests.Debug|AnyCPU" : 39,
+"Workspace:Version" : 1
+}
+01/20/2025 17:52:07 Mitteleuropäische Normalzeit: Information : 13420831 :Query subscription collected 2 items for Select Workspace.Projects (Id Name Files). Version:{
+,
+"ProjectsStateUpdates:Version" : 0,
+"CpsProject:1:EventManagementSystem.Debug|AnyCPU" : 63,
+"CpsProject:0:EventManagementSystem.Tests.Debug|AnyCPU" : 39,
+"Workspace:Version" : 1
+}
+01/20/2025 17:52:07 Mitteleuropäische Normalzeit: Information : 53672195 :Query subscription collected 2 items for Select Workspace.Projects (Id Name Files). Version:{
+,
+"ProjectsStateUpdates:Version" : 0,
+"CpsProject:1:EventManagementSystem.Debug|AnyCPU" : 63,
+"CpsProject:0:EventManagementSystem.Tests.Debug|AnyCPU" : 39,
+"Workspace:Version" : 1
+}
+01/20/2025 17:52:07 Mitteleuropäische Normalzeit: Information : 6503 :DesignTimeBuildManagerService: Build Results Success: FromCache: False ResetId: 62 Results: (CollectPackageReferences Success)(BuiltProjectOutputGroup Success)(CollectNuGetAuditSuppressions Success)(NETStandardCompatError_Mono_TextTemplating_net6_0 Success)(CollectPackageDownloads Success)(CollectFrameworkReferences Success)(CollectCentralPackageVersions Success)(CompileDesignTime Success)(CollectPrunePackageReferences Success)(GenerateProgramFile Success) - for project /Users/MacBook/EventManagementSystem/EventManagementSystem.csproj:Debug|AnyCPU
+01/20/2025 17:52:07 Mitteleuropäische Normalzeit: Information : 33754516 :Query subscription collected 2 items for Select Workspace.Projects (Id Name Path Guid ActiveConfigurations). Version:{
+,
+"ProjectsStateUpdates:Version" : 0,
+"CpsProject:1:EventManagementSystem.Debug|AnyCPU" : 63,
+"CpsProject:0:EventManagementSystem.Tests.Debug|AnyCPU" : 39,
+"Workspace:Version" : 1
+}
+01/20/2025 17:52:14 Mitteleuropäische Normalzeit: Information : 6503 :Project '/Users/MacBook/EventManagementSystem/EventManagementSystem.csproj' is updated from File
+01/20/2025 17:52:14 Mitteleuropäische Normalzeit: Information : 6503 :Write '/Users/MacBook/EventManagementSystem/EventManagementSystem.csproj' to the disk
+01/20/2025 17:52:14 Mitteleuropäische Normalzeit: Information : 6503 :Design time build targets update received for project: '/Users/MacBook/EventManagementSystem/EventManagementSystem.csproj'
+01/20/2025 17:52:14 Mitteleuropäische Normalzeit: Information : 6503 :DesignTimeBuildManagerService: Resetting design time build service for project /Users/MacBook/EventManagementSystem/EventManagementSystem.csproj:Debug|AnyCPU. Evaluation version: (current=309, previous=306).
+01/20/2025 17:52:14 Mitteleuropäische Normalzeit: Information : 6503 :Design time build targets update received for project: '/Users/MacBook/EventManagementSystem/EventManagementSystem.csproj'
+01/20/2025 17:52:14 Mitteleuropäische Normalzeit: Information : 34274199 :Query subscription collected 0 items for Select Workspace.Projects (Id Name Files). Version:{
+,
+"ProjectsStateUpdates:Version" : 0,
+"CpsProject:1:EventManagementSystem.Debug|AnyCPU" : 64,
+"CpsProject:0:EventManagementSystem.Tests.Debug|AnyCPU" : 39,
+"Workspace:Version" : 1
+}
+01/20/2025 17:52:14 Mitteleuropäische Normalzeit: Information : 13420831 :Query subscription collected 2 items for Select Workspace.Projects (Id Name Files). Version:{
+,
+"ProjectsStateUpdates:Version" : 0,
+"CpsProject:1:EventManagementSystem.Debug|AnyCPU" : 64,
+"CpsProject:0:EventManagementSystem.Tests.Debug|AnyCPU" : 39,
+"Workspace:Version" : 1
+}
+01/20/2025 17:52:14 Mitteleuropäische Normalzeit: Information : 38829871 :Query subscription collected 0 items for Select Workspace.Projects (Id Name Files). Version:{
+,
+"ProjectsStateUpdates:Version" : 0,
+"CpsProject:1:EventManagementSystem.Debug|AnyCPU" : 64,
+"CpsProject:0:EventManagementSystem.Tests.Debug|AnyCPU" : 39,
+"Workspace:Version" : 1
+}
+01/20/2025 17:52:14 Mitteleuropäische Normalzeit: Information : 26283594 :Query subscription collected 0 items for Select Workspace.Projects (Id Name Files). Version:{
+,
+"ProjectsStateUpdates:Version" : 0,
+"CpsProject:1:EventManagementSystem.Debug|AnyCPU" : 64,
+"CpsProject:0:EventManagementSystem.Tests.Debug|AnyCPU" : 39,
+"Workspace:Version" : 1
+}
+01/20/2025 17:52:14 Mitteleuropäische Normalzeit: Information : 38842255 :Query subscription collected 2 items for Select Workspace.Projects (Id Name Files). Version:{
+,
+"ProjectsStateUpdates:Version" : 0,
+"CpsProject:1:EventManagementSystem.Debug|AnyCPU" : 64,
+"CpsProject:0:EventManagementSystem.Tests.Debug|AnyCPU" : 39,
+"Workspace:Version" : 1
+}
+01/20/2025 17:52:14 Mitteleuropäische Normalzeit: Information : 395446 :Query subscription collected 2 items for Select Workspace.Projects (Id Name Files). Version:{
+,
+"ProjectsStateUpdates:Version" : 0,
+"CpsProject:1:EventManagementSystem.Debug|AnyCPU" : 64,
+"CpsProject:0:EventManagementSystem.Tests.Debug|AnyCPU" : 39,
+"Workspace:Version" : 1
+}
+01/20/2025 17:52:14 Mitteleuropäische Normalzeit: Information : 48618772 :Query subscription collected 2 items for Select Workspace.Projects (Id Name Files). Version:{
+,
+"ProjectsStateUpdates:Version" : 0,
+"CpsProject:1:EventManagementSystem.Debug|AnyCPU" : 64,
+"CpsProject:0:EventManagementSystem.Tests.Debug|AnyCPU" : 39,
+"Workspace:Version" : 1
+}
+01/20/2025 17:52:14 Mitteleuropäische Normalzeit: Information : 37915565 :Query subscription collected 0 items for Select Workspace.Projects (Id Name Files). Version:{
+,
+"ProjectsStateUpdates:Version" : 0,
+"CpsProject:1:EventManagementSystem.Debug|AnyCPU" : 64,
+"CpsProject:0:EventManagementSystem.Tests.Debug|AnyCPU" : 39,
+"Workspace:Version" : 1
+}
+01/20/2025 17:52:14 Mitteleuropäische Normalzeit: Information : 54473738 :Query subscription collected 2 items for Select Workspace.Projects (Id Name Files). Version:{
+,
+"ProjectsStateUpdates:Version" : 0,
+"CpsProject:1:EventManagementSystem.Debug|AnyCPU" : 64,
+"CpsProject:0:EventManagementSystem.Tests.Debug|AnyCPU" : 39,
+"Workspace:Version" : 1
+}
+01/20/2025 17:52:14 Mitteleuropäische Normalzeit: Information : 56417709 :Query subscription collected 0 items for Select Workspace.Projects (Id Name Files). Version:{
+,
+"ProjectsStateUpdates:Version" : 0,
+"CpsProject:1:EventManagementSystem.Debug|AnyCPU" : 64,
+"CpsProject:0:EventManagementSystem.Tests.Debug|AnyCPU" : 39,
+"Workspace:Version" : 1
+}
+01/20/2025 17:52:14 Mitteleuropäische Normalzeit: Information : 14514028 :Query subscription collected 2 items for Select Workspace.Projects (Id Name Files). Version:{
+,
+"ProjectsStateUpdates:Version" : 0,
+"CpsProject:1:EventManagementSystem.Debug|AnyCPU" : 64,
+"CpsProject:0:EventManagementSystem.Tests.Debug|AnyCPU" : 39,
+"Workspace:Version" : 1
+}
+01/20/2025 17:52:14 Mitteleuropäische Normalzeit: Information : 48028580 :Query subscription collected 0 items for Select Workspace.Projects (Id Name Files). Version:{
+,
+"ProjectsStateUpdates:Version" : 0,
+"CpsProject:1:EventManagementSystem.Debug|AnyCPU" : 64,
+"CpsProject:0:EventManagementSystem.Tests.Debug|AnyCPU" : 39,
+"Workspace:Version" : 1
+}
+01/20/2025 17:52:14 Mitteleuropäische Normalzeit: Information : 31792028 :Query subscription collected 2 items for Select Workspace.Projects (Id Name Files). Version:{
+,
+"ProjectsStateUpdates:Version" : 0,
+"CpsProject:1:EventManagementSystem.Debug|AnyCPU" : 64,
+"CpsProject:0:EventManagementSystem.Tests.Debug|AnyCPU" : 39,
+"Workspace:Version" : 1
+}
+01/20/2025 17:52:14 Mitteleuropäische Normalzeit: Information : 44047487 :Query subscription collected 2 items for Select Workspace.Projects (Id Name Files). Version:{
+,
+"ProjectsStateUpdates:Version" : 0,
+"CpsProject:1:EventManagementSystem.Debug|AnyCPU" : 64,
+"CpsProject:0:EventManagementSystem.Tests.Debug|AnyCPU" : 39,
+"Workspace:Version" : 1
+}
+01/20/2025 17:52:14 Mitteleuropäische Normalzeit: Information : 26759878 :Query subscription collected 2 items for Select Workspace.Projects (Id Name Files). Version:{
+,
+"ProjectsStateUpdates:Version" : 0,
+"CpsProject:1:EventManagementSystem.Debug|AnyCPU" : 64,
+"CpsProject:0:EventManagementSystem.Tests.Debug|AnyCPU" : 39,
+"Workspace:Version" : 1
+}
+01/20/2025 17:52:14 Mitteleuropäische Normalzeit: Information : 53672195 :Query subscription collected 2 items for Select Workspace.Projects (Id Name Files). Version:{
+,
+"ProjectsStateUpdates:Version" : 0,
+"CpsProject:1:EventManagementSystem.Debug|AnyCPU" : 64,
+"CpsProject:0:EventManagementSystem.Tests.Debug|AnyCPU" : 39,
+"Workspace:Version" : 1
+}
+01/20/2025 17:52:14 Mitteleuropäische Normalzeit: Information : 10350501 :Query subscription collected 2 items for Select Workspace.Projects (Id Name Files). Version:{
+,
+"ProjectsStateUpdates:Version" : 0,
+"CpsProject:1:EventManagementSystem.Debug|AnyCPU" : 64,
+"CpsProject:0:EventManagementSystem.Tests.Debug|AnyCPU" : 39,
+"Workspace:Version" : 1
+}
+01/20/2025 17:52:14 Mitteleuropäische Normalzeit: Information : 43260535 :Query subscription collected 2 items for Select Workspace.Projects (Id Name Files). Version:{
+,
+"ProjectsStateUpdates:Version" : 0,
+"CpsProject:1:EventManagementSystem.Debug|AnyCPU" : 64,
+"CpsProject:0:EventManagementSystem.Tests.Debug|AnyCPU" : 39,
+"Workspace:Version" : 1
+}
+01/20/2025 17:52:14 Mitteleuropäische Normalzeit: Information : 12505814 :Query subscription collected 2 items for Select Workspace.Projects (Id Name Files). Version:{
+,
+"ProjectsStateUpdates:Version" : 0,
+"CpsProject:1:EventManagementSystem.Debug|AnyCPU" : 64,
+"CpsProject:0:EventManagementSystem.Tests.Debug|AnyCPU" : 39,
+"Workspace:Version" : 1
+}
+01/20/2025 17:52:14 Mitteleuropäische Normalzeit: Information : 59498988 :Query subscription collected 2 items for Select Workspace.Projects (Id Name Files). Version:{
+,
+"ProjectsStateUpdates:Version" : 0,
+"CpsProject:1:EventManagementSystem.Debug|AnyCPU" : 64,
+"CpsProject:0:EventManagementSystem.Tests.Debug|AnyCPU" : 39,
+"Workspace:Version" : 1
+}
+01/20/2025 17:52:14 Mitteleuropäische Normalzeit: Information : 11645056 :Query subscription collected 2 items for Select Workspace.Projects (Id Name Files). Version:{
+,
+"ProjectsStateUpdates:Version" : 0,
+"CpsProject:1:EventManagementSystem.Debug|AnyCPU" : 64,
+"CpsProject:0:EventManagementSystem.Tests.Debug|AnyCPU" : 39,
+"Workspace:Version" : 1
+}
+01/20/2025 17:52:14 Mitteleuropäische Normalzeit: Information : 58187981 :Query subscription collected 0 items for Select Workspace.Projects (Id Name Files). Version:{
+,
+"ProjectsStateUpdates:Version" : 0,
+"CpsProject:1:EventManagementSystem.Debug|AnyCPU" : 64,
+"CpsProject:0:EventManagementSystem.Tests.Debug|AnyCPU" : 39,
+"Workspace:Version" : 1
+}
+01/20/2025 17:52:14 Mitteleuropäische Normalzeit: Information : 32201927 :Query subscription collected 2 items for Select Workspace.Projects (Id Name Files). Version:{
+,
+"ProjectsStateUpdates:Version" : 0,
+"CpsProject:1:EventManagementSystem.Debug|AnyCPU" : 64,
+"CpsProject:0:EventManagementSystem.Tests.Debug|AnyCPU" : 39,
+"Workspace:Version" : 1
+}
+01/20/2025 17:52:14 Mitteleuropäische Normalzeit: Information : 10794232 :Query subscription collected 0 items for Select Workspace.Projects (Id Name Files). Version:{
+,
+"ProjectsStateUpdates:Version" : 0,
+"CpsProject:1:EventManagementSystem.Debug|AnyCPU" : 64,
+"CpsProject:0:EventManagementSystem.Tests.Debug|AnyCPU" : 39,
+"Workspace:Version" : 1
+}
+01/20/2025 17:52:14 Mitteleuropäische Normalzeit: Information : 60826852 :Query subscription collected 2 items for Select Workspace.Projects (Id Name Files). Version:{
+,
+"ProjectsStateUpdates:Version" : 0,
+"CpsProject:1:EventManagementSystem.Debug|AnyCPU" : 64,
+"CpsProject:0:EventManagementSystem.Tests.Debug|AnyCPU" : 39,
+"Workspace:Version" : 1
+}
+01/20/2025 17:52:14 Mitteleuropäische Normalzeit: Information : 44840035 :Query subscription collected 2 items for Select Workspace.Projects (Id Name Files). Version:{
+,
+"ProjectsStateUpdates:Version" : 0,
+"CpsProject:1:EventManagementSystem.Debug|AnyCPU" : 64,
+"CpsProject:0:EventManagementSystem.Tests.Debug|AnyCPU" : 39,
+"Workspace:Version" : 1
+}
+01/20/2025 17:52:14 Mitteleuropäische Normalzeit: Information : 4312542 :Query subscription collected 2 items for Select Workspace.Projects (Id Name Files). Version:{
+,
+"ProjectsStateUpdates:Version" : 0,
+"CpsProject:1:EventManagementSystem.Debug|AnyCPU" : 64,
+"CpsProject:0:EventManagementSystem.Tests.Debug|AnyCPU" : 39,
+"Workspace:Version" : 1
+}
+01/20/2025 17:52:14 Mitteleuropäische Normalzeit: Information : 45968062 :Query subscription collected 2 items for Select Workspace.Projects (Id Name Files). Version:{
+,
+"ProjectsStateUpdates:Version" : 0,
+"CpsProject:1:EventManagementSystem.Debug|AnyCPU" : 64,
+"CpsProject:0:EventManagementSystem.Tests.Debug|AnyCPU" : 39,
+"Workspace:Version" : 1
+}
+01/20/2025 17:52:14 Mitteleuropäische Normalzeit: Information : 42570374 :Query subscription collected 0 items for Select Workspace.Projects (Id Name Files). Version:{
+,
+"ProjectsStateUpdates:Version" : 0,
+"CpsProject:1:EventManagementSystem.Debug|AnyCPU" : 64,
+"CpsProject:0:EventManagementSystem.Tests.Debug|AnyCPU" : 39,
+"Workspace:Version" : 1
+}
+01/20/2025 17:52:14 Mitteleuropäische Normalzeit: Information : 31464535 :Query subscription collected 2 items for Select Workspace.Projects (Id Name Files). Version:{
+,
+"ProjectsStateUpdates:Version" : 0,
+"CpsProject:1:EventManagementSystem.Debug|AnyCPU" : 64,
+"CpsProject:0:EventManagementSystem.Tests.Debug|AnyCPU" : 39,
+"Workspace:Version" : 1
+}
+01/20/2025 17:52:14 Mitteleuropäische Normalzeit: Information : 26755242 :Query subscription collected 2 items for Select Workspace.Projects (Id Name Files). Version:{
+,
+"ProjectsStateUpdates:Version" : 0,
+"CpsProject:1:EventManagementSystem.Debug|AnyCPU" : 64,
+"CpsProject:0:EventManagementSystem.Tests.Debug|AnyCPU" : 39,
+"Workspace:Version" : 1
+}
+01/20/2025 17:52:14 Mitteleuropäische Normalzeit: Information : 32101957 :Query subscription collected 0 items for Select Workspace.Projects (Id Name Files). Version:{
+,
+"ProjectsStateUpdates:Version" : 0,
+"CpsProject:1:EventManagementSystem.Debug|AnyCPU" : 64,
+"CpsProject:0:EventManagementSystem.Tests.Debug|AnyCPU" : 39,
+"Workspace:Version" : 1
+}
+01/20/2025 17:52:14 Mitteleuropäische Normalzeit: Information : 11826078 :Query subscription collected 2 items for Select Workspace.Projects (Id Name Files). Version:{
+,
+"ProjectsStateUpdates:Version" : 0,
+"CpsProject:1:EventManagementSystem.Debug|AnyCPU" : 64,
+"CpsProject:0:EventManagementSystem.Tests.Debug|AnyCPU" : 39,
+"Workspace:Version" : 1
+}
+01/20/2025 17:52:14 Mitteleuropäische Normalzeit: Information : 5967413 :Query subscription collected 2 items for Select Workspace.Projects (Id Name Files). Version:{
+,
+"ProjectsStateUpdates:Version" : 0,
+"CpsProject:1:EventManagementSystem.Debug|AnyCPU" : 64,
+"CpsProject:0:EventManagementSystem.Tests.Debug|AnyCPU" : 39,
+"Workspace:Version" : 1
+}
+01/20/2025 17:52:14 Mitteleuropäische Normalzeit: Information : 49129803 :Query subscription collected 2 items for Select Workspace.Projects (Id Name Files). Version:{
+,
+"ProjectsStateUpdates:Version" : 0,
+"CpsProject:1:EventManagementSystem.Debug|AnyCPU" : 64,
+"CpsProject:0:EventManagementSystem.Tests.Debug|AnyCPU" : 39,
+"Workspace:Version" : 1
+}
+01/20/2025 17:52:14 Mitteleuropäische Normalzeit: Information : 23767280 :Query subscription collected 2 items for Select Workspace.Projects (Id Name Files). Version:{
+,
+"ProjectsStateUpdates:Version" : 0,
+"CpsProject:1:EventManagementSystem.Debug|AnyCPU" : 64,
+"CpsProject:0:EventManagementSystem.Tests.Debug|AnyCPU" : 39,
+"Workspace:Version" : 1
+}
+01/20/2025 17:52:14 Mitteleuropäische Normalzeit: Information : 825472 :Query subscription collected 2 items for Select Workspace.Projects (Id Name Files). Version:{
+,
+"ProjectsStateUpdates:Version" : 0,
+"CpsProject:1:EventManagementSystem.Debug|AnyCPU" : 64,
+"CpsProject:0:EventManagementSystem.Tests.Debug|AnyCPU" : 39,
+"Workspace:Version" : 1
+}
+01/20/2025 17:52:14 Mitteleuropäische Normalzeit: Information : 19968525 :Query subscription collected 2 items for Select Workspace.Projects (Id Name Files). Version:{
+,
+"ProjectsStateUpdates:Version" : 0,
+"CpsProject:1:EventManagementSystem.Debug|AnyCPU" : 64,
+"CpsProject:0:EventManagementSystem.Tests.Debug|AnyCPU" : 39,
+"Workspace:Version" : 1
+}
+01/20/2025 17:52:14 Mitteleuropäische Normalzeit: Information : 15677976 :Query subscription collected 2 items for Select Workspace.Projects (Id Name Files). Version:{
+,
+"ProjectsStateUpdates:Version" : 0,
+"CpsProject:1:EventManagementSystem.Debug|AnyCPU" : 64,
+"CpsProject:0:EventManagementSystem.Tests.Debug|AnyCPU" : 39,
+"Workspace:Version" : 1
+}
+01/20/2025 17:52:14 Mitteleuropäische Normalzeit: Information : 50364069 :Query subscription collected 2 items for Select Workspace.Projects (Id Name Files). Version:{
+,
+"ProjectsStateUpdates:Version" : 0,
+"CpsProject:1:EventManagementSystem.Debug|AnyCPU" : 64,
+"CpsProject:0:EventManagementSystem.Tests.Debug|AnyCPU" : 39,
+"Workspace:Version" : 1
+}
+01/20/2025 17:52:14 Mitteleuropäische Normalzeit: Information : 56063192 :Query subscription collected 2 items for Select Workspace.Projects (Id Name Files). Version:{
+,
+"ProjectsStateUpdates:Version" : 0,
+"CpsProject:1:EventManagementSystem.Debug|AnyCPU" : 64,
+"CpsProject:0:EventManagementSystem.Tests.Debug|AnyCPU" : 39,
+"Workspace:Version" : 1
+}
+01/20/2025 17:52:14 Mitteleuropäische Normalzeit: Information : 12800199 :Query subscription collected 0 items for Select Workspace.Projects (Id Name Files). Version:{
+,
+"ProjectsStateUpdates:Version" : 0,
+"CpsProject:1:EventManagementSystem.Debug|AnyCPU" : 64,
+"CpsProject:0:EventManagementSystem.Tests.Debug|AnyCPU" : 39,
+"Workspace:Version" : 1
+}
+01/20/2025 17:52:14 Mitteleuropäische Normalzeit: Information : 8352657 :Query subscription collected 0 items for Select Workspace.Projects (Id Name Files). Version:{
+,
+"ProjectsStateUpdates:Version" : 0,
+"CpsProject:1:EventManagementSystem.Debug|AnyCPU" : 64,
+"CpsProject:0:EventManagementSystem.Tests.Debug|AnyCPU" : 39,
+"Workspace:Version" : 1
+}
+01/20/2025 17:52:14 Mitteleuropäische Normalzeit: Information : 15316017 :Query subscription collected 2 items for Select Workspace.Projects (Id Name Files). Version:{
+,
+"ProjectsStateUpdates:Version" : 0,
+"CpsProject:1:EventManagementSystem.Debug|AnyCPU" : 64,
+"CpsProject:0:EventManagementSystem.Tests.Debug|AnyCPU" : 39,
+"Workspace:Version" : 1
+}
+01/20/2025 17:52:14 Mitteleuropäische Normalzeit: Information : 33453190 :Query subscription collected 2 items for Select Workspace.Projects (Id Name Files). Version:{
+,
+"ProjectsStateUpdates:Version" : 0,
+"CpsProject:1:EventManagementSystem.Debug|AnyCPU" : 64,
+"CpsProject:0:EventManagementSystem.Tests.Debug|AnyCPU" : 39,
+"Workspace:Version" : 1
+}
+01/20/2025 17:52:14 Mitteleuropäische Normalzeit: Information : 16202333 :Query subscription collected 2 items for Select Workspace.Projects (Id Name Files). Version:{
+,
+"ProjectsStateUpdates:Version" : 0,
+"CpsProject:1:EventManagementSystem.Debug|AnyCPU" : 64,
+"CpsProject:0:EventManagementSystem.Tests.Debug|AnyCPU" : 39,
+"Workspace:Version" : 1
+}
+01/20/2025 17:52:14 Mitteleuropäische Normalzeit: Information : 56346594 :Query subscription collected 0 items for Select Workspace.Projects (Id Name Files). Version:{
+,
+"ProjectsStateUpdates:Version" : 0,
+"CpsProject:1:EventManagementSystem.Debug|AnyCPU" : 64,
+"CpsProject:0:EventManagementSystem.Tests.Debug|AnyCPU" : 39,
+"Workspace:Version" : 1
+}
+01/20/2025 17:52:14 Mitteleuropäische Normalzeit: Information : 49547977 :Query subscription collected 0 items for Select Workspace.Projects (Id Name Files). Version:{
+,
+"ProjectsStateUpdates:Version" : 0,
+"CpsProject:1:EventManagementSystem.Debug|AnyCPU" : 64,
+"CpsProject:0:EventManagementSystem.Tests.Debug|AnyCPU" : 39,
+"Workspace:Version" : 1
+}
+01/20/2025 17:52:14 Mitteleuropäische Normalzeit: Information : 46380612 :Query subscription collected 2 items for Select Workspace.Projects (Id Name Files). Version:{
+,
+"ProjectsStateUpdates:Version" : 0,
+"CpsProject:1:EventManagementSystem.Debug|AnyCPU" : 64,
+"CpsProject:0:EventManagementSystem.Tests.Debug|AnyCPU" : 39,
+"Workspace:Version" : 1
+}
+01/20/2025 17:52:14 Mitteleuropäische Normalzeit: Information : 11902578 :Query subscription collected 2 items for Select Workspace.Projects (Id Name Files). Version:{
+,
+"ProjectsStateUpdates:Version" : 0,
+"CpsProject:1:EventManagementSystem.Debug|AnyCPU" : 64,
+"CpsProject:0:EventManagementSystem.Tests.Debug|AnyCPU" : 39,
+"Workspace:Version" : 1
+}
+01/20/2025 17:52:14 Mitteleuropäische Normalzeit: Information : 56527528 :Query subscription collected 2 items for Select Workspace.Projects (Id Name Files). Version:{
+,
+"ProjectsStateUpdates:Version" : 0,
+"CpsProject:1:EventManagementSystem.Debug|AnyCPU" : 64,
+"CpsProject:0:EventManagementSystem.Tests.Debug|AnyCPU" : 39,
+"Workspace:Version" : 1
+}
+01/20/2025 17:52:14 Mitteleuropäische Normalzeit: Information : 46018583 :Query subscription collected 2 items for Select Workspace.Projects (Id Name Files). Version:{
+,
+"ProjectsStateUpdates:Version" : 0,
+"CpsProject:1:EventManagementSystem.Debug|AnyCPU" : 64,
+"CpsProject:0:EventManagementSystem.Tests.Debug|AnyCPU" : 39,
+"Workspace:Version" : 1
+}
+01/20/2025 17:52:14 Mitteleuropäische Normalzeit: Information : 9585839 :Query subscription collected 2 items for Select Workspace.Projects (Id Name Files). Version:{
+,
+"ProjectsStateUpdates:Version" : 0,
+"CpsProject:1:EventManagementSystem.Debug|AnyCPU" : 64,
+"CpsProject:0:EventManagementSystem.Tests.Debug|AnyCPU" : 39,
+"Workspace:Version" : 1
+}
+01/20/2025 17:52:14 Mitteleuropäische Normalzeit: Information : 918997 :Query subscription collected 2 items for Select Workspace.Projects (Id Name Files). Version:{
+,
+"ProjectsStateUpdates:Version" : 0,
+"CpsProject:1:EventManagementSystem.Debug|AnyCPU" : 64,
+"CpsProject:0:EventManagementSystem.Tests.Debug|AnyCPU" : 39,
+"Workspace:Version" : 1
+}
+01/20/2025 17:52:14 Mitteleuropäische Normalzeit: Information : 30216071 :Query subscription collected 2 items for Select Workspace.Projects (Id Name Files). Version:{
+,
+"ProjectsStateUpdates:Version" : 0,
+"CpsProject:1:EventManagementSystem.Debug|AnyCPU" : 64,
+"CpsProject:0:EventManagementSystem.Tests.Debug|AnyCPU" : 39,
+"Workspace:Version" : 1
+}
+01/20/2025 17:52:14 Mitteleuropäische Normalzeit: Information : 18313142 :Query subscription collected 2 items for Select Workspace.Projects (Id Name Files). Version:{
+,
+"ProjectsStateUpdates:Version" : 0,
+"CpsProject:1:EventManagementSystem.Debug|AnyCPU" : 64,
+"CpsProject:0:EventManagementSystem.Tests.Debug|AnyCPU" : 39,
+"Workspace:Version" : 1
+}
+01/20/2025 17:52:14 Mitteleuropäische Normalzeit: Information : 16295813 :Query subscription collected 2 items for Select Workspace.Projects (Id Name Files). Version:{
+,
+"ProjectsStateUpdates:Version" : 0,
+"CpsProject:1:EventManagementSystem.Debug|AnyCPU" : 64,
+"CpsProject:0:EventManagementSystem.Tests.Debug|AnyCPU" : 39,
+"Workspace:Version" : 1
+}
+01/20/2025 17:52:14 Mitteleuropäische Normalzeit: Information : 23889156 :Query subscription collected 0 items for Select Workspace.Projects (Id Name Files). Version:{
+,
+"ProjectsStateUpdates:Version" : 0,
+"CpsProject:1:EventManagementSystem.Debug|AnyCPU" : 64,
+"CpsProject:0:EventManagementSystem.Tests.Debug|AnyCPU" : 39,
+"Workspace:Version" : 1
+}
+01/20/2025 17:52:14 Mitteleuropäische Normalzeit: Information : 34879004 :Query subscription collected 0 items for Select Workspace.Projects (Id Name Files). Version:{
+,
+"ProjectsStateUpdates:Version" : 0,
+"CpsProject:1:EventManagementSystem.Debug|AnyCPU" : 64,
+"CpsProject:0:EventManagementSystem.Tests.Debug|AnyCPU" : 39,
+"Workspace:Version" : 1
+}
+01/20/2025 17:52:14 Mitteleuropäische Normalzeit: Information : 23337156 :Query subscription collected 0 items for Select Workspace.Projects (Id Name Files). Version:{
+,
+"ProjectsStateUpdates:Version" : 0,
+"CpsProject:1:EventManagementSystem.Debug|AnyCPU" : 64,
+"CpsProject:0:EventManagementSystem.Tests.Debug|AnyCPU" : 39,
+"Workspace:Version" : 1
+}
+01/20/2025 17:52:14 Mitteleuropäische Normalzeit: Information : 20497834 :Query subscription collected 2 items for Select Workspace.Projects (Id Name Files). Version:{
+,
+"ProjectsStateUpdates:Version" : 0,
+"CpsProject:1:EventManagementSystem.Debug|AnyCPU" : 64,
+"CpsProject:0:EventManagementSystem.Tests.Debug|AnyCPU" : 39,
+"Workspace:Version" : 1
+}
+01/20/2025 17:52:14 Mitteleuropäische Normalzeit: Information : 47380964 :Query subscription collected 2 items for Select Workspace.Projects (Id Name Files). Version:{
+,
+"ProjectsStateUpdates:Version" : 0,
+"CpsProject:1:EventManagementSystem.Debug|AnyCPU" : 64,
+"CpsProject:0:EventManagementSystem.Tests.Debug|AnyCPU" : 39,
+"Workspace:Version" : 1
+}
+01/20/2025 17:52:14 Mitteleuropäische Normalzeit: Information : 63347539 :Query subscription collected 2 items for Select Workspace.Projects (Id Name Files). Version:{
+,
+"ProjectsStateUpdates:Version" : 0,
+"CpsProject:1:EventManagementSystem.Debug|AnyCPU" : 64,
+"CpsProject:0:EventManagementSystem.Tests.Debug|AnyCPU" : 39,
+"Workspace:Version" : 1
+}
+01/20/2025 17:52:14 Mitteleuropäische Normalzeit: Information : 64771809 :Query subscription collected 2 items for Select Workspace.Projects (Id Name Files). Version:{
+,
+"ProjectsStateUpdates:Version" : 0,
+"CpsProject:1:EventManagementSystem.Debug|AnyCPU" : 64,
+"CpsProject:0:EventManagementSystem.Tests.Debug|AnyCPU" : 39,
+"Workspace:Version" : 1
+}
+01/20/2025 17:52:14 Mitteleuropäische Normalzeit: Information : 57771278 :Query subscription collected 2 items for Select Workspace.Projects (Id Name Files). Version:{
+,
+"ProjectsStateUpdates:Version" : 0,
+"CpsProject:1:EventManagementSystem.Debug|AnyCPU" : 64,
+"CpsProject:0:EventManagementSystem.Tests.Debug|AnyCPU" : 39,
+"Workspace:Version" : 1
+}
+01/20/2025 17:52:14 Mitteleuropäische Normalzeit: Information : 49159068 :Query subscription collected 2 items for Select Workspace.Projects (Id Name Files). Version:{
+,
+"ProjectsStateUpdates:Version" : 0,
+"CpsProject:1:EventManagementSystem.Debug|AnyCPU" : 64,
+"CpsProject:0:EventManagementSystem.Tests.Debug|AnyCPU" : 39,
+"Workspace:Version" : 1
+}
+01/20/2025 17:52:14 Mitteleuropäische Normalzeit: Information : 9261217 :Query subscription collected 2 items for Select Workspace.Projects (Id Name Files). Version:{
+,
+"ProjectsStateUpdates:Version" : 0,
+"CpsProject:1:EventManagementSystem.Debug|AnyCPU" : 64,
+"CpsProject:0:EventManagementSystem.Tests.Debug|AnyCPU" : 39,
+"Workspace:Version" : 1
+}
+01/20/2025 17:52:14 Mitteleuropäische Normalzeit: Information : 23071722 :Query subscription collected 2 items for Select Workspace.Projects (Id Name Files). Version:{
+,
+"ProjectsStateUpdates:Version" : 0,
+"CpsProject:1:EventManagementSystem.Debug|AnyCPU" : 64,
+"CpsProject:0:EventManagementSystem.Tests.Debug|AnyCPU" : 39,
+"Workspace:Version" : 1
+}
+01/20/2025 17:52:14 Mitteleuropäische Normalzeit: Information : 32161586 :Query subscription collected 2 items for Select Workspace.Projects (Id Name Files). Version:{
+,
+"ProjectsStateUpdates:Version" : 0,
+"CpsProject:1:EventManagementSystem.Debug|AnyCPU" : 64,
+"CpsProject:0:EventManagementSystem.Tests.Debug|AnyCPU" : 39,
+"Workspace:Version" : 1
+}
+01/20/2025 17:52:14 Mitteleuropäische Normalzeit: Information : 58501815 :Query subscription collected 2 items for Select Workspace.Projects (Id Name Files). Version:{
+,
+"ProjectsStateUpdates:Version" : 0,
+"CpsProject:1:EventManagementSystem.Debug|AnyCPU" : 64,
+"CpsProject:0:EventManagementSystem.Tests.Debug|AnyCPU" : 39,
+"Workspace:Version" : 1
+}
+01/20/2025 17:52:14 Mitteleuropäische Normalzeit: Information : 18140976 :Query subscription collected 0 items for Select Workspace.Projects (Id Name Files). Version:{
+,
+"ProjectsStateUpdates:Version" : 0,
+"CpsProject:1:EventManagementSystem.Debug|AnyCPU" : 64,
+"CpsProject:0:EventManagementSystem.Tests.Debug|AnyCPU" : 39,
+"Workspace:Version" : 1
+}
+01/20/2025 17:52:14 Mitteleuropäische Normalzeit: Information : 1603175 :Query subscription collected 2 items for Select Workspace.Projects (Id Name Files). Version:{
+,
+"ProjectsStateUpdates:Version" : 0,
+"CpsProject:1:EventManagementSystem.Debug|AnyCPU" : 64,
+"CpsProject:0:EventManagementSystem.Tests.Debug|AnyCPU" : 39,
+"Workspace:Version" : 1
+}
+01/20/2025 17:52:14 Mitteleuropäische Normalzeit: Information : 20932920 :Query subscription collected 2 items for Select Workspace.Projects (Id Name Files). Version:{
+,
+"ProjectsStateUpdates:Version" : 0,
+"CpsProject:1:EventManagementSystem.Debug|AnyCPU" : 64,
+"CpsProject:0:EventManagementSystem.Tests.Debug|AnyCPU" : 39,
+"Workspace:Version" : 1
+}
+01/20/2025 17:52:14 Mitteleuropäische Normalzeit: Information : 13223652 :Query subscription collected 2 items for Select Workspace.Projects (Id Name Files). Version:{
+,
+"ProjectsStateUpdates:Version" : 0,
+"CpsProject:1:EventManagementSystem.Debug|AnyCPU" : 64,
+"CpsProject:0:EventManagementSystem.Tests.Debug|AnyCPU" : 39,
+"Workspace:Version" : 1
+}
+01/20/2025 17:52:14 Mitteleuropäische Normalzeit: Information : 21108821 :Query subscription collected 2 items for Select Workspace.Projects (Id Name Files). Version:{
+,
+"ProjectsStateUpdates:Version" : 0,
+"CpsProject:1:EventManagementSystem.Debug|AnyCPU" : 64,
+"CpsProject:0:EventManagementSystem.Tests.Debug|AnyCPU" : 39,
+"Workspace:Version" : 1
+}
+01/20/2025 17:52:14 Mitteleuropäische Normalzeit: Information : 46177472 :Query subscription collected 2 items for Select Workspace.Projects (Id Name Files). Version:{
+,
+"ProjectsStateUpdates:Version" : 0,
+"CpsProject:1:EventManagementSystem.Debug|AnyCPU" : 64,
+"CpsProject:0:EventManagementSystem.Tests.Debug|AnyCPU" : 39,
+"Workspace:Version" : 1
+}
+01/20/2025 17:52:14 Mitteleuropäische Normalzeit: Information : 42117081 :Query subscription collected 2 items for Select Workspace.Projects (Id Name Files). Version:{
+,
+"ProjectsStateUpdates:Version" : 0,
+"CpsProject:1:EventManagementSystem.Debug|AnyCPU" : 64,
+"CpsProject:0:EventManagementSystem.Tests.Debug|AnyCPU" : 39,
+"Workspace:Version" : 1
+}
+01/20/2025 17:52:14 Mitteleuropäische Normalzeit: Information : 33890612 :Query subscription collected 2 items for Select Workspace.Projects (Id Name Files). Version:{
+,
+"ProjectsStateUpdates:Version" : 0,
+"CpsProject:1:EventManagementSystem.Debug|AnyCPU" : 64,
+"CpsProject:0:EventManagementSystem.Tests.Debug|AnyCPU" : 39,
+"Workspace:Version" : 1
+}
+01/20/2025 17:52:14 Mitteleuropäische Normalzeit: Information : 33999199 :Query subscription collected 0 items for Select Workspace.Projects (Id Name Files). Version:{
+,
+"ProjectsStateUpdates:Version" : 0,
+"CpsProject:1:EventManagementSystem.Debug|AnyCPU" : 64,
+"CpsProject:0:EventManagementSystem.Tests.Debug|AnyCPU" : 39,
+"Workspace:Version" : 1
+}
+01/20/2025 17:52:14 Mitteleuropäische Normalzeit: Information : 11134008 :Query subscription collected 2 items for Select Workspace.Projects (Id Name Files). Version:{
+,
+"ProjectsStateUpdates:Version" : 0,
+"CpsProject:1:EventManagementSystem.Debug|AnyCPU" : 64,
+"CpsProject:0:EventManagementSystem.Tests.Debug|AnyCPU" : 39,
+"Workspace:Version" : 1
+}
+01/20/2025 17:52:14 Mitteleuropäische Normalzeit: Information : 26852256 :Query subscription collected 2 items for Select Workspace.Projects (Id Name Files). Version:{
+,
+"ProjectsStateUpdates:Version" : 0,
+"CpsProject:1:EventManagementSystem.Debug|AnyCPU" : 64,
+"CpsProject:0:EventManagementSystem.Tests.Debug|AnyCPU" : 39,
+"Workspace:Version" : 1
+}
+01/20/2025 17:52:14 Mitteleuropäische Normalzeit: Information : 62641894 :Query subscription collected 2 items for Select Workspace.Projects (Id Name Files). Version:{
+,
+"ProjectsStateUpdates:Version" : 0,
+"CpsProject:1:EventManagementSystem.Debug|AnyCPU" : 64,
+"CpsProject:0:EventManagementSystem.Tests.Debug|AnyCPU" : 39,
+"Workspace:Version" : 1
+}
+01/20/2025 17:52:14 Mitteleuropäische Normalzeit: Information : 52249638 :Query subscription collected 2 items for Select Workspace.Projects (Id Name Files). Version:{
+,
+"ProjectsStateUpdates:Version" : 0,
+"CpsProject:1:EventManagementSystem.Debug|AnyCPU" : 64,
+"CpsProject:0:EventManagementSystem.Tests.Debug|AnyCPU" : 39,
+"Workspace:Version" : 1
+}
+01/20/2025 17:52:14 Mitteleuropäische Normalzeit: Information : 709883 :Query subscription collected 2 items for Select Workspace.Projects (Id Name Files). Version:{
+,
+"ProjectsStateUpdates:Version" : 0,
+"CpsProject:1:EventManagementSystem.Debug|AnyCPU" : 64,
+"CpsProject:0:EventManagementSystem.Tests.Debug|AnyCPU" : 39,
+"Workspace:Version" : 1
+}
+01/20/2025 17:52:14 Mitteleuropäische Normalzeit: Information : 5708136 :Query subscription collected 0 items for Select Workspace.Projects (Id Name Files). Version:{
+,
+"ProjectsStateUpdates:Version" : 0,
+"CpsProject:1:EventManagementSystem.Debug|AnyCPU" : 64,
+"CpsProject:0:EventManagementSystem.Tests.Debug|AnyCPU" : 39,
+"Workspace:Version" : 1
+}
+01/20/2025 17:52:14 Mitteleuropäische Normalzeit: Information : 6503 :DesignTimeBuildManagerService: Build Results Success: FromCache: False ResetId: 63 Results: (CollectPackageReferences Success)(BuiltProjectOutputGroup Success)(CollectNuGetAuditSuppressions Success)(NETStandardCompatError_Mono_TextTemplating_net6_0 Success)(CollectPackageDownloads Success)(CollectFrameworkReferences Success)(CollectCentralPackageVersions Success)(CompileDesignTime Success)(CollectPrunePackageReferences Success)(GenerateProgramFile Success) - for project /Users/MacBook/EventManagementSystem/EventManagementSystem.csproj:Debug|AnyCPU
+01/20/2025 17:52:14 Mitteleuropäische Normalzeit: Information : 33754516 :Query subscription collected 2 items for Select Workspace.Projects (Id Name Path Guid ActiveConfigurations). Version:{
+,
+"ProjectsStateUpdates:Version" : 0,
+"CpsProject:1:EventManagementSystem.Debug|AnyCPU" : 64,
+"CpsProject:0:EventManagementSystem.Tests.Debug|AnyCPU" : 39,
+"Workspace:Version" : 1
+}
+01/20/2025 17:52:46 Mitteleuropäische Normalzeit: Information : 58800591 :Query subscription collected 0 items for Select Workspace.Projects (Id Name Files). Version:{
+,
+"ProjectsStateUpdates:Version" : 0,
+"CpsProject:1:EventManagementSystem.Debug|AnyCPU" : 64,
+"CpsProject:0:EventManagementSystem.Tests.Debug|AnyCPU" : 39,
+"Workspace:Version" : 1
+}
+01/20/2025 17:52:55 Mitteleuropäische Normalzeit: Information : 50029054 :Query subscription collected 0 items for Select Workspace.Projects (Id Name Files). Version:{
+,
+"ProjectsStateUpdates:Version" : 0,
+"CpsProject:1:EventManagementSystem.Debug|AnyCPU" : 64,
+"CpsProject:0:EventManagementSystem.Tests.Debug|AnyCPU" : 39,
+"Workspace:Version" : 1
+}
+01/20/2025 17:52:57 Mitteleuropäische Normalzeit: Information : 64830201 :Query subscription collected 2 items for Select Workspace.Projects (Id Name Files). Version:{
+,
+"ProjectsStateUpdates:Version" : 0,
+"CpsProject:1:EventManagementSystem.Debug|AnyCPU" : 64,
+"CpsProject:0:EventManagementSystem.Tests.Debug|AnyCPU" : 39,
+"Workspace:Version" : 1
+}
+01/20/2025 17:53:09 Mitteleuropäische Normalzeit: Information : 59953623 :Query subscription collected 0 items for Select Workspace.Projects (Id Name Files). Version:{
+,
+"ProjectsStateUpdates:Version" : 0,
+"CpsProject:1:EventManagementSystem.Debug|AnyCPU" : 64,
+"CpsProject:0:EventManagementSystem.Tests.Debug|AnyCPU" : 39,
+"Workspace:Version" : 1
+}
+01/20/2025 17:53:11 Mitteleuropäische Normalzeit: Information : 54679371 :Query subscription collected 2 items for Select Workspace.Projects (Id Name Files). Version:{
+,
+"ProjectsStateUpdates:Version" : 0,
+"CpsProject:1:EventManagementSystem.Debug|AnyCPU" : 64,
+"CpsProject:0:EventManagementSystem.Tests.Debug|AnyCPU" : 39,
+"Workspace:Version" : 1
+}
+01/20/2025 17:53:27 Mitteleuropäische Normalzeit: Information : 16712520 :Query subscription collected 2 items for Select Workspace.Projects (Id Name Files). Version:{
+,
+"ProjectsStateUpdates:Version" : 0,
+"CpsProject:1:EventManagementSystem.Debug|AnyCPU" : 64,
+"CpsProject:0:EventManagementSystem.Tests.Debug|AnyCPU" : 39,
+"Workspace:Version" : 1
+}
+01/20/2025 17:53:38 Mitteleuropäische Normalzeit: Information : 43554459 :Query subscription collected 0 items for Select Workspace.Projects (Id Name Files). Version:{
+,
+"ProjectsStateUpdates:Version" : 0,
+"CpsProject:1:EventManagementSystem.Debug|AnyCPU" : 64,
+"CpsProject:0:EventManagementSystem.Tests.Debug|AnyCPU" : 39,
+"Workspace:Version" : 1
+}
+01/20/2025 17:53:49 Mitteleuropäische Normalzeit: Information : 6503 :Project '/Users/MacBook/EventManagementSystem/EventManagementSystem.csproj' is updated from File
+01/20/2025 17:53:49 Mitteleuropäische Normalzeit: Information : 6503 :Write '/Users/MacBook/EventManagementSystem/EventManagementSystem.csproj' to the disk
+01/20/2025 17:53:49 Mitteleuropäische Normalzeit: Information : 6503 :Design time build targets update received for project: '/Users/MacBook/EventManagementSystem/EventManagementSystem.csproj'
+01/20/2025 17:53:49 Mitteleuropäische Normalzeit: Information : 6503 :DesignTimeBuildManagerService: Resetting design time build service for project /Users/MacBook/EventManagementSystem/EventManagementSystem.csproj:Debug|AnyCPU. Evaluation version: (current=312, previous=309).
+01/20/2025 17:53:49 Mitteleuropäische Normalzeit: Information : 6503 :Design time build targets update received for project: '/Users/MacBook/EventManagementSystem/EventManagementSystem.csproj'
+01/20/2025 17:53:49 Mitteleuropäische Normalzeit: Information : 709883 :Query subscription collected 2 items for Select Workspace.Projects (Id Name Files). Version:{
+,
+"ProjectsStateUpdates:Version" : 0,
+"CpsProject:1:EventManagementSystem.Debug|AnyCPU" : 65,
+"CpsProject:0:EventManagementSystem.Tests.Debug|AnyCPU" : 39,
+"Workspace:Version" : 1
+}
+01/20/2025 17:53:49 Mitteleuropäische Normalzeit: Information : 5708136 :Query subscription collected 0 items for Select Workspace.Projects (Id Name Files). Version:{
+,
+"ProjectsStateUpdates:Version" : 0,
+"CpsProject:1:EventManagementSystem.Debug|AnyCPU" : 65,
+"CpsProject:0:EventManagementSystem.Tests.Debug|AnyCPU" : 39,
+"Workspace:Version" : 1
+}
+01/20/2025 17:53:49 Mitteleuropäische Normalzeit: Information : 62641894 :Query subscription collected 2 items for Select Workspace.Projects (Id Name Files). Version:{
+,
+"ProjectsStateUpdates:Version" : 0,
+"CpsProject:1:EventManagementSystem.Debug|AnyCPU" : 65,
+"CpsProject:0:EventManagementSystem.Tests.Debug|AnyCPU" : 39,
+"Workspace:Version" : 1
+}
+01/20/2025 17:53:49 Mitteleuropäische Normalzeit: Information : 43554459 :Query subscription collected 0 items for Select Workspace.Projects (Id Name Files). Version:{
+,
+"ProjectsStateUpdates:Version" : 0,
+"CpsProject:1:EventManagementSystem.Debug|AnyCPU" : 65,
+"CpsProject:0:EventManagementSystem.Tests.Debug|AnyCPU" : 39,
+"Workspace:Version" : 1
+}
+01/20/2025 17:53:49 Mitteleuropäische Normalzeit: Information : 16712520 :Query subscription collected 2 items for Select Workspace.Projects (Id Name Files). Version:{
+,
+"ProjectsStateUpdates:Version" : 0,
+"CpsProject:1:EventManagementSystem.Debug|AnyCPU" : 65,
+"CpsProject:0:EventManagementSystem.Tests.Debug|AnyCPU" : 39,
+"Workspace:Version" : 1
+}
+01/20/2025 17:53:49 Mitteleuropäische Normalzeit: Information : 52249638 :Query subscription collected 2 items for Select Workspace.Projects (Id Name Files). Version:{
+,
+"ProjectsStateUpdates:Version" : 0,
+"CpsProject:1:EventManagementSystem.Debug|AnyCPU" : 65,
+"CpsProject:0:EventManagementSystem.Tests.Debug|AnyCPU" : 39,
+"Workspace:Version" : 1
+}
+01/20/2025 17:53:49 Mitteleuropäische Normalzeit: Information : 11134008 :Query subscription collected 2 items for Select Workspace.Projects (Id Name Files). Version:{
+,
+"ProjectsStateUpdates:Version" : 0,
+"CpsProject:1:EventManagementSystem.Debug|AnyCPU" : 65,
+"CpsProject:0:EventManagementSystem.Tests.Debug|AnyCPU" : 39,
+"Workspace:Version" : 1
+}
+01/20/2025 17:53:49 Mitteleuropäische Normalzeit: Information : 58800591 :Query subscription collected 0 items for Select Workspace.Projects (Id Name Files). Version:{
+,
+"ProjectsStateUpdates:Version" : 0,
+"CpsProject:1:EventManagementSystem.Debug|AnyCPU" : 65,
+"CpsProject:0:EventManagementSystem.Tests.Debug|AnyCPU" : 39,
+"Workspace:Version" : 1
+}
+01/20/2025 17:53:49 Mitteleuropäische Normalzeit: Information : 64830201 :Query subscription collected 2 items for Select Workspace.Projects (Id Name Files). Version:{
+,
+"ProjectsStateUpdates:Version" : 0,
+"CpsProject:1:EventManagementSystem.Debug|AnyCPU" : 65,
+"CpsProject:0:EventManagementSystem.Tests.Debug|AnyCPU" : 39,
+"Workspace:Version" : 1
+}
+01/20/2025 17:53:49 Mitteleuropäische Normalzeit: Information : 54679371 :Query subscription collected 2 items for Select Workspace.Projects (Id Name Files). Version:{
+,
+"ProjectsStateUpdates:Version" : 0,
+"CpsProject:1:EventManagementSystem.Debug|AnyCPU" : 65,
+"CpsProject:0:EventManagementSystem.Tests.Debug|AnyCPU" : 39,
+"Workspace:Version" : 1
+}
+01/20/2025 17:53:49 Mitteleuropäische Normalzeit: Information : 34274199 :Query subscription collected 0 items for Select Workspace.Projects (Id Name Files). Version:{
+,
+"ProjectsStateUpdates:Version" : 0,
+"CpsProject:1:EventManagementSystem.Debug|AnyCPU" : 65,
+"CpsProject:0:EventManagementSystem.Tests.Debug|AnyCPU" : 39,
+"Workspace:Version" : 1
+}
+01/20/2025 17:53:49 Mitteleuropäische Normalzeit: Information : 50029054 :Query subscription collected 0 items for Select Workspace.Projects (Id Name Files). Version:{
+,
+"ProjectsStateUpdates:Version" : 0,
+"CpsProject:1:EventManagementSystem.Debug|AnyCPU" : 65,
+"CpsProject:0:EventManagementSystem.Tests.Debug|AnyCPU" : 39,
+"Workspace:Version" : 1
+}
+01/20/2025 17:53:49 Mitteleuropäische Normalzeit: Information : 395446 :Query subscription collected 2 items for Select Workspace.Projects (Id Name Files). Version:{
+,
+"ProjectsStateUpdates:Version" : 0,
+"CpsProject:1:EventManagementSystem.Debug|AnyCPU" : 65,
+"CpsProject:0:EventManagementSystem.Tests.Debug|AnyCPU" : 39,
+"Workspace:Version" : 1
+}
+01/20/2025 17:53:49 Mitteleuropäische Normalzeit: Information : 59953623 :Query subscription collected 0 items for Select Workspace.Projects (Id Name Files). Version:{
+,
+"ProjectsStateUpdates:Version" : 0,
+"CpsProject:1:EventManagementSystem.Debug|AnyCPU" : 65,
+"CpsProject:0:EventManagementSystem.Tests.Debug|AnyCPU" : 39,
+"Workspace:Version" : 1
+}
+01/20/2025 17:53:49 Mitteleuropäische Normalzeit: Information : 38842255 :Query subscription collected 2 items for Select Workspace.Projects (Id Name Files). Version:{
+,
+"ProjectsStateUpdates:Version" : 0,
+"CpsProject:1:EventManagementSystem.Debug|AnyCPU" : 65,
+"CpsProject:0:EventManagementSystem.Tests.Debug|AnyCPU" : 39,
+"Workspace:Version" : 1
+}
+01/20/2025 17:53:49 Mitteleuropäische Normalzeit: Information : 38829871 :Query subscription collected 0 items for Select Workspace.Projects (Id Name Files). Version:{
+,
+"ProjectsStateUpdates:Version" : 0,
+"CpsProject:1:EventManagementSystem.Debug|AnyCPU" : 65,
+"CpsProject:0:EventManagementSystem.Tests.Debug|AnyCPU" : 39,
+"Workspace:Version" : 1
+}
+01/20/2025 17:53:49 Mitteleuropäische Normalzeit: Information : 56417709 :Query subscription collected 0 items for Select Workspace.Projects (Id Name Files). Version:{
+,
+"ProjectsStateUpdates:Version" : 0,
+"CpsProject:1:EventManagementSystem.Debug|AnyCPU" : 65,
+"CpsProject:0:EventManagementSystem.Tests.Debug|AnyCPU" : 39,
+"Workspace:Version" : 1
+}
+01/20/2025 17:53:49 Mitteleuropäische Normalzeit: Information : 13420831 :Query subscription collected 2 items for Select Workspace.Projects (Id Name Files). Version:{
+,
+"ProjectsStateUpdates:Version" : 0,
+"CpsProject:1:EventManagementSystem.Debug|AnyCPU" : 65,
+"CpsProject:0:EventManagementSystem.Tests.Debug|AnyCPU" : 39,
+"Workspace:Version" : 1
+}
+01/20/2025 17:53:49 Mitteleuropäische Normalzeit: Information : 37915565 :Query subscription collected 0 items for Select Workspace.Projects (Id Name Files). Version:{
+,
+"ProjectsStateUpdates:Version" : 0,
+"CpsProject:1:EventManagementSystem.Debug|AnyCPU" : 65,
+"CpsProject:0:EventManagementSystem.Tests.Debug|AnyCPU" : 39,
+"Workspace:Version" : 1
+}
+01/20/2025 17:53:49 Mitteleuropäische Normalzeit: Information : 26852256 :Query subscription collected 2 items for Select Workspace.Projects (Id Name Files). Version:{
+,
+"ProjectsStateUpdates:Version" : 0,
+"CpsProject:1:EventManagementSystem.Debug|AnyCPU" : 65,
+"CpsProject:0:EventManagementSystem.Tests.Debug|AnyCPU" : 39,
+"Workspace:Version" : 1
+}
+01/20/2025 17:53:49 Mitteleuropäische Normalzeit: Information : 26283594 :Query subscription collected 0 items for Select Workspace.Projects (Id Name Files). Version:{
+,
+"ProjectsStateUpdates:Version" : 0,
+"CpsProject:1:EventManagementSystem.Debug|AnyCPU" : 65,
+"CpsProject:0:EventManagementSystem.Tests.Debug|AnyCPU" : 39,
+"Workspace:Version" : 1
+}
+01/20/2025 17:53:49 Mitteleuropäische Normalzeit: Information : 33999199 :Query subscription collected 0 items for Select Workspace.Projects (Id Name Files). Version:{
+,
+"ProjectsStateUpdates:Version" : 0,
+"CpsProject:1:EventManagementSystem.Debug|AnyCPU" : 65,
+"CpsProject:0:EventManagementSystem.Tests.Debug|AnyCPU" : 39,
+"Workspace:Version" : 1
+}
+01/20/2025 17:53:49 Mitteleuropäische Normalzeit: Information : 12505814 :Query subscription collected 2 items for Select Workspace.Projects (Id Name Files). Version:{
+,
+"ProjectsStateUpdates:Version" : 0,
+"CpsProject:1:EventManagementSystem.Debug|AnyCPU" : 65,
+"CpsProject:0:EventManagementSystem.Tests.Debug|AnyCPU" : 39,
+"Workspace:Version" : 1
+}
+01/20/2025 17:53:49 Mitteleuropäische Normalzeit: Information : 42117081 :Query subscription collected 2 items for Select Workspace.Projects (Id Name Files). Version:{
+,
+"ProjectsStateUpdates:Version" : 0,
+"CpsProject:1:EventManagementSystem.Debug|AnyCPU" : 65,
+"CpsProject:0:EventManagementSystem.Tests.Debug|AnyCPU" : 39,
+"Workspace:Version" : 1
+}
+01/20/2025 17:53:49 Mitteleuropäische Normalzeit: Information : 31792028 :Query subscription collected 2 items for Select Workspace.Projects (Id Name Files). Version:{
+,
+"ProjectsStateUpdates:Version" : 0,
+"CpsProject:1:EventManagementSystem.Debug|AnyCPU" : 65,
+"CpsProject:0:EventManagementSystem.Tests.Debug|AnyCPU" : 39,
+"Workspace:Version" : 1
+}
+01/20/2025 17:53:49 Mitteleuropäische Normalzeit: Information : 48028580 :Query subscription collected 0 items for Select Workspace.Projects (Id Name Files). Version:{
+,
+"ProjectsStateUpdates:Version" : 0,
+"CpsProject:1:EventManagementSystem.Debug|AnyCPU" : 65,
+"CpsProject:0:EventManagementSystem.Tests.Debug|AnyCPU" : 39,
+"Workspace:Version" : 1
+}
+01/20/2025 17:53:49 Mitteleuropäische Normalzeit: Information : 45968062 :Query subscription collected 2 items for Select Workspace.Projects (Id Name Files). Version:{
+,
+"ProjectsStateUpdates:Version" : 0,
+"CpsProject:1:EventManagementSystem.Debug|AnyCPU" : 65,
+"CpsProject:0:EventManagementSystem.Tests.Debug|AnyCPU" : 39,
+"Workspace:Version" : 1
+}
+01/20/2025 17:53:49 Mitteleuropäische Normalzeit: Information : 14514028 :Query subscription collected 2 items for Select Workspace.Projects (Id Name Files). Version:{
+,
+"ProjectsStateUpdates:Version" : 0,
+"CpsProject:1:EventManagementSystem.Debug|AnyCPU" : 65,
+"CpsProject:0:EventManagementSystem.Tests.Debug|AnyCPU" : 39,
+"Workspace:Version" : 1
+}
+01/20/2025 17:53:49 Mitteleuropäische Normalzeit: Information : 53672195 :Query subscription collected 2 items for Select Workspace.Projects (Id Name Files). Version:{
+,
+"ProjectsStateUpdates:Version" : 0,
+"CpsProject:1:EventManagementSystem.Debug|AnyCPU" : 65,
+"CpsProject:0:EventManagementSystem.Tests.Debug|AnyCPU" : 39,
+"Workspace:Version" : 1
+}
+01/20/2025 17:53:49 Mitteleuropäische Normalzeit: Information : 26759878 :Query subscription collected 2 items for Select Workspace.Projects (Id Name Files). Version:{
+,
+"ProjectsStateUpdates:Version" : 0,
+"CpsProject:1:EventManagementSystem.Debug|AnyCPU" : 65,
+"CpsProject:0:EventManagementSystem.Tests.Debug|AnyCPU" : 39,
+"Workspace:Version" : 1
+}
+01/20/2025 17:53:49 Mitteleuropäische Normalzeit: Information : 10350501 :Query subscription collected 2 items for Select Workspace.Projects (Id Name Files). Version:{
+,
+"ProjectsStateUpdates:Version" : 0,
+"CpsProject:1:EventManagementSystem.Debug|AnyCPU" : 65,
+"CpsProject:0:EventManagementSystem.Tests.Debug|AnyCPU" : 39,
+"Workspace:Version" : 1
+}
+01/20/2025 17:53:49 Mitteleuropäische Normalzeit: Information : 26755242 :Query subscription collected 2 items for Select Workspace.Projects (Id Name Files). Version:{
+,
+"ProjectsStateUpdates:Version" : 0,
+"CpsProject:1:EventManagementSystem.Debug|AnyCPU" : 65,
+"CpsProject:0:EventManagementSystem.Tests.Debug|AnyCPU" : 39,
+"Workspace:Version" : 1
+}
+01/20/2025 17:53:49 Mitteleuropäische Normalzeit: Information : 32101957 :Query subscription collected 0 items for Select Workspace.Projects (Id Name Files). Version:{
+,
+"ProjectsStateUpdates:Version" : 0,
+"CpsProject:1:EventManagementSystem.Debug|AnyCPU" : 65,
+"CpsProject:0:EventManagementSystem.Tests.Debug|AnyCPU" : 39,
+"Workspace:Version" : 1
+}
+01/20/2025 17:53:49 Mitteleuropäische Normalzeit: Information : 44047487 :Query subscription collected 2 items for Select Workspace.Projects (Id Name Files). Version:{
+,
+"ProjectsStateUpdates:Version" : 0,
+"CpsProject:1:EventManagementSystem.Debug|AnyCPU" : 65,
+"CpsProject:0:EventManagementSystem.Tests.Debug|AnyCPU" : 39,
+"Workspace:Version" : 1
+}
+01/20/2025 17:53:49 Mitteleuropäische Normalzeit: Information : 11826078 :Query subscription collected 2 items for Select Workspace.Projects (Id Name Files). Version:{
+,
+"ProjectsStateUpdates:Version" : 0,
+"CpsProject:1:EventManagementSystem.Debug|AnyCPU" : 65,
+"CpsProject:0:EventManagementSystem.Tests.Debug|AnyCPU" : 39,
+"Workspace:Version" : 1
+}
+01/20/2025 17:53:49 Mitteleuropäische Normalzeit: Information : 825472 :Query subscription collected 2 items for Select Workspace.Projects (Id Name Files). Version:{
+,
+"ProjectsStateUpdates:Version" : 0,
+"CpsProject:1:EventManagementSystem.Debug|AnyCPU" : 65,
+"CpsProject:0:EventManagementSystem.Tests.Debug|AnyCPU" : 39,
+"Workspace:Version" : 1
+}
+01/20/2025 17:53:49 Mitteleuropäische Normalzeit: Information : 11645056 :Query subscription collected 2 items for Select Workspace.Projects (Id Name Files). Version:{
+,
+"ProjectsStateUpdates:Version" : 0,
+"CpsProject:1:EventManagementSystem.Debug|AnyCPU" : 65,
+"CpsProject:0:EventManagementSystem.Tests.Debug|AnyCPU" : 39,
+"Workspace:Version" : 1
+}
+01/20/2025 17:53:49 Mitteleuropäische Normalzeit: Information : 43260535 :Query subscription collected 2 items for Select Workspace.Projects (Id Name Files). Version:{
+,
+"ProjectsStateUpdates:Version" : 0,
+"CpsProject:1:EventManagementSystem.Debug|AnyCPU" : 65,
+"CpsProject:0:EventManagementSystem.Tests.Debug|AnyCPU" : 39,
+"Workspace:Version" : 1
+}
+01/20/2025 17:53:49 Mitteleuropäische Normalzeit: Information : 48618772 :Query subscription collected 2 items for Select Workspace.Projects (Id Name Files). Version:{
+,
+"ProjectsStateUpdates:Version" : 0,
+"CpsProject:1:EventManagementSystem.Debug|AnyCPU" : 65,
+"CpsProject:0:EventManagementSystem.Tests.Debug|AnyCPU" : 39,
+"Workspace:Version" : 1
+}
+01/20/2025 17:53:49 Mitteleuropäische Normalzeit: Information : 54473738 :Query subscription collected 2 items for Select Workspace.Projects (Id Name Files). Version:{
+,
+"ProjectsStateUpdates:Version" : 0,
+"CpsProject:1:EventManagementSystem.Debug|AnyCPU" : 65,
+"CpsProject:0:EventManagementSystem.Tests.Debug|AnyCPU" : 39,
+"Workspace:Version" : 1
+}
+01/20/2025 17:53:49 Mitteleuropäische Normalzeit: Information : 59498988 :Query subscription collected 2 items for Select Workspace.Projects (Id Name Files). Version:{
+,
+"ProjectsStateUpdates:Version" : 0,
+"CpsProject:1:EventManagementSystem.Debug|AnyCPU" : 65,
+"CpsProject:0:EventManagementSystem.Tests.Debug|AnyCPU" : 39,
+"Workspace:Version" : 1
+}
+01/20/2025 17:53:49 Mitteleuropäische Normalzeit: Information : 32201927 :Query subscription collected 2 items for Select Workspace.Projects (Id Name Files). Version:{
+,
+"ProjectsStateUpdates:Version" : 0,
+"CpsProject:1:EventManagementSystem.Debug|AnyCPU" : 65,
+"CpsProject:0:EventManagementSystem.Tests.Debug|AnyCPU" : 39,
+"Workspace:Version" : 1
+}
+01/20/2025 17:53:49 Mitteleuropäische Normalzeit: Information : 4312542 :Query subscription collected 2 items for Select Workspace.Projects (Id Name Files). Version:{
+,
+"ProjectsStateUpdates:Version" : 0,
+"CpsProject:1:EventManagementSystem.Debug|AnyCPU" : 65,
+"CpsProject:0:EventManagementSystem.Tests.Debug|AnyCPU" : 39,
+"Workspace:Version" : 1
+}
+01/20/2025 17:53:49 Mitteleuropäische Normalzeit: Information : 33890612 :Query subscription collected 2 items for Select Workspace.Projects (Id Name Files). Version:{
+,
+"ProjectsStateUpdates:Version" : 0,
+"CpsProject:1:EventManagementSystem.Debug|AnyCPU" : 65,
+"CpsProject:0:EventManagementSystem.Tests.Debug|AnyCPU" : 39,
+"Workspace:Version" : 1
+}
+01/20/2025 17:53:49 Mitteleuropäische Normalzeit: Information : 10794232 :Query subscription collected 0 items for Select Workspace.Projects (Id Name Files). Version:{
+,
+"ProjectsStateUpdates:Version" : 0,
+"CpsProject:1:EventManagementSystem.Debug|AnyCPU" : 65,
+"CpsProject:0:EventManagementSystem.Tests.Debug|AnyCPU" : 39,
+"Workspace:Version" : 1
+}
+01/20/2025 17:53:49 Mitteleuropäische Normalzeit: Information : 60826852 :Query subscription collected 2 items for Select Workspace.Projects (Id Name Files). Version:{
+,
+"ProjectsStateUpdates:Version" : 0,
+"CpsProject:1:EventManagementSystem.Debug|AnyCPU" : 65,
+"CpsProject:0:EventManagementSystem.Tests.Debug|AnyCPU" : 39,
+"Workspace:Version" : 1
+}
+01/20/2025 17:53:49 Mitteleuropäische Normalzeit: Information : 56346594 :Query subscription collected 0 items for Select Workspace.Projects (Id Name Files). Version:{
+,
+"ProjectsStateUpdates:Version" : 0,
+"CpsProject:1:EventManagementSystem.Debug|AnyCPU" : 65,
+"CpsProject:0:EventManagementSystem.Tests.Debug|AnyCPU" : 39,
+"Workspace:Version" : 1
+}
+01/20/2025 17:53:49 Mitteleuropäische Normalzeit: Information : 44840035 :Query subscription collected 2 items for Select Workspace.Projects (Id Name Files). Version:{
+,
+"ProjectsStateUpdates:Version" : 0,
+"CpsProject:1:EventManagementSystem.Debug|AnyCPU" : 65,
+"CpsProject:0:EventManagementSystem.Tests.Debug|AnyCPU" : 39,
+"Workspace:Version" : 1
+}
+01/20/2025 17:53:49 Mitteleuropäische Normalzeit: Information : 46380612 :Query subscription collected 2 items for Select Workspace.Projects (Id Name Files). Version:{
+,
+"ProjectsStateUpdates:Version" : 0,
+"CpsProject:1:EventManagementSystem.Debug|AnyCPU" : 65,
+"CpsProject:0:EventManagementSystem.Tests.Debug|AnyCPU" : 39,
+"Workspace:Version" : 1
+}
+01/20/2025 17:53:49 Mitteleuropäische Normalzeit: Information : 11902578 :Query subscription collected 2 items for Select Workspace.Projects (Id Name Files). Version:{
+,
+"ProjectsStateUpdates:Version" : 0,
+"CpsProject:1:EventManagementSystem.Debug|AnyCPU" : 65,
+"CpsProject:0:EventManagementSystem.Tests.Debug|AnyCPU" : 39,
+"Workspace:Version" : 1
+}
+01/20/2025 17:53:49 Mitteleuropäische Normalzeit: Information : 31464535 :Query subscription collected 2 items for Select Workspace.Projects (Id Name Files). Version:{
+,
+"ProjectsStateUpdates:Version" : 0,
+"CpsProject:1:EventManagementSystem.Debug|AnyCPU" : 65,
+"CpsProject:0:EventManagementSystem.Tests.Debug|AnyCPU" : 39,
+"Workspace:Version" : 1
+}
+01/20/2025 17:53:49 Mitteleuropäische Normalzeit: Information : 918997 :Query subscription collected 2 items for Select Workspace.Projects (Id Name Files). Version:{
+,
+"ProjectsStateUpdates:Version" : 0,
+"CpsProject:1:EventManagementSystem.Debug|AnyCPU" : 65,
+"CpsProject:0:EventManagementSystem.Tests.Debug|AnyCPU" : 39,
+"Workspace:Version" : 1
+}
+01/20/2025 17:53:49 Mitteleuropäische Normalzeit: Information : 9585839 :Query subscription collected 2 items for Select Workspace.Projects (Id Name Files). Version:{
+,
+"ProjectsStateUpdates:Version" : 0,
+"CpsProject:1:EventManagementSystem.Debug|AnyCPU" : 65,
+"CpsProject:0:EventManagementSystem.Tests.Debug|AnyCPU" : 39,
+"Workspace:Version" : 1
+}
+01/20/2025 17:53:49 Mitteleuropäische Normalzeit: Information : 58187981 :Query subscription collected 0 items for Select Workspace.Projects (Id Name Files). Version:{
+,
+"ProjectsStateUpdates:Version" : 0,
+"CpsProject:1:EventManagementSystem.Debug|AnyCPU" : 65,
+"CpsProject:0:EventManagementSystem.Tests.Debug|AnyCPU" : 39,
+"Workspace:Version" : 1
+}
+01/20/2025 17:53:49 Mitteleuropäische Normalzeit: Information : 5967413 :Query subscription collected 2 items for Select Workspace.Projects (Id Name Files). Version:{
+,
+"ProjectsStateUpdates:Version" : 0,
+"CpsProject:1:EventManagementSystem.Debug|AnyCPU" : 65,
+"CpsProject:0:EventManagementSystem.Tests.Debug|AnyCPU" : 39,
+"Workspace:Version" : 1
+}
+01/20/2025 17:53:49 Mitteleuropäische Normalzeit: Information : 50364069 :Query subscription collected 2 items for Select Workspace.Projects (Id Name Files). Version:{
+,
+"ProjectsStateUpdates:Version" : 0,
+"CpsProject:1:EventManagementSystem.Debug|AnyCPU" : 65,
+"CpsProject:0:EventManagementSystem.Tests.Debug|AnyCPU" : 39,
+"Workspace:Version" : 1
+}
+01/20/2025 17:53:49 Mitteleuropäische Normalzeit: Information : 34879004 :Query subscription collected 0 items for Select Workspace.Projects (Id Name Files). Version:{
+,
+"ProjectsStateUpdates:Version" : 0,
+"CpsProject:1:EventManagementSystem.Debug|AnyCPU" : 65,
+"CpsProject:0:EventManagementSystem.Tests.Debug|AnyCPU" : 39,
+"Workspace:Version" : 1
+}
+01/20/2025 17:53:49 Mitteleuropäische Normalzeit: Information : 15677976 :Query subscription collected 2 items for Select Workspace.Projects (Id Name Files). Version:{
+,
+"ProjectsStateUpdates:Version" : 0,
+"CpsProject:1:EventManagementSystem.Debug|AnyCPU" : 65,
+"CpsProject:0:EventManagementSystem.Tests.Debug|AnyCPU" : 39,
+"Workspace:Version" : 1
+}
+01/20/2025 17:53:49 Mitteleuropäische Normalzeit: Information : 56063192 :Query subscription collected 2 items for Select Workspace.Projects (Id Name Files). Version:{
+,
+"ProjectsStateUpdates:Version" : 0,
+"CpsProject:1:EventManagementSystem.Debug|AnyCPU" : 65,
+"CpsProject:0:EventManagementSystem.Tests.Debug|AnyCPU" : 39,
+"Workspace:Version" : 1
+}
+01/20/2025 17:53:49 Mitteleuropäische Normalzeit: Information : 20497834 :Query subscription collected 2 items for Select Workspace.Projects (Id Name Files). Version:{
+,
+"ProjectsStateUpdates:Version" : 0,
+"CpsProject:1:EventManagementSystem.Debug|AnyCPU" : 65,
+"CpsProject:0:EventManagementSystem.Tests.Debug|AnyCPU" : 39,
+"Workspace:Version" : 1
+}
+01/20/2025 17:53:49 Mitteleuropäische Normalzeit: Information : 8352657 :Query subscription collected 0 items for Select Workspace.Projects (Id Name Files). Version:{
+,
+"ProjectsStateUpdates:Version" : 0,
+"CpsProject:1:EventManagementSystem.Debug|AnyCPU" : 65,
+"CpsProject:0:EventManagementSystem.Tests.Debug|AnyCPU" : 39,
+"Workspace:Version" : 1
+}
+01/20/2025 17:53:49 Mitteleuropäische Normalzeit: Information : 33453190 :Query subscription collected 2 items for Select Workspace.Projects (Id Name Files). Version:{
+,
+"ProjectsStateUpdates:Version" : 0,
+"CpsProject:1:EventManagementSystem.Debug|AnyCPU" : 65,
+"CpsProject:0:EventManagementSystem.Tests.Debug|AnyCPU" : 39,
+"Workspace:Version" : 1
+}
+01/20/2025 17:53:49 Mitteleuropäische Normalzeit: Information : 64771809 :Query subscription collected 2 items for Select Workspace.Projects (Id Name Files). Version:{
+,
+"ProjectsStateUpdates:Version" : 0,
+"CpsProject:1:EventManagementSystem.Debug|AnyCPU" : 65,
+"CpsProject:0:EventManagementSystem.Tests.Debug|AnyCPU" : 39,
+"Workspace:Version" : 1
+}
+01/20/2025 17:53:49 Mitteleuropäische Normalzeit: Information : 16202333 :Query subscription collected 2 items for Select Workspace.Projects (Id Name Files). Version:{
+,
+"ProjectsStateUpdates:Version" : 0,
+"CpsProject:1:EventManagementSystem.Debug|AnyCPU" : 65,
+"CpsProject:0:EventManagementSystem.Tests.Debug|AnyCPU" : 39,
+"Workspace:Version" : 1
+}
+01/20/2025 17:53:49 Mitteleuropäische Normalzeit: Information : 46177472 :Query subscription collected 2 items for Select Workspace.Projects (Id Name Files). Version:{
+,
+"ProjectsStateUpdates:Version" : 0,
+"CpsProject:1:EventManagementSystem.Debug|AnyCPU" : 65,
+"CpsProject:0:EventManagementSystem.Tests.Debug|AnyCPU" : 39,
+"Workspace:Version" : 1
+}
+01/20/2025 17:53:49 Mitteleuropäische Normalzeit: Information : 23071722 :Query subscription collected 2 items for Select Workspace.Projects (Id Name Files). Version:{
+,
+"ProjectsStateUpdates:Version" : 0,
+"CpsProject:1:EventManagementSystem.Debug|AnyCPU" : 65,
+"CpsProject:0:EventManagementSystem.Tests.Debug|AnyCPU" : 39,
+"Workspace:Version" : 1
+}
+01/20/2025 17:53:49 Mitteleuropäische Normalzeit: Information : 1603175 :Query subscription collected 2 items for Select Workspace.Projects (Id Name Files). Version:{
+,
+"ProjectsStateUpdates:Version" : 0,
+"CpsProject:1:EventManagementSystem.Debug|AnyCPU" : 65,
+"CpsProject:0:EventManagementSystem.Tests.Debug|AnyCPU" : 39,
+"Workspace:Version" : 1
+}
+01/20/2025 17:53:49 Mitteleuropäische Normalzeit: Information : 56527528 :Query subscription collected 2 items for Select Workspace.Projects (Id Name Files). Version:{
+,
+"ProjectsStateUpdates:Version" : 0,
+"CpsProject:1:EventManagementSystem.Debug|AnyCPU" : 65,
+"CpsProject:0:EventManagementSystem.Tests.Debug|AnyCPU" : 39,
+"Workspace:Version" : 1
+}
+01/20/2025 17:53:49 Mitteleuropäische Normalzeit: Information : 21108821 :Query subscription collected 2 items for Select Workspace.Projects (Id Name Files). Version:{
+,
+"ProjectsStateUpdates:Version" : 0,
+"CpsProject:1:EventManagementSystem.Debug|AnyCPU" : 65,
+"CpsProject:0:EventManagementSystem.Tests.Debug|AnyCPU" : 39,
+"Workspace:Version" : 1
+}
+01/20/2025 17:53:49 Mitteleuropäische Normalzeit: Information : 42570374 :Query subscription collected 0 items for Select Workspace.Projects (Id Name Files). Version:{
+,
+"ProjectsStateUpdates:Version" : 0,
+"CpsProject:1:EventManagementSystem.Debug|AnyCPU" : 65,
+"CpsProject:0:EventManagementSystem.Tests.Debug|AnyCPU" : 39,
+"Workspace:Version" : 1
+}
+01/20/2025 17:53:49 Mitteleuropäische Normalzeit: Information : 58501815 :Query subscription collected 2 items for Select Workspace.Projects (Id Name Files). Version:{
+,
+"ProjectsStateUpdates:Version" : 0,
+"CpsProject:1:EventManagementSystem.Debug|AnyCPU" : 65,
+"CpsProject:0:EventManagementSystem.Tests.Debug|AnyCPU" : 39,
+"Workspace:Version" : 1
+}
+01/20/2025 17:53:49 Mitteleuropäische Normalzeit: Information : 23767280 :Query subscription collected 2 items for Select Workspace.Projects (Id Name Files). Version:{
+,
+"ProjectsStateUpdates:Version" : 0,
+"CpsProject:1:EventManagementSystem.Debug|AnyCPU" : 65,
+"CpsProject:0:EventManagementSystem.Tests.Debug|AnyCPU" : 39,
+"Workspace:Version" : 1
+}
+01/20/2025 17:53:49 Mitteleuropäische Normalzeit: Information : 20932920 :Query subscription collected 2 items for Select Workspace.Projects (Id Name Files). Version:{
+,
+"ProjectsStateUpdates:Version" : 0,
+"CpsProject:1:EventManagementSystem.Debug|AnyCPU" : 65,
+"CpsProject:0:EventManagementSystem.Tests.Debug|AnyCPU" : 39,
+"Workspace:Version" : 1
+}
+01/20/2025 17:53:49 Mitteleuropäische Normalzeit: Information : 49547977 :Query subscription collected 0 items for Select Workspace.Projects (Id Name Files). Version:{
+,
+"ProjectsStateUpdates:Version" : 0,
+"CpsProject:1:EventManagementSystem.Debug|AnyCPU" : 65,
+"CpsProject:0:EventManagementSystem.Tests.Debug|AnyCPU" : 39,
+"Workspace:Version" : 1
+}
+01/20/2025 17:53:49 Mitteleuropäische Normalzeit: Information : 47380964 :Query subscription collected 2 items for Select Workspace.Projects (Id Name Files). Version:{
+,
+"ProjectsStateUpdates:Version" : 0,
+"CpsProject:1:EventManagementSystem.Debug|AnyCPU" : 65,
+"CpsProject:0:EventManagementSystem.Tests.Debug|AnyCPU" : 39,
+"Workspace:Version" : 1
+}
+01/20/2025 17:53:49 Mitteleuropäische Normalzeit: Information : 49129803 :Query subscription collected 2 items for Select Workspace.Projects (Id Name Files). Version:{
+,
+"ProjectsStateUpdates:Version" : 0,
+"CpsProject:1:EventManagementSystem.Debug|AnyCPU" : 65,
+"CpsProject:0:EventManagementSystem.Tests.Debug|AnyCPU" : 39,
+"Workspace:Version" : 1
+}
+01/20/2025 17:53:49 Mitteleuropäische Normalzeit: Information : 23889156 :Query subscription collected 0 items for Select Workspace.Projects (Id Name Files). Version:{
+,
+"ProjectsStateUpdates:Version" : 0,
+"CpsProject:1:EventManagementSystem.Debug|AnyCPU" : 65,
+"CpsProject:0:EventManagementSystem.Tests.Debug|AnyCPU" : 39,
+"Workspace:Version" : 1
+}
+01/20/2025 17:53:49 Mitteleuropäische Normalzeit: Information : 16295813 :Query subscription collected 2 items for Select Workspace.Projects (Id Name Files). Version:{
+,
+"ProjectsStateUpdates:Version" : 0,
+"CpsProject:1:EventManagementSystem.Debug|AnyCPU" : 65,
+"CpsProject:0:EventManagementSystem.Tests.Debug|AnyCPU" : 39,
+"Workspace:Version" : 1
+}
+01/20/2025 17:53:49 Mitteleuropäische Normalzeit: Information : 30216071 :Query subscription collected 2 items for Select Workspace.Projects (Id Name Files). Version:{
+,
+"ProjectsStateUpdates:Version" : 0,
+"CpsProject:1:EventManagementSystem.Debug|AnyCPU" : 65,
+"CpsProject:0:EventManagementSystem.Tests.Debug|AnyCPU" : 39,
+"Workspace:Version" : 1
+}
+01/20/2025 17:53:49 Mitteleuropäische Normalzeit: Information : 19968525 :Query subscription collected 2 items for Select Workspace.Projects (Id Name Files). Version:{
+,
+"ProjectsStateUpdates:Version" : 0,
+"CpsProject:1:EventManagementSystem.Debug|AnyCPU" : 65,
+"CpsProject:0:EventManagementSystem.Tests.Debug|AnyCPU" : 39,
+"Workspace:Version" : 1
+}
+01/20/2025 17:53:49 Mitteleuropäische Normalzeit: Information : 18313142 :Query subscription collected 2 items for Select Workspace.Projects (Id Name Files). Version:{
+,
+"ProjectsStateUpdates:Version" : 0,
+"CpsProject:1:EventManagementSystem.Debug|AnyCPU" : 65,
+"CpsProject:0:EventManagementSystem.Tests.Debug|AnyCPU" : 39,
+"Workspace:Version" : 1
+}
+01/20/2025 17:53:49 Mitteleuropäische Normalzeit: Information : 23337156 :Query subscription collected 0 items for Select Workspace.Projects (Id Name Files). Version:{
+,
+"ProjectsStateUpdates:Version" : 0,
+"CpsProject:1:EventManagementSystem.Debug|AnyCPU" : 65,
+"CpsProject:0:EventManagementSystem.Tests.Debug|AnyCPU" : 39,
+"Workspace:Version" : 1
+}
+01/20/2025 17:53:49 Mitteleuropäische Normalzeit: Information : 12800199 :Query subscription collected 0 items for Select Workspace.Projects (Id Name Files). Version:{
+,
+"ProjectsStateUpdates:Version" : 0,
+"CpsProject:1:EventManagementSystem.Debug|AnyCPU" : 65,
+"CpsProject:0:EventManagementSystem.Tests.Debug|AnyCPU" : 39,
+"Workspace:Version" : 1
+}
+01/20/2025 17:53:49 Mitteleuropäische Normalzeit: Information : 63347539 :Query subscription collected 2 items for Select Workspace.Projects (Id Name Files). Version:{
+,
+"ProjectsStateUpdates:Version" : 0,
+"CpsProject:1:EventManagementSystem.Debug|AnyCPU" : 65,
+"CpsProject:0:EventManagementSystem.Tests.Debug|AnyCPU" : 39,
+"Workspace:Version" : 1
+}
+01/20/2025 17:53:49 Mitteleuropäische Normalzeit: Information : 57771278 :Query subscription collected 2 items for Select Workspace.Projects (Id Name Files). Version:{
+,
+"ProjectsStateUpdates:Version" : 0,
+"CpsProject:1:EventManagementSystem.Debug|AnyCPU" : 65,
+"CpsProject:0:EventManagementSystem.Tests.Debug|AnyCPU" : 39,
+"Workspace:Version" : 1
+}
+01/20/2025 17:53:49 Mitteleuropäische Normalzeit: Information : 15316017 :Query subscription collected 2 items for Select Workspace.Projects (Id Name Files). Version:{
+,
+"ProjectsStateUpdates:Version" : 0,
+"CpsProject:1:EventManagementSystem.Debug|AnyCPU" : 65,
+"CpsProject:0:EventManagementSystem.Tests.Debug|AnyCPU" : 39,
+"Workspace:Version" : 1
+}
+01/20/2025 17:53:49 Mitteleuropäische Normalzeit: Information : 49159068 :Query subscription collected 2 items for Select Workspace.Projects (Id Name Files). Version:{
+,
+"ProjectsStateUpdates:Version" : 0,
+"CpsProject:1:EventManagementSystem.Debug|AnyCPU" : 65,
+"CpsProject:0:EventManagementSystem.Tests.Debug|AnyCPU" : 39,
+"Workspace:Version" : 1
+}
+01/20/2025 17:53:49 Mitteleuropäische Normalzeit: Information : 9261217 :Query subscription collected 2 items for Select Workspace.Projects (Id Name Files). Version:{
+,
+"ProjectsStateUpdates:Version" : 0,
+"CpsProject:1:EventManagementSystem.Debug|AnyCPU" : 65,
+"CpsProject:0:EventManagementSystem.Tests.Debug|AnyCPU" : 39,
+"Workspace:Version" : 1
+}
+01/20/2025 17:53:49 Mitteleuropäische Normalzeit: Information : 46018583 :Query subscription collected 2 items for Select Workspace.Projects (Id Name Files). Version:{
+,
+"ProjectsStateUpdates:Version" : 0,
+"CpsProject:1:EventManagementSystem.Debug|AnyCPU" : 65,
+"CpsProject:0:EventManagementSystem.Tests.Debug|AnyCPU" : 39,
+"Workspace:Version" : 1
+}
+01/20/2025 17:53:49 Mitteleuropäische Normalzeit: Information : 32161586 :Query subscription collected 2 items for Select Workspace.Projects (Id Name Files). Version:{
+,
+"ProjectsStateUpdates:Version" : 0,
+"CpsProject:1:EventManagementSystem.Debug|AnyCPU" : 65,
+"CpsProject:0:EventManagementSystem.Tests.Debug|AnyCPU" : 39,
+"Workspace:Version" : 1
+}
+01/20/2025 17:53:49 Mitteleuropäische Normalzeit: Information : 13223652 :Query subscription collected 2 items for Select Workspace.Projects (Id Name Files). Version:{
+,
+"ProjectsStateUpdates:Version" : 0,
+"CpsProject:1:EventManagementSystem.Debug|AnyCPU" : 65,
+"CpsProject:0:EventManagementSystem.Tests.Debug|AnyCPU" : 39,
+"Workspace:Version" : 1
+}
+01/20/2025 17:53:49 Mitteleuropäische Normalzeit: Information : 18140976 :Query subscription collected 0 items for Select Workspace.Projects (Id Name Files). Version:{
+,
+"ProjectsStateUpdates:Version" : 0,
+"CpsProject:1:EventManagementSystem.Debug|AnyCPU" : 65,
+"CpsProject:0:EventManagementSystem.Tests.Debug|AnyCPU" : 39,
+"Workspace:Version" : 1
+}
+01/20/2025 17:53:49 Mitteleuropäische Normalzeit: Information : 7066375 :Query subscription collected 2 items for Select Workspace.Projects (Id Name Files). Version:{
+,
+"ProjectsStateUpdates:Version" : 0,
+"CpsProject:1:EventManagementSystem.Debug|AnyCPU" : 65,
+"CpsProject:0:EventManagementSystem.Tests.Debug|AnyCPU" : 39,
+"Workspace:Version" : 1
+}
+01/20/2025 17:53:50 Mitteleuropäische Normalzeit: Information : 6503 :DesignTimeBuildManagerService: Build Results Success: FromCache: False ResetId: 64 Results: (CollectPackageReferences Success)(BuiltProjectOutputGroup Success)(CollectNuGetAuditSuppressions Success)(NETStandardCompatError_Mono_TextTemplating_net6_0 Success)(CollectPackageDownloads Success)(CollectFrameworkReferences Success)(CollectCentralPackageVersions Success)(CompileDesignTime Success)(CollectPrunePackageReferences Success)(GenerateProgramFile Success) - for project /Users/MacBook/EventManagementSystem/EventManagementSystem.csproj:Debug|AnyCPU
+01/20/2025 17:53:50 Mitteleuropäische Normalzeit: Information : 33754516 :Query subscription collected 2 items for Select Workspace.Projects (Id Name Path Guid ActiveConfigurations). Version:{
+,
+"ProjectsStateUpdates:Version" : 0,
+"CpsProject:1:EventManagementSystem.Debug|AnyCPU" : 65,
+"CpsProject:0:EventManagementSystem.Tests.Debug|AnyCPU" : 39,
+"Workspace:Version" : 1
+}
+01/20/2025 17:53:51 Mitteleuropäische Normalzeit: Information : 6503 :File '/Users/MacBook/EventManagementSystem/obj/project.assets.json' is updated in project '/Users/MacBook/EventManagementSystem/EventManagementSystem.csproj':Debug|AnyCPU on 01/20/2025 17:53:51.
+01/20/2025 17:53:51 Mitteleuropäische Normalzeit: Information : 6503 :File '/Users/MacBook/EventManagementSystem/obj/project.assets.json' is updated in project '/Users/MacBook/EventManagementSystem/EventManagementSystem.Tests.csproj':Debug|AnyCPU on 01/20/2025 17:53:51.
+01/20/2025 17:53:51 Mitteleuropäische Normalzeit: Information : 6503 :Invalidate project '/Users/MacBook/EventManagementSystem/EventManagementSystem.Tests.csproj' due to file content changed in '/Users/MacBook/EventManagementSystem/obj/project.assets.json'
+01/20/2025 17:53:51 Mitteleuropäische Normalzeit: Information : 6503 :Invalidate project '/Users/MacBook/EventManagementSystem/EventManagementSystem.csproj' due to file content changed in '/Users/MacBook/EventManagementSystem/obj/project.assets.json'
+01/20/2025 17:53:51 Mitteleuropäische Normalzeit: Information : 6503 :NuGet restore task finished.
+01/20/2025 17:53:52 Mitteleuropäische Normalzeit: Information : 6503 :DesignTimeBuildManagerService: Resetting design time build service for project /Users/MacBook/EventManagementSystem/EventManagementSystem.Tests.csproj:Debug|AnyCPU. Evaluation version: (current=315, previous=288).
+01/20/2025 17:53:52 Mitteleuropäische Normalzeit: Information : 6503 :Design time build targets update received for project: '/Users/MacBook/EventManagementSystem/EventManagementSystem.Tests.csproj'
+01/20/2025 17:53:52 Mitteleuropäische Normalzeit: Information : 6503 :DesignTimeBuildManagerService: Resetting design time build service for project /Users/MacBook/EventManagementSystem/EventManagementSystem.csproj:Debug|AnyCPU. Evaluation version: (current=318, previous=312).
+01/20/2025 17:53:52 Mitteleuropäische Normalzeit: Information : 6503 :Design time build targets update received for project: '/Users/MacBook/EventManagementSystem/EventManagementSystem.csproj'
+01/20/2025 17:53:52 Mitteleuropäische Normalzeit: Information : 7066375 :Query subscription collected 2 items for Select Workspace.Projects (Id Name Files). Version:{
+,
+"ProjectsStateUpdates:Version" : 0,
+"CpsProject:1:EventManagementSystem.Debug|AnyCPU" : 66,
+"CpsProject:0:EventManagementSystem.Tests.Debug|AnyCPU" : 40,
+"Workspace:Version" : 1
+}
+01/20/2025 17:53:52 Mitteleuropäische Normalzeit: Information : 49159068 :Query subscription collected 2 items for Select Workspace.Projects (Id Name Files). Version:{
+,
+"ProjectsStateUpdates:Version" : 0,
+"CpsProject:1:EventManagementSystem.Debug|AnyCPU" : 66,
+"CpsProject:0:EventManagementSystem.Tests.Debug|AnyCPU" : 40,
+"Workspace:Version" : 1
+}
+01/20/2025 17:53:52 Mitteleuropäische Normalzeit: Information : 32161586 :Query subscription collected 2 items for Select Workspace.Projects (Id Name Files). Version:{
+,
+"ProjectsStateUpdates:Version" : 0,
+"CpsProject:1:EventManagementSystem.Debug|AnyCPU" : 66,
+"CpsProject:0:EventManagementSystem.Tests.Debug|AnyCPU" : 40,
+"Workspace:Version" : 1
+}
+01/20/2025 17:53:52 Mitteleuropäische Normalzeit: Information : 12800199 :Query subscription collected 0 items for Select Workspace.Projects (Id Name Files). Version:{
+,
+"ProjectsStateUpdates:Version" : 0,
+"CpsProject:1:EventManagementSystem.Debug|AnyCPU" : 66,
+"CpsProject:0:EventManagementSystem.Tests.Debug|AnyCPU" : 40,
+"Workspace:Version" : 1
+}
+01/20/2025 17:53:52 Mitteleuropäische Normalzeit: Information : 23337156 :Query subscription collected 0 items for Select Workspace.Projects (Id Name Files). Version:{
+,
+"ProjectsStateUpdates:Version" : 0,
+"CpsProject:1:EventManagementSystem.Debug|AnyCPU" : 66,
+"CpsProject:0:EventManagementSystem.Tests.Debug|AnyCPU" : 40,
+"Workspace:Version" : 1
+}
+01/20/2025 17:53:52 Mitteleuropäische Normalzeit: Information : 18313142 :Query subscription collected 2 items for Select Workspace.Projects (Id Name Files). Version:{
+,
+"ProjectsStateUpdates:Version" : 0,
+"CpsProject:1:EventManagementSystem.Debug|AnyCPU" : 66,
+"CpsProject:0:EventManagementSystem.Tests.Debug|AnyCPU" : 40,
+"Workspace:Version" : 1
+}
+01/20/2025 17:53:52 Mitteleuropäische Normalzeit: Information : 16712520 :Query subscription collected 2 items for Select Workspace.Projects (Id Name Files). Version:{
+,
+"ProjectsStateUpdates:Version" : 0,
+"CpsProject:1:EventManagementSystem.Debug|AnyCPU" : 66,
+"CpsProject:0:EventManagementSystem.Tests.Debug|AnyCPU" : 40,
+"Workspace:Version" : 1
+}
+01/20/2025 17:53:52 Mitteleuropäische Normalzeit: Information : 54679371 :Query subscription collected 2 items for Select Workspace.Projects (Id Name Files). Version:{
+,
+"ProjectsStateUpdates:Version" : 0,
+"CpsProject:1:EventManagementSystem.Debug|AnyCPU" : 66,
+"CpsProject:0:EventManagementSystem.Tests.Debug|AnyCPU" : 40,
+"Workspace:Version" : 1
+}
+01/20/2025 17:53:52 Mitteleuropäische Normalzeit: Information : 34274199 :Query subscription collected 0 items for Select Workspace.Projects (Id Name Files). Version:{
+,
+"ProjectsStateUpdates:Version" : 0,
+"CpsProject:1:EventManagementSystem.Debug|AnyCPU" : 66,
+"CpsProject:0:EventManagementSystem.Tests.Debug|AnyCPU" : 40,
+"Workspace:Version" : 1
+}
+01/20/2025 17:53:52 Mitteleuropäische Normalzeit: Information : 18140976 :Query subscription collected 0 items for Select Workspace.Projects (Id Name Files). Version:{
+,
+"ProjectsStateUpdates:Version" : 0,
+"CpsProject:1:EventManagementSystem.Debug|AnyCPU" : 66,
+"CpsProject:0:EventManagementSystem.Tests.Debug|AnyCPU" : 40,
+"Workspace:Version" : 1
+}
+01/20/2025 17:53:52 Mitteleuropäische Normalzeit: Information : 9261217 :Query subscription collected 2 items for Select Workspace.Projects (Id Name Files). Version:{
+,
+"ProjectsStateUpdates:Version" : 0,
+"CpsProject:1:EventManagementSystem.Debug|AnyCPU" : 66,
+"CpsProject:0:EventManagementSystem.Tests.Debug|AnyCPU" : 40,
+"Workspace:Version" : 1
+}
+01/20/2025 17:53:52 Mitteleuropäische Normalzeit: Information : 13420831 :Query subscription collected 2 items for Select Workspace.Projects (Id Name Files). Version:{
+,
+"ProjectsStateUpdates:Version" : 0,
+"CpsProject:1:EventManagementSystem.Debug|AnyCPU" : 66,
+"CpsProject:0:EventManagementSystem.Tests.Debug|AnyCPU" : 40,
+"Workspace:Version" : 1
+}
+01/20/2025 17:53:52 Mitteleuropäische Normalzeit: Information : 13223652 :Query subscription collected 2 items for Select Workspace.Projects (Id Name Files). Version:{
+,
+"ProjectsStateUpdates:Version" : 0,
+"CpsProject:1:EventManagementSystem.Debug|AnyCPU" : 66,
+"CpsProject:0:EventManagementSystem.Tests.Debug|AnyCPU" : 40,
+"Workspace:Version" : 1
+}
+01/20/2025 17:53:52 Mitteleuropäische Normalzeit: Information : 63347539 :Query subscription collected 2 items for Select Workspace.Projects (Id Name Files). Version:{
+,
+"ProjectsStateUpdates:Version" : 0,
+"CpsProject:1:EventManagementSystem.Debug|AnyCPU" : 66,
+"CpsProject:0:EventManagementSystem.Tests.Debug|AnyCPU" : 40,
+"Workspace:Version" : 1
+}
+01/20/2025 17:53:52 Mitteleuropäische Normalzeit: Information : 43554459 :Query subscription collected 0 items for Select Workspace.Projects (Id Name Files). Version:{
+,
+"ProjectsStateUpdates:Version" : 0,
+"CpsProject:1:EventManagementSystem.Debug|AnyCPU" : 66,
+"CpsProject:0:EventManagementSystem.Tests.Debug|AnyCPU" : 40,
+"Workspace:Version" : 1
+}
+01/20/2025 17:53:52 Mitteleuropäische Normalzeit: Information : 62641894 :Query subscription collected 2 items for Select Workspace.Projects (Id Name Files). Version:{
+,
+"ProjectsStateUpdates:Version" : 0,
+"CpsProject:1:EventManagementSystem.Debug|AnyCPU" : 66,
+"CpsProject:0:EventManagementSystem.Tests.Debug|AnyCPU" : 40,
+"Workspace:Version" : 1
+}
+01/20/2025 17:53:52 Mitteleuropäische Normalzeit: Information : 5708136 :Query subscription collected 0 items for Select Workspace.Projects (Id Name Files). Version:{
+,
+"ProjectsStateUpdates:Version" : 0,
+"CpsProject:1:EventManagementSystem.Debug|AnyCPU" : 66,
+"CpsProject:0:EventManagementSystem.Tests.Debug|AnyCPU" : 40,
+"Workspace:Version" : 1
+}
+01/20/2025 17:53:52 Mitteleuropäische Normalzeit: Information : 52249638 :Query subscription collected 2 items for Select Workspace.Projects (Id Name Files). Version:{
+,
+"ProjectsStateUpdates:Version" : 0,
+"CpsProject:1:EventManagementSystem.Debug|AnyCPU" : 66,
+"CpsProject:0:EventManagementSystem.Tests.Debug|AnyCPU" : 40,
+"Workspace:Version" : 1
+}
+01/20/2025 17:53:52 Mitteleuropäische Normalzeit: Information : 64830201 :Query subscription collected 2 items for Select Workspace.Projects (Id Name Files). Version:{
+,
+"ProjectsStateUpdates:Version" : 0,
+"CpsProject:1:EventManagementSystem.Debug|AnyCPU" : 66,
+"CpsProject:0:EventManagementSystem.Tests.Debug|AnyCPU" : 40,
+"Workspace:Version" : 1
+}
+01/20/2025 17:53:52 Mitteleuropäische Normalzeit: Information : 46018583 :Query subscription collected 2 items for Select Workspace.Projects (Id Name Files). Version:{
+,
+"ProjectsStateUpdates:Version" : 0,
+"CpsProject:1:EventManagementSystem.Debug|AnyCPU" : 66,
+"CpsProject:0:EventManagementSystem.Tests.Debug|AnyCPU" : 40,
+"Workspace:Version" : 1
+}
+01/20/2025 17:53:52 Mitteleuropäische Normalzeit: Information : 58800591 :Query subscription collected 0 items for Select Workspace.Projects (Id Name Files). Version:{
+,
+"ProjectsStateUpdates:Version" : 0,
+"CpsProject:1:EventManagementSystem.Debug|AnyCPU" : 66,
+"CpsProject:0:EventManagementSystem.Tests.Debug|AnyCPU" : 40,
+"Workspace:Version" : 1
+}
+01/20/2025 17:53:52 Mitteleuropäische Normalzeit: Information : 11134008 :Query subscription collected 2 items for Select Workspace.Projects (Id Name Files). Version:{
+,
+"ProjectsStateUpdates:Version" : 0,
+"CpsProject:1:EventManagementSystem.Debug|AnyCPU" : 66,
+"CpsProject:0:EventManagementSystem.Tests.Debug|AnyCPU" : 40,
+"Workspace:Version" : 1
+}
+01/20/2025 17:53:52 Mitteleuropäische Normalzeit: Information : 57771278 :Query subscription collected 2 items for Select Workspace.Projects (Id Name Files). Version:{
+,
+"ProjectsStateUpdates:Version" : 0,
+"CpsProject:1:EventManagementSystem.Debug|AnyCPU" : 66,
+"CpsProject:0:EventManagementSystem.Tests.Debug|AnyCPU" : 40,
+"Workspace:Version" : 1
+}
+01/20/2025 17:53:52 Mitteleuropäische Normalzeit: Information : 15316017 :Query subscription collected 2 items for Select Workspace.Projects (Id Name Files). Version:{
+,
+"ProjectsStateUpdates:Version" : 0,
+"CpsProject:1:EventManagementSystem.Debug|AnyCPU" : 66,
+"CpsProject:0:EventManagementSystem.Tests.Debug|AnyCPU" : 40,
+"Workspace:Version" : 1
+}
+01/20/2025 17:53:52 Mitteleuropäische Normalzeit: Information : 50029054 :Query subscription collected 0 items for Select Workspace.Projects (Id Name Files). Version:{
+,
+"ProjectsStateUpdates:Version" : 0,
+"CpsProject:1:EventManagementSystem.Debug|AnyCPU" : 66,
+"CpsProject:0:EventManagementSystem.Tests.Debug|AnyCPU" : 40,
+"Workspace:Version" : 1
+}
+01/20/2025 17:53:52 Mitteleuropäische Normalzeit: Information : 395446 :Query subscription collected 2 items for Select Workspace.Projects (Id Name Files). Version:{
+,
+"ProjectsStateUpdates:Version" : 0,
+"CpsProject:1:EventManagementSystem.Debug|AnyCPU" : 66,
+"CpsProject:0:EventManagementSystem.Tests.Debug|AnyCPU" : 40,
+"Workspace:Version" : 1
+}
+01/20/2025 17:53:52 Mitteleuropäische Normalzeit: Information : 59953623 :Query subscription collected 0 items for Select Workspace.Projects (Id Name Files). Version:{
+,
+"ProjectsStateUpdates:Version" : 0,
+"CpsProject:1:EventManagementSystem.Debug|AnyCPU" : 66,
+"CpsProject:0:EventManagementSystem.Tests.Debug|AnyCPU" : 40,
+"Workspace:Version" : 1
+}
+01/20/2025 17:53:52 Mitteleuropäische Normalzeit: Information : 19968525 :Query subscription collected 2 items for Select Workspace.Projects (Id Name Files). Version:{
+,
+"ProjectsStateUpdates:Version" : 0,
+"CpsProject:1:EventManagementSystem.Debug|AnyCPU" : 66,
+"CpsProject:0:EventManagementSystem.Tests.Debug|AnyCPU" : 40,
+"Workspace:Version" : 1
+}
+01/20/2025 17:53:52 Mitteleuropäische Normalzeit: Information : 56417709 :Query subscription collected 0 items for Select Workspace.Projects (Id Name Files). Version:{
+,
+"ProjectsStateUpdates:Version" : 0,
+"CpsProject:1:EventManagementSystem.Debug|AnyCPU" : 66,
+"CpsProject:0:EventManagementSystem.Tests.Debug|AnyCPU" : 40,
+"Workspace:Version" : 1
+}
+01/20/2025 17:53:52 Mitteleuropäische Normalzeit: Information : 38829871 :Query subscription collected 0 items for Select Workspace.Projects (Id Name Files). Version:{
+,
+"ProjectsStateUpdates:Version" : 0,
+"CpsProject:1:EventManagementSystem.Debug|AnyCPU" : 66,
+"CpsProject:0:EventManagementSystem.Tests.Debug|AnyCPU" : 40,
+"Workspace:Version" : 1
+}
+01/20/2025 17:53:52 Mitteleuropäische Normalzeit: Information : 49547977 :Query subscription collected 0 items for Select Workspace.Projects (Id Name Files). Version:{
+,
+"ProjectsStateUpdates:Version" : 0,
+"CpsProject:1:EventManagementSystem.Debug|AnyCPU" : 66,
+"CpsProject:0:EventManagementSystem.Tests.Debug|AnyCPU" : 40,
+"Workspace:Version" : 1
+}
+01/20/2025 17:53:52 Mitteleuropäische Normalzeit: Information : 38842255 :Query subscription collected 2 items for Select Workspace.Projects (Id Name Files). Version:{
+,
+"ProjectsStateUpdates:Version" : 0,
+"CpsProject:1:EventManagementSystem.Debug|AnyCPU" : 66,
+"CpsProject:0:EventManagementSystem.Tests.Debug|AnyCPU" : 40,
+"Workspace:Version" : 1
+}
+01/20/2025 17:53:52 Mitteleuropäische Normalzeit: Information : 26852256 :Query subscription collected 2 items for Select Workspace.Projects (Id Name Files). Version:{
+,
+"ProjectsStateUpdates:Version" : 0,
+"CpsProject:1:EventManagementSystem.Debug|AnyCPU" : 66,
+"CpsProject:0:EventManagementSystem.Tests.Debug|AnyCPU" : 40,
+"Workspace:Version" : 1
+}
+01/20/2025 17:53:52 Mitteleuropäische Normalzeit: Information : 23767280 :Query subscription collected 2 items for Select Workspace.Projects (Id Name Files). Version:{
+,
+"ProjectsStateUpdates:Version" : 0,
+"CpsProject:1:EventManagementSystem.Debug|AnyCPU" : 66,
+"CpsProject:0:EventManagementSystem.Tests.Debug|AnyCPU" : 40,
+"Workspace:Version" : 1
+}
+01/20/2025 17:53:52 Mitteleuropäische Normalzeit: Information : 30216071 :Query subscription collected 2 items for Select Workspace.Projects (Id Name Files). Version:{
+,
+"ProjectsStateUpdates:Version" : 0,
+"CpsProject:1:EventManagementSystem.Debug|AnyCPU" : 66,
+"CpsProject:0:EventManagementSystem.Tests.Debug|AnyCPU" : 40,
+"Workspace:Version" : 1
+}
+01/20/2025 17:53:52 Mitteleuropäische Normalzeit: Information : 20932920 :Query subscription collected 2 items for Select Workspace.Projects (Id Name Files). Version:{
+,
+"ProjectsStateUpdates:Version" : 0,
+"CpsProject:1:EventManagementSystem.Debug|AnyCPU" : 66,
+"CpsProject:0:EventManagementSystem.Tests.Debug|AnyCPU" : 40,
+"Workspace:Version" : 1
+}
+01/20/2025 17:53:52 Mitteleuropäische Normalzeit: Information : 37915565 :Query subscription collected 0 items for Select Workspace.Projects (Id Name Files). Version:{
+,
+"ProjectsStateUpdates:Version" : 0,
+"CpsProject:1:EventManagementSystem.Debug|AnyCPU" : 66,
+"CpsProject:0:EventManagementSystem.Tests.Debug|AnyCPU" : 40,
+"Workspace:Version" : 1
+}
+01/20/2025 17:53:52 Mitteleuropäische Normalzeit: Information : 33999199 :Query subscription collected 0 items for Select Workspace.Projects (Id Name Files). Version:{
+,
+"ProjectsStateUpdates:Version" : 0,
+"CpsProject:1:EventManagementSystem.Debug|AnyCPU" : 66,
+"CpsProject:0:EventManagementSystem.Tests.Debug|AnyCPU" : 40,
+"Workspace:Version" : 1
+}
+01/20/2025 17:53:52 Mitteleuropäische Normalzeit: Information : 56527528 :Query subscription collected 2 items for Select Workspace.Projects (Id Name Files). Version:{
+,
+"ProjectsStateUpdates:Version" : 0,
+"CpsProject:1:EventManagementSystem.Debug|AnyCPU" : 66,
+"CpsProject:0:EventManagementSystem.Tests.Debug|AnyCPU" : 40,
+"Workspace:Version" : 1
+}
+01/20/2025 17:53:52 Mitteleuropäische Normalzeit: Information : 12505814 :Query subscription collected 2 items for Select Workspace.Projects (Id Name Files). Version:{
+,
+"ProjectsStateUpdates:Version" : 0,
+"CpsProject:1:EventManagementSystem.Debug|AnyCPU" : 66,
+"CpsProject:0:EventManagementSystem.Tests.Debug|AnyCPU" : 40,
+"Workspace:Version" : 1
+}
+01/20/2025 17:53:52 Mitteleuropäische Normalzeit: Information : 16295813 :Query subscription collected 2 items for Select Workspace.Projects (Id Name Files). Version:{
+,
+"ProjectsStateUpdates:Version" : 0,
+"CpsProject:1:EventManagementSystem.Debug|AnyCPU" : 66,
+"CpsProject:0:EventManagementSystem.Tests.Debug|AnyCPU" : 40,
+"Workspace:Version" : 1
+}
+01/20/2025 17:53:52 Mitteleuropäische Normalzeit: Information : 26283594 :Query subscription collected 0 items for Select Workspace.Projects (Id Name Files). Version:{
+,
+"ProjectsStateUpdates:Version" : 0,
+"CpsProject:1:EventManagementSystem.Debug|AnyCPU" : 66,
+"CpsProject:0:EventManagementSystem.Tests.Debug|AnyCPU" : 40,
+"Workspace:Version" : 1
+}
+01/20/2025 17:53:52 Mitteleuropäische Normalzeit: Information : 58501815 :Query subscription collected 2 items for Select Workspace.Projects (Id Name Files). Version:{
+,
+"ProjectsStateUpdates:Version" : 0,
+"CpsProject:1:EventManagementSystem.Debug|AnyCPU" : 66,
+"CpsProject:0:EventManagementSystem.Tests.Debug|AnyCPU" : 40,
+"Workspace:Version" : 1
+}
+01/20/2025 17:53:52 Mitteleuropäische Normalzeit: Information : 42117081 :Query subscription collected 2 items for Select Workspace.Projects (Id Name Files). Version:{
+,
+"ProjectsStateUpdates:Version" : 0,
+"CpsProject:1:EventManagementSystem.Debug|AnyCPU" : 66,
+"CpsProject:0:EventManagementSystem.Tests.Debug|AnyCPU" : 40,
+"Workspace:Version" : 1
+}
+01/20/2025 17:53:52 Mitteleuropäische Normalzeit: Information : 42570374 :Query subscription collected 0 items for Select Workspace.Projects (Id Name Files). Version:{
+,
+"ProjectsStateUpdates:Version" : 0,
+"CpsProject:1:EventManagementSystem.Debug|AnyCPU" : 66,
+"CpsProject:0:EventManagementSystem.Tests.Debug|AnyCPU" : 40,
+"Workspace:Version" : 1
+}
+01/20/2025 17:53:52 Mitteleuropäische Normalzeit: Information : 709883 :Query subscription collected 2 items for Select Workspace.Projects (Id Name Files). Version:{
+,
+"ProjectsStateUpdates:Version" : 0,
+"CpsProject:1:EventManagementSystem.Debug|AnyCPU" : 66,
+"CpsProject:0:EventManagementSystem.Tests.Debug|AnyCPU" : 40,
+"Workspace:Version" : 1
+}
+01/20/2025 17:53:52 Mitteleuropäische Normalzeit: Information : 23889156 :Query subscription collected 0 items for Select Workspace.Projects (Id Name Files). Version:{
+,
+"ProjectsStateUpdates:Version" : 0,
+"CpsProject:1:EventManagementSystem.Debug|AnyCPU" : 66,
+"CpsProject:0:EventManagementSystem.Tests.Debug|AnyCPU" : 40,
+"Workspace:Version" : 1
+}
+01/20/2025 17:53:52 Mitteleuropäische Normalzeit: Information : 45968062 :Query subscription collected 2 items for Select Workspace.Projects (Id Name Files). Version:{
+,
+"ProjectsStateUpdates:Version" : 0,
+"CpsProject:1:EventManagementSystem.Debug|AnyCPU" : 66,
+"CpsProject:0:EventManagementSystem.Tests.Debug|AnyCPU" : 40,
+"Workspace:Version" : 1
+}
+01/20/2025 17:53:52 Mitteleuropäische Normalzeit: Information : 21108821 :Query subscription collected 2 items for Select Workspace.Projects (Id Name Files). Version:{
+,
+"ProjectsStateUpdates:Version" : 0,
+"CpsProject:1:EventManagementSystem.Debug|AnyCPU" : 66,
+"CpsProject:0:EventManagementSystem.Tests.Debug|AnyCPU" : 40,
+"Workspace:Version" : 1
+}
+01/20/2025 17:53:52 Mitteleuropäische Normalzeit: Information : 10350501 :Query subscription collected 2 items for Select Workspace.Projects (Id Name Files). Version:{
+,
+"ProjectsStateUpdates:Version" : 0,
+"CpsProject:1:EventManagementSystem.Debug|AnyCPU" : 66,
+"CpsProject:0:EventManagementSystem.Tests.Debug|AnyCPU" : 40,
+"Workspace:Version" : 1
+}
+01/20/2025 17:53:52 Mitteleuropäische Normalzeit: Information : 46177472 :Query subscription collected 2 items for Select Workspace.Projects (Id Name Files). Version:{
+,
+"ProjectsStateUpdates:Version" : 0,
+"CpsProject:1:EventManagementSystem.Debug|AnyCPU" : 66,
+"CpsProject:0:EventManagementSystem.Tests.Debug|AnyCPU" : 40,
+"Workspace:Version" : 1
+}
+01/20/2025 17:53:52 Mitteleuropäische Normalzeit: Information : 1603175 :Query subscription collected 2 items for Select Workspace.Projects (Id Name Files). Version:{
+,
+"ProjectsStateUpdates:Version" : 0,
+"CpsProject:1:EventManagementSystem.Debug|AnyCPU" : 66,
+"CpsProject:0:EventManagementSystem.Tests.Debug|AnyCPU" : 40,
+"Workspace:Version" : 1
+}
+01/20/2025 17:53:52 Mitteleuropäische Normalzeit: Information : 48028580 :Query subscription collected 0 items for Select Workspace.Projects (Id Name Files). Version:{
+,
+"ProjectsStateUpdates:Version" : 0,
+"CpsProject:1:EventManagementSystem.Debug|AnyCPU" : 66,
+"CpsProject:0:EventManagementSystem.Tests.Debug|AnyCPU" : 40,
+"Workspace:Version" : 1
+}
+01/20/2025 17:53:52 Mitteleuropäische Normalzeit: Information : 15677976 :Query subscription collected 2 items for Select Workspace.Projects (Id Name Files). Version:{
+,
+"ProjectsStateUpdates:Version" : 0,
+"CpsProject:1:EventManagementSystem.Debug|AnyCPU" : 66,
+"CpsProject:0:EventManagementSystem.Tests.Debug|AnyCPU" : 40,
+"Workspace:Version" : 1
+}
+01/20/2025 17:53:52 Mitteleuropäische Normalzeit: Information : 64771809 :Query subscription collected 2 items for Select Workspace.Projects (Id Name Files). Version:{
+,
+"ProjectsStateUpdates:Version" : 0,
+"CpsProject:1:EventManagementSystem.Debug|AnyCPU" : 66,
+"CpsProject:0:EventManagementSystem.Tests.Debug|AnyCPU" : 40,
+"Workspace:Version" : 1
+}
+01/20/2025 17:53:52 Mitteleuropäische Normalzeit: Information : 26759878 :Query subscription collected 2 items for Select Workspace.Projects (Id Name Files). Version:{
+,
+"ProjectsStateUpdates:Version" : 0,
+"CpsProject:1:EventManagementSystem.Debug|AnyCPU" : 66,
+"CpsProject:0:EventManagementSystem.Tests.Debug|AnyCPU" : 40,
+"Workspace:Version" : 1
+}
+01/20/2025 17:53:52 Mitteleuropäische Normalzeit: Information : 14514028 :Query subscription collected 2 items for Select Workspace.Projects (Id Name Files). Version:{
+,
+"ProjectsStateUpdates:Version" : 0,
+"CpsProject:1:EventManagementSystem.Debug|AnyCPU" : 66,
+"CpsProject:0:EventManagementSystem.Tests.Debug|AnyCPU" : 40,
+"Workspace:Version" : 1
+}
+01/20/2025 17:53:52 Mitteleuropäische Normalzeit: Information : 26755242 :Query subscription collected 2 items for Select Workspace.Projects (Id Name Files). Version:{
+,
+"ProjectsStateUpdates:Version" : 0,
+"CpsProject:1:EventManagementSystem.Debug|AnyCPU" : 66,
+"CpsProject:0:EventManagementSystem.Tests.Debug|AnyCPU" : 40,
+"Workspace:Version" : 1
+}
+01/20/2025 17:53:52 Mitteleuropäische Normalzeit: Information : 53672195 :Query subscription collected 2 items for Select Workspace.Projects (Id Name Files). Version:{
+,
+"ProjectsStateUpdates:Version" : 0,
+"CpsProject:1:EventManagementSystem.Debug|AnyCPU" : 66,
+"CpsProject:0:EventManagementSystem.Tests.Debug|AnyCPU" : 40,
+"Workspace:Version" : 1
+}
+01/20/2025 17:53:52 Mitteleuropäische Normalzeit: Information : 32101957 :Query subscription collected 0 items for Select Workspace.Projects (Id Name Files). Version:{
+,
+"ProjectsStateUpdates:Version" : 0,
+"CpsProject:1:EventManagementSystem.Debug|AnyCPU" : 66,
+"CpsProject:0:EventManagementSystem.Tests.Debug|AnyCPU" : 40,
+"Workspace:Version" : 1
+}
+01/20/2025 17:53:52 Mitteleuropäische Normalzeit: Information : 44047487 :Query subscription collected 2 items for Select Workspace.Projects (Id Name Files). Version:{
+,
+"ProjectsStateUpdates:Version" : 0,
+"CpsProject:1:EventManagementSystem.Debug|AnyCPU" : 66,
+"CpsProject:0:EventManagementSystem.Tests.Debug|AnyCPU" : 40,
+"Workspace:Version" : 1
+}
+01/20/2025 17:53:52 Mitteleuropäische Normalzeit: Information : 47380964 :Query subscription collected 2 items for Select Workspace.Projects (Id Name Files). Version:{
+,
+"ProjectsStateUpdates:Version" : 0,
+"CpsProject:1:EventManagementSystem.Debug|AnyCPU" : 66,
+"CpsProject:0:EventManagementSystem.Tests.Debug|AnyCPU" : 40,
+"Workspace:Version" : 1
+}
+01/20/2025 17:53:52 Mitteleuropäische Normalzeit: Information : 825472 :Query subscription collected 2 items for Select Workspace.Projects (Id Name Files). Version:{
+,
+"ProjectsStateUpdates:Version" : 0,
+"CpsProject:1:EventManagementSystem.Debug|AnyCPU" : 66,
+"CpsProject:0:EventManagementSystem.Tests.Debug|AnyCPU" : 40,
+"Workspace:Version" : 1
+}
+01/20/2025 17:53:52 Mitteleuropäische Normalzeit: Information : 23071722 :Query subscription collected 2 items for Select Workspace.Projects (Id Name Files). Version:{
+,
+"ProjectsStateUpdates:Version" : 0,
+"CpsProject:1:EventManagementSystem.Debug|AnyCPU" : 66,
+"CpsProject:0:EventManagementSystem.Tests.Debug|AnyCPU" : 40,
+"Workspace:Version" : 1
+}
+01/20/2025 17:53:52 Mitteleuropäische Normalzeit: Information : 59498988 :Query subscription collected 2 items for Select Workspace.Projects (Id Name Files). Version:{
+,
+"ProjectsStateUpdates:Version" : 0,
+"CpsProject:1:EventManagementSystem.Debug|AnyCPU" : 66,
+"CpsProject:0:EventManagementSystem.Tests.Debug|AnyCPU" : 40,
+"Workspace:Version" : 1
+}
+01/20/2025 17:53:52 Mitteleuropäische Normalzeit: Information : 11826078 :Query subscription collected 2 items for Select Workspace.Projects (Id Name Files). Version:{
+,
+"ProjectsStateUpdates:Version" : 0,
+"CpsProject:1:EventManagementSystem.Debug|AnyCPU" : 66,
+"CpsProject:0:EventManagementSystem.Tests.Debug|AnyCPU" : 40,
+"Workspace:Version" : 1
+}
+01/20/2025 17:53:52 Mitteleuropäische Normalzeit: Information : 54473738 :Query subscription collected 2 items for Select Workspace.Projects (Id Name Files). Version:{
+,
+"ProjectsStateUpdates:Version" : 0,
+"CpsProject:1:EventManagementSystem.Debug|AnyCPU" : 66,
+"CpsProject:0:EventManagementSystem.Tests.Debug|AnyCPU" : 40,
+"Workspace:Version" : 1
+}
+01/20/2025 17:53:52 Mitteleuropäische Normalzeit: Information : 33890612 :Query subscription collected 2 items for Select Workspace.Projects (Id Name Files). Version:{
+,
+"ProjectsStateUpdates:Version" : 0,
+"CpsProject:1:EventManagementSystem.Debug|AnyCPU" : 66,
+"CpsProject:0:EventManagementSystem.Tests.Debug|AnyCPU" : 40,
+"Workspace:Version" : 1
+}
+01/20/2025 17:53:52 Mitteleuropäische Normalzeit: Information : 11645056 :Query subscription collected 2 items for Select Workspace.Projects (Id Name Files). Version:{
+,
+"ProjectsStateUpdates:Version" : 0,
+"CpsProject:1:EventManagementSystem.Debug|AnyCPU" : 66,
+"CpsProject:0:EventManagementSystem.Tests.Debug|AnyCPU" : 40,
+"Workspace:Version" : 1
+}
+01/20/2025 17:53:52 Mitteleuropäische Normalzeit: Information : 31792028 :Query subscription collected 2 items for Select Workspace.Projects (Id Name Files). Version:{
+,
+"ProjectsStateUpdates:Version" : 0,
+"CpsProject:1:EventManagementSystem.Debug|AnyCPU" : 66,
+"CpsProject:0:EventManagementSystem.Tests.Debug|AnyCPU" : 40,
+"Workspace:Version" : 1
+}
+01/20/2025 17:53:52 Mitteleuropäische Normalzeit: Information : 10794232 :Query subscription collected 0 items for Select Workspace.Projects (Id Name Files). Version:{
+,
+"ProjectsStateUpdates:Version" : 0,
+"CpsProject:1:EventManagementSystem.Debug|AnyCPU" : 66,
+"CpsProject:0:EventManagementSystem.Tests.Debug|AnyCPU" : 40,
+"Workspace:Version" : 1
+}
+01/20/2025 17:53:52 Mitteleuropäische Normalzeit: Information : 60826852 :Query subscription collected 2 items for Select Workspace.Projects (Id Name Files). Version:{
+,
+"ProjectsStateUpdates:Version" : 0,
+"CpsProject:1:EventManagementSystem.Debug|AnyCPU" : 66,
+"CpsProject:0:EventManagementSystem.Tests.Debug|AnyCPU" : 40,
+"Workspace:Version" : 1
+}
+01/20/2025 17:53:52 Mitteleuropäische Normalzeit: Information : 56346594 :Query subscription collected 0 items for Select Workspace.Projects (Id Name Files). Version:{
+,
+"ProjectsStateUpdates:Version" : 0,
+"CpsProject:1:EventManagementSystem.Debug|AnyCPU" : 66,
+"CpsProject:0:EventManagementSystem.Tests.Debug|AnyCPU" : 40,
+"Workspace:Version" : 1
+}
+01/20/2025 17:53:52 Mitteleuropäische Normalzeit: Information : 43260535 :Query subscription collected 2 items for Select Workspace.Projects (Id Name Files). Version:{
+,
+"ProjectsStateUpdates:Version" : 0,
+"CpsProject:1:EventManagementSystem.Debug|AnyCPU" : 66,
+"CpsProject:0:EventManagementSystem.Tests.Debug|AnyCPU" : 40,
+"Workspace:Version" : 1
+}
+01/20/2025 17:53:52 Mitteleuropäische Normalzeit: Information : 44840035 :Query subscription collected 2 items for Select Workspace.Projects (Id Name Files). Version:{
+,
+"ProjectsStateUpdates:Version" : 0,
+"CpsProject:1:EventManagementSystem.Debug|AnyCPU" : 66,
+"CpsProject:0:EventManagementSystem.Tests.Debug|AnyCPU" : 40,
+"Workspace:Version" : 1
+}
+01/20/2025 17:53:52 Mitteleuropäische Normalzeit: Information : 49129803 :Query subscription collected 2 items for Select Workspace.Projects (Id Name Files). Version:{
+,
+"ProjectsStateUpdates:Version" : 0,
+"CpsProject:1:EventManagementSystem.Debug|AnyCPU" : 66,
+"CpsProject:0:EventManagementSystem.Tests.Debug|AnyCPU" : 40,
+"Workspace:Version" : 1
+}
+01/20/2025 17:53:52 Mitteleuropäische Normalzeit: Information : 31464535 :Query subscription collected 2 items for Select Workspace.Projects (Id Name Files). Version:{
+,
+"ProjectsStateUpdates:Version" : 0,
+"CpsProject:1:EventManagementSystem.Debug|AnyCPU" : 66,
+"CpsProject:0:EventManagementSystem.Tests.Debug|AnyCPU" : 40,
+"Workspace:Version" : 1
+}
+01/20/2025 17:53:52 Mitteleuropäische Normalzeit: Information : 918997 :Query subscription collected 2 items for Select Workspace.Projects (Id Name Files). Version:{
+,
+"ProjectsStateUpdates:Version" : 0,
+"CpsProject:1:EventManagementSystem.Debug|AnyCPU" : 66,
+"CpsProject:0:EventManagementSystem.Tests.Debug|AnyCPU" : 40,
+"Workspace:Version" : 1
+}
+01/20/2025 17:53:52 Mitteleuropäische Normalzeit: Information : 9585839 :Query subscription collected 2 items for Select Workspace.Projects (Id Name Files). Version:{
+,
+"ProjectsStateUpdates:Version" : 0,
+"CpsProject:1:EventManagementSystem.Debug|AnyCPU" : 66,
+"CpsProject:0:EventManagementSystem.Tests.Debug|AnyCPU" : 40,
+"Workspace:Version" : 1
+}
+01/20/2025 17:53:52 Mitteleuropäische Normalzeit: Information : 32201927 :Query subscription collected 2 items for Select Workspace.Projects (Id Name Files). Version:{
+,
+"ProjectsStateUpdates:Version" : 0,
+"CpsProject:1:EventManagementSystem.Debug|AnyCPU" : 66,
+"CpsProject:0:EventManagementSystem.Tests.Debug|AnyCPU" : 40,
+"Workspace:Version" : 1
+}
+01/20/2025 17:53:52 Mitteleuropäische Normalzeit: Information : 46380612 :Query subscription collected 2 items for Select Workspace.Projects (Id Name Files). Version:{
+,
+"ProjectsStateUpdates:Version" : 0,
+"CpsProject:1:EventManagementSystem.Debug|AnyCPU" : 66,
+"CpsProject:0:EventManagementSystem.Tests.Debug|AnyCPU" : 40,
+"Workspace:Version" : 1
+}
+01/20/2025 17:53:52 Mitteleuropäische Normalzeit: Information : 4312542 :Query subscription collected 2 items for Select Workspace.Projects (Id Name Files). Version:{
+,
+"ProjectsStateUpdates:Version" : 0,
+"CpsProject:1:EventManagementSystem.Debug|AnyCPU" : 66,
+"CpsProject:0:EventManagementSystem.Tests.Debug|AnyCPU" : 40,
+"Workspace:Version" : 1
+}
+01/20/2025 17:53:52 Mitteleuropäische Normalzeit: Information : 16202333 :Query subscription collected 2 items for Select Workspace.Projects (Id Name Files). Version:{
+,
+"ProjectsStateUpdates:Version" : 0,
+"CpsProject:1:EventManagementSystem.Debug|AnyCPU" : 66,
+"CpsProject:0:EventManagementSystem.Tests.Debug|AnyCPU" : 40,
+"Workspace:Version" : 1
+}
+01/20/2025 17:53:52 Mitteleuropäische Normalzeit: Information : 34879004 :Query subscription collected 0 items for Select Workspace.Projects (Id Name Files). Version:{
+,
+"ProjectsStateUpdates:Version" : 0,
+"CpsProject:1:EventManagementSystem.Debug|AnyCPU" : 66,
+"CpsProject:0:EventManagementSystem.Tests.Debug|AnyCPU" : 40,
+"Workspace:Version" : 1
+}
+01/20/2025 17:53:52 Mitteleuropäische Normalzeit: Information : 58187981 :Query subscription collected 0 items for Select Workspace.Projects (Id Name Files). Version:{
+,
+"ProjectsStateUpdates:Version" : 0,
+"CpsProject:1:EventManagementSystem.Debug|AnyCPU" : 66,
+"CpsProject:0:EventManagementSystem.Tests.Debug|AnyCPU" : 40,
+"Workspace:Version" : 1
+}
+01/20/2025 17:53:52 Mitteleuropäische Normalzeit: Information : 11902578 :Query subscription collected 2 items for Select Workspace.Projects (Id Name Files). Version:{
+,
+"ProjectsStateUpdates:Version" : 0,
+"CpsProject:1:EventManagementSystem.Debug|AnyCPU" : 66,
+"CpsProject:0:EventManagementSystem.Tests.Debug|AnyCPU" : 40,
+"Workspace:Version" : 1
+}
+01/20/2025 17:53:52 Mitteleuropäische Normalzeit: Information : 50364069 :Query subscription collected 2 items for Select Workspace.Projects (Id Name Files). Version:{
+,
+"ProjectsStateUpdates:Version" : 0,
+"CpsProject:1:EventManagementSystem.Debug|AnyCPU" : 66,
+"CpsProject:0:EventManagementSystem.Tests.Debug|AnyCPU" : 40,
+"Workspace:Version" : 1
+}
+01/20/2025 17:53:52 Mitteleuropäische Normalzeit: Information : 5967413 :Query subscription collected 2 items for Select Workspace.Projects (Id Name Files). Version:{
+,
+"ProjectsStateUpdates:Version" : 0,
+"CpsProject:1:EventManagementSystem.Debug|AnyCPU" : 66,
+"CpsProject:0:EventManagementSystem.Tests.Debug|AnyCPU" : 40,
+"Workspace:Version" : 1
+}
+01/20/2025 17:53:52 Mitteleuropäische Normalzeit: Information : 20497834 :Query subscription collected 2 items for Select Workspace.Projects (Id Name Files). Version:{
+,
+"ProjectsStateUpdates:Version" : 0,
+"CpsProject:1:EventManagementSystem.Debug|AnyCPU" : 66,
+"CpsProject:0:EventManagementSystem.Tests.Debug|AnyCPU" : 40,
+"Workspace:Version" : 1
+}
+01/20/2025 17:53:52 Mitteleuropäische Normalzeit: Information : 33453190 :Query subscription collected 2 items for Select Workspace.Projects (Id Name Files). Version:{
+,
+"ProjectsStateUpdates:Version" : 0,
+"CpsProject:1:EventManagementSystem.Debug|AnyCPU" : 66,
+"CpsProject:0:EventManagementSystem.Tests.Debug|AnyCPU" : 40,
+"Workspace:Version" : 1
+}
+01/20/2025 17:53:52 Mitteleuropäische Normalzeit: Information : 56063192 :Query subscription collected 2 items for Select Workspace.Projects (Id Name Files). Version:{
+,
+"ProjectsStateUpdates:Version" : 0,
+"CpsProject:1:EventManagementSystem.Debug|AnyCPU" : 66,
+"CpsProject:0:EventManagementSystem.Tests.Debug|AnyCPU" : 40,
+"Workspace:Version" : 1
+}
+01/20/2025 17:53:52 Mitteleuropäische Normalzeit: Information : 48618772 :Query subscription collected 2 items for Select Workspace.Projects (Id Name Files). Version:{
+,
+"ProjectsStateUpdates:Version" : 0,
+"CpsProject:1:EventManagementSystem.Debug|AnyCPU" : 66,
+"CpsProject:0:EventManagementSystem.Tests.Debug|AnyCPU" : 40,
+"Workspace:Version" : 1
+}
+01/20/2025 17:53:52 Mitteleuropäische Normalzeit: Information : 8352657 :Query subscription collected 0 items for Select Workspace.Projects (Id Name Files). Version:{
+,
+"ProjectsStateUpdates:Version" : 0,
+"CpsProject:1:EventManagementSystem.Debug|AnyCPU" : 66,
+"CpsProject:0:EventManagementSystem.Tests.Debug|AnyCPU" : 40,
+"Workspace:Version" : 1
+}
+01/20/2025 17:53:52 Mitteleuropäische Normalzeit: Information : 6503 :DesignTimeBuildManagerService: Build Results Success: FromCache: False ResetId: 39 Results: (CollectPackageReferences Success)(BuiltProjectOutputGroup Success)(CollectNuGetAuditSuppressions Success)(CollectPackageDownloads Success)(CollectFrameworkReferences Success)(CollectCentralPackageVersions Success)(CompileDesignTime Success)(CollectPrunePackageReferences Success)(GenerateProgramFile Success) - for project /Users/MacBook/EventManagementSystem/EventManagementSystem.Tests.csproj:Debug|AnyCPU
+01/20/2025 17:53:52 Mitteleuropäische Normalzeit: Information : 6503 :DesignTimeBuildManagerService: Build Results Success: FromCache: False ResetId: 65 Results: (CollectPackageReferences Success)(BuiltProjectOutputGroup Success)(CollectNuGetAuditSuppressions Success)(NETStandardCompatError_Mono_TextTemplating_net6_0 Success)(CollectPackageDownloads Success)(CollectFrameworkReferences Success)(CollectCentralPackageVersions Success)(CompileDesignTime Success)(CollectPrunePackageReferences Success)(GenerateProgramFile Success) - for project /Users/MacBook/EventManagementSystem/EventManagementSystem.csproj:Debug|AnyCPU
+01/20/2025 17:53:52 Mitteleuropäische Normalzeit: Information : 33754516 :Query subscription collected 2 items for Select Workspace.Projects (Id Name Path Guid ActiveConfigurations). Version:{
+,
+"ProjectsStateUpdates:Version" : 0,
+"CpsProject:1:EventManagementSystem.Debug|AnyCPU" : 66,
+"CpsProject:0:EventManagementSystem.Tests.Debug|AnyCPU" : 40,
+"Workspace:Version" : 1
+}
+01/20/2025 17:54:58 Mitteleuropäische Normalzeit: Information : 17541666 :Query subscription collected 0 items for Select Workspace.Projects (Id Name Files). Version:{
+,
+"ProjectsStateUpdates:Version" : 0,
+"CpsProject:1:EventManagementSystem.Debug|AnyCPU" : 66,
+"CpsProject:0:EventManagementSystem.Tests.Debug|AnyCPU" : 40,
+"Workspace:Version" : 1
+}
+01/20/2025 17:55:00 Mitteleuropäische Normalzeit: Information : 15651494 :Query subscription collected 2 items for Select Workspace.Projects (Id Name Files). Version:{
+,
+"ProjectsStateUpdates:Version" : 0,
+"CpsProject:1:EventManagementSystem.Debug|AnyCPU" : 66,
+"CpsProject:0:EventManagementSystem.Tests.Debug|AnyCPU" : 40,
+"Workspace:Version" : 1
+}
+01/20/2025 17:55:02 Mitteleuropäische Normalzeit: Information : 23616033 :Query subscription collected 2 items for Select Workspace.Projects (Id Name Files). Version:{
+,
+"ProjectsStateUpdates:Version" : 0,
+"CpsProject:1:EventManagementSystem.Debug|AnyCPU" : 66,
+"CpsProject:0:EventManagementSystem.Tests.Debug|AnyCPU" : 40,
+"Workspace:Version" : 1
+}
+01/20/2025 17:55:03 Mitteleuropäische Normalzeit: Information : 65845454 :Query subscription collected 2 items for Select Workspace.Projects (Id Name Files). Version:{
+,
+"ProjectsStateUpdates:Version" : 0,
+"CpsProject:1:EventManagementSystem.Debug|AnyCPU" : 66,
+"CpsProject:0:EventManagementSystem.Tests.Debug|AnyCPU" : 40,
+"Workspace:Version" : 1
+}
+01/20/2025 17:55:10 Mitteleuropäische Normalzeit: Information : 21346347 :Query subscription collected 0 items for Select Workspace.Projects (Id Name Files). Version:{
+,
+"ProjectsStateUpdates:Version" : 0,
+"CpsProject:1:EventManagementSystem.Debug|AnyCPU" : 66,
+"CpsProject:0:EventManagementSystem.Tests.Debug|AnyCPU" : 40,
+"Workspace:Version" : 1
+}
+01/20/2025 17:55:11 Mitteleuropäische Normalzeit: Information : 39162778 :Query subscription collected 2 items for Select Workspace.Projects (Id Name Files). Version:{
+,
+"ProjectsStateUpdates:Version" : 0,
+"CpsProject:1:EventManagementSystem.Debug|AnyCPU" : 66,
+"CpsProject:0:EventManagementSystem.Tests.Debug|AnyCPU" : 40,
+"Workspace:Version" : 1
+}
+01/20/2025 17:55:18 Mitteleuropäische Normalzeit: Information : 58251978 :Query subscription collected 2 items for Select Workspace.Projects (Id Name Files). Version:{
+,
+"ProjectsStateUpdates:Version" : 0,
+"CpsProject:1:EventManagementSystem.Debug|AnyCPU" : 66,
+"CpsProject:0:EventManagementSystem.Tests.Debug|AnyCPU" : 40,
+"Workspace:Version" : 1
+}
+01/20/2025 17:55:19 Mitteleuropäische Normalzeit: Information : 15332493 :Query subscription collected 2 items for Select Workspace.Projects (Id Name Files). Version:{
+,
+"ProjectsStateUpdates:Version" : 0,
+"CpsProject:1:EventManagementSystem.Debug|AnyCPU" : 66,
+"CpsProject:0:EventManagementSystem.Tests.Debug|AnyCPU" : 40,
+"Workspace:Version" : 1
+}
+01/20/2025 17:55:23 Mitteleuropäische Normalzeit: Information : 6503 :File '/Users/MacBook/EventManagementSystem/obj/project.assets.json' is updated in project '/Users/MacBook/EventManagementSystem/EventManagementSystem.Tests.csproj':Debug|AnyCPU on 01/20/2025 17:55:23.
+01/20/2025 17:55:23 Mitteleuropäische Normalzeit: Information : 6503 :File '/Users/MacBook/EventManagementSystem/obj/project.assets.json' is updated in project '/Users/MacBook/EventManagementSystem/EventManagementSystem.csproj':Debug|AnyCPU on 01/20/2025 17:55:23.
+01/20/2025 17:55:23 Mitteleuropäische Normalzeit: Information : 6503 :Invalidate project '/Users/MacBook/EventManagementSystem/EventManagementSystem.Tests.csproj' due to file content changed in '/Users/MacBook/EventManagementSystem/obj/project.assets.json'
+01/20/2025 17:55:23 Mitteleuropäische Normalzeit: Information : 6503 :Invalidate project '/Users/MacBook/EventManagementSystem/EventManagementSystem.csproj' due to file content changed in '/Users/MacBook/EventManagementSystem/obj/project.assets.json'
+01/20/2025 17:55:24 Mitteleuropäische Normalzeit: Information : 6503 :DesignTimeBuildManagerService: Resetting design time build service for project /Users/MacBook/EventManagementSystem/EventManagementSystem.Tests.csproj:Debug|AnyCPU. Evaluation version: (current=321, previous=315).
+01/20/2025 17:55:24 Mitteleuropäische Normalzeit: Information : 6503 :Design time build targets update received for project: '/Users/MacBook/EventManagementSystem/EventManagementSystem.Tests.csproj'
+01/20/2025 17:55:24 Mitteleuropäische Normalzeit: Information : 6503 :DesignTimeBuildManagerService: Resetting design time build service for project /Users/MacBook/EventManagementSystem/EventManagementSystem.csproj:Debug|AnyCPU. Evaluation version: (current=324, previous=318).
+01/20/2025 17:55:24 Mitteleuropäische Normalzeit: Information : 23071722 :Query subscription collected 2 items for Select Workspace.Projects (Id Name Files). Version:{
+,
+"ProjectsStateUpdates:Version" : 0,
+"CpsProject:1:EventManagementSystem.Debug|AnyCPU" : 67,
+"CpsProject:0:EventManagementSystem.Tests.Debug|AnyCPU" : 41,
+"Workspace:Version" : 1
+}
+01/20/2025 17:55:24 Mitteleuropäische Normalzeit: Information : 44840035 :Query subscription collected 2 items for Select Workspace.Projects (Id Name Files). Version:{
+,
+"ProjectsStateUpdates:Version" : 0,
+"CpsProject:1:EventManagementSystem.Debug|AnyCPU" : 67,
+"CpsProject:0:EventManagementSystem.Tests.Debug|AnyCPU" : 41,
+"Workspace:Version" : 1
+}
+01/20/2025 17:55:24 Mitteleuropäische Normalzeit: Information : 20497834 :Query subscription collected 2 items for Select Workspace.Projects (Id Name Files). Version:{
+,
+"ProjectsStateUpdates:Version" : 0,
+"CpsProject:1:EventManagementSystem.Debug|AnyCPU" : 67,
+"CpsProject:0:EventManagementSystem.Tests.Debug|AnyCPU" : 41,
+"Workspace:Version" : 1
+}
+01/20/2025 17:55:24 Mitteleuropäische Normalzeit: Information : 8352657 :Query subscription collected 0 items for Select Workspace.Projects (Id Name Files). Version:{
+,
+"ProjectsStateUpdates:Version" : 0,
+"CpsProject:1:EventManagementSystem.Debug|AnyCPU" : 67,
+"CpsProject:0:EventManagementSystem.Tests.Debug|AnyCPU" : 41,
+"Workspace:Version" : 1
+}
+01/20/2025 17:55:24 Mitteleuropäische Normalzeit: Information : 11902578 :Query subscription collected 2 items for Select Workspace.Projects (Id Name Files). Version:{
+,
+"ProjectsStateUpdates:Version" : 0,
+"CpsProject:1:EventManagementSystem.Debug|AnyCPU" : 67,
+"CpsProject:0:EventManagementSystem.Tests.Debug|AnyCPU" : 41,
+"Workspace:Version" : 1
+}
+01/20/2025 17:55:24 Mitteleuropäische Normalzeit: Information : 48618772 :Query subscription collected 2 items for Select Workspace.Projects (Id Name Files). Version:{
+,
+"ProjectsStateUpdates:Version" : 0,
+"CpsProject:1:EventManagementSystem.Debug|AnyCPU" : 67,
+"CpsProject:0:EventManagementSystem.Tests.Debug|AnyCPU" : 41,
+"Workspace:Version" : 1
+}
+01/20/2025 17:55:24 Mitteleuropäische Normalzeit: Information : 6503 :Design time build targets update received for project: '/Users/MacBook/EventManagementSystem/EventManagementSystem.csproj'
+01/20/2025 17:55:24 Mitteleuropäische Normalzeit: Information : 34879004 :Query subscription collected 0 items for Select Workspace.Projects (Id Name Files). Version:{
+,
+"ProjectsStateUpdates:Version" : 0,
+"CpsProject:1:EventManagementSystem.Debug|AnyCPU" : 67,
+"CpsProject:0:EventManagementSystem.Tests.Debug|AnyCPU" : 41,
+"Workspace:Version" : 1
+}
+01/20/2025 17:55:24 Mitteleuropäische Normalzeit: Information : 58187981 :Query subscription collected 0 items for Select Workspace.Projects (Id Name Files). Version:{
+,
+"ProjectsStateUpdates:Version" : 0,
+"CpsProject:1:EventManagementSystem.Debug|AnyCPU" : 67,
+"CpsProject:0:EventManagementSystem.Tests.Debug|AnyCPU" : 41,
+"Workspace:Version" : 1
+}
+01/20/2025 17:55:24 Mitteleuropäische Normalzeit: Information : 39162778 :Query subscription collected 2 items for Select Workspace.Projects (Id Name Files). Version:{
+,
+"ProjectsStateUpdates:Version" : 0,
+"CpsProject:1:EventManagementSystem.Debug|AnyCPU" : 67,
+"CpsProject:0:EventManagementSystem.Tests.Debug|AnyCPU" : 41,
+"Workspace:Version" : 1
+}
+01/20/2025 17:55:24 Mitteleuropäische Normalzeit: Information : 56063192 :Query subscription collected 2 items for Select Workspace.Projects (Id Name Files). Version:{
+,
+"ProjectsStateUpdates:Version" : 0,
+"CpsProject:1:EventManagementSystem.Debug|AnyCPU" : 67,
+"CpsProject:0:EventManagementSystem.Tests.Debug|AnyCPU" : 41,
+"Workspace:Version" : 1
+}
+01/20/2025 17:55:24 Mitteleuropäische Normalzeit: Information : 33453190 :Query subscription collected 2 items for Select Workspace.Projects (Id Name Files). Version:{
+,
+"ProjectsStateUpdates:Version" : 0,
+"CpsProject:1:EventManagementSystem.Debug|AnyCPU" : 67,
+"CpsProject:0:EventManagementSystem.Tests.Debug|AnyCPU" : 41,
+"Workspace:Version" : 1
+}
+01/20/2025 17:55:24 Mitteleuropäische Normalzeit: Information : 17541666 :Query subscription collected 0 items for Select Workspace.Projects (Id Name Files). Version:{
+,
+"ProjectsStateUpdates:Version" : 0,
+"CpsProject:1:EventManagementSystem.Debug|AnyCPU" : 67,
+"CpsProject:0:EventManagementSystem.Tests.Debug|AnyCPU" : 41,
+"Workspace:Version" : 1
+}
+01/20/2025 17:55:24 Mitteleuropäische Normalzeit: Information : 11826078 :Query subscription collected 2 items for Select Workspace.Projects (Id Name Files). Version:{
+,
+"ProjectsStateUpdates:Version" : 0,
+"CpsProject:1:EventManagementSystem.Debug|AnyCPU" : 67,
+"CpsProject:0:EventManagementSystem.Tests.Debug|AnyCPU" : 41,
+"Workspace:Version" : 1
+}
+01/20/2025 17:55:24 Mitteleuropäische Normalzeit: Information : 65845454 :Query subscription collected 2 items for Select Workspace.Projects (Id Name Files). Version:{
+,
+"ProjectsStateUpdates:Version" : 0,
+"CpsProject:1:EventManagementSystem.Debug|AnyCPU" : 67,
+"CpsProject:0:EventManagementSystem.Tests.Debug|AnyCPU" : 41,
+"Workspace:Version" : 1
+}
+01/20/2025 17:55:24 Mitteleuropäische Normalzeit: Information : 32161586 :Query subscription collected 2 items for Select Workspace.Projects (Id Name Files). Version:{
+,
+"ProjectsStateUpdates:Version" : 0,
+"CpsProject:1:EventManagementSystem.Debug|AnyCPU" : 67,
+"CpsProject:0:EventManagementSystem.Tests.Debug|AnyCPU" : 41,
+"Workspace:Version" : 1
+}
+01/20/2025 17:55:24 Mitteleuropäische Normalzeit: Information : 5967413 :Query subscription collected 2 items for Select Workspace.Projects (Id Name Files). Version:{
+,
+"ProjectsStateUpdates:Version" : 0,
+"CpsProject:1:EventManagementSystem.Debug|AnyCPU" : 67,
+"CpsProject:0:EventManagementSystem.Tests.Debug|AnyCPU" : 41,
+"Workspace:Version" : 1
+}
+01/20/2025 17:55:24 Mitteleuropäische Normalzeit: Information : 825472 :Query subscription collected 2 items for Select Workspace.Projects (Id Name Files). Version:{
+,
+"ProjectsStateUpdates:Version" : 0,
+"CpsProject:1:EventManagementSystem.Debug|AnyCPU" : 67,
+"CpsProject:0:EventManagementSystem.Tests.Debug|AnyCPU" : 41,
+"Workspace:Version" : 1
+}
+01/20/2025 17:55:24 Mitteleuropäische Normalzeit: Information : 15332493 :Query subscription collected 2 items for Select Workspace.Projects (Id Name Files). Version:{
+,
+"ProjectsStateUpdates:Version" : 0,
+"CpsProject:1:EventManagementSystem.Debug|AnyCPU" : 67,
+"CpsProject:0:EventManagementSystem.Tests.Debug|AnyCPU" : 41,
+"Workspace:Version" : 1
+}
+01/20/2025 17:55:24 Mitteleuropäische Normalzeit: Information : 21346347 :Query subscription collected 0 items for Select Workspace.Projects (Id Name Files). Version:{
+,
+"ProjectsStateUpdates:Version" : 0,
+"CpsProject:1:EventManagementSystem.Debug|AnyCPU" : 67,
+"CpsProject:0:EventManagementSystem.Tests.Debug|AnyCPU" : 41,
+"Workspace:Version" : 1
+}
+01/20/2025 17:55:24 Mitteleuropäische Normalzeit: Information : 58251978 :Query subscription collected 2 items for Select Workspace.Projects (Id Name Files). Version:{
+,
+"ProjectsStateUpdates:Version" : 0,
+"CpsProject:1:EventManagementSystem.Debug|AnyCPU" : 67,
+"CpsProject:0:EventManagementSystem.Tests.Debug|AnyCPU" : 41,
+"Workspace:Version" : 1
+}
+01/20/2025 17:55:24 Mitteleuropäische Normalzeit: Information : 49159068 :Query subscription collected 2 items for Select Workspace.Projects (Id Name Files). Version:{
+,
+"ProjectsStateUpdates:Version" : 0,
+"CpsProject:1:EventManagementSystem.Debug|AnyCPU" : 67,
+"CpsProject:0:EventManagementSystem.Tests.Debug|AnyCPU" : 41,
+"Workspace:Version" : 1
+}
+01/20/2025 17:55:24 Mitteleuropäische Normalzeit: Information : 32101957 :Query subscription collected 0 items for Select Workspace.Projects (Id Name Files). Version:{
+,
+"ProjectsStateUpdates:Version" : 0,
+"CpsProject:1:EventManagementSystem.Debug|AnyCPU" : 67,
+"CpsProject:0:EventManagementSystem.Tests.Debug|AnyCPU" : 41,
+"Workspace:Version" : 1
+}
+01/20/2025 17:55:24 Mitteleuropäische Normalzeit: Information : 12800199 :Query subscription collected 0 items for Select Workspace.Projects (Id Name Files). Version:{
+,
+"ProjectsStateUpdates:Version" : 0,
+"CpsProject:1:EventManagementSystem.Debug|AnyCPU" : 67,
+"CpsProject:0:EventManagementSystem.Tests.Debug|AnyCPU" : 41,
+"Workspace:Version" : 1
+}
+01/20/2025 17:55:24 Mitteleuropäische Normalzeit: Information : 14514028 :Query subscription collected 2 items for Select Workspace.Projects (Id Name Files). Version:{
+,
+"ProjectsStateUpdates:Version" : 0,
+"CpsProject:1:EventManagementSystem.Debug|AnyCPU" : 67,
+"CpsProject:0:EventManagementSystem.Tests.Debug|AnyCPU" : 41,
+"Workspace:Version" : 1
+}
+01/20/2025 17:55:24 Mitteleuropäische Normalzeit: Information : 44047487 :Query subscription collected 2 items for Select Workspace.Projects (Id Name Files). Version:{
+,
+"ProjectsStateUpdates:Version" : 0,
+"CpsProject:1:EventManagementSystem.Debug|AnyCPU" : 67,
+"CpsProject:0:EventManagementSystem.Tests.Debug|AnyCPU" : 41,
+"Workspace:Version" : 1
+}
+01/20/2025 17:55:24 Mitteleuropäische Normalzeit: Information : 46380612 :Query subscription collected 2 items for Select Workspace.Projects (Id Name Files). Version:{
+,
+"ProjectsStateUpdates:Version" : 0,
+"CpsProject:1:EventManagementSystem.Debug|AnyCPU" : 67,
+"CpsProject:0:EventManagementSystem.Tests.Debug|AnyCPU" : 41,
+"Workspace:Version" : 1
+}
+01/20/2025 17:55:24 Mitteleuropäische Normalzeit: Information : 23616033 :Query subscription collected 2 items for Select Workspace.Projects (Id Name Files). Version:{
+,
+"ProjectsStateUpdates:Version" : 0,
+"CpsProject:1:EventManagementSystem.Debug|AnyCPU" : 67,
+"CpsProject:0:EventManagementSystem.Tests.Debug|AnyCPU" : 41,
+"Workspace:Version" : 1
+}
+01/20/2025 17:55:24 Mitteleuropäische Normalzeit: Information : 50364069 :Query subscription collected 2 items for Select Workspace.Projects (Id Name Files). Version:{
+,
+"ProjectsStateUpdates:Version" : 0,
+"CpsProject:1:EventManagementSystem.Debug|AnyCPU" : 67,
+"CpsProject:0:EventManagementSystem.Tests.Debug|AnyCPU" : 41,
+"Workspace:Version" : 1
+}
+01/20/2025 17:55:24 Mitteleuropäische Normalzeit: Information : 18313142 :Query subscription collected 2 items for Select Workspace.Projects (Id Name Files). Version:{
+,
+"ProjectsStateUpdates:Version" : 0,
+"CpsProject:1:EventManagementSystem.Debug|AnyCPU" : 67,
+"CpsProject:0:EventManagementSystem.Tests.Debug|AnyCPU" : 41,
+"Workspace:Version" : 1
+}
+01/20/2025 17:55:24 Mitteleuropäische Normalzeit: Information : 47380964 :Query subscription collected 2 items for Select Workspace.Projects (Id Name Files). Version:{
+,
+"ProjectsStateUpdates:Version" : 0,
+"CpsProject:1:EventManagementSystem.Debug|AnyCPU" : 67,
+"CpsProject:0:EventManagementSystem.Tests.Debug|AnyCPU" : 41,
+"Workspace:Version" : 1
+}
+01/20/2025 17:55:24 Mitteleuropäische Normalzeit: Information : 54679371 :Query subscription collected 2 items for Select Workspace.Projects (Id Name Files). Version:{
+,
+"ProjectsStateUpdates:Version" : 0,
+"CpsProject:1:EventManagementSystem.Debug|AnyCPU" : 67,
+"CpsProject:0:EventManagementSystem.Tests.Debug|AnyCPU" : 41,
+"Workspace:Version" : 1
+}
+01/20/2025 17:55:24 Mitteleuropäische Normalzeit: Information : 16712520 :Query subscription collected 2 items for Select Workspace.Projects (Id Name Files). Version:{
+,
+"ProjectsStateUpdates:Version" : 0,
+"CpsProject:1:EventManagementSystem.Debug|AnyCPU" : 67,
+"CpsProject:0:EventManagementSystem.Tests.Debug|AnyCPU" : 41,
+"Workspace:Version" : 1
+}
+01/20/2025 17:55:24 Mitteleuropäische Normalzeit: Information : 46177472 :Query subscription collected 2 items for Select Workspace.Projects (Id Name Files). Version:{
+,
+"ProjectsStateUpdates:Version" : 0,
+"CpsProject:1:EventManagementSystem.Debug|AnyCPU" : 67,
+"CpsProject:0:EventManagementSystem.Tests.Debug|AnyCPU" : 41,
+"Workspace:Version" : 1
+}
+01/20/2025 17:55:24 Mitteleuropäische Normalzeit: Information : 26755242 :Query subscription collected 2 items for Select Workspace.Projects (Id Name Files). Version:{
+,
+"ProjectsStateUpdates:Version" : 0,
+"CpsProject:1:EventManagementSystem.Debug|AnyCPU" : 67,
+"CpsProject:0:EventManagementSystem.Tests.Debug|AnyCPU" : 41,
+"Workspace:Version" : 1
+}
+01/20/2025 17:55:24 Mitteleuropäische Normalzeit: Information : 33890612 :Query subscription collected 2 items for Select Workspace.Projects (Id Name Files). Version:{
+,
+"ProjectsStateUpdates:Version" : 0,
+"CpsProject:1:EventManagementSystem.Debug|AnyCPU" : 67,
+"CpsProject:0:EventManagementSystem.Tests.Debug|AnyCPU" : 41,
+"Workspace:Version" : 1
+}
+01/20/2025 17:55:24 Mitteleuropäische Normalzeit: Information : 16202333 :Query subscription collected 2 items for Select Workspace.Projects (Id Name Files). Version:{
+,
+"ProjectsStateUpdates:Version" : 0,
+"CpsProject:1:EventManagementSystem.Debug|AnyCPU" : 67,
+"CpsProject:0:EventManagementSystem.Tests.Debug|AnyCPU" : 41,
+"Workspace:Version" : 1
+}
+01/20/2025 17:55:24 Mitteleuropäische Normalzeit: Information : 4312542 :Query subscription collected 2 items for Select Workspace.Projects (Id Name Files). Version:{
+,
+"ProjectsStateUpdates:Version" : 0,
+"CpsProject:1:EventManagementSystem.Debug|AnyCPU" : 67,
+"CpsProject:0:EventManagementSystem.Tests.Debug|AnyCPU" : 41,
+"Workspace:Version" : 1
+}
+01/20/2025 17:55:24 Mitteleuropäische Normalzeit: Information : 9261217 :Query subscription collected 2 items for Select Workspace.Projects (Id Name Files). Version:{
+,
+"ProjectsStateUpdates:Version" : 0,
+"CpsProject:1:EventManagementSystem.Debug|AnyCPU" : 67,
+"CpsProject:0:EventManagementSystem.Tests.Debug|AnyCPU" : 41,
+"Workspace:Version" : 1
+}
+01/20/2025 17:55:24 Mitteleuropäische Normalzeit: Information : 34274199 :Query subscription collected 0 items for Select Workspace.Projects (Id Name Files). Version:{
+,
+"ProjectsStateUpdates:Version" : 0,
+"CpsProject:1:EventManagementSystem.Debug|AnyCPU" : 67,
+"CpsProject:0:EventManagementSystem.Tests.Debug|AnyCPU" : 41,
+"Workspace:Version" : 1
+}
+01/20/2025 17:55:24 Mitteleuropäische Normalzeit: Information : 10794232 :Query subscription collected 0 items for Select Workspace.Projects (Id Name Files). Version:{
+,
+"ProjectsStateUpdates:Version" : 0,
+"CpsProject:1:EventManagementSystem.Debug|AnyCPU" : 67,
+"CpsProject:0:EventManagementSystem.Tests.Debug|AnyCPU" : 41,
+"Workspace:Version" : 1
+}
+01/20/2025 17:55:24 Mitteleuropäische Normalzeit: Information : 53672195 :Query subscription collected 2 items for Select Workspace.Projects (Id Name Files). Version:{
+,
+"ProjectsStateUpdates:Version" : 0,
+"CpsProject:1:EventManagementSystem.Debug|AnyCPU" : 67,
+"CpsProject:0:EventManagementSystem.Tests.Debug|AnyCPU" : 41,
+"Workspace:Version" : 1
+}
+01/20/2025 17:55:24 Mitteleuropäische Normalzeit: Information : 15677976 :Query subscription collected 2 items for Select Workspace.Projects (Id Name Files). Version:{
+,
+"ProjectsStateUpdates:Version" : 0,
+"CpsProject:1:EventManagementSystem.Debug|AnyCPU" : 67,
+"CpsProject:0:EventManagementSystem.Tests.Debug|AnyCPU" : 41,
+"Workspace:Version" : 1
+}
+01/20/2025 17:55:24 Mitteleuropäische Normalzeit: Information : 1603175 :Query subscription collected 2 items for Select Workspace.Projects (Id Name Files). Version:{
+,
+"ProjectsStateUpdates:Version" : 0,
+"CpsProject:1:EventManagementSystem.Debug|AnyCPU" : 67,
+"CpsProject:0:EventManagementSystem.Tests.Debug|AnyCPU" : 41,
+"Workspace:Version" : 1
+}
+01/20/2025 17:55:24 Mitteleuropäische Normalzeit: Information : 23337156 :Query subscription collected 0 items for Select Workspace.Projects (Id Name Files). Version:{
+,
+"ProjectsStateUpdates:Version" : 0,
+"CpsProject:1:EventManagementSystem.Debug|AnyCPU" : 67,
+"CpsProject:0:EventManagementSystem.Tests.Debug|AnyCPU" : 41,
+"Workspace:Version" : 1
+}
+01/20/2025 17:55:24 Mitteleuropäische Normalzeit: Information : 26759878 :Query subscription collected 2 items for Select Workspace.Projects (Id Name Files). Version:{
+,
+"ProjectsStateUpdates:Version" : 0,
+"CpsProject:1:EventManagementSystem.Debug|AnyCPU" : 67,
+"CpsProject:0:EventManagementSystem.Tests.Debug|AnyCPU" : 41,
+"Workspace:Version" : 1
+}
+01/20/2025 17:55:24 Mitteleuropäische Normalzeit: Information : 13420831 :Query subscription collected 2 items for Select Workspace.Projects (Id Name Files). Version:{
+,
+"ProjectsStateUpdates:Version" : 0,
+"CpsProject:1:EventManagementSystem.Debug|AnyCPU" : 67,
+"CpsProject:0:EventManagementSystem.Tests.Debug|AnyCPU" : 41,
+"Workspace:Version" : 1
+}
+01/20/2025 17:55:24 Mitteleuropäische Normalzeit: Information : 48028580 :Query subscription collected 0 items for Select Workspace.Projects (Id Name Files). Version:{
+,
+"ProjectsStateUpdates:Version" : 0,
+"CpsProject:1:EventManagementSystem.Debug|AnyCPU" : 67,
+"CpsProject:0:EventManagementSystem.Tests.Debug|AnyCPU" : 41,
+"Workspace:Version" : 1
+}
+01/20/2025 17:55:24 Mitteleuropäische Normalzeit: Information : 9585839 :Query subscription collected 2 items for Select Workspace.Projects (Id Name Files). Version:{
+,
+"ProjectsStateUpdates:Version" : 0,
+"CpsProject:1:EventManagementSystem.Debug|AnyCPU" : 67,
+"CpsProject:0:EventManagementSystem.Tests.Debug|AnyCPU" : 41,
+"Workspace:Version" : 1
+}
+01/20/2025 17:55:24 Mitteleuropäische Normalzeit: Information : 54473738 :Query subscription collected 2 items for Select Workspace.Projects (Id Name Files). Version:{
+,
+"ProjectsStateUpdates:Version" : 0,
+"CpsProject:1:EventManagementSystem.Debug|AnyCPU" : 67,
+"CpsProject:0:EventManagementSystem.Tests.Debug|AnyCPU" : 41,
+"Workspace:Version" : 1
+}
+01/20/2025 17:55:24 Mitteleuropäische Normalzeit: Information : 63347539 :Query subscription collected 2 items for Select Workspace.Projects (Id Name Files). Version:{
+,
+"ProjectsStateUpdates:Version" : 0,
+"CpsProject:1:EventManagementSystem.Debug|AnyCPU" : 67,
+"CpsProject:0:EventManagementSystem.Tests.Debug|AnyCPU" : 41,
+"Workspace:Version" : 1
+}
+01/20/2025 17:55:24 Mitteleuropäische Normalzeit: Information : 64771809 :Query subscription collected 2 items for Select Workspace.Projects (Id Name Files). Version:{
+,
+"ProjectsStateUpdates:Version" : 0,
+"CpsProject:1:EventManagementSystem.Debug|AnyCPU" : 67,
+"CpsProject:0:EventManagementSystem.Tests.Debug|AnyCPU" : 41,
+"Workspace:Version" : 1
+}
+01/20/2025 17:55:24 Mitteleuropäische Normalzeit: Information : 5708136 :Query subscription collected 0 items for Select Workspace.Projects (Id Name Files). Version:{
+,
+"ProjectsStateUpdates:Version" : 0,
+"CpsProject:1:EventManagementSystem.Debug|AnyCPU" : 67,
+"CpsProject:0:EventManagementSystem.Tests.Debug|AnyCPU" : 41,
+"Workspace:Version" : 1
+}
+01/20/2025 17:55:24 Mitteleuropäische Normalzeit: Information : 21108821 :Query subscription collected 2 items for Select Workspace.Projects (Id Name Files). Version:{
+,
+"ProjectsStateUpdates:Version" : 0,
+"CpsProject:1:EventManagementSystem.Debug|AnyCPU" : 67,
+"CpsProject:0:EventManagementSystem.Tests.Debug|AnyCPU" : 41,
+"Workspace:Version" : 1
+}
+01/20/2025 17:55:24 Mitteleuropäische Normalzeit: Information : 43554459 :Query subscription collected 0 items for Select Workspace.Projects (Id Name Files). Version:{
+,
+"ProjectsStateUpdates:Version" : 0,
+"CpsProject:1:EventManagementSystem.Debug|AnyCPU" : 67,
+"CpsProject:0:EventManagementSystem.Tests.Debug|AnyCPU" : 41,
+"Workspace:Version" : 1
+}
+01/20/2025 17:55:24 Mitteleuropäische Normalzeit: Information : 56527528 :Query subscription collected 2 items for Select Workspace.Projects (Id Name Files). Version:{
+,
+"ProjectsStateUpdates:Version" : 0,
+"CpsProject:1:EventManagementSystem.Debug|AnyCPU" : 67,
+"CpsProject:0:EventManagementSystem.Tests.Debug|AnyCPU" : 41,
+"Workspace:Version" : 1
+}
+01/20/2025 17:55:24 Mitteleuropäische Normalzeit: Information : 32201927 :Query subscription collected 2 items for Select Workspace.Projects (Id Name Files). Version:{
+,
+"ProjectsStateUpdates:Version" : 0,
+"CpsProject:1:EventManagementSystem.Debug|AnyCPU" : 67,
+"CpsProject:0:EventManagementSystem.Tests.Debug|AnyCPU" : 41,
+"Workspace:Version" : 1
+}
+01/20/2025 17:55:24 Mitteleuropäische Normalzeit: Information : 15316017 :Query subscription collected 2 items for Select Workspace.Projects (Id Name Files). Version:{
+,
+"ProjectsStateUpdates:Version" : 0,
+"CpsProject:1:EventManagementSystem.Debug|AnyCPU" : 67,
+"CpsProject:0:EventManagementSystem.Tests.Debug|AnyCPU" : 41,
+"Workspace:Version" : 1
+}
+01/20/2025 17:55:24 Mitteleuropäische Normalzeit: Information : 18140976 :Query subscription collected 0 items for Select Workspace.Projects (Id Name Files). Version:{
+,
+"ProjectsStateUpdates:Version" : 0,
+"CpsProject:1:EventManagementSystem.Debug|AnyCPU" : 67,
+"CpsProject:0:EventManagementSystem.Tests.Debug|AnyCPU" : 41,
+"Workspace:Version" : 1
+}
+01/20/2025 17:55:24 Mitteleuropäische Normalzeit: Information : 7066375 :Query subscription collected 2 items for Select Workspace.Projects (Id Name Files). Version:{
+,
+"ProjectsStateUpdates:Version" : 0,
+"CpsProject:1:EventManagementSystem.Debug|AnyCPU" : 67,
+"CpsProject:0:EventManagementSystem.Tests.Debug|AnyCPU" : 41,
+"Workspace:Version" : 1
+}
+01/20/2025 17:55:24 Mitteleuropäische Normalzeit: Information : 918997 :Query subscription collected 2 items for Select Workspace.Projects (Id Name Files). Version:{
+,
+"ProjectsStateUpdates:Version" : 0,
+"CpsProject:1:EventManagementSystem.Debug|AnyCPU" : 67,
+"CpsProject:0:EventManagementSystem.Tests.Debug|AnyCPU" : 41,
+"Workspace:Version" : 1
+}
+01/20/2025 17:55:24 Mitteleuropäische Normalzeit: Information : 13223652 :Query subscription collected 2 items for Select Workspace.Projects (Id Name Files). Version:{
+,
+"ProjectsStateUpdates:Version" : 0,
+"CpsProject:1:EventManagementSystem.Debug|AnyCPU" : 67,
+"CpsProject:0:EventManagementSystem.Tests.Debug|AnyCPU" : 41,
+"Workspace:Version" : 1
+}
+01/20/2025 17:55:24 Mitteleuropäische Normalzeit: Information : 59498988 :Query subscription collected 2 items for Select Workspace.Projects (Id Name Files). Version:{
+,
+"ProjectsStateUpdates:Version" : 0,
+"CpsProject:1:EventManagementSystem.Debug|AnyCPU" : 67,
+"CpsProject:0:EventManagementSystem.Tests.Debug|AnyCPU" : 41,
+"Workspace:Version" : 1
+}
+01/20/2025 17:55:24 Mitteleuropäische Normalzeit: Information : 46018583 :Query subscription collected 2 items for Select Workspace.Projects (Id Name Files). Version:{
+,
+"ProjectsStateUpdates:Version" : 0,
+"CpsProject:1:EventManagementSystem.Debug|AnyCPU" : 67,
+"CpsProject:0:EventManagementSystem.Tests.Debug|AnyCPU" : 41,
+"Workspace:Version" : 1
+}
+01/20/2025 17:55:24 Mitteleuropäische Normalzeit: Information : 52249638 :Query subscription collected 2 items for Select Workspace.Projects (Id Name Files). Version:{
+,
+"ProjectsStateUpdates:Version" : 0,
+"CpsProject:1:EventManagementSystem.Debug|AnyCPU" : 67,
+"CpsProject:0:EventManagementSystem.Tests.Debug|AnyCPU" : 41,
+"Workspace:Version" : 1
+}
+01/20/2025 17:55:24 Mitteleuropäische Normalzeit: Information : 64830201 :Query subscription collected 2 items for Select Workspace.Projects (Id Name Files). Version:{
+,
+"ProjectsStateUpdates:Version" : 0,
+"CpsProject:1:EventManagementSystem.Debug|AnyCPU" : 67,
+"CpsProject:0:EventManagementSystem.Tests.Debug|AnyCPU" : 41,
+"Workspace:Version" : 1
+}
+01/20/2025 17:55:24 Mitteleuropäische Normalzeit: Information : 57771278 :Query subscription collected 2 items for Select Workspace.Projects (Id Name Files). Version:{
+,
+"ProjectsStateUpdates:Version" : 0,
+"CpsProject:1:EventManagementSystem.Debug|AnyCPU" : 67,
+"CpsProject:0:EventManagementSystem.Tests.Debug|AnyCPU" : 41,
+"Workspace:Version" : 1
+}
+01/20/2025 17:55:24 Mitteleuropäische Normalzeit: Information : 58800591 :Query subscription collected 0 items for Select Workspace.Projects (Id Name Files). Version:{
+,
+"ProjectsStateUpdates:Version" : 0,
+"CpsProject:1:EventManagementSystem.Debug|AnyCPU" : 67,
+"CpsProject:0:EventManagementSystem.Tests.Debug|AnyCPU" : 41,
+"Workspace:Version" : 1
+}
+01/20/2025 17:55:24 Mitteleuropäische Normalzeit: Information : 49129803 :Query subscription collected 2 items for Select Workspace.Projects (Id Name Files). Version:{
+,
+"ProjectsStateUpdates:Version" : 0,
+"CpsProject:1:EventManagementSystem.Debug|AnyCPU" : 67,
+"CpsProject:0:EventManagementSystem.Tests.Debug|AnyCPU" : 41,
+"Workspace:Version" : 1
+}
+01/20/2025 17:55:24 Mitteleuropäische Normalzeit: Information : 11134008 :Query subscription collected 2 items for Select Workspace.Projects (Id Name Files). Version:{
+,
+"ProjectsStateUpdates:Version" : 0,
+"CpsProject:1:EventManagementSystem.Debug|AnyCPU" : 67,
+"CpsProject:0:EventManagementSystem.Tests.Debug|AnyCPU" : 41,
+"Workspace:Version" : 1
+}
+01/20/2025 17:55:24 Mitteleuropäische Normalzeit: Information : 395446 :Query subscription collected 2 items for Select Workspace.Projects (Id Name Files). Version:{
+,
+"ProjectsStateUpdates:Version" : 0,
+"CpsProject:1:EventManagementSystem.Debug|AnyCPU" : 67,
+"CpsProject:0:EventManagementSystem.Tests.Debug|AnyCPU" : 41,
+"Workspace:Version" : 1
+}
+01/20/2025 17:55:24 Mitteleuropäische Normalzeit: Information : 59953623 :Query subscription collected 0 items for Select Workspace.Projects (Id Name Files). Version:{
+,
+"ProjectsStateUpdates:Version" : 0,
+"CpsProject:1:EventManagementSystem.Debug|AnyCPU" : 67,
+"CpsProject:0:EventManagementSystem.Tests.Debug|AnyCPU" : 41,
+"Workspace:Version" : 1
+}
+01/20/2025 17:55:24 Mitteleuropäische Normalzeit: Information : 31464535 :Query subscription collected 2 items for Select Workspace.Projects (Id Name Files). Version:{
+,
+"ProjectsStateUpdates:Version" : 0,
+"CpsProject:1:EventManagementSystem.Debug|AnyCPU" : 67,
+"CpsProject:0:EventManagementSystem.Tests.Debug|AnyCPU" : 41,
+"Workspace:Version" : 1
+}
+01/20/2025 17:55:24 Mitteleuropäische Normalzeit: Information : 56417709 :Query subscription collected 0 items for Select Workspace.Projects (Id Name Files). Version:{
+,
+"ProjectsStateUpdates:Version" : 0,
+"CpsProject:1:EventManagementSystem.Debug|AnyCPU" : 67,
+"CpsProject:0:EventManagementSystem.Tests.Debug|AnyCPU" : 41,
+"Workspace:Version" : 1
+}
+01/20/2025 17:55:24 Mitteleuropäische Normalzeit: Information : 60826852 :Query subscription collected 2 items for Select Workspace.Projects (Id Name Files). Version:{
+,
+"ProjectsStateUpdates:Version" : 0,
+"CpsProject:1:EventManagementSystem.Debug|AnyCPU" : 67,
+"CpsProject:0:EventManagementSystem.Tests.Debug|AnyCPU" : 41,
+"Workspace:Version" : 1
+}
+01/20/2025 17:55:24 Mitteleuropäische Normalzeit: Information : 10350501 :Query subscription collected 2 items for Select Workspace.Projects (Id Name Files). Version:{
+,
+"ProjectsStateUpdates:Version" : 0,
+"CpsProject:1:EventManagementSystem.Debug|AnyCPU" : 67,
+"CpsProject:0:EventManagementSystem.Tests.Debug|AnyCPU" : 41,
+"Workspace:Version" : 1
+}
+01/20/2025 17:55:24 Mitteleuropäische Normalzeit: Information : 19968525 :Query subscription collected 2 items for Select Workspace.Projects (Id Name Files). Version:{
+,
+"ProjectsStateUpdates:Version" : 0,
+"CpsProject:1:EventManagementSystem.Debug|AnyCPU" : 67,
+"CpsProject:0:EventManagementSystem.Tests.Debug|AnyCPU" : 41,
+"Workspace:Version" : 1
+}
+01/20/2025 17:55:24 Mitteleuropäische Normalzeit: Information : 62641894 :Query subscription collected 2 items for Select Workspace.Projects (Id Name Files). Version:{
+,
+"ProjectsStateUpdates:Version" : 0,
+"CpsProject:1:EventManagementSystem.Debug|AnyCPU" : 67,
+"CpsProject:0:EventManagementSystem.Tests.Debug|AnyCPU" : 41,
+"Workspace:Version" : 1
+}
+01/20/2025 17:55:24 Mitteleuropäische Normalzeit: Information : 50029054 :Query subscription collected 0 items for Select Workspace.Projects (Id Name Files). Version:{
+,
+"ProjectsStateUpdates:Version" : 0,
+"CpsProject:1:EventManagementSystem.Debug|AnyCPU" : 67,
+"CpsProject:0:EventManagementSystem.Tests.Debug|AnyCPU" : 41,
+"Workspace:Version" : 1
+}
+01/20/2025 17:55:24 Mitteleuropäische Normalzeit: Information : 38829871 :Query subscription collected 0 items for Select Workspace.Projects (Id Name Files). Version:{
+,
+"ProjectsStateUpdates:Version" : 0,
+"CpsProject:1:EventManagementSystem.Debug|AnyCPU" : 67,
+"CpsProject:0:EventManagementSystem.Tests.Debug|AnyCPU" : 41,
+"Workspace:Version" : 1
+}
+01/20/2025 17:55:24 Mitteleuropäische Normalzeit: Information : 15651494 :Query subscription collected 2 items for Select Workspace.Projects (Id Name Files). Version:{
+,
+"ProjectsStateUpdates:Version" : 0,
+"CpsProject:1:EventManagementSystem.Debug|AnyCPU" : 67,
+"CpsProject:0:EventManagementSystem.Tests.Debug|AnyCPU" : 41,
+"Workspace:Version" : 1
+}
+01/20/2025 17:55:24 Mitteleuropäische Normalzeit: Information : 26852256 :Query subscription collected 2 items for Select Workspace.Projects (Id Name Files). Version:{
+,
+"ProjectsStateUpdates:Version" : 0,
+"CpsProject:1:EventManagementSystem.Debug|AnyCPU" : 67,
+"CpsProject:0:EventManagementSystem.Tests.Debug|AnyCPU" : 41,
+"Workspace:Version" : 1
+}
+01/20/2025 17:55:24 Mitteleuropäische Normalzeit: Information : 56346594 :Query subscription collected 0 items for Select Workspace.Projects (Id Name Files). Version:{
+,
+"ProjectsStateUpdates:Version" : 0,
+"CpsProject:1:EventManagementSystem.Debug|AnyCPU" : 67,
+"CpsProject:0:EventManagementSystem.Tests.Debug|AnyCPU" : 41,
+"Workspace:Version" : 1
+}
+01/20/2025 17:55:24 Mitteleuropäische Normalzeit: Information : 43260535 :Query subscription collected 2 items for Select Workspace.Projects (Id Name Files). Version:{
+,
+"ProjectsStateUpdates:Version" : 0,
+"CpsProject:1:EventManagementSystem.Debug|AnyCPU" : 67,
+"CpsProject:0:EventManagementSystem.Tests.Debug|AnyCPU" : 41,
+"Workspace:Version" : 1
+}
+01/20/2025 17:55:24 Mitteleuropäische Normalzeit: Information : 45968062 :Query subscription collected 2 items for Select Workspace.Projects (Id Name Files). Version:{
+,
+"ProjectsStateUpdates:Version" : 0,
+"CpsProject:1:EventManagementSystem.Debug|AnyCPU" : 67,
+"CpsProject:0:EventManagementSystem.Tests.Debug|AnyCPU" : 41,
+"Workspace:Version" : 1
+}
+01/20/2025 17:55:24 Mitteleuropäische Normalzeit: Information : 38842255 :Query subscription collected 2 items for Select Workspace.Projects (Id Name Files). Version:{
+,
+"ProjectsStateUpdates:Version" : 0,
+"CpsProject:1:EventManagementSystem.Debug|AnyCPU" : 67,
+"CpsProject:0:EventManagementSystem.Tests.Debug|AnyCPU" : 41,
+"Workspace:Version" : 1
+}
+01/20/2025 17:55:24 Mitteleuropäische Normalzeit: Information : 49547977 :Query subscription collected 0 items for Select Workspace.Projects (Id Name Files). Version:{
+,
+"ProjectsStateUpdates:Version" : 0,
+"CpsProject:1:EventManagementSystem.Debug|AnyCPU" : 67,
+"CpsProject:0:EventManagementSystem.Tests.Debug|AnyCPU" : 41,
+"Workspace:Version" : 1
+}
+01/20/2025 17:55:24 Mitteleuropäische Normalzeit: Information : 30216071 :Query subscription collected 2 items for Select Workspace.Projects (Id Name Files). Version:{
+,
+"ProjectsStateUpdates:Version" : 0,
+"CpsProject:1:EventManagementSystem.Debug|AnyCPU" : 67,
+"CpsProject:0:EventManagementSystem.Tests.Debug|AnyCPU" : 41,
+"Workspace:Version" : 1
+}
+01/20/2025 17:55:24 Mitteleuropäische Normalzeit: Information : 20932920 :Query subscription collected 2 items for Select Workspace.Projects (Id Name Files). Version:{
+,
+"ProjectsStateUpdates:Version" : 0,
+"CpsProject:1:EventManagementSystem.Debug|AnyCPU" : 67,
+"CpsProject:0:EventManagementSystem.Tests.Debug|AnyCPU" : 41,
+"Workspace:Version" : 1
+}
+01/20/2025 17:55:24 Mitteleuropäische Normalzeit: Information : 37915565 :Query subscription collected 0 items for Select Workspace.Projects (Id Name Files). Version:{
+,
+"ProjectsStateUpdates:Version" : 0,
+"CpsProject:1:EventManagementSystem.Debug|AnyCPU" : 67,
+"CpsProject:0:EventManagementSystem.Tests.Debug|AnyCPU" : 41,
+"Workspace:Version" : 1
+}
+01/20/2025 17:55:24 Mitteleuropäische Normalzeit: Information : 58501815 :Query subscription collected 2 items for Select Workspace.Projects (Id Name Files). Version:{
+,
+"ProjectsStateUpdates:Version" : 0,
+"CpsProject:1:EventManagementSystem.Debug|AnyCPU" : 67,
+"CpsProject:0:EventManagementSystem.Tests.Debug|AnyCPU" : 41,
+"Workspace:Version" : 1
+}
+01/20/2025 17:55:24 Mitteleuropäische Normalzeit: Information : 23889156 :Query subscription collected 0 items for Select Workspace.Projects (Id Name Files). Version:{
+,
+"ProjectsStateUpdates:Version" : 0,
+"CpsProject:1:EventManagementSystem.Debug|AnyCPU" : 67,
+"CpsProject:0:EventManagementSystem.Tests.Debug|AnyCPU" : 41,
+"Workspace:Version" : 1
+}
+01/20/2025 17:55:24 Mitteleuropäische Normalzeit: Information : 33999199 :Query subscription collected 0 items for Select Workspace.Projects (Id Name Files). Version:{
+,
+"ProjectsStateUpdates:Version" : 0,
+"CpsProject:1:EventManagementSystem.Debug|AnyCPU" : 67,
+"CpsProject:0:EventManagementSystem.Tests.Debug|AnyCPU" : 41,
+"Workspace:Version" : 1
+}
+01/20/2025 17:55:24 Mitteleuropäische Normalzeit: Information : 31792028 :Query subscription collected 2 items for Select Workspace.Projects (Id Name Files). Version:{
+,
+"ProjectsStateUpdates:Version" : 0,
+"CpsProject:1:EventManagementSystem.Debug|AnyCPU" : 67,
+"CpsProject:0:EventManagementSystem.Tests.Debug|AnyCPU" : 41,
+"Workspace:Version" : 1
+}
+01/20/2025 17:55:24 Mitteleuropäische Normalzeit: Information : 42570374 :Query subscription collected 0 items for Select Workspace.Projects (Id Name Files). Version:{
+,
+"ProjectsStateUpdates:Version" : 0,
+"CpsProject:1:EventManagementSystem.Debug|AnyCPU" : 67,
+"CpsProject:0:EventManagementSystem.Tests.Debug|AnyCPU" : 41,
+"Workspace:Version" : 1
+}
+01/20/2025 17:55:24 Mitteleuropäische Normalzeit: Information : 12505814 :Query subscription collected 2 items for Select Workspace.Projects (Id Name Files). Version:{
+,
+"ProjectsStateUpdates:Version" : 0,
+"CpsProject:1:EventManagementSystem.Debug|AnyCPU" : 67,
+"CpsProject:0:EventManagementSystem.Tests.Debug|AnyCPU" : 41,
+"Workspace:Version" : 1
+}
+01/20/2025 17:55:24 Mitteleuropäische Normalzeit: Information : 26283594 :Query subscription collected 0 items for Select Workspace.Projects (Id Name Files). Version:{
+,
+"ProjectsStateUpdates:Version" : 0,
+"CpsProject:1:EventManagementSystem.Debug|AnyCPU" : 67,
+"CpsProject:0:EventManagementSystem.Tests.Debug|AnyCPU" : 41,
+"Workspace:Version" : 1
+}
+01/20/2025 17:55:24 Mitteleuropäische Normalzeit: Information : 709883 :Query subscription collected 2 items for Select Workspace.Projects (Id Name Files). Version:{
+,
+"ProjectsStateUpdates:Version" : 0,
+"CpsProject:1:EventManagementSystem.Debug|AnyCPU" : 67,
+"CpsProject:0:EventManagementSystem.Tests.Debug|AnyCPU" : 41,
+"Workspace:Version" : 1
+}
+01/20/2025 17:55:24 Mitteleuropäische Normalzeit: Information : 42117081 :Query subscription collected 2 items for Select Workspace.Projects (Id Name Files). Version:{
+,
+"ProjectsStateUpdates:Version" : 0,
+"CpsProject:1:EventManagementSystem.Debug|AnyCPU" : 67,
+"CpsProject:0:EventManagementSystem.Tests.Debug|AnyCPU" : 41,
+"Workspace:Version" : 1
+}
+01/20/2025 17:55:24 Mitteleuropäische Normalzeit: Information : 16295813 :Query subscription collected 2 items for Select Workspace.Projects (Id Name Files). Version:{
+,
+"ProjectsStateUpdates:Version" : 0,
+"CpsProject:1:EventManagementSystem.Debug|AnyCPU" : 67,
+"CpsProject:0:EventManagementSystem.Tests.Debug|AnyCPU" : 41,
+"Workspace:Version" : 1
+}
+01/20/2025 17:55:24 Mitteleuropäische Normalzeit: Information : 23767280 :Query subscription collected 2 items for Select Workspace.Projects (Id Name Files). Version:{
+,
+"ProjectsStateUpdates:Version" : 0,
+"CpsProject:1:EventManagementSystem.Debug|AnyCPU" : 67,
+"CpsProject:0:EventManagementSystem.Tests.Debug|AnyCPU" : 41,
+"Workspace:Version" : 1
+}
+01/20/2025 17:55:24 Mitteleuropäische Normalzeit: Information : 11645056 :Query subscription collected 2 items for Select Workspace.Projects (Id Name Files). Version:{
+,
+"ProjectsStateUpdates:Version" : 0,
+"CpsProject:1:EventManagementSystem.Debug|AnyCPU" : 67,
+"CpsProject:0:EventManagementSystem.Tests.Debug|AnyCPU" : 41,
+"Workspace:Version" : 1
+}
+01/20/2025 17:55:24 Mitteleuropäische Normalzeit: Information : 6503 :DesignTimeBuildManagerService: Build Results Success: FromCache: False ResetId: 40 Results: (CollectPackageReferences Success)(BuiltProjectOutputGroup Success)(CollectNuGetAuditSuppressions Success)(CollectPackageDownloads Success)(CollectFrameworkReferences Success)(CollectCentralPackageVersions Success)(CompileDesignTime Success)(CollectPrunePackageReferences Success)(GenerateProgramFile Success) - for project /Users/MacBook/EventManagementSystem/EventManagementSystem.Tests.csproj:Debug|AnyCPU
+01/20/2025 17:55:24 Mitteleuropäische Normalzeit: Information : 6503 :DesignTimeBuildManagerService: Build Results Success: FromCache: False ResetId: 66 Results: (CollectPackageReferences Success)(BuiltProjectOutputGroup Success)(CollectNuGetAuditSuppressions Success)(NETStandardCompatError_Mono_TextTemplating_net6_0 Success)(CollectPackageDownloads Success)(CollectFrameworkReferences Success)(CollectCentralPackageVersions Success)(CompileDesignTime Success)(CollectPrunePackageReferences Success)(GenerateProgramFile Success) - for project /Users/MacBook/EventManagementSystem/EventManagementSystem.csproj:Debug|AnyCPU
+01/20/2025 17:55:24 Mitteleuropäische Normalzeit: Information : 33754516 :Query subscription collected 2 items for Select Workspace.Projects (Id Name Path Guid ActiveConfigurations). Version:{
+,
+"ProjectsStateUpdates:Version" : 0,
+"CpsProject:1:EventManagementSystem.Debug|AnyCPU" : 67,
+"CpsProject:0:EventManagementSystem.Tests.Debug|AnyCPU" : 41,
+"Workspace:Version" : 1
+}
+01/20/2025 18:53:27 Mitteleuropäische Normalzeit: Error : 15332493 :Query subscription failed, query Select Workspace.Projects (Id Name Files), A task was canceled..

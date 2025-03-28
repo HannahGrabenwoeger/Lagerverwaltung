@@ -12,7 +12,7 @@ public class WarehouseControllerTests
 {
     private FirestoreDb GetFirestoreDb()
     {
-        return FirestoreDb.Create("your-project-id");
+        return FirestoreDb.Create("lagerverwaltung-backend-10629");
     }
 
     [Fact]

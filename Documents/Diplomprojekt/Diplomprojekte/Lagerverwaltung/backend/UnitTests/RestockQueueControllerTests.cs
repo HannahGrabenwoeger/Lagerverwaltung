@@ -7,30 +7,31 @@ using System;
 using System.Threading.Tasks;
 using System.Linq;
 using System.Collections.Generic;
-using Google.Cloud.Firestore;
+using Microsoft.EntityFrameworkCore;
 using Moq;
 
 public class RestockQueueControllerTests
 {
-    private RestockQueueController CreateController()
+    private (RestockQueueController controller, Backend.Data.AppDbContext context) CreateController()
     {
-        var fakeDbContext = new Mock<Backend.Data.AppDbContext>().Object;
-        // var fakeFirestoreDb = FirestoreDb.Create("your-project-id");
-        return new RestockQueueController(fakeDbContext);
+        var options = new DbContextOptionsBuilder<Backend.Data.AppDbContext>()
+            .UseInMemoryDatabase(databaseName: Guid.NewGuid().ToString())
+            .Options;
+        var fakeDbContext = new Backend.Data.AppDbContext(options);
+        var controller = new RestockQueueController(fakeDbContext);
+        return (controller, fakeDbContext);
     }
 
     [Fact]
     public async Task RequestRestock_AddsToQueue()
     {
-        var controller = CreateController();
-        var productCollection = FirestoreDb.Create("your-project-id").Collection("products");
-        var restockCollection = FirestoreDb.Create("your-project-id").Collection("restockQueue");
+        var (controller, fakeDbContext) = CreateController();
 
-        // Add test product to Firestore
-        var productId = Guid.NewGuid().ToString();
-        await productCollection.Document(productId).SetAsync(new { Name = "Produkt A" });
+        var productId = Guid.NewGuid();
+        fakeDbContext.Products.Add(new Product { Id = productId, Name = "Produkt A" });
+        await fakeDbContext.SaveChangesAsync();
 
-        var request = new RestockRequestDto { ProductId = Guid.Parse(productId), Quantity = 5 };
+        var request = new RestockRequestDto { ProductId = productId, Quantity = 5 };
         var result = await controller.RequestRestock(request);
 
         var okResult = Assert.IsType<OkObjectResult>(result);
@@ -41,7 +42,7 @@ public class RestockQueueControllerTests
     [Fact]
     public async Task RequestRestock_ReturnsNotFound_IfProductMissing()
     {
-        var controller = CreateController();
+        var controller = CreateController().controller;
 
         var request = new RestockRequestDto { ProductId = Guid.NewGuid(), Quantity = 5 };        
         var result = await controller.RequestRestock(request);
@@ -52,39 +53,38 @@ public class RestockQueueControllerTests
     [Fact]
     public async Task ProcessRestock_UpdatesProcessedFlag()
     {
-        var controller = CreateController();
-        var restockCollection = FirestoreDb.Create("your-project-id").Collection("restockQueue");
+        var (controller, fakeDbContext) = CreateController();
 
-        // Add test restock entry to Firestore
-        var restockId = Guid.NewGuid().ToString();
-        await restockCollection.Document(restockId).SetAsync(new { Quantity = 3, Processed = false });
+        var restockId = Guid.NewGuid();
+        fakeDbContext.RestockQueue.Add(new RestockQueue { Id = restockId, Quantity = 3, Processed = false });
+        await fakeDbContext.SaveChangesAsync();
 
-        var result = await controller.ProcessRestock(Guid.Parse(restockId));
+        var result = await controller.ProcessRestock(restockId);
         var okResult = Assert.IsType<OkObjectResult>(result);
-        
-        // Verify that the 'Processed' flag is now true
-        var snapshot = await restockCollection.Document(restockId).GetSnapshotAsync();
-        Assert.True(snapshot.GetValue<bool>("Processed"));
+
+        var restock = await fakeDbContext.RestockQueue.FindAsync(restockId);
+
+        Assert.NotNull(restock);
+        Assert.True(restock.Processed);
     }
 
     [Fact]
     public async Task GetAllRestocks_ReturnsRestocksWithProductName()
     {
-        var controller = CreateController();
-        var productCollection = FirestoreDb.Create("your-project-id").Collection("products");
-        var restockCollection = FirestoreDb.Create("your-project-id").Collection("restockQueue");
+        var (controller, fakeDbContext) = CreateController();
 
-        // Add test product and restock entry to Firestore
-        var productId = Guid.NewGuid().ToString();
-        var restockId = Guid.NewGuid().ToString();
+        var productId = Guid.NewGuid();
+        var restockId = Guid.NewGuid();
 
-        await productCollection.Document(productId).SetAsync(new { Name = "Produkt X" });
-        await restockCollection.Document(restockId).SetAsync(new
+        fakeDbContext.Products.Add(new Product { Id = productId, Name = "Produkt X" });
+        fakeDbContext.RestockQueue.Add(new RestockQueue
         {
+            Id = restockId,
             ProductId = productId,
             Quantity = 10,
             RequestedAt = DateTime.UtcNow
         });
+        await fakeDbContext.SaveChangesAsync();
 
         var result = await controller.GetAllRestocks();
 

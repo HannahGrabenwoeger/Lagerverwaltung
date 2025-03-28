@@ -38,7 +38,7 @@ namespace Backend.Controllers
         [HttpGet("stock-summary")]
         public async Task<IActionResult> GetStockSummary()
         {
-            var summary = _context.Products
+            var summary = await _context.Products
                 .Include(p => p.Warehouse) 
                 .Select(p => new
                 {
@@ -47,7 +47,7 @@ namespace Backend.Controllers
                     p.Quantity,
                     Warehouse = p.Warehouse != null ? p.Warehouse.Name : "Unknown"
                 })
-                .ToList();
+                .ToListAsync(); // Verwende ToListAsync() anstelle von ToList()
 
             if (!summary.Any())
                 return NotFound(new { message = "No stocks found" });
