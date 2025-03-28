@@ -23,10 +23,8 @@ namespace Backend.Controllers
         {
             try
             {
-                var decodedToken = await _firebaseAuth.VerifyIdTokenAsync(idToken);
-                string uid = decodedToken.Uid;
-                string email = decodedToken.Claims.TryGetValue("email", out var claim) ? claim?.ToString() ?? "N/A" : "N/A";
-                return Ok(new { message = "Token valid", uid = uid, email = email });
+                var uid = await _firebaseAuth.VerifyIdTokenAndGetUidAsync(idToken);
+                return Ok(new { message = "Token valid", uid = uid });
             }
             catch (FirebaseAuthException ex)
             {
@@ -37,13 +35,8 @@ namespace Backend.Controllers
         [HttpPost("verify-token")]
         public async Task<IActionResult> VerifyToken([FromBody] FirebaseAuthDto model)
         {
-            var decoded = await _firebaseAuth.VerifyIdTokenAsync(model.IdToken);
-            return Ok(new { uid = decoded.Uid });
-        }
-
-        public class TokenModel
-        {
-            public required string IdToken { get; set; }
+            var uid = await _firebaseAuth.VerifyIdTokenAndGetUidAsync(model.IdToken);
+            return Ok(new { uid = uid });
         }
 
         [HttpPost("get-uid")]
@@ -51,10 +44,7 @@ namespace Backend.Controllers
         {
             try
             {
-                var decodedToken = await _firebaseAuth.VerifyIdTokenAsync(idToken);
-                
-                string uid = decodedToken.Uid;
-
+                var uid = await _firebaseAuth.VerifyIdTokenAndGetUidAsync(idToken);
                 return Ok(new { uid = uid });
             }
             catch (FirebaseAuthException ex)

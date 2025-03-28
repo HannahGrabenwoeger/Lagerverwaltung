@@ -4,8 +4,8 @@ using Backend.Data;
 using System;
 using System.Linq;
 using System.Threading.Tasks;
-using Google.Cloud.Firestore;
 using Backend.Services;
+using Backend.Services.Firestore;
 
 namespace Backend.Controllers
 {
@@ -14,17 +14,16 @@ namespace Backend.Controllers
     public class ReportsController : ControllerBase
     {
         private readonly AppDbContext _context;
-        private readonly FirestoreDb _db;
+        private readonly IFirestoreDbWrapper _firestoreDbWrapper;
         private readonly IUserQueryService _userQueryService;
 
-
-        public ReportsController(AppDbContext context, FirestoreDb db, IUserQueryService userQueryService)
+        public ReportsController(AppDbContext context, IFirestoreDbWrapper firestoreDbWrapper, IUserQueryService userQueryService)
         {
             _context = context;
-             _db = db;
-             _userQueryService = userQueryService;
+            _firestoreDbWrapper = firestoreDbWrapper;
+            _userQueryService = userQueryService;
         }
-        
+
         [HttpGet("find-user/{username}")]
         public async Task<IActionResult> FindUser(string username)
         {
@@ -39,7 +38,7 @@ namespace Backend.Controllers
         public async Task<IActionResult> GetStockSummary()
         {
             var summary = await _context.Products
-                .Include(p => p.Warehouse) 
+                .Include(p => p.Warehouse)
                 .Select(p => new
                 {
                     p.Id,
@@ -47,7 +46,7 @@ namespace Backend.Controllers
                     p.Quantity,
                     Warehouse = p.Warehouse != null ? p.Warehouse.Name : "Unknown"
                 })
-                .ToListAsync(); // Verwende ToListAsync() anstelle von ToList()
+                .ToListAsync();
 
             if (!summary.Any())
                 return NotFound(new { message = "No stocks found" });
@@ -100,7 +99,7 @@ namespace Backend.Controllers
         public async Task<IActionResult> GetRestocksByPeriod(string? period)
         {
             if (string.IsNullOrEmpty(period))
-                return BadRequest("Period parameter is required");
+                return BadRequest(new { message = "Period parameter is required" });
 
             var restocks = await _context.RestockQueue
                 .Include(r => r.Product)
@@ -126,12 +125,6 @@ namespace Backend.Controllers
                 .ToList();
 
             return Ok(groupedData);
-        }
-
-        private int GetIsoWeek(DateTime date)
-        {
-            var day = (int)date.DayOfWeek;
-            return ((date.DayOfYear - day + 10) / 7);
         }
 
         [HttpGet("low-stock-products")]

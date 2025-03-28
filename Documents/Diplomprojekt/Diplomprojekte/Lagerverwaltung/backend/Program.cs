@@ -34,6 +34,7 @@ builder.Services.AddScoped<UserQueryService>();
 builder.Services.AddSingleton<RestockProcessor>();
 builder.Services.AddSingleton<IFirebaseAuthWrapper, FirebaseAuthWrapper>();
 builder.Services.AddHostedService(sp => sp.GetRequiredService<RestockProcessor>());
+builder.Services.AddScoped<IFirebaseAuthWrapper, FirebaseAuthWrapper>();
 
 builder.Services.AddControllers()
     .AddJsonOptions(options =>

@@ -9,8 +9,8 @@ using System.Threading.Tasks;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text.Json;
-using Backend.Models.DTOs;
 using Backend.Dtos;
+using Backend.Models.DTOs;
 
 public class ProductsControllerTests
 {
@@ -31,16 +31,24 @@ public class ProductsControllerTests
     public async Task GetProducts_ReturnsAllProducts()
     {
         var context = GetDbContext();
-        context.Products.Add(new Product { Id = Guid.NewGuid(), Name = "TestProdukt", Quantity = 10, MinimumStock = 2 });
-        context.SaveChanges();
+        context.Products.Add(new Product 
+        { 
+            Id = Guid.NewGuid(), 
+            Name = "TestProdukt", 
+            Quantity = 10, 
+            MinimumStock = 2,
+            Warehouse = new Warehouse { Id = Guid.NewGuid(), Name = "Lager 1" }
+        });
+        await context.SaveChangesAsync();
 
         var controller = CreateController(context);
+
         var result = await controller.GetProducts();
 
         var okResult = Assert.IsType<OkObjectResult>(result);
-        Assert.NotNull(okResult.Value);
         var list = Assert.IsAssignableFrom<IEnumerable<object>>(okResult.Value);
-        Assert.NotEmpty(list);
+        var json = JsonSerializer.Serialize(list);
+        Assert.Contains("TestProdukt", json);
     }
 
     [Fact]
@@ -61,7 +69,6 @@ public class ProductsControllerTests
         var result = controller.GetProductsById(product.Id);
 
         var okResult = Assert.IsType<OkObjectResult>(result);
-
         var json = JsonSerializer.Serialize(okResult.Value);
         var data = JsonDocument.Parse(json).RootElement;
 
@@ -79,13 +86,14 @@ public class ProductsControllerTests
         { 
             Name = "Neues Produkt", 
             Quantity = 5, 
-            WarehouseId = Guid.Parse("11111111-1111-1111-1111-111111111111")
+            WarehouseId = Guid.NewGuid()
         };
 
         var result = controller.AddProducts(productDto);
 
         var createdResult = Assert.IsType<CreatedAtActionResult>(result);
-        Assert.Equal("Neues Produkt", ((Product)createdResult.Value!).Name);
+        var product = Assert.IsType<Product>(createdResult.Value);
+        Assert.Equal("Neues Produkt", product.Name);
     }
 
     [Fact]
@@ -115,7 +123,7 @@ public class ProductsControllerTests
         var result = await controller.UpdateProduct(product.Id, dto);
 
         var okResult = Assert.IsType<OkObjectResult>(result);
-        Assert.Contains("Produkt aktualisiert!", okResult.Value!.ToString());
+        Assert.Contains("Product updated!", okResult.Value!.ToString());
     }
 
     [Fact]
@@ -146,6 +154,7 @@ public class ProductsControllerTests
         var okResult = Assert.IsType<OkObjectResult>(result);
         Assert.NotNull(okResult.Value);
         var list = Assert.IsAssignableFrom<IEnumerable<object>>(okResult.Value);
-        Assert.NotEmpty(list);
+        var json = JsonSerializer.Serialize(list);
+        Assert.Contains("Low", json);
     }
 }

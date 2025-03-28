@@ -5,8 +5,10 @@ using System.Threading.Tasks;
 using Backend.Controllers;
 using Backend.Models;
 using Backend.Services;
+using Backend.Services.Firestore;
 using Google.Cloud.Firestore;
 using System.Collections.Generic;
+using System.Linq;
 
 public class ReportsControllerTests
 {
@@ -26,36 +28,40 @@ public class ReportsControllerTests
         }
     }
 
-    private Mock<FirestoreDb> GetMockFirestoreDb()
-    {
-        var mockDb = new Mock<FirestoreDb>();
-        var mockCollection = new Mock<CollectionReference>();
-
-        mockDb.Setup(db => db.Collection(It.IsAny<string>())).Returns(mockCollection.Object);
-        return mockDb;
-    }
-
-    private ReportsController CreateController(FirestoreDb db, IUserQueryService userService = null!)
+    private ReportsController CreateController(IFirestoreDbWrapper firestoreWrapper, IUserQueryService? userService = null)
     {
         userService ??= new FakeUserQueryService();
-        return new ReportsController(null!, db, userService);
+        var dbContext = TestDbContextFactory.Create(); 
+        return new ReportsController(dbContext, firestoreWrapper, userService);
     }
 
     [Fact]
     public async Task GetStockSummary_ReturnsProducts()
     {
-        // Use the mock firestore db instead of real one
-        var db = GetMockFirestoreDb().Object;
-        var collection = db.Collection("products");
+        // Arrange
+        var mockFirestore = new Mock<IFirestoreDbWrapper>();
 
-        // Add test data to Firestore
-        await collection.Document("product1").SetAsync(new { Name = "Testprodukt", Quantity = 10, WarehouseName = "Lager A" });
+        var controller = CreateController(mockFirestore.Object);
 
-        var controller = CreateController(db);
-        var result = await controller.GetStockSummary();
+        var dbContext = TestDbContextFactory.Create();
+        dbContext.Products.Add(new Product
+        {
+            Id = Guid.NewGuid(),
+            Name = "Produkt 1",
+            Quantity = 5,
+            MinimumStock = 2,
+            Warehouse = new Warehouse { Name = "Lager A" }
+        });
+        await dbContext.SaveChangesAsync();
 
+        var controllerWithDb = new ReportsController(dbContext, mockFirestore.Object, new FakeUserQueryService());
+
+        // Act
+        var result = await controllerWithDb.GetStockSummary();
+
+        // Assert
         var okResult = Assert.IsType<OkObjectResult>(result);
-        Assert.NotNull(okResult.Value);
-        Assert.NotEmpty((IEnumerable<object>)okResult.Value);
+        var products = Assert.IsAssignableFrom<IEnumerable<object>>(okResult.Value);
+        Assert.NotEmpty(products);
     }
 }

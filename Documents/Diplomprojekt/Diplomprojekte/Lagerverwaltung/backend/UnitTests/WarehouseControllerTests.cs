@@ -1,85 +1,84 @@
 using Xunit;
 using Backend.Controllers;
-using Backend.Models;
 using Microsoft.AspNetCore.Mvc;
-using System;
 using System.Threading.Tasks;
-using System.Linq;
+using Moq;
+using Backend.Services.Firestore;
 using System.Collections.Generic;
-using Google.Cloud.Firestore;
 
 public class WarehouseControllerTests
 {
-    private FirestoreDb GetFirestoreDb()
-    {
-        return FirestoreDb.Create("lagerverwaltung-backend-10629");
-    }
-
     [Fact]
     public async Task GetWarehouses_ReturnsWarehouses_WhenExist()
     {
-        var db = GetFirestoreDb();
-        var warehousesCollection = db.Collection("warehouses");
+        // Arrange
+        var mockFirestore = new Mock<IFirestoreDbWrapper>();
+        mockFirestore.Setup(f => f.GetWarehousesAsync())
+            .ReturnsAsync(new List<object> { new { Id = "1", Name = "Lager A" } });
 
-        await warehousesCollection.Document("warehouse1").SetAsync(new
-        {
-            Name = "Lager 1",
-            Location = "Berlin",
-            Products = new List<object>
-            {
-                new { Name = "Produkt A", Quantity = 10 }
-            }
-        });
+        var controller = new WarehouseController(mockFirestore.Object);
 
-        var controller = new WarehouseController(db);
+        // Act
         var result = await controller.GetWarehouses();
 
+        // Assert
         var okResult = Assert.IsType<OkObjectResult>(result);
-        Assert.NotNull(okResult.Value);
+        var warehouses = Assert.IsAssignableFrom<IEnumerable<object>>(okResult.Value);
+        Assert.NotEmpty(warehouses);
     }
 
     [Fact]
     public async Task GetWarehouses_ReturnsNotFound_WhenEmpty()
     {
-        var db = GetFirestoreDb();
-        var controller = new WarehouseController(db); 
+        // Arrange
+        var mockFirestore = new Mock<IFirestoreDbWrapper>();
+        mockFirestore.Setup(f => f.GetWarehousesAsync())
+            .ReturnsAsync(new List<object>());
 
+        var controller = new WarehouseController(mockFirestore.Object);
+
+        // Act
         var result = await controller.GetWarehouses();
 
+        // Assert
         Assert.IsType<NotFoundObjectResult>(result);
     }
 
     [Fact]
     public async Task GetProductsByWarehouseId_ReturnsProducts()
     {
-        var db = GetFirestoreDb();
-        var warehousesCollection = db.Collection("warehouses");
+        // Arrange
+        var mockFirestore = new Mock<IFirestoreDbWrapper>();
         var warehouseId = "warehouse1";
+        mockFirestore.Setup(f => f.GetProductsByWarehouseIdAsync(warehouseId))
+            .ReturnsAsync(new List<object> { new { Name = "Produkt X", Quantity = 5 } });
 
-        // Add test data to Firestore
-        await warehousesCollection.Document(warehouseId).SetAsync(new
-        {
-            Products = new List<object>
-            {
-                new { Name = "Produkt X", Quantity = 5, MinimumStock = 2 }
-            }
-        });
+        var controller = new WarehouseController(mockFirestore.Object);
 
-        var controller = new WarehouseController(db); 
+        // Act
         var result = await controller.GetProductsByWarehouseId(warehouseId);
 
+        // Assert
         var okResult = Assert.IsType<OkObjectResult>(result);
-        Assert.NotNull(okResult.Value);
+        var products = Assert.IsAssignableFrom<IEnumerable<object>>(okResult.Value);
+        Assert.NotEmpty(products);
     }
 
     [Fact]
     public async Task GetProductsByWarehouseId_ReturnsNotFound_WhenNoProducts()
     {
-        var db = GetFirestoreDb();
-        var controller = new WarehouseController(db); 
+        // Arrange
+        var mockFirestore = new Mock<IFirestoreDbWrapper>();
+        var warehouseId = "warehouse1";
+        mockFirestore.Setup(f => f.GetProductsByWarehouseIdAsync(warehouseId))
+            .ReturnsAsync(new List<object>());
 
-        var result = await controller.GetProductsByWarehouseId("nonexistent-warehouse-id");
+        var controller = new WarehouseController(mockFirestore.Object);
 
+        // Act
+        var result = await controller.GetProductsByWarehouseId(warehouseId);
+
+        // Assert
         Assert.IsType<NotFoundObjectResult>(result);
     }
 }

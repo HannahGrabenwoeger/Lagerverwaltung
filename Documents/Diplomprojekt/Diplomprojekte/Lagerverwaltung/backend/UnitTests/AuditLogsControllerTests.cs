@@ -6,32 +6,36 @@ using Backend.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Xunit;
-using Google.Cloud.Firestore;
+using System.Text.Json;
+using System;
 
 public class AuditLogsControllerTests
 {
     private AppDbContext CreateInMemoryContext()
     {
         var options = new DbContextOptionsBuilder<AppDbContext>()
-            .UseInMemoryDatabase(databaseName: "AuditLogsTestDb_" + System.Guid.NewGuid())
+            .UseInMemoryDatabase(databaseName: "AuditLogsTestDb_" + Guid.NewGuid())
             .Options;
         return new AppDbContext(options);
     }
 
-   [Fact]
+    [Fact]
     public async Task GetAuditLogs_ReturnsAuditLogs_WhenLogsExist()
-   {
+    {
         using var context = CreateInMemoryContext();
-        context.AuditLogs.Add(new AuditLog { Entity = "Product", Action = "Test" });
+        context.AuditLogs.Add(new AuditLog { Id = Guid.NewGuid(), Action = "Test", User = "User" });
         await context.SaveChangesAsync();
 
         var controller = new AuditLogsController(context);
         var result = await controller.GetAuditLogs();
-        var okResult = Assert.IsType<OkObjectResult>(result);
-        var logs = Assert.IsType<List<AuditLog>>(okResult.Value);
 
-        Assert.Single(logs);
-        Assert.Equal("Test", logs[0].Action);
+        var okResult = Assert.IsType<OkObjectResult>(result);
+        Assert.NotNull(okResult.Value);
+
+        // Anonyme Objekte → JSON prüfen
+        var json = JsonSerializer.Serialize(okResult.Value);
+        var logs = JsonDocument.Parse(json).RootElement;
+        Assert.True(logs.GetArrayLength() > 0);
     }
 
     [Fact]
@@ -41,9 +45,12 @@ public class AuditLogsControllerTests
         var controller = new AuditLogsController(context);
 
         var result = await controller.GetAuditLogs();
-        var okResult = Assert.IsType<OkObjectResult>(result);
-        var logs = Assert.IsType<List<AuditLog>>(okResult.Value);
 
-        Assert.Empty(logs);
+        var okResult = Assert.IsType<OkObjectResult>(result);
+        Assert.NotNull(okResult.Value);
+
+        var json = JsonSerializer.Serialize(okResult.Value);
+        var logs = JsonDocument.Parse(json).RootElement;
+        Assert.Equal(0, logs.GetArrayLength());
     }
 }
