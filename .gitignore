@@ -36,3 +36,4 @@ ServiceHub/
 /node_modules
 .nuget/
 .ServiceHub/
+Secrets/
