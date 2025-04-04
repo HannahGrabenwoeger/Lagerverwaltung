@@ -19,8 +19,20 @@ namespace Backend.Controllers
 
         protected async Task<string?> GetUserRole()
         {
-            var uid = User.FindFirst("user_id")?.Value ?? User.FindFirst("sub")?.Value;
-            if (string.IsNullOrEmpty(uid)) return null;
+            var user = User;
+            if (user == null)
+            {
+                // Hier könntest du Log-Ausgaben oder eine Exception werfen, je nach Bedarf
+                return null;
+            }
+
+            var uid = user.FindFirst("user_id")?.Value ?? user.FindFirst("sub")?.Value;
+
+            if (string.IsNullOrEmpty(uid)) 
+            {
+                // Hier auch Log-Ausgaben hinzufügen, wenn nötig
+                return null;
+            }
 
             var role = await _dbContext.UserRoles
                 .Where(r => r.FirebaseUid == uid)

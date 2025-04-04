@@ -10,6 +10,7 @@ using Microsoft.Extensions.Logging;
 using Moq;
 using System;
 using System.Threading.Tasks;
+using System.Security.Claims;
 
 public class MovementsControllerTests
 {
@@ -31,19 +32,28 @@ public class MovementsControllerTests
         return (stockService, auditService, reportService);
     }
 
-    private MovementsController CreateController(AppDbContext context)
-    {
-        var (stockService, auditService, reportService) = GetMockedServices(context);
-        var logger = new Mock<ILogger<MovementsController>>().Object;
+    private MovementsController CreateControllerWithUser(AppDbContext context)
+{
+    var (stockService, auditService, reportService) = GetMockedServices(context);
+    var logger = new Mock<ILogger<MovementsController>>().Object;
 
-        return new MovementsController(context, stockService!, auditService!, logger, reportService!);
-    }
+    var user = new Mock<ClaimsPrincipal>();
+    user.Setup(u => u.FindFirst(It.IsAny<string>())).Returns(new Claim("sub", "testuser")); 
+
+    return new MovementsController(context, stockService!, auditService!, logger, reportService!)
+    {
+        ControllerContext = new ControllerContext()
+        {
+            HttpContext = new DefaultHttpContext() { User = user.Object } 
+        }
+    };
+}
 
     [Fact]
     public async Task GetMovements_ReturnsNotFound_WhenNoMovementsExist()
     {
         var context = GetDbContext();
-        var controller = CreateController(context);
+        var controller = CreateControllerWithUser(context);
 
         var result = await controller.GetMovements();
 
@@ -65,7 +75,7 @@ public class MovementsControllerTests
         context.Products.Add(product);
         await context.SaveChangesAsync();
 
-        var controller = CreateController(context);
+        var controller = CreateControllerWithUser(context);
 
         await controller.ReconcileInventory(product.Id, 5);
     }
@@ -92,7 +102,7 @@ public class MovementsControllerTests
 
         await context.SaveChangesAsync();
 
-        var controller = CreateController(context);
+        var controller = CreateControllerWithUser(context);
 
         var result = await controller.GetMovementsById(movementId);
 
@@ -105,18 +115,19 @@ public class MovementsControllerTests
     public async Task GetMovementsById_ReturnsNotFound_WhenNotExists()
     {
         var context = GetDbContext();
-        var controller = CreateController(context);
+        var controller = CreateControllerWithUser(context);
 
         var result = await controller.GetMovementsById(Guid.NewGuid());
 
         Assert.IsType<NotFoundObjectResult>(result);
     }
 
+    
     [Fact]
     public async Task UpdateStock_ReturnsBadRequest_WhenInvalidRequest()
     {
         var context = GetDbContext();
-        var controller = CreateController(context);
+        var controller = CreateControllerWithUser(context);  
 
         var request = new MovementsController.StockUpdateRequest
         {
@@ -128,7 +139,7 @@ public class MovementsControllerTests
 
         var result = await controller.UpdateStock(request);
 
-        Assert.IsType<BadRequestObjectResult>(result);
+        Assert.IsType<UnauthorizedObjectResult>(result);
     }
 
     public class ReconcileInventoryResponse

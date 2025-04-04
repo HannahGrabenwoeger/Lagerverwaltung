@@ -127,18 +127,18 @@ public class ProductsControllerTests
     }
 
     [Fact]
-    public void DeleteProduct_RemovesProduct()
+    public async Task DeleteProduct_RemovesProduct()
     {
         var context = GetDbContext();
-        var product = new Product { Id = Guid.NewGuid(), Name = "Zu löschen" };
+        var product = new Product { Id = Guid.NewGuid(), Name = "To delete" };
         context.Products.Add(product);
-        context.SaveChanges();
+        await context.SaveChangesAsync();
 
         var controller = CreateController(context);
-        var result = controller.DeleteProducts(product.Id);
+        var result = await controller.DeleteProducts(product.Id);  
 
         Assert.IsType<NoContentResult>(result);
-        Assert.False(context.Products.Any(p => p.Id == product.Id));
+        Assert.False(await context.Products.AnyAsync(p => p.Id == product.Id));  
     }
 
     [Fact]
