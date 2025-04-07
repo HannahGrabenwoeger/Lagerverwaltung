@@ -20,41 +20,49 @@ using Google.Cloud.Firestore.V1;
 var builder = WebApplication.CreateBuilder(args);
 
 var firestoreConfig = builder.Configuration.GetSection("Firestore");
-var firestorePath = Path.Combine(AppContext.BaseDirectory, firestoreConfig["ServiceAccountPath"] ?? "");
+var serviceAccountPath = firestoreConfig["ServiceAccountPath"];
 var projectId = firestoreConfig["ProjectId"];
 
-if (!string.IsNullOrEmpty(firestorePath) && File.Exists(firestorePath) && !string.IsNullOrEmpty(projectId))
+if (!string.IsNullOrEmpty(serviceAccountPath) && !string.IsNullOrEmpty(projectId))
 {
-    try
+    var firestorePath = Path.Combine(AppContext.BaseDirectory, serviceAccountPath);
+    if (File.Exists(firestorePath))
     {
-        if (FirebaseApp.DefaultInstance == null)
+        try
         {
-            FirebaseApp.Create(new AppOptions
+            if (FirebaseApp.DefaultInstance == null)
             {
-                Credential = GoogleCredential.FromFile(firestorePath)
-            });
+                FirebaseApp.Create(new AppOptions
+                {
+                    Credential = GoogleCredential.FromFile(firestorePath)
+                });
+            }
+
+            var credential = GoogleCredential.FromFile(firestorePath);
+            var builderFirestore = new FirestoreClientBuilder
+            {
+                Credential = credential
+            };
+            var client = builderFirestore.Build();
+            var firestoreDb = FirestoreDb.Create(projectId, client);
+            builder.Services.AddSingleton(firestoreDb);
+            builder.Services.AddScoped<IFirestoreDbWrapper, FirestoreDbWrapper>();
+
+            Console.WriteLine("Firestore erfolgreich initialisiert.");
         }
-
-        var credential = GoogleCredential.FromFile(firestorePath);
-        var builderFirestore = new FirestoreClientBuilder
+        catch (Exception ex)
         {
-            Credential = credential
-        };
-        var client = builderFirestore.Build();
-        var firestoreDb = FirestoreDb.Create(projectId, client);
-        builder.Services.AddSingleton(firestoreDb);
-        builder.Services.AddScoped<IFirestoreDbWrapper, FirestoreDbWrapper>();
-
-        Console.WriteLine("Firestore erfolgreich initialisiert.");
+            Console.WriteLine("Fehler beim Initialisieren von Firestore: " + ex.Message);
+        }
     }
-    catch (Exception ex)
+    else
     {
-        Console.WriteLine("Fehler beim Initialisieren von Firestore: " + ex.Message);
+        Console.WriteLine("Firestore NICHT initialisiert. ServiceAccount-Datei nicht gefunden.");
     }
 }
 else
 {
-    Console.WriteLine("Firestore NICHT initialisiert. Prüfe appsettings.json und Datei-Pfad.");
+    Console.WriteLine("Firestore NICHT initialisiert. Überprüfe Firestore-Konfiguration in appsettings.json.");
 }
 
 builder.Services.AddDbContext<AppDbContext>(options =>
@@ -128,6 +136,7 @@ app.MapControllers();
 using (var scope = app.Services.CreateScope())
 {
     var dbContext = scope.ServiceProvider.GetRequiredService<AppDbContext>();
+    await dbContext.Database.MigrateAsync(); 
     await SeedDataAsync(dbContext);
 }
 
