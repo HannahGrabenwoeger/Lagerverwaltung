@@ -14,14 +14,15 @@ namespace Backend.Controllers
     public class ReportsController : ControllerBase
     {
         private readonly AppDbContext _context;
-        private readonly IFirestoreDbWrapper _firestoreDbWrapper;
+        private readonly IFirestoreDbWrapper? _firestoreDbWrapper;
         private readonly IUserQueryService _userQueryService;
 
-        public ReportsController(AppDbContext context, IFirestoreDbWrapper firestoreDbWrapper, IUserQueryService userQueryService)
+        public ReportsController(AppDbContext context, IServiceProvider services, IUserQueryService userQueryService)
         {
             _context = context;
-            _firestoreDbWrapper = firestoreDbWrapper;
             _userQueryService = userQueryService;
+
+            _firestoreDbWrapper = services.GetService<IFirestoreDbWrapper>();
         }
 
         [HttpGet("find-user/{username}")]
@@ -140,25 +141,29 @@ namespace Backend.Controllers
                     .Where(r => r.Quantity > 0 && r.Product != null)
                     .ToListAsync();
 
-                var groupedData = restocks
+                var grouped = restocks
                     .GroupBy(r => r.RequestedAt.Year)
                     .Select(g => new
                     {
                         Year = g.Key.ToString(),
-                        RestockCount = g.Count(),
-                        ProductDetails = g.Select(r => new
+                        Restocks = g.Select(r => new
                         {
-                            Id = r.Product.Id,
-                            Name = r.Product.Name,
-                            QuantityAvailable = r.Product.Quantity,
-                            MinimumQuantity = r.Product.MinimumStock,
-                            WarehouseId = r.Product.WarehouseId,
-                            RestockedQuantity = r.Quantity
-                        }).ToList()
+                            Date = r.RequestedAt.ToString("yyyy-MM-dd HH:mm"),
+                            Product = new
+                            {
+                                Id = r.Product!.Id,
+                                Name = r.Product.Name,
+                                QuantityAvailable = r.Product.Quantity,
+                                MinimumQuantity = r.Product.MinimumStock,
+                                WarehouseId = r.Product.WarehouseId,
+                                RestockedQuantity = r.Quantity
+                            }
+                        }).OrderBy(r => r.Date).ToList()
                     })
+                    .OrderBy(g => g.Year)
                     .ToList();
 
-                return Ok(groupedData);
+                return Ok(grouped);
             }
             catch (Exception ex)
             {

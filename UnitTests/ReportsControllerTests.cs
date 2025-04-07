@@ -6,9 +6,9 @@ using Backend.Controllers;
 using Backend.Models;
 using Backend.Services;
 using Backend.Services.Firestore;
-using Google.Cloud.Firestore;
 using System.Collections.Generic;
 using System.Linq;
+using System;
 
 public class ReportsControllerTests
 {
@@ -28,11 +28,17 @@ public class ReportsControllerTests
         }
     }
 
-    private ReportsController CreateController(IFirestoreDbWrapper firestoreWrapper, IUserQueryService? userService = null)
+    private ReportsController CreateController(IFirestoreDbWrapper? firestoreWrapper = null, IUserQueryService? userService = null)
     {
         userService ??= new FakeUserQueryService();
-        var dbContext = TestDbContextFactory.Create(); 
-        return new ReportsController(dbContext, firestoreWrapper, userService);
+        var dbContext = TestDbContextFactory.Create();
+
+        var serviceProviderMock = new Mock<IServiceProvider>();
+        serviceProviderMock
+            .Setup(sp => sp.GetService(typeof(IFirestoreDbWrapper)))
+            .Returns(firestoreWrapper);
+
+        return new ReportsController(dbContext, serviceProviderMock.Object, userService);
     }
 
     [Fact]
@@ -40,7 +46,6 @@ public class ReportsControllerTests
     {
         // Arrange
         var mockFirestore = new Mock<IFirestoreDbWrapper>();
-
         var controller = CreateController(mockFirestore.Object);
 
         var dbContext = TestDbContextFactory.Create();
@@ -54,7 +59,7 @@ public class ReportsControllerTests
         });
         await dbContext.SaveChangesAsync();
 
-        var controllerWithDb = new ReportsController(dbContext, mockFirestore.Object, new FakeUserQueryService());
+        var controllerWithDb = CreateController(mockFirestore.Object, new FakeUserQueryService());
 
         // Act
         var result = await controllerWithDb.GetStockSummary();

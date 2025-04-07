@@ -1,61 +1,72 @@
 using Microsoft.AspNetCore.Builder;
-using Microsoft.AspNetCore.Authorization;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.IdentityModel.Tokens;
-using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using Backend.Data;
-using Backend.Models;
-using Backend.Services;
-using System.Text;
-using System;
-using System.Threading.Tasks;
-using System.Linq;
 using Microsoft.OpenApi.Models;
+using Backend.Data;
+using Backend.Services;
+using Backend.Services.Firebase;
+using Backend.Services.Firestore;
 using Google.Apis.Auth.OAuth2;
 using FirebaseAdmin;
-using Backend.Services.Firebase;
 using Google.Cloud.Firestore;
-using Backend.Services.Firestore;
+using System;
+using System.IO;
+using System.Threading.Tasks;
+using Backend.Models;
+using Google.Cloud.Firestore.V1;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// === FIREBASE + FIRESTORE (nur wenn vorhanden) ===
-var firestorePath = "Secrets/service-account.json";
-var projectId = builder.Configuration["Firestore:lagerverwaltung-backend-10629"];
+var firestoreConfig = builder.Configuration.GetSection("Firestore");
+var firestorePath = Path.Combine(AppContext.BaseDirectory, firestoreConfig["ServiceAccountPath"] ?? "");
+var projectId = firestoreConfig["ProjectId"];
 
-if (System.IO.File.Exists(firestorePath) && !string.IsNullOrEmpty(projectId))
+if (!string.IsNullOrEmpty(firestorePath) && File.Exists(firestorePath) && !string.IsNullOrEmpty(projectId))
 {
-    FirebaseApp.Create(new AppOptions
+    try
     {
-        Credential = GoogleCredential.FromFile(firestorePath)
-    });
+        if (FirebaseApp.DefaultInstance == null)
+        {
+            FirebaseApp.Create(new AppOptions
+            {
+                Credential = GoogleCredential.FromFile(firestorePath)
+            });
+        }
 
-    var firestoreDb = FirestoreDb.Create(projectId);
-    builder.Services.AddSingleton(firestoreDb);
-    builder.Services.AddScoped<IFirestoreDbWrapper, FirestoreDbWrapper>();
+        var credential = GoogleCredential.FromFile(firestorePath);
+        var builderFirestore = new FirestoreClientBuilder
+        {
+            Credential = credential
+        };
+        var client = builderFirestore.Build();
+        var firestoreDb = FirestoreDb.Create(projectId, client);
+        builder.Services.AddSingleton(firestoreDb);
+        builder.Services.AddScoped<IFirestoreDbWrapper, FirestoreDbWrapper>();
 
-    Console.WriteLine("✅ Firestore initialisiert");
+        Console.WriteLine("Firestore erfolgreich initialisiert.");
+    }
+    catch (Exception ex)
+    {
+        Console.WriteLine("Fehler beim Initialisieren von Firestore: " + ex.Message);
+    }
 }
 else
 {
-    Console.WriteLine("⚠️  Firestore NICHT initialisiert. Datei oder Projekt-ID fehlt.");
+    Console.WriteLine("Firestore NICHT initialisiert. Prüfe appsettings.json und Datei-Pfad.");
 }
 
-// === DB & Services ===
 builder.Services.AddDbContext<AppDbContext>(options =>
     options.UseSqlite(builder.Configuration.GetConnectionString("DefaultConnection")));
 
 builder.Services.AddScoped<InventoryReportService>();
 builder.Services.AddScoped<AuditLogService>();
 builder.Services.AddScoped<StockService>();
-builder.Services.AddScoped<UserQueryService>();
+builder.Services.AddScoped<IUserQueryService, UserQueryService>();
 builder.Services.AddSingleton<RestockProcessor>();
 builder.Services.AddSingleton<IFirebaseAuthWrapper, FirebaseAuthWrapper>();
 builder.Services.AddHostedService(sp => sp.GetRequiredService<RestockProcessor>());
-
-builder.Logging.SetMinimumLevel(LogLevel.Debug);
 
 builder.Services.AddControllers()
     .AddJsonOptions(options =>
@@ -77,7 +88,6 @@ builder.Services.AddCors(options =>
 builder.Services.AddSwaggerGen(c =>
 {
     c.SwaggerDoc("v1", new OpenApiInfo { Title = "API", Version = "v1" });
-    c.DocInclusionPredicate((docName, apiDesc) => true);
 });
 
 builder.Services.AddSingleton<EmailService>(sp =>
@@ -92,7 +102,6 @@ builder.Services.AddSingleton<EmailService>(sp =>
 
 var app = builder.Build();
 
-// === Middleware ===
 if (app.Environment.IsDevelopment())
 {
     app.UseDeveloperExceptionPage();
@@ -109,17 +118,16 @@ app.UseCors("AllowFrontend");
 app.UseAuthorization();
 app.MapControllers();
 
-// === Datenbank seeden ===
+// === Seed-Daten in DB schreiben ===
 using (var scope = app.Services.CreateScope())
 {
-    var services = scope.ServiceProvider;
-    var dbContext = services.GetRequiredService<AppDbContext>();
+    var dbContext = scope.ServiceProvider.GetRequiredService<AppDbContext>();
     await SeedDataAsync(dbContext);
 }
 
 app.Run();
 
-// === SEED-METHODE ===
+// === SEED ===
 async Task SeedDataAsync(AppDbContext dbContext)
 {
     if (!dbContext.Warehouses.Any())
