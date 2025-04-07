@@ -27,8 +27,6 @@ ServiceHub/
 *.bak
 *~$.DS_Store
 *.log
-*.db
-*.sqlite
 *.shm
 *.wal
 /node_modules
