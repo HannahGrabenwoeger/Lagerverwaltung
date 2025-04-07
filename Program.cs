@@ -65,8 +65,12 @@ else
     Console.WriteLine("Firestore NICHT initialisiert. Überprüfe Firestore-Konfiguration in appsettings.json.");
 }
 
+// Entferne die doppelte Registrierung und verwende nur eine Version:
 builder.Services.AddDbContext<AppDbContext>(options =>
-    options.UseSqlite(builder.Configuration.GetConnectionString("DefaultConnection")));
+    options.UseSqlite(builder.Configuration.GetConnectionString("DefaultConnection"))
+           .ConfigureWarnings(warnings => warnings.Ignore(
+               Microsoft.EntityFrameworkCore.Diagnostics.RelationalEventId.PendingModelChangesWarning))
+);
 
 builder.Services.AddScoped<InventoryReportService>();
 builder.Services.AddScoped<AuditLogService>();
@@ -75,12 +79,6 @@ builder.Services.AddScoped<IUserQueryService, UserQueryService>();
 builder.Services.AddSingleton<RestockProcessor>();
 builder.Services.AddSingleton<IFirebaseAuthWrapper, FirebaseAuthWrapper>();
 builder.Services.AddHostedService(sp => sp.GetRequiredService<RestockProcessor>());
-
-builder.Services.AddDbContext<AppDbContext>(options =>
-    options.UseSqlite(builder.Configuration.GetConnectionString("DefaultConnection"))
-           .ConfigureWarnings(warnings => warnings.Ignore(
-               Microsoft.EntityFrameworkCore.Diagnostics.RelationalEventId.PendingModelChangesWarning))
-);
 
 builder.Services.AddControllers()
     .AddJsonOptions(options =>
@@ -132,7 +130,6 @@ app.UseCors("AllowFrontend");
 app.UseAuthorization();
 app.MapControllers();
 
-// === Seed-Daten in DB schreiben ===
 using (var scope = app.Services.CreateScope())
 {
     var dbContext = scope.ServiceProvider.GetRequiredService<AppDbContext>();
@@ -142,7 +139,6 @@ using (var scope = app.Services.CreateScope())
 
 app.Run();
 
-// === SEED ===
 async Task SeedDataAsync(AppDbContext dbContext)
 {
     if (!dbContext.Warehouses.Any())

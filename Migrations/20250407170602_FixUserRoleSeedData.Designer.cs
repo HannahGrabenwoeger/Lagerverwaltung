@@ -11,8 +11,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace backend.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20250324110257_AddUserRolesTable")]
-    partial class AddUserRolesTable
+    [Migration("20250407170602_FixUserRoleSeedData")]
+    partial class FixUserRoleSeedData
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -135,6 +135,20 @@ namespace backend.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("UserRoles");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = new Guid("83ab39e4-0d0c-4600-9861-8eaf0f221ec4"),
+                            FirebaseUid = "test-user-1",
+                            Role = "Manager"
+                        },
+                        new
+                        {
+                            Id = new Guid("65af311e-d8a3-43ad-b1b4-c6fc06889387"),
+                            FirebaseUid = "test-user-2",
+                            Role = "Employee"
+                        });
                 });
 
             modelBuilder.Entity("Backend.Models.Warehouse", b =>
@@ -159,14 +173,14 @@ namespace backend.Migrations
                         new
                         {
                             Id = new Guid("11111111-1111-1111-1111-111111111111"),
-                            Location = "Standort A",
-                            Name = "Lager A"
+                            Location = "Location A",
+                            Name = "Warehouse A"
                         },
                         new
                         {
                             Id = new Guid("22222222-2222-2222-2222-222222222222"),
-                            Location = "Standort B",
-                            Name = "Lager B"
+                            Location = "Location B",
+                            Name = "Warehouse B"
                         });
                 });
 
@@ -213,7 +227,7 @@ namespace backend.Migrations
                             Id = new Guid("33333333-3333-3333-3333-333333333333"),
                             HasSentLowStockNotification = false,
                             MinimumStock = 0,
-                            Name = "Produkt 1",
+                            Name = "Product 1",
                             Quantity = 100,
                             RowVersion = new byte[0],
                             WarehouseId = new Guid("11111111-1111-1111-1111-111111111111")
@@ -223,7 +237,7 @@ namespace backend.Migrations
                             Id = new Guid("44444444-4444-4444-4444-444444444444"),
                             HasSentLowStockNotification = false,
                             MinimumStock = 0,
-                            Name = "Produkt 2",
+                            Name = "Product 2",
                             Quantity = 50,
                             RowVersion = new byte[0],
                             WarehouseId = new Guid("22222222-2222-2222-2222-222222222222")

@@ -20,9 +20,18 @@ namespace Backend.Data
 
             Console.WriteLine("OnModelCreating is called!");
 
+            // Verwende statische GUIDs für deterministische Seed-Daten:
             modelBuilder.Entity<UserRole>().HasData(
-                new UserRole { FirebaseUid = "test-user-1", Role = "Manager" },
-                new UserRole { FirebaseUid = "test-user-2", Role = "Employee" }
+                new UserRole { 
+                    Id = Guid.Parse("11111111-1111-1111-1111-111111111111"), 
+                    FirebaseUid = "test-user-1", 
+                    Role = "Manager" 
+                },
+                new UserRole { 
+                    Id = Guid.Parse("22222222-2222-2222-2222-222222222222"), 
+                    FirebaseUid = "test-user-2", 
+                    Role = "Employee" 
+                }
             );
 
             Guid warehouseId1 = Guid.Parse("11111111-1111-1111-1111-111111111111");

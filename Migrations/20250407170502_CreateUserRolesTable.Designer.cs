@@ -3,6 +3,7 @@ using System;
 using Backend.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -10,9 +11,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace backend.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    partial class AppDbContextModelSnapshot : ModelSnapshot
+    [Migration("20250407170502_CreateUserRolesTable")]
+    partial class CreateUserRolesTable
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder.HasAnnotation("ProductVersion", "9.0.1");
@@ -136,13 +139,13 @@ namespace backend.Migrations
                     b.HasData(
                         new
                         {
-                            Id = new Guid("83ab39e4-0d0c-4600-9861-8eaf0f221ec4"),
+                            Id = new Guid("e9be03b3-a6cb-483c-93a7-cb3d18ce4c43"),
                             FirebaseUid = "test-user-1",
                             Role = "Manager"
                         },
                         new
                         {
-                            Id = new Guid("65af311e-d8a3-43ad-b1b4-c6fc06889387"),
+                            Id = new Guid("9f147bac-bc26-45bc-a8fc-f4e2815e9fac"),
                             FirebaseUid = "test-user-2",
                             Role = "Employee"
                         });

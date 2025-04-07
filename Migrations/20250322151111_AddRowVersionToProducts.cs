@@ -15,8 +15,7 @@ namespace backend.Migrations
                 table: "Products",
                 type: "BLOB",
                 rowVersion: true,
-                nullable: false,
-                defaultValue: new byte[0]);
+                nullable: true);
         }
 
         /// <inheritdoc />
