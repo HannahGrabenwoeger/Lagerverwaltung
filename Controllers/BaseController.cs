@@ -8,6 +8,7 @@ using Microsoft.EntityFrameworkCore;
 namespace Backend.Controllers
 {
     [ApiController]
+    [Route("api/[controller]")]
     public class BaseController : ControllerBase
     {
         protected readonly AppDbContext _dbContext;
@@ -17,7 +18,9 @@ namespace Backend.Controllers
             _dbContext = dbContext;
         }
 
-        protected async Task<string?> GetUserRole()
+        // Hinzufügen der Route, um diese Methode über einen HTTP GET Aufruf zu erreichen
+        [HttpGet("user-role")]
+        public async Task<string?> GetUserRole()
         {
             var user = User;
             if (user == null)
@@ -28,7 +31,7 @@ namespace Backend.Controllers
 
             var uid = user.FindFirst("user_id")?.Value ?? user.FindFirst("sub")?.Value;
 
-            if (string.IsNullOrEmpty(uid)) 
+            if (string.IsNullOrEmpty(uid))
             {
                 // Hier auch Log-Ausgaben hinzufügen, wenn nötig
                 return null;

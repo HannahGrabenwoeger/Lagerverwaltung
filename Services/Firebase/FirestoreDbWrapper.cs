@@ -16,11 +16,20 @@ namespace Backend.Services.Firestore
         public async Task<IEnumerable<object>> GetWarehousesAsync()
         {
             var snapshot = await _firestoreDb.Collection("warehouses").GetSnapshotAsync();
-            var warehouses = snapshot.Documents.Select(doc => new
+            var warehouses = snapshot.Documents.Select(doc =>
             {
-                Id = doc.Id,
-                Name = doc.GetValue<string>("Name"),
-                Location = doc.GetValue<string>("Location"),
+                string name = doc.ContainsField("Name") ? doc.GetValue<string>("Name") :
+                            doc.ContainsField("name") ? doc.GetValue<string>("name") : "Unbenannt";
+
+                string location = doc.ContainsField("Location") ? doc.GetValue<string>("Location") :
+                                doc.ContainsField("location") ? doc.GetValue<string>("location") : "Unbekannt";
+
+                return new
+                {
+                    Id = doc.Id,
+                    Name = name,
+                    Location = location
+                };
             }).ToList();
 
             return warehouses;

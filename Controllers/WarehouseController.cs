@@ -1,41 +1,60 @@
 using Microsoft.AspNetCore.Mvc;
-using Backend.Models;
+using Microsoft.EntityFrameworkCore;
+using Backend.Data;
 using System;
 using System.Linq;
 using System.Threading.Tasks;
-using Backend.Services.Firestore;
-using Google.Cloud.Firestore;
 
 [ApiController]
 [Route("api/[controller]")]
 public class WarehouseController : ControllerBase
 {
-    private readonly IFirestoreDbWrapper _firestoreDbWrapper;
+    private readonly AppDbContext _context;
 
-    public WarehouseController(IFirestoreDbWrapper firestoreDbWrapper)
+    public WarehouseController(AppDbContext context)
     {
-        _firestoreDbWrapper = firestoreDbWrapper;
+        _context = context;
     }
 
     [HttpGet]
     public async Task<IActionResult> GetWarehouses()
     {
-        var warehouses = await _firestoreDbWrapper.GetWarehousesAsync();
+        try
+        {
+            var warehouses = await _context.Warehouses.ToListAsync();
 
-        if (!warehouses.Any())
-            return NotFound(new { message = "No warehouses found" });
+            if (warehouses == null || !warehouses.Any())
+                return NotFound(new { message = "Keine Lager gefunden." });
 
-        return Ok(warehouses);
+            return Ok(warehouses);
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine("Fehler beim Laden der Warehouses:");
+            Console.WriteLine(ex.Message);
+            return StatusCode(500, new { message = "Interner Serverfehler", details = ex.Message });
+        }
     }
 
     [HttpGet("products/{warehouseId}")]
-    public async Task<IActionResult> GetProductsByWarehouseId(string warehouseId)
+    public async Task<IActionResult> GetProductsByWarehouseId(Guid warehouseId)
     {
-        var products = await _firestoreDbWrapper.GetProductsByWarehouseIdAsync(warehouseId);
+        try
+        {
+            var products = await _context.Products
+                .Where(p => p.WarehouseId == warehouseId)
+                .ToListAsync();
 
-        if (!products.Any())
-            return NotFound(new { message = "No products found in this warehouse" });
+            if (products == null || !products.Any())
+                return NotFound(new { message = "Keine Produkte in diesem Lager gefunden." });
 
-        return Ok(products);
+            return Ok(products);
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine("Fehler beim Laden der Produkte:");
+            Console.WriteLine(ex.Message);
+            return StatusCode(500, new { message = "Interner Serverfehler", details = ex.Message });
+        }
     }
 }

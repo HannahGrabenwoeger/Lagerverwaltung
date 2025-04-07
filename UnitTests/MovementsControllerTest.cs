@@ -33,21 +33,21 @@ public class MovementsControllerTests
     }
 
     private MovementsController CreateControllerWithUser(AppDbContext context)
-{
-    var (stockService, auditService, reportService) = GetMockedServices(context);
-    var logger = new Mock<ILogger<MovementsController>>().Object;
-
-    var user = new Mock<ClaimsPrincipal>();
-    user.Setup(u => u.FindFirst(It.IsAny<string>())).Returns(new Claim("sub", "testuser")); 
-
-    return new MovementsController(context, stockService!, auditService!, logger, reportService!)
     {
-        ControllerContext = new ControllerContext()
+        var (stockService, auditService, reportService) = GetMockedServices(context);
+        var logger = new Mock<ILogger<MovementsController>>().Object;
+
+        var user = new Mock<ClaimsPrincipal>();
+        user.Setup(u => u.FindFirst(It.IsAny<string>())).Returns(new Claim(ClaimTypes.Role, "Manager"));
+
+        return new MovementsController(context, stockService!, auditService!, logger, reportService!)
         {
-            HttpContext = new DefaultHttpContext() { User = user.Object } 
-        }
-    };
-}
+            ControllerContext = new ControllerContext()
+            {
+                HttpContext = new DefaultHttpContext() { User = user.Object } 
+            }
+        };
+    }
 
     [Fact]
     public async Task GetMovements_ReturnsNotFound_WhenNoMovementsExist()

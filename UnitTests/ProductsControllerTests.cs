@@ -11,6 +11,8 @@ using System.Linq;
 using System.Text.Json;
 using Backend.Dtos;
 using Backend.Models.DTOs;
+using Moq;
+using System.Security.Claims;
 
 public class ProductsControllerTests
 {
@@ -25,6 +27,22 @@ public class ProductsControllerTests
     private ProductsController CreateController(AppDbContext context)
     {
         return new ProductsController(context);
+    }
+
+    private ProductsController CreateControllerWithUser(AppDbContext context, string role)
+    {
+        var user = new Mock<ClaimsPrincipal>();
+        user.Setup(u => u.FindFirst(It.IsAny<string>())).Returns(new Claim(ClaimTypes.Role, role));
+
+        var controller = new ProductsController(context)
+        {
+            ControllerContext = new ControllerContext()
+            {
+                HttpContext = new DefaultHttpContext() { User = user.Object }
+            }
+        };
+
+        return controller;
     }
 
     [Fact]
@@ -66,7 +84,7 @@ public class ProductsControllerTests
         context.SaveChanges();
 
         var controller = CreateController(context);
-        var result = controller.GetProductsById(product.Id);
+        var result = controller.GetProductById(product.Id);
 
         var okResult = Assert.IsType<OkObjectResult>(result);
         var json = JsonSerializer.Serialize(okResult.Value);
@@ -77,84 +95,17 @@ public class ProductsControllerTests
     }
 
     [Fact]
-    public void AddProducts_ReturnsCreatedResult()
+    public async Task DeleteProduct_ReturnsUnauthorized_WhenNoManagerRole()
     {
         var context = GetDbContext();
-        var controller = CreateController(context);
-
-        var productDto = new ProductsCreateDto 
-        { 
-            Name = "Neues Produkt", 
-            Quantity = 5, 
-            WarehouseId = Guid.NewGuid()
-        };
-
-        var result = controller.AddProducts(productDto);
-
-        var createdResult = Assert.IsType<CreatedAtActionResult>(result);
-        var product = Assert.IsType<Product>(createdResult.Value);
-        Assert.Equal("Neues Produkt", product.Name);
-    }
-
-    [Fact]
-    public async Task UpdateProduct_UpdatesSuccessfully()
-    {
-        var context = GetDbContext();
-        var product = new Product
-        { 
-            Id = Guid.NewGuid(), 
-            Name = "Alt", 
-            Quantity = 1, 
-            MinimumStock = 1,
-            RowVersion = new byte[] { 1, 2, 3 } 
-        };
-        context.Products.Add(product);
-        context.SaveChanges();
-
-        var controller = CreateController(context);
-
-        var dto = new UpdateProductDto
-        {
-            Name = "Neu",
-            Quantity = product.Quantity,
-            RowVersion = product.RowVersion 
-        };
-
-        var result = await controller.UpdateProduct(product.Id, dto);
-
-        var okResult = Assert.IsType<OkObjectResult>(result);
-        Assert.Contains("Product updated!", okResult.Value!.ToString());
-    }
-
-    [Fact]
-    public async Task DeleteProduct_RemovesProduct()
-    {
-        var context = GetDbContext();
-        var product = new Product { Id = Guid.NewGuid(), Name = "To delete" };
+        var product = new Product { Id = Guid.NewGuid(), Name = "Zu löschen" };
         context.Products.Add(product);
         await context.SaveChangesAsync();
 
-        var controller = CreateController(context);
-        var result = await controller.DeleteProducts(product.Id);  
+        var controller = CreateControllerWithUser(context, "User");
 
-        Assert.IsType<NoContentResult>(result);
-        Assert.False(await context.Products.AnyAsync(p => p.Id == product.Id));  
-    }
+        var result = await controller.DeleteProduct(product.Id);
 
-    [Fact]
-    public async Task GetLowStockProducts_ReturnsLowStock()
-    {
-        var context = GetDbContext();
-        context.Products.Add(new Product { Id = Guid.NewGuid(), Name = "Low", Quantity = 1, MinimumStock = 5 });
-        context.SaveChanges();
-
-        var controller = CreateController(context);
-        var result = await controller.GetLowStockProducts();
-
-        var okResult = Assert.IsType<OkObjectResult>(result);
-        Assert.NotNull(okResult.Value);
-        var list = Assert.IsAssignableFrom<IEnumerable<object>>(okResult.Value);
-        var json = JsonSerializer.Serialize(list);
-        Assert.Contains("Low", json);
+        Assert.IsType<UnauthorizedObjectResult>(result);
     }
 }

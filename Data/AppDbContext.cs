@@ -20,6 +20,11 @@ namespace Backend.Data
 
             Console.WriteLine("OnModelCreating is called!");
 
+            modelBuilder.Entity<UserRole>().HasData(
+                new UserRole { FirebaseUid = "test-user-1", Role = "Manager" },
+                new UserRole { FirebaseUid = "test-user-2", Role = "Employee" }
+            );
+
             Guid warehouseId1 = Guid.Parse("11111111-1111-1111-1111-111111111111");
             Guid warehouseId2 = Guid.Parse("22222222-2222-2222-2222-222222222222");
 

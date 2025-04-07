@@ -16,14 +16,34 @@ using Microsoft.OpenApi.Models;
 using Google.Apis.Auth.OAuth2;
 using FirebaseAdmin;
 using Backend.Services.Firebase;
-
-FirebaseApp.Create(new AppOptions
-{
-    Credential = GoogleCredential.FromFile("Secrets/service-account.json")
-});
+using Google.Cloud.Firestore;
+using Backend.Services.Firestore;
 
 var builder = WebApplication.CreateBuilder(args);
 
+// === FIREBASE + FIRESTORE (nur wenn vorhanden) ===
+var firestorePath = "Secrets/service-account.json";
+var projectId = builder.Configuration["Firestore:lagerverwaltung-backend-10629"];
+
+if (System.IO.File.Exists(firestorePath) && !string.IsNullOrEmpty(projectId))
+{
+    FirebaseApp.Create(new AppOptions
+    {
+        Credential = GoogleCredential.FromFile(firestorePath)
+    });
+
+    var firestoreDb = FirestoreDb.Create(projectId);
+    builder.Services.AddSingleton(firestoreDb);
+    builder.Services.AddScoped<IFirestoreDbWrapper, FirestoreDbWrapper>();
+
+    Console.WriteLine("✅ Firestore initialisiert");
+}
+else
+{
+    Console.WriteLine("⚠️  Firestore NICHT initialisiert. Datei oder Projekt-ID fehlt.");
+}
+
+// === DB & Services ===
 builder.Services.AddDbContext<AppDbContext>(options =>
     options.UseSqlite(builder.Configuration.GetConnectionString("DefaultConnection")));
 
@@ -34,7 +54,8 @@ builder.Services.AddScoped<UserQueryService>();
 builder.Services.AddSingleton<RestockProcessor>();
 builder.Services.AddSingleton<IFirebaseAuthWrapper, FirebaseAuthWrapper>();
 builder.Services.AddHostedService(sp => sp.GetRequiredService<RestockProcessor>());
-builder.Services.AddScoped<IFirebaseAuthWrapper, FirebaseAuthWrapper>();
+
+builder.Logging.SetMinimumLevel(LogLevel.Debug);
 
 builder.Services.AddControllers()
     .AddJsonOptions(options =>
@@ -45,13 +66,12 @@ builder.Services.AddControllers()
 
 builder.Services.AddCors(options =>
 {
-    options.AddPolicy("AllowFrontend",
-        policy =>
-        {
-            policy.WithOrigins("http://localhost:3000")
-                  .AllowAnyMethod()
-                  .AllowAnyHeader();
-        });
+    options.AddPolicy("AllowFrontend", policy =>
+    {
+        policy.WithOrigins("http://localhost:3000")
+              .AllowAnyMethod()
+              .AllowAnyHeader();
+    });
 });
 
 builder.Services.AddSwaggerGen(c =>
@@ -72,6 +92,7 @@ builder.Services.AddSingleton<EmailService>(sp =>
 
 var app = builder.Build();
 
+// === Middleware ===
 if (app.Environment.IsDevelopment())
 {
     app.UseDeveloperExceptionPage();
@@ -85,11 +106,10 @@ app.UseSwaggerUI(c =>
 });
 
 app.UseCors("AllowFrontend");
-
 app.UseAuthorization();
-
 app.MapControllers();
 
+// === Datenbank seeden ===
 using (var scope = app.Services.CreateScope())
 {
     var services = scope.ServiceProvider;
@@ -99,6 +119,7 @@ using (var scope = app.Services.CreateScope())
 
 app.Run();
 
+// === SEED-METHODE ===
 async Task SeedDataAsync(AppDbContext dbContext)
 {
     if (!dbContext.Warehouses.Any())
