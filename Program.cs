@@ -68,6 +68,12 @@ builder.Services.AddSingleton<RestockProcessor>();
 builder.Services.AddSingleton<IFirebaseAuthWrapper, FirebaseAuthWrapper>();
 builder.Services.AddHostedService(sp => sp.GetRequiredService<RestockProcessor>());
 
+builder.Services.AddDbContext<AppDbContext>(options =>
+    options.UseSqlite(builder.Configuration.GetConnectionString("DefaultConnection"))
+           .ConfigureWarnings(warnings => warnings.Ignore(
+               Microsoft.EntityFrameworkCore.Diagnostics.RelationalEventId.PendingModelChangesWarning))
+);
+
 builder.Services.AddControllers()
     .AddJsonOptions(options =>
     {
