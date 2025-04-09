@@ -12,14 +12,14 @@ namespace Backend.Controllers
 {
     [ApiController]
     [Route("api/[controller]")]
-    public class ProductsController : BaseController
+    public class ProductsController : RolesController
     {
         public ProductsController(AppDbContext dbContext) : base(dbContext) { }
 
         [HttpGet]
         public async Task<IActionResult> GetProducts()
         {
-            var products = await _dbContext.Products
+            var products = await _context.Products
                 .Select(p => new
                 {
                     p.Id,
@@ -36,11 +36,11 @@ namespace Backend.Controllers
         }
 
         [HttpGet("{id}")]
-        public IActionResult GetProductById(Guid id)
+        public async Task<IActionResult> GetProductById(Guid id)
         {
-            var product = _dbContext.Products
+            var product = await _context.Products
                 .Include(p => p.Warehouse)
-                .FirstOrDefault(p => p.Id == id);
+                .FirstOrDefaultAsync(p => p.Id == id);
 
             if (product == null)
                 return NotFound(new { message = "Product not found" });
@@ -58,21 +58,21 @@ namespace Backend.Controllers
         [HttpPost("update-product")]
         public async Task<IActionResult> UpdateProduct(Guid productId, [FromBody] UpdateProductDto dto)
         {
-            var role = await GetUserRole();
+            var role = await GetUserRoleAsync();
             if (role != "Manager" && role != "Admin")
                 return Unauthorized(new { message = "Only managers or admins can update products." });
 
-            var product = await _dbContext.Products.FindAsync(productId);
+            var product = await _context.Products.FindAsync(productId);
             if (product == null)
                 return NotFound(new { message = "Product not found" });
 
-            if (!dto.RowVersion.SequenceEqual(product.RowVersion))
-                return Conflict(new { message = "The product has been changed in the meantime" });
+            if (dto.RowVersion == null || product.RowVersion == null || !dto.RowVersion.SequenceEqual(product.RowVersion))
+            return Conflict(new { message = "The product has been changed in the meantime." });
 
             product.Name = dto.Name;
             product.Quantity = dto.Quantity;
 
-            await _dbContext.SaveChangesAsync();
+            await _context.SaveChangesAsync();
 
             return Ok(new { message = "Product updated!" });
         }
@@ -80,40 +80,53 @@ namespace Backend.Controllers
         [HttpPost]
         public async Task<IActionResult> AddProduct([FromBody] ProductsCreateDto dto)
         {
-            var role = await GetUserRole();
+            var role = await GetUserRoleAsync();
             if (role != "Manager" && role != "Employee")
                 return Unauthorized(new { message = "Only managers or employees can add products." });
 
             if (dto == null || string.IsNullOrWhiteSpace(dto.Name))
-                return BadRequest();
+                return BadRequest(new { message = "Invalid product data." });
 
             var product = new Product
             {
-                Id = Guid.NewGuid(),
+                Id = Guid.NewGuid(), 
                 Name = dto.Name,
                 Quantity = dto.Quantity,
+                MinimumStock = dto.MinimumStock,
                 WarehouseId = dto.WarehouseId
             };
 
-            _dbContext.Products.Add(product);
-            await _dbContext.SaveChangesAsync();
+            _context.Products.Add(product);
+            await _context.SaveChangesAsync();
 
-            return CreatedAtAction(nameof(GetProductById), new { id = product.Id }, product);
+            await _context.Entry(product).Reference(p => p.Warehouse).LoadAsync();
+
+            var resultProduct = new
+            {
+                product.Id,
+                product.Name,
+                product.Quantity,
+                product.MinimumStock,
+                product.WarehouseId,
+                WarehouseName = product.Warehouse != null ? product.Warehouse.Name : "Unknown"
+            };
+
+            return CreatedAtAction(nameof(GetProductById), new { id = product.Id }, resultProduct);
         }
 
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteProduct(Guid id)
         {
-            var role = await GetUserRole();
+            var role = await GetUserRoleAsync();
             if (role != "Manager")
                 return Unauthorized(new { message = "Only managers can delete products." });
 
-            var product = await _dbContext.Products.FirstOrDefaultAsync(p => p.Id == id);
+            var product = await _context.Products.FirstOrDefaultAsync(p => p.Id == id);
             if (product == null)
                 return NotFound(new { message = "Product not found" });
 
-            _dbContext.Products.Remove(product);
-            await _dbContext.SaveChangesAsync();
+            _context.Products.Remove(product);
+            await _context.SaveChangesAsync();
 
             return NoContent();
         }
@@ -121,7 +134,7 @@ namespace Backend.Controllers
         [HttpGet("low-stock")]
         public async Task<IActionResult> GetLowStockProducts()
         {
-            var lowStock = await _dbContext.Products
+            var lowStock = await _context.Products
                 .Where(p => p.Quantity < p.MinimumStock)
                 .Select(p => new
                 {

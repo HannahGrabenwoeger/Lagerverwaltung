@@ -1,6 +1,6 @@
 namespace Backend.Dtos
 {
-    public class ProductsDto
+    public class ProductResponseDto
     {
         public Guid Id { get; set; }
         public string Name { get; set; } = string.Empty;
@@ -8,6 +8,6 @@ namespace Backend.Dtos
         public int MinimumStock { get; set; }
         public Guid WarehouseId { get; set; }
         public string WarehouseName { get; set; } = string.Empty;
-        public bool IsBelowMinimum => Quantity < MinimumStock;
     }
 }
+

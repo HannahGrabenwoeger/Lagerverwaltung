@@ -70,7 +70,7 @@ public class ProductsControllerTests
     }
 
     [Fact]
-    public void GetProductById_ReturnsProduct_WhenExists()
+    public async Task GetProductById_ReturnsProduct_WhenExists()
     {
         var context = GetDbContext();
         var product = new Product
@@ -78,13 +78,13 @@ public class ProductsControllerTests
             Id = Guid.NewGuid(),
             Name = "Produkt A",
             Quantity = 5,
-            Warehouse = new Warehouse { Name = "Lager 1" }
+            Warehouse = new Warehouse { Id = Guid.NewGuid(), Name = "Lager 1" }
         };
         context.Products.Add(product);
-        context.SaveChanges();
+        await context.SaveChangesAsync();
 
         var controller = CreateController(context);
-        var result = controller.GetProductById(product.Id);
+        var result = await controller.GetProductById(product.Id); // await the async method
 
         var okResult = Assert.IsType<OkObjectResult>(result);
         var json = JsonSerializer.Serialize(okResult.Value);

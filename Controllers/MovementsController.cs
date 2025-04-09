@@ -14,7 +14,7 @@ namespace Backend.Controllers
 {
     [ApiController]
     [Route("api/movements")]
-    public class MovementsController : BaseController
+    public class MovementsController : RolesController
     {
         private readonly StockService _stockService;
         private readonly AuditLogService _auditLogService;
@@ -33,7 +33,7 @@ namespace Backend.Controllers
         [HttpPost("create")]
         public async Task<IActionResult> CreateMovements([FromBody] MovementsDto movementsDto)
         {
-            var role = await GetUserRole();
+            var role = await GetUserRoleAsync();
             if (role != "Manager" && role != "Admin")
             {
                 return Unauthorized(new { message = "Only managers or admins can perform inventory movements." });
@@ -49,7 +49,7 @@ namespace Backend.Controllers
                 return BadRequest(new { message = "Invalid warehouse or product IDs" });
             }
 
-            var lastMovement = await _dbContext.Movements
+            var lastMovement = await _context.Movements
                 .Where(m => m.ProductId == productId)
                 .OrderByDescending(m => m.MovementsDate)
                 .FirstOrDefaultAsync();
@@ -62,9 +62,9 @@ namespace Backend.Controllers
 
             try
             {
-                var product = await _dbContext.Products.FindAsync(productId);
-                var fromWarehouse = await _dbContext.Warehouses.FindAsync(fromWarehouseId);
-                var toWarehouse = await _dbContext.Warehouses.FindAsync(toWarehouseId);
+                var product = await _context.Products.FindAsync(productId);
+                var fromWarehouse = await _context.Warehouses.FindAsync(fromWarehouseId);
+                var toWarehouse = await _context.Warehouses.FindAsync(toWarehouseId);
 
                 if (product == null || fromWarehouse == null || toWarehouse == null)
                     return NotFound(new { message = "Product or stock not found." });
@@ -77,7 +77,7 @@ namespace Backend.Controllers
 
                 product.Quantity -= movementsDto.Quantity;
 
-                var targetProduct = await _dbContext.Products
+                var targetProduct = await _context.Products
                     .FirstOrDefaultAsync(p => p.Name == product.Name && p.WarehouseId == toWarehouseId);
 
                 if (targetProduct != null)
@@ -94,8 +94,8 @@ namespace Backend.Controllers
                         WarehouseId = toWarehouseId,
                     };
 
-                    _dbContext.Entry(product).State = EntityState.Detached;
-                    _dbContext.Products.Update(targetProduct);
+                    _context.Entry(product).State = EntityState.Detached;
+                    _context.Products.Update(targetProduct);
                 }
 
                 var movement = new Movements
@@ -108,14 +108,14 @@ namespace Backend.Controllers
                     MovementsDate = movementsDto.MovementsDate,
                 };
 
-                await _dbContext.Movements.AddAsync(movement);
+                await _context.Movements.AddAsync(movement);
 
                 string currentUser = User?.Claims?.FirstOrDefault(c => c.Type == "email")?.Value ?? "Unknown";
 
                 await _auditLogService.LogAction("Movement", "Stock Moved", product.Id, -movementsDto.Quantity, currentUser);
                 await _auditLogService.LogAction("Movement", "Stock Received", targetProduct.Id, movementsDto.Quantity, currentUser);
 
-                await _dbContext.SaveChangesAsync();
+                await _context.SaveChangesAsync();
                 _logger.LogInformation("Inventory movement successfully saved: {MovementId}", movement.Id);
 
                 return CreatedAtAction(nameof(GetMovementsById), new { id = movement.Id }, movement);
@@ -135,19 +135,19 @@ namespace Backend.Controllers
         [HttpPost("reconcile/{id}")]
         public async Task<IActionResult> ReconcileInventory(Guid id, [FromBody] int scannedQuantity)
         {
-            var role = await GetUserRole();
+            var role = await GetUserRoleAsync();
             if (role != "Manager" && role != "Admin")
             {
                 return Unauthorized(new { message = "Only managers or admins can reconcile inventory." });
             }
 
-            var product = await _dbContext.Products.FindAsync(id);
+            var product = await _context.Products.FindAsync(id);
             if (product == null)
                 return NotFound(new { message = "Product not found" });
 
             int shrink = product.Quantity - scannedQuantity;
             product.Quantity = scannedQuantity;
-            await _dbContext.SaveChangesAsync();
+            await _context.SaveChangesAsync();
 
             return Ok(new { productId = id, newQuantity = scannedQuantity, shrinkAmount = shrink });
         }
@@ -155,7 +155,7 @@ namespace Backend.Controllers
         [HttpGet]
         public async Task<IActionResult> GetMovements()
         {
-            var movements = await _dbContext.Movements
+            var movements = await _context.Movements
                 .Include(m => m.Product)
                 .Include(m => m.FromWarehouse)
                 .Include(m => m.ToWarehouse)
@@ -180,7 +180,7 @@ namespace Backend.Controllers
         [HttpGet("{id}")]
         public async Task<IActionResult> GetMovementsById(Guid id)
         {
-            var movement = await _dbContext.Movements
+            var movement = await _context.Movements
                 .Include(m => m.Product)
                 .Include(m => m.FromWarehouse)
                 .Include(m => m.ToWarehouse)
@@ -204,7 +204,7 @@ namespace Backend.Controllers
         [HttpPost("update")]
         public async Task<IActionResult> UpdateStock([FromBody] StockUpdateRequest request)
         {
-            var role = await GetUserRole();
+            var role = await GetUserRoleAsync();
             if (role != "Manager" && role != "Admin")
             {
                 return Unauthorized(new { message = "Only managers or admins can update stock." });
@@ -219,13 +219,13 @@ namespace Backend.Controllers
         [HttpGet("inventory-report")]
         public async Task<IActionResult> GetInventoryReport()
         {
-            var reportData = await _dbContext.Products
+            var reportData = await _context.Products
                 .Select(p => new InventoryReportDto
                 {
                     ProductName = p.Name,
                     TotalQuantity = p.Quantity,
-                    TotalMovements = _dbContext.Movements.Count(m => m.ProductId == p.Id),
-                    LastUpdated = _dbContext.Movements
+                    TotalMovements = _context.Movements.Count(m => m.ProductId == p.Id),
+                    LastUpdated = _context.Movements
                         .Where(m => m.ProductId == p.Id)
                         .OrderByDescending(m => m.MovementsDate)
                         .Select(m => m.MovementsDate)
