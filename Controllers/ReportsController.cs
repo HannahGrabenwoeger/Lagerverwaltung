@@ -1,11 +1,7 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Backend.Data;
-using System;
-using System.Linq;
-using System.Threading.Tasks;
 using Backend.Services;
-using Backend.Services.Firestore;
 
 namespace Backend.Controllers
 {
@@ -14,15 +10,12 @@ namespace Backend.Controllers
     public class ReportsController : ControllerBase
     {
         private readonly AppDbContext _context;
-        private readonly IFirestoreDbWrapper? _firestoreDbWrapper;
         private readonly IUserQueryService _userQueryService;
 
-        public ReportsController(AppDbContext context, IServiceProvider services, IUserQueryService userQueryService)
+        public ReportsController(AppDbContext context, IUserQueryService userQueryService)
         {
             _context = context;
             _userQueryService = userQueryService;
-
-            _firestoreDbWrapper = services.GetService<IFirestoreDbWrapper>();
         }
 
         [HttpGet("find-user/{username}")]

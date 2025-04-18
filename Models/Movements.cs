@@ -1,4 +1,4 @@
-using System;
+using System.Text.Json.Serialization;
 
 namespace Backend.Models
 {
@@ -10,12 +10,16 @@ namespace Backend.Models
         public Guid ToWarehouseId { get; set; }  
         public int Quantity { get; set; }
         public DateTime MovementsDate { get; set; }  
-
-        public string User { get; set; } = string.Empty;  
+        public string PerformedBy { get; set; } = string.Empty;  
         public DateTime Timestamp { get; set; } = DateTime.UtcNow;  
-
+        
+        [JsonIgnore]
         public Product? Product { get; set; }
-        public Warehouse? FromWarehouse { get; set; }  
-        public Warehouse? ToWarehouse { get; set; }  
+
+        [JsonIgnore]
+        public Warehouse? FromWarehouse { get; set; }
+
+        [JsonIgnore]
+        public Warehouse? ToWarehouse { get; set; }
     }
 }

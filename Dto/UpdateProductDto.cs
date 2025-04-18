@@ -1,7 +1,6 @@
-using System;
 using System.ComponentModel.DataAnnotations;
 
-namespace Backend.Models.DTOs
+namespace Backend.Dtos
 {
     public class UpdateProductDto
     {
@@ -11,8 +10,9 @@ namespace Backend.Models.DTOs
         [Range(0, int.MaxValue)]
         public int Quantity { get; set; }
 
+        [Range(0, int.MaxValue, ErrorMessage = "Minimum Stock cannot be negativ.")]
         public int MinimumStock { get; set; }
+        public string? Unit { get; set; }
 
-        public byte[] RowVersion { get; set; } = Array.Empty<byte>();
     }
 }

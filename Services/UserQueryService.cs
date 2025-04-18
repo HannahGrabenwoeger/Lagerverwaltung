@@ -1,25 +1,26 @@
+using Backend.Data;
 using Backend.Models;
-using System.Threading.Tasks;
+using Microsoft.EntityFrameworkCore;
 
 namespace Backend.Services
 {
     public class UserQueryService : IUserQueryService
     {
-        public UserQueryService() { }
+        private readonly AppDbContext _context;
 
-        public async Task<UserRole?> FindUserAsync(string firebaseUid)
+        public UserQueryService(AppDbContext context)
         {
-            return await GetUserRoleByUid(firebaseUid);
+            _context = context;
         }
 
-        private async Task<UserRole?> GetUserRoleByUid(string firebaseUid)
+        public async Task<UserRole?> FindUserAsync(string username)
         {
-            await Task.Delay(50);
-            return new UserRole
-            {
-                FirebaseUid = firebaseUid,
-                Role = "Employee"
-            };
+            if (string.IsNullOrWhiteSpace(username))
+                return null;
+
+            return await _context.UserRoles
+                .FirstOrDefaultAsync(u => 
+                    string.Equals(u.FirebaseUid, username.Trim(), StringComparison.OrdinalIgnoreCase));
         }
     }
 }

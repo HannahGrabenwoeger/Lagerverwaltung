@@ -1,24 +1,28 @@
-using System;
 using System.ComponentModel.DataAnnotations;
-using Backend.Models;
+using System.Text.Json.Serialization;
 
-public class Product
+namespace Backend.Models
 {
-    public Guid Id { get; set; } = Guid.NewGuid();
+    public class Product
+    {
+        public Guid Id { get; set; } = Guid.NewGuid();
 
-    [Required]
-    public string Name { get; set; } = string.Empty;
+        [Required]
+        public string Name { get; set; } = string.Empty;
 
-    public int Quantity { get; set; }
+        public string? Unit { get; set; }
 
-    public int MinimumStock { get; set; }
+        [Range(0, int.MaxValue)]
+        public int Quantity { get; set; }
 
-    public Guid WarehouseId { get; set; }
+        [Range(0, int.MaxValue)]
+        public int MinimumStock { get; set; }
 
-    public Warehouse? Warehouse { get; set; }
+        public Guid WarehouseId { get; set; }
 
-    public bool HasSentLowStockNotification { get; set; }
+        [JsonIgnore]
+        public Warehouse? Warehouse { get; set; }
 
-    [Timestamp]
-    public byte[]? RowVersion { get; set; }
+        public bool HasSentLowStockNotification { get; set; }
+    }
 }

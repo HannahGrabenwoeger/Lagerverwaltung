@@ -1,5 +1,3 @@
-using System;
-using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Text.Json.Serialization;
 
@@ -9,7 +7,7 @@ namespace Backend.Models
     {
         public Guid Id { get; set; } = Guid.NewGuid();
 
-        [Required]
+        [Required(ErrorMessage = "Warehouse name is required.")]
         public string Name { get; set; } = string.Empty;
 
         [Required]

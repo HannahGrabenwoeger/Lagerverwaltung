@@ -1,9 +1,7 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Backend.Data;
-using System;
-using System.Linq;
-using System.Threading.Tasks;
+using Backend.Dtos;
 
 [ApiController]
 [Route("api/[controller]")]
@@ -19,42 +17,54 @@ public class WarehouseController : ControllerBase
     [HttpGet]
     public async Task<IActionResult> GetWarehouses()
     {
-        try
-        {
-            var warehouses = await _context.Warehouses.ToListAsync();
+        var warehouses = await _context.Warehouses
+            .Include(w => w.Products)
+            .Select(w => new WarehouseDto
+            {
+                Id = w.Id,
+                Name = w.Name,
+                Location = w.Location,
+                Products = w.Products.Select(p => new ProductDto
+                {
+                    Id = p.Id,
+                    Name = p.Name,
+                    Quantity = p.Quantity,
+                    MinimumStock = p.MinimumStock,
+                    WarehouseId = p.WarehouseId,
+                    WarehouseName = w.Name
+                }).ToList()
+            }).ToListAsync();
 
-            if (warehouses == null || !warehouses.Any())
-                return NotFound(new { message = "Keine Lager gefunden." });
-
-            return Ok(warehouses);
-        }
-        catch (Exception ex)
-        {
-            Console.WriteLine("Fehler beim Laden der Warehouses:");
-            Console.WriteLine(ex.Message);
-            return StatusCode(500, new { message = "Interner Serverfehler", details = ex.Message });
-        }
+        return Ok(warehouses);
     }
 
     [HttpGet("products/{warehouseId}")]
-    public async Task<IActionResult> GetProductsByWarehouseId(Guid warehouseId)
+    public async Task<IActionResult> GetProductsByWarehouse(Guid warehouseId)
     {
         try
         {
+            var warehouseExists = await _context.Warehouses.AnyAsync(w => w.Id == warehouseId);
+            if (!warehouseExists)
+                return NotFound(new { message = "Lager nicht gefunden." });
+
             var products = await _context.Products
                 .Where(p => p.WarehouseId == warehouseId)
+                .Select(p => new ProductDto
+                {
+                    Id = p.Id,
+                    Name = p.Name,
+                    Quantity = p.Quantity,
+                    MinimumStock = p.MinimumStock,
+                    WarehouseId = p.WarehouseId,
+                    WarehouseName = p.Warehouse != null ? p.Warehouse.Name : null
+                })
                 .ToListAsync();
-
-            if (products == null || !products.Any())
-                return NotFound(new { message = "Keine Produkte in diesem Lager gefunden." });
 
             return Ok(products);
         }
         catch (Exception ex)
         {
-            Console.WriteLine("Fehler beim Laden der Produkte:");
-            Console.WriteLine(ex.Message);
-            return StatusCode(500, new { message = "Interner Serverfehler", details = ex.Message });
+            return StatusCode(500, new { message = "Fehler beim Abrufen der Produkte", details = ex.Message });
         }
     }
 }

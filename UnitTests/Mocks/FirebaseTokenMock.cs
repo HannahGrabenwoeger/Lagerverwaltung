@@ -1,6 +1,3 @@
-// FirebaseTokenMock.cs
-using System.Collections.Generic;
-
 public class FirebaseTokenMock
 {
     public string Uid { get; set; }

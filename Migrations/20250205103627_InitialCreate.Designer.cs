@@ -71,7 +71,7 @@ namespace backend.Migrations
                     b.Property<Guid>("ProductId")
                         .HasColumnType("TEXT");
 
-                    b.Property<Guid?>("ProductsId")
+                    b.Property<Guid?>("ProductId")
                         .HasColumnType("TEXT");
 
                     b.Property<int>("Quantity")
@@ -91,7 +91,7 @@ namespace backend.Migrations
 
                     b.HasIndex("FromWarehouseId");
 
-                    b.HasIndex("ProductsId");
+                    b.HasIndex("ProductId");
 
                     b.HasIndex("ToWarehouseId");
 
@@ -210,7 +210,7 @@ namespace backend.Migrations
 
                     b.HasOne("Products", "Products")
                         .WithMany()
-                        .HasForeignKey("ProductsId");
+                        .HasForeignKey("ProductId");
 
                     b.HasOne("Backend.Models.Warehouse", "ToWarehouse")
                         .WithMany()

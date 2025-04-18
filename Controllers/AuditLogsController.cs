@@ -1,13 +1,13 @@
+// Controllers/AuditLogsController.cs
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Backend.Data;
 using Backend.Models;
-using System.Threading.Tasks;
 
 namespace Backend.Controllers
 {
     [ApiController]
-    [Route("api/[controller]")]
+    [Route("api/audit-logs")]
     public class AuditLogsController : ControllerBase
     {
         private readonly AppDbContext _context;
@@ -20,21 +20,8 @@ namespace Backend.Controllers
         [HttpGet]
         public async Task<IActionResult> GetAuditLogs()
         {
-            var logs = await _context.AuditLogs
-                .Include(l => l.Product)
-                .Select(l => new
-                {
-                    l.Id,
-                    l.Entity,
-                    l.Action,
-                    l.ProductId,
-                    ProductName = l.Product!.Name, 
-                    l.QuantityChange,
-                    l.User,
-                    l.Timestamp
-                })
-                .ToListAsync();
-
+            // Liefert direkt IEnumerable<AuditLog>
+            var logs = await _context.AuditLogs.ToListAsync();
             return Ok(logs);
         }
     }

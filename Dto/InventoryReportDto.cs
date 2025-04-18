@@ -1,5 +1,5 @@
-using System;
-namespace Backend.Dtos{
+namespace Backend.Dtos
+{
     public class InventoryReportDto
     {
         public required string ProductName { get; set; }

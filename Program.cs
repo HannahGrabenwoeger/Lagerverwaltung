@@ -1,116 +1,54 @@
-using Microsoft.AspNetCore.Builder;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.Configuration;
-using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Hosting;
 using Microsoft.OpenApi.Models;
 using Backend.Data;
 using Backend.Services;
 using Backend.Services.Firebase;
-using Backend.Services.Firestore;
-using Google.Apis.Auth.OAuth2;
-using FirebaseAdmin;
-using Google.Cloud.Firestore;
-using System;
-using System.IO;
-using System.Threading.Tasks;
 using Backend.Models;
-using Google.Cloud.Firestore.V1;
 
 var builder = WebApplication.CreateBuilder(args);
 
-var firestoreConfig = builder.Configuration.GetSection("Firestore");
-var serviceAccountPath = firestoreConfig["ServiceAccountPath"];
-var projectId = firestoreConfig["ProjectId"];
+var configuration = builder.Configuration;
+var testMode = configuration.GetValue<bool>("TestMode");
+builder.Services.AddSingleton(new AppSettings { TestMode = testMode });
 
-if (!string.IsNullOrEmpty(serviceAccountPath) && !string.IsNullOrEmpty(projectId))
-{
-    var firestorePath = Path.Combine(AppContext.BaseDirectory, serviceAccountPath);
-    if (File.Exists(firestorePath))
-    {
-        try
-        {
-            if (FirebaseApp.DefaultInstance == null)
-            {
-                FirebaseApp.Create(new AppOptions
-                {
-                    Credential = GoogleCredential.FromFile(firestorePath)
-                });
-            }
-
-            var credential = GoogleCredential.FromFile(firestorePath);
-            var builderFirestore = new FirestoreClientBuilder
-            {
-                Credential = credential
-            };
-            var client = builderFirestore.Build();
-            var firestoreDb = FirestoreDb.Create(projectId, client);
-            builder.Services.AddSingleton(firestoreDb);
-            builder.Services.AddScoped<IFirestoreDbWrapper, FirestoreDbWrapper>();
-
-            Console.WriteLine("Firestore erfolgreich initialisiert.");
-        }
-        catch (Exception ex)
-        {
-            Console.WriteLine("Fehler beim Initialisieren von Firestore: " + ex.Message);
-        }
-    }
-    else
-    {
-        Console.WriteLine("Firestore NICHT initialisiert. ServiceAccount-Datei nicht gefunden.");
-    }
-}
-else
-{
-    Console.WriteLine("Firestore NICHT initialisiert. Überprüfe Firestore-Konfiguration in appsettings.json.");
-}
-
-// Entferne die doppelte Registrierung und verwende nur eine Version:
+// Datenbank
 builder.Services.AddDbContext<AppDbContext>(options =>
-    options.UseSqlite(builder.Configuration.GetConnectionString("DefaultConnection"))
-           .ConfigureWarnings(warnings => warnings.Ignore(
-               Microsoft.EntityFrameworkCore.Diagnostics.RelationalEventId.PendingModelChangesWarning))
+    options.UseSqlite(configuration.GetConnectionString("DefaultConnection"))
+           .ConfigureWarnings(w => w.Ignore(Microsoft.EntityFrameworkCore.Diagnostics.RelationalEventId.PendingModelChangesWarning))
 );
 
+// Services
 builder.Services.AddScoped<InventoryReportService>();
 builder.Services.AddScoped<AuditLogService>();
 builder.Services.AddScoped<StockService>();
 builder.Services.AddScoped<IUserQueryService, UserQueryService>();
-builder.Services.AddSingleton<RestockProcessor>();
 builder.Services.AddSingleton<IFirebaseAuthWrapper, FirebaseAuthWrapper>();
+builder.Services.AddSingleton<RestockProcessor>();
 builder.Services.AddHostedService(sp => sp.GetRequiredService<RestockProcessor>());
 
-builder.Services.AddControllers()
-    .AddJsonOptions(options =>
-    {
-        options.JsonSerializerOptions.WriteIndented = true;
-        options.JsonSerializerOptions.ReferenceHandler = System.Text.Json.Serialization.ReferenceHandler.IgnoreCycles;
-    });
-
-builder.Services.AddCors(options =>
+// JSON & Controller
+builder.Services.AddControllers().AddJsonOptions(o =>
 {
-    options.AddPolicy("AllowFrontend", policy =>
+    o.JsonSerializerOptions.WriteIndented = true;
+    o.JsonSerializerOptions.ReferenceHandler = System.Text.Json.Serialization.ReferenceHandler.IgnoreCycles;
+});
+
+// CORS für Frontend
+builder.Services.AddCors(o =>
+{
+    o.AddPolicy("AllowFrontend", p =>
     {
-        policy.WithOrigins("http://localhost:3000")
-              .AllowAnyMethod()
-              .AllowAnyHeader();
+        p.WithOrigins("http://localhost:3000")
+         .AllowAnyMethod()
+         .AllowAnyHeader();
     });
 });
 
+// Swagger für API-Dokumentation
 builder.Services.AddSwaggerGen(c =>
 {
-    c.SwaggerDoc("v1", new OpenApiInfo { Title = "API", Version = "v1" });
+    c.SwaggerDoc("v1", new OpenApiInfo { Title = "Lagerverwaltung API", Version = "v1" });
 });
-
-builder.Services.AddSingleton<EmailService>(sp =>
-    new EmailService(
-        smtpServer: "sandbox.smtp.mailtrap.io",
-        smtpPort: 587,
-        smtpUser: "77cfd1069e13e9",
-        smtpPassword: "25037aeb7aeb51",
-        fromAddress: "no-reply@example.com"
-    )
-);
 
 var app = builder.Build();
 
@@ -130,16 +68,20 @@ app.UseCors("AllowFrontend");
 app.UseAuthorization();
 app.MapControllers();
 
-using (var scope = app.Services.CreateScope())
+// Testdaten nur bei aktivem TestMode
+if (testMode)
 {
+    Console.WriteLine("⚠️ TestMode aktiv – Testdaten werden eingefügt");
+    using var scope = app.Services.CreateScope();
     var dbContext = scope.ServiceProvider.GetRequiredService<AppDbContext>();
-    await dbContext.Database.MigrateAsync(); 
-    await SeedDataAsync(dbContext);
+    await dbContext.Database.MigrateAsync();
+    await SeedTestDataAsync(dbContext);
 }
 
 app.Run();
 
-async Task SeedDataAsync(AppDbContext dbContext)
+// Testdaten für Entwicklung/Test
+async Task SeedTestDataAsync(AppDbContext dbContext)
 {
     if (!dbContext.Warehouses.Any())
     {
@@ -151,11 +93,10 @@ async Task SeedDataAsync(AppDbContext dbContext)
 
     if (!dbContext.UserRoles.Any())
     {
-        dbContext.UserRoles.Add(new UserRole
-        {
-            FirebaseUid = "firebase-uid-of-manager",
-            Role = "Manager"
-        });
+        dbContext.UserRoles.AddRange(
+            new UserRole { FirebaseUid = "manager", Role = "Manager" },
+            new UserRole { FirebaseUid = "employee", Role = "Employee" }
+        );
     }
 
     await dbContext.SaveChangesAsync();

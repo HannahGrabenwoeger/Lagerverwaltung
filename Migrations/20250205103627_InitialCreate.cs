@@ -77,14 +77,13 @@ namespace backend.Migrations
                     MovementType = table.Column<string>(type: "TEXT", nullable: false),
                     User = table.Column<string>(type: "TEXT", nullable: false),
                     Timestamp = table.Column<DateTime>(type: "TEXT", nullable: false),
-                    ProductsId = table.Column<Guid>(type: "TEXT", nullable: true)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Movements", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_Movements_Products_ProductsId",
-                        column: x => x.ProductsId,
+                        name: "FK_Movements_Products_ProductId",
+                        column: x => x.ProductId,
                         principalTable: "Products",
                         principalColumn: "Id");
                     table.ForeignKey(
@@ -146,9 +145,9 @@ namespace backend.Migrations
                 column: "FromWarehouseId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Movements_ProductsId",
+                name: "IX_Movements_ProductId",
                 table: "Movements",
-                column: "ProductsId");
+                column: "ProductId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Movements_ToWarehouseId",

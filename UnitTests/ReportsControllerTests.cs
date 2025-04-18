@@ -1,14 +1,9 @@
-using Moq;
 using Xunit;
 using Microsoft.AspNetCore.Mvc;
-using System.Threading.Tasks;
 using Backend.Controllers;
 using Backend.Models;
 using Backend.Services;
-using Backend.Services.Firestore;
-using System.Collections.Generic;
-using System.Linq;
-using System;
+using Backend.Data;
 
 public class ReportsControllerTests
 {
@@ -16,38 +11,21 @@ public class ReportsControllerTests
     {
         private readonly Dictionary<string, UserRole> _users = new();
 
-        public void AddUser(string username, UserRole user)
-        {
-            _users[username] = user;
-        }
+        public void AddUser(string uid, UserRole role) => _users[uid] = role;
 
-        public Task<UserRole?> FindUserAsync(string username)
-        {
-            _users.TryGetValue(username, out var user);
-            return Task.FromResult<UserRole?>(user);
-        }
+        public Task<UserRole?> FindUserAsync(string uid) =>
+            Task.FromResult(_users.TryGetValue(uid, out var role) ? role : null);
     }
 
-    private ReportsController CreateController(IFirestoreDbWrapper? firestoreWrapper = null, IUserQueryService? userService = null)
+    private ReportsController CreateController(AppDbContext dbContext, IUserQueryService? userService = null)
     {
         userService ??= new FakeUserQueryService();
-        var dbContext = TestDbContextFactory.Create();
-
-        var serviceProviderMock = new Mock<IServiceProvider>();
-        serviceProviderMock
-            .Setup(sp => sp.GetService(typeof(IFirestoreDbWrapper)))
-            .Returns(firestoreWrapper);
-
-        return new ReportsController(dbContext, serviceProviderMock.Object, userService);
+        return new ReportsController(dbContext, userService);
     }
 
     [Fact]
-    public async Task GetStockSummary_ReturnsProducts()
+    public async Task GetStockSummary_ReturnsProductList()
     {
-        // Arrange
-        var mockFirestore = new Mock<IFirestoreDbWrapper>();
-        var controller = CreateController(mockFirestore.Object);
-
         var dbContext = TestDbContextFactory.Create();
         dbContext.Products.Add(new Product
         {
@@ -55,16 +33,15 @@ public class ReportsControllerTests
             Name = "Produkt 1",
             Quantity = 5,
             MinimumStock = 2,
-            Warehouse = new Warehouse { Name = "Lager A" }
+            Warehouse = new Warehouse { Id = Guid.NewGuid(), Name = "Lager A", Location = "Ort A" }
         });
+
         await dbContext.SaveChangesAsync();
 
-        var controllerWithDb = CreateController(mockFirestore.Object, new FakeUserQueryService());
+        var controller = CreateController(dbContext);
 
-        // Act
-        var result = await controllerWithDb.GetStockSummary();
+        var result = await controller.GetStockSummary();
 
-        // Assert
         var okResult = Assert.IsType<OkObjectResult>(result);
         var products = Assert.IsAssignableFrom<IEnumerable<object>>(okResult.Value);
         Assert.NotEmpty(products);

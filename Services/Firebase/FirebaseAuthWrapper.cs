@@ -1,5 +1,4 @@
 using FirebaseAdmin.Auth;
-using System.Threading.Tasks;
 
 namespace Backend.Services.Firebase
 {
@@ -7,8 +6,15 @@ namespace Backend.Services.Firebase
     {
         public async Task<string> VerifyIdTokenAndGetUidAsync(string idToken)
         {
-            var token = await FirebaseAuth.DefaultInstance.VerifyIdTokenAsync(idToken);
-            return token.Uid;
+            try
+            {
+                var token = await FirebaseAuth.DefaultInstance.VerifyIdTokenAsync(idToken);
+                return token.Uid;
+            }
+            catch (FirebaseAuthException ex)
+            {
+                throw new UnauthorizedAccessException("Firebase token is invalid", ex);
+            }
         }
     }
 }

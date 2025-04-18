@@ -1,8 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
-using System.Threading.Tasks;
 using FirebaseAdmin.Auth;
 using Backend.Dtos;
-using Backend.Interfaces;
 using Backend.Services.Firebase;
 
 namespace Backend.Controllers

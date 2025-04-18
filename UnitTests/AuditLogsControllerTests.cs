@@ -1,21 +1,18 @@
-using System.Collections.Generic;
-using System.Threading.Tasks;
 using Backend.Controllers;
 using Backend.Data;
 using Backend.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Xunit;
-using System.Text.Json;
-using System;
 
 public class AuditLogsControllerTests
 {
     private AppDbContext CreateInMemoryContext()
     {
         var options = new DbContextOptionsBuilder<AppDbContext>()
-            .UseInMemoryDatabase(databaseName: "AuditLogsTestDb_" + Guid.NewGuid())
+            .UseInMemoryDatabase($"AuditLogsTestDb_{Guid.NewGuid()}")
             .Options;
+
         return new AppDbContext(options);
     }
 
@@ -23,23 +20,35 @@ public class AuditLogsControllerTests
     public async Task GetAuditLogs_ReturnsAuditLogs_WhenLogsExist()
     {
         using var context = CreateInMemoryContext();
-        context.AuditLogs.Add(new AuditLog { Id = Guid.NewGuid(), Action = "Test", User = "User" });
+        var testLog = new AuditLog
+        {
+            Id = Guid.NewGuid(),
+            Action = "Create",
+            Entity = "Product",
+            ProductId = Guid.NewGuid(),
+            QuantityChange = 5,
+            User = "test-user",
+            Timestamp = DateTime.UtcNow
+        };
+
+        context.AuditLogs.Add(testLog);
         await context.SaveChangesAsync();
 
         var controller = new AuditLogsController(context);
         var result = await controller.GetAuditLogs();
 
         var okResult = Assert.IsType<OkObjectResult>(result);
-        Assert.NotNull(okResult.Value);
+        var logs = Assert.IsAssignableFrom<IEnumerable<AuditLog>>(okResult.Value);
 
-        // Anonyme Objekte → JSON prüfen
-        var json = JsonSerializer.Serialize(okResult.Value);
-        var logs = JsonDocument.Parse(json).RootElement;
-        Assert.True(logs.GetArrayLength() > 0);
+        Assert.Single(logs);
+        var returnedLog = Assert.Single(logs);
+        Assert.Equal("Create", returnedLog.Action);
+        Assert.Equal("Product", returnedLog.Entity);
+        Assert.Equal("test-user", returnedLog.User);
     }
 
     [Fact]
-    public async Task GetAuditLogs_ReturnsEmptyList_WhenNoLogsExist()
+    public async Task GetAuditLogs_ReturnsEmpty_WhenNoLogsExist()
     {
         using var context = CreateInMemoryContext();
         var controller = new AuditLogsController(context);
@@ -47,10 +56,7 @@ public class AuditLogsControllerTests
         var result = await controller.GetAuditLogs();
 
         var okResult = Assert.IsType<OkObjectResult>(result);
-        Assert.NotNull(okResult.Value);
-
-        var json = JsonSerializer.Serialize(okResult.Value);
-        var logs = JsonDocument.Parse(json).RootElement;
-        Assert.Equal(0, logs.GetArrayLength());
+        var logs = Assert.IsAssignableFrom<IEnumerable<AuditLog>>(okResult.Value);
+        Assert.Empty(logs);
     }
 }

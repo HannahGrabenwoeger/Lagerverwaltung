@@ -2,7 +2,8 @@ namespace Backend.Dtos
 {
     public class MovementsDto
     {
-        public Guid ProductsId { get; set; }  
+        public Guid Id { get; set; }  
+        public Guid ProductId { get; set; }  
         public string ProductName { get; set; } = string.Empty;
         public Guid FromWarehouseId { get; set; }  
         public Guid ToWarehouseId { get; set; }  
@@ -10,5 +11,3 @@ namespace Backend.Dtos
         public DateTime MovementsDate { get; set; }
     }
 }
-
-

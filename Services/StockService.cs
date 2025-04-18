@@ -2,7 +2,7 @@ using System;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
-using Backend.Data; 
+using Backend.Data;
 using Backend.Models;
 
 namespace Backend.Services
@@ -15,31 +15,37 @@ namespace Backend.Services
         {
             _context = context;
         }
-        
 
-        public async Task<bool> UpdateStock(Guid productId, int quantity, string movementType, string user)
+        public async Task<bool> UpdateStock(Guid productId, int quantity, string movementType, string performedBy)
         {
             var product = await _context.Products.FindAsync(productId);
             if (product == null) return false;
 
-            if (movementType == "IN") 
+            if (movementType == "IN")
             {
                 product.Quantity += quantity;
             }
-            else if (movementType == "OUT") 
+            else if (movementType == "OUT")
             {
+                if (product.Quantity < quantity)
+                    return false;
+
                 product.Quantity -= quantity;
             }
             else
             {
-                throw new ArgumentException("Invalid movement type");
+                throw new ArgumentException("Invalid movement type. Use 'IN' or 'OUT'.");
             }
 
             var movement = new Movements
             {
+                Id = Guid.NewGuid(),
                 ProductId = productId,
                 Quantity = quantity,
-                User = user,
+                MovementsDate = DateTime.UtcNow,
+                FromWarehouseId = product.WarehouseId, 
+                ToWarehouseId = product.WarehouseId,
+                PerformedBy = performedBy,
                 Timestamp = DateTime.UtcNow
             };
 
@@ -47,13 +53,19 @@ namespace Backend.Services
 
             if (product.Quantity < product.MinimumStock)
             {
-                _context.RestockQueue.Add(new RestockQueue
+                var alreadyQueued = await _context.RestockQueue
+                    .AnyAsync(r => r.ProductId == productId && !r.Processed);
+
+                if (!alreadyQueued)
                 {
-                    ProductId = productId,
-                    Quantity = product.MinimumStock - product.Quantity,
-                    Processed = false,
-                    RequestedAt = DateTime.UtcNow
-                });
+                    _context.RestockQueue.Add(new RestockQueue
+                    {
+                        ProductId = productId,
+                        Quantity = product.MinimumStock - product.Quantity,
+                        RequestedAt = DateTime.UtcNow,
+                        Processed = false
+                    });
+                }
             }
 
             await _context.SaveChangesAsync();

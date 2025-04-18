@@ -4,7 +4,7 @@ namespace Backend.Dtos
 {
     public class ProductsCreateDto
     {
-        [Required]
+        [Required(ErrorMessage = "Porduct name cannot be empty.")]
         public string Name { get; set; } = string.Empty;
 
         [Range(0, int.MaxValue)]
@@ -15,5 +15,6 @@ namespace Backend.Dtos
         
         [Range(0, int.MaxValue)]
         public int MinimumStock { get; set; }
+        public string? Unit { get; set; }
     }
 }
