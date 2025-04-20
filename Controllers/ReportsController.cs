@@ -2,6 +2,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Backend.Data;
 using Backend.Services;
+using Microsoft.AspNetCore.Authorization;
 
 namespace Backend.Controllers
 {
@@ -155,31 +156,6 @@ namespace Backend.Controllers
             catch (Exception ex)
             {
                 Console.WriteLine("Fehler in restocks-by-period: " + ex.Message);
-                return StatusCode(500, new { message = "Serverfehler", details = ex.Message });
-            }
-        }
-
-        [HttpGet("low-stock-products")]
-        public async Task<IActionResult> GetLowStockProducts()
-        {
-            try
-            {
-                var lowStockProducts = await _context.Products
-                    .Where(p => p.Quantity < p.MinimumStock)
-                    .Select(p => new
-                    {
-                        p.Id,
-                        p.Name,
-                        p.Quantity,
-                        p.MinimumStock
-                    })
-                    .ToListAsync();
-
-                return Ok(lowStockProducts);
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine("Fehler in low-stock-products: " + ex.Message);
                 return StatusCode(500, new { message = "Serverfehler", details = ex.Message });
             }
         }

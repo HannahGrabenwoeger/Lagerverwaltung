@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Mvc;
 using Moq;
 using Backend.Dtos;
 using Backend.Services.Firebase;
+using Backend.Models;
 
 public class AuthentificationControllerTests
 {
@@ -21,8 +22,7 @@ public class AuthentificationControllerTests
 
         var controller = CreateController(mockAuth);
 
-        var result = await controller.VerifyFirebaseToken("valid-token");
-
+        var result = await controller.VerifyFirebaseToken(new FirebaseTokenRequest { IdToken = "valid-token" });
         OkObjectResult okResult = Assert.IsType<OkObjectResult>(result);
         dynamic response = okResult.Value!;
         Assert.Equal("mocked-uid", (string)response.uid);

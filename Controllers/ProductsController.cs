@@ -3,6 +3,7 @@ using Microsoft.EntityFrameworkCore;
 using Backend.Models;
 using Backend.Data;
 using Backend.Dtos;
+using Microsoft.AspNetCore.Authorization;
 
 namespace Backend.Controllers
 {
@@ -61,7 +62,6 @@ namespace Backend.Controllers
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteProduct(Guid id)
         {
-            // Nur Manager dürfen löschen
             if (!User.IsInRole("Manager"))
                 return Unauthorized(new { message = "Unauthorized" });
 
@@ -129,6 +129,7 @@ namespace Backend.Controllers
             });
         }
 
+        [Authorize(Roles = "Manager")]
         [HttpGet("low-stock")]
         public async Task<IActionResult> GetLowStockProducts()
         {

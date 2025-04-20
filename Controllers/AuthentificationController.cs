@@ -2,6 +2,7 @@ using Microsoft.AspNetCore.Mvc;
 using FirebaseAdmin.Auth;
 using Backend.Dtos;
 using Backend.Services.Firebase;
+using Backend.Models;
 
 namespace Backend.Controllers
 {
@@ -16,12 +17,12 @@ namespace Backend.Controllers
             _firebaseAuth = firebaseAuth;
         }
 
-        [HttpPost("verify-firebase-token")]
-        public async Task<IActionResult> VerifyFirebaseToken(string idToken)
+       [HttpPost("verify-firebase-token")]
+        public async Task<IActionResult> VerifyFirebaseToken([FromBody] FirebaseTokenRequest request)
         {
             try
             {
-                var uid = await _firebaseAuth.VerifyIdTokenAndGetUidAsync(idToken);
+                var uid = await _firebaseAuth.VerifyIdTokenAndGetUidAsync(request.IdToken);
                 return Ok(new { message = "Token valid", uid = uid });
             }
             catch (FirebaseAuthException ex)
@@ -29,7 +30,7 @@ namespace Backend.Controllers
                 return Unauthorized(new { message = "Invalid token", error = ex.Message });
             }
         }
-
+        
         [HttpPost("verify-token")]
         public async Task<IActionResult> VerifyToken([FromBody] FirebaseAuthDto model)
         {
