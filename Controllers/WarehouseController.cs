@@ -19,23 +19,25 @@ public class WarehouseController : ControllerBase
     {
         var warehouses = await _context.Warehouses
             .Include(w => w.Products)
-            .Select(w => new WarehouseDto
-            {
-                Id = w.Id,
-                Name = w.Name,
-                Location = w.Location,
-                Products = w.Products.Select(p => new ProductDto
-                {
-                    Id = p.Id,
-                    Name = p.Name,
-                    Quantity = p.Quantity,
-                    MinimumStock = p.MinimumStock,
-                    WarehouseId = p.WarehouseId,
-                    WarehouseName = w.Name
-                }).ToList()
-            }).ToListAsync();
+            .ToListAsync();
 
-        return Ok(warehouses);
+        var result = warehouses.Select(w => new WarehouseDto
+        {
+            Id = w.Id,
+            Name = w.Name,
+            Location = w.Location,
+            Products = w.Products.Select(p => new ProductDto
+            {
+                Id = p.Id,
+                Name = p.Name,
+                Quantity = p.Quantity,
+                MinimumStock = p.MinimumStock,
+                WarehouseId = p.WarehouseId,
+                WarehouseName = w.Name
+            }).ToList()
+        }).ToList();
+
+        return Ok(result);
     }
 
     [HttpGet("products/{warehouseId}")]

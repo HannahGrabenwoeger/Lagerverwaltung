@@ -1,8 +1,11 @@
+using System;
+using System.Linq;
+using Microsoft.EntityFrameworkCore;
 using Backend.Data;
 using Backend.Models;
-using Microsoft.EntityFrameworkCore;
+using Backend.Services;
 
-namespace Backend.Services
+namespace Backend.Servicesxs
 {
     public class UserQueryService : IUserQueryService
     {
@@ -15,12 +18,14 @@ namespace Backend.Services
 
         public async Task<UserRole?> FindUserAsync(string username)
         {
-            if (string.IsNullOrWhiteSpace(username))
-                return null;
+            var trimmedLower = username.Trim().ToLower();
+            var roles = await _context.UserRoles
+                .AsNoTracking()
+                .ToListAsync();
 
-            return await _context.UserRoles
-                .FirstOrDefaultAsync(u => 
-                    string.Equals(u.FirebaseUid, username.Trim(), StringComparison.OrdinalIgnoreCase));
+            return roles.FirstOrDefault(u =>
+                u.FirebaseUid.Trim().ToLower() == trimmedLower
+            );
         }
     }
 }

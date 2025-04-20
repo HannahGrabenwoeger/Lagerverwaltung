@@ -4,6 +4,7 @@ using Backend.Data;
 using Backend.Services;
 using Backend.Services.Firebase;
 using Backend.Models;
+using Backend.Servicesxs;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -19,21 +20,29 @@ builder.Services.AddDbContext<AppDbContext>(options =>
 
 // Services
 builder.Services.AddScoped<InventoryReportService>();
+builder.Services.AddScoped(sp => new EmailService(
+    configuration["Smtp:Server"]!,
+    int.Parse(configuration["Smtp:Port"]!),
+    configuration["Smtp:User"]!,
+    configuration["Smtp:Password"]!,
+    configuration["Smtp:FromAddress"]!
+));
 builder.Services.AddScoped<AuditLogService>();
 builder.Services.AddScoped<StockService>();
 builder.Services.AddScoped<IUserQueryService, UserQueryService>();
 builder.Services.AddSingleton<IFirebaseAuthWrapper, FirebaseAuthWrapper>();
+
 builder.Services.AddSingleton<RestockProcessor>();
 builder.Services.AddHostedService(sp => sp.GetRequiredService<RestockProcessor>());
 
-// JSON & Controller
 builder.Services.AddControllers().AddJsonOptions(o =>
 {
     o.JsonSerializerOptions.WriteIndented = true;
     o.JsonSerializerOptions.ReferenceHandler = System.Text.Json.Serialization.ReferenceHandler.IgnoreCycles;
 });
 
-// CORS für Frontend
+builder.Services.AddEndpointsApiExplorer();
+
 builder.Services.AddCors(o =>
 {
     o.AddPolicy("AllowFrontend", p =>
@@ -44,7 +53,6 @@ builder.Services.AddCors(o =>
     });
 });
 
-// Swagger für API-Dokumentation
 builder.Services.AddSwaggerGen(c =>
 {
     c.SwaggerDoc("v1", new OpenApiInfo { Title = "Lagerverwaltung API", Version = "v1" });
@@ -68,10 +76,9 @@ app.UseCors("AllowFrontend");
 app.UseAuthorization();
 app.MapControllers();
 
-// Testdaten nur bei aktivem TestMode
 if (testMode)
 {
-    Console.WriteLine("⚠️ TestMode aktiv – Testdaten werden eingefügt");
+    Console.WriteLine("TestMode aktiv – Testdaten werden eingefügt");
     using var scope = app.Services.CreateScope();
     var dbContext = scope.ServiceProvider.GetRequiredService<AppDbContext>();
     await dbContext.Database.MigrateAsync();
@@ -80,7 +87,6 @@ if (testMode)
 
 app.Run();
 
-// Testdaten für Entwicklung/Test
 async Task SeedTestDataAsync(AppDbContext dbContext)
 {
     if (!dbContext.Warehouses.Any())
@@ -91,13 +97,13 @@ async Task SeedTestDataAsync(AppDbContext dbContext)
         );
     }
 
-    if (!dbContext.UserRoles.Any())
+     if (!dbContext.UserRoles.Any(u => u.FirebaseUid == "manager"))
     {
-        dbContext.UserRoles.AddRange(
-            new UserRole { FirebaseUid = "manager", Role = "Manager" },
-            new UserRole { FirebaseUid = "employee", Role = "Employee" }
-        );
+        dbContext.UserRoles.Add(new UserRole { FirebaseUid = "manager", Role = "Manager" });
     }
-
+    if (!dbContext.UserRoles.Any(u => u.FirebaseUid == "employee"))
+    {
+        dbContext.UserRoles.Add(new UserRole { FirebaseUid = "employee", Role = "Employee" });
+    }
     await dbContext.SaveChangesAsync();
 }

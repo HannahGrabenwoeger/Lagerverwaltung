@@ -64,12 +64,6 @@ namespace Backend.Controllers
             }
         }
 
-        [HttpGet("reports")]
-        public IActionResult GetReports()
-        {
-            return Ok(new { message = "Reports loaded successfully!" });
-        }
-
         [HttpGet("movements-per-day")]
         public async Task<IActionResult> GetMovementsPerDay()
         {

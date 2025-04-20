@@ -23,8 +23,8 @@ public class AuthentificationControllerTests
 
         var result = await controller.VerifyFirebaseToken("valid-token");
 
-        var okResult = Assert.IsType<OkObjectResult>(result);
-        dynamic response = okResult.Value;
+        OkObjectResult okResult = Assert.IsType<OkObjectResult>(result);
+        dynamic response = okResult.Value!;
         Assert.Equal("mocked-uid", (string)response.uid);
     }
 
@@ -40,8 +40,8 @@ public class AuthentificationControllerTests
 
         var result = await controller.VerifyToken(model);
 
-        var okResult = Assert.IsType<OkObjectResult>(result);
-        dynamic response = okResult.Value;
+        OkObjectResult okResult = Assert.IsType<OkObjectResult>(result);
+        dynamic response = okResult.Value!;
         Assert.Equal("mocked-uid", (string)response.uid);
     }
 
@@ -56,8 +56,8 @@ public class AuthentificationControllerTests
 
         var result = await controller.GetUid("valid-token");
 
-        var okResult = Assert.IsType<OkObjectResult>(result);
-        dynamic response = okResult.Value;
+        OkObjectResult okResult = Assert.IsType<OkObjectResult>(result);
+        dynamic response = okResult.Value!;
         Assert.Equal("mocked-uid", (string)response.uid);
     }
 }

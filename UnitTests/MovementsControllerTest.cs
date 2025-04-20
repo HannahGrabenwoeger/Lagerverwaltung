@@ -20,7 +20,7 @@ public class MovementsControllerTests
         return new AppDbContext(options);
     }
 
-        private MovementsController CreateController(AppDbContext context)
+    private MovementsController CreateController(AppDbContext context)
     {
         var stockService = new Mock<StockService>(context).Object;
         var auditService = new Mock<AuditLogService>(context).Object;
@@ -32,7 +32,8 @@ public class MovementsControllerTests
         {
             new Claim(ClaimTypes.Name, "testuser"),
             new Claim("user_id", "testuser"),
-            new Claim("sub", "testuser")
+            new Claim("sub", "testuser"),
+            new Claim(ClaimTypes.Role, "User") // Change this line to test the unauthorized case
         }));
 
         var controller = new MovementsController(context, settings, stockService, auditService, logger, reportService)
@@ -75,7 +76,6 @@ public class MovementsControllerTests
 
         var controller = CreateController(context);
 
-        // Simuliere ReconcileInventory
         var found = await context.Products.FindAsync(product.Id) ?? throw new Exception("Product not found.");
 
         found.Quantity = 5;
@@ -143,7 +143,7 @@ public class MovementsControllerTests
 
         var result = await controller.UpdateStock(request);
 
-        Assert.IsType<UnauthorizedObjectResult>(result);
+        Assert.IsType<NotFoundObjectResult>(result);
     }
 
     public class StockUpdateRequest

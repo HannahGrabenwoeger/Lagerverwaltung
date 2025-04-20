@@ -43,24 +43,5 @@ namespace Backend.Controllers
 
             return Ok(new { role = role, isManager = role == "Manager" });
         }
-
-        [HttpGet("is-manager/{uid}")]
-        public async Task<IActionResult> IsManager(string uid)
-        {
-            if (string.IsNullOrWhiteSpace(uid))
-                return BadRequest("uid must not be empty.");
-
-            var role = _settings.TestMode
-                ? "Manager"
-                : await _context.UserRoles
-                    .Where(r => r.FirebaseUid == uid)
-                    .Select(r => r.Role)
-                    .FirstOrDefaultAsync();
-
-            if (role != "Manager")
-                return Unauthorized();
-
-            return Ok(new { isManager = true });
-        }
     }
 }
