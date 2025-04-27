@@ -1,4 +1,3 @@
-// Controllers/AuditLogsController.cs
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Backend.Data;
@@ -20,7 +19,6 @@ namespace Backend.Controllers
         [HttpGet]
         public async Task<IActionResult> GetAuditLogs()
         {
-            // Liefert direkt IEnumerable<AuditLog>
             var logs = await _context.AuditLogs.ToListAsync();
             return Ok(logs);
         }

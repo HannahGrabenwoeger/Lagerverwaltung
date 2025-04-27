@@ -33,7 +33,7 @@ public class MovementsControllerTests
             new Claim(ClaimTypes.Name, "testuser"),
             new Claim("user_id", "testuser"),
             new Claim("sub", "testuser"),
-            new Claim(ClaimTypes.Role, "User") // Change this line to test the unauthorized case
+            new Claim(ClaimTypes.Role, "User")  
         }));
 
         var controller = new MovementsController(context, settings, stockService, auditService, logger, reportService)

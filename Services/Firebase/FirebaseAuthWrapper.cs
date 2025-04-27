@@ -8,7 +8,6 @@ namespace Backend.Services.Firebase
     {
         static FirebaseAuthWrapper()
         {
-            // Nur initialisieren, wenn noch kein FirebaseApp existiert
             if (FirebaseApp.DefaultInstance == null)
             {
                 FirebaseApp.Create(new AppOptions

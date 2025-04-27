@@ -7,18 +7,17 @@ using Backend.Models;
 using Backend.Servicesxs;
 
 var builder = WebApplication.CreateBuilder(args);
+builder.WebHost.UseUrls("http://0.0.0.0:80");
 
 var configuration = builder.Configuration;
 var testMode = configuration.GetValue<bool>("TestMode");
 builder.Services.AddSingleton(new AppSettings { TestMode = testMode });
 
-// Datenbank
 builder.Services.AddDbContext<AppDbContext>(options =>
     options.UseSqlite(configuration.GetConnectionString("DefaultConnection"))
            .ConfigureWarnings(w => w.Ignore(Microsoft.EntityFrameworkCore.Diagnostics.RelationalEventId.PendingModelChangesWarning))
 );
 
-// Services
 builder.Services.AddScoped<InventoryReportService>();
 builder.Services.AddScoped(sp => new EmailService(
     configuration["Smtp:Server"]!,
@@ -69,7 +68,7 @@ app.UseSwagger();
 app.UseSwaggerUI(c =>
 {
     c.SwaggerEndpoint("/swagger/v1/swagger.json", "API v1");
-    c.RoutePrefix = "";
+    c.RoutePrefix = "swagger";
 });
 
 app.UseCors("AllowFrontend");
