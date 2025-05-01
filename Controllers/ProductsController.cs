@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Authorization;
 
 namespace Backend.Controllers
 {
+   // [Authorize]
     [ApiController]
     [Route("api/[controller]")]
     public class ProductsController : RolesController
@@ -96,12 +97,12 @@ namespace Backend.Controllers
         public async Task<IActionResult> AddProduct([FromBody] ProductsCreateDto dto)
         {
             if (dto == null || string.IsNullOrWhiteSpace(dto.Name))
-                return BadRequest(new { message = "Ungültige Produktdaten" });
+                return BadRequest(new { message = "Invalid Product" });
 
             var duplicate = await _context.Products
                 .AnyAsync(p => p.Name == dto.Name && p.WarehouseId == dto.WarehouseId);
             if (duplicate)
-                return Conflict(new { message = "Ein Produkt mit diesem Namen existiert bereits in diesem Lager" });
+                return Conflict(new { message = "Product with this name already exits in this warehouse." });
 
             var product = new Product
             {
@@ -129,28 +130,34 @@ namespace Backend.Controllers
             });
         }
 
-        [Authorize(Roles = "Manager")]
         [HttpGet("low-stock")]
         public async Task<IActionResult> GetLowStockProducts()
         {
-            var lowStock = await _context.Products
-                .Where(p => p.Quantity < p.MinimumStock)
-                .Select(p => new
-                {
-                    p.Id,
-                    p.Name,
-                    p.Unit,
-                    p.Quantity,
-                    p.MinimumStock,
-                    p.WarehouseId
-                })
-                .AsNoTracking()
-                .ToListAsync();
+            try
+            {
+                var lowStock = await _context.Products
+                    .Where(p => p.Quantity < p.MinimumStock)
+                    .Select(p => new
+                    {
+                        p.Id,
+                        p.Name,
+                        p.Unit,
+                        p.Quantity,
+                        p.MinimumStock,
+                        p.WarehouseId
+                    })
+                    .AsNoTracking()
+                    .ToListAsync();
 
-            if (!lowStock.Any())
-                return NotFound(new { message = "Keine Produkte mit niedrigem Lagerbestand gefunden" });
+                if (!lowStock.Any())
+                    return NotFound(new { message = "Keine Produkte mit niedrigem Lagerbestand gefunden" });
 
-            return Ok(lowStock);
+                return Ok(lowStock);
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, new { message = "Interner Fehler beim Abrufen des Lagerbestands", error = ex.Message });
+            }
         }
     }
 }

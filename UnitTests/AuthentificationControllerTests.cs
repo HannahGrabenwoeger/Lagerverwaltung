@@ -22,7 +22,7 @@ public class AuthentificationControllerTests
 
         var controller = CreateController(mockAuth);
 
-        var result = await controller.VerifyFirebaseToken(new FirebaseTokenRequest { IdToken = "valid-token" });
+        var result = await controller.VerifyFirebaseToken(new Backend.Dtos.FirebaseTokenRequest { IdToken = "valid-token" });
         OkObjectResult okResult = Assert.IsType<OkObjectResult>(result);
         dynamic response = okResult.Value!;
         Assert.Equal("mocked-uid", (string)response.uid);
@@ -54,7 +54,7 @@ public class AuthentificationControllerTests
 
         var controller = CreateController(mockAuth);
 
-        var result = await controller.GetUid("valid-token");
+        var result = await controller.VerifyToken(new FirebaseAuthDto { IdToken = "valid-token" });
 
         OkObjectResult okResult = Assert.IsType<OkObjectResult>(result);
         dynamic response = okResult.Value!;

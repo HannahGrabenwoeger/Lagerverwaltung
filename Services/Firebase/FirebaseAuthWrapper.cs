@@ -6,27 +6,24 @@ namespace Backend.Services.Firebase
 {
     public class FirebaseAuthWrapper : IFirebaseAuthWrapper
     {
-        static FirebaseAuthWrapper()
-        {
-            if (FirebaseApp.DefaultInstance == null)
-            {
-                FirebaseApp.Create(new AppOptions
-                {
-                    Credential = GoogleCredential.FromFile("Secrets/service-account.json")
-                });
-            }
-        }
-
         public async Task<string> VerifyIdTokenAndGetUidAsync(string idToken)
         {
             try
             {
+                Console.WriteLine("Token wird überprüft...");
                 var token = await FirebaseAuth.DefaultInstance.VerifyIdTokenAsync(idToken);
+                Console.WriteLine("Token erfolgreich verifiziert!");
                 return token.Uid;
             }
             catch (FirebaseAuthException ex)
             {
+                Console.WriteLine($"FirebaseAuthException: {ex.Message}");
                 throw new UnauthorizedAccessException("Firebase token is invalid", ex);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Allgemeiner Fehler in VerifyIdTokenAndGetUidAsync: {ex.Message}");
+                throw;
             }
         }
     }
