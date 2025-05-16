@@ -9,6 +9,9 @@ using Backend.Models;
 using FirebaseAdmin;
 using Google.Apis.Auth.OAuth2;
 using Backend.Servicesxs;
+using Microsoft.IdentityModel.Logging;
+
+IdentityModelEventSource.ShowPII = true;
 
 var builder = WebApplication.CreateBuilder(args);
 builder.WebHost.UseUrls("http://0.0.0.0:80");
@@ -22,6 +25,8 @@ builder.Services.AddDbContext<AppDbContext>(options =>
     options.UseSqlite(configuration.GetConnectionString("DefaultConnection"))
            .ConfigureWarnings(w => w.Ignore(Microsoft.EntityFrameworkCore.Diagnostics.RelationalEventId.PendingModelChangesWarning))
 );
+
+Console.WriteLine("Datenbankpfad: " + configuration.GetConnectionString("DefaultConnection"));
 
 // Services
 builder.Services.AddScoped<InventoryReportService>();
@@ -54,30 +59,29 @@ builder.Services.AddSwaggerGen(c =>
 {
     c.SwaggerDoc("v1", new OpenApiInfo { Title = "Lagerverwaltung API", Version = "v1" });
 
-    // Swagger Autorisierung hinzufügen
-/*
-c.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme
-{
-    In = ParameterLocation.Header,
-    Description = "Bitte einen gültigen JWT Token eingeben (Prefix: 'Bearer ' nicht vergessen)",
-    Name = "Authorization",
-    Type = SecuritySchemeType.ApiKey,
-    Scheme = "Bearer"
-});
-
-c.AddSecurityRequirement(new OpenApiSecurityRequirement {
-{
-    new OpenApiSecurityScheme
+    c.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme
     {
-        Reference = new OpenApiReference
+        In = ParameterLocation.Header,
+        Description = "JWT Authorization header using the Bearer scheme. Example: 'Bearer {token}'",
+        Name = "Authorization",
+        Type = SecuritySchemeType.ApiKey,
+        Scheme = "Bearer"
+    });
+
+    c.AddSecurityRequirement(new OpenApiSecurityRequirement
+    {
         {
-            Type = ReferenceType.SecurityScheme,
-            Id = "Bearer"
+            new OpenApiSecurityScheme
+            {
+                Reference = new OpenApiReference
+                {
+                    Type = ReferenceType.SecurityScheme,
+                    Id = "Bearer"
+                }
+            },
+            Array.Empty<string>()
         }
-    },
-    new string[] {}
-}});
-*/
+    });
 });
 
 builder.Services.AddCors(o =>
@@ -99,6 +103,7 @@ if (FirebaseApp.DefaultInstance == null)
     });
 }
 
+// 🔐 Firebase JWT Authentication mit Claim-Logging
 builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
     .AddJwtBearer(options =>
     {
@@ -110,7 +115,34 @@ builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
             ValidIssuer = $"https://securetoken.google.com/{projectId}",
             ValidateAudience = true,
             ValidAudience = projectId,
-            ValidateLifetime = true
+            ValidateLifetime = true,
+            NameClaimType = "sub",
+            RoleClaimType = "role"
+        };
+
+        options.Events = new JwtBearerEvents
+        {
+            OnTokenValidated = context =>
+{
+    var claims = context.Principal?.Claims;
+    Console.WriteLine("✅ Token wurde validiert!");
+    Console.WriteLine("=== Token Claims ===");
+    if (claims != null)
+    {
+        foreach (var claim in claims)
+        {
+            Console.WriteLine($"Type: {claim.Type}, Value: {claim.Value}");
+        }
+    }
+    return Task.CompletedTask;
+},
+            OnAuthenticationFailed = context =>
+{
+    Console.WriteLine("❌ Token-Fehler: " + context.Exception.Message);
+    if (context.Exception.InnerException != null)
+        Console.WriteLine("➡️ Inner Exception: " + context.Exception.InnerException.Message);
+    return Task.CompletedTask;
+}
         };
     });
 
@@ -127,11 +159,12 @@ app.UseSwaggerUI(c =>
 {
     c.SwaggerEndpoint("/swagger/v1/swagger.json", "API v1");
     c.RoutePrefix = "swagger";
+    c.ConfigObject.AdditionalItems["persistAuthorization"] = true;
 });
 
 app.UseCors("AllowFrontend");
-//app.UseAuthentication();
-//app.UseAuthorization();
+app.UseAuthentication();
+app.UseAuthorization();
 
 app.MapControllers();
 
@@ -160,9 +193,14 @@ async Task SeedTestDataAsync(AppDbContext dbContext)
     {
         dbContext.UserRoles.Add(new UserRole { FirebaseUid = "manager", Role = "Manager" });
     }
-    if (!dbContext.UserRoles.Any(u => u.FirebaseUid == "employee"))
+
+    if (!dbContext.UserRoles.Any(u => u.FirebaseUid == "N1hfy3HSyNb4QxynYzjDlF8to4W2"))
     {
-        dbContext.UserRoles.Add(new UserRole { FirebaseUid = "employee", Role = "Employee" });
+        dbContext.UserRoles.Add(new UserRole
+        {
+            FirebaseUid = "N1hfy3HSyNb4QxynYzjDlF8to4W2",
+            Role = "admin"
+        });
     }
 
     await dbContext.SaveChangesAsync();

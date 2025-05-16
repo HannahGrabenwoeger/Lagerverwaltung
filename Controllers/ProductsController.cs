@@ -60,11 +60,26 @@ namespace Backend.Controllers
             });
         }
 
+        [Authorize]
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteProduct(Guid id)
         {
-            if (!User.IsInRole("Manager"))
+            // UID aus JWT extrahieren
+            var uid = User.FindFirst("sub")?.Value;
+            Console.WriteLine($"[DEBUG] UID: {uid}");
+
+            if (string.IsNullOrEmpty(uid))
+            {
+                return Unauthorized(new { message = "Kein UID im Token gefunden." });
+            }
+
+            var role = await GetUserRoleAsync();
+            Console.WriteLine($"[DEBUG] Rolle im DeleteProduct: {role}");
+
+            if (role != "Manager" && role != "admin")
+            {
                 return Unauthorized(new { message = "Unauthorized" });
+            }
 
             var product = await _context.Products.FindAsync(id);
             if (product == null)

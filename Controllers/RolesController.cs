@@ -1,9 +1,12 @@
 using Microsoft.AspNetCore.Mvc;
 using Backend.Data;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.Authorization;
+using System.Security.Claims;
 
 namespace Backend.Controllers
 {
+    [Authorize]
     [ApiController]
     [Route("api/roles")]
     public class RolesController : ControllerBase
@@ -17,31 +20,43 @@ namespace Backend.Controllers
             _settings = settings;
         }
 
-        protected async Task<string?> GetUserRoleAsync()
+        protected Task<string?> GetUserRoleAsync()
         {
-            if (_settings.TestMode)
+            // Alle Claims ausgeben
+            foreach (var claim in User.Claims)
             {
-                return "Manager";
+                Console.WriteLine($"Claim: {claim.Type} = {claim.Value}");
             }
 
-            var uid = User.FindFirst("user_id")?.Value ?? User.FindFirst("sub")?.Value;
-            if (string.IsNullOrEmpty(uid))
-                return null;
+            // Rolle direkt aus JWT-Claim lesen
+            var role = User.FindFirst(System.Security.Claims.ClaimTypes.Role)?.Value;
+            Console.WriteLine($"[JWT Claim] Rolle: {role}");
 
-            return await _context.UserRoles
-                .Where(r => r.FirebaseUid == uid)
-                .Select(r => r.Role)
-                .FirstOrDefaultAsync();
+            return Task.FromResult(role);
         }
-
+        
+        [Authorize]
         [HttpGet("user-role")]
         public async Task<IActionResult> GetUserRole()
         {
-            var role = await GetUserRoleAsync();
-            if (role == null)
-                return NotFound("No role found.");
+            var uid = User.FindFirst(System.Security.Claims.ClaimTypes.NameIdentifier)?.Value;
 
-            return Ok(new { role = role, isManager = role == "Manager" });
+            if (string.IsNullOrEmpty(uid))
+            {
+                return Unauthorized("Kein UID im Token gefunden.");
+            }
+
+            var role = await _context.UserRoles
+                .Where(r => r.FirebaseUid == uid)
+                .Select(r => r.Role)
+                .FirstOrDefaultAsync();
+
+            if (role == null)
+            {
+                return NotFound("No role found.");
+            }
+
+            return Ok(new { role });
         }
     }
 }
