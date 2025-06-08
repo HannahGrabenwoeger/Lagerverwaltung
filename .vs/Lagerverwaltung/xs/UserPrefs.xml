@@ -1,0 +1,26 @@
+﻿<Properties StartupConfiguration="{B5CEE1AB-68C5-FCEC-EA61-653FFB609ED2}|Default">
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workbench ActiveDocument="backend/Secrets/service-account.json">
+    <Files>
+      <File FileName="backend/Secrets/service-account.json" Line="1" Column="1" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="Lagerverwaltung" expanded="True">
+            <Node name="Lagerverwaltung_backend" expanded="True" />
+            <Node name="backend" expanded="True">
+              <Node name="Secrets" expanded="True" />
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.ItemProperties.backend PreferredExecutionTarget="/System/Volumes/Preboot/Cryptexes/App/System/Applications/Safari.app" />
+  <MultiItemStartupConfigurations />
+</Properties>
