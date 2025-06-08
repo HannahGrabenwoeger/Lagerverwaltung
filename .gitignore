@@ -1,65 +1,41 @@
-# Build-Ordner
+# .NET Build-Dateien
 bin/
 obj/
+*.db-shm
+*.db-wal
+*.db-journal
 
-# System und Mac-Dateien
+# System-/Editor-Dateien
 .DS_Store
 *.log
-.ServiceHub/
-*.pid
 *.lock
+*.pid
 .vscode/
-*.user
+.idea/
+
+# Datenbanken
 *.db
+!lagerverwaltung.db  # <– deine Hauptdatenbank behalten
 
-# Anaconda und Python
-.anaconda/
-navigator.*
-keyring
-
-# Node.js
+# Node.js Tools (z. B. firebase-token-tool)
 node_modules/
+npm-debug.log
 package-lock.json
 
-# Python/Notebooks
-venv/
-*.ipynb
+# Tools – nur temporäre Dateien ignorieren
+Tools/*.log
+Tools/venv/
+Tools/__pycache__/
 
-# Office-Dateien
+# Secrets – außer wenn gewollt
+backend/Secrets/service-account.json
+
+# Office-Dateien (optional)
 *.docx
 *.xlsx
 ~$*
 
-# IDE-Ordner
-.idea/
-.vscode/
-.npm/
-
-# CSV-Dateien
-*.csv
-
-# JSON ignorieren – außer Konfig
-*.json
-!appsettings.json
-backend/Secrets/service-account.json
-
-# Mac-Systemdateien
-.DS_Store
-.AppleDouble
-.LSOverride
-
-# Verzeichnisse, die häufig in macOS verwendet werden
-Library/
-Movies/
-Music/
-Pictures/
-Public/
-
-# Projektbezogene Verzeichnisse oder Dateien
-*.csv
-*.ipynb
-.idea/
-
-# Weitere Systemdateien und Verzeichnisse
-.ServiceHub/
-.npm/
+# Sonstiges (für Sicherheit)
+*.zip
+*.tar.gz
+*.bak
