@@ -153,7 +153,7 @@ namespace Backend.Controllers
         public async Task<IActionResult> UpdateStock([FromBody] StockUpdateRequest request)
         {
             var role = await GetUserRoleAsync();
-            if (role != "Manager")
+            if (role != "Manager" && role != "admin")
                 return Unauthorized(new { message = "Insufficient permissions" });
 
             var product = await _context.Products.FindAsync(request.ProductId);

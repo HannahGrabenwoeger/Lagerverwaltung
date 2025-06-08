@@ -16,6 +16,7 @@ namespace Backend.Controllers
             _context = context;
         }
 
+        [Authorize(Roles = "Manager,admin")]
         [HttpGet]
         public async Task<IActionResult> GetAuditLogs()
         {
