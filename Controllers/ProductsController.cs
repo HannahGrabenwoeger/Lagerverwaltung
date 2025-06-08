@@ -108,7 +108,6 @@ namespace Backend.Controllers
             return Ok(new { message = "Produkt aktualisiert" });
         }
 
-        [Authorize(Roles = "Manager,admin")]
         [HttpPost]
         public async Task<IActionResult> AddProduct([FromBody] ProductsCreateDto dto)
         {
