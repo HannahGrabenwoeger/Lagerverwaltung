@@ -1,3 +1,4 @@
+
 # .NET Build-Dateien
 bin/
 obj/
@@ -18,10 +19,41 @@ obj/
 !lagerverwaltung.db  # <– deine Hauptdatenbank behalten
 
 # Node.js Tools (z. B. firebase-token-tool)
+=======
+# .NET build output
+bin/
+obj/
+
+# Datenbank temporär-Dateien
+*.db-wal
+*.db-shm
+*.db-journal
+
+# Behalte Hauptdatenbank
+*.db
+!lagerverwaltung.db
+
+# Logs und systemnahe Dateien
+*.log
+*.pid
+*.lock
+
+# Editor und IDE
+.vscode/
+.idea/
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Node.js Tools
+>>>>>>> 62668124ec9b2a43627d4e9d6fc7cbbae8f41807
 node_modules/
 npm-debug.log
 package-lock.json
 
+<<<<<<< HEAD
 # Tools – nur temporäre Dateien ignorieren
 Tools/*.log
 Tools/venv/
@@ -31,11 +63,23 @@ Tools/__pycache__/
 backend/Secrets/service-account.json
 
 # Office-Dateien (optional)
+=======
+# Secrets
+backend/Secrets/service-account.json
+
+# Office
+>>>>>>> 62668124ec9b2a43627d4e9d6fc7cbbae8f41807
 *.docx
 *.xlsx
 ~$*
 
+<<<<<<< HEAD
 # Sonstiges (für Sicherheit)
 *.zip
 *.tar.gz
 *.bak
+=======
+# Test-Tools: virtuelle Umgebungen
+Tools/venv/
+Tools/__pycache__/
+>>>>>>> 62668124ec9b2a43627d4e9d6fc7cbbae8f41807

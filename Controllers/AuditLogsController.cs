@@ -1,0 +1,28 @@
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
+using Backend.Data;
+using Backend.Models;
+using Microsoft.AspNetCore.Authorization;
+
+namespace Backend.Controllers
+{
+    [ApiController]
+    [Route("api/audit-logs")]
+    public class AuditLogsController : ControllerBase
+    {
+        private readonly AppDbContext _context;
+
+        public AuditLogsController(AppDbContext context)
+        {
+            _context = context;
+        }
+
+        [Authorize(Roles = "Manager,admin")]
+        [HttpGet]
+        public async Task<IActionResult> GetAuditLogs()
+        {
+            var logs = await _context.AuditLogs.ToListAsync();
+            return Ok(logs);
+        }
+    }
+}
