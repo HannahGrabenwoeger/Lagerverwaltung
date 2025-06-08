@@ -1,35 +1,43 @@
-# Build & system
+# .NET build output
 bin/
 obj/
+
+# Datenbank temporär-Dateien
+*.db-wal
+*.db-shm
+*.db-journal
+
+# Behalte Hauptdatenbank
+*.db
+!lagerverwaltung.db
+
+# Logs und systemnahe Dateien
+*.log
+*.pid
+*.lock
+
+# Editor und IDE
 .vscode/
 .idea/
-.DS_Store
-*.log
-*.pdb
-*.ipynb
-*.trn
-*.nupkg
-*.shm
-*.wal
 
-# User settings & temp
-*.user
-*.suo
-*.history
-.history/
-.ipython/
-.local/
-.nuget/
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Node.js Tools
 node_modules/
-*.log
-ServiceHub/
-.env
-*.bak
-*~$.DS_Store
-*.log
-*.shm
-*.wal
-/node_modules
-.nuget/
-.ServiceHub/
-Secrets/
+npm-debug.log
+package-lock.json
+
+# Secrets
+backend/Secrets/service-account.json
+
+# Office
+*.docx
+*.xlsx
+~$*
+
+# Test-Tools: virtuelle Umgebungen
+Tools/venv/
+Tools/__pycache__/
