@@ -6,6 +6,7 @@ using Backend.Dtos;
 using System;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 
 namespace Backend.Controllers
 {
