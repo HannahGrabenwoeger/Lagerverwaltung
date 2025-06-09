@@ -10,6 +10,7 @@ using FirebaseAdmin;
 using Google.Apis.Auth.OAuth2;
 using Backend.Servicesxs;
 using Microsoft.IdentityModel.Logging;
+using System.Security.Claims;
 
 IdentityModelEventSource.ShowPII = true;
 

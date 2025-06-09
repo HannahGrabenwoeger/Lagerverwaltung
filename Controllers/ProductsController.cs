@@ -4,6 +4,7 @@ using Backend.Models;
 using Backend.Data;
 using Backend.Dtos;
 using Microsoft.AspNetCore.Authorization;
+using System.Security.Claims;
 
 namespace Backend.Controllers
 {
@@ -65,7 +66,7 @@ namespace Backend.Controllers
         public async Task<IActionResult> DeleteProduct(Guid id)
         {
             // UID aus JWT extrahieren
-            var uid = User.FindFirst("sub")?.Value;
+            var uid = User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
             Console.WriteLine($"[DEBUG] UID: {uid}");
 
             if (string.IsNullOrEmpty(uid))

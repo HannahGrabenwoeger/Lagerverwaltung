@@ -1,6 +1,6 @@
-using FirebaseAdmin;
 using FirebaseAdmin.Auth;
-using Google.Apis.Auth.OAuth2;
+using System;
+using System.Threading.Tasks;
 
 namespace Backend.Services.Firebase
 {
@@ -10,19 +10,19 @@ namespace Backend.Services.Firebase
         {
             try
             {
-                Console.WriteLine("Token wird überprüft...");
+                Console.WriteLine("🔐 Verifiziere Firebase Token...");
                 var token = await FirebaseAuth.DefaultInstance.VerifyIdTokenAsync(idToken);
-                Console.WriteLine("Token erfolgreich verifiziert!");
+                Console.WriteLine("✅ Token gültig. UID: " + token.Uid);
                 return token.Uid;
             }
             catch (FirebaseAuthException ex)
             {
-                Console.WriteLine($"FirebaseAuthException: {ex.Message}");
-                throw new UnauthorizedAccessException("Firebase token is invalid", ex);
+                Console.WriteLine("❌ FirebaseAuthException: " + ex.Message);
+                throw new UnauthorizedAccessException("Ungültiger Firebase-Token", ex);
             }
             catch (Exception ex)
             {
-                Console.WriteLine($"Allgemeiner Fehler in VerifyIdTokenAndGetUidAsync: {ex.Message}");
+                Console.WriteLine("❌ Allgemeiner Fehler bei der Tokenverifizierung: " + ex.Message);
                 throw;
             }
         }
