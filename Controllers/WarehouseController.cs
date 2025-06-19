@@ -47,7 +47,7 @@ public class WarehouseController : ControllerBase
         {
             var warehouseExists = await _context.Warehouses.AnyAsync(w => w.Id == warehouseId);
             if (!warehouseExists)
-                return NotFound(new { message = "Lager nicht gefunden." });
+                return NotFound(new { message = "Bearing not found." });
 
             var products = await _context.Products
                 .Where(p => p.WarehouseId == warehouseId)
@@ -66,7 +66,7 @@ public class WarehouseController : ControllerBase
         }
         catch (Exception ex)
         {
-            return StatusCode(500, new { message = "Fehler beim Abrufen der Produkte", details = ex.Message });
+            return StatusCode(500, new { message = "Error retrieving products", details = ex.Message });
         }
     }
 }

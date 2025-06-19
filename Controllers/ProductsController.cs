@@ -66,17 +66,16 @@ namespace Backend.Controllers
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteProduct(Guid id)
         {
-            // UID aus JWT extrahieren
             var uid = User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
             Console.WriteLine($"[DEBUG] UID: {uid}");
 
             if (string.IsNullOrEmpty(uid))
             {
-                return Unauthorized(new { message = "Kein UID im Token gefunden." });
+                return Unauthorized(new { message = "No UID found in token." });
             }
 
             var role = await GetUserRoleAsync();
-            Console.WriteLine($"[DEBUG] Rolle im DeleteProduct: {role}");
+            Console.WriteLine($"[DEBUG] Role in DeleteProduct: {role}");
 
             if (role != "Manager" && role != "admin")
             {
@@ -85,7 +84,7 @@ namespace Backend.Controllers
 
             var product = await _context.Products.FindAsync(id);
             if (product == null)
-                return NotFound(new { message = "Produkt nicht gefunden" });
+                return NotFound(new { message = "Product not found." });
 
             _context.Products.Remove(product);
             await _context.SaveChangesAsync();
@@ -182,13 +181,13 @@ namespace Backend.Controllers
                     .ToListAsync();
 
                 if (!lowStock.Any())
-                    return NotFound(new { message = "Keine Produkte mit niedrigem Lagerbestand gefunden" });
+                    return NotFound(new { message = "No low stock products found" });
 
                 return Ok(lowStock);
             }
             catch (Exception ex)
             {
-                return StatusCode(500, new { message = "Interner Fehler beim Abrufen des Lagerbestands", error = ex.Message });
+                return StatusCode(500, new { message = "Internal error while retrieving inventory", error = ex.Message });
             }
         }
     }

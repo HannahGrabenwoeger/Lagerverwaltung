@@ -20,7 +20,7 @@ namespace Backend.Controllers
         [HttpPost("verify-firebase-token")]
         public async Task<IActionResult> VerifyFirebaseToken([FromBody] FirebaseTokenRequest request)
         {
-            Console.WriteLine("Anfrage erhalten!");
+            Console.WriteLine("Request received!");
 
             if (!string.IsNullOrEmpty(request.IdToken))
             {
@@ -32,8 +32,8 @@ namespace Backend.Controllers
             }
             else
             {
-                Console.WriteLine("Kein Token übergeben.");
-                return BadRequest(new { message = "Token fehlt im Request." });
+                Console.WriteLine("No token passed.");
+                return BadRequest(new { message = "Token missing in request." });
             }
 
             try
@@ -49,8 +49,8 @@ namespace Backend.Controllers
             }
             catch (Exception ex)
             {
-                Console.WriteLine($"Allgemeiner Fehler: {ex.Message}");
-                return new UnauthorizedObjectResult(new { message = "Token ungültig", error = ex.Message });
+                Console.WriteLine($"General error: {ex.Message}");
+                return new UnauthorizedObjectResult(new { message = "Invalid token", error = ex.Message });
             }
         }
 
@@ -71,7 +71,7 @@ namespace Backend.Controllers
 
             return Ok(new
             {
-                message = $"Hallo {email}, UID: {uid}, Rolle: {role}"
+                message = $"Hello {email}, UID: {uid}, Role: {role}"
             });
         }
     }

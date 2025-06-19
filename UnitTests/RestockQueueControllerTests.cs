@@ -101,8 +101,8 @@ public class RestockQueueControllerTests
         context.RestockQueue.Add(new RestockQueue { Id = restockId, Quantity = 3, Processed = false });
         await context.SaveChangesAsync();
 
-        await controller.MarkAsProcessed(restockId); // erster Aufruf
-        var result = await controller.MarkAsProcessed(restockId); // zweiter Aufruf
+        await controller.MarkAsProcessed(restockId);
+        var result = await controller.MarkAsProcessed(restockId);
 
         var okResult = Assert.IsType<OkObjectResult>(result);
         var updated = await context.RestockQueue.FindAsync(restockId);

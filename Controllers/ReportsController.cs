@@ -32,8 +32,8 @@ namespace Backend.Controllers
             }
             catch (Exception ex)
             {
-                Console.WriteLine("Fehler in find-user: " + ex.Message);
-                return StatusCode(500, new { message = "Serverfehler", details = ex.Message });
+                Console.WriteLine("Error in find-user: " + ex.Message);
+                return StatusCode(500, new { message = "Server error", details = ex.Message });
             }
         }
 
@@ -49,7 +49,7 @@ namespace Backend.Controllers
                         p.Id,
                         p.Name,
                         p.Quantity,
-                        Warehouse = p.Warehouse != null ? p.Warehouse.Name : "Unbekannt"
+                        Warehouse = p.Warehouse != null ? p.Warehouse.Name : "Unknown"
                     })
                     .ToListAsync();
 
@@ -60,8 +60,8 @@ namespace Backend.Controllers
             }
             catch (Exception ex)
             {
-                Console.WriteLine("Fehler in stock-summary: " + ex.Message);
-                return StatusCode(500, new { message = "Serverfehler", details = ex.Message });
+                Console.WriteLine("Error in stock-summary: " + ex.Message);
+                return StatusCode(500, new { message = "Server error", details = ex.Message });
             }
         }
 
@@ -85,8 +85,8 @@ namespace Backend.Controllers
             }
             catch (Exception ex)
             {
-                Console.WriteLine("Fehler in movements-per-day: " + ex.Message);
-                return StatusCode(500, new { message = "Serverfehler", details = ex.Message });
+                Console.WriteLine("Error in movements-per-day: " + ex.Message);
+                return StatusCode(500, new { message = "Server error", details = ex.Message });
             }
         }
 
@@ -111,8 +111,8 @@ namespace Backend.Controllers
             }
             catch (Exception ex)
             {
-                Console.WriteLine("Fehler in top-restock-products: " + ex.Message);
-                return StatusCode(500, new { message = "Serverfehler", details = ex.Message });
+                Console.WriteLine("Error in top-restock-products: " + ex.Message);
+                return StatusCode(500, new { message = "Server error", details = ex.Message });
             }
         }
 

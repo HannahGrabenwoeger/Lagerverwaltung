@@ -104,7 +104,6 @@ if (FirebaseApp.DefaultInstance == null)
     });
 }
 
-// 🔐 Firebase JWT Authentication mit Claim-Logging
 builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
     .AddJwtBearer(options =>
     {
@@ -126,7 +125,7 @@ builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
             OnTokenValidated = context =>
 {
     var claims = context.Principal?.Claims;
-    Console.WriteLine("✅ Token wurde validiert!");
+    Console.WriteLine("Token has been validated!");
     Console.WriteLine("=== Token Claims ===");
     if (claims != null)
     {
@@ -139,9 +138,9 @@ builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
 },
             OnAuthenticationFailed = context =>
 {
-    Console.WriteLine("❌ Token-Fehler: " + context.Exception.Message);
+    Console.WriteLine("Token error: " + context.Exception.Message);
     if (context.Exception.InnerException != null)
-        Console.WriteLine("➡️ Inner Exception: " + context.Exception.InnerException.Message);
+        Console.WriteLine("Inner Exception: " + context.Exception.InnerException.Message);
     return Task.CompletedTask;
 }
         };
@@ -154,7 +153,6 @@ if (app.Environment.IsDevelopment())
     app.UseDeveloperExceptionPage();
 }
 
-// Middlewares
 app.UseSwagger();
 app.UseSwaggerUI(c =>
 {
@@ -171,7 +169,7 @@ app.MapControllers();
 
 if (testMode)
 {
-    Console.WriteLine("TestMode aktiv – Testdaten werden eingefügt");
+    Console.WriteLine("TestMode active – test data is inserted");
     using var scope = app.Services.CreateScope();
     var dbContext = scope.ServiceProvider.GetRequiredService<AppDbContext>();
     await dbContext.Database.MigrateAsync();
@@ -185,8 +183,8 @@ async Task SeedTestDataAsync(AppDbContext dbContext)
     if (!dbContext.Warehouses.Any())
     {
         dbContext.Warehouses.AddRange(
-            new Warehouse { Id = Guid.NewGuid(), Name = "Warehouse A", Location = "Ort A" },
-            new Warehouse { Id = Guid.NewGuid(), Name = "Warehouse B", Location = "Ort B" }
+            new Warehouse { Id = Guid.NewGuid(), Name = "Warehouse A", Location = "Location A" },
+            new Warehouse { Id = Guid.NewGuid(), Name = "Warehouse B", Location = "Location B" }
         );
     }
 

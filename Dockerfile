@@ -23,9 +23,7 @@
     # --- Final Image ---
     FROM base AS final
     WORKDIR /app
-    
-    # Falls du Secrets brauchst (z. B. Firebase):
-    # COPY backend/Secrets ./Secrets
+
     
     COPY --from=build /app/publish .
     ENTRYPOINT ["dotnet", "backend.dll"]

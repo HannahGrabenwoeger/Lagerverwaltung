@@ -15,13 +15,13 @@ async function setRole() {
       role: "admin", 
     });
 
-    console.log(`Rolle "admin" wurde für ${email} gesetzt.`);
+    console.log(`Role "admin" was set for ${email}.`);
 
     const updatedUser = await admin.auth().getUser(user.uid);
-    console.log("Aktuelle Custom Claims:");
+    console.log("Current custom claims:");
     console.log(updatedUser.customClaims);
   } catch (err) {
-    console.error("Fehler:", err);
+    console.error("Error:", err);
   }
 }
 

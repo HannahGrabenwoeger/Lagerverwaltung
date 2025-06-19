@@ -42,7 +42,7 @@ namespace Backend.Controllers
 
             if (string.IsNullOrEmpty(uid))
             {
-                return Unauthorized("Kein UID im Token gefunden.");
+                return Unauthorized("No UID found in token.");
             }
 
             var role = await _context.UserRoles
