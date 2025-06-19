@@ -11,4 +11,3 @@ namespace Backend.Dtos
         public string? Unit { get; set; }
     }
 }
-

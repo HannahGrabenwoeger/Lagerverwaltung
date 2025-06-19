@@ -51,13 +51,14 @@ namespace Backend.Controllers
 
             return Ok(new
             {
-                id            = product.Id,
-                name          = product.Name,
-                unit          = product.Unit,
-                quantity      = product.Quantity,
-                minimumStock  = product.MinimumStock,
-                warehouseId   = product.WarehouseId,
-                warehouseName = product.Warehouse?.Name ?? "Unknown"
+                id = product.Id,
+                name = product.Name,
+                unit = product.Unit,
+                quantity = product.Quantity,
+                minimumStock = product.MinimumStock,
+                warehouseId = product.WarehouseId,
+                warehouseName = product.Warehouse?.Name ?? "Unknown",
+                rowVersion    = product.RowVersion
             });
         }
 
@@ -92,12 +93,23 @@ namespace Backend.Controllers
             return NoContent();
         }
 
-        [HttpPost("update-product")]
-        public async Task<IActionResult> UpdateProduct(Guid productId, [FromBody] UpdateProductDto dto)
+        [HttpPut("{id}")]
+        public async Task<IActionResult> UpdateProduct(Guid id, [FromBody] UpdateProductDto dto)
         {
-            var product = await _context.Products.FindAsync(productId);
+            var uid = User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
+            if (string.IsNullOrEmpty(uid))
+                return Unauthorized(new { message = "No UID found in token." });
+
+            var role = await GetUserRoleAsync();
+            if (role != "Manager" && role != "admin")
+                return Unauthorized(new { message = "Unauthorized access." });
+
+            var product = await _context.Products.FindAsync(id);
             if (product == null)
-                return NotFound(new { message = "Product not found" });
+                return NotFound(new { message = "Product not found." });
+
+            if (!product.RowVersion.SequenceEqual(dto.RowVersion))
+                return Conflict(new { message = "Concurrency conflict: The product was modified by another user." });
 
             product.Name = dto.Name;
             product.Unit = dto.Unit;
@@ -106,7 +118,11 @@ namespace Backend.Controllers
 
             await _context.SaveChangesAsync();
 
-            return Ok(new { message = "Produkt aktualisiert" });
+            return Ok(new
+            {
+                message = "Product updated successfully.",
+                newRowVersion = product.RowVersion
+            });
         }
 
         [HttpPost]

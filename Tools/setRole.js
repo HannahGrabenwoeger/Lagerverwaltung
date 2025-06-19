@@ -17,7 +17,6 @@ async function setRole() {
 
     console.log(`Rolle "admin" wurde für ${email} gesetzt.`);
 
-    // Überprüfen, ob der Claim korrekt gesetzt wurde
     const updatedUser = await admin.auth().getUser(user.uid);
     console.log("Aktuelle Custom Claims:");
     console.log(updatedUser.customClaims);

@@ -20,19 +20,18 @@ namespace Backend.Controllers
             _settings = settings;
         }
 
-        protected Task<string?> GetUserRoleAsync()
+        protected async Task<string?> GetUserRoleAsync()
         {
-            // Alle Claims ausgeben
-            foreach (var claim in User.Claims)
-            {
-                Console.WriteLine($"Claim: {claim.Type} = {claim.Value}");
-            }
+            var uid = User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
+            if (string.IsNullOrEmpty(uid)) return null;
 
-            // Rolle direkt aus JWT-Claim lesen
-            var role = User.FindFirst(System.Security.Claims.ClaimTypes.Role)?.Value;
-            Console.WriteLine($"[JWT Claim] Rolle: {role}");
+            var role = await _context.UserRoles
+                .Where(r => r.FirebaseUid == uid)
+                .Select(r => r.Role)
+                .FirstOrDefaultAsync();
 
-            return Task.FromResult(role);
+            Console.WriteLine($"[DB-Rolle] UID: {uid}, Rolle: {role}");
+            return role;
         }
         
         [Authorize]

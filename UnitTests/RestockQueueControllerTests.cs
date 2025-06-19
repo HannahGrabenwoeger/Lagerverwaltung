@@ -91,4 +91,23 @@ public class RestockQueueControllerTests
 
         Assert.NotEmpty(restocks);
     }
+
+    [Fact]
+    public async Task MarkAsProcessed_Twice_StaysProcessed()
+    {
+        var (controller, context) = CreateTestController();
+        var restockId = Guid.NewGuid();
+
+        context.RestockQueue.Add(new RestockQueue { Id = restockId, Quantity = 3, Processed = false });
+        await context.SaveChangesAsync();
+
+        await controller.MarkAsProcessed(restockId); // erster Aufruf
+        var result = await controller.MarkAsProcessed(restockId); // zweiter Aufruf
+
+        var okResult = Assert.IsType<OkObjectResult>(result);
+        var updated = await context.RestockQueue.FindAsync(restockId);
+
+        Assert.NotNull(updated);
+        Assert.True(updated!.Processed);
+    }
 }

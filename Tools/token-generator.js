@@ -12,24 +12,23 @@ const auth = getAuth(app);
 
 async function getToken() {
   try {
-    await auth.signOut(); // <- hinzufügen
-    // Anmeldung mit E-Mail & Passwort
+    await auth.signOut();
+
     const userCredential = await signInWithEmailAndPassword(auth, "admin@email.com", "password");
 
-    // Neuestes Token mit Custom Claims anfordern
-    const tokenResult = await userCredential.user.getIdTokenResult(true); // forceRefresh: true
+    const tokenResult = await userCredential.user.getIdTokenResult(true); 
 
-    console.log("✅ Dein ID Token:");
+    console.log("Dein ID Token:");
     console.log(tokenResult.token);
 
-    console.log("🎭 Custom Claims im Token:");
+    console.log("Custom Claims im Token:");
     console.log(tokenResult.claims);
 
     if (!tokenResult.claims.role) {
-      console.warn("⚠️ ACHTUNG: Kein 'role' Claim im Token vorhanden!");
+      console.warn("ACHTUNG: Kein 'role' Claim im Token vorhanden!");
     }
   } catch (error) {
-    console.error("❌ Fehler beim Login oder Tokenabruf:", error.message);
+    console.error("Fehler beim Login oder Tokenabruf:", error.message);
   }
 }
 

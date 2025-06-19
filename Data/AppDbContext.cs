@@ -66,8 +66,24 @@ namespace Backend.Data
             );
 
             modelBuilder.Entity<Product>().HasData(
-                new Product { Id = Guid.Parse("33333333-3333-3333-3333-333333333333"), Name = "Product 1", Quantity = 100, MinimumStock = 10, WarehouseId = warehouseAId },
-                new Product { Id = Guid.Parse("44444444-4444-4444-4444-444444444444"), Name = "Product 2", Quantity = 50, MinimumStock = 5, WarehouseId = warehouseBId }
+                new Product
+                {
+                    Id = Guid.Parse("33333333-3333-3333-3333-333333333333"),
+                    Name = "Product 1",
+                    Quantity = 100,
+                    MinimumStock = 10,
+                    WarehouseId = warehouseAId,
+                    RowVersion = new byte[8]
+                },
+                new Product
+                {
+                    Id = Guid.Parse("44444444-4444-4444-4444-444444444444"),
+                    Name = "Product 2",
+                    Quantity = 50,
+                    MinimumStock = 5,
+                    WarehouseId = warehouseBId,
+                    RowVersion = new byte[8]
+                }
             );
 
             Console.WriteLine("Seed data and relationships were defined in OnModelCreating!");

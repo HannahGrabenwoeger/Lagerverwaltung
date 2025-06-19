@@ -1,3 +1,4 @@
+#nullable enable
 using Xunit;
 using Microsoft.AspNetCore.Mvc;
 using Backend.Controllers;
@@ -45,5 +46,46 @@ public class ReportsControllerTests
         var okResult = Assert.IsType<OkObjectResult>(result);
         var products = Assert.IsAssignableFrom<IEnumerable<object>>(okResult.Value);
         Assert.NotEmpty(products);
+    }
+
+    [Fact]
+    public async Task GetMovementsPerDay_ReturnsGroupedData()
+    {
+        var dbContext = TestDbContextFactory.Create();
+
+        var productId = Guid.NewGuid();
+        var warehouseId = Guid.NewGuid();
+
+        dbContext.Warehouses.Add(new Warehouse { Id = warehouseId, Name = "W1", Location = "X" });
+        dbContext.Products.Add(new Product { Id = productId, Name = "P1", Quantity = 10, MinimumStock = 2, WarehouseId = warehouseId });
+        dbContext.Movements.AddRange(
+            new Movements
+            {
+                Id = Guid.NewGuid(),
+                ProductId = productId,
+                FromWarehouseId = warehouseId,
+                ToWarehouseId = warehouseId,
+                Quantity = 5,
+                MovementsDate = DateTime.UtcNow.Date
+            },
+            new Movements
+            {
+                Id = Guid.NewGuid(),
+                ProductId = productId,
+                FromWarehouseId = warehouseId,
+                ToWarehouseId = warehouseId,
+                Quantity = 3,
+                MovementsDate = DateTime.UtcNow.Date
+            }
+        );
+
+        await dbContext.SaveChangesAsync();
+
+        var controller = new ReportsController(dbContext, new FakeUserQueryService());
+        var result = await controller.GetMovementsPerDay();
+
+        var okResult = Assert.IsType<OkObjectResult>(result);
+        var data = Assert.IsAssignableFrom<IEnumerable<object>>(okResult.Value);
+        Assert.Single(data);
     }
 }

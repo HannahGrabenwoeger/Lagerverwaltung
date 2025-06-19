@@ -17,7 +17,6 @@ namespace Backend.Controllers
             _firebaseAuth = firebaseAuth;
         }
 
-        // 🔐 1. Firebase ID-Token manuell prüfen
         [HttpPost("verify-firebase-token")]
         public async Task<IActionResult> VerifyFirebaseToken([FromBody] FirebaseTokenRequest request)
         {
@@ -41,7 +40,7 @@ namespace Backend.Controllers
             {
                 var uid = await _firebaseAuth.VerifyIdTokenAndGetUidAsync(request.IdToken);
                 Console.WriteLine($"UID: {uid}");
-                return Ok(new { message = "Token valid", uid = uid });
+                return Ok(new TokenResponseDto { Uid = uid });
             }
             catch (FirebaseAuthException ex)
             {
@@ -51,21 +50,19 @@ namespace Backend.Controllers
             catch (Exception ex)
             {
                 Console.WriteLine($"Allgemeiner Fehler: {ex.Message}");
-                return StatusCode(500, new { message = "Interner Fehler", error = ex.Message });
+                return new UnauthorizedObjectResult(new { message = "Token ungültig", error = ex.Message });
             }
         }
 
-        // 🔐 2. Alternative einfache Tokenprüfung
         [HttpPost("verify-token")]
         public async Task<IActionResult> VerifyToken([FromBody] FirebaseAuthDto model)
         {
             var uid = await _firebaseAuth.VerifyIdTokenAndGetUidAsync(model.IdToken);
-            return Ok(new { uid = uid });
+            return Ok(new TokenResponseDto { Uid = uid });
         }
 
-        // 🔒 3. Geschützter Endpunkt für eingeloggte Benutzer
         [HttpGet("secure-data")]
-        [Authorize] // Nur mit gültigem Firebase-Token zugänglich
+        [Authorize]
         public IActionResult GetSecureData()
         {
             var email = User.FindFirst("email")?.Value;
