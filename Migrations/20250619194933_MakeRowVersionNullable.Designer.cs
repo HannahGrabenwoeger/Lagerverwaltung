@@ -3,6 +3,7 @@ using System;
 using Backend.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -10,9 +11,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace backend.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    partial class AppDbContextModelSnapshot : ModelSnapshot
+    [Migration("20250619194933_MakeRowVersionNullable")]
+    partial class MakeRowVersionNullable
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder.HasAnnotation("ProductVersion", "9.0.1");
@@ -111,6 +114,7 @@ namespace backend.Migrations
 
                     b.Property<byte[]>("RowVersion")
                         .IsConcurrencyToken()
+                        .IsRequired()
                         .ValueGeneratedOnAddOrUpdate()
                         .HasColumnType("BLOB");
 
@@ -137,7 +141,6 @@ namespace backend.Migrations
                             MinimumStock = 10,
                             Name = "Product 1",
                             Quantity = 100,
-                            RowVersion = new byte[] { 0, 0, 0, 0, 0, 0, 0, 0 },
                             WarehouseId = new Guid("11111111-1111-1111-1111-111111111111")
                         },
                         new
@@ -147,7 +150,6 @@ namespace backend.Migrations
                             MinimumStock = 5,
                             Name = "Product 2",
                             Quantity = 50,
-                            RowVersion = new byte[] { 0, 0, 0, 0, 0, 0, 0, 0 },
                             WarehouseId = new Guid("22222222-2222-2222-2222-222222222222")
                         });
                 });

@@ -30,15 +30,15 @@ public class AuthentificationControllerTests
     }
 
     [Fact]
-public async Task VerifyFirebaseToken_ReturnsUnauthorized_WhenTokenIsInvalid()
-{
-    var mockAuth = new Mock<IFirebaseAuthWrapper>();
-    mockAuth.Setup(auth => auth.VerifyIdTokenAndGetUidAsync("invalid-token"))
-            .ThrowsAsync(new Exception("Token invalid"));
+    public async Task VerifyFirebaseToken_ReturnsUnauthorized_WhenTokenIsInvalid()
+    {
+        var mockAuth = new Mock<IFirebaseAuthWrapper>();
+        mockAuth.Setup(auth => auth.VerifyIdTokenAndGetUidAsync("invalid-token"))
+                .ThrowsAsync(new Exception("Token invalid"));
 
-    var controller = new AuthentificationController(mockAuth.Object);
-    var result = await controller.VerifyFirebaseToken(new FirebaseTokenRequest { IdToken = "invalid-token" });
+        var controller = new AuthentificationController(mockAuth.Object);
+        var result = await controller.VerifyFirebaseToken(new FirebaseTokenRequest { IdToken = "invalid-token" });
 
-    Assert.IsType<UnauthorizedObjectResult>(result);
+        Assert.IsType<UnauthorizedObjectResult>(result);
 }
 }

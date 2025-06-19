@@ -30,6 +30,10 @@ namespace Backend.Data
                 .HasIndex(p => new { p.Name, p.WarehouseId })
                 .IsUnique();
 
+            modelBuilder.Entity<Product>()
+                .Property(p => p.RowVersion)
+                .IsRowVersion();
+
             modelBuilder.Entity<Movements>()
                 .HasOne(m => m.FromWarehouse)
                 .WithMany()

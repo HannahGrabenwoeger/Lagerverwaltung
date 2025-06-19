@@ -22,15 +22,7 @@ namespace Backend.Controllers
         {
             Console.WriteLine("Request received!");
 
-            if (!string.IsNullOrEmpty(request.IdToken))
-            {
-                var tokenPreview = request.IdToken.Length > 32
-                    ? request.IdToken.Substring(0, 32) + "..."
-                    : request.IdToken;
-
-                Console.WriteLine($"Token: {tokenPreview}");
-            }
-            else
+            if (string.IsNullOrEmpty(request.IdToken))
             {
                 Console.WriteLine("No token passed.");
                 return BadRequest(new { message = "Token missing in request." });
@@ -38,9 +30,28 @@ namespace Backend.Controllers
 
             try
             {
-                var uid = await _firebaseAuth.VerifyIdTokenAndGetUidAsync(request.IdToken);
+                var decodedToken = await FirebaseAuth.DefaultInstance.VerifyIdTokenAsync(request.IdToken);
+
+                // UID: entweder direkt oder aus sub
+                var uid = decodedToken.Uid ?? decodedToken.Claims.GetValueOrDefault("sub")?.ToString();
+
+                if (string.IsNullOrEmpty(uid))
+                {
+                    Console.WriteLine("No UID or sub claim found.");
+                    return Unauthorized(new { message = "Kein UID im Token gefunden." });
+                }
+
+                // Rolle aus Custom Claims holen
+                var role = decodedToken.Claims.TryGetValue("role", out var roleObj) ? roleObj?.ToString() : "none";
+
                 Console.WriteLine($"UID: {uid}");
-                return Ok(new TokenResponseDto { Uid = uid });
+                Console.WriteLine($"Role: {role}");
+
+                return Ok(new
+                {
+                    uid,
+                    role
+                });
             }
             catch (FirebaseAuthException ex)
             {
@@ -50,7 +61,7 @@ namespace Backend.Controllers
             catch (Exception ex)
             {
                 Console.WriteLine($"General error: {ex.Message}");
-                return new UnauthorizedObjectResult(new { message = "Invalid token", error = ex.Message });
+                return Unauthorized(new { message = "Invalid token", error = ex.Message });
             }
         }
 

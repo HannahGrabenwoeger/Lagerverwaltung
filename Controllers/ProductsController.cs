@@ -8,7 +8,7 @@ using System.Security.Claims;
 
 namespace Backend.Controllers
 {
-   // [Authorize]
+
     [ApiController]
     [Route("api/[controller]")]
     public class ProductsController : RolesController
@@ -62,25 +62,14 @@ namespace Backend.Controllers
             });
         }
 
-        [Authorize]
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteProduct(Guid id)
         {
             var uid = User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
-            Console.WriteLine($"[DEBUG] UID: {uid}");
-
-            if (string.IsNullOrEmpty(uid))
-            {
-                return Unauthorized(new { message = "No UID found in token." });
-            }
+            if (string.IsNullOrEmpty(uid)) return Unauthorized();
 
             var role = await GetUserRoleAsync();
-            Console.WriteLine($"[DEBUG] Role in DeleteProduct: {role}");
-
-            if (role != "Manager" && role != "admin")
-            {
-                return Unauthorized(new { message = "Unauthorized" });
-            }
+            if (role != "Manager" && role != "admin") return Unauthorized();
 
             var product = await _context.Products.FindAsync(id);
             if (product == null)
@@ -142,7 +131,7 @@ namespace Backend.Controllers
                 Unit = dto.Unit,
                 Quantity = dto.Quantity,
                 MinimumStock = dto.MinimumStock,
-                WarehouseId = dto.WarehouseId
+                WarehouseId = dto.WarehouseId,
             };
 
             _context.Products.Add(product);
