@@ -2,7 +2,11 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Backend.Data;
 using Backend.Dtos;
+using Backend.Models;
+using Microsoft.AspNetCore.Authorization;
+using System.Security.Claims;
 
+[Authorize]
 [ApiController]
 [Route("api/[controller]")]
 public class WarehouseController : ControllerBase
@@ -12,6 +16,17 @@ public class WarehouseController : ControllerBase
     public WarehouseController(AppDbContext context)
     {
         _context = context;
+    }
+
+    private async Task<string?> GetUserRoleAsync()
+    {
+        var uid = User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
+        if (string.IsNullOrEmpty(uid)) return null;
+
+        return await _context.UserRoles
+            .Where(r => r.FirebaseUid == uid)
+            .Select(r => r.Role)
+            .FirstOrDefaultAsync();
     }
 
     [HttpGet]
@@ -43,30 +58,95 @@ public class WarehouseController : ControllerBase
     [HttpGet("products/{warehouseId}")]
     public async Task<IActionResult> GetProductsByWarehouse(Guid warehouseId)
     {
-        try
-        {
-            var warehouseExists = await _context.Warehouses.AnyAsync(w => w.Id == warehouseId);
-            if (!warehouseExists)
-                return NotFound(new { message = "Bearing not found." });
+        var warehouseExists = await _context.Warehouses.AnyAsync(w => w.Id == warehouseId);
+        if (!warehouseExists)
+            return NotFound(new { message = "Warehouse not found." });
 
-            var products = await _context.Products
-                .Where(p => p.WarehouseId == warehouseId)
-                .Select(p => new ProductDto
-                {
-                    Id = p.Id,
-                    Name = p.Name,
-                    Quantity = p.Quantity,
-                    MinimumStock = p.MinimumStock,
-                    WarehouseId = p.WarehouseId,
-                    WarehouseName = p.Warehouse != null ? p.Warehouse.Name : null
-                })
-                .ToListAsync();
+        var products = await _context.Products
+            .Where(p => p.WarehouseId == warehouseId)
+            .Select(p => new ProductDto
+            {
+                Id = p.Id,
+                Name = p.Name,
+                Quantity = p.Quantity,
+                MinimumStock = p.MinimumStock,
+                WarehouseId = p.WarehouseId,
+                WarehouseName = p.Warehouse != null ? p.Warehouse.Name : null
+            })
+            .ToListAsync();
 
-            return Ok(products);
-        }
-        catch (Exception ex)
+        return Ok(products);
+    }
+
+    [HttpPost]
+    public async Task<IActionResult> CreateWarehouse([FromBody] CreateWarehouseDto dto)
+    {
+        var role = await GetUserRoleAsync();
+        if (role != "Manager" && role != "admin")
+            return Forbid();
+
+        if (string.IsNullOrWhiteSpace(dto.Name) || string.IsNullOrWhiteSpace(dto.Location))
         {
-            return StatusCode(500, new { message = "Error retrieving products", details = ex.Message });
+            return BadRequest(new { message = "Name and location are required." });
         }
+
+        var warehouse = new Warehouse
+        {
+            Id = Guid.NewGuid(),
+            Name = dto.Name,
+            Location = dto.Location
+        };
+
+        _context.Warehouses.Add(warehouse);
+        await _context.SaveChangesAsync();
+
+        return CreatedAtAction(nameof(GetWarehouses), new { id = warehouse.Id }, warehouse);
+    }
+
+    [Authorize]
+    [HttpPut("{id}")]
+    public async Task<IActionResult> UpdateWarehouse(Guid id, [FromBody] UpdateWarehouseDto dto)
+    {
+        var role = await GetUserRoleAsync();
+        if (role != "Manager" && role != "admin")
+            return Forbid();
+
+        var warehouse = await _context.Warehouses.FindAsync(id);
+        if (warehouse == null)
+            return NotFound();
+
+        if (string.IsNullOrWhiteSpace(dto.Name) || string.IsNullOrWhiteSpace(dto.Location))
+        {
+            return BadRequest(new { message = "Name and location are required." });
+        }
+
+        warehouse.Name = dto.Name;
+        warehouse.Location = dto.Location;
+
+        await _context.SaveChangesAsync();
+        return NoContent();
+    }
+
+    [HttpDelete("{id}")]
+    public async Task<IActionResult> DeleteWarehouse(Guid id)
+    {
+        var role = await GetUserRoleAsync();
+        if (role != "Manager" && role != "admin")
+            return Forbid();
+
+        var warehouse = await _context.Warehouses
+            .Include(w => w.Products)
+            .FirstOrDefaultAsync(w => w.Id == id);
+
+        if (warehouse == null)
+            return NotFound();
+
+        if (warehouse.Products.Any())
+            return BadRequest(new { message = "Cannot delete a warehouse that contains products." });
+
+        _context.Warehouses.Remove(warehouse);
+        await _context.SaveChangesAsync();
+
+        return NoContent();
     }
 }
