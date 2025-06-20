@@ -19,7 +19,7 @@ obj/
 .vscode/
 .idea/
 
-# Node.js Tools (z. B. firebase-token-tool)
+# Node.js Tools
 node_modules/
 npm-debug.log
 package-lock.json
@@ -29,8 +29,6 @@ Tools/*.log
 Tools/venv/
 Tools/__pycache__/
 
-# Secrets (nur wenn nicht gewollt)
-backend/Secrets/service-account.json
 
 # Office-Dateien (optional)
 *.docx

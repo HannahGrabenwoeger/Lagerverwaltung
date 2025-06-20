@@ -3,31 +3,25 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 #nullable disable
 
-#pragma warning disable CA1814 // Prefer jagged arrays over multidimensional
-
 namespace backend.Migrations
 {
     /// <inheritdoc />
-    public partial class InitialCreate : Migration
+    public partial class CleanInitial : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.CreateTable(
-                name: "AuditLogs",
+                name: "UserRoles",
                 columns: table => new
                 {
                     Id = table.Column<Guid>(type: "TEXT", nullable: false),
-                    Entity = table.Column<string>(type: "TEXT", nullable: false),
-                    Action = table.Column<string>(type: "TEXT", nullable: false),
-                    ProductId = table.Column<Guid>(type: "TEXT", nullable: true),
-                    QuantityChange = table.Column<int>(type: "INTEGER", nullable: false),
-                    User = table.Column<string>(type: "TEXT", nullable: false),
-                    Timestamp = table.Column<DateTime>(type: "TEXT", nullable: false)
+                    FirebaseUid = table.Column<string>(type: "TEXT", nullable: false),
+                    Role = table.Column<string>(type: "TEXT", nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_AuditLogs", x => x.Id);
+                    table.PrimaryKey("PK_UserRoles", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
@@ -49,9 +43,12 @@ namespace backend.Migrations
                 {
                     Id = table.Column<Guid>(type: "TEXT", nullable: false),
                     Name = table.Column<string>(type: "TEXT", nullable: false),
+                    Unit = table.Column<string>(type: "TEXT", nullable: true),
                     Quantity = table.Column<int>(type: "INTEGER", nullable: false),
                     MinimumStock = table.Column<int>(type: "INTEGER", nullable: false),
-                    WarehouseId = table.Column<Guid>(type: "TEXT", nullable: false)
+                    WarehouseId = table.Column<Guid>(type: "TEXT", nullable: false),
+                    HasSentLowStockNotification = table.Column<bool>(type: "INTEGER", nullable: false),
+                    RowVersion = table.Column<byte[]>(type: "BLOB", rowVersion: true, nullable: true)
                 },
                 constraints: table =>
                 {
@@ -65,6 +62,28 @@ namespace backend.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "AuditLogs",
+                columns: table => new
+                {
+                    Id = table.Column<Guid>(type: "TEXT", nullable: false),
+                    Entity = table.Column<string>(type: "TEXT", nullable: false),
+                    Action = table.Column<string>(type: "TEXT", nullable: false),
+                    ProductId = table.Column<Guid>(type: "TEXT", nullable: true),
+                    QuantityChange = table.Column<int>(type: "INTEGER", nullable: false),
+                    User = table.Column<string>(type: "TEXT", nullable: false),
+                    Timestamp = table.Column<DateTime>(type: "TEXT", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_AuditLogs", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_AuditLogs_Products_ProductId",
+                        column: x => x.ProductId,
+                        principalTable: "Products",
+                        principalColumn: "Id");
+                });
+
+            migrationBuilder.CreateTable(
                 name: "Movements",
                 columns: table => new
                 {
@@ -74,9 +93,8 @@ namespace backend.Migrations
                     ToWarehouseId = table.Column<Guid>(type: "TEXT", nullable: false),
                     Quantity = table.Column<int>(type: "INTEGER", nullable: false),
                     MovementsDate = table.Column<DateTime>(type: "TEXT", nullable: false),
-                    MovementType = table.Column<string>(type: "TEXT", nullable: false),
-                    User = table.Column<string>(type: "TEXT", nullable: false),
-                    Timestamp = table.Column<DateTime>(type: "TEXT", nullable: false),
+                    PerformedBy = table.Column<string>(type: "TEXT", nullable: false),
+                    Timestamp = table.Column<DateTime>(type: "TEXT", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -85,7 +103,8 @@ namespace backend.Migrations
                         name: "FK_Movements_Products_ProductId",
                         column: x => x.ProductId,
                         principalTable: "Products",
-                        principalColumn: "Id");
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
                         name: "FK_Movements_Warehouses_FromWarehouseId",
                         column: x => x.FromWarehouseId,
@@ -121,23 +140,10 @@ namespace backend.Migrations
                         onDelete: ReferentialAction.Cascade);
                 });
 
-            migrationBuilder.InsertData(
-                table: "Warehouses",
-                columns: new[] { "Id", "Location", "Name" },
-                values: new object[,]
-                {
-                    { new Guid("11111111-1111-1111-1111-111111111111"), "Standort A", "Lager A" },
-                    { new Guid("22222222-2222-2222-2222-222222222222"), "Standort B", "Lager B" }
-                });
-
-            migrationBuilder.InsertData(
-                table: "Products",
-                columns: new[] { "Id", "MinimumStock", "Name", "Quantity", "WarehouseId" },
-                values: new object[,]
-                {
-                    { new Guid("33333333-3333-3333-3333-333333333333"), 0, "Produkt 1", 100, new Guid("11111111-1111-1111-1111-111111111111") },
-                    { new Guid("44444444-4444-4444-4444-444444444444"), 0, "Produkt 2", 50, new Guid("22222222-2222-2222-2222-222222222222") }
-                });
+            migrationBuilder.CreateIndex(
+                name: "IX_AuditLogs_ProductId",
+                table: "AuditLogs",
+                column: "ProductId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Movements_FromWarehouseId",
@@ -153,6 +159,12 @@ namespace backend.Migrations
                 name: "IX_Movements_ToWarehouseId",
                 table: "Movements",
                 column: "ToWarehouseId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Products_Name_WarehouseId",
+                table: "Products",
+                columns: new[] { "Name", "WarehouseId" },
+                unique: true);
 
             migrationBuilder.CreateIndex(
                 name: "IX_Products_WarehouseId",
@@ -176,6 +188,9 @@ namespace backend.Migrations
 
             migrationBuilder.DropTable(
                 name: "RestockQueue");
+
+            migrationBuilder.DropTable(
+                name: "UserRoles");
 
             migrationBuilder.DropTable(
                 name: "Products");

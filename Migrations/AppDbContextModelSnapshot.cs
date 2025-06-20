@@ -128,28 +128,6 @@ namespace backend.Migrations
                         .IsUnique();
 
                     b.ToTable("Products");
-
-                    b.HasData(
-                        new
-                        {
-                            Id = new Guid("33333333-3333-3333-3333-333333333333"),
-                            HasSentLowStockNotification = false,
-                            MinimumStock = 10,
-                            Name = "Product 1",
-                            Quantity = 100,
-                            RowVersion = new byte[] { 0, 0, 0, 0, 0, 0, 0, 0 },
-                            WarehouseId = new Guid("11111111-1111-1111-1111-111111111111")
-                        },
-                        new
-                        {
-                            Id = new Guid("44444444-4444-4444-4444-444444444444"),
-                            HasSentLowStockNotification = false,
-                            MinimumStock = 5,
-                            Name = "Product 2",
-                            Quantity = 50,
-                            RowVersion = new byte[] { 0, 0, 0, 0, 0, 0, 0, 0 },
-                            WarehouseId = new Guid("22222222-2222-2222-2222-222222222222")
-                        });
                 });
 
             modelBuilder.Entity("Backend.Models.RestockQueue", b =>
@@ -194,20 +172,6 @@ namespace backend.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("UserRoles");
-
-                    b.HasData(
-                        new
-                        {
-                            Id = new Guid("11111111-1111-0000-1111-111111111111"),
-                            FirebaseUid = "test-user-1",
-                            Role = "Manager"
-                        },
-                        new
-                        {
-                            Id = new Guid("22222222-2222-0000-2222-222222222222"),
-                            FirebaseUid = "test-user-2",
-                            Role = "Employee"
-                        });
                 });
 
             modelBuilder.Entity("Backend.Models.Warehouse", b =>
@@ -227,20 +191,6 @@ namespace backend.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Warehouses");
-
-                    b.HasData(
-                        new
-                        {
-                            Id = new Guid("11111111-1111-1111-1111-111111111111"),
-                            Location = "Location A",
-                            Name = "Warehouse A"
-                        },
-                        new
-                        {
-                            Id = new Guid("22222222-2222-2222-2222-222222222222"),
-                            Location = "Location B",
-                            Name = "Warehouse B"
-                        });
                 });
 
             modelBuilder.Entity("Backend.Models.AuditLog", b =>

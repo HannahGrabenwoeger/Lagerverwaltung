@@ -169,9 +169,10 @@ app.MapControllers();
 
 if (testMode)
 {
-    Console.WriteLine("TestMode active – test data is inserted");
+    Console.WriteLine("TestMode active – inserting development test data");
     using var scope = app.Services.CreateScope();
     var dbContext = scope.ServiceProvider.GetRequiredService<AppDbContext>();
+
     await dbContext.Database.MigrateAsync();
     await SeedTestDataAsync(dbContext);
 }
