@@ -6,7 +6,6 @@ using Backend.Models;
 using Microsoft.AspNetCore.Authorization;
 using System.Security.Claims;
 
-[Authorize]
 [ApiController]
 [Route("api/[controller]")]
 public class WarehouseController : ControllerBase
