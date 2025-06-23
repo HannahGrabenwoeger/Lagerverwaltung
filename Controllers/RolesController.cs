@@ -30,7 +30,7 @@ namespace Backend.Controllers
                 .Select(r => r.Role)
                 .FirstOrDefaultAsync();
 
-            Console.WriteLine($"[DB-Rolle] UID: {uid}, Rolle: {role}");
+            Console.WriteLine("UID aus JWT: " + User.FindFirst(ClaimTypes.NameIdentifier)?.Value);
             return role;
         }
         

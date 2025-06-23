@@ -78,6 +78,7 @@ public class WarehouseController : ControllerBase
         return Ok(products);
     }
 
+    [Authorize]
     [HttpPost]
     public async Task<IActionResult> CreateWarehouse([FromBody] CreateWarehouseDto dto)
     {
@@ -126,6 +127,7 @@ public class WarehouseController : ControllerBase
         await _context.SaveChangesAsync();
         return NoContent();
     }
+
 
     [HttpDelete("{id}")]
     public async Task<IActionResult> DeleteWarehouse(Guid id)
