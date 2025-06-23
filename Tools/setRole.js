@@ -1,23 +1,23 @@
-const admin = require("firebase-admin");
+const manager = require("firebase-admin");
 
 const serviceAccount = require("../backend/Secrets/service-account.json"); 
 
-admin.initializeApp({
-  credential: admin.credential.cert(serviceAccount),
+manager.initializeApp({
+  credential: manager.credential.cert(serviceAccount),
 });
 
 async function setRole() {
-  const email = "admin@email.com"; 
+  const email = "manager@email.com"; 
   try {
-    const user = await admin.auth().getUserByEmail(email);
+    const user = await manager.auth().getUserByEmail(email);
 
-    await admin.auth().setCustomUserClaims(user.uid, {
-      role: "admin", 
+    await manager.auth().setCustomUserClaims(user.uid, {
+      role: "manager", 
     });
 
-    console.log(`Role "admin" was set for ${email}.`);
+    console.log(`Role "manager" was set for ${email}.`);
 
-    const updatedUser = await admin.auth().getUser(user.uid);
+    const updatedUser = await manager.auth().getUser(user.uid);
     console.log("Current custom claims:");
     console.log(updatedUser.customClaims);
   } catch (err) {

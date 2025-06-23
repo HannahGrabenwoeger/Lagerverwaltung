@@ -189,17 +189,12 @@ async Task SeedTestDataAsync(AppDbContext dbContext)
         );
     }
 
-    if (!dbContext.UserRoles.Any(u => u.FirebaseUid == "manager"))
-    {
-        dbContext.UserRoles.Add(new UserRole { FirebaseUid = "manager", Role = "Manager" });
-    }
-
     if (!dbContext.UserRoles.Any(u => u.FirebaseUid == "N1hfy3HSyNb4QxynYzjDlF8to4W2"))
     {
         dbContext.UserRoles.Add(new UserRole
         {
             FirebaseUid = "N1hfy3HSyNb4QxynYzjDlF8to4W2",
-            Role = "admin"
+            Role = "manager"
         });
     }
 

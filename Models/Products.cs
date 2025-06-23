@@ -26,6 +26,6 @@ namespace Backend.Models
         public bool HasSentLowStockNotification { get; set; }
 
         [Timestamp]
-        public byte[]? RowVersion { get; set; }
+        public byte[] RowVersion { get; set; } = BitConverter.GetBytes(DateTime.UtcNow.Ticks);
     }
 }

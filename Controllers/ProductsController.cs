@@ -69,7 +69,7 @@ namespace Backend.Controllers
             if (string.IsNullOrEmpty(uid)) return Unauthorized();
 
             var role = await GetUserRoleAsync();
-            if (role != "Manager" && role != "admin") return Unauthorized();
+            if (role != "manager") return Unauthorized();
 
             var product = await _context.Products.FindAsync(id);
             if (product == null)
@@ -89,7 +89,7 @@ namespace Backend.Controllers
                 return Unauthorized(new { message = "No UID found in token." });
 
             var role = await GetUserRoleAsync();
-            if (role != "Manager" && role != "admin")
+            if (role != "manager")
                 return Unauthorized(new { message = "Unauthorized access." });
 
             var product = await _context.Products.FindAsync(id);
@@ -132,6 +132,7 @@ namespace Backend.Controllers
                 Quantity = dto.Quantity,
                 MinimumStock = dto.MinimumStock,
                 WarehouseId = dto.WarehouseId,
+                RowVersion = BitConverter.GetBytes(DateTime.UtcNow.Ticks)
             };
 
             _context.Products.Add(product);
@@ -146,7 +147,8 @@ namespace Backend.Controllers
                 product.Quantity,
                 product.MinimumStock,
                 product.WarehouseId,
-                WarehouseName = product.Warehouse?.Name ?? "Unknown"
+                WarehouseName = product.Warehouse?.Name ?? "Unknown",
+                RowVersion = product.RowVersion
             });
         }
 

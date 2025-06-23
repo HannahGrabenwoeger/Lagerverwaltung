@@ -96,7 +96,7 @@ namespace Backend.Services
         private async Task<List<string>> GetManagersAsync(AppDbContext context)
         {
             return await context.UserRoles
-                .Where(ur => ur.Role == "Manager")
+                .Where(ur => ur.Role == "manager")
                 .Select(ur => ur.FirebaseUid)
                 .ToListAsync();
         }

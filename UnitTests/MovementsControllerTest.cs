@@ -30,7 +30,7 @@ public class MovementsControllerTests
         context.UserRoles.Add(new UserRole
         {
             FirebaseUid = "testuser",
-            Role = "Manager"
+            Role = "manager"
         });
         await context.SaveChangesAsync();
 
@@ -93,7 +93,7 @@ public class MovementsControllerTests
         context.UserRoles.Add(new UserRole
         {
             FirebaseUid = "testuser",
-            Role = "Manager"
+            Role = "manager"
         });
         await context.SaveChangesAsync();
 

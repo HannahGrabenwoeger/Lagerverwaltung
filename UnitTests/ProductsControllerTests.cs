@@ -19,7 +19,7 @@ public class ProductsControllerTests
         return new AppDbContext(options);
     }
 
-    private ProductsController CreateController(AppDbContext context, string role = "Manager")
+    private ProductsController CreateController(AppDbContext context, string role = "manager")
     {
         var user = new ClaimsPrincipal(new ClaimsIdentity(new[]
         {
@@ -49,7 +49,7 @@ public class ProductsControllerTests
             Role = "Manager"
         });
 
-        var product = new Product { Id = Guid.NewGuid(), Name = "Manager Delete" };
+        var product = new Product { Id = Guid.NewGuid(), Name = "manager Delete" };
         context.Products.Add(product);
         await context.SaveChangesAsync();
 

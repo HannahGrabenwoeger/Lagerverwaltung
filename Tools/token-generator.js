@@ -1,5 +1,5 @@
 const { initializeApp } = require("firebase/app");
-const { getAuth, signInWithEmailAndPassword } = require("firebase/auth");
+const { getAuth, signInWithEmailAndPassword, signOut } = require("firebase/auth");
 
 const firebaseConfig = {
   apiKey: "AIzaSyBfpghFMu5DCVgXr7tx35_uipcwpUlb5ZY",
@@ -12,23 +12,20 @@ const auth = getAuth(app);
 
 async function getToken() {
   try {
-    await auth.signOut();
+    await signOut(auth); // wichtig, damit das neue Token geladen wird!
 
-    const userCredential = await signInWithEmailAndPassword(auth, "admin@email.com", "password");
+    const userCredential = await signInWithEmailAndPassword(auth, "manager@email.com", "password");
 
-    const tokenResult = await userCredential.user.getIdTokenResult(true); 
+    const tokenResult = await userCredential.user.getIdTokenResult(true); // ⬅ true ist extrem wichtig
 
-    console.log("Dein ID Token:");
+    console.log("➡️ Token geladen:");
     console.log(tokenResult.token);
 
-    console.log("Custom Claims im Token:");
+    console.log("➡️ Custom Claims:");
     console.log(tokenResult.claims);
 
-    if (!tokenResult.claims.role) {
-      console.warn("ACHTUNG: Kein 'role' Claim im Token vorhanden!");
-    }
-  } catch (error) {
-    console.error("Fehler beim Login oder Tokenabruf:", error.message);
+  } catch (err) {
+    console.error("❌ Fehler beim Login/Token:", err.message);
   }
 }
 

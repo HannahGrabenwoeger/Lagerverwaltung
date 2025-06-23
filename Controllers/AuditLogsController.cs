@@ -36,7 +36,7 @@ namespace Backend.Controllers
         public async Task<IActionResult> GetAuditLogs()
         {
             var role = await GetUserRoleAsync();
-            if (role != "Manager" && role != "admin")
+            if (!string.Equals(role, "manager", StringComparison.OrdinalIgnoreCase))
                 return Forbid();
 
             var logs = await _context.AuditLogs.ToListAsync();

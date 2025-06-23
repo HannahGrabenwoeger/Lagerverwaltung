@@ -4,7 +4,7 @@ Dies ist das Backend eines Lagerverwaltungssystems mit Funktionen wie Produktver
 
 ## 🚀 Features
 
-- Benutzerbasierte Rechtevergabe (Manager, Admin)
+- Benutzerbasierte Rechtevergabe (Manager)
 - Produkt- und Lagerverwaltung
 - Restock Queue & automatische Verarbeitung
 - Audit Logs

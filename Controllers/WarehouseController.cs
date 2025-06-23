@@ -111,7 +111,7 @@ public class WarehouseController : ControllerBase
     public async Task<IActionResult> CreateWarehouse([FromBody] CreateWarehouseDto dto)
     {
         var role = await GetUserRoleAsync();
-        if (role != "Manager" && role != "admin")
+        if (role != "manager")
             return Forbid();
 
         if (string.IsNullOrWhiteSpace(dto.Name) || string.IsNullOrWhiteSpace(dto.Location))
@@ -137,7 +137,7 @@ public class WarehouseController : ControllerBase
     public async Task<IActionResult> UpdateWarehouse(Guid id, [FromBody] UpdateWarehouseDto dto)
     {
         var role = await GetUserRoleAsync();
-        if (role != "Manager" && role != "admin")
+        if (role != "manager")
             return Forbid();
 
         var warehouse = await _context.Warehouses.FindAsync(id);
@@ -161,7 +161,7 @@ public class WarehouseController : ControllerBase
     public async Task<IActionResult> DeleteWarehouse(Guid id)
     {
         var role = await GetUserRoleAsync();
-        if (role != "Manager" && role != "admin")
+        if (role != "manager")
             return Forbid();
 
         var warehouse = await _context.Warehouses
