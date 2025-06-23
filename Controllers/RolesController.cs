@@ -4,6 +4,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Authorization;
 using System.Security.Claims;
 using Backend.Models;
+using Backend.Dtos;
 
 namespace Backend.Controllers
 {
