@@ -90,7 +90,7 @@ namespace Backend.Controllers
             return Ok(new { message = "Restock marked as processed" });
         }
 
-        [Authorize(Roles = "manager")]
+        [Authorize]
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteRestock(Guid id)
         {
