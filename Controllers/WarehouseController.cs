@@ -29,6 +29,35 @@ public class WarehouseController : ControllerBase
             .FirstOrDefaultAsync();
     }
 
+    [HttpGet("{id}")]
+    public async Task<IActionResult> GetWarehouseById(Guid id)
+    {
+        var warehouse = await _context.Warehouses
+            .Include(w => w.Products)
+            .FirstOrDefaultAsync(w => w.Id == id);
+
+        if (warehouse == null)
+            return NotFound(new { message = "Warehouse not found." });
+
+        var result = new WarehouseDto
+        {
+            Id = warehouse.Id,
+            Name = warehouse.Name,
+            Location = warehouse.Location,
+            Products = warehouse.Products.Select(p => new ProductDto
+            {
+                Id = p.Id,
+                Name = p.Name,
+                Quantity = p.Quantity,
+                MinimumStock = p.MinimumStock,
+                WarehouseId = p.WarehouseId,
+                WarehouseName = warehouse.Name
+            }).ToList()
+        };
+
+        return Ok(result);
+    }
+
     [HttpGet]
     public async Task<IActionResult> GetWarehouses()
     {
