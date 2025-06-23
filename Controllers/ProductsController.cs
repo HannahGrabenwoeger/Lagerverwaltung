@@ -58,7 +58,7 @@ namespace Backend.Controllers
                 minimumStock = product.MinimumStock,
                 warehouseId = product.WarehouseId,
                 warehouseName = product.Warehouse?.Name ?? "Unknown",
-                rowVersion    = product.RowVersion
+                version    = product.Version
             });
         }
 
@@ -96,7 +96,7 @@ namespace Backend.Controllers
             if (product == null)
                 return NotFound(new { message = "Product not found." });
 
-            if (!product.RowVersion.SequenceEqual(dto.RowVersion))
+            if (product.Version != dto.Version)
                 return Conflict(new { message = "Concurrency conflict: The product was modified by another user." });
 
             product.Name = dto.Name;
@@ -104,12 +104,14 @@ namespace Backend.Controllers
             product.Quantity = dto.Quantity;
             product.MinimumStock = dto.MinimumStock;
 
+            product.Version = DateTimeOffset.UtcNow.ToUnixTimeMilliseconds();
+
             await _context.SaveChangesAsync();
 
             return Ok(new
             {
                 message = "Product updated successfully.",
-                newRowVersion = product.RowVersion
+                newVersion = product.Version
             });
         }
 
@@ -119,10 +121,14 @@ namespace Backend.Controllers
             if (dto == null || string.IsNullOrWhiteSpace(dto.Name))
                 return BadRequest(new { message = "Invalid Product" });
 
+            var warehouseExists = await _context.Warehouses.AnyAsync(w => w.Id == dto.WarehouseId);
+            if (!warehouseExists)
+                return BadRequest(new { message = "Warehouse does not exist." });
+
             var duplicate = await _context.Products
                 .AnyAsync(p => p.Name == dto.Name && p.WarehouseId == dto.WarehouseId);
             if (duplicate)
-                return Conflict(new { message = "Product with this name already exits in this warehouse." });
+                return Conflict(new { message = "Product with this name already exists in this warehouse." });
 
             var product = new Product
             {
@@ -132,11 +138,11 @@ namespace Backend.Controllers
                 Quantity = dto.Quantity,
                 MinimumStock = dto.MinimumStock,
                 WarehouseId = dto.WarehouseId,
-                RowVersion = BitConverter.GetBytes(DateTime.UtcNow.Ticks)
             };
 
             _context.Products.Add(product);
             await _context.SaveChangesAsync();
+
             await _context.Entry(product).Reference(p => p.Warehouse).LoadAsync();
 
             return CreatedAtAction(nameof(GetProductById), new { id = product.Id }, new
@@ -148,7 +154,7 @@ namespace Backend.Controllers
                 product.MinimumStock,
                 product.WarehouseId,
                 WarehouseName = product.Warehouse?.Name ?? "Unknown",
-                RowVersion = product.RowVersion
+                Version = product.Version
             });
         }
 

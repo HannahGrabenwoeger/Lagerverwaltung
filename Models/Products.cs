@@ -24,8 +24,6 @@ namespace Backend.Models
         public Warehouse? Warehouse { get; set; }
 
         public bool HasSentLowStockNotification { get; set; }
-
-        [Timestamp]
-        public byte[] RowVersion { get; set; } = BitConverter.GetBytes(DateTime.UtcNow.Ticks);
+        public long Version { get; set; } = DateTimeOffset.UtcNow.ToUnixTimeMilliseconds();
     }
 }

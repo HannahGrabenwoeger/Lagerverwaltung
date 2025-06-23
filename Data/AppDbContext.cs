@@ -15,38 +15,34 @@ namespace Backend.Data
         public DbSet<AuditLog> AuditLogs { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
-        {
-            base.OnModelCreating(modelBuilder);
+{
+    base.OnModelCreating(modelBuilder);
 
-            Console.WriteLine("OnModelCreating is called!");
+    Console.WriteLine("OnModelCreating is called!");
 
-            modelBuilder.Entity<Product>()
-                .HasOne(p => p.Warehouse)
-                .WithMany(w => w.Products)
-                .HasForeignKey(p => p.WarehouseId)
-                .OnDelete(DeleteBehavior.Cascade);
+    modelBuilder.Entity<Product>()
+        .HasOne(p => p.Warehouse)
+        .WithMany(w => w.Products)
+        .HasForeignKey(p => p.WarehouseId)
+        .OnDelete(DeleteBehavior.Cascade);
 
-            modelBuilder.Entity<Product>()
-                .HasIndex(p => new { p.Name, p.WarehouseId })
-                .IsUnique();
+    modelBuilder.Entity<Product>()
+        .HasIndex(p => new { p.Name, p.WarehouseId })
+        .IsUnique();
 
-            modelBuilder.Entity<Product>()
-                .Property(p => p.RowVersion)
-                .IsRowVersion();
+    modelBuilder.Entity<Movements>()
+        .HasOne(m => m.FromWarehouse)
+        .WithMany()
+        .HasForeignKey(m => m.FromWarehouseId)
+        .OnDelete(DeleteBehavior.Restrict);
 
-            modelBuilder.Entity<Movements>()
-                .HasOne(m => m.FromWarehouse)
-                .WithMany()
-                .HasForeignKey(m => m.FromWarehouseId)
-                .OnDelete(DeleteBehavior.Restrict);
+    modelBuilder.Entity<Movements>()
+        .HasOne(m => m.ToWarehouse)
+        .WithMany()
+        .HasForeignKey(m => m.ToWarehouseId)
+        .OnDelete(DeleteBehavior.Restrict);
 
-            modelBuilder.Entity<Movements>()
-                .HasOne(m => m.ToWarehouse)
-                .WithMany()
-                .HasForeignKey(m => m.ToWarehouseId)
-                .OnDelete(DeleteBehavior.Restrict);
-
-            Console.WriteLine("Seed data and relationships were defined in OnModelCreating!");
-        }
+    Console.WriteLine("Seed data and relationships were defined in OnModelCreating!");
+}
     }
 }

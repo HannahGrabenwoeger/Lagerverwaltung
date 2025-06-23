@@ -14,6 +14,6 @@ namespace Backend.Dtos
         public int MinimumStock { get; set; }
         public string? Unit { get; set; }
         [Required]
-        public byte[] RowVersion { get; set; } = Array.Empty<byte>();
+        public long Version { get; set; }
     }
 }
