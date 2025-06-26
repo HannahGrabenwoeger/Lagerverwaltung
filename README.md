@@ -27,3 +27,20 @@ Für die Nutzung des Systems ist ein eigener Firebase-Service-Account erforderli
    - Neues Firebase-Projekt unter https://console.firebase.google.com anlegen
    - In den Projekteinstellungen unter **Service Accounts** einen neuen privaten Schlüssel generieren
    - Die heruntergeladene Datei in `Backend/Secrets/ServiceAccount.json` einfügen (bestehende Datei ersetzen)
+
+## 🔐 Swagger & Authentifizierung
+
+Nach dem Starten des Projekts ist die API unter `http://localhost:xxxx/swagger` aufrufbar (Port abhängig von `launchSettings.json`).
+
+Da geschützte Endpunkte eine Authentifizierung erfordern, muss ein Bearer-Token angegeben werden:
+
+1. **Klicke im Swagger UI rechts oben auf „Authorize“**
+2. **Füge deinen Token im Format `Bearer <deinToken>` ein**
+3. **Bestätige mit „Authorize“**
+
+### 🔑 Token generieren
+
+Um ein gültiges Firebase-Token zu erhalten, verwende folgendes Node.js-Skript:
+
+```bash
+node Tools/token-generator
