@@ -67,39 +67,6 @@ namespace Backend.Controllers
             return Ok(new { message = $"Rolle '{request.Role}' wurde für UID '{request.FirebaseUid}' gesetzt." });
         }
 
-        [Authorize]
-        [HttpPost("set")]
-        public async Task<IActionResult> SetUserRole([FromBody] SetUserRoleDto dto)
-        {
-            var uid = User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
-            if (string.IsNullOrEmpty(uid))
-                return Unauthorized("No UID found in token.");
-
-            var callerRole = await GetUserRoleAsync();
-            if (callerRole != "manager")
-                return Forbid("Only managers can set roles.");
-
-            var validRoles = new[] { "manager", "employee" };
-            if (!validRoles.Contains(dto.Role.ToLower()))
-                return BadRequest(new { message = "Invalid role." });
-
-            var existing = await _context.UserRoles.FirstOrDefaultAsync(u => u.FirebaseUid == dto.FirebaseUid);
-            if (existing != null)
-            {
-                existing.Role = dto.Role.ToLower();
-            }
-            else
-            {
-                _context.UserRoles.Add(new UserRole
-                {
-                    FirebaseUid = dto.FirebaseUid,
-                    Role = dto.Role.ToLower()
-                });
-            }
-
-            await _context.SaveChangesAsync();
-            return Ok(new { message = $"Role '{dto.Role}' set for UID {dto.FirebaseUid}" });
-        }
         
         [Authorize]
         [HttpGet("user-role")]

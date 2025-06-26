@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 using FirebaseAdmin.Auth;
 using Backend.Dtos;
 using Backend.Services.Firebase;
+using Backend.Services;
 
 namespace Backend.Controllers
 {
@@ -11,10 +12,12 @@ namespace Backend.Controllers
     public class AuthentificationController : ControllerBase
     {
         private readonly IFirebaseAuthWrapper _firebaseAuth;
+        private readonly IUserQueryService _userQueryService;
 
-        public AuthentificationController(IFirebaseAuthWrapper firebaseAuth)
+        public AuthentificationController(IFirebaseAuthWrapper firebaseAuth, IUserQueryService userQueryService)
         {
             _firebaseAuth = firebaseAuth;
+            _userQueryService = userQueryService;
         }
 
         [HttpPost("verify-firebase-token")]
@@ -65,25 +68,18 @@ namespace Backend.Controllers
             }
         }
 
-        [HttpPost("verify-token")]
-        public async Task<IActionResult> VerifyToken([FromBody] FirebaseAuthDto model)
-        {
-            var uid = await _firebaseAuth.VerifyIdTokenAndGetUidAsync(model.IdToken);
-            return Ok(new TokenResponseDto { Uid = uid });
-        }
 
         [HttpGet("secure-data")]
         [Authorize]
-        public IActionResult GetSecureData()
+        public async Task<IActionResult> GetSecureData()
         {
-            var email = User.FindFirst("email")?.Value;
             var uid = User.FindFirst("user_id")?.Value;
-            var role = User.FindFirst("role")?.Value ?? "none";
+            var role = await _userQueryService.GetUserRoleAsync();
 
-            return Ok(new
-            {
-                message = $"Hello {email}, UID: {uid}, Role: {role}"
-            });
+            Console.WriteLine($"[SECURE-DATA] UID: {uid}");
+            Console.WriteLine($"[SECURE-DATA] Rolle laut Service: {role}");
+
+            return Ok(new { message = $"Hello , UID: {uid}, Role: {role ?? "none"}" });
         }
     }
 }

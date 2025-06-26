@@ -22,6 +22,20 @@ public class MovementsControllerTests
         return new AppDbContext(options);
     }
 
+    private IHttpContextAccessor CreateHttpContextAccessor(string uid)
+    {
+        var user = new ClaimsPrincipal(new ClaimsIdentity(new[]
+        {
+            new Claim(ClaimTypes.NameIdentifier, uid)
+        }, "mock"));
+
+        var context = new DefaultHttpContext { User = user };
+
+        var accessor = new Mock<IHttpContextAccessor>();
+        accessor.Setup(a => a.HttpContext).Returns(context);
+        return accessor.Object;
+    }
+
     [Fact]
     public async Task UpdateStock_AddsQuantity_WhenMovementTypeIsIn()
     {
@@ -34,43 +48,26 @@ public class MovementsControllerTests
         });
         await context.SaveChangesAsync();
 
-        var warehouseId = Guid.NewGuid();
         var product = new Product
         {
             Id = Guid.NewGuid(),
             Name = "TestProdukt",
             Quantity = 10,
             MinimumStock = 0,
-            WarehouseId = warehouseId
+            WarehouseId = Guid.NewGuid()
         };
-
         context.Products.Add(product);
         await context.SaveChangesAsync();
-
-        var stockService = new StockService(context);
-        var auditLog = new Mock<AuditLogService>(context).Object;
-        var reportService = new Mock<InventoryReportService>(context).Object;
-        var logger = new Mock<ILogger<MovementsController>>().Object;
 
         var controller = new MovementsController(
             context,
             new AppSettings(),
-            stockService,
-            auditLog,
-            logger,
-            reportService
+            new StockService(context),
+            new AuditLogService(context),
+            new Mock<ILogger<MovementsController>>().Object,
+            new Mock<InventoryReportService>(context).Object,
+            CreateHttpContextAccessor("testuser")
         );
-
-        controller.ControllerContext = new ControllerContext
-        {
-            HttpContext = new DefaultHttpContext
-            {
-                User = new ClaimsPrincipal(new ClaimsIdentity(new[]
-                {
-                    new Claim(ClaimTypes.NameIdentifier, "testuser")
-                }, "mock"))
-            }
-        };
 
         var request = new StockUpdateRequest
         {
@@ -79,10 +76,11 @@ public class MovementsControllerTests
             MovementType = "In"
         };
 
-        await controller.UpdateStock(request);
+        var result = await controller.UpdateStock(request);
 
         var updatedProduct = await context.Products.FindAsync(product.Id);
-        Assert.Equal(15, updatedProduct?.Quantity ?? -1);
+        Assert.Equal(15, updatedProduct?.Quantity);
+        Assert.IsType<OkObjectResult>(result);
     }
 
     [Fact]
@@ -97,21 +95,15 @@ public class MovementsControllerTests
         });
         await context.SaveChangesAsync();
 
-        var stockService = new StockService(context);
-        var auditLog = new Mock<AuditLogService>(context).Object;
-        var reportService = new Mock<InventoryReportService>(context).Object;
-        var logger = new Mock<ILogger<MovementsController>>().Object;
-
-        var controller = new MovementsController(context, new AppSettings(), stockService, auditLog, logger, reportService);
-        controller.ControllerContext = new ControllerContext
-        {
-            HttpContext = new DefaultHttpContext
-            {
-                User = new ClaimsPrincipal(new ClaimsIdentity(new[] {
-                    new Claim(ClaimTypes.NameIdentifier, "testuser")
-                }, "mock"))
-            }
-        };
+        var controller = new MovementsController(
+            context,
+            new AppSettings(),
+            new StockService(context),
+            new AuditLogService(context),
+            new Mock<ILogger<MovementsController>>().Object,
+            new Mock<InventoryReportService>(context).Object,
+            CreateHttpContextAccessor("testuser")
+        );
 
         var request = new StockUpdateRequest
         {

@@ -24,6 +24,8 @@ namespace Backend.Services
         {
             try
             {
+                
+
                 var log = new AuditLog
                 {
                     Entity = entity,

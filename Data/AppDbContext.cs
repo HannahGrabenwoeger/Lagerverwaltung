@@ -41,8 +41,14 @@ namespace Backend.Data
         .WithMany()
         .HasForeignKey(m => m.ToWarehouseId)
         .OnDelete(DeleteBehavior.Restrict);
+    
+    modelBuilder.Entity<AuditLog>()
+        .HasOne(a => a.Product)
+        .WithMany()
+        .HasForeignKey(a => a.ProductId)
+        .OnDelete(DeleteBehavior.SetNull);
 
-    Console.WriteLine("Seed data and relationships were defined in OnModelCreating!");
-}
+        Console.WriteLine("Seed data and relationships were defined in OnModelCreating!");
+        }
     }
 }

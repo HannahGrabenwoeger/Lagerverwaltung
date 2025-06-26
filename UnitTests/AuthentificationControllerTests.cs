@@ -1,4 +1,5 @@
 #nullable enable
+using Backend.Services;
 using Xunit;
 using Backend.Controllers;
 using Microsoft.AspNetCore.Mvc;
@@ -7,10 +8,14 @@ using Backend.Dtos;
 using Backend.Services.Firebase;
 
 public class AuthentificationControllerTests
-{
-    private AuthentificationController CreateController(Mock<IFirebaseAuthWrapper>? mockAuth = null)
     {
-        return new AuthentificationController(mockAuth?.Object ?? Mock.Of<IFirebaseAuthWrapper>());
+        private AuthentificationController CreateController(
+        Mock<IFirebaseAuthWrapper>? mockAuth = null,
+        Mock<IUserQueryService>? mockUserQuery = null)
+    {
+        return new AuthentificationController(
+            mockAuth?.Object ?? Mock.Of<IFirebaseAuthWrapper>(),
+            mockUserQuery?.Object ?? Mock.Of<IUserQueryService>());
     }
 
     [Fact]
@@ -36,7 +41,7 @@ public class AuthentificationControllerTests
         mockAuth.Setup(auth => auth.VerifyIdTokenAndGetUidAsync("invalid-token"))
                 .ThrowsAsync(new Exception("Token invalid"));
 
-        var controller = new AuthentificationController(mockAuth.Object);
+        var controller = new AuthentificationController(mockAuth.Object, Mock.Of<IUserQueryService>());
         var result = await controller.VerifyFirebaseToken(new FirebaseTokenRequest { IdToken = "invalid-token" });
 
         Assert.IsType<UnauthorizedObjectResult>(result);

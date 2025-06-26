@@ -5,32 +5,40 @@ using Backend.Models;
 using Backend.Data;
 using Backend.Dtos;
 using Backend.Services;
-using static MovementsControllerTests;
-using System;
+using System.Security.Claims;
 
 namespace Backend.Controllers
 {
     [ApiController]
     [Route("api/movements")]
-    public class MovementsController : RolesController
+    public class MovementsController : ControllerBase
     {
+        private readonly AppDbContext _context;
         private readonly StockService _stockService;
         private readonly AuditLogService _auditLogService;
         private readonly ILogger<MovementsController> _logger;
-
         private readonly AppSettings _settings;
+        private readonly IHttpContextAccessor _httpContextAccessor;
 
-        public MovementsController(AppDbContext context, AppSettings settings, StockService stockService, AuditLogService auditLogService, ILogger<MovementsController> logger, InventoryReportService reportService)
-            : base(context, settings)
+        public MovementsController(
+            AppDbContext context,
+            AppSettings settings,
+            StockService stockService,
+            AuditLogService auditLogService,
+            ILogger<MovementsController> logger,
+            InventoryReportService reportService,
+            IHttpContextAccessor httpContextAccessor)
         {
+            _context = context;
+            _settings = settings;
             _stockService = stockService;
             _auditLogService = auditLogService;
             _logger = logger;
-            _settings = settings;
+            _httpContextAccessor = httpContextAccessor;
         }
 
         [HttpPost("create")]
-        public async Task<IActionResult> CreateMovements([FromBody] MovementsDto dto)
+        public async Task<IActionResult> CreateMovements([FromBody] CreateMovementDto dto)
         {
             if (dto == null)
                 return BadRequest(new { message = "Invalid input" });
@@ -90,6 +98,8 @@ namespace Backend.Controllers
                     _context.Products.Add(targetProduct);
                 }
 
+                var uid = GetUserUid();
+
                 var movement = new Movements
                 {
                     Id = Guid.NewGuid(),
@@ -98,17 +108,17 @@ namespace Backend.Controllers
                     ToWarehouseId = toWarehouseId,
                     Quantity = dto.Quantity,
                     MovementsDate = dto.MovementsDate,
-                    PerformedBy = User?.Identity?.Name ?? "Unknown"
+                    PerformedBy = uid
                 };
 
                 await _context.Movements.AddAsync(movement);
 
-                await _auditLogService.LogActionAsync("Movement", "Out", product.Id, -dto.Quantity, movement.PerformedBy);
-                await _auditLogService.LogActionAsync("Movement", "In", targetProduct.Id, dto.Quantity, movement.PerformedBy);
+                await _auditLogService.LogActionAsync("Movement", "Out", product.Id, -dto.Quantity, uid);
+                await _auditLogService.LogActionAsync("Movement", "In", targetProduct.Id, dto.Quantity, uid);
 
                 await _context.SaveChangesAsync();
 
-                _logger.LogInformation("Movement saved: {MovementId}", movement.Id);
+                _logger.LogInformation("Movement saved: {MovementId} by UID: {Uid}", movement.Id, uid);
 
                 return CreatedAtAction(nameof(GetMovementsById), new { id = movement.Id }, movement);
             }
@@ -149,7 +159,7 @@ namespace Backend.Controllers
 
             return Ok(result);
         }
-        
+
         [HttpPost("update-stock")]
         public async Task<IActionResult> UpdateStock([FromBody] StockUpdateRequest request)
         {
@@ -200,6 +210,27 @@ namespace Backend.Controllers
         {
             result = Guid.Empty;
             return input != null && Guid.TryParse(input.ToString(), out result);
+        }
+
+        private string GetUserUid()
+        {
+            return User?.FindFirst("user_id")?.Value ??
+                   User?.FindFirst("sub")?.Value ??
+                   User?.FindFirst(ClaimTypes.NameIdentifier)?.Value ??
+                   "Unknown";
+        }
+
+        private async Task<string?> GetUserRoleAsync()
+        {
+            var uid = GetUserUid();
+            if (string.IsNullOrEmpty(uid)) return null;
+
+            var role = await _context.UserRoles
+                .Where(r => r.FirebaseUid == uid)
+                .Select(r => r.Role)
+                .FirstOrDefaultAsync();
+
+            return role;
         }
     }
 }

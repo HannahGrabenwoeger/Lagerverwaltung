@@ -19,24 +19,6 @@ namespace Backend.Controllers
             _userQueryService = userQueryService;
         }
 
-        [HttpGet("find-user/{username}")]
-        public async Task<IActionResult> FindUser(string username)
-        {
-            try
-            {
-                var user = await _userQueryService.FindUserAsync(username);
-                if (user == null)
-                    return NotFound(new { message = "User not found" });
-
-                return Ok(user);
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine("Error in find-user: " + ex.Message);
-                return StatusCode(500, new { message = "Server error", details = ex.Message });
-            }
-        }
-
         [HttpGet("stock-summary")]
         public async Task<IActionResult> GetStockSummary()
         {
@@ -122,11 +104,23 @@ namespace Backend.Controllers
             try
             {
                 if (string.IsNullOrEmpty(period))
-                    return BadRequest(new { message = "Period parameter is required" });
+                    return BadRequest(new { message = "Period parameter is required (use 'd', 'w', 'm', 'y')" });
+
+                DateTime fromDate = period switch
+                {
+                    "d" => DateTime.UtcNow.Date,                    // Heute
+                    "w" => DateTime.UtcNow.Date.AddDays(-7),        // Letzte 7 Tage
+                    "m" => DateTime.UtcNow.Date.AddMonths(-1),      // Letzter Monat
+                    "y" => DateTime.UtcNow.Date.AddYears(-1),       // Letztes Jahr
+                    _ => throw new ArgumentException("Invalid period value. Use 'd', 'w', 'm', or 'y'.")
+                };
 
                 var restocks = await _context.RestockQueue
                     .Include(r => r.Product)
-                    .Where(r => r.Quantity > 0 && r.Product != null)
+                    .Where(r =>
+                        r.Quantity > 0 &&
+                        r.Product != null &&
+                        r.RequestedAt >= fromDate)
                     .ToListAsync();
 
                 var grouped = restocks
@@ -152,6 +146,10 @@ namespace Backend.Controllers
                     .ToList();
 
                 return Ok(grouped);
+            }
+            catch (ArgumentException argEx)
+            {
+                return BadRequest(new { message = argEx.Message });
             }
             catch (Exception ex)
             {

@@ -8,7 +8,7 @@ using Backend.Services.Firebase;
 using Backend.Models;
 using FirebaseAdmin;
 using Google.Apis.Auth.OAuth2;
-using Backend.Servicesxs;
+using Backend.Services;
 using Microsoft.IdentityModel.Logging;
 using System.Security.Claims;
 
@@ -42,6 +42,7 @@ builder.Services.AddScoped<AuditLogService>();
 builder.Services.AddScoped<StockService>();
 builder.Services.AddScoped<IUserQueryService, UserQueryService>();
 builder.Services.AddSingleton<IFirebaseAuthWrapper, FirebaseAuthWrapper>();
+builder.Services.AddHttpContextAccessor();
 
 // Hintergrundprozess
 builder.Services.AddSingleton<RestockProcessor>();
@@ -100,7 +101,7 @@ if (FirebaseApp.DefaultInstance == null)
     var firebaseCredentialsPath = configuration["Firebase:CredentialsPath"];
     FirebaseApp.Create(new AppOptions
     {
-        Credential = GoogleCredential.FromFile(Path.Combine(AppContext.BaseDirectory, "Secrets", "service-account.json"))
+        Credential = GoogleCredential.FromFile(Path.Combine(AppContext.BaseDirectory, firebaseCredentialsPath!))
     });
 }
 
@@ -189,11 +190,11 @@ async Task SeedTestDataAsync(AppDbContext dbContext)
         );
     }
 
-    if (!dbContext.UserRoles.Any(u => u.FirebaseUid == "N1hfy3HSyNb4QxynYzjDlF8to4W2"))
+    if (!dbContext.UserRoles.Any(u => u.FirebaseUid == "AWFG0PtIhWbMmaK6j7X4Pr83oWj2"))
     {
         dbContext.UserRoles.Add(new UserRole
         {
-            FirebaseUid = "N1hfy3HSyNb4QxynYzjDlF8to4W2",
+            FirebaseUid = "AWFG0PtIhWbMmaK6j7X4Pr83oWj2",
             Role = "manager"
         });
     }
