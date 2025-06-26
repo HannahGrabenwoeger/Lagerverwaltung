@@ -7,14 +7,18 @@ FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
 WORKDIR /src
 
 # Kopiere Projektdatei und restore NuGet-Pakete
-COPY ./backend.csproj ./Lagerverwaltung_backend/
-WORKDIR /src/Lagerverwaltung_backend
+COPY ./backend.csproj ./Lagerverwaltung/
+WORKDIR /src/Lagerverwaltung
 RUN dotnet restore
 
 # Kopiere den restlichen Code
-COPY . ./Lagerverwaltung_backend/
-WORKDIR /src/Lagerverwaltung_backend
-COPY ./Secrets/ ./Lagerverwaltung_backend/Secrets/
+COPY . ./Lagerverwaltung/
+WORKDIR /src/Lagerverwaltung
+
+# Konfiguration + Secrets
+COPY ./appsettings.json ./appsettings.json
+COPY ./Secrets/ ./Secrets/
+
 # Build & Publish
 RUN dotnet publish -c Release -o /app/publish
 
